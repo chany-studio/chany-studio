@@ -30,9 +30,20 @@ codex plugin marketplace add junphoto1008-tech/photo-reference-studio --ref main
 
 그다음 ChatGPT 데스크톱 앱을 다시 시작하고 Plugins에서 **AI Photo Reference Studio** 마켓플레이스를 선택해 `photo-reference-studio`를 설치합니다. 설치 후에는 새 대화나 새 Codex 작업에서 플러그인을 활성화하세요.
 
-## Claude Cowork 설치
+## Claude Cowork 마켓플레이스 설치
 
-가장 간단한 방법은 [최신 GitHub Release](https://github.com/junphoto1008-tech/photo-reference-studio/releases/latest)에서 `photo-reference-studio.plugin`을 내려받아 Claude Cowork에서 열거나 가져오는 것입니다. 파일 내용을 검토한 뒤 설치를 승인하고 새 Cowork 대화를 시작하세요.
+1. Claude Desktop에서 **Cowork → Customize → Browse plugins**를 엽니다.
+2. **Personal → + → Add marketplace from GitHub**를 선택합니다.
+3. 다음 공개 저장소 주소를 입력합니다.
+
+```text
+https://github.com/junphoto1008-tech/photo-reference-studio
+```
+
+4. 추가된 **photo-reference-studio** 마켓플레이스에서 같은 이름의 플러그인을 선택하고 **Install**을 누릅니다.
+5. Higgsfield 연결 요청을 승인한 뒤 새 Cowork 작업을 시작합니다.
+
+Claude의 보안 절차상 마켓플레이스 추가와 플러그인 설치 승인은 두 단계입니다. 저장소를 추가하면 플러그인이 설치 목록에 바로 표시됩니다. 파일 설치가 필요한 경우에는 [최신 GitHub Release](https://github.com/junphoto1008-tech/photo-reference-studio/releases/latest)의 `photo-reference-studio.plugin`을 사용할 수 있습니다.
 
 ## Claude Code 마켓플레이스 설치
 
