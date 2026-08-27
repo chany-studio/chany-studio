@@ -1,0 +1,13 @@
+interface:
+  display_name: "AI Photo Reference Studio"
+  short_description: "원본을 보존한 누끼, 레퍼런스 보드와 연출컷 제작"
+  default_prompt: "$auto-photo-production으로 이 원본의 정체성을 보존한 누끼와 레퍼런스 기반 연출컷을 만들어줘."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "higgsfield"
+      description: "Upload source media, preserve source pixels with background removal, and create reference-directed images"
+      transport: "streamable_http"
+      url: "https://mcp.higgsfield.ai/mcp"
+policy:
+  allow_implicit_invocation: true

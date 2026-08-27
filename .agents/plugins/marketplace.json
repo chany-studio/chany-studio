@@ -1,0 +1,20 @@
+{
+  "name": "photo-reference-studio",
+  "interface": {
+    "displayName": "AI Photo Reference Studio"
+  },
+  "plugins": [
+    {
+      "name": "photo-reference-studio",
+      "source": {
+        "source": "local",
+        "path": "./plugins/photo-reference-studio"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

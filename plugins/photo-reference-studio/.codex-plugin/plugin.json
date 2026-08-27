@@ -1,0 +1,44 @@
+{
+  "name": "photo-reference-studio",
+  "version": "1.0.0+codex.20260825082232",
+  "description": "Create source-faithful cutouts, curated reference boards, packshots, and commercial images through Higgsfield MCP.",
+  "author": {
+    "name": "Chany",
+    "url": "https://jolly-phlox-79c.notion.site/AI-Photo-Reference-Studio-v1-0-3c783e9464668140b794ee076be24406"
+  },
+  "homepage": "https://jolly-phlox-79c.notion.site/AI-Photo-Reference-Studio-v1-0-3c783e9464668140b794ee076be24406",
+  "repository": "https://github.com/junphoto1008-tech/photo-reference-studio",
+  "license": "MIT",
+  "keywords": [
+    "product photography",
+    "food photography",
+    "reference board",
+    "cutout",
+    "Higgsfield"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "AI Photo Reference Studio",
+    "shortDescription": "\uc6d0\ubcf8\uc744 \uc9c0\ud0a4\ub294 \ub204\ub07c\u00b7\ub808\ud37c\ub7f0\uc2a4 \ubcf4\ub4dc\u00b7\uad11\uace0 \uc5f0\ucd9c\ucef7",
+    "longDescription": "\uc81c\ud488\u00b7\uc74c\uc2dd \uc6d0\ubcf8\uc758 \ub77c\ubca8, \ud615\ud0dc\uc640 \uc7ac\ub8cc\ub97c \uba3c\uc800 \uae30\ub85d\ud55c \ub4a4 Behance\u00b7Pinterest \ubc0f Unsplash\u00b7Pexels\uc5d0\uc11c \ucd2c\uc601 \ub808\ud37c\ub7f0\uc2a4 6\uc7a5\uc744 \uad6c\uc131\ud569\ub2c8\ub2e4. \uc120\ud0dd\ud55c \ub808\ud37c\ub7f0\uc2a4\uc5d0\uc11c\ub294 \uad6c\ub3c4\uc640 \uc870\uba85\ub9cc \uac00\uc838\uc624\uace0 Higgsfield MCP\ub85c \ub204\ub07c, \ud329\uc0f7\uacfc \uc0c1\uc5c5\uc6a9 \uc5f0\ucd9c\ucef7\uc744 \uc81c\uc791\u00b7\uac80\uc218\ud569\ub2c8\ub2e4.",
+    "developerName": "Chany",
+    "category": "Productivity",
+    "websiteURL": "https://jolly-phlox-79c.notion.site/AI-Photo-Reference-Studio-v1-0-3c783e9464668140b794ee076be24406",
+    "privacyPolicyURL": "https://jolly-phlox-79c.notion.site/AI-Photo-Reference-Studio-3c783e94646681089a5dc4694a045cb3",
+    "termsOfServiceURL": "https://jolly-phlox-79c.notion.site/AI-Photo-Reference-Studio-3c783e9464668136822bf7f00201f429",
+    "capabilities": [
+      "Image analysis",
+      "Reference search",
+      "Higgsfield image editing"
+    ],
+    "brandColor": "#2563EB",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/logo.png",
+    "defaultPrompt": [
+      "\uc774 \uc6d0\ubcf8 \uc0ac\uc9c4\uc73c\ub85c \ub204\ub07c\uc640 \ub808\ud37c\ub7f0\uc2a4 \uae30\ubc18 \uc5f0\ucd9c\ucef7\uc744 \ub9cc\ub4e4\uc5b4\uc918.",
+      "\uc774 \uc0ac\uc9c4\uc5d0 \ub9de\ub294 \ucd2c\uc601 \ub808\ud37c\ub7f0\uc2a4 6\uc7a5\uc744 \uba3c\uc800 \ubcf4\uc5ec\uc918.",
+      "\uc6d0\ubcf8 \ubd84\uc11d\ubd80\ud130 \uc790\ub3d9 \uc120\ud0dd, \ucd5c\uc885 \uc5f0\ucd9c\ucef7\uacfc \uac80\uc218\uae4c\uc9c0 \uc9c4\ud589\ud574\uc918."
+    ]
+  }
+}
