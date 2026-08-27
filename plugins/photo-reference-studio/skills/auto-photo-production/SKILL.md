@@ -1,124 +1,154 @@
 ---
 name: auto-photo-production
-description: This skill should be used when the user asks for a faithful product or food photo cutout, white packshot, six-image reference board, reference-directed commercial image, campaign image, source-locked revision, "누끼", "팩샷", "촬영 레퍼런스", or "연출컷".
+description: This skill should be used when the user asks for a source-faithful product or food cutout, packshot, reference board, commerce key visual, promotional poster, ad creative, banner, detail-page image, consistent model, fashion try-on, local image edit, channel variation, complete commerce image suite, "누끼", "키비주얼", "연출컷", "광고소재", "광고 배너", "상세페이지", "착장샷", or "부분 수정".
 ---
 
 # Auto Photo Production
 
-Create production-ready assets from a real source photograph. The source controls subject identity; references control only photographic direction.
+Create production-ready commerce images from real source photographs. The source controls product, food, model, and garment identity. References and briefs control only art direction, layout, and capture style.
 
 ## Capability routing
 
 Prefer this stack when it is connected:
 
 - native vision for source and result inspection
-- image search with domain filtering, or a reference-search connector, for the two approved source pools
+- image search with domain filtering, or a reference-search connector, limited to Behance and Pinterest
 - the bundled Higgsfield MCP server for upload, background removal, and reference-directed editing
+- a layout-capable image editor when exact promotional copy must be typeset
 
-If Higgsfield authentication is required, ask the user to select the connection or login button shown by the host, complete the Higgsfield authorization page, and then return to the same chat. Never ask the user to paste a password, access token, API key, or authorization code into the conversation. After authentication, resume the interrupted step instead of restarting the workflow.
+If Higgsfield authentication is required, ask the user to select the connection or login button shown by the host, complete authorization, and return to the same chat. Never ask for a password, access token, API key, or authorization code. Resume the interrupted step after authentication.
 
-If Higgsfield is unavailable, use another connected image editor only when it can accept the source and, for staged work, the chosen reference. Preserve the same identity lock and QA rules. If no suitable editor exists, complete the source analysis, reference board, and production prompt, then state the single missing connection. Never invent search results, source URLs, generated assets, or QA scores.
+If no suitable production tool is available, complete the source analysis, six-element brief, layout plan, reference board when requested, and production prompt, then state the single missing capability. Never invent source URLs, generated assets, copy accuracy, or QA scores.
 
 Read [references/reference-search-mcp-contract.md](references/reference-search-mcp-contract.md) only when implementing or connecting the dedicated reference-search tool.
 
-## Choose the job and operating mode
+## Choose the smallest job
 
-Infer the smallest job that satisfies the request:
+- `prompt-brief`: a production-ready prompt or brief only
+- `cutout`: transparent cutout or clean white packshot
+- `reference-board`: six traceable reference candidates only
+- `staged`: one source-faithful lifestyle or campaign image
+- `key-visual`: one master commerce visual that establishes the campaign system
+- `promo-poster`: product image plus exact promotional copy and layout
+- `ad-creative`: a static performance or awareness ad for a named placement
+- `model-shot`: an adult commercial model image with a reusable consistency lock
+- `fashion-shot`: a locked model wearing source-locked garments or accessories
+- `local-edit`: a masked or clearly bounded one-property edit to an accepted image
+- `banner`: one ad layout at a requested channel ratio and template type
+- `detail-page`: a coherent set of requested commerce-page image modules
+- `channel-set`: one campaign adapted across named ratios or channels
+- `commerce-suite`: the named packshots, key visual, detail modules, and ad assets as one locked campaign family
+- `full`: cutout, reference selection, and one staged image
 
-- `cutout`: transparent cutout or clean white packshot only
-- `reference-board`: six reference candidates only; do not generate an asset
-- `staged`: one reference-directed commercial image; create a source-preserving cutout first when it improves fidelity
-- `full`: cutout, reference selection, and staged image
+Do not add deliverables that were not requested. A poster is not automatically a detail page, and a banner or vertical ratio is not a video request.
 
-Use `semi-auto` unless the user explicitly requests automatic selection.
+Use `semi-auto` for reference discovery unless the user explicitly requests automatic selection. Present six candidates and wait for one number or `자동 선택` before paid reference-directed generation. A user-supplied reference is already selected.
 
-- `semi-auto`: present six references and wait for one number or `자동 선택` before any paid staged generation.
-- `auto`: rank the candidates, choose the best viable reference, and continue.
-- A user-supplied reference is already selected; skip search and the selection checkpoint.
-
-Read [references/production-modes.md](references/production-modes.md) when job scope, defaults, or checkpoints need routing.
+Read [references/production-modes.md](references/production-modes.md) when routing scope, defaults, ratios, templates, or checkpoints.
 
 ## Workflow
 
-### 1. Acquire and inspect the source
+### 1. Acquire sources and build a six-element brief
 
-Use the original attachment at the highest available resolution. If the production connector cannot read it directly, open its upload control immediately and retain the returned media handle.
+Use original attachments at the highest available resolution. Upload them to the production connector only when needed and retain their roles.
 
-Do not ask the user to describe visible facts. Ask only when a missing business choice would materially change the deliverable, such as required copy, a mandatory ratio, or whether automatic reference selection is allowed. Otherwise use the defaults in `production-modes.md` and state them in the delivery note.
+Structure the request as:
 
-### 2. Build the subject lock
+1. subject
+2. style and mood
+3. composition and camera
+4. lighting
+5. background and environment
+6. quality, ratio, channel, and intended use
 
-Record only visible facts and separate them into:
+Put the subject and non-negotiable output requirements first. Write the desired state positively. Treat the first result as the start of an iterative production flow, not a promise of one-shot perfection.
 
-- `immutable`: subject count, silhouette, proportions, orientation, camera angle, visible structure, materials, colors, transparency, gloss, texture, and every legible identity detail
-- `editable`: background, set, support surface, lighting, shadow, framing, copy space, and only the minimum requested capture correction
-- `uncertain`: unreadable text, hidden sides, occluded details, uncertain ingredients, ambiguous edges, or color affected by glare
+For promotional work, also record category, product name, exact offer or event copy, supporting copy, CTA, brand palette, target channel, ratio, and layout type. Never invent a discount, date, product claim, price, or legal line. If the user asks Claude to draft marketing copy, mark it as draft until approved.
 
-For products, transcribe visible label text, line breaks, logo, and printed marks exactly. For food, inventory visible ingredients, amounts, distribution, doneness, sauce flow, and irregular shape.
+For model or fashion work, record the model source or profile, adult age range, expression and action, shot size and angle, location, lighting, mood, and every supplied garment or accessory.
 
-Never present hidden or unreadable details as known. Reconstruct only the smallest necessary missing area from visible symmetry and adjacent material cues.
+Ask only when a missing business choice would materially change the deliverable. Do not ask the user to describe visible facts.
 
-### 3. Protect identity before creating
+Read [references/commerce-formats.md](references/commerce-formats.md) for job formulas, banner templates, channel ratios, and detail-page structure.
 
-Use non-generative background removal for transparent cutouts whenever possible. This is the preferred path for text-bearing packaging, exact logos, intricate food edges, and any source whose pixel identity matters.
+### 2. Build the required locks
 
-Do not use generative correction merely to make a product straighter or more symmetrical. Apply angle, perspective, or lens correction only when the user asks for a clean packshot or the capture defect is materially distracting, and treat any changed text, geometry, ingredients, or surface detail as a failed result.
+Record visible facts and uncertainty separately.
 
-For a white packshot, prefer placing the source-derived cutout on pure white without redrawing the subject. Use generative editing only when the connected tool cannot produce the requested output otherwise.
+- `subject_lock`: count, silhouette, proportions, orientation, structure, materials, colors, transparency, gloss, texture, logo, label, package design, or visible food composition
+- `copy_lock`: exact approved wording, line grouping, hierarchy, CTA, offer, date, and legal copy
+- `model_lock`: source identity or fictional model profile, facial proportions, hair, body proportions, skin appearance, and fixed styling traits
+- `garment_lock`: garment count, silhouette, length, construction, collar, sleeves, seams, closures, pattern, color, material, drape, logos, and accessories
+- `editable`: set, props, pose, crop, background, lighting, shadow, copy space, and only requested corrections
+- `uncertain`: unreadable text, hidden sides, occluded construction, ambiguous edges, or color distorted by glare
 
-### 4. Find and choose a reference
+Transcribe visible product text exactly. Inventory visible food ingredients and garment construction. Never present hidden or unreadable details as known. For a generated fictional model, create one adult profile and reuse it consistently; do not silently change identity between outputs.
 
-Skip this step for `cutout` jobs and user-supplied references. Otherwise read [references/search-policy.md](references/search-policy.md).
+### 3. Protect source identity
 
-Generate at most two English queries:
+Use non-generative background removal for transparent cutouts whenever possible. Do not redraw text-bearing packaging, exact logos, fine food edges, or garment details merely to make them neater.
 
-1. `"<Broad category> Photography"`
-2. `"<Direct subtype> Photography"`
+- Transparent cutout: no floor, glow, or contact shadow.
+- White catalog packshot: source-derived subject on pure `#FFFFFF`, centered with safe margin; use a subtle natural contact shadow unless the user requests a flat shadowless asset.
+- Staged, poster, banner, and detail-page work: create or reuse a clean source-derived subject before compositing when that improves identity fidelity.
 
-Run each valid semantic query against both approved source pools: `Behance + Pinterest` and `Unsplash + Pexels`. Do not use general-web or other-domain results as silent fallbacks. Merge and deduplicate results, reject unusable sources, rank them, then choose six visually diverse candidates. Treat domain scope as a search filter rather than a style modifier added to the semantic query.
+Apply perspective or capture correction only when requested or materially necessary. Any changed text, geometry, ingredients, model identity, or garment construction is a failed result.
 
-In `semi-auto`, show a compact numbered board containing source pool, thumbnail, source link, query, fit note, and one-sentence Visual DNA. Target three viable candidates from each source pool. Ask for one number or `자동 선택`; this is the only default human checkpoint.
+### 4. Find and choose a reference when needed
 
-In `auto`, choose the highest-ranked viable candidate after diversity, rights, accessibility, and contamination checks. Retain its source-page URL and search query.
+Skip this step for `prompt-brief`, `cutout`, a user-supplied reference, or a layout job that already has a complete brand direction. Otherwise read [references/search-policy.md](references/search-policy.md).
 
-Import a selected web reference through the production connector before generation. Never pass an unverified raw web URL as an image input when the connector requires an uploaded media handle.
+Use at most two English taxonomy queries and run each against both approved providers: Behance and Pinterest. Present six candidates as directly visible inline images in the conversation, not as a link-only list. Under each image, retain its provider, source-page link, query, fit note, and Visual DNA. Reject or replace any candidate whose preview cannot be displayed directly. In `auto`, choose the highest-ranked viable candidate. Import the selected reference through the production connector instead of passing an unverified raw URL.
 
-### 5. Extract reference Visual DNA
+### 5. Convert the brief into production direction
 
-Describe transferable photographic direction:
+Read [references/prompt-templates.md](references/prompt-templates.md). Apply the appropriate formula:
 
-- composition, subject scale, and negative space
-- camera height, angle, and perspective character
-- background and support-surface relationship
-- key-light direction, size, hardness, fill, and shadow behavior
-- palette and contrast hierarchy
-- supporting geometry, props, liquid, particles, or human interaction
-- depth of field, texture, and commercial mood
+- staged image: source identity + brand mood + scene + capture settings + exclusions
+- key visual: source identity + campaign idea + brand codes + focal composition + channel-safe master layout
+- promo poster: source identity + approved copy + brand mood + background + layout + output quality
+- ad creative: source identity + message objective + approved copy + placement + hierarchy + output quality
+- model shot: model lock + expression/action + shot/camera + location + light + commercial mood
+- fashion shot: model lock + garment lock + pose + scene + capture settings + exclusions
+- local edit: accepted asset + target region + one requested change + fixed-property list
+- banner: category/product + ratio/template + approved copy + image hierarchy
+- detail page: source lock + module purpose + copy/image hierarchy + coherent campaign system
 
-Explicitly exclude the reference subject, recipe, packaging, logo, copy, price, people, and branded design. Preserve a human interaction pose only when the user requests it.
+Reference Visual DNA may control composition, camera, light, palette, props, depth, and mood. It may not contribute another product, recipe, model identity, garment, package, logo, copy, price, or branded layout.
 
-### 6. Create the requested assets
+### 6. Create only the requested assets
 
-Before the first paid generation, inspect the current tool or model schema and pass only supported parameters. Read [references/prompt-templates.md](references/prompt-templates.md) before assembling an edit prompt.
+Inspect the current tool schema before generation and pass only supported parameters.
 
-- Cutout: remove the background from the source; do not add a contact shadow to a transparent asset.
-- White packshot: use a source-derived subject on pure `#FFFFFF`; keep the source crop unless the user requested reframing.
-- Staged image: pass the source-derived subject first and the selected reference second. State that image 1 controls immutable subject identity and image 2 provides photographic direction only.
+- `prompt-brief`: return the brief and assembled prompt without generating.
+- `cutout`: remove the background or compose the white packshot.
+- `staged`: pass the source-derived subject first and selected reference second.
+- `key-visual`: establish one accepted master composition, palette, light, surface, prop language, copy-zone logic, and crop-safe area before deriving other assets.
+- `promo-poster` and `banner`: reserve copy-safe space and maintain clear subject–headline–offer–CTA hierarchy. When the image model cannot render exact text reliably, create the visual plate first and typeset exact copy with a layout-capable tool. If that tool is unavailable, return the clean plate plus a copy map and mark text rendering as pending.
+- `ad-creative`: use the requested placement and objective to choose one message, one visual focal point, and one CTA; never crowd a single asset with every available claim.
+- `model-shot`: create one adult model identity and preserve its lock for revisions or a requested sequence.
+- `fashion-shot`: use the locked model and source garments; do not redesign, shorten, recolor, re-pattern, or substitute them.
+- `local-edit`: use a mask or an unambiguous target region when supported, change only the named property, and preserve all other pixels and locks. Use up to three user-supplied references only when each has a distinct declared role and the connector supports them.
+- `detail-page`: create only the requested modules, sharing subject scale, palette, lighting logic, typography plan, and spacing system.
+- `channel-set`: derive each ratio from the same accepted master direction and source lock rather than regenerating unrelated concepts.
+- `commerce-suite`: accept the key visual first, then derive source-faithful product views, detail-page modules, and ad placements from the same campaign state.
 
-Create one final asset per requested deliverable by default. When the user requests variations, keep the same subject lock and selected reference unless they explicitly ask to explore different directions.
+Use one asset per requested deliverable by default. Do not generate unrequested variations.
 
-### 7. Validate and retry once
+### 7. Revise conversationally and compare deliberately
 
-Read [references/qa-rubric.md](references/qa-rubric.md). Compare the output against the original source at high zoom and, for staged work, against the selected reference direction.
+Follow `generate → inspect → specific conversational revision → compare/select`. Interpret short revisions such as `문구만 더 크게`, `배경만 더 밝게`, or `그림자만 부드럽게` as local changes. Keep every unmentioned accepted property fixed.
 
-Any critical failure is an automatic rejection, regardless of score. Make one corrective retry that names only observed defects, reattaches or reuses the original source, and restates the affected immutable facts. Keep accepted composition and lighting fixed unless they caused the defect.
+When alternatives are requested, label them by the single changed variable and compare against the original source, approved copy, model lock, garment lock, and channel requirement. Do not spend another generation merely because the first result exists; revise only for an observed defect or requested direction.
 
-After the corrective retry, return the best viable result with a concise defect note if anything remains. Do not hide uncertainty or claim exact label fidelity that cannot be visually verified.
+### 8. Validate and retry once
 
-### 8. Deliver and preserve revision context
+Read [references/qa-rubric.md](references/qa-rubric.md). Compare the output at high zoom with every authoritative input. Any critical failure is an automatic rejection.
 
-Read [references/delivery-and-revision.md](references/delivery-and-revision.md) before final delivery or a follow-up revision.
+Make one corrective retry naming only observed defects, reuse the original authority images, and keep accepted composition and lighting fixed unless they caused the failure. After retry, return the best viable result with unresolved defects stated plainly. Never claim exact copy, label, model, or garment fidelity when it cannot be verified.
 
-Return the requested assets, selected reference source and query when applicable, the effective ratio, and a compact production note covering identity preservation, borrowed Visual DNA, QA status, and remaining uncertainty. Do not expose internal media IDs, job IDs, or raw tool payloads.
+### 9. Deliver and preserve revision context
 
-For follow-up edits, keep the original source as the identity authority. Local lighting, color, crop, copy-space, prop, or background changes may use the accepted result as the edit target, but identity-sensitive repairs must be checked against the original source. A new reference starts a new staged render from the source-derived subject rather than repeatedly transforming the old render.
+Read [references/delivery-and-revision.md](references/delivery-and-revision.md). Return requested assets, effective ratio and template, selected reference provenance when applicable, exact-copy status, and a compact production note.
+
+For follow-up edits, identity-sensitive repairs use the original source; copy repairs use the approved copy lock; model and garment repairs reuse their original authority images or profile. A new art direction starts from the clean source assets instead of repeatedly degrading an old render.

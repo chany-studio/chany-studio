@@ -2,16 +2,18 @@
 
 ## Overview
 
-Create source-faithful cutouts, white packshots, six-image reference boards, and reference-directed commercial images from real product or food photographs. The original photograph controls subject identity; references control photographic direction only.
+Create a complete static commerce image system from real product, food, model, and garment sources: cutouts, white packshots, directly visible reference boards, campaign key visuals, detail-page modules, fashion images, localized edits, posters, banners, and channel-ready ad creatives. Original sources control identity; references control photographic direction only.
 
 This package supports Claude Cowork, Claude Code, Codex, and the ChatGPT desktop plugin surface where custom marketplaces are available.
 
 ## Components
 
-- `auto-photo-production`: analyzes the source, protects visible identity details, finds traceable references, directs image production, and validates the result.
+- `auto-photo-production`: builds six-element production prompts, protects product, food, model, garment, and copy locks, shows Behance and Pinterest references inline, creates a master key visual, derives commerce assets, and validates the result.
 - `higgsfield` MCP server: uploads media, removes backgrounds, and performs reference-directed image editing.
 
 The plugin does not include agents or hooks.
+
+The current scope is static commerce imagery. It does not include video, GIF, narration, voice, music, or CapCut workflows.
 
 ## Setup
 
@@ -24,12 +26,13 @@ Higgsfield access, pricing, and usage credits are not included with this plugin.
 Try requests such as:
 
 - `이 제품 사진을 투명 배경 누끼 PNG로 만들어줘.`
-- `이 음식 사진에 맞는 촬영 레퍼런스 6장을 먼저 보여줘.`
-- `원본 분석부터 자동 선택, 최종 연출컷과 검수까지 진행해줘.`
-- `이 레퍼런스의 구도와 조명만 가져와서 제품 연출컷을 만들어줘.`
+- `Behance와 Pinterest에서 이 제품에 맞는 레퍼런스 6장을 찾아 이미지로 바로 보여줘.`
+- `이 제품으로 키비주얼부터 상세페이지와 광고소재까지 같은 캠페인 톤으로 만들어줘.`
+- `이 원피스와 가방을 동일한 모델에게 착장한 상세페이지 이미지를 만들어줘.`
+- `승인 문구를 정확히 유지한 1:1 강조형 광고소재를 만들어줘.`
 
 Staged production uses semi-automatic reference selection by default. Choose one of the six references or answer `자동 선택` before paid image generation continues.
 
 ## Data and external services
 
-Source photographs and selected references may be sent to Higgsfield when its editing tools are used. Reference discovery may access public pages on Behance, Pinterest, Unsplash, and Pexels. Review each external service's terms, privacy policy, pricing, and content rights before use.
+Source photographs and selected references may be sent to Higgsfield when its editing tools are used. Reference discovery is limited to public pages on Behance and Pinterest. Review each external service's terms, privacy policy, pricing, and content rights before use.

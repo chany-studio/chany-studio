@@ -2,18 +2,24 @@
 
 ![AI Photo Reference Studio](plugins/photo-reference-studio/assets/logo.png)
 
-원본 제품·음식 사진의 정체성을 보존하면서 누끼, 흰 배경 팩샷, 촬영 레퍼런스 보드와 상업용 연출컷을 만드는 Codex 및 Claude Cowork 플러그인입니다.
+하나의 원본 제품·음식·의류 사진에서 누끼와 팩샷부터 키비주얼, 상세페이지 이미지, 모델 착장샷과 광고소재까지 일관된 커머스 이미지 세트를 만드는 Codex 및 Claude Cowork 플러그인입니다.
 
-This dual-platform plugin turns real product or food photographs into source-faithful cutouts, curated reference boards, clean packshots, and reference-directed commercial images in Codex, Claude Cowork, and Claude Code.
+This dual-platform commerce image studio turns real product, food, and fashion sources into faithful cutouts, inline reference boards, key visuals, detail-page modules, model shots, and channel-ready static ad creatives.
 
 ## 주요 기능
 
-- 제품 라벨, 로고, 형태, 재질과 음식 재료 구성을 먼저 기록하는 subject lock
-- 투명 PNG 누끼와 순백색 팩샷 제작
-- Behance·Pinterest 및 Unsplash·Pexels에서 추적 가능한 레퍼런스 6장 구성
-- 원본은 피사체 정체성에만, 레퍼런스는 구도·조명 등 Visual DNA에만 사용하는 연출컷 생성
-- 원본 대조 QA와 관찰된 결함만 수정하는 1회 보정 재시도
+- 피사체·무드·구도·조명·배경·출력의 6요소를 갖춘 작업별 완성형 프롬프트
+- 제품·음식·모델·의류·승인 문구를 원본별로 잠그는 source and copy lock
+- 투명 PNG 누끼, 순백색 팩샷과 캠페인 마스터 키비주얼 제작
+- Behance·Pinterest에서만 찾은 레퍼런스 6장을 링크가 아닌 이미지로 대화 안에 직접 표시
+- 키비주얼에서 상세페이지 모듈, 프로모션 포스터, 배너와 정적 광고소재를 일관되게 파생
+- 성인 모델 일관성 유지와 원본 의류·가방·신발을 보존한 착장 이미지
+- 마스크 또는 명확한 영역을 이용해 나머지는 고정하는 인페인팅·국소 수정
+- 1:1·3:4·4:3·9:16·16:9 및 기본형·강조형·문구형·이미지형 레이아웃
+- 생성→대화 수정→비교 선택과 원본·문구·비율별 QA 및 1회 보정 재시도
 - Higgsfield MCP를 통한 업로드, 배경 제거와 레퍼런스 기반 이미지 편집
+
+현재 범위는 정적 커머스 이미지입니다. 영상, GIF, 내레이션, 음성, 음악과 CapCut 작업은 포함하지 않습니다.
 
 ## Codex 및 ChatGPT 데스크톱 설치
 
@@ -65,9 +71,11 @@ junphoto1008-tech/photo-reference-studio
 ## 사용 예시
 
 - `이 제품 사진을 투명 배경 누끼 PNG로 만들어줘.`
-- `이 음식 사진에 맞는 촬영 레퍼런스 6장을 먼저 보여줘.`
-- `원본 분석부터 자동 선택, 최종 연출컷과 검수까지 진행해줘.`
-- `이 레퍼런스의 구도와 조명만 가져와서 제품 연출컷을 만들어줘.`
+- `이 제품에 맞는 Behance·Pinterest 레퍼런스 6장을 이미지로 바로 보여줘.`
+- `이 원본으로 캠페인 키비주얼을 만들고 같은 톤으로 상세페이지 이미지 5장을 구성해줘.`
+- `키비주얼을 1:1 피드, 9:16 스토리, 16:9 광고소재로 재구성해줘.`
+- `이 모델에게 첨부한 원피스·가방·신발을 원본 그대로 착장시켜줘.`
+- `메인 문구와 할인율을 정확히 유지한 프로모션 포스터를 만들어줘.`
 
 기본 staged 작업은 `semi-auto` 모드입니다. 플러그인이 레퍼런스 6장을 제시하면 번호 하나 또는 `자동 선택`을 답한 뒤 유료 이미지 생성을 진행합니다.
 
@@ -75,7 +83,7 @@ junphoto1008-tech/photo-reference-studio
 
 - 플러그인 저장소에는 API 키, 액세스 토큰 또는 사용자 사진이 포함되어 있지 않습니다.
 - Higgsfield 기능을 사용할 때 원본 사진과 선택한 레퍼런스가 Higgsfield 서비스로 전송될 수 있습니다.
-- 레퍼런스 탐색은 Behance, Pinterest, Unsplash와 Pexels의 공개 소스 페이지를 이용합니다.
+- 레퍼런스 탐색은 Behance와 Pinterest의 공개 소스 페이지만 이용합니다.
 - 외부 서비스의 이용 약관, 개인정보 처리방침, 요금과 콘텐츠 권리는 각 서비스에서 별도로 확인하세요.
 
 인증이 필요하면 호스트가 표시하는 Higgsfield 연결 또는 로그인 화면에서 OAuth를 완료합니다. 비밀번호, API 키, 액세스 토큰이나 인증 코드를 대화에 붙여 넣지 마세요.

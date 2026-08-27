@@ -1,97 +1,105 @@
 # Reference Search MCP Contract
 
-Use this contract when implementing a separate reference-search connector. The transport may remain search-vendor independent, but returned content must be limited to the two approved source pools.
+Use this contract when implementing a dedicated reference-search connector. The connector must return only public Behance and Pinterest results with directly displayable previews.
 
 ## Required tool
 
-### `search_images`
+### search_images
 
-Creative-direction input:
+Behance input:
 
-```json
-{
-  "query": "Food Photography",
-  "source_pool": "creative-direction",
-  "domains": ["behance.net", "pinterest.com"],
-  "limit": 8,
-  "safe_search": true
-}
-```
+    {
+      "query": "Product Photography",
+      "provider": "behance",
+      "domains": ["behance.net"],
+      "limit": 8,
+      "safe_search": true
+    }
 
-Stock-reference input:
+Pinterest input:
 
-```json
-{
-  "query": "Food Photography",
-  "source_pool": "stock-reference",
-  "domains": ["unsplash.com", "pexels.com"],
-  "limit": 8,
-  "safe_search": true
-}
-```
+    {
+      "query": "Product Photography",
+      "provider": "pinterest",
+      "domains": ["pinterest.com"],
+      "limit": 8,
+      "safe_search": true
+    }
 
 Rules:
 
-- Accept the semantic query exactly as supplied. Do not expand it with style terms.
-- Accept only `creative-direction` with `behance.net` and `pinterest.com`, or `stock-reference` with `unsplash.com` and `pexels.com`.
-- Cap `limit` at 8 per call.
-- Return stable provider source-page URLs and direct preview or image URLs.
-- Do not scrape Pinterest, bypass login or access controls, or bulk-download provider content. Return only results available through the authorized search path.
-- Do not download or upload an image without a later explicit tool call.
+- accept the semantic query exactly as supplied
+- accept only provider behance with behance.net, or provider pinterest with pinterest.com
+- cap limit at 8 per call
+- return a directly displayable public preview for every candidate
+- return stable provider source-page URLs and the Pinterest outbound original source when available
+- do not scrape Pinterest, bypass login or access controls, or bulk-download content
+- reject results whose preview cannot be rendered by the host
+- do not download or upload a full-resolution image without a later explicit tool call
 
 Output:
 
-```json
-{
-  "query": "Food Photography",
-  "source_pool": "creative-direction",
-  "results": [
     {
-      "id": "provider-stable-id",
-      "provider": "Behance",
-      "title": "result title",
-      "image_url": "https://example.com/image.jpg",
-      "thumbnail_url": "https://example.com/thumb.jpg",
-      "source_url": "https://example.com/page",
-      "original_source_url": null,
-      "source_domain": "example.com",
-      "creator": "creator name when visible",
-      "width": 1600,
-      "height": 2000,
-      "mime_type": "image/jpeg",
-      "license_status": "not-stated",
-      "license_url": null
+      "query": "Product Photography",
+      "provider": "behance",
+      "results": [
+        {
+          "id": "provider-stable-id",
+          "provider": "Behance",
+          "title": "project title",
+          "preview_image_url": "https://example.com/public-preview.jpg",
+          "source_url": "https://www.behance.net/gallery/example",
+          "original_source_url": null,
+          "source_domain": "behance.net",
+          "creator": "creator name when visible",
+          "width": 1600,
+          "height": 2000,
+          "mime_type": "image/jpeg",
+          "preview_renderable": true,
+          "rights_status": "direction-only"
+        }
+      ]
     }
-  ]
-}
-```
 
 ## Recommended tool
 
-### `fetch_image_metadata`
+### fetch_preview
 
 Input:
 
-```json
-{
-  "image_url": "https://example.com/image.jpg",
-  "source_url": "https://example.com/page"
-}
-```
+    {
+      "preview_image_url": "https://example.com/public-preview.jpg",
+      "source_url": "https://www.behance.net/gallery/example"
+    }
 
-Output should confirm accessibility, dimensions, MIME type, file size, provider source URL, Pinterest outbound original source when available, creator when visible, and any stated license or attribution field. Do not claim a license when the source does not state one.
+Output should return host-displayable image content or a public preview URL plus confirmed MIME type and dimensions. It must also retain the provider source URL, Pinterest outbound original source when available, and creator when visible.
+
+Use this tool only for read-only preview display and metadata confirmation. Do not fetch protected full-resolution assets.
 
 ## Separation of responsibilities
 
-- The connector searches approved domains and returns factual metadata.
-- The model classifies the source image, generates the two allowed semantic queries, calls both source pools, analyzes candidates, ranks them, balances the final board, and extracts Visual DNA.
-- Higgsfield imports only the selected reference image and generates the final assets.
+- The connector searches Behance or Pinterest and returns factual metadata plus a renderable preview.
+- The model classifies the source subject, generates the two allowed taxonomy queries, calls both providers, ranks and diversifies candidates, renders the inline board, and extracts Visual DNA.
+- Higgsfield imports only the user-selected reference and creates the requested assets.
+
+## Inline-display requirement
+
+The model must show each finalist image directly in the conversation. Source-page links are provenance captions, not the primary viewing method.
+
+If preview_image_url cannot render:
+
+1. call fetch_preview
+2. display the returned image content
+3. reject the candidate if display still fails
+4. replace it with the next viable Behance or Pinterest result
+
+Never return six source links without six visible images.
 
 ## Safety and provenance
 
-- Apply safe search by default.
-- Keep the provider source-page URL for every candidate and the outbound original-source URL for Pinterest when available.
-- Do not return images that require bypassing access controls.
-- Reject Pinterest results without a public Pin page or visible creator/original-source trail.
-- Treat search results as reference direction, not as licensed production assets.
-- Never fabricate missing dimensions, source pages, authorship, or license status.
+- apply safe search by default
+- keep the provider page for every candidate
+- keep the Pinterest outbound source when available
+- reject orphaned Pins and inaccessible pages
+- treat every result as direction-only
+- never fabricate dimensions, creator, source page, original source, renderability, or rights status
