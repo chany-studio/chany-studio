@@ -1,7 +1,7 @@
 interface:
   display_name: "AI Photo Reference Studio"
   short_description: "원본을 보존한 키비주얼·상세페이지·광고소재 제작"
-  default_prompt: "$auto-photo-production으로 이 원본을 분석하고 Behance·Pinterest 레퍼런스를 이미지로 보여준 뒤, 정체성을 보존한 키비주얼과 커머스 이미지 세트를 만들어줘."
+  default_prompt: "$auto-photo-production으로 첨부 원본과 승인 문구를 잠그고 Behance·Pinterest 레퍼런스 6장을 이미지로 보여준 뒤, 선택한 방향으로 키비주얼·상세페이지·광고소재를 같은 캠페인 톤으로 만들어줘."
 dependencies:
   tools:
     - type: "mcp"

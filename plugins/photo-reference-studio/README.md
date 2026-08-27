@@ -1,38 +1,70 @@
-# AI Photo Reference Studio
+# AI Photo Reference Studio 1.3.0
 
-## Overview
+원본 제품·음식·모델·의류 사진을 보존하면서 누끼, 팩샷, Behance·Pinterest 레퍼런스 보드, 키비주얼, 상세페이지 이미지, 착장샷, 포스터, 배너와 정적 광고소재를 제작합니다.
 
-Create a complete static commerce image system from real product, food, model, and garment sources: cutouts, white packshots, directly visible reference boards, campaign key visuals, detail-page modules, fashion images, localized edits, posters, banners, and channel-ready ad creatives. Original sources control identity; references control photographic direction only.
+## 처음 사용하기
 
-This package supports Claude Cowork, Claude Code, Codex, and the ChatGPT desktop plugin surface where custom marketplaces are available.
+1. 가장 해상도가 높은 원본 사진을 첨부합니다.
+2. 원하는 결과물, 채널과 비율을 한 문장으로 말합니다.
+3. 정확히 들어가야 하는 문구·가격·할인·기간이 있다면 텍스트로 제공합니다.
+4. Higgsfield 연결 요청이 나오면 호스트의 로그인 화면에서 인증합니다.
+5. 레퍼런스 6장 중 번호 하나를 고르거나 `자동 선택`이라고 답합니다.
 
-## Components
+사진에 보이는 제품 형태, 라벨, 재질과 색상을 다시 설명할 필요는 없습니다. 플러그인이 먼저 분석하고 원본 잠금을 만듭니다.
 
-- `auto-photo-production`: builds six-element production prompts, protects product, food, model, garment, and copy locks, shows Behance and Pinterest references inline, creates a master key visual, derives commerce assets, and validates the result.
-- `higgsfield` MCP server: uploads media, removes backgrounds, and performs reference-directed image editing.
+## 바로 쓸 수 있는 요청
 
-The plugin does not include agents or hooks.
-
-The current scope is static commerce imagery. It does not include video, GIF, narration, voice, music, or CapCut workflows.
-
-## Setup
-
-Connect Higgsfield when Claude or Codex prompts for authentication. Complete authorization in the provider page and return to the same conversation. Never paste a password, API key, access token, or authorization code into chat.
-
-Higgsfield access, pricing, and usage credits are not included with this plugin.
-
-## Usage
-
-Try requests such as:
-
-- `이 제품 사진을 투명 배경 누끼 PNG로 만들어줘.`
+- `이 제품을 투명 PNG 누끼와 순백색 팩샷으로 만들어줘.`
 - `Behance와 Pinterest에서 이 제품에 맞는 레퍼런스 6장을 찾아 이미지로 바로 보여줘.`
-- `이 제품으로 키비주얼부터 상세페이지와 광고소재까지 같은 캠페인 톤으로 만들어줘.`
-- `이 원피스와 가방을 동일한 모델에게 착장한 상세페이지 이미지를 만들어줘.`
+- `이 제품의 마스터 키비주얼을 만들고 같은 톤으로 상세페이지 이미지 5장을 구성해줘.`
+- `키비주얼을 1:1 피드, 4:5 피드, 9:16 스토리와 16:9 배너로 확장해줘.`
+- `이 성인 모델에게 첨부한 원피스·가방·신발을 원본 그대로 착장시켜줘.`
 - `승인 문구를 정확히 유지한 1:1 강조형 광고소재를 만들어줘.`
+- `선택한 이미지에서 배경만 밝게 하고 제품·문구·구도는 고정해줘.`
+- `누끼부터 키비주얼, 상세페이지와 광고소재까지 전체 커머스 세트로 만들어줘.`
 
-Staged production uses semi-automatic reference selection by default. Choose one of the six references or answer `자동 선택` before paid image generation continues.
+## 전체 커머스 세트 권장 요청
 
-## Data and external services
+```text
+이 원본으로 전체 커머스 이미지 세트를 만들어줘.
+투명 누끼 1장, 백색 팩샷 1장, 마스터 키비주얼 1장,
+상세페이지 모듈 5장, 1:1·4:5·9:16 광고소재 각 1장으로 구성해줘.
+먼저 Behance·Pinterest 레퍼런스 6장을 이미지로 보여주고,
+내가 선택한 뒤 키비주얼을 승인받아 나머지를 같은 캠페인 톤으로 파생해줘.
+```
 
-Source photographs and selected references may be sent to Higgsfield when its editing tools are used. Reference discovery is limited to public pages on Behance and Pinterest. Review each external service's terms, privacy policy, pricing, and content rights before use.
+기본값은 유료 생성 전 레퍼런스를 확인하는 `semi-auto`입니다. 처음부터 자동 진행하려면 `레퍼런스도 자동 선택해서 끝까지 진행해줘`라고 요청하세요.
+
+## 원본과 레퍼런스의 역할
+
+- 원본은 제품, 음식, 모델, 의류와 승인 문구의 정체성을 결정합니다.
+- 레퍼런스는 구도, 카메라, 조명, 배경, 색감, 소품, 심도와 분위기에만 사용합니다.
+- 레퍼런스 속 다른 상품, 모델, 의류, 로고, 패키지, 문구와 가격을 가져오지 않습니다.
+- 레퍼런스 탐색은 Behance와 Pinterest 공개 페이지만 이용하며 후보 이미지를 대화 안에 직접 표시합니다.
+
+## 정확한 광고 문구
+
+제품명, 가격, 할인율, 날짜, 제품 효능, CTA와 법적 문구를 임의로 만들지 않습니다. 정확한 카피가 필요하면 다음처럼 승인 문구를 제공합니다.
+
+```text
+메인:
+서브:
+가격/할인:
+기간:
+CTA:
+법적 고지:
+```
+
+이미지 모델이 정확한 텍스트를 만들기 어려운 경우 비주얼 플레이트를 먼저 만들고 레이아웃 도구로 조판합니다. 사용할 수 있는 조판 도구가 없으면 카피 배치도를 제공하고 텍스트 렌더링이 남아 있음을 명시합니다.
+
+## 연결과 데이터
+
+Higgsfield MCP는 미디어 업로드, 배경 제거와 레퍼런스 기반 이미지 편집에 사용됩니다. Higgsfield 접근 권한, 요금제와 생성 크레딧은 플러그인에 포함되지 않습니다. 원본 사진과 선택 레퍼런스가 Higgsfield로 전송될 수 있습니다.
+
+비밀번호, API 키, 액세스 토큰이나 인증 코드를 대화에 입력하지 말고 호스트가 표시하는 인증 화면을 사용하세요.
+
+## 업데이트 확인
+
+최신 버전은 `1.3.0`입니다. Unsplash 또는 Pexels가 레퍼런스 소스로 보이면 이전 버전이므로 마켓플레이스를 Refresh/Update한 뒤 새 작업을 시작하세요.
+
+전체 문서: https://github.com/junphoto1008-tech/photo-reference-studio

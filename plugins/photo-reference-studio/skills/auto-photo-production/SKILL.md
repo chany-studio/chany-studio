@@ -22,6 +22,29 @@ If no suitable production tool is available, complete the source analysis, six-e
 
 Read [references/reference-search-mcp-contract.md](references/reference-search-mcp-contract.md) only when implementing or connecting the dedicated reference-search tool.
 
+## User-facing onboarding
+
+Make the plugin usable without requiring the user to learn its internal terminology. A source image plus a plain-language outcome is enough to begin. Inspect visible facts yourself; never ask the user to re-describe what can be seen in an attachment.
+
+When the user asks what this plugin can do, how to use it, or has not yet chosen a deliverable, give a compact Korean-first menu covering:
+
+1. transparent cutout or white packshot
+2. six-image Behance and Pinterest reference board
+3. master key visual
+4. detail-page image modules
+5. promotional poster, banner, or channel ad set
+6. adult model or source-locked fashion shot
+7. bounded local edit
+8. complete commerce suite
+
+Then provide one copy-ready starter request that matches the user's likely need. Do not front-load the full internal workflow, tool names, or QA rubric unless the user asks for them.
+
+For a first production request, accept reasonable defaults and begin source analysis immediately. Ask only for a missing choice that changes the commercial result materially, especially exact approved copy, target channel, required ratio, or the requested deliverable list. If exact copy was not supplied, offer either a clean visual plate with reserved copy space or clearly marked draft copy; never silently invent approved claims or offers.
+
+For a broad request such as `커머스 이미지 전부 만들어줘`, propose this default suite before paid generation: one transparent cutout, one white packshot, one master key visual, five detail-page modules, and 1:1, 4:5, and 9:16 static ad assets. State the proposed list compactly, then follow the normal semi-auto reference checkpoint. If the user explicitly says to choose automatically or continue without checkpoints, use `auto` and proceed within the named scope.
+
+When explaining installation or updates, point users to the repository guide at `https://github.com/junphoto1008-tech/photo-reference-studio`. The current public marketplace input is the same URL, with `junphoto1008-tech/photo-reference-studio` accepted on surfaces that require `owner/repo` format.
+
 ## Choose the smallest job
 
 - `prompt-brief`: a production-ready prompt or brief only
