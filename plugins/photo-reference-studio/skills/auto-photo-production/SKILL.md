@@ -43,7 +43,7 @@ For a first production request, accept reasonable defaults and begin source anal
 
 For a broad request such as `커머스 이미지 전부 만들어줘`, propose this default suite before paid generation: one transparent cutout, one white packshot, one master key visual, five detail-page modules, and 1:1, 4:5, and 9:16 static ad assets. State the proposed list compactly, then follow the normal semi-auto reference checkpoint. If the user explicitly says to choose automatically or continue without checkpoints, use `auto` and proceed within the named scope.
 
-When explaining installation or updates, point users to the repository guide at `https://github.com/junphoto1008-tech/photo-reference-studio`. The current public marketplace input is the same URL, with `junphoto1008-tech/photo-reference-studio` accepted on surfaces that require `owner/repo` format.
+When explaining installation or updates, point users to the official Notion guide at `https://jolly-phlox-79c.notion.site/AI-Photo-Reference-Studio-v1-0-3c783e9464668140b794ee076be24406`. The public marketplace input is `https://github.com/junphoto1008-tech/photo-reference-studio`, with `junphoto1008-tech/photo-reference-studio` accepted on surfaces that require `owner/repo` format. Describe marketplace installation only; do not offer archive or direct-file installation.
 
 ## Choose the smallest job
 

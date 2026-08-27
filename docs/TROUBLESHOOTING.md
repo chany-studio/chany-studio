@@ -1,5 +1,7 @@
 # 문제 해결
 
+[공식 설치·사용설명서 (Notion)](https://jolly-phlox-79c.notion.site/AI-Photo-Reference-Studio-v1-0-3c783e9464668140b794ee076be24406)
+
 ## 마켓플레이스 추가 버튼이 보이지 않음
 
 - 현재 플랜, 워크스페이스 역할과 지원 화면에서 커스텀 플러그인 마켓플레이스를 사용할 수 있는지 확인합니다.
@@ -23,8 +25,8 @@ https://github.com/junphoto1008-tech/photo-reference-studio
 
 다음 증상은 이전 설치본일 가능성이 높습니다.
 
-- 버전이 `1.3.0`보다 낮음
-- 레퍼런스 소스로 Unsplash 또는 Pexels를 안내함
+- 버전이 `1.3.1`보다 낮음
+- 레퍼런스 소스로 Behance와 Pinterest 이외의 사이트를 안내함
 - 레퍼런스를 이미지가 아닌 링크 목록만 제공함
 - 키비주얼 외 상세페이지·광고소재 작업을 지원하지 않는다고 안내함
 
@@ -106,7 +108,7 @@ Higgsfield 도구가 연결되지 않은 경우 플러그인은 분석, 프롬�
 
 - 사용 플랫폼과 앱 버전
 - 플러그인 버전
-- 설치 방식: GitHub marketplace 또는 `.plugin` 파일
+- 설치한 GitHub marketplace 주소
 - 문제가 발생한 요청의 재현 가능한 축약본
 - 기대한 동작과 실제 동작
 - 개인정보와 비밀값을 제거한 오류 메시지 또는 화면

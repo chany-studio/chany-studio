@@ -1,4 +1,4 @@
-# AI Photo Reference Studio 1.3.0
+# AI Photo Reference Studio 1.3.1
 
 원본 제품·음식·모델·의류 사진을 보존하면서 누끼, 팩샷, Behance·Pinterest 레퍼런스 보드, 키비주얼, 상세페이지 이미지, 착장샷, 포스터, 배너와 정적 광고소재를 제작합니다.
 
@@ -65,6 +65,8 @@ Higgsfield MCP는 미디어 업로드, 배경 제거와 레퍼런스 기반 이�
 
 ## 업데이트 확인
 
-최신 버전은 `1.3.0`입니다. Unsplash 또는 Pexels가 레퍼런스 소스로 보이면 이전 버전이므로 마켓플레이스를 Refresh/Update한 뒤 새 작업을 시작하세요.
+최신 버전은 `1.3.1`입니다. Behance와 Pinterest 이외의 레퍼런스 소스가 보이면 마켓플레이스를 Refresh/Update한 뒤 새 작업을 시작하세요.
 
-전체 문서: https://github.com/junphoto1008-tech/photo-reference-studio
+공식 설치·사용설명서: https://jolly-phlox-79c.notion.site/AI-Photo-Reference-Studio-v1-0-3c783e9464668140b794ee076be24406
+
+GitHub 마켓플레이스: https://github.com/junphoto1008-tech/photo-reference-studio

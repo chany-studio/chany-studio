@@ -1,5 +1,7 @@
 # 설치 및 업데이트 가이드
 
+[공식 설치·사용설명서 (Notion)](https://jolly-phlox-79c.notion.site/AI-Photo-Reference-Studio-v1-0-3c783e9464668140b794ee076be24406)
+
 ## 공통 마켓플레이스 주소
 
 ```text
@@ -66,12 +68,6 @@ Claude Code 세션 안에서 실행:
 
 모든 프로젝트에서 혼자 사용하려면 User scope, 저장소 구성원과 설정을 공유하려면 Project scope, 현재 저장소에서 본인만 쓰려면 Local scope를 선택합니다.
 
-## Release 파일로 설치
-
-마켓플레이스 연결을 사용할 수 없고 호스트가 파일 설치를 지원한다면 [최신 Release](https://github.com/junphoto1008-tech/photo-reference-studio/releases/latest)에서 `photo-reference-studio.plugin`을 내려받아 Plugins의 파일 업로드 기능으로 설치합니다.
-
-파일 설치본은 GitHub 마켓플레이스와 연결되지 않으므로 새 버전이 자동으로 전달되지 않습니다. 이후에도 매번 최신 파일을 다시 설치해야 합니다.
-
 ## 기존 사용자 업데이트
 
 ### ChatGPT 및 Codex
@@ -79,7 +75,7 @@ Claude Code 세션 안에서 실행:
 1. Plugins 또는 Workspace settings의 Plugins를 엽니다.
 2. 가져온 `photo-reference-studio` 플러그인을 선택합니다.
 3. **Refresh**를 눌러 원본 마켓플레이스의 최신 버전을 가져옵니다.
-4. 플러그인 상세에서 버전이 `1.3.0`인지 확인합니다.
+4. 플러그인 상세에서 버전이 `1.3.1`인지 확인합니다.
 5. 앱을 다시 시작하거나 새 작업을 시작합니다.
 
 개인 설치 화면에서 Refresh가 보이지 않고 Update만 보이면 Update를 사용합니다. 어느 버튼도 없으면 마켓플레이스를 새로 고친 다음 플러그인을 제거·재설치합니다.
@@ -89,7 +85,7 @@ Claude Code 세션 안에서 실행:
 1. **Customize → Plugins**를 엽니다.
 2. Personal plugins에서 추가한 `photo-reference-studio` 마켓플레이스를 찾습니다.
 3. 마켓플레이스의 **Update**를 누릅니다.
-4. 설치된 플러그인을 열어 `1.3.0`인지 확인합니다.
+4. 설치된 플러그인을 열어 `1.3.1`인지 확인합니다.
 5. 새 Cowork 작업을 시작합니다.
 
 ### Claude Code
@@ -102,19 +98,12 @@ Claude Code 세션 안에서 실행:
 
 `/plugin → Marketplaces`에서 해당 마켓플레이스의 자동 업데이트를 켤 수도 있습니다. 버전이 바뀌어도 이미 열려 있던 세션은 이전 구성 요소를 유지할 수 있으므로 reload 후 새 세션에서 검증하는 것이 안전합니다.
 
-### 파일 설치본
-
-1. 최신 `.plugin` 파일을 내려받습니다.
-2. 호스트의 Plugins 파일 설치 메뉴에서 다시 설치합니다.
-3. 같은 이름 충돌로 실패하면 이전 플러그인을 제거하고 새 파일을 설치합니다.
-4. 새 작업에서 버전을 확인합니다.
-
 ## 정상 설치 확인
 
 플러그인 상세 화면에서 다음을 확인합니다.
 
 - 이름: `photo-reference-studio`
-- 버전: `1.3.0`
+- 버전: `1.3.1`
 - Skill: `auto-photo-production`
 - Connector 또는 MCP: `higgsfield`
 - 레퍼런스 소스: Behance와 Pinterest만 표시

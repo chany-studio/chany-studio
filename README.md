@@ -4,6 +4,8 @@
 
 원본 제품·음식·모델·의류 사진을 보존하면서 **누끼와 팩샷부터 키비주얼, 상세페이지 이미지, 착장샷, 배너와 정적 광고소재까지** 하나의 캠페인 톤으로 만드는 ChatGPT/Codex 및 Claude 플러그인입니다.
 
+> [공식 설치·사용설명서 (Notion)](https://jolly-phlox-79c.notion.site/AI-Photo-Reference-Studio-v1-0-3c783e9464668140b794ee076be24406) · [문제 해결](https://jolly-phlox-79c.notion.site/AI-Photo-Reference-Studio-3c783e94646681c8b3f2ddfe499c40db)
+
 ## 설치할 때 입력할 마켓플레이스 주소
 
 아래 주소 하나만 복사해 마켓플레이스 추가 화면에 입력하세요.
@@ -50,9 +52,16 @@ Claude Code 안에서 다음 명령을 실행합니다.
 
 설치 범위를 물으면 모든 프로젝트에서 개인적으로 쓰려는 경우 **User scope**를 선택합니다.
 
-설치 화면을 찾기 어렵거나 파일 설치가 필요한 경우 [최신 GitHub Release](https://github.com/junphoto1008-tech/photo-reference-studio/releases/latest)의 `photo-reference-studio.plugin`을 사용할 수 있습니다.
-
 플랫폼별 상세 화면, 관리자 설치, 업데이트와 재설치는 [설치 및 업데이트 가이드](docs/INSTALL-AND-UPDATE.md)를 확인하세요.
+
+## 프로젝트 또는 일반 대화에서 사용
+
+- **프로젝트:** 프로젝트에 원본, 로고, 브랜드 가이드와 승인 문구를 넣고 프로젝트 안에서 새 대화/작업을 시작합니다.
+- **ChatGPT:** 입력창에 `@`를 입력해 **AI Photo Reference Studio** 또는 `auto-photo-production`을 선택합니다.
+- **Codex:** `$auto-photo-production`으로 스킬을 명시합니다.
+- **일반 대화:** 프로젝트 없이 새 대화를 열고 원본 사진을 첨부한 뒤 같은 방식으로 호출합니다.
+
+플러그인은 프로젝트마다 다시 설치하지 않습니다. 설치 후 새 대화에서 사용할 수 있으며, 이미 열려 있던 대화는 설치·업데이트 전 구성을 유지할 수 있습니다.
 
 ## 설치 후 바로 시작하기
 
@@ -119,9 +128,7 @@ GitHub에 새 버전이 올라가도 이미 열린 대화가 자동으로 새 �
 /reload-plugins
 ```
 
-- **`.plugin` 파일로 직접 설치:** [최신 Release](https://github.com/junphoto1008-tech/photo-reference-studio/releases/latest) 파일을 다시 설치합니다. 충돌이 나면 이전 설치본을 제거한 뒤 새 파일을 설치하세요.
-
-업데이트 후 플러그인 상세 화면에서 버전이 **1.3.0**인지 확인하세요. 예전 안내에 Unsplash 또는 Pexels가 보이면 이전 설치본입니다.
+업데이트 후 플러그인 상세 화면에서 버전이 **1.3.1**인지 확인하고 새 대화 또는 새 작업을 시작하세요.
 
 ## 핵심 보호 원칙
 
@@ -150,6 +157,7 @@ GitHub에 새 버전이 올라가도 이미 열린 대화가 자동으로 새 �
 - [전체 사용 가이드](docs/USER-GUIDE.md)
 - [문제 해결](docs/TROUBLESHOOTING.md)
 - [변경 이력](CHANGELOG.md)
+- [공식 설치·사용설명서 (Notion)](https://jolly-phlox-79c.notion.site/AI-Photo-Reference-Studio-v1-0-3c783e9464668140b794ee076be24406)
 
 ## 저장소 구조
 
@@ -174,6 +182,6 @@ GitHub에 새 버전이 올라가도 이미 열린 대화가 자동으로 새 �
 - [Claude Cowork: Install plugins](https://claude.com/docs/cowork/guide/plugins)
 - [Claude Code: Discover and install plugins](https://code.claude.com/docs/en/discover-plugins)
 - [Claude Code: Plugins reference](https://code.claude.com/docs/en/plugins-reference)
-- [프로젝트 소개](https://jolly-phlox-79c.notion.site/AI-Photo-Reference-Studio-v1-0-3c783e9464668140b794ee076be24406)
+- [공식 설치·사용설명서](https://jolly-phlox-79c.notion.site/AI-Photo-Reference-Studio-v1-0-3c783e9464668140b794ee076be24406)
 - [개인정보 처리방침](https://jolly-phlox-79c.notion.site/AI-Photo-Reference-Studio-3c783e94646681089a5dc4694a045cb3)
 - [서비스 이용약관](https://jolly-phlox-79c.notion.site/AI-Photo-Reference-Studio-3c783e9464668136822bf7f00201f429)
