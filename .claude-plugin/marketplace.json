@@ -1,0 +1,29 @@
+{
+  "name": "photo-reference-studio",
+  "owner": {
+    "name": "Chany",
+    "url": "https://github.com/junphoto1008-tech"
+  },
+  "metadata": {
+    "description": "Source-faithful product and food photography workflows for Claude Cowork and Claude Code."
+  },
+  "plugins": [
+    {
+      "name": "photo-reference-studio",
+      "source": "./plugins/photo-reference-studio",
+      "description": "Create source-faithful cutouts, reference boards, packshots, and commercial images through Higgsfield MCP.",
+      "version": "1.1.0",
+      "author": {
+        "name": "Chany"
+      },
+      "category": "creative",
+      "tags": [
+        "photography",
+        "image-editing",
+        "product-photography",
+        "food-photography",
+        "higgsfield"
+      ]
+    }
+  ]
+}

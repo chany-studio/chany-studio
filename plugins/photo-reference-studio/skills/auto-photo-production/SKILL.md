@@ -1,6 +1,6 @@
 ---
 name: auto-photo-production
-description: Turn an uploaded product or food photo into a faithful cutout, a six-image reference board, or a reference-directed commercial image. Use for 누끼, packshots, product or food photography, campaign images, reference search, and source-locked revisions.
+description: This skill should be used when the user asks for a faithful product or food photo cutout, white packshot, six-image reference board, reference-directed commercial image, campaign image, source-locked revision, "누끼", "팩샷", "촬영 레퍼런스", or "연출컷".
 ---
 
 # Auto Photo Production

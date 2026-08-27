@@ -2,9 +2,9 @@
 
 ![AI Photo Reference Studio](plugins/photo-reference-studio/assets/logo.png)
 
-원본 제품·음식 사진의 정체성을 보존하면서 누끼, 흰 배경 팩샷, 촬영 레퍼런스 보드와 상업용 연출컷을 만드는 Codex 플러그인입니다.
+원본 제품·음식 사진의 정체성을 보존하면서 누끼, 흰 배경 팩샷, 촬영 레퍼런스 보드와 상업용 연출컷을 만드는 Codex 및 Claude Cowork 플러그인입니다.
 
-This Codex plugin turns real product or food photographs into source-faithful cutouts, curated reference boards, clean packshots, and reference-directed commercial images.
+This dual-platform plugin turns real product or food photographs into source-faithful cutouts, curated reference boards, clean packshots, and reference-directed commercial images in Codex, Claude Cowork, and Claude Code.
 
 ## 주요 기능
 
@@ -15,7 +15,7 @@ This Codex plugin turns real product or food photographs into source-faithful cu
 - 원본 대조 QA와 관찰된 결함만 수정하는 1회 보정 재시도
 - Higgsfield MCP를 통한 업로드, 배경 제거와 레퍼런스 기반 이미지 편집
 
-## 설치
+## Codex 및 ChatGPT 데스크톱 설치
 
 필요 조건:
 
@@ -29,6 +29,27 @@ codex plugin marketplace add junphoto1008-tech/photo-reference-studio --ref main
 ```
 
 그다음 ChatGPT 데스크톱 앱을 다시 시작하고 Plugins에서 **AI Photo Reference Studio** 마켓플레이스를 선택해 `photo-reference-studio`를 설치합니다. 설치 후에는 새 대화나 새 Codex 작업에서 플러그인을 활성화하세요.
+
+## Claude Cowork 설치
+
+가장 간단한 방법은 [최신 GitHub Release](https://github.com/junphoto1008-tech/photo-reference-studio/releases/latest)에서 `photo-reference-studio.plugin`을 내려받아 Claude Cowork에서 열거나 가져오는 것입니다. 파일 내용을 검토한 뒤 설치를 승인하고 새 Cowork 대화를 시작하세요.
+
+## Claude Code 마켓플레이스 설치
+
+Claude Code에서 `/plugin`을 열어 Marketplace 추가 화면에 다음 저장소를 입력합니다.
+
+```text
+junphoto1008-tech/photo-reference-studio
+```
+
+명령으로 설치하려면 다음을 실행합니다.
+
+```text
+/plugin marketplace add junphoto1008-tech/photo-reference-studio
+/plugin install photo-reference-studio@photo-reference-studio
+```
+
+설치 후 Higgsfield 연결 요청을 승인하고 새 대화를 시작하세요.
 
 ## 사용 예시
 
@@ -53,8 +74,10 @@ codex plugin marketplace add junphoto1008-tech/photo-reference-studio --ref main
 ```text
 .
 ├── .agents/plugins/marketplace.json
+├── .claude-plugin/marketplace.json
 └── plugins/photo-reference-studio/
     ├── .codex-plugin/plugin.json
+    ├── .claude-plugin/plugin.json
     ├── .mcp.json
     ├── assets/
     └── skills/auto-photo-production/
@@ -67,6 +90,8 @@ codex plugin marketplace add junphoto1008-tech/photo-reference-studio --ref main
 ## 참고
 
 - [OpenAI 플러그인 패키징 문서](https://developers.openai.com/plugins/build/plugins)
+- [Claude 플러그인 마켓플레이스 문서](https://code.claude.com/docs/en/plugin-marketplaces)
+- [Claude 플러그인 규격](https://code.claude.com/docs/en/plugins-reference)
 - [프로젝트 소개](https://jolly-phlox-79c.notion.site/AI-Photo-Reference-Studio-v1-0-3c783e9464668140b794ee076be24406)
 - [개인정보 처리방침](https://jolly-phlox-79c.notion.site/AI-Photo-Reference-Studio-3c783e94646681089a5dc4694a045cb3)
 - [서비스 이용약관](https://jolly-phlox-79c.notion.site/AI-Photo-Reference-Studio-3c783e9464668136822bf7f00201f429)
