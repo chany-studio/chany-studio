@@ -1,7 +1,7 @@
 {
   "name": "photo-reference-studio",
-  "version": "1.3.1",
-  "description": "Create a source-faithful commerce image system spanning cutouts, key visuals, detail-page modules, fashion images, and static ads.",
+  "version": "1.3.2",
+  "description": "Create source-faithful commerce images with native in-chat Behance and Pinterest reference previews.",
   "author": {
     "name": "Chany",
     "url": "https://github.com/junphoto1008-tech"
@@ -21,5 +21,5 @@
     "inpainting",
     "higgsfield"
   ],
-  "mcpServers": "./.mcp.json"
+  "mcpServers": "./.mcp.claude.json"
 }

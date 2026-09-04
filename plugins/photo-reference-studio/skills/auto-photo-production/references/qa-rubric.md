@@ -2,6 +2,18 @@
 
 Compare the result with the original source at high zoom before delivery. Do not validate identity against an earlier generated result. Score normal criteria, but treat any critical failure as an automatic rejection.
 
+## Reference-board acceptance gate
+
+Before asking for a reference number, confirm all of the following:
+
+- every candidate is represented by an actual image visible in the current conversation
+- Claude Cowork candidates use native image content or a host-rendered image attachment, not URL-only metadata
+- discovery evidence shows that candidate number, visible image, provider page, query, fit note, and Visual DNA map to the same source; the connector cross-checks Behance asset IDs but Pinterest mapping still depends on discovery evidence
+- the six candidates are distinct and meet the provider, provenance, quality, and diversity rules
+- no HTML file, contact sheet, artifact, filename, placeholder, or link-only list is being counted as direct display
+
+If any item fails, replace the affected candidate or report that inline display is unavailable. Do not proceed through the semi-auto checkpoint or report a passing reference board.
+
 ## Critical failures
 
 - product label, logo, line break, printed mark, or package geometry changed

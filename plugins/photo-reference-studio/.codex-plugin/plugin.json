@@ -1,7 +1,7 @@
 {
   "name": "photo-reference-studio",
-  "version": "1.3.1+codex.20260827083913",
-  "description": "Create a source-faithful commerce image system spanning cutouts, key visuals, detail-page modules, fashion images, and static ads.",
+  "version": "1.3.2+codex.20260903222937",
+  "description": "Create source-faithful commerce images with native in-chat Behance and Pinterest reference previews.",
   "author": {
     "name": "Chany",
     "url": "https://jolly-phlox-79c.notion.site/AI-Photo-Reference-Studio-v1-0-3c783e9464668140b794ee076be24406"
@@ -34,7 +34,7 @@
     "termsOfServiceURL": "https://jolly-phlox-79c.notion.site/AI-Photo-Reference-Studio-3c783e9464668136822bf7f00201f429",
     "capabilities": [
       "Image analysis",
-      "Inline Behance and Pinterest reference boards",
+      "Native in-chat Behance and Pinterest reference previews",
       "Commerce prompt engineering",
       "Key visual and campaign systems",
       "Detail-page and static ad layouts",

@@ -2,7 +2,7 @@
 
 ## Core rule
 
-Search only Behance and Pinterest. Search terms identify what the source subject is, not how it should be photographed. The final reference board must show the reference images directly in the conversation; a link-only board is not acceptable.
+Search only Behance and Pinterest. Search terms identify what the source subject is, not how it should be photographed. The final reference board must show the reference images directly in the current conversation; a link-only board, HTML file, contact sheet, or separate artifact is not an inline reference board.
 
 ## Approved providers
 
@@ -86,6 +86,17 @@ Target three Behance and three Pinterest candidates when both providers have at 
 
 Render every finalist as an actual image in the response. The user must be able to compare all candidates without opening another page.
 
+Use this display order:
+
+1. in Claude Cowork, six separate `fetch_reference_preview_image` calls returning MCP image content
+2. a fetched public preview returned as host-displayable image content
+3. an attached preview image file when the host can display that attachment in the current conversation
+4. a verified inline image embed supported by the host
+
+In Claude Cowork, call the bundled tool once per finalist rather than batching six images into one tool result. Each successful result starts with an MCP `ImageContent` block containing `type: image`, base64 `data`, and an accurate `mimeType`. Search-result metadata or `preview_image_url` alone is not image presentation. Do not create HTML as the primary answer, and do not ask the user to open six links just to compare candidates.
+
+Before each preview call, confirm in the discovery result that the preview and provider page are paired. The preview connection checks the provider, URL shape, CDN, bytes, MIME, and dimensions. It also verifies Behance mapping when the public asset identifier contains the gallery ID. It does not scrape Pinterest to prove image-to-Pin membership, so do not convert a Pinterest `provenance_mapping_verified: false` field into a claim that the connector independently verified the mapping.
+
 For each candidate, present in this order:
 
 1. directly rendered image preview
@@ -96,7 +107,9 @@ For each candidate, present in this order:
 6. one-line fit note
 7. one-sentence Visual DNA
 
-Do not substitute a text card, filename, placeholder, or bare URL for the image. If the host cannot render a candidate from its preview URL, fetch or import the publicly accessible preview through an approved read-only path and display the returned image. If direct display still fails, reject and replace that candidate.
+Do not substitute a text card, filename, placeholder, source-page thumbnail screenshot, or bare URL for the image. If search returns only a preview URL, fetch or import the publicly accessible preview through an approved read-only path and return the resulting image content. Fetch preview-size media only; do not fetch protected originals or bypass access controls.
+
+Treat the board as incomplete until every presented candidate has a visible image. If one candidate cannot be displayed, reject and replace it before asking the user to choose. If the current host has no image-content or image-attachment path at all, state the limitation once and offer source links or an HTML board as an optional fallback. Never label that fallback as an inline board or continue the semi-auto selection checkpoint as though the images were visible.
 
 After the six images, ask for one number or 자동 선택. Do not begin paid staged generation before this checkpoint in semi-auto mode.
 
@@ -119,6 +132,8 @@ Maintain:
     source_url: ""
     original_source_url: ""
     preview_image_url: ""
+    display_transport: "mcp-image-content | native-image-content | image-attachment | verified-inline-embed"
+    display_confirmed: false
     search_query: ""
     creator: ""
     rights_status: "direction-only"

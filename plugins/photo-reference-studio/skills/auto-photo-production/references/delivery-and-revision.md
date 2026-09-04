@@ -13,7 +13,7 @@ Return only the deliverables requested, in this order when present:
 7. selected reference provenance and search query
 8. compact production note
 
-Show the actual image or connector preview instead of a raw remote media URL when the tool supports display. Do not expose internal handles, job IDs, or temporary upload URLs.
+Show the actual image or connector preview instead of a raw remote media URL. In Claude Cowork, keep the six reference images visible in the current conversation through native tool/MCP image content or a host-rendered image attachment. A link, HTML file, contact sheet, or separate artifact may be included only as an optional secondary convenience after the inline images. Do not expose internal handles, job IDs, or temporary upload URLs.
 
 ## Production note
 

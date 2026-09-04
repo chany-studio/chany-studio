@@ -11,7 +11,7 @@
     {
       "name": "photo-reference-studio",
       "source": "./plugins/photo-reference-studio",
-      "description": "Create source-faithful commerce key visuals, inline reference boards, detail-page modules, fashion images, and static ads.",
+      "description": "Create source-faithful commerce key visuals with native in-chat reference previews, detail-page modules, fashion images, and static ads.",
       "author": {
         "name": "Chany"
       },

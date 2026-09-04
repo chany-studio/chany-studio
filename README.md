@@ -34,11 +34,13 @@ junphoto1008-tech/photo-reference-studio
 
 ### Claude Cowork
 
+직접 이미지 미리보기 연결은 로컬에서 **Node.js 18 이상**을 사용합니다. 처음 설치하기 전에 터미널에서 `node --version`이 동작하는지 확인하세요. 동작하지 않으면 [Node.js 공식 다운로드](https://nodejs.org/en/download)에서 LTS 버전을 먼저 설치합니다.
+
 1. Claude Desktop에서 **Customize → Plugins → Browse plugins**를 엽니다.
 2. **Personal plugins의 `+` → Add marketplace → Add from a repository**를 선택합니다.
 3. 위 GitHub 저장소 주소를 입력합니다.
 4. `photo-reference-studio`를 선택하고 **Install**을 누릅니다.
-5. Higgsfield 로그인을 마친 뒤 **새 Cowork 작업**을 시작합니다.
+5. Higgsfield 로그인을 마치고 인증이 필요 없는 로컬 `reference-preview` 연결이 활성화됐는지 확인한 뒤 **새 Cowork 작업**을 시작합니다.
 
 ### Claude Code
 
@@ -76,7 +78,7 @@ Claude Code 안에서 다음 명령을 실행합니다.
 
 1. 원본의 형태·라벨·재질·색상과 승인 문구를 분석하고 잠급니다.
 2. 필요한 경우 Behance와 Pinterest에서만 레퍼런스 6장을 찾습니다.
-3. 링크 목록이 아니라 **대화 안에 이미지로 직접 표시**합니다.
+3. 링크나 HTML 대신 **현재 대화 안에 실제 이미지 6장으로 직접 표시**합니다. Claude Cowork에서는 플러그인에 포함된 `reference-preview` 연결이 공개 미리보기를 네이티브 이미지 콘텐츠로 전달합니다.
 4. 사용자가 번호 하나 또는 `자동 선택`을 답합니다.
 5. 선택한 방향으로 마스터 키비주얼을 만든 뒤 필요한 상세페이지·광고 규격으로 확장합니다.
 6. 원본, 문구, 비율과 채널 요구사항을 비교 검수하고 필요한 경우 한 번 보정합니다.
@@ -128,7 +130,7 @@ GitHub에 새 버전이 올라가도 이미 열린 대화가 자동으로 새 �
 /reload-plugins
 ```
 
-업데이트 후 플러그인 상세 화면에서 버전이 **1.3.1**인지 확인하고 새 대화 또는 새 작업을 시작하세요.
+업데이트 후 플러그인 상세 화면에서 버전이 **1.3.2**인지 확인하고 새 대화 또는 새 작업을 시작하세요.
 
 ## 핵심 보호 원칙
 
@@ -144,6 +146,8 @@ GitHub에 새 버전이 올라가도 이미 열린 대화가 자동으로 새 �
 - 플러그인 저장소에는 API 키, 액세스 토큰 또는 사용자 사진이 포함되어 있지 않습니다.
 - Higgsfield 기능을 사용할 때 원본 사진과 선택한 레퍼런스가 Higgsfield로 전송될 수 있습니다.
 - 레퍼런스 탐색은 Behance와 Pinterest의 공개 소스 페이지만 이용합니다.
+- Claude용 `reference-preview`는 선택 후보의 공개 미리보기만 불러와 Cowork 대화에 이미지로 표시하며 보호된 원본이나 로그인 정보에는 접근하지 않습니다.
+- `reference-preview`는 Claude Desktop이 실행되는 컴퓨터의 Node.js 18 이상을 사용하며 별도 npm 패키지를 설치하지 않습니다.
 - 외부 서비스의 이용 약관, 개인정보 처리방침, 요금, 생성 크레딧과 콘텐츠 권리는 각 서비스에서 별도로 확인하세요.
 - 비밀번호, API 키, 액세스 토큰이나 인증 코드를 대화에 붙여 넣지 마세요. 호스트가 표시하는 연결 화면에서 인증합니다.
 
@@ -169,8 +173,10 @@ GitHub에 새 버전이 올라가도 이미 열린 대화가 자동으로 새 �
 └── plugins/photo-reference-studio/
     ├── .codex-plugin/plugin.json
     ├── .claude-plugin/plugin.json
+    ├── .mcp.claude.json
     ├── .mcp.json
     ├── assets/
+    ├── mcp/reference-preview/
     └── skills/auto-photo-production/
 ```
 

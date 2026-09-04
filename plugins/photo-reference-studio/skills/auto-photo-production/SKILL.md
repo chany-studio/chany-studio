@@ -13,14 +13,15 @@ Prefer this stack when it is connected:
 
 - native vision for source and result inspection
 - image search with domain filtering, or a reference-search connector, limited to Behance and Pinterest
+- the bundled `reference-preview` connection in Claude Cowork, which turns one public finalist preview into actual MCP image content with `fetch_reference_preview_image`
 - the bundled Higgsfield MCP server for upload, background removal, and reference-directed editing
 - a layout-capable image editor when exact promotional copy must be typeset
 
 If Higgsfield authentication is required, ask the user to select the connection or login button shown by the host, complete authorization, and return to the same chat. Never ask for a password, access token, API key, or authorization code. Resume the interrupted step after authentication.
 
-If no suitable production tool is available, complete the source analysis, six-element brief, layout plan, reference board when requested, and production prompt, then state the single missing capability. Never invent source URLs, generated assets, copy accuracy, or QA scores.
+If no suitable production tool is available, complete the source analysis, six-element brief, layout plan, any reference research that can be shown honestly, and the production prompt, then state the single missing capability. Never invent source URLs, generated assets, copy accuracy, QA scores, or successful image display.
 
-Read [references/reference-search-mcp-contract.md](references/reference-search-mcp-contract.md) only when implementing or connecting the dedicated reference-search tool.
+Read [references/reference-search-mcp-contract.md](references/reference-search-mcp-contract.md) when using, testing, implementing, or connecting the Claude Cowork reference-preview path.
 
 ## User-facing onboarding
 
@@ -121,7 +122,7 @@ Apply perspective or capture correction only when requested or materially necess
 
 Skip this step for `prompt-brief`, `cutout`, a user-supplied reference, or a layout job that already has a complete brand direction. Otherwise read [references/search-policy.md](references/search-policy.md).
 
-Use at most two English taxonomy queries and run each against both approved providers: Behance and Pinterest. Present six candidates as directly visible inline images in the conversation, not as a link-only list. Under each image, retain its provider, source-page link, query, fit note, and Visual DNA. Reject or replace any candidate whose preview cannot be displayed directly. In `auto`, choose the highest-ranked viable candidate. Import the selected reference through the production connector instead of passing an unverified raw URL.
+Use at most two English taxonomy queries and run each against both approved providers: Behance and Pinterest. Present six candidates as actual images in the current conversation, not as a link-only list, HTML file, contact sheet, artifact, or instruction to open another view. In Claude Cowork, call `fetch_reference_preview_image` once for each finalist and use the six returned MCP image blocks as the visible previews; run the independent calls in parallel when supported. A preview URL by itself does not satisfy the checkpoint. Under each visible image, retain its provider, source-page link, query, fit note, and Visual DNA. Reject or replace any candidate whose image content cannot be presented in-chat. If the host has no path that can return or attach image content, say that inline preview is unavailable and offer links or HTML only as a clearly labeled fallback; do not claim that the reference board is complete. In `auto`, choose the highest-ranked viable candidate. Import the selected reference through the production connector instead of passing an unverified raw URL.
 
 ### 5. Convert the brief into production direction
 
