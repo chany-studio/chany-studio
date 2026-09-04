@@ -23,4 +23,4 @@ Use this skill for editorial, lookbook, PDP, or campaign stills. Route talking r
 
 Inspect the connected tool schema before use. If the required identity or try-on capability is unavailable, return the locked brief and production prompt and state the missing capability.
 
-Paid submission, recovery, and scope changes follow the shared runtime contract exactly. Never blindly resubmit after a timeout, disconnect, or unknown charge state; inspect the original job or receipt first. A changed request requires a new preflight and approval under that contract.
+Paid submission, recovery, and scope changes follow the shared runtime contract exactly. Never blindly resubmit after a timeout, disconnect, or unknown charge state; inspect the original job or receipt first. A changed request requires a new paid-generation preflight and approval under that contract.

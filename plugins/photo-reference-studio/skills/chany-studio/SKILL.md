@@ -27,9 +27,10 @@ Default dependency order when those assets are requested:
 4. find and select art direction when needed
 5. approve one master campaign visual or design system
 6. derive page, static-ad, promotion, and UGC assets from that master
-7. revise observed defects and complete family-level QA
-8. for every named platform or placement, build the current-source adapter record and keep any live operation read-only until its separate write, budget, and activation approvals
-9. when a publication gate applies, review the exact final copy and rendered asset through `chany-publication-review`
+7. after the included UGC clip versions are accepted, use `chany-video-assembly` to conform and assemble them when a delivered cut or controlled hook variants are requested
+8. revise observed defects and complete family-level QA
+9. for every named platform or placement, build the current-source adapter record and keep any live operation read-only until its separate write, budget, and activation approvals
+10. when a publication gate applies, review the exact final copy and rendered asset through `chany-publication-review`
 
 Do not add deliverables that the user did not request. Before a paid generation, apply [references/higgsfield-runtime-contract.md](references/higgsfield-runtime-contract.md) and [references/creative-quality-loop.md](references/creative-quality-loop.md). Show the live-resolved operation, inputs, prompt, options, count, server adjustments and provider-reported cost information when available. One accepted key visual should establish the palette, lighting, material language, copy zones, and crop-safe logic for downstream assets.
 
@@ -42,4 +43,4 @@ Do not add deliverables that the user did not request. Before a paid generation,
 - A selected online reference contributes direction only, never its product, person, packaging, logo, copy, or other branded pixels.
 - A specialist may change only the fields its deliverable owns.
 
-If a connected production capability is missing, continue with the brief, prompt, layout, and handoff state that can be completed honestly, then name the single unavailable capability. Never claim that an asset was generated, displayed, verified, or delivered when it was not.
+If a connected production or local assembly capability is missing, continue with the brief, prompt, layout, clip manifest, and handoff state that can be completed honestly, then name the single unavailable capability. Use `chany-preflight` for an observed local-environment report when assembly, extraction, or batch image work is requested. Never claim that an asset was generated, assembled, displayed, verified, or delivered when it was not.

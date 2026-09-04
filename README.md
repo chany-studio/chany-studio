@@ -2,7 +2,7 @@
 
 ![Chany's Studio](plugins/photo-reference-studio/assets/logo.png)
 
-업종별 구매 여정·증거·연출·컴플라이언스 판단과 공통 제작 워크플로를 결합해 **광고·홍보·마케팅·상세/랜딩·콘텐츠**를 기획하고 제작하는 ChatGPT Work/Codex 및 Claude 플러그인입니다. Chany's Studio 2.2.0은 업종 전문 오버레이가 방향과 검증 기준을 정하고, 공통 제작 스킬이 승인된 방향을 실제 산출물로 전환하는 2축 구조입니다.
+업종별 구매 여정·증거·연출·컴플라이언스 판단과 공통 제작 워크플로를 결합해 **광고·홍보·마케팅·상세/랜딩·콘텐츠**를 기획하고 제작하는 ChatGPT Work/Codex 및 Claude 플러그인입니다. Chany's Studio 2.2.1은 업종 전문 오버레이가 방향과 검증 기준을 정하고, 공통 제작 스킬이 승인된 방향을 실제 산출물로 전환하는 2축 구조입니다.
 
 > [공식 설치·사용설명서 (Notion)](https://jolly-phlox-79c.notion.site/Chany-s-Studio-3c783e9464668140b794ee076be24406) · [문제 해결](docs/TROUBLESHOOTING.md)
 
@@ -88,6 +88,8 @@ ChatGPT Work에서 스킬을 직접 고를 때는 `@스킬명`, Codex에서는 `
 | ChatGPT `@chany-image-edit` · Codex `$chany-image-edit` | 마스크 편집, 부분 수정, 문구 복원과 제한된 교체 |
 | ChatGPT `@chany-model-fashion` · Codex `$chany-model-fashion` | 성인 모델 일관성, 원본 의류·액세서리 착장 |
 | ChatGPT `@chany-ugc-ads` · Codex `$chany-ugc-ads` | 리뷰, 언박싱, 튜토리얼, SaaS, Try-on, 현지화 UGC |
+| ChatGPT `@chany-video-assembly` · Codex `$chany-video-assembly` | 승인 클립 조립, 지정 규격 정규화, 훅 변형과 빈 성과 입력표 |
+| ChatGPT `@chany-preflight` · Codex `$chany-preflight` | 영상·프레임·배치 작업 전 로컬 도구와 한글 폰트 환경 점검 |
 | ChatGPT `@chany-publication-review` · Codex `$chany-publication-review` | 정확한 최종 카피·오퍼·에셋 버전의 근거·권리·채널·최종 렌더 게시 전 검수 |
 
 기존 호출은 ChatGPT Work의 `@auto-photo-production`과 Codex의 `$auto-photo-production`에서 한 버전 동안 호환되며 새 `chany-studio` 라우터로 안내됩니다.
@@ -182,6 +184,9 @@ Codex: $chany-ad-creative로 이 프로모션의 1:1 피드와 9:16 스토리 �
 
 ChatGPT Work: @chany-ugc-ads로 이 제품의 자연스러운 9:16 언박싱 광고를 만들어줘.
 Codex: $chany-ugc-ads로 이 제품의 자연스러운 9:16 언박싱 광고를 만들어줘.
+
+ChatGPT Work: @chany-video-assembly로 승인된 UGC 클립을 지정 규격으로 조립하고 훅만 다른 2개 버전과 빈 성과표를 만들어줘.
+Codex: $chany-video-assembly로 승인된 UGC 클립을 지정 규격으로 조립하고 훅만 다른 2개 버전과 빈 성과표를 만들어줘.
 ```
 
 상세/랜딩페이지는 목적에 따라 `plan`, `audit`, `produce`로 요청할 수 있습니다. `plan`은 페이지 구조와 촬영 필요 항목, `audit`은 기존 페이지의 증거 범위와 누락된 촬영·자료, `produce`는 이름이 정해진 모듈 제작을 담당합니다. 생성 이미지는 누락된 사실 증거를 대신하지 않습니다.
@@ -204,8 +209,9 @@ Codex: $chany-publication-review로 최종 광고의 정확한 카피·오퍼·�
 4. 필요한 경우 제한된 업종 검색 경로로 Behance와 Pinterest 레퍼런스 6장을 대화 안에 실제 이미지로 표시합니다.
 5. 마스터 키비주얼을 먼저 승인합니다.
 6. 승인된 패킷과 캠페인 규칙에서 상세/랜딩페이지와 채널 광고를 파생합니다.
-7. UGC가 포함되면 훅·대본·출연자·증거 노출·CTA를 잠근 뒤 제작합니다.
-8. 원본, 승인 카피, 비율, 안전영역, 업종별 실패 기준과 캠페인 일관성을 검수합니다.
+7. UGC가 포함되면 훅·대본·출연자·증거 노출·CTA를 잠그고 제품 장면마다 승인 스틸을 첫 프레임 권위로 연결해 클립을 제작합니다.
+8. 승인된 복수 클립을 지정 규격으로 조립하고, 요청한 경우 훅 하나만 바꾼 변형과 빈 성과 입력표를 만듭니다.
+9. 원본, 승인 카피, 비율, 안전영역, 업종별 실패 기준과 캠페인 일관성을 검수합니다.
 
 기본값은 유료 생성 전에 사용자가 레퍼런스와 산출물 수를 확인하는 방식입니다. 자동 진행을 원하면 범위와 함께 `레퍼런스도 자동 선택해서 끝까지 진행해줘`라고 요청하세요.
 
@@ -251,7 +257,7 @@ Codex: $chany-publication-review로 최종 광고의 정확한 카피·오퍼·�
 /reload-plugins
 ```
 
-업데이트 후 버전이 **2.2.0**인지 확인하고 새 대화 또는 새 작업을 시작하세요.
+업데이트 후 버전이 **2.2.1**인지 확인하고 새 대화 또는 새 작업을 시작하세요.
 
 ## 외부 서비스와 데이터
 

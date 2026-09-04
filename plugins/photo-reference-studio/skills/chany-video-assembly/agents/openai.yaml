@@ -1,0 +1,6 @@
+interface:
+  display_name: "Chany's Video Assembly"
+  short_description: "승인 클립 조립·규격 통일·훅 변형·성과표 생성"
+  default_prompt: "$chany-video-assembly로 승인된 클립을 지정 규격으로 정규화해 조립하고, 훅 하나만 바꾼 변형과 빈 성과 입력표를 만들어줘."
+policy:
+  allow_implicit_invocation: true

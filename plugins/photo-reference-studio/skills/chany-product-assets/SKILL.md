@@ -23,4 +23,4 @@ Transparent cutouts have no floor, glow, contact shadow, or generated background
 
 Inspect the connected tool schema before calling it. If Higgsfield authentication is required, direct the user to the host-provided login flow and never ask for credentials or tokens. If no suitable edit tool is available, return the source lock and production prompt and state the missing capability.
 
-Paid submission, recovery, and scope changes follow the shared runtime contract exactly. Never blindly resubmit after a timeout, disconnect, or unknown charge state; inspect the original job or receipt first. A changed request requires a new preflight and approval under that contract.
+Paid submission, recovery, and scope changes follow the shared runtime contract exactly. Never blindly resubmit after a timeout, disconnect, or unknown charge state; inspect the original job or receipt first. A changed request requires a new paid-generation preflight and approval under that contract.

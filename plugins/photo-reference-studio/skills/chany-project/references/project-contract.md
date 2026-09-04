@@ -46,6 +46,8 @@ Select the primary industry overlay before the production skills. Read `chany-st
 | bounded repair of an accepted image | `chany-image-edit` |
 | adult model or source-locked fashion stills | `chany-model-fashion` |
 | review, unboxing, tutorial, SaaS demo, or try-on UGC | `chany-ugc-ads` |
+| accepted-clip assembly, target normalization, hook-only variants | `chany-video-assembly` |
+| local media-tool and Korean-font environment check | `chany-preflight` |
 | version-bound final claims, offer, rights, disclosures, and release review | `chany-publication-review` |
 
 Use `chany-studio` only when two or more production families need shared sequencing. Do not list unneeded specialists in the generated project instructions.
@@ -137,4 +139,4 @@ After setup or update, verify:
 - no secret-looking values, temporary upload URLs, or invented approval labels were written
 - files outside the target project were unchanged
 
-For `status`, read `.chany-studio/brief.md`, `.chany-studio/state.md`, and the managed `AGENTS.md` block and report discrepancies. For `doctor`, also check format, markers, override precedence, hosted-work delegation guidance, paired-agent parity, multiple active managed roles, stale version metadata, and missing imports.
+For `status`, read `.chany-studio/brief.md`, `.chany-studio/state.md`, and the managed `AGENTS.md` block and report discrepancies. For `doctor`, also check format, markers, override precedence, hosted-work delegation guidance, paired-agent parity, multiple active managed roles, stale version metadata, and missing imports. If an active skill needs assembly, reference-video extraction, or batch image work, use `chany-preflight` for the smallest relevant non-destructive environment check and report `available`, `missing`, `not_observable`, or `blocked`; doctor never installs, upgrades, writes project files, or leaves persistent tool-check artifacts.

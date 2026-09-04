@@ -25,6 +25,6 @@ Never invent specifications, efficacy, outcomes, qualifications, certification, 
 
 Inspect the connected tool schema before use. If exact typesetting or generation is unavailable, return the module plan, clean visual plates or prompts that can be produced, and a precise list of pending work.
 
-Paid submission, recovery, and scope changes follow the shared runtime contract exactly. Never blindly resubmit after a timeout, disconnect, or unknown charge state; inspect the original job or receipt first. A changed request requires a new preflight and approval under that contract.
+Paid submission, recovery, and scope changes follow the shared runtime contract exactly. Never blindly resubmit after a timeout, disconnect, or unknown charge state; inspect the original job or receipt first. A changed request requires a new paid-generation preflight and approval under that contract.
 
 Draft modules may proceed while review inputs are incomplete. Before publication, route every applicable exact final copy, offer, page destination, module, crop, layout, and final-render version to `chany-publication-review`; a draft or a review of a different page version is not publication clearance.

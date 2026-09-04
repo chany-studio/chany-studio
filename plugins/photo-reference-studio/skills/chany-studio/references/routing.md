@@ -39,6 +39,8 @@ Do not add two overlays merely because two subjects appear in one scene. Use a s
 | inpaint, remove or replace one region, copy repair, “only change this” | `chany-image-edit` | one bounded revision |
 | static adult model campaign, lookbook, source-locked fashion try-on | `chany-model-fashion` | one model or fashion still |
 | creator review, unboxing, tutorial, SaaS demo, try-on video, localization | `chany-ugc-ads` | one approved UGC master or named localized variants |
+| assemble accepted clips, normalize an approved target, produce hook-only variants | `chany-video-assembly` | one verified delivered cut, controlled variant set, and blank performance table |
+| check local tools before assembly, extraction, or batch image work | `chany-preflight` | observed environment report and an approval-gated unblocking path |
 | final claims, offer, delivery, endorsement, rights, disclosure, and publication readiness | `chany-publication-review` | version-bound review record and named human-review status |
 
 ## Boundary decisions
@@ -51,6 +53,7 @@ Do not add two overlays merely because two subjects appear in one scene. Use a s
 - A text-free master composition belongs to `chany-campaign-visual`. A finished layout with offer, CTA, legal copy, or placement constraints belongs to `chany-ad-creative`.
 - Source cleanup before any composition belongs to `chany-product-assets`. A local change to an already accepted composition belongs to `chany-image-edit`.
 - Static editorial, lookbook, and fashion try-on belong to `chany-model-fashion`. Talking testimonials, reviews, demonstrations, and localized creator videos belong to `chany-ugc-ads`.
+- UGC narrative, generation, and clip acceptance belong to `chany-ugc-ads`; conforming and concatenating those accepted clip versions belongs to `chany-video-assembly`. Environment readiness belongs to `chany-preflight`, which is not the paid-generation cost preflight.
 - A new reference, offer, core composition, or campaign idea is not a local edit. Return it to the original production owner.
 
 ## Campaign sequencing
@@ -63,7 +66,8 @@ For a requested campaign family, propose only the needed stages:
 4. `chany-reference-board` runs only when art direction is missing or explicitly requested.
 5. `chany-campaign-visual` creates and locks one master direction.
 6. `chany-detail-page`, `chany-ad-creative`, `chany-model-fashion`, and `chany-ugc-ads` derive only their named deliverables.
-7. `chany-image-edit` repairs bounded defects without changing the accepted campaign.
-8. `chany-publication-review` checks the exact final copy and rendered assets when jurisdiction, claims, offers, outbound delivery, endorsement, rights, disclosure, platform, or industry gates make release review relevant.
+7. `chany-video-assembly` delivers the cut and its controlled variant set only after every included clip version is accepted.
+8. `chany-image-edit` repairs bounded image defects without changing the accepted campaign.
+9. `chany-publication-review` checks the exact final copy and rendered assets when jurisdiction, claims, offers, outbound delivery, endorsement, rights, disclosure, platform, or industry gates make release review relevant.
 
 Apply `higgsfield-runtime-contract.md` and `creative-quality-loop.md` before paid operations. Show the effective paid-generation plan and live cost information when available; do not assume that one final video equals one paid generation call. Installed Moai specialists may supply attributed evidence through `moai-specialist-chain.md`, but Chany retains campaign orchestration and never treats a specialist result as blanket legal clearance.

@@ -75,7 +75,25 @@ ugc_manifests:
     input_asset_version_ids: []
     resolved_workflow_family: ""
     paid_approval_id: ""
+    scene_bindings:
+      - scene: 1
+        usp_role: ""
+        message_rank: 0
+        governing_still_version_id: ""
+        resolved_first_frame_role: ""
+        output_clip_version_id: ""
     status: "draft | approved | invalidated | not-applicable"
+assembly_manifests:
+  - assembly_id: ""
+    shot_plan_version_id: ""
+    source_clip_version_ids: []
+    target_authority_reference: ""
+    target_checked_at: ""
+    output_render_version_id: ""
+    output_probe: {}
+    variant_set_id: ""
+    performance_table_path: ""
+    status: "draft | verified | invalidated | not-applicable"
 selected_reference:
   provider: ""
   source_url: ""
@@ -151,9 +169,10 @@ publication_reviews:
 - Pass only approved copy as locked copy. Keep draft copy visibly marked.
 - The reference handoff contains its source page and transferable Visual DNA, not reusable pixels or implied rights.
 - The campaign-visual handoff contains the accepted master plus explicit campaign rules. Downstream skills may recompose for format but may not invent a new campaign direction.
+- The UGC handoff binds every product scene to its approved still version, resolved first-frame role, and accepted output clip. The assembly handoff names those exact clip versions, the target authority, verified final-render version, controlled variant set, and empty performance table.
 - Each produced asset returns its effective ratio or duration, source/copy verification status, and observed unresolved defects.
 - Attribute optional Moai specialist results with the producer's exact installed name, reviewed-object version, sources and dates, findings, and unresolved questions; never collapse them into untraceable campaign truth.
-- Bind identity authority, consent, UGC manifests, paid-generation approval, and publication review to stable content and asset versions. A changed subject or authority input, consent scope, script, prompt, input role, identity or model, workflow, billable option, copy, crop, disclosure, offer, destination, or final render invalidates every affected record and reopens its approval or review.
+- Bind identity authority, consent, UGC manifests, assembly manifests, paid-generation approval, and publication review to stable content and asset versions. A changed subject or authority input, consent scope, script, prompt, input role, identity or model, workflow, billable option, accepted clip, delivery target, copy, crop, disclosure, offer, destination, or final render invalidates every affected record and reopens its approval or review.
 - Do not expose temporary media handles, internal job IDs, or upload URLs to the user.
 
 ## Checkpoints

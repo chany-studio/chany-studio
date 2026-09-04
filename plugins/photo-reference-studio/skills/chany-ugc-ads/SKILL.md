@@ -15,17 +15,21 @@ For every named platform, placement, storefront, outbound channel, upload, sched
 
 ## Workflow
 
-1. Read the industry direction packet and choose exactly one primary format, journey stage, proof job, and desired action: review, visit, booking, unboxing, tutorial, SaaS demo, or virtual try-on. Treat localization as a derivative of an approved master, not as its narrative format.
-2. Lock the approved offer facts, evidence, limitations, disclosure, CTA, creator or avatar authority, language, locale, platform, duration, ratio, and required deliverables.
-3. Write a scene-level script with hook, proof or demonstration, and CTA. Mark proposed copy as draft until approved and never fabricate experience, results, testimonials, or scarcity.
-4. Inspect the active Higgsfield MCP tools and schemas. Use only capabilities actually exposed in the current connection; website availability alone does not prove MCP availability.
-5. Before paid generation, show the number of planned variants and generation steps. Generate only the approved scope.
-6. Review the final-resolution video through the shared bounded creative quality loop for authority fidelity, claim and experience accuracy, industry failure gates, identity and voice consistency, lip sync, timing, disclosures, overlays, captions, audio, accessibility, and platform framing. Must-pass failures cannot be averaged away.
+1. When the user supplies a reference-video file, run the relevant non-destructive environment check through `chany-preflight` without persistent project changes, then read [references/reference-teardown.md](references/reference-teardown.md) and produce the beat table before writing the script. Timing may transfer; content does not.
+2. Read the industry direction packet and choose exactly one primary format, journey stage, proof job, and desired action: review, visit, booking, unboxing, tutorial, SaaS demo, or virtual try-on. Treat localization as a derivative of an approved master, not as its narrative format.
+3. Lock the approved offer facts, evidence, limitations, disclosure, CTA, creator or avatar authority, language, locale, platform, duration, ratio, and required deliverables.
+4. Write a scene-level script with hook, proof or demonstration, and CTA. Mark proposed copy as draft until approved and never fabricate experience, results, testimonials, or scarcity.
+5. Inspect the active Higgsfield MCP tools and schemas. Use only capabilities actually exposed in the current connection; website availability alone does not prove MCP availability.
+6. Approve one still per product scene and attach it in the live schema's conditioning first-frame role before any paid video call. Read [references/ugc-production.md](references/ugc-production.md) "Approved-still-first rule" for mode, role, version, and recovery requirements.
+7. Before paid generation, show the number of planned variants and generation steps. Generate only the approved scope.
+8. Review the final-resolution video through the shared bounded creative quality loop for authority fidelity, claim and experience accuracy, industry failure gates, identity and voice consistency, lip sync, timing, disclosures, overlays, captions, audio, accessibility, and platform framing. Must-pass failures cannot be averaged away.
+
+This skill owns narrative, shot planning, generation, and clip acceptance. When the user wants multiple accepted clips conformed, concatenated, exported, or duplicated as hook-only variants, hand those exact versions to `chany-video-assembly`; do not hide post-production inside another paid generation.
 
 Obtain permission for an identifiable person's face or cloned voice and do not use a real person's likeness for deceptive endorsement. Approve one master before localization, then preserve meaning, brand pronunciation, offer values, legal copy, and timing rather than translating word for word.
 
 If a required UGC operation is not exposed through MCP, return the completed script, shot plan, asset-role map, and exact Higgsfield interface handoff. Do not claim generation succeeded.
 
-Paid submission, recovery, and scope changes follow the shared runtime contract exactly. Never blindly resubmit after a timeout, disconnect, or unknown charge state; inspect the original job or receipt first. A changed request requires a new preflight and approval under that contract.
+Paid submission, recovery, and scope changes follow the shared runtime contract exactly. Never blindly resubmit after a timeout, disconnect, or unknown charge state; inspect the original job or receipt first. A changed request requires a new paid-generation preflight and approval under that contract.
 
 Draft scripts, shot plans, and draft renders may proceed while review inputs are incomplete. Before publication, route every applicable exact final script or copy, offer, platform placement, creator disclosure, video, crop or layout, subtitle, audio, and final-render version to `chany-publication-review`; a draft or a review of a different master or localized variant is not publication clearance.

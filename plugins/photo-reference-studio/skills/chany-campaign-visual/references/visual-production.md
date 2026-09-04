@@ -44,6 +44,17 @@ Explicitly exclude the reference subject, model, ingredients, garments, architec
 
 Before writing the prompt, import only the applicable `message_job`, `proof_objects`, `must_capture`, `directing_rules`, `required_disclosures`, `prohibited_or_high_risk`, and `human_review_gate` fields. A visually attractive image that contradicts an industry failure gate is a failed asset.
 
+## Positive, measurable instruction
+
+State the required end state, not the thing to avoid. A prohibition tends to be ignored; a measurable target is checkable.
+
+- Replace a negation with a proportion, dimension, count, or position: "폭은 기준 물체의 1/3" instead of "너무 크게 하지 마", "제품 1개" instead of "여러 개 만들지 마", "뚜껑이 위, 병은 바로 선 상태" instead of "뒤집지 마".
+- Anchor scale to something visible in the frame or to a real-world measurement supplied by the user. Do not invent a dimension the user has not given.
+- Convert each observed defect into one positive clause before retrying, and keep the clauses that already passed unchanged.
+- Reserve the exclusion list for whole categories that must never appear at all (reference brand marks, unapproved people, watermarks, invented copy). Everything else belongs in the positive spec.
+
+A retry prompt that only adds another "do not" is a failed correction. Rewrite it as a measurable state. This prompting rule does not weaken non-negotiable rights, safety, factual, regulatory, disclosure, or authority exclusions.
+
 ## Production prompt
 
 ```text
@@ -115,4 +126,4 @@ Key-visual weights:
 
 Accept at 86 or higher. Any changed authority identity, leaked reference brand, duplicated subject, impossible physical contact, invented hidden detail, space or UI state, unsupported outcome, missing required disclosure, or unverified fidelity claim is an automatic failure.
 
-For a correction, keep accepted composition and light fixed and name only visible defects. Compare the retry with the original authority, not the failed generation.
+For a correction, convert the highest-impact visible defect into one positive, measurable target, keep every passed authority, composition, and light clause fixed, and compare the retry with the original authority rather than the failed generation.

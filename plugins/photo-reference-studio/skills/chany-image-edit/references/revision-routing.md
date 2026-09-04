@@ -31,6 +31,17 @@ remaining_uncertainties: []
 
 Use up to three user-supplied references only when the active editor supports them and every reference has one declared role.
 
+## Positive, measurable instruction
+
+State the required end state, not the thing to avoid. A prohibition tends to be ignored; a measurable target is checkable.
+
+- Replace a negation with a proportion, dimension, count, or position: "폭은 기준 물체의 1/3" instead of "너무 크게 하지 마", "제품 1개" instead of "여러 개 만들지 마", "뚜껑이 위, 병은 바로 선 상태" instead of "뒤집지 마".
+- Anchor scale to something visible in the frame or to a real-world measurement supplied by the user. Do not invent a dimension the user has not given.
+- Convert each observed defect into one positive clause before retrying, and keep the clauses that already passed unchanged.
+- Reserve the exclusion list for whole categories that must never appear at all (reference brand marks, unapproved people, watermarks, invented copy). Everything else belongs in the positive spec.
+
+A retry prompt that only adds another "do not" is a failed correction. Rewrite it as a measurable state. This prompting rule does not weaken non-negotiable rights, safety, factual, regulatory, disclosure, or authority exclusions.
+
 ## Edit prompt
 
 ```text
@@ -73,9 +84,10 @@ Compare the result with both the accepted asset and the relevant original author
 For the single corrective retry:
 
 1. list observable defects
-2. retain every accepted property
-3. restate only authority facts affected by the defect
-4. repair only the named region
-5. compare again with the original authority, not the failed edit
+2. select the highest-impact defect and state one positive, measurable target
+3. retain every passed property
+4. restate only authority facts affected by the defect
+5. repair only the named region
+6. compare again with the original authority, not the failed edit
 
 After a second failure, return the best still-useful result only with unresolved defects stated plainly.

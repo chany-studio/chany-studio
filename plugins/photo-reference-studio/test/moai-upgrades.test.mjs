@@ -211,7 +211,7 @@ test("paid runtime contract resolves live capabilities, quotes costs, and never 
   assert.match(runtime, /ambiguous outcome[\s\S]+do not send it again/i);
   assert.match(runtime, /Inspect status, history, or the provider job list with the original receipt/i);
   assert.match(runtime, /`changed request`:[^\n]+quote and approve again/i);
-  assert.match(runtime, /requires a new preflight and approval/i);
+  assert.match(runtime, /requires a new paid-generation preflight and approval/i);
 });
 
 test("creative loop binds acceptance to evidence and stops bounded one-defect revisions on regression", async () => {
@@ -285,7 +285,7 @@ test("campaign state keeps specialist handoffs and publication reviews version-b
   );
   assert.match(state, /Attribute optional Moai specialist results with the producer's exact installed name/i);
   assert.match(state, /reviewed-object version, sources and dates, findings, and unresolved questions/i);
-  assert.match(state, /Bind identity authority, consent, UGC manifests, paid-generation approval, and publication review to stable content and asset versions/i);
+  assert.match(state, /Bind identity authority, consent, UGC manifests, assembly manifests, paid-generation approval, and publication review to stable content and asset versions/i);
   assert.match(state, /a version-bound publication status for every asset/i);
 });
 

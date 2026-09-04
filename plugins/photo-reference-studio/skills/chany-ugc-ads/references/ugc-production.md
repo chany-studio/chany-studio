@@ -76,6 +76,8 @@ Use `hook → demonstration or proof → reaction or payoff → CTA`. Every scen
 ```yaml
 scene: 1
 duration: ""
+usp_role: ""              # approved benefit, objection, or claim-ledger item; empty means transitional
+message_rank: 0           # 1 is the primary message for this deliverable; 0 is not a sort rank
 visual_action: ""
 product_state: ""
 spoken_line: ""
@@ -83,6 +85,8 @@ on_screen_text: ""
 audio_or_sfx: ""
 continuity_from_previous: ""
 ```
+
+Order claim-bearing scenes by `message_rank`, not by the order in which the brand lists specifications. `message_rank: 0` marks a transitional scene and must not sort ahead of ranked messages. A cold viewer meets the approved message that answers their situation first, while cause-and-effect and continuity remain intact. Every non-empty `usp_role` must resolve to an approved benefit, objection, or claim-ledger item; it cannot introduce a new USP.
 
 Keep the first one to three seconds decisive for short-form placements, but do not manufacture sensational claims. Spoken copy, captions, overlays, CTA, price, offer, and legal copy share the same approved-copy authority.
 
@@ -171,6 +175,20 @@ For any UI, account, customer, workplace, or service-process demonstration:
 3. Inspect the actual derivative for credentials, secrets, access tokens, session values, private IDs, customer data, and confidential or regulated content. Do not repeat those values in prompts, manifests, filenames, captions, or logs.
 4. Obtain a separate upload approval naming the exact derivative, external media service, purpose, and allowed transformation. Capture approval alone does not authorize upload.
 5. If safe redaction or authority cannot be verified, stop and use synthetic reconstruction that is clearly labelled when material.
+
+## Approved-still-first rule
+
+Do not generate a product scene from text alone when a source-faithful still can be approved first. A still is cheaper to reject, but creating that still can itself be a paid operation and must follow the shared cost contract.
+
+1. For every scene that shows the product, select or create an approved still before the paid video call. Prefer the accepted campaign master or an accepted `chany-campaign-visual` output rather than re-describing the subject in words.
+2. Record the still's stable asset and version ID, then attach it using the conditioning first-frame role exposed by the active tool schema. Do not assume that a generic image role becomes the first frame.
+3. When the schema exposes a mode selector, resolve and use the image-conditioned mode. Never hardcode a remembered model, mode, or role name into the request.
+4. If an immediate validation response says the reference is unsupported for the selected mode or role, classify mode and role compatibility before changing the prompt. Preserve the same approved still and prompt meaning. Confirm from the response and provider records that no chargeable job was created; if the outcome or charge state is ambiguous, inspect the original job or receipt and do not resubmit.
+5. A changed mode, workflow, input-role mapping, or billable option creates a changed paid-request version. Refresh any available quote and obtain approval under the shared runtime contract before submitting the corrected request.
+6. Submit one approved generation at a time within the accepted attempt and credit ceiling, inspect the actual result, and only then continue to the next scene or variant.
+7. If no still can be approved for a product scene, state why and generate that scene only after the user accepts the added fidelity and cost risk through a new paid-generation approval.
+
+For every generated clip, report its scene, governing still asset/version ID, resolved workflow or mode, resolved first-frame role, accepted clip version, and observed defects. Record the provider job reference internally under the shared runtime contract, never expose a transient or internal handle, and bind the accepted clip version in the shared campaign state's UGC manifest. A timeout, disconnect, or unknown charge state is never treated as a prompt or mode error.
 
 ## Higgsfield execution
 

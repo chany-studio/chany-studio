@@ -34,7 +34,7 @@ Read [references/moai-chain.md](references/moai-chain.md) whenever `.moai/` exis
 - **chany-only** skips Moai detection and creates only the Chany project layer.
 - **update** changes only Chany-managed content and the approved runtime delegation configuration after showing the proposed diff.
 - **status** summarizes the brief, approvals, pending decisions, active skill chain, and next action without writing.
-- **doctor** checks structure, instruction precedence, imports, formats, runtime delegation, skill references, secrets, and stale state without writing. Apply repairs only when the user separately approves them.
+- **doctor** checks structure, instruction precedence, imports, formats, runtime delegation, skill references, secrets, and stale state without writing project files. When active project work includes assembly, reference-video extraction, or batch image processing, route only the required non-destructive environment checks to `chany-preflight`; doctor must not install, upgrade, or leave persistent tool-check artifacts. Apply project-file repairs only when the user separately approves them.
 
 Do not implement automatic self-evolution. Corrections become project changes only through an explicit setup or update request.
 

@@ -35,7 +35,7 @@ paid_generation_approval:
 
 Use the server-returned cost and balance when available; do not estimate them from an old price table. If cost is unavailable, say so and stop at the user's stated credit boundary. Approval may use a structured question when the host supports it, ordinary conversation when it does not, or an explicit blocker when an outer orchestrator owns user interaction.
 
-One approval covers only the displayed version. A change to prompt meaning, authoritative inputs or roles, model or workflow, billable options, count, duration, ratios, locales, or batch ceiling requires a new preflight and approval. A harmless display-format change does not.
+One approval covers only the displayed version. A change to prompt meaning, authoritative inputs or roles, model or workflow, billable options, count, duration, ratios, locales, or batch ceiling requires a new paid-generation preflight and approval. A harmless display-format change does not.
 
 An operating-system permission dialog, connector authorization, account login, file picker, or upload confirmation is not approval of creative content, credit use, training, or the paid request. Keep those decisions separate.
 

@@ -4,7 +4,7 @@ Chany's Studio는 Claude와 ChatGPT Work에서 같은 프로젝트 지침을 사
 
 ## 어떤 스킬을 써야 하나요?
 
-Chany's Studio 2.2.0은 두 축을 함께 사용합니다.
+Chany's Studio 2.2.1은 두 축을 함께 사용합니다.
 
 1. **업종 오버레이**는 고객이 왜 선택하는지, 어떤 근거가 필요한지, 어떤 표현을 피해야 하는지와 그 업종다운 촬영·연출 방향을 정합니다.
 2. **공통 제작 스킬**은 브리프, 레퍼런스 보드, 키비주얼, 상세페이지, 광고, 편집, 모델·패션 또는 UGC 같은 실제 산출물을 만듭니다.
@@ -30,6 +30,8 @@ ChatGPT Work의 명시 호출은 `@스킬명`, Codex의 명시 호출은 `$스�
 | 기존 이미지 부분 수정 | ChatGPT `@chany-image-edit` · Codex `$chany-image-edit` |
 | 성인 모델·패션 착장 | ChatGPT `@chany-model-fashion` · Codex `$chany-model-fashion` |
 | 리뷰·언박싱·튜토리얼 UGC | ChatGPT `@chany-ugc-ads` · Codex `$chany-ugc-ads` |
+| 승인 클립 조립·훅 변형·성과표 | ChatGPT `@chany-video-assembly` · Codex `$chany-video-assembly` |
+| 로컬 미디어 도구·한글 폰트 점검 | ChatGPT `@chany-preflight` · Codex `$chany-preflight` |
 | 최종 광고·상세페이지·메시지·UGC 게시 검토 | ChatGPT `@chany-publication-review` · Codex `$chany-publication-review` |
 
 ### 업종 오버레이 11개
@@ -65,7 +67,7 @@ chany-hospitality-travel → chany-marketing-brief → chany-reference-board →
 chany-healthcare-marketing → chany-marketing-brief → chany-ad-creative → chany-publication-review
 
 SaaS 데모 UGC
-chany-digital-product-marketing → chany-marketing-brief → chany-ugc-ads
+chany-digital-product-marketing → chany-marketing-brief → chany-ugc-ads → chany-video-assembly
 
 채용 캠페인
 chany-corporate-employer → chany-marketing-brief → chany-ugc-ads 또는 chany-ad-creative
@@ -187,7 +189,7 @@ Codex: $chany-studio로 이 제품의 광고 캠페인을 구성해줘.
 
 전체 캠페인의 기본 순서는 다음과 같습니다.
 
-`브리프 → 원본 잠금 → 레퍼런스 선택 → 키비주얼 승인 → 상세페이지 → 광고 변형 → UGC → 전체 검수 → 필요한 최종 게시 검토`
+`브리프 → 원본 잠금 → 레퍼런스 선택 → 키비주얼 승인 → 상세페이지 → 광고 변형 → UGC 클립 승인 → 필요한 경우 로컬 환경 점검·영상 조립 → 전체 검수 → 필요한 최종 게시 검토`
 
 유료 생성 전에는 현재 연결에서 실제로 제공되는 도구·모델·옵션을 다시 확인합니다. 무료 견적 기능이 있으면 먼저 사용하고, 최종 프롬프트, 입력별 역할, 선택된 워크플로와 옵션, 산출물 수, 서버 조정값, 제공자가 반환한 크레딧 정보와 전체 한도를 보여준 뒤 승인을 받습니다. 시간초과나 연결 끊김으로 결제 여부가 모호하면 같은 요청을 다시 보내지 않고 기존 작업 상태부터 확인합니다. 프롬프트·입력·모델·유료 옵션·수량이 달라지면 새 요청으로 다시 견적과 승인을 받습니다.
 
@@ -310,12 +312,31 @@ Codex: $chany-ugc-ads로 이 제품의 15초 9:16 리뷰형 UGC 광고를 만들
 2. 훅, 근거, 제품 시연과 CTA
 3. 제품 및 크리에이터 권위 입력
 4. 음성·자막·언어
-5. 샷과 제품 노출 시간
-6. 최종 영상의 제품 정확도, 카피와 전환 흐름
+5. USP 역할과 메시지 우선순위가 연결된 샷 구성
+6. 제품 장면별 승인 스틸과 현재 도구가 노출하는 첫 프레임 역할
+7. 최종 영상의 제품 정확도, 카피와 전환 흐름
 
-Higgsfield MCP가 지원하는 UGC 워크플로는 Claude 안에서 실행할 수 있습니다. Marketing Studio 템플릿이 필요한 작업은 입력과 템플릿을 준비한 뒤 Higgsfield 웹에서 완료합니다.
+사용자가 영상 레퍼런스 파일을 제공하면 로컬에서 일정 간격의 프레임과 컨택트시트를 만들고 비트별 변화와 타이밍을 먼저 분석합니다. 플랫폼 영상을 직접 내려받거나 내용·인물·브랜드를 복제하지 않습니다. Higgsfield MCP가 지원하는 UGC 워크플로는 Claude 안에서 실행할 수 있습니다. Marketing Studio 템플릿이 필요한 작업은 입력과 템플릿을 준비한 뒤 Higgsfield 웹에서 완료합니다.
 
-## 10. 게시 전 검토
+## 10. 실행 환경 점검
+
+```text
+ChatGPT Work: @chany-preflight로 프로젝트에 영구 변경을 남기지 않고 이번 영상 조립에 필요한 도구와 한글 폰트를 점검해줘.
+Codex: $chany-preflight로 프로젝트에 영구 변경을 남기지 않고 이번 영상 조립에 필요한 도구와 한글 폰트를 점검해줘.
+```
+
+환경 점검은 실제 버전·기능 명령과 승인 문구의 글리프 증거를 사용해 `사용 가능`, `누락`, `관찰 불가`, `차단`을 구분합니다. 읽기만으로 글리프를 확인할 수 없을 때는 운영체제 임시 공간에서 고유한 샘플을 검사하고 즉시 정리하며 프로젝트에는 남기지 않습니다. 처음에는 아무것도 설치하지 않으며, 보완이 필요하면 현재 운영체제와 실제 패키지 관리자를 확인한 해결안과 변경 범위를 먼저 보여주고 별도 승인을 받습니다. 이는 Higgsfield 유료 생성 전 비용·입력·모델을 확인하는 사전검토와 다른 단계입니다.
+
+## 11. 영상 조립과 훅 변형
+
+```text
+ChatGPT Work: @chany-video-assembly로 승인된 클립을 지정한 세로 규격으로 조립하고 훅만 다른 v01·v02와 빈 성과 입력표를 만들어줘.
+Codex: $chany-video-assembly로 승인된 클립을 지정한 세로 규격으로 조립하고 훅만 다른 v01·v02와 빈 성과 입력표를 만들어줘.
+```
+
+조립은 승인된 샷 순서와 카피를 그대로 사용합니다. 입력과 최종 파일을 실제로 측정하고, 오디오가 없는 클립에는 목표 오디오 형식의 무음을 넣으며, 기존 경로를 덮어쓰지 않습니다. 비율·픽셀 크기·프레임률·길이 제한은 사용자가 준 납품 사양이나 확인 시점의 공식 플랫폼 자료에서 정하고 기억한 기본값으로 채우지 않습니다. 공식 자료가 범위만 주면 정확한 값은 사용자가 선택할 때까지 조립을 시작하지 않습니다. 훅 변형에서는 텍스트 한 요소만 바꾸고 컷·오디오·서체·위치·내보내기 설정은 고정합니다.
+
+## 12. 게시 전 검토
 
 ```text
 ChatGPT Work: @chany-publication-review로 이 광고의 정확한 문구, 제안 조건, 권리와 최종 렌더 버전을 검수해줘.

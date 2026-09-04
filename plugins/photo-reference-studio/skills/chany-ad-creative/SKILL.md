@@ -23,6 +23,6 @@ Do not invent scarcity, discounts, prices, availability, outcomes, testimonials,
 
 Inspect the connected tool schema before use. If a website-only Higgsfield feature is not exposed through the active MCP connection, complete the creative brief and input package, state that generation requires the Higgsfield interface, and do not claim it ran.
 
-Paid submission, recovery, and scope changes follow the shared runtime contract exactly. Never blindly resubmit after a timeout, disconnect, or unknown charge state; inspect the original job or receipt first. A changed request requires a new preflight and approval under that contract.
+Paid submission, recovery, and scope changes follow the shared runtime contract exactly. Never blindly resubmit after a timeout, disconnect, or unknown charge state; inspect the original job or receipt first. A changed request requires a new paid-generation preflight and approval under that contract.
 
 Draft layouts may proceed while review inputs are incomplete. Before publication, route every applicable exact final copy, offer, placement, asset, crop, layout, and final-render version to `chany-publication-review`; a draft or a review of a different version is not publication clearance.

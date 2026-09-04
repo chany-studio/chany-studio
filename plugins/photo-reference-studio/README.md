@@ -1,4 +1,4 @@
-# Chany's Studio 2.2.0
+# Chany's Studio 2.2.1
 
 Claude와 ChatGPT Work/Codex에서 함께 쓰는 광고 프로젝트 지침을 설정하고, 업종별 여정·증거·연출·컴플라이언스와 공통 제작 워크플로를 결합해 광고·홍보·마케팅·상세/랜딩·콘텐츠를 기획·제작합니다.
 
@@ -41,6 +41,8 @@ ChatGPT Work에서는 `@스킬명`, Codex에서는 `$스킬명`으로 명시 호
 | ChatGPT `@chany-image-edit` · Codex `$chany-image-edit` | 제한된 부분 수정과 복원 |
 | ChatGPT `@chany-model-fashion` · Codex `$chany-model-fashion` | 성인 모델과 원본 의류 착장 |
 | ChatGPT `@chany-ugc-ads` · Codex `$chany-ugc-ads` | 리뷰, 언박싱, 튜토리얼, SaaS, Try-on과 현지화 UGC |
+| ChatGPT `@chany-video-assembly` · Codex `$chany-video-assembly` | 승인 클립 조립, 지정 규격 통일, 훅 변형과 빈 성과 입력표 |
+| ChatGPT `@chany-preflight` · Codex `$chany-preflight` | 영상·프레임·배치 작업 전 실행 환경과 한글 폰트 점검 |
 | ChatGPT `@chany-publication-review` · Codex `$chany-publication-review` | 정확한 최종 카피·오퍼·에셋 버전의 근거·권리·채널·최종 렌더 게시 전 검수 |
 
 기존 `@auto-photo-production`(ChatGPT Work)과 `$auto-photo-production`(Codex)은 호환 호출로만 남아 새 `chany-studio` 라우터를 안내합니다.
@@ -84,9 +86,11 @@ Moai의 `project`를 먼저 실행한 뒤 Chany 설정을 이어가는 수동 2�
 1. 제품, 공간, 차량, UI, 프로그램, 사람 등 업종의 사실 기준이 되는 원본을 제공합니다.
 2. 목표, 채널, 필요한 산출물을 말하면 업종 오버레이가 `industry direction packet`을 만듭니다.
 3. 정확히 들어가야 하는 가격·할인·기간·CTA, 증거와 법적 문구를 텍스트로 제공합니다.
-4. 공통 제작 스킬이 승인된 패킷에서 키비주얼, 광고, 상세/랜딩과 UGC를 만듭니다.
-5. Higgsfield 연결 요청이 나오면 호스트의 로그인 화면에서 인증합니다.
-6. 여러 유료 생성이 필요한 경우 산출물 수와 승인 지점을 확인합니다.
+4. 로컬 영상·프레임·배치 작업이 있으면 먼저 현재 환경의 실제 도구와 승인 문구의 한글 글리프를 점검합니다.
+5. Higgsfield 작업이 있으면 호스트의 로그인 화면에서 인증합니다.
+6. 여러 유료 생성이 필요하면 라이브 작업·입력 역할·비용·산출물 수와 승인 지점을 확인합니다.
+7. 공통 제작 스킬이 승인된 패킷과 범위에서 키비주얼, 광고, 상세/랜딩과 UGC를 만듭니다.
+8. 복수 UGC 클립은 모두 승인된 뒤 지정 규격으로 조립하고, 요청 시 훅 하나만 바꾼 변형과 빈 성과 입력표를 만듭니다.
 
 아래에서 사용하는 플랫폼의 첫 줄 하나를 선택하고 나머지 요청을 이어 붙입니다.
 
