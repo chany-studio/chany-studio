@@ -2,10 +2,17 @@
 
 이 프로젝트는 사용자에게 보이는 기능 개편 단위로 버전을 관리합니다.
 
+## 2.1.1 - 2026-09-04
+
+- Claude Cowork 프로젝트 명령을 `/project-studio`와 `/photo-reference-studio:project-studio`로 변경해 다른 프로젝트 관리 플러그인의 `/project`와 충돌하지 않도록 했습니다.
+- ChatGPT Work의 명시적 스킬 호출을 공식 문법인 `@chany-project`로 바로잡고 Codex의 `$chany-project`와 구분했습니다.
+- ChatGPT 또는 Codex에 일반 메시지로 전달된 `/project-studio <설명>`을 `chany-project`로 라우팅하는 호환 별칭을 추가했습니다. 이는 ChatGPT 슬래시 메뉴에 등록되는 명령이 아닙니다.
+- 플러그인 안내, 설치·문제 해결 문서와 Notion 가이드를 런타임별 호출 방식에 맞춰 동기화했습니다.
+
 ## 2.1.0 - 2026-09-04
 
 - Claude Cowork에서 `/project`, 공식 네임스페이스에서 `/photo-reference-studio:project`로 광고·커머스 프로젝트를 설정하는 명령을 추가했습니다.
-- ChatGPT Work/Codex에서 같은 흐름을 실행하는 `$chany-project` 스킬과 자연어 자동 선택을 추가했습니다.
+- ChatGPT Work와 Codex에서 같은 흐름을 실행하는 `chany-project` 스킬과 자연어 자동 선택을 추가했습니다.
 - `AGENTS.md`를 양쪽 런타임의 프로젝트 지침 정본으로 사용하고, Claude의 `CLAUDE.md`는 이를 불러오도록 설계했습니다.
 - 프로젝트 브리프·상태·비밀값 없는 설정, ChatGPT Work 호스팅 위임 규칙과 같은 역할의 Claude·로컬 Codex 프로젝트 에이전트를 생성합니다.
 - 기존 지침 파일은 백업하고 Chany's Studio 관리 구역만 병합하며 `update`, `status`, `doctor` 모드를 제공합니다.

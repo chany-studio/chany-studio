@@ -1,31 +1,37 @@
-# Chany's Studio 2.1.0
+# Chany's Studio 2.1.1
 
 Claude와 ChatGPT Work에서 함께 쓰는 광고 프로젝트 지침을 설정하고, 제품 원본과 승인 문구를 보존하면서 광고·마케팅·상세페이지·홍보 콘텐츠를 분야별 전문 스킬로 기획·제작합니다.
 
 ## 전문 스킬
 
-- `chany-studio`: 여러 결과물을 연결하는 캠페인 라우터
-- `chany-project`: 프로젝트 인터뷰, `AGENTS.md`, 브리프·상태, ChatGPT Work 위임 규칙과 Claude·로컬 Codex 에이전트 설정
-- `chany-marketing-brief`: 목표, 타깃, 메시지, 채널과 에셋 매트릭스
-- `chany-product-assets`: 투명 누끼, 순백 팩샷과 원본 클린업
-- `chany-reference-board`: Behance·Pinterest 레퍼런스 6장 직접 표시
-- `chany-campaign-visual`: 연출컷과 마스터 키비주얼
-- `chany-detail-page`: 상세페이지 이미지 모듈
-- `chany-ad-creative`: 정적 광고, 프로모션 포스터, 배너와 채널 변형
-- `chany-image-edit`: 제한된 부분 수정과 복원
-- `chany-model-fashion`: 성인 모델과 원본 의류 착장
-- `chany-ugc-ads`: 리뷰, 언박싱, 튜토리얼, SaaS, Try-on과 현지화 UGC
+ChatGPT Work에서는 `@스킬명`, Codex에서는 `$스킬명`으로 명시 호출합니다. Claude Cowork에서는 `/project-studio`를 제외한 전문 작업을 자연어로 요청하면 설명에 맞는 스킬이 자동 선택됩니다.
 
-기존 `auto-photo-production`은 호환 호출로만 남아 새 `chany-studio` 라우터를 안내합니다.
+- ChatGPT `@chany-studio` · Codex `$chany-studio`: 여러 결과물을 연결하는 캠페인 라우터
+- ChatGPT `@chany-project` · Codex `$chany-project`: 프로젝트 인터뷰, `AGENTS.md`, 브리프·상태, ChatGPT Work 위임 규칙과 Claude·로컬 Codex 에이전트 설정
+- ChatGPT `@chany-marketing-brief` · Codex `$chany-marketing-brief`: 목표, 타깃, 메시지, 채널과 에셋 매트릭스
+- ChatGPT `@chany-product-assets` · Codex `$chany-product-assets`: 투명 누끼, 순백 팩샷과 원본 클린업
+- ChatGPT `@chany-reference-board` · Codex `$chany-reference-board`: Behance·Pinterest 레퍼런스 6장 직접 표시
+- ChatGPT `@chany-campaign-visual` · Codex `$chany-campaign-visual`: 연출컷과 마스터 키비주얼
+- ChatGPT `@chany-detail-page` · Codex `$chany-detail-page`: 상세페이지 이미지 모듈
+- ChatGPT `@chany-ad-creative` · Codex `$chany-ad-creative`: 정적 광고, 프로모션 포스터, 배너와 채널 변형
+- ChatGPT `@chany-image-edit` · Codex `$chany-image-edit`: 제한된 부분 수정과 복원
+- ChatGPT `@chany-model-fashion` · Codex `$chany-model-fashion`: 성인 모델과 원본 의류 착장
+- ChatGPT `@chany-ugc-ads` · Codex `$chany-ugc-ads`: 리뷰, 언박싱, 튜토리얼, SaaS, Try-on과 현지화 UGC
+
+기존 `@auto-photo-production`(ChatGPT Work)과 `$auto-photo-production`(Codex)은 호환 호출로만 남아 새 `chany-studio` 라우터를 안내합니다.
 
 ## 처음 사용하기
 
 새 프로젝트에서는 먼저 지침을 설정합니다.
 
 ```text
-Claude Cowork: /project 신제품 선크림의 상세페이지와 Meta 광고 프로젝트를 설정해줘.
-ChatGPT Work/Codex: $chany-project로 현재 폴더를 같은 프로젝트로 설정해줘.
+Claude Cowork: /project-studio 신제품 선크림의 상세페이지와 Meta 광고 프로젝트를 설정해줘.
+ChatGPT Work: @chany-project로 현재 폴더를 같은 프로젝트로 설정해줘.
+Codex: $chany-project로 현재 폴더를 같은 프로젝트로 설정해줘.
+호환 별칭: /project-studio 현재 폴더를 같은 프로젝트로 설정해줘.
 ```
+
+ChatGPT의 `/project-studio`는 슬래시 메뉴 명령이 아니라 일반 메시지로 전달될 때 동작하는 호환 별칭입니다.
 
 설정 후 새 작업을 열고 다음 순서로 제작합니다.
 
@@ -35,8 +41,11 @@ ChatGPT Work/Codex: $chany-project로 현재 폴더를 같은 프로젝트로 �
 4. Higgsfield 연결 요청이 나오면 호스트의 로그인 화면에서 인증합니다.
 5. 여러 유료 생성이 필요한 경우 산출물 수와 승인 지점을 확인합니다.
 
+아래에서 사용하는 플랫폼의 첫 줄 하나를 선택하고 나머지 요청을 이어 붙입니다.
+
 ```text
-$chany-studio로 이 제품의 마스터 키비주얼, 상세페이지 모듈 5장,
+ChatGPT Work: @chany-studio로 이 제품의 마스터 키비주얼, 상세페이지 모듈 5장,
+Codex: $chany-studio로 이 제품의 마스터 키비주얼, 상세페이지 모듈 5장,
 1:1·9:16 광고소재와 15초 리뷰형 UGC를 같은 캠페인으로 만들어줘.
 ```
 

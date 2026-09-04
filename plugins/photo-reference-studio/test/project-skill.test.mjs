@@ -5,6 +5,7 @@ import test from "node:test";
 import { fileURLToPath } from "node:url";
 
 const pluginRoot = join(dirname(fileURLToPath(import.meta.url)), "..");
+const repoRoot = join(pluginRoot, "..", "..");
 const skillRoot = join(pluginRoot, "skills", "chany-project");
 
 async function read(relativePath) {
@@ -13,13 +14,25 @@ async function read(relativePath) {
 
 test("project skill exposes cross-runtime entry points and all referenced resources", async () => {
   const skill = await read("SKILL.md");
-  const command = await readFile(join(pluginRoot, "commands", "project.md"), "utf8");
+  const command = await readFile(join(pluginRoot, "commands", "project-studio.md"), "utf8");
+  const openai = await read("agents/openai.yaml");
 
   assert.match(skill, /^name: chany-project$/m);
+  assert.match(skill, /ChatGPT Work: explicitly select `@chany-project`/);
   assert.match(skill, /\$chany-project/);
-  assert.match(skill, /\/photo-reference-studio:project/);
+  assert.match(skill, /literal `\/project-studio <description>` reaches the model as an ordinary message/);
+  assert.match(skill, /not a registered plugin slash command/);
+  assert.match(skill, /\/photo-reference-studio:project-studio/);
+  assert.match(skill, /Do not treat `\/project` as a Chany's Studio entry point/);
   assert.match(command, /Skill\("photo-reference-studio:chany-project"\)/);
   assert.match(command, /\$ARGUMENTS/);
+  assert.match(openai, /ChatGPT에서는 @chany-project/);
+  assert.match(openai, /Codex에서는 \$chany-project/);
+  assert.match(openai, /allow_implicit_invocation: true/);
+  await assert.rejects(
+    readFile(join(pluginRoot, "commands", "project.md"), "utf8"),
+    (error) => error?.code === "ENOENT",
+  );
 
   for (const path of [
     "references/project-contract.md",
@@ -33,6 +46,52 @@ test("project skill exposes cross-runtime entry points and all referenced resour
     "assets/templates/codex-agent.toml.tmpl",
   ]) {
     assert.ok((await read(path)).length > 0, `${path} should not be empty`);
+  }
+});
+
+test("user-facing docs distinguish ChatGPT and Codex skill sigils", async () => {
+  const [rootReadme, pluginReadme, userGuide, installGuide, troubleshooting] = await Promise.all([
+    readFile(join(repoRoot, "README.md"), "utf8"),
+    readFile(join(pluginRoot, "README.md"), "utf8"),
+    readFile(join(repoRoot, "docs", "USER-GUIDE.md"), "utf8"),
+    readFile(join(repoRoot, "docs", "INSTALL-AND-UPDATE.md"), "utf8"),
+    readFile(join(repoRoot, "docs", "TROUBLESHOOTING.md"), "utf8"),
+  ]);
+  const specialistSkills = [
+    "chany-project",
+    "chany-studio",
+    "chany-marketing-brief",
+    "chany-product-assets",
+    "chany-reference-board",
+    "chany-campaign-visual",
+    "chany-detail-page",
+    "chany-ad-creative",
+    "chany-image-edit",
+    "chany-model-fashion",
+    "chany-ugc-ads",
+  ];
+
+  for (const document of [rootReadme, pluginReadme, userGuide]) {
+    for (const skill of specialistSkills) {
+      assert.ok(document.includes(`@${skill}`), `documentation missing ChatGPT invocation @${skill}`);
+      assert.ok(document.includes(`$${skill}`), `documentation missing Codex invocation $${skill}`);
+    }
+  }
+
+  const allDocs = [rootReadme, pluginReadme, userGuide, installGuide, troubleshooting].join("\n");
+  assert.match(allDocs, /\/project-studio/);
+  assert.doesNotMatch(allDocs, /\/project(?=[\s`]|$)/m);
+  assert.doesNotMatch(allDocs, /photo-reference-studio:project(?=[\s`]|$)/m);
+});
+
+test("Codex manifest default prompts use Codex skill sigils only", async () => {
+  const manifest = JSON.parse(
+    await readFile(join(pluginRoot, ".codex-plugin", "plugin.json"), "utf8"),
+  );
+
+  for (const prompt of manifest.interface.defaultPrompt) {
+    assert.match(prompt, /^\$chany-[a-z-]+/);
+    assert.doesNotMatch(prompt, /@chany-/);
   }
 });
 

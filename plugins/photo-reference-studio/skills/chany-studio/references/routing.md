@@ -6,7 +6,7 @@ Project setup is a separate concern: requests to create or update project instru
 
 | User intent | Owner skill | Typical result |
 |---|---|---|
-| initialize or update an advertising-production project | `chany-project` | shared project instructions, brief, state, and paired runtime agents |
+| initialize or update an advertising-production project | `chany-project` | shared project instructions, brief, state, and runtime-specific delegation configuration |
 | campaign strategy, launch plan, message hierarchy, asset plan | `chany-marketing-brief` | approved brief and asset matrix |
 | transparent cutout, background removal, white packshot, source cleanup | `chany-product-assets` | reusable source asset |
 | visual references, mood direction, Behance or Pinterest board | `chany-reference-board` | six visible candidates and Visual DNA |

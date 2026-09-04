@@ -51,21 +51,23 @@ chany-studio/chany-studio
 
 ## 전문 스킬
 
+ChatGPT Work에서 스킬을 직접 고를 때는 `@스킬명`, Codex에서는 `$스킬명`을 사용합니다. Claude Cowork에서는 `/project-studio`를 제외한 전문 작업을 자연어로 요청하면 설명에 맞는 스킬이 자동 선택됩니다.
+
 | 스킬 | 담당 작업 |
 | --- | --- |
-| `$chany-project` | 프로젝트 인터뷰, 공통 `AGENTS.md`, 브리프·상태, ChatGPT Work 위임 규칙과 Claude·로컬 Codex 프로젝트 에이전트 설정 |
-| `$chany-studio` | 두 분야 이상이 연결된 전체 캠페인과 산출물 순서 관리 |
-| `$chany-marketing-brief` | 목표·타깃·메시지·승인 카피·채널·에셋 매트릭스 정리 |
-| `$chany-product-assets` | 투명 누끼, 순백 팩샷, 제품·음식 클린업 |
-| `$chany-reference-board` | Behance·Pinterest 레퍼런스 6장과 Visual DNA |
-| `$chany-campaign-visual` | 연출컷과 텍스트 없는 마스터 키비주얼 |
-| `$chany-detail-page` | 히어로·특징·혜택·디테일·사용 장면·CTA 모듈 |
-| `$chany-ad-creative` | 정적 광고, 프로모션 포스터, 배너, 채널별 재구성 |
-| `$chany-image-edit` | 마스크 편집, 부분 수정, 문구 복원과 제한된 교체 |
-| `$chany-model-fashion` | 성인 모델 일관성, 원본 의류·액세서리 착장 |
-| `$chany-ugc-ads` | 제품 리뷰, 언박싱, 튜토리얼, SaaS, Try-on, 현지화 UGC |
+| ChatGPT `@chany-project` · Codex `$chany-project` | 프로젝트 인터뷰, 공통 `AGENTS.md`, 브리프·상태, ChatGPT Work 위임 규칙과 Claude·로컬 Codex 프로젝트 에이전트 설정 |
+| ChatGPT `@chany-studio` · Codex `$chany-studio` | 두 분야 이상이 연결된 전체 캠페인과 산출물 순서 관리 |
+| ChatGPT `@chany-marketing-brief` · Codex `$chany-marketing-brief` | 목표·타깃·메시지·승인 카피·채널·에셋 매트릭스 정리 |
+| ChatGPT `@chany-product-assets` · Codex `$chany-product-assets` | 투명 누끼, 순백 팩샷, 제품·음식 클린업 |
+| ChatGPT `@chany-reference-board` · Codex `$chany-reference-board` | Behance·Pinterest 레퍼런스 6장과 Visual DNA |
+| ChatGPT `@chany-campaign-visual` · Codex `$chany-campaign-visual` | 연출컷과 텍스트 없는 마스터 키비주얼 |
+| ChatGPT `@chany-detail-page` · Codex `$chany-detail-page` | 히어로·특징·혜택·디테일·사용 장면·CTA 모듈 |
+| ChatGPT `@chany-ad-creative` · Codex `$chany-ad-creative` | 정적 광고, 프로모션 포스터, 배너, 채널별 재구성 |
+| ChatGPT `@chany-image-edit` · Codex `$chany-image-edit` | 마스크 편집, 부분 수정, 문구 복원과 제한된 교체 |
+| ChatGPT `@chany-model-fashion` · Codex `$chany-model-fashion` | 성인 모델 일관성, 원본 의류·액세서리 착장 |
+| ChatGPT `@chany-ugc-ads` · Codex `$chany-ugc-ads` | 제품 리뷰, 언박싱, 튜토리얼, SaaS, Try-on, 현지화 UGC |
 
-기존 `$auto-photo-production` 호출은 한 버전 동안 호환되며 새 `$chany-studio` 라우터로 안내됩니다.
+기존 호출은 ChatGPT Work의 `@auto-photo-production`과 Codex의 `$auto-photo-production`에서 한 버전 동안 호환되며 새 `chany-studio` 라우터로 안내됩니다.
 
 ## 프로젝트부터 시작하기
 
@@ -74,19 +76,31 @@ chany-studio/chany-studio
 Claude Cowork에서는 다음처럼 시작합니다.
 
 ```text
-/project 신제품 선크림의 상세페이지, Meta 광고와 15초 리뷰 UGC 프로젝트를 설정해줘.
+/project-studio 신제품 선크림의 상세페이지, Meta 광고와 15초 리뷰 UGC 프로젝트를 설정해줘.
 ```
 
 짧은 명령이 보이지 않으면 공식 네임스페이스 호출을 사용합니다.
 
 ```text
-/photo-reference-studio:project 신제품 선크림 광고 프로젝트를 설정해줘.
+/photo-reference-studio:project-studio 신제품 선크림 광고 프로젝트를 설정해줘.
 ```
 
-ChatGPT Work와 Codex에서는 같은 기능을 다음처럼 호출합니다.
+ChatGPT Work에서는 `@`로 스킬을 선택합니다.
+
+```text
+@chany-project로 현재 작업 폴더를 신제품 선크림 광고 프로젝트로 설정해줘.
+```
+
+Codex에서는 `$`로 호출합니다.
 
 ```text
 $chany-project로 현재 작업 폴더를 신제품 선크림 광고 프로젝트로 설정해줘.
+```
+
+ChatGPT 또는 Codex에 아래 문장이 일반 메시지로 전달되면 같은 스킬의 호환 별칭으로 처리합니다. ChatGPT 슬래시 메뉴에 등록되는 정식 명령은 아닙니다.
+
+```text
+/project-studio 신제품 선크림 광고 프로젝트를 설정해줘.
 ```
 
 설정이 승인되면 다음을 만듭니다.
@@ -101,10 +115,11 @@ ChatGPT Work는 로컬 Codex의 TOML 에이전트 파일을 전제로 하지 않
 
 ## 바로 시작하기
 
-전체 캠페인은 다음처럼 요청할 수 있습니다.
+전체 캠페인은 다음처럼 요청할 수 있습니다. 플랫폼에 맞는 첫 줄 하나를 선택하고 나머지 요청을 이어 붙입니다.
 
 ```text
-$chany-studio로 이 제품의 마케팅 캠페인을 만들어줘.
+ChatGPT Work: @chany-studio로 이 제품의 마케팅 캠페인을 만들어줘.
+Codex: $chany-studio로 이 제품의 마케팅 캠페인을 만들어줘.
 제품 누끼와 팩샷, 마스터 키비주얼, 상세페이지 모듈 5장,
 1:1·4:5·9:16 광고소재와 15초 제품 리뷰 UGC를 같은 방향으로 구성해줘.
 유료 생성 전에 산출물 수와 승인 지점을 먼저 보여줘.
@@ -113,9 +128,14 @@ $chany-studio로 이 제품의 마케팅 캠페인을 만들어줘.
 한 가지 결과가 분명하면 해당 전문 스킬을 바로 호출합니다.
 
 ```text
-$chany-detail-page로 승인된 키비주얼을 사용해 상세페이지 모듈 5장을 만들어줘.
-$chany-ad-creative로 이 프로모션의 1:1 피드와 9:16 스토리 광고를 만들어줘.
-$chany-ugc-ads로 이 제품의 자연스러운 9:16 언박싱 광고를 만들어줘.
+ChatGPT Work: @chany-detail-page로 승인된 키비주얼을 사용해 상세페이지 모듈 5장을 만들어줘.
+Codex: $chany-detail-page로 승인된 키비주얼을 사용해 상세페이지 모듈 5장을 만들어줘.
+
+ChatGPT Work: @chany-ad-creative로 이 프로모션의 1:1 피드와 9:16 스토리 광고를 만들어줘.
+Codex: $chany-ad-creative로 이 프로모션의 1:1 피드와 9:16 스토리 광고를 만들어줘.
+
+ChatGPT Work: @chany-ugc-ads로 이 제품의 자연스러운 9:16 언박싱 광고를 만들어줘.
+Codex: $chany-ugc-ads로 이 제품의 자연스러운 9:16 언박싱 광고를 만들어줘.
 ```
 
 ## 캠페인 제작 순서
@@ -159,7 +179,7 @@ $chany-ugc-ads로 이 제품의 자연스러운 9:16 언박싱 광고를 만들�
 /reload-plugins
 ```
 
-업데이트 후 버전이 **2.1.0**인지 확인하고 새 대화 또는 새 작업을 시작하세요.
+업데이트 후 버전이 **2.1.1**인지 확인하고 새 대화 또는 새 작업을 시작하세요.
 
 ## 외부 서비스와 데이터
 
@@ -189,7 +209,7 @@ $chany-ugc-ads로 이 제품의 자연스러운 9:16 언박싱 광고를 만들�
     ├── .mcp.claude.json
     ├── .mcp.json
     ├── assets/
-    ├── commands/project.md
+    ├── commands/project-studio.md
     ├── mcp/reference-preview/
     └── skills/
 ```

@@ -1,6 +1,6 @@
 ---
 name: chany-project
-description: Initialize, inspect, or safely update a file-backed Chany's Studio advertising and commerce project with a canonical AGENTS.md, a Claude import, project brief and state, ChatGPT Work delegation guidance, and matched Claude/local-Codex project agents. Use when the user asks to start, set up, organize, diagnose, or update a marketing, detail-page, promotion, product-content, fashion, or UGC production project; not for producing one deliverable inside an already configured project.
+description: Initialize, inspect, diagnose, or safely update a file-backed Chany's Studio advertising and commerce project with a canonical AGENTS.md, a Claude import, project brief and state, ChatGPT Work delegation guidance, and matched Claude/local-Codex project agents. Use when the user asks to start, set up, organize, inspect, diagnose, or update a marketing, detail-page, promotion, product-content, fashion, or UGC production project; when they invoke ChatGPT's @chany-project, Codex's $chany-project, Claude's /project-studio, or a literal /project-studio plain-text compatibility alias; not for producing one deliverable inside an already configured project.
 ---
 
 # Chany's Studio project setup
@@ -11,8 +11,10 @@ This skill configures the current project folder. It does not create a cloud Pro
 
 ## Entry points
 
-- Claude Cowork: `/project <description>`. If the short form is not surfaced, use `/photo-reference-studio:project <description>`.
-- ChatGPT Work/Codex: `$chany-project` or a natural-language request such as “이 폴더를 신제품 광고 프로젝트로 설정해줘.”
+- Claude Cowork: `/project-studio <description>`. If the short form is not surfaced, use `/photo-reference-studio:project-studio <description>`.
+- ChatGPT Work: explicitly select `@chany-project`, or use a natural-language request such as “이 폴더를 신제품 광고 프로젝트로 설정해줘.” If a literal `/project-studio <description>` reaches the model as an ordinary message, treat it as a compatibility alias for this skill. Do not claim that it is registered in ChatGPT's slash-command menu; if the composer intercepts it, tell the user to select `@chany-project`.
+- Codex: use `$chany-project` or the same natural-language request. A literal `/project-studio <description>` that arrives as prompt text is also a compatibility alias, not a registered plugin slash command.
+- Do not treat `/project` as a Chany's Studio entry point. It is intentionally left available to other project-management tools.
 - Treat the text after the invocation as project context. Do not ask for information already present there, in attached files, or in existing project records.
 
 ## Modes

@@ -4,21 +4,23 @@ Chany's Studio는 Claude와 ChatGPT Work에서 같은 프로젝트 지침을 사
 
 ## 어떤 스킬을 써야 하나요?
 
-한 가지 결과가 분명하면 해당 전문 스킬을 바로 사용합니다. 키비주얼, 상세페이지, 광고, UGC처럼 두 분야 이상이 연결되면 `$chany-studio`를 사용합니다.
+한 가지 결과가 분명하면 해당 전문 스킬을 바로 사용합니다. 키비주얼, 상세페이지, 광고, UGC처럼 두 분야 이상이 연결되면 ChatGPT Work의 `@chany-studio` 또는 Codex의 `$chany-studio`를 사용합니다. ChatGPT Work의 명시 호출은 `@스킬명`, Codex의 명시 호출은 `$스킬명`이며 자연어만으로도 설명에 맞는 스킬을 자동 선택할 수 있습니다. Claude Cowork에서는 `/project-studio` 슬래시 명령을 제외한 전문 작업을 자연어로 요청해 자동 선택합니다.
+
+아래 예시의 `ChatGPT Work`와 `Codex` 호출 줄은 서로 대안입니다. 사용하는 플랫폼의 한 줄만 선택하고 이어지는 요청을 함께 입력하세요.
 
 | 원하는 결과 | 사용할 스킬 |
 | --- | --- |
-| 새 프로젝트 지침·브리프·에이전트 설정 | `$chany-project` |
-| 전체 캠페인 또는 여러 산출물 | `$chany-studio` |
-| 캠페인 목표·타깃·메시지·산출물 계획 | `$chany-marketing-brief` |
-| 누끼·순백 팩샷·제품 클린업 | `$chany-product-assets` |
-| Behance·Pinterest 레퍼런스 비교 | `$chany-reference-board` |
-| 제품 연출컷·마스터 키비주얼 | `$chany-campaign-visual` |
-| 상세페이지 이미지 모듈 | `$chany-detail-page` |
-| 광고·포스터·배너·채널 변형 | `$chany-ad-creative` |
-| 기존 이미지 부분 수정 | `$chany-image-edit` |
-| 성인 모델·패션 착장 | `$chany-model-fashion` |
-| 리뷰·언박싱·튜토리얼 UGC | `$chany-ugc-ads` |
+| 새 프로젝트 지침·브리프·에이전트 설정 | ChatGPT `@chany-project` · Codex `$chany-project` |
+| 전체 캠페인 또는 여러 산출물 | ChatGPT `@chany-studio` · Codex `$chany-studio` |
+| 캠페인 목표·타깃·메시지·산출물 계획 | ChatGPT `@chany-marketing-brief` · Codex `$chany-marketing-brief` |
+| 누끼·순백 팩샷·제품 클린업 | ChatGPT `@chany-product-assets` · Codex `$chany-product-assets` |
+| Behance·Pinterest 레퍼런스 비교 | ChatGPT `@chany-reference-board` · Codex `$chany-reference-board` |
+| 제품 연출컷·마스터 키비주얼 | ChatGPT `@chany-campaign-visual` · Codex `$chany-campaign-visual` |
+| 상세페이지 이미지 모듈 | ChatGPT `@chany-detail-page` · Codex `$chany-detail-page` |
+| 광고·포스터·배너·채널 변형 | ChatGPT `@chany-ad-creative` · Codex `$chany-ad-creative` |
+| 기존 이미지 부분 수정 | ChatGPT `@chany-image-edit` · Codex `$chany-image-edit` |
+| 성인 모델·패션 착장 | ChatGPT `@chany-model-fashion` · Codex `$chany-model-fashion` |
+| 리뷰·언박싱·튜토리얼 UGC | ChatGPT `@chany-ugc-ads` · Codex `$chany-ugc-ads` |
 
 ## 0. 프로젝트 설정
 
@@ -26,13 +28,19 @@ Chany's Studio는 Claude와 ChatGPT Work에서 같은 프로젝트 지침을 사
 
 ```text
 Claude Cowork
-/project 신제품 선크림의 상세페이지, Meta 광고 3종과 15초 리뷰 UGC 프로젝트를 설정해줘.
+/project-studio 신제품 선크림의 상세페이지, Meta 광고 3종과 15초 리뷰 UGC 프로젝트를 설정해줘.
 
-ChatGPT Work/Codex
+ChatGPT Work
+@chany-project로 현재 작업 폴더를 신제품 선크림 광고 프로젝트로 설정해줘.
+
+Codex
 $chany-project로 현재 작업 폴더를 신제품 선크림 광고 프로젝트로 설정해줘.
+
+일반 메시지 호환 별칭
+/project-studio 신제품 선크림 광고 프로젝트를 설정해줘.
 ```
 
-Claude에서 `/project`가 보이지 않으면 `/photo-reference-studio:project`를 사용합니다. ChatGPT Work에는 플러그인 슬래시 명령 대신 `$chany-project`와 자연어 자동 선택이 제공됩니다.
+Claude에서 `/project-studio`가 보이지 않으면 `/photo-reference-studio:project-studio`를 사용합니다. ChatGPT Work의 공식 명시 호출은 `@chany-project`, Codex는 `$chany-project`입니다. ChatGPT 또는 Codex에 `/project-studio …`가 일반 메시지로 전달되면 호환 별칭으로 처리하지만 ChatGPT 슬래시 메뉴에 등록되는 명령은 아닙니다.
 
 생성되는 공통 구조:
 
@@ -51,9 +59,13 @@ CLAUDE.md                         @AGENTS.md를 불러오는 Claude용 연결 �
 후속 관리:
 
 ```text
-$chany-project status
-$chany-project update 상세페이지에 일본어 버전을 추가해줘.
-$chany-project doctor
+ChatGPT: @chany-project status
+ChatGPT: @chany-project update 상세페이지에 일본어 버전을 추가해줘.
+ChatGPT: @chany-project doctor
+
+Codex: $chany-project status
+Codex: $chany-project update 상세페이지에 일본어 버전을 추가해줘.
+Codex: $chany-project doctor
 ```
 
 설정 또는 업데이트가 끝나면 새 대화나 새 작업을 열어 프로젝트 지침과 에이전트를 다시 불러옵니다.
@@ -61,7 +73,8 @@ $chany-project doctor
 ## 전체 캠페인 요청
 
 ```text
-$chany-studio로 이 제품의 광고 캠페인을 구성해줘.
+ChatGPT Work: @chany-studio로 이 제품의 광고 캠페인을 구성해줘.
+Codex: $chany-studio로 이 제품의 광고 캠페인을 구성해줘.
 투명 누끼와 백색 팩샷, 마스터 키비주얼, 상세페이지 모듈 5장,
 1:1·4:5·9:16 광고소재와 15초 리뷰형 UGC가 필요해.
 먼저 산출물 수, 승인 지점과 필요한 정확한 문구를 정리해줘.
@@ -76,7 +89,8 @@ $chany-studio로 이 제품의 광고 캠페인을 구성해줘.
 제품 사진이나 URL을 제공하고 목표를 말하면 타깃, 핵심 메시지, 채널, 승인 카피와 산출물 계획을 정리합니다.
 
 ```text
-$chany-marketing-brief로 이 신제품의 인스타그램 런칭 캠페인을 설계해줘.
+ChatGPT Work: @chany-marketing-brief로 이 신제품의 인스타그램 런칭 캠페인을 설계해줘.
+Codex: $chany-marketing-brief로 이 신제품의 인스타그램 런칭 캠페인을 설계해줘.
 인지도와 첫 구매 전환이 목표고 예산을 낭비하지 않게 최소 산출물부터 제안해줘.
 ```
 
@@ -85,7 +99,8 @@ $chany-marketing-brief로 이 신제품의 인스타그램 런칭 캠페인을 �
 ## 2. 제품 에셋
 
 ```text
-$chany-product-assets로 이 제품을 원본 픽셀과 라벨을 보존한 투명 PNG 누끼와 #FFFFFF 팩샷으로 만들어줘.
+ChatGPT Work: @chany-product-assets로 이 제품을 원본 픽셀과 라벨을 보존한 투명 PNG 누끼와 #FFFFFF 팩샷으로 만들어줘.
+Codex: $chany-product-assets로 이 제품을 원본 픽셀과 라벨을 보존한 투명 PNG 누끼와 #FFFFFF 팩샷으로 만들어줘.
 ```
 
 - 투명 누끼에는 바닥, 그림자와 글로우를 넣지 않습니다.
@@ -95,7 +110,8 @@ $chany-product-assets로 이 제품을 원본 픽셀과 라벨을 보존한 투�
 ## 3. 레퍼런스 보드
 
 ```text
-$chany-reference-board로 이 제품에 맞는 촬영 레퍼런스 6장을 찾아줘.
+ChatGPT Work: @chany-reference-board로 이 제품에 맞는 촬영 레퍼런스 6장을 찾아줘.
+Codex: $chany-reference-board로 이 제품에 맞는 촬영 레퍼런스 6장을 찾아줘.
 Behance와 Pinterest 후보를 링크만 주지 말고 이 대화 안에 이미지로 보여주고,
 구도·조명·배경·색감·소품의 Visual DNA를 설명해줘.
 ```
@@ -105,7 +121,8 @@ Behance와 Pinterest 후보를 링크만 주지 말고 이 대화 안에 이미�
 ## 4. 캠페인 키비주얼
 
 ```text
-$chany-campaign-visual로 제품 형태와 패키지 문구를 보존한 4:5 마스터 키비주얼을 만들어줘.
+ChatGPT Work: @chany-campaign-visual로 제품 형태와 패키지 문구를 보존한 4:5 마스터 키비주얼을 만들어줘.
+Codex: $chany-campaign-visual로 제품 형태와 패키지 문구를 보존한 4:5 마스터 키비주얼을 만들어줘.
 프리미엄 미니멀 무드, 부드러운 확산광, 우측 카피 여백으로 구성해줘.
 ```
 
@@ -114,7 +131,8 @@ $chany-campaign-visual로 제품 형태와 패키지 문구를 보존한 4:5 마
 ## 5. 상세페이지
 
 ```text
-$chany-detail-page로 승인된 키비주얼 톤을 유지해 상세페이지 모듈 5장을 만들어줘.
+ChatGPT Work: @chany-detail-page로 승인된 키비주얼 톤을 유지해 상세페이지 모듈 5장을 만들어줘.
+Codex: $chany-detail-page로 승인된 키비주얼 톤을 유지해 상세페이지 모듈 5장을 만들어줘.
 1) 히어로 2) 핵심 특징 3) 사용 장면 4) 소재 디테일 5) 마감 CTA 순서야.
 ```
 
@@ -123,7 +141,8 @@ $chany-detail-page로 승인된 키비주얼 톤을 유지해 상세페이지 �
 ## 6. 광고·포스터·배너
 
 ```text
-$chany-ad-creative로 아래 승인 문구를 사용한 1:1 피드와 9:16 스토리 광고를 만들어줘.
+ChatGPT Work: @chany-ad-creative로 아래 승인 문구를 사용한 1:1 피드와 9:16 스토리 광고를 만들어줘.
+Codex: $chany-ad-creative로 아래 승인 문구를 사용한 1:1 피드와 9:16 스토리 광고를 만들어줘.
 메인: 여름 한정 20% OFF
 기간: 8월 31일까지
 CTA: 지금 구매하기
@@ -134,7 +153,8 @@ CTA: 지금 구매하기
 ## 7. 부분 수정
 
 ```text
-$chany-image-edit로 승인한 이미지에서 배경 밝기만 한 단계 올려줘.
+ChatGPT Work: @chany-image-edit로 승인한 이미지에서 배경 밝기만 한 단계 올려줘.
+Codex: $chany-image-edit로 승인한 이미지에서 배경 밝기만 한 단계 올려줘.
 제품, 라벨, 구도, 크기, 조명 방향, 그림자와 문구는 모두 고정해줘.
 ```
 
@@ -143,7 +163,8 @@ $chany-image-edit로 승인한 이미지에서 배경 밝기만 한 단계 올�
 ## 8. 모델과 패션
 
 ```text
-$chany-model-fashion으로 첨부한 성인 모델의 얼굴·헤어·체형을 고정하고,
+ChatGPT Work: @chany-model-fashion으로 첨부한 성인 모델의 얼굴·헤어·체형을 고정하고,
+Codex: $chany-model-fashion으로 첨부한 성인 모델의 얼굴·헤어·체형을 고정하고,
 원피스와 가방을 원본 구조와 색상 그대로 착장한 3:4 전신 광고 이미지를 만들어줘.
 ```
 
@@ -152,7 +173,8 @@ $chany-model-fashion으로 첨부한 성인 모델의 얼굴·헤어·체형을 
 ## 9. UGC 광고
 
 ```text
-$chany-ugc-ads로 이 제품의 15초 9:16 리뷰형 UGC 광고를 만들어줘.
+ChatGPT Work: @chany-ugc-ads로 이 제품의 15초 9:16 리뷰형 UGC 광고를 만들어줘.
+Codex: $chany-ugc-ads로 이 제품의 15초 9:16 리뷰형 UGC 광고를 만들어줘.
 첫 2초에 문제 상황을 보여주고, 실제 사용 장면과 제품 클로즈업 뒤 승인 CTA로 끝내줘.
 같은 성인 크리에이터와 제품 형태를 모든 장면에서 유지해줘.
 ```

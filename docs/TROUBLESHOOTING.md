@@ -16,7 +16,7 @@ https://github.com/chany-studio/chany-studio
 
 다음 상태는 이전 설치본일 가능성이 높습니다.
 
-- 버전이 `2.1.0`보다 낮음
+- 버전이 `2.1.1`보다 낮음
 - 대표 스킬 `chany-studio`가 없음
 - 상세페이지·광고·UGC가 전문 스킬로 분리되어 있지 않음
 - 레퍼런스를 이미지 대신 링크나 HTML만 제공함
@@ -28,16 +28,19 @@ Refresh 또는 Update 후 반드시 새 대화나 새 작업을 시작하세요.
 2.0에서는 `auto-photo-production`이 이전 요청과 문서를 위한 호환 안내로만 남습니다. 새 작업에서는 다음처럼 시작하세요.
 
 ```text
-$chany-studio로 이 제품의 광고 캠페인을 시작해줘.
+Claude Cowork(자연어 자동 선택): 이 제품의 광고 캠페인을 시작해줘.
+ChatGPT Work: @chany-studio로 이 제품의 광고 캠페인을 시작해줘.
+Codex: $chany-studio로 이 제품의 광고 캠페인을 시작해줘.
 ```
 
-한 가지 결과라면 `$chany-detail-page`, `$chany-ad-creative`, `$chany-ugc-ads`처럼 해당 전문 스킬을 직접 사용합니다.
+한 가지 결과라면 ChatGPT Work에서 `@chany-detail-page`, `@chany-ad-creative`, `@chany-ugc-ads`처럼 `@`로, Codex에서 `$chany-detail-page`, `$chany-ad-creative`, `$chany-ugc-ads`처럼 `$`로 해당 전문 스킬을 직접 사용합니다. Claude Cowork에서는 원하는 결과를 자연어로 요청하면 해당 전문 스킬을 자동 선택합니다.
 
-## `/project` 또는 `chany-project`가 보이지 않음
+## `/project-studio` 또는 `chany-project`가 보이지 않음
 
-- 설치 상세 버전이 `2.1.0`인지 확인하고 Refresh 또는 Update합니다.
-- Claude Cowork에서 짧은 `/project`가 보이지 않으면 `/photo-reference-studio:project`를 사용합니다.
-- ChatGPT Work/Codex는 플러그인 `commands/`를 사용하지 않으므로 `$chany-project` 또는 “현재 폴더를 광고 프로젝트로 설정해줘”라고 요청합니다.
+- 설치 상세 버전이 `2.1.1`인지 확인하고 Refresh 또는 Update합니다.
+- Claude Cowork에서 짧은 `/project-studio`가 보이지 않으면 `/photo-reference-studio:project-studio`를 사용합니다.
+- ChatGPT Work는 `@chany-project`, Codex는 `$chany-project` 또는 “현재 폴더를 광고 프로젝트로 설정해줘”라고 요청합니다.
+- ChatGPT에서 `/project-studio …`는 슬래시 메뉴에 등록되지 않습니다. 일반 메시지로 전송되면 호환 별칭으로 처리되며, 입력창에서 가로막히면 `@chany-project`를 사용합니다.
 - 업데이트 후 새 대화나 새 작업을 시작합니다. `AGENTS.md`, `CLAUDE.md`와 런타임별 설정은 다음 세션에서 확실히 로드됩니다. `.codex/agents/*.toml`은 로컬 Codex 클라이언트용이며 ChatGPT Work는 `AGENTS.md`의 호스팅 위임 규칙을 사용합니다.
 
 ## 프로젝트 지침을 만들 수 없음
@@ -73,7 +76,7 @@ MCP에서 직접 실행 가능한 일반 이미지·영상·Soul·오디오 또�
 - 제품 이미지와 크리에이터 이미지의 역할을 각각 지정합니다.
 - 목표 길이, 비율, 유형과 승인 CTA를 제공합니다.
 - 여러 생성 단계가 있다면 크레딧 사용 범위 확인에 답합니다.
-- 해당 템플릿이 웹 전용이면 `$chany-ugc-ads`가 제공한 입력안을 Marketing Studio에서 실행합니다.
+- 해당 템플릿이 웹 전용이면 ChatGPT Work의 `@chany-ugc-ads` 또는 Codex의 `$chany-ugc-ads`가 제공한 입력안을 Marketing Studio에서 실행합니다.
 
 ```text
 제품 이미지는 제품 권위 입력, 인물 이미지는 성인 크리에이터 권위 입력이야.
@@ -95,7 +98,8 @@ Claude Cowork에서 플러그인 상세의 `reference-preview` 연결과 컴퓨�
 해당 결과를 승인하지 말고 원본을 다시 권위 입력으로 지정합니다.
 
 ```text
-$chany-image-edit로 원본을 다시 권위 입력으로 사용해 관찰된 변형만 복원해줘.
+ChatGPT Work: @chany-image-edit로 원본을 다시 권위 입력으로 사용해 관찰된 변형만 복원해줘.
+Codex: $chany-image-edit로 원본을 다시 권위 입력으로 사용해 관찰된 변형만 복원해줘.
 현재 캠페인 방향, 구도와 조명은 유지해줘.
 ```
 
@@ -117,7 +121,8 @@ CTA: ...
 ## 부분 수정이 전체 이미지를 바꿈
 
 ```text
-$chany-image-edit로 배경 밝기만 수정해줘. 제품, 문구, 구도, 크기, 조명 방향과 그림자는 모두 고정해줘.
+ChatGPT Work: @chany-image-edit로 배경 밝기만 수정해줘. 제품, 문구, 구도, 크기, 조명 방향과 그림자는 모두 고정해줘.
+Codex: $chany-image-edit로 배경 밝기만 수정해줘. 제품, 문구, 구도, 크기, 조명 방향과 그림자는 모두 고정해줘.
 ```
 
 한 번에 한 가지 속성만 요청하고 지원되는 경우 마스크 또는 명확한 영역을 제공합니다.

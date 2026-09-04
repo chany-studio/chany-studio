@@ -1,6 +1,6 @@
 interface:
   display_name: "Chany Project"
   short_description: "광고 프로젝트 지침과 런타임별 위임 설정"
-  default_prompt: "$chany-project로 현재 작업 폴더를 제품 광고 프로젝트로 설정하고 AGENTS.md, 프로젝트 브리프, ChatGPT Work 위임 규칙과 Claude·로컬 Codex용 에이전트를 만들어줘."
+  default_prompt: "ChatGPT에서는 @chany-project, Codex에서는 $chany-project로 현재 작업 폴더를 제품 광고 프로젝트로 설정하고 공통 AGENTS.md와 런타임별 위임 구성을 만들어줘."
 policy:
   allow_implicit_invocation: true

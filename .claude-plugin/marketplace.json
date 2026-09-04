@@ -11,7 +11,7 @@
     {
       "name": "photo-reference-studio",
       "source": "./plugins/photo-reference-studio",
-      "description": "Set up shared Claude and Codex advertising projects, then plan and produce source-faithful campaigns, detail pages, promotional creatives, static ads, and Higgsfield UGC.",
+      "description": "Set up shared Claude, ChatGPT Work, and Codex advertising projects, then plan and produce source-faithful campaigns, detail pages, promotional creatives, static ads, and Higgsfield UGC.",
       "author": {
         "name": "Chany"
       },
