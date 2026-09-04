@@ -1,0 +1,13 @@
+interface:
+  display_name: "Chany's Product Assets"
+  short_description: "제품·음식 원본을 보존한 누끼와 팩샷 전문 제작"
+  default_prompt: "$chany-product-assets로 첨부 원본을 보존한 투명 누끼와 순백색 팩샷을 만들어줘."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "higgsfield"
+      description: "Upload source media and perform source-faithful background removal or image editing"
+      transport: "streamable_http"
+      url: "https://mcp.higgsfield.ai/mcp"
+policy:
+  allow_implicit_invocation: true

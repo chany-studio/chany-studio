@@ -1,0 +1,6 @@
+interface:
+  display_name: "Chany's Marketing Brief"
+  short_description: "캠페인 목표·메시지·채널·에셋을 제작 브리프로 정리"
+  default_prompt: "$chany-marketing-brief로 이 제품의 타깃, 핵심 메시지, 채널과 필요한 광고·상세페이지 에셋을 제작 가능한 브리프로 정리해줘."
+policy:
+  allow_implicit_invocation: true

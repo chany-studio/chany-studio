@@ -1,0 +1,13 @@
+interface:
+  display_name: "Chany's UGC Ads"
+  short_description: "리뷰·언박싱·튜토리얼·SaaS·착장·현지화 UGC 광고"
+  default_prompt: "$chany-ugc-ads로 이 제품의 9:16 UGC 광고를 훅, 시연, CTA가 있는 리뷰 형식으로 기획하고 Higgsfield에서 제작해줘."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "higgsfield"
+      description: "Create UGC, avatar, product, voice, or localization media exposed by the active Higgsfield connection"
+      transport: "streamable_http"
+      url: "https://mcp.higgsfield.ai/mcp"
+policy:
+  allow_implicit_invocation: true

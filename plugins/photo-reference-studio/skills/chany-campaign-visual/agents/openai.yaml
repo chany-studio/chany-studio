@@ -1,0 +1,13 @@
+interface:
+  display_name: "Chany's Campaign Visual"
+  short_description: "제품 연출컷과 캠페인 마스터 키비주얼 제작 워크플로"
+  default_prompt: "$chany-campaign-visual로 첨부 제품을 보존한 마스터 키비주얼을 만들고 팔레트·조명·소재·크롭 규칙을 잠가줘."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "higgsfield"
+      description: "Create reference-directed campaign imagery from authoritative source media"
+      transport: "streamable_http"
+      url: "https://mcp.higgsfield.ai/mcp"
+policy:
+  allow_implicit_invocation: true

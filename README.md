@@ -1,127 +1,123 @@
-# AI Photo Reference Studio
+# Chany's Studio
 
-![AI Photo Reference Studio](plugins/photo-reference-studio/assets/logo.png)
+![Chany's Studio](plugins/photo-reference-studio/assets/logo.png)
 
-원본 제품·음식·모델·의류 사진을 보존하면서 **누끼와 팩샷부터 키비주얼, 상세페이지 이미지, 착장샷, 배너와 정적 광고소재까지** 하나의 캠페인 톤으로 만드는 ChatGPT/Codex 및 Claude 플러그인입니다.
+제품 원본과 승인 문구를 보존하면서 **광고·마케팅·상세페이지·홍보 콘텐츠**를 기획하고 제작하는 ChatGPT/Codex 및 Claude 플러그인입니다. 한 개의 거대한 지침 대신 캠페인 기획, 제품 에셋, 레퍼런스, 키비주얼, 상세페이지, 광고, 편집, 패션, UGC를 각각의 전문 스킬로 제공합니다.
 
-> [공식 설치·사용설명서 (Notion)](https://jolly-phlox-79c.notion.site/AI-Photo-Reference-Studio-v1-0-3c783e9464668140b794ee076be24406) · [문제 해결](https://jolly-phlox-79c.notion.site/AI-Photo-Reference-Studio-3c783e94646681c8b3f2ddfe499c40db)
+> [공식 설치·사용설명서 (Notion)](https://jolly-phlox-79c.notion.site/AI-Photo-Reference-Studio-v1-0-3c783e9464668140b794ee076be24406) · [문제 해결](docs/TROUBLESHOOTING.md)
 
 ## 설치할 때 입력할 마켓플레이스 주소
 
-아래 주소 하나만 복사해 마켓플레이스 추가 화면에 입력하세요.
-
 ```text
-https://github.com/junphoto1008-tech/photo-reference-studio
+https://github.com/chany-studio/chany-studio
 ```
 
 `owner/repo` 형식만 받는 화면에서는 다음 값을 입력합니다.
 
 ```text
-junphoto1008-tech/photo-reference-studio
+chany-studio/chany-studio
 ```
 
-## 3분 설치
+플러그인은 화면에서 **Chany's Studio**로 표시됩니다. 기존 사용자의 업데이트 경로를 보호하기 위해 2.0에서도 내부 마켓플레이스 식별자 `photo-reference-studio`는 유지합니다.
+
+## 설치
 
 ### ChatGPT 및 Codex 앱
 
-1. **Plugins**를 열고 **Add marketplace(마켓플레이스 추가)**를 선택합니다.
-2. 위 GitHub 저장소 주소를 붙여 넣습니다.
-3. 추가된 **AI Photo Reference Studio** 마켓플레이스를 엽니다.
-4. `photo-reference-studio`를 선택하고 **Install**을 누릅니다.
-5. Higgsfield 연결 요청을 승인한 뒤 **새 대화 또는 새 Codex 작업**을 시작합니다.
-
-관리형 ChatGPT 워크스페이스에서는 관리자 권한이나 플러그인·앱 허용 정책이 필요할 수 있습니다. 마켓플레이스 추가 버튼이 보이지 않으면 워크스페이스 관리자에게 이 저장소를 가져오고 플러그인 및 Higgsfield 접근을 허용해 달라고 요청하세요.
+1. **Plugins → Add marketplace**를 엽니다.
+2. 위 GitHub 주소를 붙여 넣습니다.
+3. **Chany's Studio**를 선택하고 **Install**을 누릅니다.
+4. Higgsfield 연결을 승인한 뒤 새 대화 또는 새 작업을 시작합니다.
 
 ### Claude Cowork
 
-직접 이미지 미리보기 연결은 로컬에서 **Node.js 18 이상**을 사용합니다. 처음 설치하기 전에 터미널에서 `node --version`이 동작하는지 확인하세요. 동작하지 않으면 [Node.js 공식 다운로드](https://nodejs.org/en/download)에서 LTS 버전을 먼저 설치합니다.
+대화 안 레퍼런스 이미지 표시에는 Claude Desktop이 실행되는 컴퓨터의 **Node.js 18 이상**이 필요합니다.
 
-1. Claude Desktop에서 **Customize → Plugins → Browse plugins**를 엽니다.
+1. **Customize → Plugins → Browse plugins**를 엽니다.
 2. **Personal plugins의 `+` → Add marketplace → Add from a repository**를 선택합니다.
-3. 위 GitHub 저장소 주소를 입력합니다.
-4. `photo-reference-studio`를 선택하고 **Install**을 누릅니다.
-5. Higgsfield 로그인을 마치고 인증이 필요 없는 로컬 `reference-preview` 연결이 활성화됐는지 확인한 뒤 **새 Cowork 작업**을 시작합니다.
+3. 위 GitHub 주소를 입력하고 `photo-reference-studio`를 설치합니다.
+4. Higgsfield 로그인을 마치고 `reference-preview` 연결이 활성화됐는지 확인합니다.
+5. 새 Cowork 작업을 시작합니다.
 
 ### Claude Code
 
-Claude Code 안에서 다음 명령을 실행합니다.
-
 ```text
-/plugin marketplace add junphoto1008-tech/photo-reference-studio
+/plugin marketplace add chany-studio/chany-studio
 /plugin install photo-reference-studio@photo-reference-studio
 /reload-plugins
 ```
 
-설치 범위를 물으면 모든 프로젝트에서 개인적으로 쓰려는 경우 **User scope**를 선택합니다.
+플랫폼별 세부 절차는 [설치 및 업데이트 가이드](docs/INSTALL-AND-UPDATE.md)를 확인하세요.
 
-플랫폼별 상세 화면, 관리자 설치, 업데이트와 재설치는 [설치 및 업데이트 가이드](docs/INSTALL-AND-UPDATE.md)를 확인하세요.
+## 전문 스킬
 
-## 프로젝트 또는 일반 대화에서 사용
+| 스킬 | 담당 작업 |
+| --- | --- |
+| `$chany-studio` | 두 분야 이상이 연결된 전체 캠페인과 산출물 순서 관리 |
+| `$chany-marketing-brief` | 목표·타깃·메시지·승인 카피·채널·에셋 매트릭스 정리 |
+| `$chany-product-assets` | 투명 누끼, 순백 팩샷, 제품·음식 클린업 |
+| `$chany-reference-board` | Behance·Pinterest 레퍼런스 6장과 Visual DNA |
+| `$chany-campaign-visual` | 연출컷과 텍스트 없는 마스터 키비주얼 |
+| `$chany-detail-page` | 히어로·특징·혜택·디테일·사용 장면·CTA 모듈 |
+| `$chany-ad-creative` | 정적 광고, 프로모션 포스터, 배너, 채널별 재구성 |
+| `$chany-image-edit` | 마스크 편집, 부분 수정, 문구 복원과 제한된 교체 |
+| `$chany-model-fashion` | 성인 모델 일관성, 원본 의류·액세서리 착장 |
+| `$chany-ugc-ads` | 제품 리뷰, 언박싱, 튜토리얼, SaaS, Try-on, 현지화 UGC |
 
-- **프로젝트:** 프로젝트에 원본, 로고, 브랜드 가이드와 승인 문구를 넣고 프로젝트 안에서 새 대화/작업을 시작합니다.
-- **ChatGPT:** 입력창에 `@`를 입력해 **AI Photo Reference Studio** 또는 `auto-photo-production`을 선택합니다.
-- **Codex:** `$auto-photo-production`으로 스킬을 명시합니다.
-- **일반 대화:** 프로젝트 없이 새 대화를 열고 원본 사진을 첨부한 뒤 같은 방식으로 호출합니다.
+기존 `$auto-photo-production` 호출은 한 버전 동안 호환되며 새 `$chany-studio` 라우터로 안내됩니다.
 
-플러그인은 프로젝트마다 다시 설치하지 않습니다. 설치 후 새 대화에서 사용할 수 있으며, 이미 열려 있던 대화는 설치·업데이트 전 구성을 유지할 수 있습니다.
+## 바로 시작하기
 
-## 설치 후 바로 시작하기
-
-가장 간단한 사용법은 **원본 사진을 첨부하고 원하는 결과를 한 문장으로 말하는 것**입니다. 사진에 보이는 사실을 다시 설명할 필요는 없습니다.
+전체 캠페인은 다음처럼 요청할 수 있습니다.
 
 ```text
-이 제품 원본을 보존하면서 Behance·Pinterest 레퍼런스 6장을 이미지로 바로 보여줘.
-하나를 고른 다음 키비주얼부터 상세페이지 이미지 5장과 1:1·9:16 광고소재까지 같은 톤으로 만들어줘.
+$chany-studio로 이 제품의 마케팅 캠페인을 만들어줘.
+제품 누끼와 팩샷, 마스터 키비주얼, 상세페이지 모듈 5장,
+1:1·4:5·9:16 광고소재와 15초 제품 리뷰 UGC를 같은 방향으로 구성해줘.
+유료 생성 전에 산출물 수와 승인 지점을 먼저 보여줘.
 ```
 
-기본 흐름은 다음과 같습니다.
+한 가지 결과가 분명하면 해당 전문 스킬을 바로 호출합니다.
 
-1. 원본의 형태·라벨·재질·색상과 승인 문구를 분석하고 잠급니다.
-2. 필요한 경우 Behance와 Pinterest에서만 레퍼런스 6장을 찾습니다.
-3. 링크나 HTML 대신 **현재 대화 안에 실제 이미지 6장으로 직접 표시**합니다. Claude Cowork에서는 플러그인에 포함된 `reference-preview` 연결이 공개 미리보기를 네이티브 이미지 콘텐츠로 전달합니다.
-4. 사용자가 번호 하나 또는 `자동 선택`을 답합니다.
-5. 선택한 방향으로 마스터 키비주얼을 만든 뒤 필요한 상세페이지·광고 규격으로 확장합니다.
-6. 원본, 문구, 비율과 채널 요구사항을 비교 검수하고 필요한 경우 한 번 보정합니다.
+```text
+$chany-detail-page로 승인된 키비주얼을 사용해 상세페이지 모듈 5장을 만들어줘.
+$chany-ad-creative로 이 프로모션의 1:1 피드와 9:16 스토리 광고를 만들어줘.
+$chany-ugc-ads로 이 제품의 자연스러운 9:16 언박싱 광고를 만들어줘.
+```
 
-기본값은 유료 생성 전에 레퍼런스를 확인하는 `semi-auto`입니다. 처음부터 자동으로 진행하려면 요청 끝에 `레퍼런스도 자동 선택해서 끝까지 진행해줘`라고 추가하세요.
+## 캠페인 제작 순서
 
-## 만들 수 있는 이미지
+1. 제품·브랜드·타깃·채널·승인 문구를 캠페인 브리프로 정리합니다.
+2. 원본에서 제품, 모델, 의류와 카피 잠금을 만듭니다.
+3. 필요한 경우 Behance와 Pinterest 레퍼런스 6장을 대화 안에 실제 이미지로 표시합니다.
+4. 마스터 키비주얼을 먼저 승인합니다.
+5. 승인된 캠페인 규칙에서 상세페이지와 채널 광고를 파생합니다.
+6. UGC가 포함되면 훅·대본·크리에이터·제품 노출·CTA를 잠근 뒤 제작합니다.
+7. 원본, 승인 카피, 비율, 안전영역과 캠페인 일관성을 검수합니다.
 
-| 필요한 결과 | 요청 예시 |
-| --- | --- |
-| 투명 누끼·백색 팩샷 | `이 제품을 투명 PNG 누끼와 순백색 팩샷으로 만들어줘.` |
-| 레퍼런스 보드 | `Behance·Pinterest 레퍼런스 6장을 이미지로 보여주고 각각의 구도와 조명을 설명해줘.` |
-| 마스터 키비주얼 | `프리미엄 여름 캠페인 키비주얼을 4:5로 만들어줘.` |
-| 상세페이지 이미지 | `키비주얼 톤을 유지해 히어로·특징·사용 장면·디테일·마감 모듈 5장을 만들어줘.` |
-| 프로모션 포스터 | `승인 문구와 할인율을 정확히 유지한 1:1 강조형 포스터를 만들어줘.` |
-| 광고소재·배너 | `같은 캠페인으로 1:1 피드, 9:16 스토리, 16:9 배너를 재구성해줘.` |
-| 모델·착장 이미지 | `이 성인 모델에게 첨부한 원피스·가방·신발을 원본 그대로 착장시켜줘.` |
-| 부분 수정 | `선택한 이미지에서 배경만 조금 밝게 하고 제품·문구·구도는 고정해줘.` |
-| 전체 커머스 세트 | `누끼, 팩샷, 키비주얼, 상세페이지 5장, 광고소재 3종을 한 캠페인으로 만들어줘.` |
+기본값은 유료 생성 전에 사용자가 레퍼런스와 산출물 수를 확인하는 방식입니다. 자동 진행을 원하면 범위와 함께 `레퍼런스도 자동 선택해서 끝까지 진행해줘`라고 요청하세요.
 
-지원 비율은 기본적으로 `1:1`, `3:4`, `4:3`, `4:5`, `9:16`, `16:9`이며 실제 플랫폼 규격이나 픽셀 크기를 지정하면 그것을 우선합니다. 현재 범위는 **정적 커머스 이미지**입니다. 영상, GIF, 내레이션, 음성, 음악과 CapCut 작업은 포함하지 않습니다.
+## 핵심 보호 원칙
 
-전체 제작법, 입력 템플릿, 작업별 프롬프트와 수정 요령은 [사용 가이드](docs/USER-GUIDE.md)를 확인하세요.
+- 제품·음식·모델·의류 원본은 정체성의 최종 기준입니다.
+- 가격, 할인율, 기간, 제품 효능, 비교 주장, CTA와 법적 고지는 임의로 만들지 않습니다.
+- Behance·Pinterest 레퍼런스는 구도, 조명, 배경, 색감, 재질과 무드에만 사용합니다.
+- 마스터 키비주얼을 승인한 뒤 상세페이지와 광고 규격을 파생합니다.
+- 기존 결과의 부분 수정은 지정 영역과 한 가지 속성만 바꿉니다.
+- 라벨·로고·카피·제품 형상·모델 정체성·의류 구조가 바뀐 결과는 실패로 처리합니다.
+- 여러 단계를 자동 생성하기 전에 예상 생성 횟수와 크레딧 사용 지점을 알립니다.
 
-## 좋은 결과를 위한 입력
+## Higgsfield 실행 범위
 
-원본 사진만으로도 시작할 수 있으며, 다음 정보가 있으면 상업용 결과를 더 정확하게 만들 수 있습니다.
-
-- 가장 해상도가 높은 원본 사진
-- 결과물 목적: 키비주얼, 상세페이지, 광고, 배너 등
-- 채널과 비율 또는 픽셀 크기
-- 반드시 그대로 써야 하는 승인 문구, 가격, 할인율, 기간과 CTA
-- 브랜드 컬러·로고·가이드와 피해야 할 표현
-- 원하는 레퍼런스가 있다면 그 이미지와 역할
-
-숫자, 가격, 할인율, 날짜, 제품 효능과 법적 고지는 임의로 만들지 않습니다. 정확한 문구가 필요한 작업에서는 사용자가 제공한 승인 문구가 기준입니다.
+- Higgsfield MCP가 연결된 Claude에서는 이미지·영상·Soul 캐릭터·오디오 생성과 UGC 워크플로를 실행할 수 있습니다.
+- Marketing Studio의 템플릿 방식은 현재 웹 전용이므로, 플러그인은 템플릿 선택과 입력 준비 후 Higgsfield 화면으로 안내합니다.
+- Cinema Studio의 정밀 설정은 기획할 수 있지만 사용자가 Higgsfield 화면에서 최종 생성을 확인합니다.
+- 도구에서 지원하지 않는 기능을 실행했다고 주장하지 않고, `직접 실행`, `웹에서 완료`, `기획만 가능` 상태를 명확히 표시합니다.
 
 ## 기존 사용자 업데이트
 
-GitHub에 새 버전이 올라가도 이미 열린 대화가 자동으로 새 지침을 다시 읽지는 않을 수 있습니다. 업데이트한 뒤 새 작업을 시작하세요.
-
-- **ChatGPT/Codex:** 가져온 플러그인 또는 워크스페이스 플러그인에서 **Refresh**를 눌러 원본 마켓플레이스의 최신 버전을 가져옵니다.
-- **Claude Cowork:** `Customize → Plugins`에서 추가한 `photo-reference-studio` 마켓플레이스의 **Update**를 누릅니다.
+- **ChatGPT/Codex:** 설치된 마켓플레이스에서 **Refresh**를 누릅니다.
+- **Claude Cowork:** `Customize → Plugins`에서 `photo-reference-studio`의 **Update**를 누릅니다.
 - **Claude Code:** 아래 명령을 실행합니다.
 
 ```text
@@ -130,30 +126,15 @@ GitHub에 새 버전이 올라가도 이미 열린 대화가 자동으로 새 �
 /reload-plugins
 ```
 
-업데이트 후 플러그인 상세 화면에서 버전이 **1.3.2**인지 확인하고 새 대화 또는 새 작업을 시작하세요.
-
-## 핵심 보호 원칙
-
-- 제품·음식·모델·의류 원본이 정체성의 기준입니다.
-- Behance·Pinterest 레퍼런스는 구도, 조명, 배경, 색감과 무드에만 사용합니다.
-- 레퍼런스 속 제품, 모델, 로고, 패키지, 문구나 가격을 가져오지 않습니다.
-- 투명 누끼는 가능하면 비생성형 배경 제거를 사용해 원본 픽셀을 보존합니다.
-- 승인된 결과의 부분 수정은 지정 영역과 한 가지 속성만 바꾸고 나머지를 고정합니다.
-- 라벨·로고·문구·의류 구조가 바뀐 결과는 실패로 처리합니다.
+업데이트 후 버전이 **2.0.0**인지 확인하고 새 대화 또는 새 작업을 시작하세요.
 
 ## 외부 서비스와 데이터
 
 - 플러그인 저장소에는 API 키, 액세스 토큰 또는 사용자 사진이 포함되어 있지 않습니다.
-- Higgsfield 기능을 사용할 때 원본 사진과 선택한 레퍼런스가 Higgsfield로 전송될 수 있습니다.
-- 레퍼런스 탐색은 Behance와 Pinterest의 공개 소스 페이지만 이용합니다.
-- Claude용 `reference-preview`는 선택 후보의 공개 미리보기만 불러와 Cowork 대화에 이미지로 표시하며 보호된 원본이나 로그인 정보에는 접근하지 않습니다.
-- `reference-preview`는 Claude Desktop이 실행되는 컴퓨터의 Node.js 18 이상을 사용하며 별도 npm 패키지를 설치하지 않습니다.
-- 외부 서비스의 이용 약관, 개인정보 처리방침, 요금, 생성 크레딧과 콘텐츠 권리는 각 서비스에서 별도로 확인하세요.
-- 비밀번호, API 키, 액세스 토큰이나 인증 코드를 대화에 붙여 넣지 마세요. 호스트가 표시하는 연결 화면에서 인증합니다.
-
-## 문제 해결
-
-플러그인이 안 보이거나, 업데이트가 반영되지 않거나, Higgsfield 연결 또는 이미지 표시가 실패하는 경우 [문제 해결 가이드](docs/TROUBLESHOOTING.md)를 확인하세요.
+- Higgsfield 기능 사용 시 사용자가 선택한 원본과 레퍼런스가 Higgsfield로 전송될 수 있습니다.
+- Claude용 `reference-preview`는 Behance·Pinterest의 공개 미리보기만 읽어 대화에 표시합니다.
+- 비밀번호, API 키, 액세스 토큰이나 인증 코드를 대화에 붙여 넣지 말고 연결 화면에서 인증하세요.
+- 요금, 크레딧, 생성물 권리와 외부 서비스 약관은 각 서비스에서 확인하세요.
 
 ## 문서
 
@@ -161,7 +142,6 @@ GitHub에 새 버전이 올라가도 이미 열린 대화가 자동으로 새 �
 - [전체 사용 가이드](docs/USER-GUIDE.md)
 - [문제 해결](docs/TROUBLESHOOTING.md)
 - [변경 이력](CHANGELOG.md)
-- [공식 설치·사용설명서 (Notion)](https://jolly-phlox-79c.notion.site/AI-Photo-Reference-Studio-v1-0-3c783e9464668140b794ee076be24406)
 
 ## 저장소 구조
 
@@ -177,7 +157,7 @@ GitHub에 새 버전이 올라가도 이미 열린 대화가 자동으로 새 �
     ├── .mcp.json
     ├── assets/
     ├── mcp/reference-preview/
-    └── skills/auto-photo-production/
+    └── skills/
 ```
 
 ## 라이선스와 공식 참고
@@ -186,8 +166,6 @@ GitHub에 새 버전이 올라가도 이미 열린 대화가 자동으로 새 �
 
 - [OpenAI: Plugins in ChatGPT and Codex](https://help.openai.com/en/articles/20001256-plugins-in-codex/)
 - [Claude Cowork: Install plugins](https://claude.com/docs/cowork/guide/plugins)
-- [Claude Code: Discover and install plugins](https://code.claude.com/docs/en/discover-plugins)
 - [Claude Code: Plugins reference](https://code.claude.com/docs/en/plugins-reference)
+- [Higgsfield MCP 도움말](https://higgsfield.ai/creator-hub/help-center/integrations/what-is-higgsfield-mcp)
 - [공식 설치·사용설명서](https://jolly-phlox-79c.notion.site/AI-Photo-Reference-Studio-v1-0-3c783e9464668140b794ee076be24406)
-- [개인정보 처리방침](https://jolly-phlox-79c.notion.site/AI-Photo-Reference-Studio-3c783e94646681089a5dc4694a045cb3)
-- [서비스 이용약관](https://jolly-phlox-79c.notion.site/AI-Photo-Reference-Studio-3c783e9464668136822bf7f00201f429)

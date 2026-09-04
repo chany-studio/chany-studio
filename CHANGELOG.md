@@ -2,6 +2,17 @@
 
 이 프로젝트는 사용자에게 보이는 기능 개편 단위로 버전을 관리합니다.
 
+## 2.0.0 - 2026-09-04
+
+- 사용자 표시 브랜드를 **Chany's Studio**로 변경했습니다.
+- GitHub 계정과 저장소 주소를 `chany-studio/chany-studio`로 변경했습니다.
+- 기존 설치 사용자가 그대로 업데이트할 수 있도록 내부 플러그인·마켓플레이스 식별자 `photo-reference-studio`는 유지했습니다.
+- 하나의 대형 `auto-photo-production` 지침을 캠페인 라우터와 마케팅 브리프, 제품 에셋, 레퍼런스, 키비주얼, 상세페이지, 광고, 부분 편집, 모델·패션 전문 스킬로 분리했습니다.
+- Higgsfield 기반 Product Review, Unboxing, Tutorial, SaaS, Try-on과 Localization용 `chany-ugc-ads` 스킬을 추가했습니다.
+- 광고·마케팅·상세페이지·프로모션 중심으로 설치 문서, 사용 가이드, 기본 요청과 문제 해결 절차를 전면 개편했습니다.
+- Marketing Studio 템플릿의 웹 전용 경계와 MCP 직접 실행 범위를 구분하고, 다단계 생성 전에 산출물 수와 크레딧 사용 지점을 확인하도록 했습니다.
+- 기존 `$auto-photo-production`은 한 버전 동안 자동 선택되지 않는 호환 안내 스킬로 유지했습니다.
+
 ## 1.3.2 - 2026-09-03
 
 - Claude Cowork 레퍼런스 보드가 링크나 HTML 대신 현재 대화 안의 실제 이미지 6장으로 먼저 표시되도록 동작 계약을 강화했습니다.

@@ -1,13 +1,14 @@
 {
   "name": "photo-reference-studio",
-  "version": "1.3.2",
-  "description": "Create source-faithful commerce images with native in-chat Behance and Pinterest reference previews.",
+  "displayName": "Chany's Studio",
+  "version": "2.0.0",
+  "description": "Chany's advertising and commerce studio for campaign briefs, product assets, key visuals, detail pages, promotions, static ads, fashion, and UGC.",
   "author": {
     "name": "Chany",
-    "url": "https://github.com/junphoto1008-tech"
+    "url": "https://github.com/chany-studio"
   },
   "homepage": "https://jolly-phlox-79c.notion.site/AI-Photo-Reference-Studio-v1-0-3c783e9464668140b794ee076be24406",
-  "repository": "https://github.com/junphoto1008-tech/photo-reference-studio",
+  "repository": "https://github.com/chany-studio/chany-studio",
   "license": "MIT",
   "keywords": [
     "product-photography",
@@ -19,7 +20,10 @@
     "ad-creative",
     "fashion",
     "inpainting",
-    "higgsfield"
+    "higgsfield",
+    "marketing",
+    "promotion",
+    "ugc"
   ],
   "mcpServers": "./.mcp.claude.json"
 }

@@ -1,0 +1,13 @@
+interface:
+  display_name: "Chany's Image Edit"
+  short_description: "승인 이미지에서 지정 영역과 한 속성만 정밀 수정"
+  default_prompt: "$chany-image-edit로 선택한 이미지의 배경만 밝게 하고 제품, 문구, 구도와 나머지 영역은 그대로 유지해줘."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "higgsfield"
+      description: "Perform bounded image edits and inpainting where supported"
+      transport: "streamable_http"
+      url: "https://mcp.higgsfield.ai/mcp"
+policy:
+  allow_implicit_invocation: true

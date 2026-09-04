@@ -1,0 +1,13 @@
+interface:
+  display_name: "Chany's Model & Fashion"
+  short_description: "성인 모델 일관성과 원본 의류를 보존한 캠페인 이미지"
+  default_prompt: "$chany-model-fashion으로 이 성인 모델에게 첨부한 의류와 액세서리를 원본 그대로 착장한 광고 이미지를 만들어줘."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "higgsfield"
+      description: "Create consistent model and source-locked fashion imagery where supported"
+      transport: "streamable_http"
+      url: "https://mcp.higgsfield.ai/mcp"
+policy:
+  allow_implicit_invocation: true

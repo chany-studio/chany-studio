@@ -2,16 +2,16 @@
   "name": "photo-reference-studio",
   "owner": {
     "name": "Chany",
-    "url": "https://github.com/junphoto1008-tech"
+    "url": "https://github.com/chany-studio"
   },
   "metadata": {
-    "description": "A source-faithful commerce image studio for key visuals, detail pages, fashion, and static ad creatives."
+    "description": "Chany's advertising and commerce studio for campaign planning, product assets, key visuals, detail pages, promotions, static ads, and UGC."
   },
   "plugins": [
     {
       "name": "photo-reference-studio",
       "source": "./plugins/photo-reference-studio",
-      "description": "Create source-faithful commerce key visuals with native in-chat reference previews, detail-page modules, fashion images, and static ads.",
+      "description": "Plan and produce source-faithful product marketing campaigns, detail pages, promotional creatives, static ads, and Higgsfield UGC.",
       "author": {
         "name": "Chany"
       },
@@ -26,7 +26,10 @@
         "ad-creative",
         "fashion",
         "inpainting",
-        "higgsfield"
+        "higgsfield",
+        "marketing",
+        "promotion",
+        "ugc"
       ]
     }
   ]

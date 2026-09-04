@@ -1,0 +1,13 @@
+interface:
+  display_name: "Chany's Studio"
+  short_description: "광고·마케팅 캠페인을 분야별 전문 제작 스킬로 연결"
+  default_prompt: "$chany-studio로 제품 원본과 승인 문구를 잠그고 키비주얼, 상세페이지, 광고와 홍보 콘텐츠를 하나의 캠페인으로 기획·제작해줘."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "higgsfield"
+      description: "Create and edit campaign media with connected Higgsfield capabilities"
+      transport: "streamable_http"
+      url: "https://mcp.higgsfield.ai/mcp"
+policy:
+  allow_implicit_invocation: true
