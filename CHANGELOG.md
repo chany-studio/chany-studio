@@ -2,6 +2,16 @@
 
 이 프로젝트는 사용자에게 보이는 기능 개편 단위로 버전을 관리합니다.
 
+## 2.1.0 - 2026-09-04
+
+- Claude Cowork에서 `/project`, 공식 네임스페이스에서 `/photo-reference-studio:project`로 광고·커머스 프로젝트를 설정하는 명령을 추가했습니다.
+- ChatGPT Work/Codex에서 같은 흐름을 실행하는 `$chany-project` 스킬과 자연어 자동 선택을 추가했습니다.
+- `AGENTS.md`를 양쪽 런타임의 프로젝트 지침 정본으로 사용하고, Claude의 `CLAUDE.md`는 이를 불러오도록 설계했습니다.
+- 프로젝트 브리프·상태·비밀값 없는 설정, ChatGPT Work 호스팅 위임 규칙과 같은 역할의 Claude·로컬 Codex 프로젝트 에이전트를 생성합니다.
+- 기존 지침 파일은 백업하고 Chany's Studio 관리 구역만 병합하며 `update`, `status`, `doctor` 모드를 제공합니다.
+- `AGENTS.override.md` 우선순위 충돌, TOML 문자열 escaping과 프로젝트 역할 전환 시 이전 관리 에이전트 퇴역을 처리합니다.
+- 프로젝트 초기화 중에는 외부 업로드, Higgsfield 생성, 크레딧 사용, 커밋과 푸시를 수행하지 않도록 분리했습니다.
+
 ## 2.0.0 - 2026-09-04
 
 - 사용자 표시 브랜드를 **Chany's Studio**로 변경했습니다.

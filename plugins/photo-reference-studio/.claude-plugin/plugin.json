@@ -1,8 +1,8 @@
 {
   "name": "photo-reference-studio",
   "displayName": "Chany's Studio",
-  "version": "2.0.0",
-  "description": "Chany's advertising and commerce studio for campaign briefs, product assets, key visuals, detail pages, promotions, static ads, fashion, and UGC.",
+  "version": "2.1.0",
+  "description": "Chany's cross-runtime advertising and commerce studio for project setup, campaign briefs, product assets, key visuals, detail pages, promotions, static ads, fashion, and UGC.",
   "author": {
     "name": "Chany",
     "url": "https://github.com/chany-studio"
@@ -23,7 +23,9 @@
     "higgsfield",
     "marketing",
     "promotion",
-    "ugc"
+    "ugc",
+    "project-instructions",
+    "agents"
   ],
   "mcpServers": "./.mcp.claude.json"
 }

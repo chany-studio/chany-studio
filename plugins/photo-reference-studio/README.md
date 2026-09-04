@@ -1,10 +1,11 @@
-# Chany's Studio 2.0.0
+# Chany's Studio 2.1.0
 
-제품 원본과 승인 문구를 보존하면서 광고·마케팅·상세페이지·홍보 콘텐츠를 분야별 전문 스킬로 기획·제작합니다.
+Claude와 ChatGPT Work에서 함께 쓰는 광고 프로젝트 지침을 설정하고, 제품 원본과 승인 문구를 보존하면서 광고·마케팅·상세페이지·홍보 콘텐츠를 분야별 전문 스킬로 기획·제작합니다.
 
 ## 전문 스킬
 
 - `chany-studio`: 여러 결과물을 연결하는 캠페인 라우터
+- `chany-project`: 프로젝트 인터뷰, `AGENTS.md`, 브리프·상태, ChatGPT Work 위임 규칙과 Claude·로컬 Codex 에이전트 설정
 - `chany-marketing-brief`: 목표, 타깃, 메시지, 채널과 에셋 매트릭스
 - `chany-product-assets`: 투명 누끼, 순백 팩샷과 원본 클린업
 - `chany-reference-board`: Behance·Pinterest 레퍼런스 6장 직접 표시
@@ -18,6 +19,15 @@
 기존 `auto-photo-production`은 호환 호출로만 남아 새 `chany-studio` 라우터를 안내합니다.
 
 ## 처음 사용하기
+
+새 프로젝트에서는 먼저 지침을 설정합니다.
+
+```text
+Claude Cowork: /project 신제품 선크림의 상세페이지와 Meta 광고 프로젝트를 설정해줘.
+ChatGPT Work/Codex: $chany-project로 현재 폴더를 같은 프로젝트로 설정해줘.
+```
+
+설정 후 새 작업을 열고 다음 순서로 제작합니다.
 
 1. 가장 해상도가 높은 제품 원본을 첨부합니다.
 2. 목표, 채널, 필요한 산출물을 말합니다.

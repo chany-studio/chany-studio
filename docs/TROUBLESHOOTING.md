@@ -16,7 +16,7 @@ https://github.com/chany-studio/chany-studio
 
 다음 상태는 이전 설치본일 가능성이 높습니다.
 
-- 버전이 `2.0.0`보다 낮음
+- 버전이 `2.1.0`보다 낮음
 - 대표 스킬 `chany-studio`가 없음
 - 상세페이지·광고·UGC가 전문 스킬로 분리되어 있지 않음
 - 레퍼런스를 이미지 대신 링크나 HTML만 제공함
@@ -32,6 +32,24 @@ $chany-studio로 이 제품의 광고 캠페인을 시작해줘.
 ```
 
 한 가지 결과라면 `$chany-detail-page`, `$chany-ad-creative`, `$chany-ugc-ads`처럼 해당 전문 스킬을 직접 사용합니다.
+
+## `/project` 또는 `chany-project`가 보이지 않음
+
+- 설치 상세 버전이 `2.1.0`인지 확인하고 Refresh 또는 Update합니다.
+- Claude Cowork에서 짧은 `/project`가 보이지 않으면 `/photo-reference-studio:project`를 사용합니다.
+- ChatGPT Work/Codex는 플러그인 `commands/`를 사용하지 않으므로 `$chany-project` 또는 “현재 폴더를 광고 프로젝트로 설정해줘”라고 요청합니다.
+- 업데이트 후 새 대화나 새 작업을 시작합니다. `AGENTS.md`, `CLAUDE.md`와 런타임별 설정은 다음 세션에서 확실히 로드됩니다. `.codex/agents/*.toml`은 로컬 Codex 클라이언트용이며 ChatGPT Work는 `AGENTS.md`의 호스팅 위임 규칙을 사용합니다.
+
+## 프로젝트 지침을 만들 수 없음
+
+- 파일이 연결된 로컬 프로젝트 또는 쓰기 가능한 작업 폴더에서 실행했는지 확인합니다.
+- 홈 폴더, 파일시스템 루트와 플러그인 캐시는 안전을 위해 초기화 대상이 아닙니다.
+- 기존 `AGENTS.md`나 `CLAUDE.md`에 충돌이 있으면 Chany's Studio가 제시한 병합 내용을 먼저 승인합니다.
+- 같은 위치의 `AGENTS.override.md`는 `AGENTS.md`보다 우선합니다. 발견되면 사용자 내용을 보존한 연결 블록을 추가할지 먼저 확인합니다.
+- 설정 중에는 이미지·영상 생성, Higgsfield 호출, 자동 커밋과 푸시를 하지 않습니다.
+- `doctor` 모드는 읽기 전용입니다. 발견된 문제를 고치려면 별도로 수정 승인을 합니다.
+
+기존 파일을 수정했다면 이전 내용은 `.chany-studio/backups/`에서 확인할 수 있습니다. 이 폴더에는 비밀번호나 API 키를 넣지 마세요.
 
 ## Higgsfield 연결 요청이 반복됨
 

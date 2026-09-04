@@ -1,6 +1,6 @@
 # Chany's Studio 사용 가이드
 
-Chany's Studio는 제품 원본과 승인 문구를 기준으로 광고·마케팅·상세페이지·홍보 콘텐츠를 만드는 전문 스킬 모음입니다.
+Chany's Studio는 Claude와 ChatGPT Work에서 같은 프로젝트 지침을 사용하며 제품 원본과 승인 문구를 기준으로 광고·마케팅·상세페이지·홍보 콘텐츠를 만드는 전문 스킬 모음입니다.
 
 ## 어떤 스킬을 써야 하나요?
 
@@ -8,6 +8,7 @@ Chany's Studio는 제품 원본과 승인 문구를 기준으로 광고·마케�
 
 | 원하는 결과 | 사용할 스킬 |
 | --- | --- |
+| 새 프로젝트 지침·브리프·에이전트 설정 | `$chany-project` |
 | 전체 캠페인 또는 여러 산출물 | `$chany-studio` |
 | 캠페인 목표·타깃·메시지·산출물 계획 | `$chany-marketing-brief` |
 | 누끼·순백 팩샷·제품 클린업 | `$chany-product-assets` |
@@ -18,6 +19,44 @@ Chany's Studio는 제품 원본과 승인 문구를 기준으로 광고·마케�
 | 기존 이미지 부분 수정 | `$chany-image-edit` |
 | 성인 모델·패션 착장 | `$chany-model-fashion` |
 | 리뷰·언박싱·튜토리얼 UGC | `$chany-ugc-ads` |
+
+## 0. 프로젝트 설정
+
+프로젝트를 처음 시작할 때 한 번 실행합니다. 현재 작업 폴더를 읽고 이미 제공된 정보는 다시 묻지 않으며, 부족한 핵심 정보만 한 번에 최대 3개씩 확인합니다. 파일을 쓰기 전 프로젝트 요약, 스킬 체인과 변경 파일을 보여주고 승인을 기다립니다.
+
+```text
+Claude Cowork
+/project 신제품 선크림의 상세페이지, Meta 광고 3종과 15초 리뷰 UGC 프로젝트를 설정해줘.
+
+ChatGPT Work/Codex
+$chany-project로 현재 작업 폴더를 신제품 선크림 광고 프로젝트로 설정해줘.
+```
+
+Claude에서 `/project`가 보이지 않으면 `/photo-reference-studio:project`를 사용합니다. ChatGPT Work에는 플러그인 슬래시 명령 대신 `$chany-project`와 자연어 자동 선택이 제공됩니다.
+
+생성되는 공통 구조:
+
+```text
+AGENTS.md                         공통 지침과 ChatGPT Work 위임 규칙
+CLAUDE.md                         @AGENTS.md를 불러오는 Claude용 연결 파일
+.chany-studio/project.json        비밀값 없는 프로젝트 설정
+.chany-studio/brief.md            승인 사실·카피·산출물·제약
+.chany-studio/state.md            승인·원본·카피·키비주얼·출력 진행 상태
+.claude/agents/<role>.md          Claude 프로젝트 에이전트
+.codex/agents/<role>.toml         로컬 Codex 프로젝트 에이전트
+```
+
+`AGENTS.md`가 공통 정본이므로 두 런타임의 프로젝트 규칙이 따로 노는 문제를 줄입니다. ChatGPT Work는 이 파일의 역할·위임 규칙으로 호스팅 하위 에이전트를 사용하며, `.codex/agents/*.toml`은 로컬 Codex 클라이언트용입니다. 기존 파일은 삭제하거나 전체 덮어쓰지 않고 Chany's Studio 관리 구역만 갱신하며, 수정 전 원본은 `.chany-studio/backups/`에 보관합니다. 같은 위치에 `AGENTS.override.md`가 있으면 우선순위 충돌과 안전한 연결 방법을 먼저 보여줍니다. 초기화 자체는 Higgsfield를 호출하거나 크레딧을 사용하지 않습니다.
+
+후속 관리:
+
+```text
+$chany-project status
+$chany-project update 상세페이지에 일본어 버전을 추가해줘.
+$chany-project doctor
+```
+
+설정 또는 업데이트가 끝나면 새 대화나 새 작업을 열어 프로젝트 지침과 에이전트를 다시 불러옵니다.
 
 ## 전체 캠페인 요청
 

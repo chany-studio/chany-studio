@@ -55,8 +55,9 @@ chany-studio/chany-studio
 
 - 표시 이름: `Chany's Studio`
 - 내부 식별자: `photo-reference-studio`
-- 버전: `2.0.0`
+- 버전: `2.1.0`
 - 대표 Skill: `chany-studio`
+- 프로젝트 Skill: `chany-project`
 - 전문 Skill: 마케팅 브리프, 제품 에셋, 레퍼런스, 키비주얼, 상세페이지, 광고, 편집, 패션, UGC
 - 연결: Higgsfield
 - Claude Cowork 추가 연결: `reference-preview`
@@ -73,6 +74,13 @@ Claude Cowork 레퍼런스 표시 테스트:
 $chany-reference-board로 제품 촬영 레퍼런스 6장을 Behance와 Pinterest에서 찾아 링크나 HTML이 아니라 이 대화에 이미지로 보여줘.
 ```
 
+프로젝트 설정 테스트:
+
+```text
+Claude Cowork: /project 테스트 광고 프로젝트를 설정해줘.
+ChatGPT Work/Codex: $chany-project로 테스트 광고 프로젝트를 설정해줘.
+```
+
 ## 기존 사용자 업데이트
 
 ### ChatGPT 및 Codex 앱
@@ -83,7 +91,7 @@ $chany-reference-board로 제품 촬영 레퍼런스 6장을 Behance와 Pinteres
 
 1. **Customize → Plugins**를 엽니다.
 2. `photo-reference-studio` 마켓플레이스에서 **Update**를 누릅니다.
-3. 버전 `2.0.0`과 새 전문 스킬 목록을 확인합니다.
+3. 버전 `2.1.0`과 `chany-project`를 포함한 전문 스킬 목록을 확인합니다.
 4. 새 Cowork 작업을 시작합니다.
 
 ### Claude Code
@@ -103,9 +111,17 @@ $chany-reference-board로 제품 촬영 레퍼런스 6장을 Behance와 Pinteres
 - 정적 이미지뿐 아니라 Higgsfield 기반 UGC 광고 제작이 추가됐습니다.
 - 광고·마케팅·상세페이지·프로모션 워크플로가 우선 범위입니다.
 
+## 2.1에서 추가된 기능
+
+- Claude Cowork의 `/project`와 ChatGPT Work/Codex의 `$chany-project`로 광고 제작 프로젝트를 초기화합니다.
+- `AGENTS.md`를 공통 정본으로 만들고 Claude는 `CLAUDE.md`에서 같은 지침을 불러옵니다.
+- 프로젝트 브리프·상태, ChatGPT Work 호스팅 위임 규칙과 같은 역할의 Claude·로컬 Codex 프로젝트 에이전트를 함께 설정합니다.
+- 기존 지침은 백업한 뒤 관리 구역만 병합하며, `status`, `update`, `doctor` 모드를 지원합니다.
+- `AGENTS.override.md` 우선순위를 감지해 공통 지침이 조용히 무시되지 않도록 합니다.
+
 ## 업데이트가 반영되지 않을 때
 
-- 설치 상세의 버전이 `2.0.0`인지 확인합니다.
+- 설치 상세의 버전이 `2.1.0`인지 확인합니다.
 - Refresh 또는 Update 뒤 반드시 새 대화나 새 작업을 시작합니다.
 - Claude Code에서는 `/plugin`의 Errors 탭을 확인합니다.
 - Claude Cowork에서 레퍼런스 이미지가 안 보이면 Node.js 18 이상과 `reference-preview` 연결을 확인합니다.

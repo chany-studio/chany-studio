@@ -2,7 +2,7 @@
 
 ![Chany's Studio](plugins/photo-reference-studio/assets/logo.png)
 
-제품 원본과 승인 문구를 보존하면서 **광고·마케팅·상세페이지·홍보 콘텐츠**를 기획하고 제작하는 ChatGPT/Codex 및 Claude 플러그인입니다. 한 개의 거대한 지침 대신 캠페인 기획, 제품 에셋, 레퍼런스, 키비주얼, 상세페이지, 광고, 편집, 패션, UGC를 각각의 전문 스킬로 제공합니다.
+제품 원본과 승인 문구를 보존하면서 **광고·마케팅·상세페이지·홍보 콘텐츠**를 기획하고 제작하는 ChatGPT Work/Codex 및 Claude 플러그인입니다. 공통 프로젝트 지침과 런타임별 위임 구성을 먼저 설정하고, 캠페인 기획, 제품 에셋, 레퍼런스, 키비주얼, 상세페이지, 광고, 편집, 패션, UGC를 각각의 전문 스킬로 연결합니다.
 
 > [공식 설치·사용설명서 (Notion)](https://jolly-phlox-79c.notion.site/Chany-s-Studio-3c783e9464668140b794ee076be24406) · [문제 해결](docs/TROUBLESHOOTING.md)
 
@@ -53,6 +53,7 @@ chany-studio/chany-studio
 
 | 스킬 | 담당 작업 |
 | --- | --- |
+| `$chany-project` | 프로젝트 인터뷰, 공통 `AGENTS.md`, 브리프·상태, ChatGPT Work 위임 규칙과 Claude·로컬 Codex 프로젝트 에이전트 설정 |
 | `$chany-studio` | 두 분야 이상이 연결된 전체 캠페인과 산출물 순서 관리 |
 | `$chany-marketing-brief` | 목표·타깃·메시지·승인 카피·채널·에셋 매트릭스 정리 |
 | `$chany-product-assets` | 투명 누끼, 순백 팩샷, 제품·음식 클린업 |
@@ -65,6 +66,38 @@ chany-studio/chany-studio
 | `$chany-ugc-ads` | 제품 리뷰, 언박싱, 튜토리얼, SaaS, Try-on, 현지화 UGC |
 
 기존 `$auto-photo-production` 호출은 한 버전 동안 호환되며 새 `$chany-studio` 라우터로 안내됩니다.
+
+## 프로젝트부터 시작하기
+
+새 광고 프로젝트를 만든 뒤 Chany's Studio가 사용할 로컬 폴더를 연결합니다. 초기화는 지침과 작업 구조만 만들며 이미지·영상 생성이나 크레딧 사용을 시작하지 않습니다.
+
+Claude Cowork에서는 다음처럼 시작합니다.
+
+```text
+/project 신제품 선크림의 상세페이지, Meta 광고와 15초 리뷰 UGC 프로젝트를 설정해줘.
+```
+
+짧은 명령이 보이지 않으면 공식 네임스페이스 호출을 사용합니다.
+
+```text
+/photo-reference-studio:project 신제품 선크림 광고 프로젝트를 설정해줘.
+```
+
+ChatGPT Work와 Codex에서는 같은 기능을 다음처럼 호출합니다.
+
+```text
+$chany-project로 현재 작업 폴더를 신제품 선크림 광고 프로젝트로 설정해줘.
+```
+
+설정이 승인되면 다음을 만듭니다.
+
+- `AGENTS.md`: ChatGPT Work/Codex가 직접 읽는 공통 프로젝트 지침 정본과 호스팅 하위 에이전트 위임 규칙
+- `CLAUDE.md`: 같은 `AGENTS.md`를 불러오는 Claude용 연결 파일
+- `.chany-studio/`: 프로젝트 브리프, 진행 상태와 비밀값 없는 설정
+- `.claude/agents/`: Claude용 프로젝트 에이전트
+- `.codex/agents/`: 로컬 Codex 클라이언트용 프로젝트 에이전트
+
+ChatGPT Work는 로컬 Codex의 TOML 에이전트 파일을 전제로 하지 않고 `AGENTS.md`의 역할·위임 규칙으로 호스팅 하위 에이전트를 사용합니다. 기존 지침은 통째로 덮어쓰지 않으며, `AGENTS.override.md`의 우선순위도 먼저 확인합니다. 변경 전 로컬 백업을 만들고 Chany's Studio 관리 구역만 병합합니다. 설정 후에는 새 대화 또는 새 작업을 열어 새 지침을 불러옵니다.
 
 ## 바로 시작하기
 
@@ -126,7 +159,7 @@ $chany-ugc-ads로 이 제품의 자연스러운 9:16 언박싱 광고를 만들�
 /reload-plugins
 ```
 
-업데이트 후 버전이 **2.0.0**인지 확인하고 새 대화 또는 새 작업을 시작하세요.
+업데이트 후 버전이 **2.1.0**인지 확인하고 새 대화 또는 새 작업을 시작하세요.
 
 ## 외부 서비스와 데이터
 
@@ -156,6 +189,7 @@ $chany-ugc-ads로 이 제품의 자연스러운 9:16 언박싱 광고를 만들�
     ├── .mcp.claude.json
     ├── .mcp.json
     ├── assets/
+    ├── commands/project.md
     ├── mcp/reference-preview/
     └── skills/
 ```

@@ -7,6 +7,8 @@ description: Route end-to-end or multi-asset product marketing requests across C
 
 Coordinate advertising and commerce production without duplicating the specialist instructions. Keep the user's source materials, approved business facts, and accepted campaign direction authoritative across every handoff.
 
+Project initialization, `AGENTS.md`, project records, and project-specific Claude/Codex agents belong to `chany-project`. Once a project is configured, use this router for its multi-deliverable production work.
+
 ## Route the request
 
 Read [references/routing.md](references/routing.md) and choose the smallest set of specialists that covers the named deliverables. A single clearly named deliverable should go directly to its owner skill. Use this router for ambiguous requests, complete campaigns, or work spanning two or more categories.

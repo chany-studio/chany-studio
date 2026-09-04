@@ -2,8 +2,11 @@
 
 Choose the owner by the final deliverable, not merely by a tool name mentioned in the request.
 
+Project setup is a separate concern: requests to create or update project instructions, briefs, state, `AGENTS.md`, `CLAUDE.md`, or project-specific agents belong to `chany-project` before production routing begins.
+
 | User intent | Owner skill | Typical result |
 |---|---|---|
+| initialize or update an advertising-production project | `chany-project` | shared project instructions, brief, state, and paired runtime agents |
 | campaign strategy, launch plan, message hierarchy, asset plan | `chany-marketing-brief` | approved brief and asset matrix |
 | transparent cutout, background removal, white packshot, source cleanup | `chany-product-assets` | reusable source asset |
 | visual references, mood direction, Behance or Pinterest board | `chany-reference-board` | six visible candidates and Visual DNA |
@@ -16,7 +19,7 @@ Choose the owner by the final deliverable, not merely by a tool name mentioned i
 
 ## Boundary decisions
 
-- A single known output uses its owner directly. Use `chany-studio` when two or more rows are required or when the user asks for a complete campaign.
+- A request to configure the working project uses `chany-project`. A single known production output uses its owner directly. Use `chany-studio` when two or more production rows are required or when the user asks for a complete campaign.
 - `프롬프트만` is a mode of the owner skill. It does not automatically route to marketing strategy.
 - A reference plus one final output keeps the output skill as owner; `chany-reference-board` supplies only the selected source and Visual DNA.
 - A product-page hero that sits inside a scrolling commerce page belongs to `chany-detail-page`. A standalone paid-media or social placement belongs to `chany-ad-creative`.

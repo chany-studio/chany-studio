@@ -1,0 +1,66 @@
+# Project instructions
+
+<!-- chany-studio:project:start schema=1 -->
+## Chany's Studio project
+
+- Project: {{PROJECT_NAME}}
+- Purpose: {{PROJECT_PURPOSE}}
+- Audience: {{AUDIENCE}}
+- Deadline: {{DEADLINE}}
+- Completion: {{COMPLETION_CRITERIA}}
+- Canonical brief: `.chany-studio/brief.md`
+- Mutable state: `.chany-studio/state.md`
+
+## Authority and locks
+
+- Original product, food, adult-model, garment, logo, and brand files are the identity authority for their own subjects.
+- Only facts and copy marked approved in `.chany-studio/brief.md` may be treated as final.
+- Never invent a price, discount, period, certification, performance claim, comparison, CTA, legal notice, right, or consent.
+- Online references contribute art direction only. Do not copy their product, person, packaging, logo, copy, or branded pixels.
+- Keep the accepted campaign master as the palette, lighting, material, copy-zone, and crop-safe reference for downstream assets.
+
+## Deliverables
+
+{{DELIVERABLES}}
+
+## Skill routing
+
+{{SKILL_ROUTING}}
+
+Use the smallest applicable skill. For work spanning multiple production families, coordinate through `chany-studio`; for one clear output, use its specialist directly.
+
+## Runtime orchestration
+
+- Primary recurring role: {{PRIMARY_AGENT_ROLE}}
+- Role responsibility: {{AGENT_DESCRIPTION}}
+- Approved skill chain: {{SKILL_CHAIN}}
+- ChatGPT Work: when two or more deliverables can be handled independently, explicitly delegate bounded tasks to hosted subagents. Give each subagent its exact deliverable, the relevant brief and state, authority locks, success criteria, and the approved skill chain. Wait for the delegated work, then reconcile it in the main response.
+- Claude: when the named project agent is available, use `{{CLAUDE_AGENT_PATH}}` for this role; otherwise delegate from this contract.
+- Local Codex clients: when the custom agent is available, use `{{CODEX_AGENT_PATH}}`; otherwise delegate from this contract. Hosted ChatGPT Work must not assume that this local TOML file is loaded.
+- The main agent owns user questions, approvals, paid-generation consent, state changes, and final quality control. Subagents must not independently broaden scope or mark unknown facts approved.
+
+## Production flow
+
+{{PRODUCTION_FLOW}}
+
+## Approval and cost
+
+- Before multiple paid generations, show the effective image, video, scene, and variant counts and the known approval points.
+- Before approval, produce only the brief, plan, prompt, layout, or web handoff that the user requested.
+- Never claim a connected-tool or web-only action completed unless it actually completed and can be verified.
+- Record approvals and reversals in `.chany-studio/state.md` without upgrading an unknown value to approved.
+
+## Quality gate
+
+- Compare product shape, count, color, material, label, logo, model identity, garment structure, and approved copy against their authority sources.
+- Check channel ratio, safe area, mobile readability, CTA, language, and campaign-family consistency.
+- Reject unapproved claims, fabricated details, unintended source changes, broken copy, and unverifiable completion.
+- Name observed defects and the smallest repair path. Use `chany-image-edit` only for a bounded change to an accepted image.
+
+## Files and handoff
+
+- Keep source files separate from drafts and finals. Use descriptive names containing deliverable, ratio or size, language when relevant, and revision.
+- Do not overwrite an approved final. Create a new revision and update the output index in `.chany-studio/state.md`.
+- Store no passwords, API keys, access tokens, cookies, signed URLs, temporary download URLs, or hidden credentials.
+- Explicit instructions in the current conversation override this file.
+<!-- chany-studio:project:end -->
