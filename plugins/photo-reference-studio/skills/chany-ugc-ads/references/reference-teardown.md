@@ -27,4 +27,4 @@ Write one row per meaningful beat, not per sampled frame. The change column must
 
 Pacing, beat length, reveal timing, camera behavior, information order, and the shape of the opening may inform the new shot plan. The reference product, person, packaging, copy, music, brand marks, distinctive artwork, exact sequence, and other protected expression do not transfer. Map the useful timing to approved `usp_role` and `message_rank` values, then build new content from the user's own authorities.
 
-This video teardown does not expand the Behance/Pinterest search scope. `chany-reference-board` remains the owner of static-image discovery and its L1-first, direct-L2-only policy.
+This video teardown does not expand the Pinterest-only search scope. `chany-reference-board` remains the owner of static-image discovery and its L1-first, direct-L2-only policy.

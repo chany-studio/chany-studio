@@ -1,7 +1,6 @@
 {
   "schemaVersion": 1,
   "providers": [
-    "Behance",
     "Pinterest"
   ],
   "queryPolicy": {
@@ -47,15 +46,22 @@
       "industrySkill": null,
       "branches": [
         {
+          "l1": "Cosmetic Photography",
+          "medium": "Photography",
+          "l2Examples": [
+            "Serum Photography",
+            "Skincare Photography",
+            "Blush Photography",
+            "Lipstick Photography"
+          ]
+        },
+        {
           "l1": "Product Photography",
           "medium": "Photography",
           "l2Examples": [
-            "Cosmetic Photography",
-            "Skincare Photography",
             "Jewelry Photography",
             "Watch Photography",
-            "Headphone Photography",
-            "Handbag Photography"
+            "Headphone Photography"
           ]
         }
       ]
@@ -70,9 +76,15 @@
           "medium": "Photography",
           "l2Examples": [
             "Editorial Fashion Photography",
-            "Lookbook Photography",
+            "Lookbook Photography"
+          ]
+        },
+        {
+          "l1": "Fashion Accessories Photography",
+          "medium": "Photography",
+          "l2Examples": [
             "Footwear Photography",
-            "Fashion Accessories Photography"
+            "Handbag Photography"
           ]
         }
       ]
@@ -136,6 +148,7 @@
             "Restaurant Photography",
             "Menu Photography",
             "Dessert Photography",
+            "Hotdog Photography",
             "Burger Photography",
             "Bakery Photography"
           ]

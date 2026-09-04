@@ -1,4 +1,4 @@
-# Chany's Studio 2.2.1
+# Chany's Studio 2.2.2
 
 Claude와 ChatGPT Work/Codex에서 함께 쓰는 광고 프로젝트 지침을 설정하고, 업종별 여정·증거·연출·컴플라이언스와 공통 제작 워크플로를 결합해 광고·홍보·마케팅·상세/랜딩·콘텐츠를 기획·제작합니다.
 
@@ -34,7 +34,7 @@ ChatGPT Work에서는 `@스킬명`, Codex에서는 `$스킬명`으로 명시 호
 | ChatGPT `@chany-project` · Codex `$chany-project` | 프로젝트 인터뷰, `AGENTS.md`, 브리프·상태와 런타임별 에이전트 설정 |
 | ChatGPT `@chany-marketing-brief` · Codex `$chany-marketing-brief` | 목표, 타깃, 메시지, 채널과 에셋 매트릭스 |
 | ChatGPT `@chany-product-assets` · Codex `$chany-product-assets` | 투명 누끼, 순백 팩샷과 원본 클린업 |
-| ChatGPT `@chany-reference-board` · Codex `$chany-reference-board` | 제한된 업종 검색 경로의 Behance·Pinterest 레퍼런스 6장 직접 표시 |
+| ChatGPT `@chany-reference-board` · Codex `$chany-reference-board` | 제한된 업종 검색 경로의 Pinterest 레퍼런스 6장 직접 표시 |
 | ChatGPT `@chany-campaign-visual` · Codex `$chany-campaign-visual` | 연출컷과 마스터 키비주얼 |
 | ChatGPT `@chany-detail-page` · Codex `$chany-detail-page` | 상세/랜딩페이지 이미지 모듈 |
 | ChatGPT `@chany-ad-creative` · Codex `$chany-ad-creative` | 정적 광고, 프로모션 포스터, 배너와 채널 변형 |
@@ -117,10 +117,10 @@ Codex: $chany-publication-review로 최종 광고의 정확한 카피·오퍼·�
 ## 레퍼런스와 원본
 
 - 승인 원본과 사실 자료는 제품, 음식, 차량, 공간, UI, 프로그램, 모델, 의류와 카피의 정체성을 결정합니다.
-- Behance와 Pinterest에는 업종 taxonomy의 L1 광역 카테고리 1개를 먼저 검색하고, 필요할 때만 같은 경로의 직접 L2 하위 카테고리 0~1개를 추가합니다.
+- Pinterest에는 업종 taxonomy의 L1 광역 카테고리 1개를 먼저 검색하고, 필요할 때만 같은 경로의 직접 L2 하위 카테고리 0~1개를 추가합니다.
 - 한 작업에서 여러 L2 형제나 세 번째 의미 검색어를 쓰지 않으며 스타일·렌즈·지역·색·무드·플랫폼 modifier도 검색어에 붙이지 않습니다.
 - 검색 결과는 복제하지 않고 구도, 조명, 배경, 재질, 색 관계와 정보 위계를 분석하는 방향 자료로 사용합니다. 분석어를 새 검색어로 확장하지 않습니다.
-- `chany-reference-board`는 Behance와 Pinterest 후보를 링크나 HTML이 아닌 현재 대화의 실제 이미지로 보여줍니다.
+- `chany-reference-board`는 Pinterest 후보 6장을 링크나 HTML이 아닌 현재 대화의 실제 이미지로 보여줍니다.
 - Claude Cowork의 직접 미리보기에는 Node.js 18 이상과 로컬 `reference-preview` 연결이 필요합니다.
 
 ## 유료 생성 계약과 Higgsfield 경계
@@ -136,7 +136,7 @@ Codex: $chany-publication-review로 최종 광고의 정확한 카피·오퍼·�
 
 ## 연결과 데이터
 
-Higgsfield 기능 사용 시 선택한 원본과 레퍼런스가 Higgsfield로 전송될 수 있습니다. 로컬 `reference-preview`는 Behance·Pinterest의 공개 미리보기만 불러옵니다. 비밀번호, API 키, 액세스 토큰이나 인증 코드는 대화에 입력하지 말고 호스트의 인증 화면을 사용하세요.
+Higgsfield 기능 사용 시 선택한 원본과 레퍼런스가 Higgsfield로 전송될 수 있습니다. 로컬 `reference-preview`는 Pinterest의 공개 미리보기만 불러옵니다. 비밀번호, API 키, 액세스 토큰이나 인증 코드는 대화에 입력하지 말고 호스트의 인증 화면을 사용하세요.
 
 공식 설치·사용설명서: https://jolly-phlox-79c.notion.site/Chany-s-Studio-3c783e9464668140b794ee076be24406
 

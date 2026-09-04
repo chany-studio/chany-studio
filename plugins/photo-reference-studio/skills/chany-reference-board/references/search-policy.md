@@ -2,20 +2,19 @@
 
 ## Core rule
 
-Search only Behance and Pinterest. Search terms identify what the source subject is, not how it should be photographed. The final reference board must show the reference images directly in the current conversation; a link-only board, HTML file, contact sheet, or separate artifact is not an inline reference board.
+Search only Pinterest. Search terms identify what the source subject is, not how it should be photographed. The final reference board must show exactly six distinct reference images directly in the current conversation; a link-only board, HTML file, contact sheet, or separate artifact is not an inline reference board.
 
-## Approved providers
+## Approved provider
 
 | Provider | Domain | Purpose |
 |---|---|---|
-| Behance | behance.net | Commercial art direction, campaign systems, set design, lighting, and composition |
 | Pinterest | pinterest.com | Broad visual discovery and traceable links to original creative sources |
 
-Do not use general web results, stock sites, social networks, agency sites, or any domain other than Behance and Pinterest as a silent fallback.
+Do not use general web results, stock sites, social networks, agency sites, or any domain other than Pinterest as a fallback.
 
-Prefer a Behance project page with visible project ownership. For Pinterest, require a public Pin page plus a visible creator or outbound original-source link. Reject orphaned Pins, inaccessible pages, login-gated content, scraped mirrors, and results without a directly displayable preview.
+Require a public Pinterest Pin page plus a visible creator or outbound original-source link. Reject orphaned Pins, inaccessible pages, login-gated content, scraped mirrors, and results without a directly displayable preview.
 
-Behance and Pinterest content is direction-only. Do not treat it as licensed production pixels.
+Pinterest content is direction-only. Do not treat it as licensed production pixels.
 
 ## Query depth
 
@@ -42,7 +41,7 @@ The L2 term is a direct child, not the L1 phrase plus a string of modifiers. An 
 
 Additional valid pairs include `Professional Services Branding` → `Law Firm Branding`, `Hospitality Photography` → `Hotel Photography`, `Architecture Photography` → `Interior Photography`, and `Automotive Photography` → `Electric Vehicle Photography`.
 
-Run each approved semantic query once for Behance and once for Pinterest, for a maximum of four search calls. If the direct subtype cannot be identified confidently, run only the L1 query for both providers. Do not retry with a narrower phrase; improve filtering and ranking instead.
+Run each approved semantic query once on Pinterest, for a maximum of two search calls: the required L1 call and at most one direct-L2 call. If the direct subtype cannot be identified confidently, run only the L1 query. Do not retry with a narrower phrase; improve filtering and ranking instead.
 
 ## Prohibited query modifiers
 
@@ -59,12 +58,12 @@ Provider and domain scope is routing metadata, not part of the semantic query.
 
 ## Collection
 
-- collect up to 8 candidates per query per provider
-- retain provider, preview image URL, source-page URL, Pinterest outbound original-source URL when available, project or Pin title, creator when visible, source domain, dimensions when known, and query
-- merge exact duplicates and near-duplicates
+- collect up to 8 Pinterest candidates per query
+- retain provider, preview image URL, Pin-page URL, reported Pinterest outbound-source URL when available, Pin title, creator when visible, source domain, dimensions when known, and query
+- merge duplicates by canonical Pin ID or URL, normalized `i.pinimg.com` asset URL with size and query removed, and outbound original-source URL; also merge perceptual near-duplicates and alternate crops from one image
 - reject collages, screenshots, severe compression, watermarks over the subject, images dominated by text, inaccessible previews, missing source pages, orphaned Pins, and duplicate crops from one shoot
 - require an image preview that the conversation surface can render directly
-- never bypass access controls, scrape Pinterest, or bulk-download provider content
+- never bypass access controls, scrape Pinterest, or bulk-download Pinterest content
 
 ## Visual ranking
 
@@ -79,7 +78,7 @@ Score each candidate from 0 to 100:
 | Production feasibility | 10 | Can the scene be built without hiding or redesigning the subject? |
 | Contamination risk | 10 | Are foreign logos, packaging, copy, people, and recipe features easy to exclude? |
 
-## Diversity and provider balance
+## Diversity and source spread
 
 Select six candidates that differ across at least three axes:
 
@@ -90,7 +89,7 @@ Select six candidates that differ across at least three axes:
 - minimal vs prop-supported scene
 - front view vs high angle vs top view
 
-Target three Behance and three Pinterest candidates when both providers have at least three viable results. If one provider is short, keep at least two from it when possible and fill from the other provider. If fewer than six directly displayable candidates remain, return only the viable images and state the shortfall. Do not use another site or lower the standard.
+Select exactly six distinct Pinterest candidates. When the metadata permits, avoid taking more than two candidates from the same creator, board, outbound source, or obvious shoot so that a single source does not masquerade as visual diversity. If fewer than six directly displayable candidates remain after the allowed L1 and optional L2 searches, mark the board incomplete, state the shortfall, and do not ask the user to choose or begin paid production. Do not search another site, add a third query, recycle a failed candidate, or lower the standard.
 
 ## Mandatory inline reference board
 
@@ -98,30 +97,30 @@ Render every finalist as an actual image in the response. The user must be able 
 
 Use this display order:
 
-1. in Claude Cowork, six separate `fetch_reference_preview_image` calls returning MCP image content
+1. in Claude Cowork, six successful separate `fetch_reference_preview_image` results returning MCP image content
 2. a fetched public preview returned as host-displayable image content
 3. an attached preview image file when the host can display that attachment in the current conversation
 4. a verified inline image embed supported by the host
 
-In Claude Cowork, call the bundled tool once per finalist rather than batching six images into one tool result. Each successful result starts with an MCP `ImageContent` block containing `type: image`, base64 `data`, and an accurate `mimeType`. Search-result metadata or `preview_image_url` alone is not image presentation. Do not create HTML as the primary answer, and do not ask the user to open six links just to compare candidates.
+In Claude Cowork, call the bundled tool once per candidate rather than batching six images into one tool result. Continue through unused reserve candidates until six distinct calls succeed; never retry a failed candidate blindly. Each successful result starts with an MCP `ImageContent` block containing `type: image`, base64 `data`, and an accurate `mimeType`. Search-result metadata or `preview_image_url` alone is not image presentation. Do not create HTML as the primary answer, and do not ask the user to open six links just to compare candidates.
 
-Before each preview call, confirm in the discovery result that the preview and provider page are paired. The preview connection checks the provider, URL shape, CDN, bytes, MIME, and dimensions. It also verifies Behance mapping when the public asset identifier contains the gallery ID. It does not scrape Pinterest to prove image-to-Pin membership, so do not convert a Pinterest `provenance_mapping_verified: false` field into a claim that the connector independently verified the mapping.
+Before each preview call, confirm in the discovery result that the preview and Pin page are paired. The preview connection checks the Pinterest provider, URL shape, CDN, bytes, MIME, and dimensions. It does not scrape Pinterest to prove image-to-Pin membership, so do not convert a `provenance_mapping_verified: false` field into a claim that the connector independently verified the mapping.
 
 For each candidate, present in this order:
 
 1. directly rendered image preview
 2. number and provider
-3. clickable provider source-page link
-4. Pinterest outbound original-source link when available
+3. clickable Pinterest Pin-page link
+4. reported, unverified outbound-source link when available
 5. search query
 6. one-line fit note
 7. one-sentence Visual DNA
 
 Do not substitute a text card, filename, placeholder, source-page thumbnail screenshot, or bare URL for the image. If search returns only a preview URL, fetch or import the publicly accessible preview through an approved read-only path and return the resulting image content. Fetch preview-size media only; do not fetch protected originals or bypass access controls.
 
-Treat the board as incomplete until every presented candidate has a visible image. If one candidate cannot be displayed, reject and replace it before asking the user to choose. If the current host has no image-content or image-attachment path at all, state the limitation once and offer source links or an HTML board as an optional fallback. Never label that fallback as an inline board or continue the semi-auto selection checkpoint as though the images were visible.
+Treat the board as incomplete until every presented candidate has a visible image. Set `display_confirmed: true` only after actual image content appears in the current conversation. If one candidate cannot be displayed, reject it and use the next unused Pinterest reserve candidate before asking the user to choose. If the current host has no image-content or image-attachment path at all, state the limitation once and offer source links or an HTML board as an optional fallback. Never label that fallback as an inline board or continue the semi-auto selection checkpoint as though the images were visible.
 
-After the six images, ask for one number or 자동 선택. Do not begin paid staged generation before this checkpoint in semi-auto mode.
+After exactly six distinct images are visible, ask for one number or 자동 선택. Do not begin paid staged generation before this checkpoint in semi-auto mode.
 
 ## Visual DNA record
 
@@ -138,7 +137,7 @@ Maintain:
     depth_of_field: ""
     commercial_mood: ""
     exclude_from_reference: []
-    provider: "Behance | Pinterest"
+    provider: "Pinterest"
     source_url: ""
     original_source_url: ""
     preview_image_url: ""
@@ -152,9 +151,8 @@ Exclude the reference subject, model identity, garments, packaging, logo, label,
 
 ## Rights and provenance
 
-Use online images only as visual direction. Keep the provider source page and, for Pinterest, the outbound original source when visible.
+Use online images only as visual direction. Keep the Pinterest Pin page and the reported outbound source when visible, and label the outbound mapping unverified.
 
-Never infer that Behance or Pinterest content is licensed for commercial reuse. For any requested direct reuse of reference pixels, stop and verify rights separately.
+Never infer that Pinterest content is licensed for commercial reuse. For any requested direct reuse of reference pixels, stop and verify rights separately.
 
-- Behance copyright guidance: https://help.behance.net/hc/en-us/articles/204485044-Guide-Copyright-And-Posting-Content-On-Behance
 - Pinterest terms: https://policy.pinterest.com/en/terms-of-service

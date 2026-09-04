@@ -24,17 +24,11 @@ const SUPPORTED_PROTOCOL_VERSIONS = new Set([
 ]);
 const SUPPORTED_MIME_TYPES = new Set(["image/jpeg", "image/png", "image/webp"]);
 const SOURCE_HOSTS = {
-  behance: "behance.net",
   pinterest: "pinterest.com",
 };
 const PREVIEW_HOSTS = {
-  behance: new Set(["mir-s3-cdn-cf.behance.net", "mir-cdn.behance.net"]),
   pinterest: new Set(["i.pinimg.com"]),
 };
-const BEHANCE_MODULE_SIZE_SEGMENTS =
-  /^(?:(?:source|fs|disp|[1-9][0-9]{2,4})|max_[1-9][0-9]{1,4})(?:_opt_1)?(?:_webp)?$/;
-const BEHANCE_PROJECT_SIZE_SEGMENTS =
-  /^(?:115|202|230|404|808|max_808)(?:_webp)?$/;
 const PINTEREST_SIZE_SEGMENTS = new Set(["originals", "236x", "474x", "564x", "736x"]);
 const INPUT_KEYS = new Set([
   "id",
@@ -109,9 +103,9 @@ const REFERENCE_OUTPUT_PROPERTIES = {
 
 export const TOOL_DEFINITION = {
   name: TOOL_NAME,
-  title: "Fetch Reference Preview Image",
+  title: "Fetch Pinterest Reference Preview Image",
   description:
-    "Fetch one public Behance or Pinterest preview and return it as an inline MCP image with provider-scoped provenance. Call once per finalist. This read-only tool verifies Behance image-to-gallery mapping from its public asset identifier; Pinterest mapping remains caller-supplied and must be verified by discovery. It does not search, authenticate, scrape protected pages, or fetch full-resolution assets.",
+    "Fetch one public Pinterest preview and return it as an inline MCP image with Pinterest-scoped provenance. Call once per finalist. Image-to-Pin mapping remains caller-supplied and must be verified by discovery. This read-only tool does not search, authenticate, scrape protected pages, or fetch full-resolution assets.",
   inputSchema: {
     type: "object",
     additionalProperties: false,
@@ -120,7 +114,7 @@ export const TOOL_DEFINITION = {
       id: { type: "string", minLength: 1, maxLength: 200 },
       provider: {
         type: "string",
-        enum: ["behance", "pinterest", "Behance", "Pinterest"],
+        enum: ["pinterest", "Pinterest"],
       },
       title: { type: "string", maxLength: 300 },
       preview_image_url: { type: "string", format: "uri", maxLength: 1024 },
@@ -219,28 +213,19 @@ function isHostOrSubdomain(hostname, base) {
 
 function providerFromSourceUrl(sourceUrl) {
   const host = sourceUrl.hostname.toLowerCase();
-  for (const [provider, base] of Object.entries(SOURCE_HOSTS)) {
-    if (!isHostOrSubdomain(host, base)) continue;
-    const validPath =
-      provider === "behance"
-        ? /^\/gallery\/[1-9][0-9]*(?:\/[^/]+)?(?:\/modules\/[1-9][0-9]*)?\/?$/.test(
-            sourceUrl.pathname,
-          )
-        : /^\/pin\/(?:[1-9][0-9]*|[a-z0-9][a-z0-9-]{0,300}--[1-9][0-9]*)\/?$/i.test(
-            sourceUrl.pathname,
-          );
-    if (!validPath) {
-      throw new UserFacingError(
-        provider === "behance"
-          ? "source_url must point to a public Behance /gallery/<id>/ page."
-          : "source_url must point to a public Pinterest /pin/<id>/ page.",
-      );
-    }
-    return provider;
+  if (!isHostOrSubdomain(host, SOURCE_HOSTS.pinterest)) {
+    throw new UserFacingError(
+      "source_url must point to a public Pinterest (pinterest.com) Pin page.",
+    );
   }
-  throw new UserFacingError(
-    "source_url must be a Behance (behance.net) or Pinterest (pinterest.com) page.",
-  );
+  if (
+    !/^\/pin\/(?:[1-9][0-9]*|[a-z0-9][a-z0-9-]{0,300}--[1-9][0-9]*)\/?$/i.test(
+      sourceUrl.pathname,
+    )
+  ) {
+    throw new UserFacingError("source_url must point to a public Pinterest /pin/<id>/ page.");
+  }
+  return "pinterest";
 }
 
 function assertAllowedPreviewHost(url, provider, name) {
@@ -255,39 +240,17 @@ function assertAllowedPreviewHost(url, provider, name) {
 }
 
 export function normalizePreviewUrl(inputUrl, provider, name = "preview_image_url") {
+  if (provider !== "pinterest") {
+    throw new UserFacingError("provider must be Pinterest.");
+  }
   const url = inputUrl instanceof URL ? new URL(inputUrl.href) : parseHttpsUrl(inputUrl, name);
   assertAllowedPreviewHost(url, provider, name);
   const segments = url.pathname.split("/");
 
-  if (provider === "behance") {
-    const familyIndex =
-      ["project_modules", "projects"].includes(segments[1])
-        ? 1
-        : segments[1] === "v1" &&
-            segments[2] === "rendition" &&
-            ["project_modules", "projects"].includes(segments[3])
-          ? 3
-          : -1;
-    const family = segments[familyIndex];
-    const size = segments[familyIndex + 1];
-    const validSize =
-      family === "project_modules"
-        ? BEHANCE_MODULE_SIZE_SEGMENTS.test(size ?? "")
-        : family === "projects"
-          ? BEHANCE_PROJECT_SIZE_SEGMENTS.test(size ?? "")
-          : false;
-    if (familyIndex < 0 || segments.length !== familyIndex + 3 || !validSize) {
-      throw new UserFacingError(
-        `${name} must use a recognized Behance project_modules or projects preview-size path.`,
-      );
-    }
-    segments[familyIndex + 1] = family === "project_modules" ? "max_316" : "202";
-  } else {
-    if (segments.length < 3 || !PINTEREST_SIZE_SEGMENTS.has(segments[1])) {
-      throw new UserFacingError(`${name} must use a recognized Pinterest image-size path.`);
-    }
-    segments[1] = "236x";
+  if (segments.length < 3 || !PINTEREST_SIZE_SEGMENTS.has(segments[1])) {
+    throw new UserFacingError(`${name} must use a recognized Pinterest image-size path.`);
   }
+  segments[1] = "236x";
 
   url.pathname = segments.join("/");
   url.search = "";
@@ -303,24 +266,6 @@ function optionalPositiveInteger(value, name) {
   return value;
 }
 
-function verifyProviderMapping(provider, sourceUrl, previewUrl) {
-  if (provider !== "behance") return false;
-  const galleryId = sourceUrl.pathname.match(/^\/gallery\/([1-9][0-9]*)/)?.[1];
-  let filename;
-  try {
-    filename = decodeURIComponent(previewUrl.pathname.split("/").at(-1) ?? "");
-  } catch {
-    throw new UserFacingError("preview_image_url contains an invalid encoded filename.");
-  }
-  const assetId = filename.split(".", 1)[0];
-  if (!galleryId || !/^[a-z0-9_-]+$/i.test(assetId) || !assetId.endsWith(galleryId)) {
-    throw new UserFacingError(
-      "Behance preview asset does not match the gallery ID in source_url.",
-    );
-  }
-  return true;
-}
-
 export function validateArguments(args) {
   if (!objectLike(args)) throw new UserFacingError("Tool arguments must be an object.");
   const unexpected = Object.keys(args).find((key) => !INPUT_KEYS.has(key));
@@ -330,12 +275,11 @@ export function validateArguments(args) {
   const sourceUrl = parseHttpsUrl(args.source_url, "source_url");
   const provider = providerFromSourceUrl(sourceUrl);
   const suppliedProvider = boundedString(args.provider, "provider", { max: 20 });
-  if (suppliedProvider && suppliedProvider.toLowerCase() !== provider) {
-    throw new UserFacingError("provider does not match source_url.");
+  if (suppliedProvider && !["pinterest", "Pinterest"].includes(suppliedProvider)) {
+    throw new UserFacingError("provider must be Pinterest.");
   }
   const previewUrl = parseHttpsUrl(args.preview_image_url, "preview_image_url");
   const fetchedPreviewUrl = normalizePreviewUrl(previewUrl, provider);
-  const provenanceMappingVerified = verifyProviderMapping(provider, sourceUrl, previewUrl);
 
   let originalSourceUrl;
   if (args.original_source_url === null) {
@@ -350,7 +294,7 @@ export function validateArguments(args) {
     title: boundedString(args.title, "title", { max: 300 }),
     preview_image_url: previewUrl.href,
     fetched_preview_url: fetchedPreviewUrl.href,
-    provenance_mapping_verified: provenanceMappingVerified,
+    provenance_mapping_verified: false,
     source_url: sourceUrl.href,
     original_source_url: originalSourceUrl,
     creator: boundedString(args.creator, "creator", { max: 300 }),
@@ -757,16 +701,15 @@ async function fetchValidatedImage(candidate, dependencies) {
 }
 
 function captionFor(candidate) {
-  const provider = candidate.provider === "behance" ? "Behance" : "Pinterest";
   const lines = [
-    `${provider} reference | ${candidate.id}`,
+    `Pinterest reference | ${candidate.id}`,
     `Provided source page: ${candidate.source_url}`,
-    candidate.provenance_mapping_verified
-      ? "Image-to-page mapping: verified from Behance asset identifier"
-      : "Image-to-page mapping: supplied by discovery; not verified by preview fetch",
+    "Image-to-Pin mapping: supplied by discovery; not verified by preview fetch",
   ];
   if (candidate.title) lines.splice(1, 0, `Title: ${candidate.title}`);
-  if (candidate.original_source_url) lines.push(`Original source: ${candidate.original_source_url}`);
+  if (candidate.original_source_url) {
+    lines.push(`Reported outbound source: ${candidate.original_source_url}`);
+  }
   if (candidate.creator) lines.push(`Creator: ${candidate.creator}`);
   if (candidate.query) lines.push(`Query: ${candidate.query}`);
   if (candidate.fit_note) lines.push(`Fit: ${candidate.fit_note}`);
@@ -778,7 +721,7 @@ function referenceMetadata(candidate, image) {
   return Object.fromEntries(
     Object.entries({
       id: candidate.id,
-      provider: candidate.provider === "behance" ? "Behance" : "Pinterest",
+      provider: "Pinterest",
       title: candidate.title,
       source_url: candidate.source_url,
       preview_image_url: candidate.preview_image_url,
@@ -854,9 +797,9 @@ export function createProtocolHandler(dependencies = {}) {
               ? requested
               : DEFAULT_PROTOCOL_VERSION,
             capabilities: { tools: {} },
-            serverInfo: { name: SERVER_NAME, version: "1.1.0" },
+            serverInfo: { name: SERVER_NAME, version: "1.2.0" },
             instructions:
-              "Call fetch_reference_preview_image once for each shortlisted Behance or Pinterest finalist.",
+              "Call fetch_reference_preview_image once for each of the six shortlisted Pinterest finalists.",
           },
         };
       }

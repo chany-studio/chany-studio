@@ -157,7 +157,7 @@ Choose one L1 and optionally one direct L2. Search each semantic level independe
 
 | L1 category | Direct L2 options |
 |---|---|
-| Food Photography | Restaurant Photography; Menu Photography; Dessert Photography; Burger Photography; Bakery Photography |
+| Food Photography | Restaurant Photography; Menu Photography; Dessert Photography; Hotdog Photography; Burger Photography; Bakery Photography |
 | Beverage Photography | Cafe Photography; Coffee Photography; Cocktail Photography; Tea Photography |
 
 Allowed: `Food Photography`, then `Menu Photography`.

@@ -55,7 +55,7 @@ chany-studio/chany-studio
 
 - 표시 이름: `Chany's Studio`
 - 내부 식별자: `photo-reference-studio`
-- 버전: `2.2.1`
+- 버전: `2.2.2`
 - 대표 Skill: `chany-studio`
 - 프로젝트 Skill: `chany-project`
 - 전문 Skill: 마케팅 브리프, 제품 에셋, 레퍼런스, 키비주얼, 상세페이지, 광고, 편집, 패션, UGC, 영상 조립(`chany-video-assembly`), 환경 점검(`chany-preflight`), 게시 전 검수(`chany-publication-review`)
@@ -98,9 +98,9 @@ Codex: $chany-hospitality-travel로 신규 호텔 예약 캠페인의 방향을 
 플랫폼별 레퍼런스 표시 테스트:
 
 ```text
-Claude Cowork(자연어 자동 선택): 제품 촬영 레퍼런스 6장을 Behance와 Pinterest에서 찾아 링크나 HTML이 아니라 이 대화에 이미지로 보여줘.
-ChatGPT Work: @chany-reference-board로 제품 촬영 레퍼런스 6장을 Behance와 Pinterest에서 찾아 링크나 HTML이 아니라 이 대화에 이미지로 보여줘.
-Codex: $chany-reference-board로 제품 촬영 레퍼런스 6장을 Behance와 Pinterest에서 찾아 링크나 HTML이 아니라 이 대화에 이미지로 보여줘.
+Claude Cowork(자연어 자동 선택): 제품 촬영 레퍼런스 6장을 Pinterest에서만 찾아 링크나 HTML이 아니라 이 대화에 이미지로 보여줘.
+ChatGPT Work: @chany-reference-board로 제품 촬영 레퍼런스 6장을 Pinterest에서만 찾아 링크나 HTML이 아니라 이 대화에 이미지로 보여줘.
+Codex: $chany-reference-board로 제품 촬영 레퍼런스 6장을 Pinterest에서만 찾아 링크나 HTML이 아니라 이 대화에 이미지로 보여줘.
 ```
 
 프로젝트 설정 테스트:
@@ -147,7 +147,7 @@ Chany 확인: Chany's Studio가 제공하는 chany-project와 업종 스킬을 �
 
 1. **Customize → Plugins**를 엽니다.
 2. `photo-reference-studio` 마켓플레이스에서 **Update**를 누릅니다.
-3. 버전 `2.2.1`, `chany-project`, 공통 제작 스킬과 11개 업종 스킬 목록을 확인합니다.
+3. 버전 `2.2.2`, `chany-project`, 공통 제작 스킬과 11개 업종 스킬 목록을 확인합니다.
 4. 새 Cowork 작업을 시작합니다.
 
 ### Claude Code
@@ -188,6 +188,12 @@ Chany 확인: Chany's Studio가 제공하는 chany-project와 업종 스킬을 �
 - 유료 생성은 현재 도구 스키마·무료 견적·버전별 승인을 따르고, 결과가 불명확할 때 기존 작업을 확인하기 전에는 재제출하지 않습니다.
 - 최종 게시 후보는 `chany-publication-review`의 공식 출처·증거·거래·메시지·권리·플랫폼·최종 렌더 게이트와 이름이 지정된 사람 검토를 거칩니다.
 
+## 2.2.2에서 변경된 기능
+
+- 레퍼런스 검색과 인라인 미리보기 소스를 Pinterest 하나로 제한했습니다.
+- L1 검색 1회와 선택적 직접 L2 검색 1회만 사용하며, 서로 다른 Pinterest 이미지 6장이 실제로 표시돼야 보드가 완료됩니다.
+- 후보가 실패하면 같은 검색 풀의 사용하지 않은 Pinterest 후보로 교체합니다. 6장 미만이면 미완성으로 표시하고 다른 사이트나 세 번째 검색어로 채우지 않습니다.
+
 ## 2.2.1에서 추가된 기능
 
 - 제품이 등장하는 UGC 장면마다 승인 스틸을 현재 영상 도구가 노출하는 이미지 조건 첫 프레임 역할에 연결하고, 모드·역할 오류와 결제 상태가 불명확한 오류를 구분합니다.
@@ -198,7 +204,7 @@ Chany 확인: Chany's Studio가 제공하는 chany-project와 업종 스킬을 �
 
 ## 업데이트가 반영되지 않을 때
 
-- 설치 상세의 버전이 `2.2.1`인지 확인합니다.
+- 설치 상세의 버전이 `2.2.2`인지 확인합니다.
 - Refresh 또는 Update 뒤 반드시 새 대화나 새 작업을 시작합니다.
 - Moai 체이닝을 사용할 때는 두 플러그인의 설치·활성화뿐 아니라 현재 호스트의 실제 플러그인 간 호출 기능도 확인합니다. 기능이 없으면 Moai project 완료 후 Chany를 실행하는 수동 2단계를 사용합니다. 필수 실행은 `--with-moai`, 단독 실행은 `--chany-only`입니다.
 - Claude Code에서는 `/plugin`의 Errors 탭을 확인합니다.

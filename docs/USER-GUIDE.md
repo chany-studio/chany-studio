@@ -4,7 +4,7 @@ Chany's Studio는 Claude와 ChatGPT Work에서 같은 프로젝트 지침을 사
 
 ## 어떤 스킬을 써야 하나요?
 
-Chany's Studio 2.2.1은 두 축을 함께 사용합니다.
+Chany's Studio 2.2.2는 두 축을 함께 사용합니다.
 
 1. **업종 오버레이**는 고객이 왜 선택하는지, 어떤 근거가 필요한지, 어떤 표현을 피해야 하는지와 그 업종다운 촬영·연출 방향을 정합니다.
 2. **공통 제작 스킬**은 브리프, 레퍼런스 보드, 키비주얼, 상세페이지, 광고, 편집, 모델·패션 또는 UGC 같은 실제 산출물을 만듭니다.
@@ -23,7 +23,7 @@ ChatGPT Work의 명시 호출은 `@스킬명`, Codex의 명시 호출은 `$스�
 | 전체 캠페인 또는 여러 산출물 | ChatGPT `@chany-studio` · Codex `$chany-studio` |
 | 캠페인 목표·타깃·메시지·산출물 계획 | ChatGPT `@chany-marketing-brief` · Codex `$chany-marketing-brief` |
 | 누끼·순백 팩샷·제품 클린업 | ChatGPT `@chany-product-assets` · Codex `$chany-product-assets` |
-| Behance·Pinterest 레퍼런스 비교 | ChatGPT `@chany-reference-board` · Codex `$chany-reference-board` |
+| Pinterest 레퍼런스 6장 비교 | ChatGPT `@chany-reference-board` · Codex `$chany-reference-board` |
 | 제품 연출컷·마스터 키비주얼 | ChatGPT `@chany-campaign-visual` · Codex `$chany-campaign-visual` |
 | 상세페이지 이미지 모듈 | ChatGPT `@chany-detail-page` · Codex `$chany-detail-page` |
 | 광고·포스터·배너·채널 변형 | ChatGPT `@chany-ad-creative` · Codex `$chany-ad-creative` |
@@ -221,11 +221,11 @@ Codex: $chany-product-assets로 이 제품을 원본 픽셀과 라벨을 보존�
 ```text
 ChatGPT Work: @chany-reference-board로 이 제품에 맞는 촬영 레퍼런스 6장을 찾아줘.
 Codex: $chany-reference-board로 이 제품에 맞는 촬영 레퍼런스 6장을 찾아줘.
-Behance와 Pinterest 후보를 링크만 주지 말고 이 대화 안에 이미지로 보여주고,
+Pinterest 후보만 링크가 아니라 이 대화 안에 이미지 6장으로 보여주고,
 구도·조명·배경·색감·소품의 Visual DNA를 설명해줘.
 ```
 
-기본적으로 후보 6장을 보여준 뒤 번호 하나 또는 `자동 선택`을 기다립니다. 레퍼런스 속 제품, 모델, 로고, 패키지, 문구와 가격은 최종 결과로 가져오지 않습니다.
+서로 다른 Pinterest 후보 6장이 실제로 표시된 뒤 번호 하나 또는 `자동 선택`을 기다립니다. 6장 미만이면 보드가 미완성이므로 선택이나 유료 제작으로 넘어가지 않습니다. 레퍼런스 속 제품, 모델, 로고, 패키지, 문구와 가격은 최종 결과로 가져오지 않습니다.
 
 검색은 업종 오버레이가 정한 분류를 따라 **L1 광역 카테고리부터 시작하고, 필요할 때 직접 연결된 L2 하위 카테고리 하나까지만** 추가합니다. 검색어 자체에는 지역, 플랫폼, 스타일, 무드, 색, 연도, 카메라, 렌즈, 조명, 비율, 타깃, 브랜드 또는 “고급·시네마틱” 같은 창작 수식어를 넣지 않습니다. 이런 연출 조건은 검색 결과를 고르는 Visual DNA와 제작 프롬프트에 적용합니다.
 

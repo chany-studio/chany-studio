@@ -299,6 +299,53 @@ test("reference search policy requires L1 first, at most one L2, and no third qu
   );
 });
 
+test("reference discovery is Pinterest-only and completes only with six visible finalists", async () => {
+  const [skill, policy, contract, ui, taxonomyText] = await Promise.all([
+    readPluginFile("skills/chany-reference-board/SKILL.md"),
+    readPluginFile("skills/chany-reference-board/references/search-policy.md"),
+    readPluginFile("skills/chany-reference-board/references/reference-search-mcp-contract.md"),
+    readPluginFile("skills/chany-reference-board/agents/openai.yaml"),
+    readPluginFile("skills/chany-reference-board/references/industry-taxonomy.json"),
+  ]);
+  const taxonomy = JSON.parse(taxonomyText);
+
+  assert.deepEqual(taxonomy.providers, ["Pinterest"]);
+  assert.equal(taxonomy.queryPolicy.maxTaxonomyDepth, 2);
+  assert.equal(taxonomy.queryPolicy.maxSemanticQueries, 2);
+  const generalProduct = taxonomy.domains.find((domain) => domain.id === "general-product");
+  const cosmetics = generalProduct.branches.find(
+    (branch) => branch.l1 === "Cosmetic Photography",
+  );
+  const products = generalProduct.branches.find(
+    (branch) => branch.l1 === "Product Photography",
+  );
+  assert.ok(cosmetics.l2Examples.includes("Lipstick Photography"));
+  assert.ok(cosmetics.l2Examples.includes("Serum Photography"));
+  assert.ok(!products.l2Examples.includes("Cosmetic Photography"));
+  const queryPairTable = policy
+    .split("| Input | Broad query | Direct-subtype query |", 2)[1]
+    .split("Additional valid pairs", 1)[0];
+  const documentedPairs = [...queryPairTable.matchAll(/^\|\s*[^|]+\|\s*([^|]+)\|\s*([^|]+)\|$/gm)]
+    .map((match) => [match[1].trim(), match[2].trim()])
+    .filter(([l1]) => !l1.startsWith("---"));
+  const taxonomyPairs = new Set(
+    taxonomy.domains.flatMap((domain) =>
+      domain.branches.flatMap((branch) =>
+        branch.l2Examples.map((l2) => `${branch.l1} -> ${l2}`),
+      ),
+    ),
+  );
+  for (const [l1, l2] of documentedPairs) {
+    assert.ok(taxonomyPairs.has(`${l1} -> ${l2}`), `${l1} -> ${l2} must exist in taxonomy`);
+  }
+  assert.doesNotMatch([skill, policy, contract, ui].join("\n"), /Behance/i);
+  assert.match(policy, /maximum of two search calls/i);
+  assert.match(policy, /Select exactly six distinct Pinterest candidates/i);
+  assert.match(skill, /Six successful visible results are required/i);
+  assert.match(contract, /each candidate is submitted at most once/i);
+  assert.match(contract, /Do not[^.]*ask the user to choose[^.]*begin paid production/i);
+});
+
 test("the Chany project skill detects Moai context but gates same-request execution by host capability", async () => {
   const [projectSkill, moaiChain] = await Promise.all([
     readPluginFile("skills/chany-project/SKILL.md"),

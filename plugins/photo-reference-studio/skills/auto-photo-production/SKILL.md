@@ -12,7 +12,7 @@ Route the request as follows:
 - multi-asset or end-to-end campaign → `chany-studio`
 - marketing plan or asset brief → `chany-marketing-brief`
 - cutout, white packshot, or source cleanup → `chany-product-assets`
-- Behance or Pinterest reference board → `chany-reference-board`
+- Pinterest reference board with exactly six visible candidates → `chany-reference-board`
 - staged image or master key visual → `chany-campaign-visual`
 - static ad, poster, banner, or channel set → `chany-ad-creative`
 - product detail-page modules → `chany-detail-page`

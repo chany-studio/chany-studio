@@ -59,14 +59,14 @@ function webpVp8x(width = 2, height = 2) {
 const JPEG = jpeg();
 const PNG = png();
 
-function behanceCandidate(overrides = {}) {
+function pinterestCandidate(overrides = {}) {
   return {
-    id: "behance-123",
-    provider: "Behance",
+    id: "pin-456",
+    provider: "pinterest",
     title: "Clean skincare campaign",
-    preview_image_url:
-      "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/preview123.jpg",
-    source_url: "https://www.behance.net/gallery/123/clean-skincare",
+    preview_image_url: "https://i.pinimg.com/originals/aa/bb/cc/image.png",
+    source_url: "https://www.pinterest.com/pin/123456789/",
+    original_source_url: "https://example.com/editorial/source",
     creator: "Studio Example",
     query: "Skincare Product Photography",
     fit_note: "Quiet palette and strong copy space",
@@ -77,40 +77,7 @@ function behanceCandidate(overrides = {}) {
   };
 }
 
-function pinterestCandidate(overrides = {}) {
-  return {
-    id: "pin-456",
-    provider: "pinterest",
-    preview_image_url: "https://i.pinimg.com/originals/aa/bb/cc/image.png",
-    source_url: "https://www.pinterest.com/pin/123456789/",
-    original_source_url: "https://example.com/editorial/source",
-    ...overrides,
-  };
-}
-
-test("normalizes only recognized provider CDN paths to small preview variants", () => {
-  assert.equal(
-    normalizePreviewUrl(
-      "https://mir-s3-cdn-cf.behance.net/project_modules/2800/a.jpg?width=2800",
-      "behance",
-    ).href,
-    "https://mir-s3-cdn-cf.behance.net/project_modules/max_316/a.jpg",
-  );
-  assert.equal(
-    normalizePreviewUrl(
-      "https://mir-cdn.behance.net/v1/rendition/project_modules/max_3840_webp/a.jpg",
-      "behance",
-      "Redirect target",
-    ).href,
-    "https://mir-cdn.behance.net/v1/rendition/project_modules/max_316/a.jpg",
-  );
-  assert.equal(
-    normalizePreviewUrl(
-      "https://mir-s3-cdn-cf.behance.net/projects/404_webp/cover.jpg",
-      "behance",
-    ).href,
-    "https://mir-s3-cdn-cf.behance.net/projects/202/cover.jpg",
-  );
+test("normalizes only recognized Pinterest CDN paths to small preview variants", () => {
   assert.equal(
     normalizePreviewUrl("https://i.pinimg.com/736x/aa/bb/a.webp", "pinterest").href,
     "https://i.pinimg.com/236x/aa/bb/a.webp",
@@ -122,69 +89,56 @@ test("normalizes only recognized provider CDN paths to small preview variants", 
   assert.throws(
     () =>
       normalizePreviewUrl(
-        "https://mir-s3-cdn-cf.behance.net/project_modules/2800/a.jpg#fragment",
-        "behance",
+        "https://i.pinimg.com/736x/aa/bb/a.jpg#fragment",
+        "pinterest",
       ),
     /must not contain a fragment/,
   );
   assert.throws(
     () =>
       normalizePreviewUrl(
-        "https://mir-s3-cdn-cf.behance.net/project_modules_evil/1400/a.jpg",
+        "https://mir-s3-cdn-cf.behance.net/project_modules/2800/a.jpg",
         "behance",
       ),
-    /recognized Behance/,
-  );
-  assert.throws(
-    () =>
-      normalizePreviewUrl(
-        "https://mir-s3-cdn-cf.behance.net/projects/999/a.jpg",
-        "behance",
-      ),
-    /recognized Behance/,
+    /provider must be Pinterest/,
   );
 });
 
-test("validates HTTPS source provenance, provider agreement, and CDN host", () => {
+test("accepts only Pinterest Pin provenance, provider agreement, and CDN host", () => {
   assert.throws(
-    () => validateArguments(behanceCandidate({ source_url: "https://example.com/gallery/123" })),
-    /Behance.*Pinterest/,
+    () => validateArguments(pinterestCandidate({ source_url: "https://example.com/pin/123" })),
+    /public Pinterest/,
   );
   assert.throws(
-    () => validateArguments(behanceCandidate({ source_url: "http://www.behance.net/gallery/123" })),
+    () => validateArguments(pinterestCandidate({ source_url: "http://www.pinterest.com/pin/123" })),
     /must use HTTPS/,
   );
   assert.throws(
-    () => validateArguments(behanceCandidate({ provider: "Pinterest" })),
-    /does not match/,
+    () => validateArguments(pinterestCandidate({ provider: "Behance" })),
+    /provider must be Pinterest/,
   );
   assert.throws(
     () =>
       validateArguments(
-        behanceCandidate({ source_url: "https://www.behance.net/gallery/123#hidden" }),
+        pinterestCandidate({ source_url: "https://www.pinterest.com/pin/123#hidden" }),
       ),
     /must not contain a fragment/,
   );
   assert.throws(
     () =>
       validateArguments(
-        behanceCandidate({ preview_image_url: "https://images.example.com/project_modules/disp/a.jpg" }),
+        pinterestCandidate({ preview_image_url: "https://images.example.com/236x/a.jpg" }),
       ),
     /approved public preview CDN/,
   );
   assert.throws(
     () =>
       validateArguments(
-        behanceCandidate({
-          preview_image_url:
-            "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/asset999.jpg",
+        pinterestCandidate({
+          preview_image_url: "https://mir-s3-cdn-cf.behance.net/project_modules/2800/a.jpg",
         }),
       ),
-    /does not match the gallery ID/,
-  );
-  assert.throws(
-    () => validateArguments(behanceCandidate({ source_url: "https://www.behance.net/search" })),
-    /public Behance.*gallery/,
+    /approved public preview CDN/,
   );
   assert.throws(
     () => validateArguments(pinterestCandidate({ source_url: "https://www.pinterest.com/ideas/skincare" })),
@@ -202,19 +156,18 @@ test("validates HTTPS source provenance, provider agreement, and CDN host", () =
     ).provider,
     "pinterest",
   );
-  assert.equal(
-    validateArguments(
-      behanceCandidate({
-        source_url: "https://www.behance.net/gallery/123/clean-skincare/modules/456789",
-      }),
-    ).provider,
-    "behance",
+  assert.throws(
+    () =>
+      validateArguments(
+        pinterestCandidate({ source_url: "https://www.behance.net/gallery/123/example" }),
+      ),
+    /public Pinterest/,
   );
 });
 
 test("returns the image first with accurate MIME and structured provenance", async () => {
   const calls = [];
-  const result = await fetchReferencePreviewImage(behanceCandidate(), {
+  const result = await fetchReferencePreviewImage(pinterestCandidate(), {
     fetchOnce: async (url, options) => {
       calls.push({ url: url.href, options });
       return {
@@ -228,26 +181,25 @@ test("returns the image first with accurate MIME and structured provenance", asy
   assert.equal(calls.length, 1);
   assert.equal(
     calls[0].url,
-    "https://mir-s3-cdn-cf.behance.net/project_modules/max_316/preview123.jpg",
+    "https://i.pinimg.com/236x/aa/bb/cc/image.png",
   );
   assert.equal(calls[0].options.maxBytes, MAX_IMAGE_BYTES);
   assert.equal(result.content[0].type, "image");
   assert.equal(result.content[0].mimeType, "image/jpeg");
   assert.equal(result.content[0].data, JPEG.toString("base64"));
   assert.equal(result.content[1].type, "text");
-  assert.match(result.content[1].text, /Provided source page: https:\/\/www\.behance\.net/);
-  assert.match(result.content[1].text, /verified from Behance asset identifier/);
+  assert.match(result.content[1].text, /Provided source page: https:\/\/www\.pinterest\.com/);
+  assert.match(result.content[1].text, /Image-to-Pin mapping: supplied by discovery/);
+  assert.match(result.content[1].text, /Reported outbound source:/);
   assert.deepEqual(result.structuredContent.reference, {
-    id: "behance-123",
-    provider: "Behance",
+    id: "pin-456",
+    provider: "Pinterest",
     title: "Clean skincare campaign",
-    source_url: "https://www.behance.net/gallery/123/clean-skincare",
-    preview_image_url:
-      "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/preview123.jpg",
-    fetched_preview_url:
-      "https://mir-s3-cdn-cf.behance.net/project_modules/max_316/preview123.jpg",
-    final_preview_url:
-      "https://mir-s3-cdn-cf.behance.net/project_modules/max_316/preview123.jpg",
+    source_url: "https://www.pinterest.com/pin/123456789/",
+    preview_image_url: "https://i.pinimg.com/originals/aa/bb/cc/image.png",
+    fetched_preview_url: "https://i.pinimg.com/236x/aa/bb/cc/image.png",
+    final_preview_url: "https://i.pinimg.com/236x/aa/bb/cc/image.png",
+    original_source_url: "https://example.com/editorial/source",
     creator: "Studio Example",
     query: "Skincare Product Photography",
     fit_note: "Quiet palette and strong copy space",
@@ -258,13 +210,13 @@ test("returns the image first with accurate MIME and structured provenance", asy
     byte_length: JPEG.length,
     intrinsic_width: 2,
     intrinsic_height: 2,
-    provenance_mapping_verified: true,
+    provenance_mapping_verified: false,
     display_transport: "mcp-image-content",
     rights_status: "direction-only",
   });
 });
 
-test("labels Pinterest image-to-page provenance as caller-supplied rather than connector-verified", async () => {
+test("labels Pinterest image-to-Pin provenance as caller-supplied rather than connector-verified", async () => {
   const result = await fetchReferencePreviewImage(
     pinterestCandidate({
       preview_image_url:
@@ -319,7 +271,7 @@ test("validates and normalizes every redirect before fetching it", async () => {
 
 test("rejects oversized, unsupported, and MIME-spoofed responses", async () => {
   await assert.rejects(
-    fetchReferencePreviewImage(behanceCandidate(), {
+    fetchReferencePreviewImage(pinterestCandidate(), {
       fetchOnce: async () => ({
         statusCode: 200,
         headers: { "content-type": "image/jpeg" },
@@ -329,7 +281,7 @@ test("rejects oversized, unsupported, and MIME-spoofed responses", async () => {
     /size limit/,
   );
   await assert.rejects(
-    fetchReferencePreviewImage(behanceCandidate(), {
+    fetchReferencePreviewImage(pinterestCandidate(), {
       fetchOnce: async () => ({
         statusCode: 200,
         headers: { "content-type": "text/html" },
@@ -339,7 +291,7 @@ test("rejects oversized, unsupported, and MIME-spoofed responses", async () => {
     /declare JPEG, PNG, or WebP/,
   );
   await assert.rejects(
-    fetchReferencePreviewImage(behanceCandidate(), {
+    fetchReferencePreviewImage(pinterestCandidate(), {
       fetchOnce: async () => ({
         statusCode: 200,
         headers: { "content-type": "image/png" },
@@ -378,7 +330,7 @@ test("parses JPEG, PNG, and WebP dimensions and rejects pixel bombs or truncated
   );
 
   await assert.rejects(
-    fetchReferencePreviewImage(behanceCandidate(), {
+    fetchReferencePreviewImage(pinterestCandidate(), {
       fetchOnce: async () => ({
         statusCode: 200,
         headers: { "content-type": "image/png" },
@@ -388,7 +340,7 @@ test("parses JPEG, PNG, and WebP dimensions and rejects pixel bombs or truncated
     /dimensions exceed/,
   );
   await assert.rejects(
-    fetchReferencePreviewImage(behanceCandidate(), {
+    fetchReferencePreviewImage(pinterestCandidate(), {
       fetchOnce: async () => ({
         statusCode: 200,
         headers: { "content-type": "image/png" },
@@ -403,11 +355,11 @@ test("keeps the largest permitted MCP tool result below 150,000 JSON characters"
   const body = Buffer.alloc(MAX_IMAGE_BYTES);
   body.set(JPEG, 0);
   const result = await fetchReferencePreviewImage(
-    behanceCandidate({
+    pinterestCandidate({
       id: "i".repeat(200),
       title: "t".repeat(300),
-      source_url: `https://www.behance.net/gallery/123456789/${"s".repeat(880)}`,
-      preview_image_url: `https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/${"p".repeat(880)}123456789.jpg`,
+      source_url: `https://www.pinterest.com/pin/${"s".repeat(300)}--123456789/`,
+      preview_image_url: `https://i.pinimg.com/originals/aa/bb/${"p".repeat(880)}.jpg`,
       original_source_url: `https://example.com/${"o".repeat(900)}`,
       creator: "c".repeat(300),
       query: "q".repeat(300),
@@ -474,7 +426,7 @@ test("low-level request pins validated DNS and sends no cookies or authorization
   };
 
   const response = await requestOnce(
-    new URL("https://mir-s3-cdn-cf.behance.net/project_modules/max_316/a.jpg"),
+    new URL("https://i.pinimg.com/236x/aa/bb/a.jpg"),
     {
       lookup: async () => [{ address: "93.184.216.34", family: 4 }],
       httpsRequest,
@@ -536,12 +488,18 @@ test("implements initialize, ping, tools/list, tools/call, and MCP tool errors",
   assert.equal(listed.result.tools.length, 1);
   assert.equal(listed.result.tools[0].name, TOOL_NAME);
   assert.equal(listed.result.tools[0].annotations.readOnlyHint, true);
+  assert.deepEqual(listed.result.tools[0].inputSchema.properties.provider.enum, [
+    "pinterest",
+    "Pinterest",
+  ]);
+  assert.doesNotMatch(listed.result.tools[0].description, /Behance/i);
+  assert.equal(initialized.result.serverInfo.version, "1.2.0");
 
   const called = await handle({
     jsonrpc: "2.0",
     id: 4,
     method: "tools/call",
-    params: { name: TOOL_NAME, arguments: behanceCandidate() },
+    params: { name: TOOL_NAME, arguments: pinterestCandidate() },
   });
   assert.equal(called.result.content[0].type, "image");
 
@@ -619,7 +577,7 @@ test("stdio transport caps concurrent calls while preserving six-way preview par
         jsonrpc: "2.0",
         id: index,
         method: "tools/call",
-        params: { name: TOOL_NAME, arguments: behanceCandidate({ id: `ref-${index}` }) },
+        params: { name: TOOL_NAME, arguments: pinterestCandidate({ id: `ref-${index}` }) },
       })}\n`,
     );
   }

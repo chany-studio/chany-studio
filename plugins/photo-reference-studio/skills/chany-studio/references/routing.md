@@ -31,7 +31,7 @@ Do not add two overlays merely because two subjects appear in one scene. Use a s
 | initialize or update an advertising-production project | `chany-project` | shared project instructions, brief, state, and runtime-specific delegation configuration |
 | campaign strategy, launch plan, message hierarchy, asset plan | `chany-marketing-brief` | approved brief and asset matrix |
 | transparent cutout, background removal, white packshot, source cleanup | `chany-product-assets` | reusable source asset |
-| visual references, mood direction, Behance or Pinterest board | `chany-reference-board` | six visible candidates and Visual DNA |
+| visual references, mood direction, Pinterest board | `chany-reference-board` | exactly six visible Pinterest candidates and Visual DNA |
 | staged subject or experience image, hero art, campaign key visual | `chany-campaign-visual` | one staged image or accepted master visual |
 | static ad, sale or event poster, feed creative, story creative, banner | `chany-ad-creative` | one placement asset or named channel set |
 | e-commerce detail page, PDP, service/booking/launch landing modules | `chany-detail-page` | named evidence-led page modules |

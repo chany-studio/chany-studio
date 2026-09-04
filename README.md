@@ -2,7 +2,7 @@
 
 ![Chany's Studio](plugins/photo-reference-studio/assets/logo.png)
 
-업종별 구매 여정·증거·연출·컴플라이언스 판단과 공통 제작 워크플로를 결합해 **광고·홍보·마케팅·상세/랜딩·콘텐츠**를 기획하고 제작하는 ChatGPT Work/Codex 및 Claude 플러그인입니다. Chany's Studio 2.2.1은 업종 전문 오버레이가 방향과 검증 기준을 정하고, 공통 제작 스킬이 승인된 방향을 실제 산출물로 전환하는 2축 구조입니다.
+업종별 구매 여정·증거·연출·컴플라이언스 판단과 공통 제작 워크플로를 결합해 **광고·홍보·마케팅·상세/랜딩·콘텐츠**를 기획하고 제작하는 ChatGPT Work/Codex 및 Claude 플러그인입니다. Chany's Studio 2.2.2는 업종 전문 오버레이가 방향과 검증 기준을 정하고, 공통 제작 스킬이 승인된 방향을 실제 산출물로 전환하는 2축 구조입니다.
 
 > [공식 설치·사용설명서 (Notion)](https://jolly-phlox-79c.notion.site/Chany-s-Studio-3c783e9464668140b794ee076be24406) · [문제 해결](docs/TROUBLESHOOTING.md)
 
@@ -81,7 +81,7 @@ ChatGPT Work에서 스킬을 직접 고를 때는 `@스킬명`, Codex에서는 `
 | ChatGPT `@chany-studio` · Codex `$chany-studio` | 업종 오버레이와 두 분야 이상이 연결된 전체 캠페인 및 산출물 순서 관리 |
 | ChatGPT `@chany-marketing-brief` · Codex `$chany-marketing-brief` | 목표·타깃·메시지·승인 카피·채널·에셋 매트릭스 정리 |
 | ChatGPT `@chany-product-assets` · Codex `$chany-product-assets` | 투명 누끼, 순백 팩샷, 제품·음식 클린업 |
-| ChatGPT `@chany-reference-board` · Codex `$chany-reference-board` | 제한된 업종 검색 경로로 Behance·Pinterest 레퍼런스 6장과 Visual DNA 구성 |
+| ChatGPT `@chany-reference-board` · Codex `$chany-reference-board` | 제한된 업종 검색 경로로 Pinterest 레퍼런스 6장과 Visual DNA 구성 |
 | ChatGPT `@chany-campaign-visual` · Codex `$chany-campaign-visual` | 연출컷과 텍스트 없는 마스터 키비주얼 |
 | ChatGPT `@chany-detail-page` · Codex `$chany-detail-page` | 히어로·특징·혜택·증거·사용 장면·CTA 상세/랜딩 모듈 |
 | ChatGPT `@chany-ad-creative` · Codex `$chany-ad-creative` | 정적 광고, 프로모션 포스터, 배너, 채널별 재구성 |
@@ -206,7 +206,7 @@ Codex: $chany-publication-review로 최종 광고의 정확한 카피·오퍼·�
 1. 해당 업종 전문 스킬이 여정·증거·연출·주장 경계를 `industry direction packet`으로 정리합니다.
 2. 브랜드·타깃·채널·승인 문구를 공통 캠페인 브리프로 전환합니다.
 3. 원본에서 제품, 차량, 공간, UI, 사람, 프로그램과 카피 등 필요한 정체성 잠금을 만듭니다.
-4. 필요한 경우 제한된 업종 검색 경로로 Behance와 Pinterest 레퍼런스 6장을 대화 안에 실제 이미지로 표시합니다.
+4. 필요한 경우 제한된 업종 검색 경로로 Pinterest 레퍼런스 6장을 대화 안에 실제 이미지로 표시합니다.
 5. 마스터 키비주얼을 먼저 승인합니다.
 6. 승인된 패킷과 캠페인 규칙에서 상세/랜딩페이지와 채널 광고를 파생합니다.
 7. UGC가 포함되면 훅·대본·출연자·증거 노출·CTA를 잠그고 제품 장면마다 승인 스틸을 첫 프레임 권위로 연결해 클립을 제작합니다.
@@ -217,7 +217,7 @@ Codex: $chany-publication-review로 최종 광고의 정확한 카피·오퍼·�
 
 ## 레퍼런스 검색 규칙
 
-- Behance와 Pinterest에는 업종 taxonomy의 **L1 광역 카테고리 1개를 먼저** 검색합니다.
+- Pinterest에는 업종 taxonomy의 **L1 광역 카테고리 1개를 먼저** 검색합니다.
 - 더 좁혀야 할 때만 같은 경로의 **직접 L2 하위 카테고리 0~1개**를 추가합니다. 한 작업에서 여러 L2 형제를 검색하지 않습니다.
 - 세 번째 의미 검색어와 스타일·렌즈·지역·색·무드·플랫폼 modifier를 검색어에 붙이지 않습니다.
 - 검색 뒤에는 선택한 이미지의 구도·조명·배경·재질·색 관계·정보 위계를 Visual DNA로 분석할 수 있지만, 그 분석어를 새 검색 쿼리로 확장하지 않습니다.
@@ -227,7 +227,7 @@ Codex: $chany-publication-review로 최종 광고의 정확한 카피·오퍼·�
 
 - 제품·음식·차량·공간·UI·프로그램·모델·의류의 승인 원본과 사실 자료가 정체성의 최종 기준입니다.
 - 가격, 할인율, 기간, 제품 효능, 비교 주장, CTA와 법적 고지는 임의로 만들지 않습니다.
-- Behance·Pinterest 레퍼런스는 복제 대상이 아니라 구도, 조명, 배경, 색 관계, 재질과 정보 위계를 이해하는 방향 자료로만 사용합니다.
+- Pinterest 레퍼런스는 복제 대상이 아니라 구도, 조명, 배경, 색 관계, 재질과 정보 위계를 이해하는 방향 자료로만 사용합니다.
 - 마스터 키비주얼을 승인한 뒤 상세페이지와 광고 규격을 파생합니다.
 - 기존 결과의 부분 수정은 지정 영역과 한 가지 속성만 바꿉니다.
 - 라벨·로고·카피·제품 형상·모델 정체성·의류 구조가 바뀐 결과는 실패로 처리합니다.
@@ -257,13 +257,13 @@ Codex: $chany-publication-review로 최종 광고의 정확한 카피·오퍼·�
 /reload-plugins
 ```
 
-업데이트 후 버전이 **2.2.1**인지 확인하고 새 대화 또는 새 작업을 시작하세요.
+업데이트 후 버전이 **2.2.2**인지 확인하고 새 대화 또는 새 작업을 시작하세요.
 
 ## 외부 서비스와 데이터
 
 - 플러그인 저장소에는 API 키, 액세스 토큰 또는 사용자 사진이 포함되어 있지 않습니다.
 - Higgsfield 기능 사용 시 사용자가 선택한 원본과 레퍼런스가 Higgsfield로 전송될 수 있습니다.
-- Claude용 `reference-preview`는 Behance·Pinterest의 공개 미리보기만 읽어 대화에 표시합니다.
+- Claude용 `reference-preview`는 Pinterest의 공개 미리보기만 읽어 대화에 표시합니다.
 - 비밀번호, API 키, 액세스 토큰이나 인증 코드를 대화에 붙여 넣지 말고 연결 화면에서 인증하세요.
 - 요금, 크레딧, 생성물 권리와 외부 서비스 약관은 각 서비스에서 확인하세요.
 

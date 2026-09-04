@@ -16,7 +16,7 @@ https://github.com/chany-studio/chany-studio
 
 다음 상태는 이전 설치본일 가능성이 높습니다.
 
-- 버전이 `2.2.1`보다 낮음
+- 버전이 `2.2.2`보다 낮음
 - 대표 스킬 `chany-studio`가 없음
 - 상세페이지·광고·UGC가 전문 스킬로 분리되어 있지 않음
 - 11개 업종 스킬이 보이지 않음
@@ -39,7 +39,7 @@ Codex: $chany-studio로 이 제품의 광고 캠페인을 시작해줘.
 
 ## `/project-studio` 또는 `chany-project`가 보이지 않음
 
-- 설치 상세 버전이 `2.2.1`인지 확인하고 Refresh 또는 Update합니다.
+- 설치 상세 버전이 `2.2.2`인지 확인하고 Refresh 또는 Update합니다.
 - Claude Cowork에서 짧은 `/project-studio`가 보이지 않으면 `/photo-reference-studio:project-studio`를 사용합니다.
 - ChatGPT Work는 `@chany-project`, Codex는 `$chany-project` 또는 “현재 폴더를 광고 프로젝트로 설정해줘”라고 요청합니다.
 - ChatGPT에서 `/project-studio …`는 슬래시 메뉴에 등록되지 않습니다. 일반 메시지로 전송되면 호환 별칭으로 처리되며, 입력창에서 가로막히면 `@chany-project`를 사용합니다.
@@ -163,10 +163,10 @@ ffmpeg·ffprobe와 한글 폰트를 실제 버전·폰트 증거로 확인하고
 Claude Cowork에서 플러그인 상세의 `reference-preview` 연결과 컴퓨터의 Node.js 18 이상을 확인합니다.
 
 ```text
-링크나 HTML만 주지 말고 `reference-preview`를 사용해 Behance·Pinterest 후보 6장을 현재 대화 안의 실제 이미지로 다시 보여줘. 표시되지 않는 후보는 교체해줘.
+링크나 HTML만 주지 말고 `reference-preview`를 사용해 Pinterest 후보 6장을 현재 대화 안의 실제 이미지로 다시 보여줘. 표시되지 않는 후보는 같은 검색 풀의 사용하지 않은 Pinterest 후보로 교체해줘.
 ```
 
-연결은 공개 미리보기만 가져옵니다. 가져올 수 없는 후보는 다른 후보로 교체해야 하며 링크나 HTML은 직접 이미지 표시를 대신하지 않습니다.
+연결은 공개 Pinterest 미리보기만 가져옵니다. 가져올 수 없는 후보는 사용하지 않은 Pinterest 후보로 교체해야 하며 링크나 HTML은 직접 이미지 표시를 대신하지 않습니다. 안전하게 표시할 후보가 6장보다 적으면 결과를 미완성으로 알리고 선택이나 유료 제작을 시작하지 않습니다.
 
 ## 레퍼런스 검색이 L3로 내려가거나 창작 수식어를 붙임
 

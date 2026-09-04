@@ -90,7 +90,7 @@ Run one L1 search first. Keep `l2` empty and `query_count: 1` when discovery sto
 ## Production handoff
 
 - `$chany-marketing-brief`: objective, message hierarchy, approved-fact ledger, offer, asset matrix, and tests
-- `$chany-reference-board`: L1-first, optional single-L2 Behance and Pinterest discovery with inline previews
+- `$chany-reference-board`: Pinterest-only, L1-first, optional single-L2 discovery with exactly six inline previews
 - `$chany-campaign-visual`: approved launch or campaign key visual and image system
 - `$chany-ad-creative`: placement-specific awareness, feature, retail, offer, and retargeting variants
 - `$chany-detail-page`: product, specification, comparison, compatibility, setup, bundle, or conversion page structure
