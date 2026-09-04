@@ -1,0 +1,6 @@
+interface:
+  display_name: "Chany's Corporate & Employer"
+  short_description: "기업·채용 브랜드의 실제 경험·증거·공정성 방향 설계"
+  default_prompt: "$chany-corporate-employer로 기업 또는 채용 브랜드의 증거 중심 방향 패킷을 만들어줘."
+policy:
+  allow_implicit_invocation: true

@@ -19,7 +19,15 @@ Behance and Pinterest content is direction-only. Do not treat it as licensed pro
 
 ## Query depth
 
-Use no more than two taxonomy levels:
+Read [industry-taxonomy.json](industry-taxonomy.json) and use no more than two taxonomy levels. The query plan contains exactly one L1 broad category and zero or one direct L2 subtype:
+
+1. classify the request into one domain and one branch
+2. run the branch's exact `l1` query first
+3. run at most one exact `l2Examples` value that directly matches the subject
+4. for an unlisted subject, normalize only that one subject with the branch `medium`; if that would require another qualifier or compound concept, stop after L1
+5. never concatenate L1, L2, and creative attributes into a long-tail query
+
+The L2 term is a direct child, not the L1 phrase plus a string of modifiers. An industry direction packet can choose the branch and direct subtype, but visual attributes remain ranking criteria after discovery.
 
 | Input | Broad query | Direct-subtype query |
 |---|---|---|
@@ -32,7 +40,9 @@ Use no more than two taxonomy levels:
 | Headphones | Product Photography | Headphone Photography |
 | Handbag | Fashion Accessories Photography | Handbag Photography |
 
-Run each approved semantic query once for Behance and once for Pinterest, for a maximum of four search calls. If the direct subtype cannot be identified confidently, run only the broad query for both providers.
+Additional valid pairs include `Professional Services Branding` → `Law Firm Branding`, `Hospitality Photography` → `Hotel Photography`, `Architecture Photography` → `Interior Photography`, and `Automotive Photography` → `Electric Vehicle Photography`.
+
+Run each approved semantic query once for Behance and once for Pinterest, for a maximum of four search calls. If the direct subtype cannot be identified confidently, run only the L1 query for both providers. Do not retry with a narrower phrase; improve filtering and ranking instead.
 
 ## Prohibited query modifiers
 

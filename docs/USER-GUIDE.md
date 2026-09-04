@@ -1,12 +1,21 @@
 # Chany's Studio 사용 가이드
 
-Chany's Studio는 Claude와 ChatGPT Work에서 같은 프로젝트 지침을 사용하며 제품 원본과 승인 문구를 기준으로 광고·마케팅·상세페이지·홍보 콘텐츠를 만드는 전문 스킬 모음입니다.
+Chany's Studio는 Claude와 ChatGPT Work에서 같은 프로젝트 지침을 사용하며, 업종별 고객 여정과 증거 기준에 맞춰 광고·마케팅·상세페이지·홍보 콘텐츠를 만드는 전문 스킬 모음입니다. 제품과 음식뿐 아니라 서비스, 교육, 의료, 여행, 공간, 디지털 제품, 자동차, 소비자 기술, 기업·채용, 공연·행사까지 다룹니다.
 
 ## 어떤 스킬을 써야 하나요?
 
-한 가지 결과가 분명하면 해당 전문 스킬을 바로 사용합니다. 키비주얼, 상세페이지, 광고, UGC처럼 두 분야 이상이 연결되면 ChatGPT Work의 `@chany-studio` 또는 Codex의 `$chany-studio`를 사용합니다. ChatGPT Work의 명시 호출은 `@스킬명`, Codex의 명시 호출은 `$스킬명`이며 자연어만으로도 설명에 맞는 스킬을 자동 선택할 수 있습니다. Claude Cowork에서는 `/project-studio` 슬래시 명령을 제외한 전문 작업을 자연어로 요청해 자동 선택합니다.
+Chany's Studio 2.2.0은 두 축을 함께 사용합니다.
+
+1. **업종 오버레이**는 고객이 왜 선택하는지, 어떤 근거가 필요한지, 어떤 표현을 피해야 하는지와 그 업종다운 촬영·연출 방향을 정합니다.
+2. **공통 제작 스킬**은 브리프, 레퍼런스 보드, 키비주얼, 상세페이지, 광고, 편집, 모델·패션 또는 UGC 같은 실제 산출물을 만듭니다.
+
+업종이 분명하면 기본적으로 주 업종 스킬 하나를 먼저 선택하고 필요한 제작 스킬을 이어 붙입니다. 한 가지 결과가 분명하면 해당 제작 스킬까지 함께 지정하고, 키비주얼·상세페이지·광고·UGC처럼 여러 결과가 연결되면 ChatGPT Work의 `@chany-studio` 또는 Codex의 `$chany-studio`에 전체 조정을 맡깁니다. 업종이 겹치더라도 서로 다른 규제나 구매 행동을 동시에 다루는 경우가 아니면 주 업종을 두 개 이상 선택하지 않습니다.
+
+ChatGPT Work의 명시 호출은 `@스킬명`, Codex의 명시 호출은 `$스킬명`이며 자연어만으로도 설명에 맞는 스킬을 자동 선택할 수 있습니다. Claude Cowork에서는 `/project-studio` 슬래시 명령을 제외한 전문 작업을 자연어로 요청해 자동 선택합니다.
 
 아래 예시의 `ChatGPT Work`와 `Codex` 호출 줄은 서로 대안입니다. 사용하는 플랫폼의 한 줄만 선택하고 이어지는 요청을 함께 입력하세요.
+
+### 공통 제작·운영 스킬
 
 | 원하는 결과 | 사용할 스킬 |
 | --- | --- |
@@ -21,6 +30,62 @@ Chany's Studio는 Claude와 ChatGPT Work에서 같은 프로젝트 지침을 사
 | 기존 이미지 부분 수정 | ChatGPT `@chany-image-edit` · Codex `$chany-image-edit` |
 | 성인 모델·패션 착장 | ChatGPT `@chany-model-fashion` · Codex `$chany-model-fashion` |
 | 리뷰·언박싱·튜토리얼 UGC | ChatGPT `@chany-ugc-ads` · Codex `$chany-ugc-ads` |
+| 최종 광고·상세페이지·메시지·UGC 게시 검토 | ChatGPT `@chany-publication-review` · Codex `$chany-publication-review` |
+
+### 업종 오버레이 11개
+
+| 업종 | 사용할 스킬 | 대표 용도 |
+| --- | --- | --- |
+| 전문 서비스 | ChatGPT `@chany-professional-services` · Codex `$chany-professional-services` | 컨설팅, 자문, 전문직, 리드 확보 |
+| 교육 | ChatGPT `@chany-education-marketing` · Codex `$chany-education-marketing` | 학교, 학원, 강의, 대학, 에듀테크, 모집 |
+| 헬스케어 | ChatGPT `@chany-healthcare-marketing` · Codex `$chany-healthcare-marketing` | 병원, 의원, 치과, 웰니스, 재활, 정신건강, 원격의료 |
+| 식당·카페/F&B | ChatGPT `@chany-food-dining` · Codex `$chany-food-dining` | 식당, 카페, 음료, 포장, 배달 |
+| 호텔·여행 | ChatGPT `@chany-hospitality-travel` · Codex `$chany-hospitality-travel` | 호텔, 리조트, 숙박, 여행지, 예약형 체험 |
+| 공간·인테리어·부동산 | ChatGPT `@chany-space-real-estate` · Codex `$chany-space-real-estate` | 건축, 인테리어, 상업 공간, 매물 홍보 |
+| 디지털 제품 | ChatGPT `@chany-digital-product-marketing` · Codex `$chany-digital-product-marketing` | 소비자 앱, 플랫폼, B2B SaaS |
+| 자동차·모빌리티 | ChatGPT `@chany-automotive-marketing` · Codex `$chany-automotive-marketing` | 자동차, 전기차, 오토바이, 상용차 |
+| 소비자 기술 | ChatGPT `@chany-consumer-tech-marketing` · Codex `$chany-consumer-tech-marketing` | 전자제품, 웨어러블, 연결형 기기 |
+| 기업·채용 | ChatGPT `@chany-corporate-employer` · Codex `$chany-corporate-employer` | 기업 브랜드, 평판, 채용, 조직문화 |
+| 공연·전시·행사·지역축제 | ChatGPT `@chany-live-culture-events` · Codex `$chany-live-culture-events` | 공연, 전시, 컨퍼런스, 행사, 문화·지역축제 |
+
+Claude Cowork에서는 스킬 이름을 외울 필요 없이 “이 호텔의 예약 전환 캠페인”처럼 업종과 목표를 자연어로 말하면 해당 업종 오버레이를 자동 선택합니다. ChatGPT Work나 Codex에서도 자연어 자동 선택을 사용할 수 있지만, 재현 가능한 작업 기록이 필요하면 위의 명시 호출을 권장합니다.
+
+### 업종 선택과 체인 예시
+
+업종 오버레이가 전략과 증거 기준을 넘겨주면 공통 제작 스킬이 결과물을 만듭니다. 대표 체인은 다음과 같습니다.
+
+```text
+식당 오픈 캠페인
+chany-food-dining → chany-marketing-brief → chany-reference-board → chany-campaign-visual → chany-ad-creative
+
+호텔 예약 전환
+chany-hospitality-travel → chany-marketing-brief → chany-reference-board → chany-campaign-visual → chany-detail-page
+
+병원·의원 홍보
+chany-healthcare-marketing → chany-marketing-brief → chany-ad-creative → chany-publication-review
+
+SaaS 데모 UGC
+chany-digital-product-marketing → chany-marketing-brief → chany-ugc-ads
+
+채용 캠페인
+chany-corporate-employer → chany-marketing-brief → chany-ugc-ads 또는 chany-ad-creative
+
+지역축제 홍보
+chany-live-culture-events → chany-reference-board → chany-campaign-visual → chany-ad-creative
+```
+
+명시 호출 예시:
+
+```text
+ChatGPT Work
+@chany-food-dining과 @chany-marketing-brief로 신규 브런치 매장의 오픈 캠페인을 설계해줘.
+
+Codex
+$chany-hospitality-travel과 $chany-detail-page로 객실 예약 상세페이지 방향을 만들어줘.
+
+Claude Cowork
+신규 지역축제의 방문 전환 캠페인이야. 업종별 전략과 증거 기준을 먼저 잡고 레퍼런스 보드와 9:16 광고까지 이어줘.
+```
 
 ## 0. 프로젝트 설정
 
@@ -41,6 +106,46 @@ $chany-project로 현재 작업 폴더를 신제품 선크림 광고 프로젝�
 ```
 
 Claude에서 `/project-studio`가 보이지 않으면 `/photo-reference-studio:project-studio`를 사용합니다. ChatGPT Work의 공식 명시 호출은 `@chany-project`, Codex는 `$chany-project`입니다. ChatGPT 또는 Codex에 `/project-studio …`가 일반 메시지로 전달되면 호환 별칭으로 처리하지만 ChatGPT 슬래시 메뉴에 등록되는 명령은 아닙니다.
+
+### Moai와 함께 쓸 때
+
+두 플러그인의 프로젝트 명령은 역할이 다릅니다.
+
+- `/project`는 **Moai**가 소유하며 일반 프로젝트 구조와 개발 맥락을 만듭니다.
+- `/project-studio`는 **Chany's Studio**가 소유하며 광고·콘텐츠 제작 맥락을 만듭니다.
+- 기존 `.moai/**`는 Moai의 정본이므로 Chany's Studio가 수정·삭제·이동하거나 백업하지 않고 읽기 전용으로 재사용합니다.
+- 이미 성공적으로 만들어진 Moai 산출물이 있으면 Chany's Studio가 제품·구조·기술 맥락을 자동으로 읽어 같은 질문을 반복하지 않습니다.
+
+기본은 프로젝트와 광고 범위를 한 번에 말하는 것입니다. 이 호출은 기존 Moai 상태를 자동 감지하지만, 새 Moai 실행은 현재 호스트가 정확한 스킬을 같은 요청 안에서 호출하고 기다릴 수 있다고 확인된 경우에만 체인합니다.
+
+```text
+Claude Cowork
+/project-studio 신규 호텔 예약 사이트의 예약 전환 광고와 상세페이지 제작 환경을 설정해줘.
+
+ChatGPT Work
+@chany-project로 신규 호텔 예약 사이트의 광고·콘텐츠 제작 환경을 설정해줘.
+
+Codex
+$chany-project로 신규 호텔 예약 사이트의 광고·콘텐츠 제작 환경을 설정해줘.
+```
+
+일반 `/project-studio` 초기화가 Moai 상태를 자동 감지합니다. 기존 `.moai/project/*`가 있으면 다시 실행하지 않고 읽어 재사용합니다. 기록이 없으면 단순 설치 표시가 아니라 현재 호스트의 실제 in-process 호출 기능을 확인한 경우에만 통합 승인안에 Moai `project` 단계를 포함합니다. 기능이 없으면 Chany 단독 설정을 진행하고 아래 수동 2단계를 안내합니다.
+
+```text
+Claude Cowork: /project-studio --with-moai 신규 호텔 예약·광고 프로젝트를 함께 설정해줘.
+ChatGPT Work: @chany-project moai-chain으로 신규 호텔 예약·광고 프로젝트를 함께 설정해줘.
+Codex: $chany-project --with-moai 신규 호텔 예약·광고 프로젝트를 함께 설정해줘.
+```
+
+Moai가 설치되지 않았거나 현재 세션에서 실제 호출할 수 없으면 Chany's Studio가 `/project`를 흉내 내지 않습니다. 이 경우 Chany 전용 설정만 계속하거나, Moai가 callable한 세션에서 Moai project를 먼저 완료한 뒤 `@chany-project` 또는 `$chany-project`를 실행합니다.
+
+`--with-moai` 또는 `moai-chain`은 Moai 단계를 필수로 요구하므로 Moai나 같은 요청 내 호출 기능이 확인되지 않으면 Chany 쓰기 전에 중단하고 수동 2단계를 알려줍니다. `--chany-only`는 Moai 감지를 건너뜁니다. 플래그가 없어도 Moai의 변경 미리보기와 승인 절차는 항상 유지됩니다.
+
+Moai의 일반 프로젝트 기반을 별도로 검토하고 싶거나 현재 호스트가 플러그인 간 같은 요청 내 호출을 지원하지 않을 때는 Moai `project`를 먼저 실행한 뒤 Chany 프로젝트 설정을 이어가는 수동 2단계를 사용합니다.
+
+프로젝트 기반이 준비된 뒤에는 요청 범위에 맞는 Moai 전문 스킬도 자동으로 확인합니다. 한국 광고 주장, 문자·이메일·푸시 발송 조건, 인플루언서·UGC 권리, 최신 법령·MFDS 검토, 캠페인·디자인 보강, Higgsfield 실행처럼 실제로 필요한 단계만 제안합니다. 설치되어 있지 않으면 결과를 흉내 내지 않고 Chany 단독 체인으로 진행하며, 근거나 검토자가 부족한 산출물은 초안 상태에 둡니다.
+
+Moai 결과는 `사용한 정확한 스킬 이름 → 검토 대상 버전 → 확인한 출처와 날짜 → 발견사항 → Chany의 다음 담당 스킬` 형태로 넘깁니다. Moai가 일반 프로젝트나 전문 검토를 맡더라도 Chany's Studio는 캠페인 브리프, 원본·카피 잠금, 유료 생성 승인, 최종 렌더와 게시 상태를 계속 관리합니다.
 
 생성되는 공통 구조:
 
@@ -82,7 +187,9 @@ Codex: $chany-studio로 이 제품의 광고 캠페인을 구성해줘.
 
 전체 캠페인의 기본 순서는 다음과 같습니다.
 
-`브리프 → 원본 잠금 → 레퍼런스 선택 → 키비주얼 승인 → 상세페이지 → 광고 변형 → UGC → 전체 검수`
+`브리프 → 원본 잠금 → 레퍼런스 선택 → 키비주얼 승인 → 상세페이지 → 광고 변형 → UGC → 전체 검수 → 필요한 최종 게시 검토`
+
+유료 생성 전에는 현재 연결에서 실제로 제공되는 도구·모델·옵션을 다시 확인합니다. 무료 견적 기능이 있으면 먼저 사용하고, 최종 프롬프트, 입력별 역할, 선택된 워크플로와 옵션, 산출물 수, 서버 조정값, 제공자가 반환한 크레딧 정보와 전체 한도를 보여준 뒤 승인을 받습니다. 시간초과나 연결 끊김으로 결제 여부가 모호하면 같은 요청을 다시 보내지 않고 기존 작업 상태부터 확인합니다. 프롬프트·입력·모델·유료 옵션·수량이 달라지면 새 요청으로 다시 견적과 승인을 받습니다.
 
 ## 1. 마케팅 브리프
 
@@ -118,6 +225,24 @@ Behance와 Pinterest 후보를 링크만 주지 말고 이 대화 안에 이미�
 
 기본적으로 후보 6장을 보여준 뒤 번호 하나 또는 `자동 선택`을 기다립니다. 레퍼런스 속 제품, 모델, 로고, 패키지, 문구와 가격은 최종 결과로 가져오지 않습니다.
 
+검색은 업종 오버레이가 정한 분류를 따라 **L1 광역 카테고리부터 시작하고, 필요할 때 직접 연결된 L2 하위 카테고리 하나까지만** 추가합니다. 검색어 자체에는 지역, 플랫폼, 스타일, 무드, 색, 연도, 카메라, 렌즈, 조명, 비율, 타깃, 브랜드 또는 “고급·시네마틱” 같은 창작 수식어를 넣지 않습니다. 이런 연출 조건은 검색 결과를 고르는 Visual DNA와 제작 프롬프트에 적용합니다.
+
+```text
+허용
+L1: Food Photography
+L2: Restaurant Photography
+
+허용
+L1: Hospitality Photography
+L2: Hotel Photography
+
+금지
+Food Photography → Restaurant Photography → Brunch Cafe Photography
+moody Seoul brunch cafe 85mm cinematic Instagram ad
+```
+
+L2가 불분명하거나 결과가 약하면 세 번째 검색어나 더 세밀한 하위 분류로 내려가지 않고 L1 후보의 선별 기준을 개선합니다.
+
 ## 4. 캠페인 키비주얼
 
 ```text
@@ -136,7 +261,7 @@ Codex: $chany-detail-page로 승인된 키비주얼 톤을 유지해 상세페�
 1) 히어로 2) 핵심 특징 3) 사용 장면 4) 소재 디테일 5) 마감 CTA 순서야.
 ```
 
-상세페이지 전체 HTML이 아니라 요청한 이미지 모듈을 제작합니다. 특징이나 혜택은 사용자가 제공한 사실만 사용합니다.
+상세페이지는 `plan`, `audit`, `produce` 세 모드로 동작합니다. 새 페이지의 구조와 필요한 촬영을 정할 때는 `plan`, 기존 페이지의 근거·전환 흐름을 진단할 때는 `audit`, 승인된 모듈을 만들 때는 `produce`를 사용합니다. 각 모듈은 한 메시지만 담당하며, 근거 자료와 wide/medium/close 또는 화면·문서 소스의 보유 여부를 표로 연결합니다. 부족한 실제 증거를 생성 이미지로 대신하지 않고 촬영·자료 요청·주장 축소 중 하나로 해결합니다. 고정 13단 구성이나 가짜 후기·통계·희소성은 강제하지 않습니다.
 
 ## 6. 광고·포스터·배너
 
@@ -190,9 +315,22 @@ Codex: $chany-ugc-ads로 이 제품의 15초 9:16 리뷰형 UGC 광고를 만들
 
 Higgsfield MCP가 지원하는 UGC 워크플로는 Claude 안에서 실행할 수 있습니다. Marketing Studio 템플릿이 필요한 작업은 입력과 템플릿을 준비한 뒤 Higgsfield 웹에서 완료합니다.
 
+## 10. 게시 전 검토
+
+```text
+ChatGPT Work: @chany-publication-review로 이 광고의 정확한 문구, 제안 조건, 권리와 최종 렌더 버전을 검수해줘.
+Codex: $chany-publication-review로 이 광고의 정확한 문구, 제안 조건, 권리와 최종 렌더 버전을 검수해줘.
+게시 국가는 한국, 채널은 Meta 피드, 게시 예정일은 9월 10일이고 담당 검토자는 마케팅 책임자 김OO야.
+```
+
+검토는 주장·근거, 가격·배송·구독·환불 등 거래 조건, 이메일·문자·푸시 같은 발송 조건, 협찬·UGC·저작권·초상권, 업종·플랫폼·최종 렌더의 다섯 영역을 분리합니다. 게시 시점에 최신 공식 1차 자료를 확인하고 정확한 카피·오퍼·랜딩·크롭·최종 파일 버전에 결박합니다. 문구, 번역, 가격, CTA, 고지 위치, 크롭, 레이아웃 또는 렌더가 바뀌면 이전 검토는 무효입니다.
+
+상태는 `blocked`, `draft-only`, `ready-for-named-human-review`, `reviewed-by-named-owner`만 사용합니다. 이는 법률 자문이나 법적 승인, 플랫폼 사전승인 또는 자동 게시 권한이 아닙니다. 자료가 부족해도 초안 제작은 계속할 수 있지만 게시·발송은 멈춥니다.
+
 ## 입력 정보 템플릿
 
 ```text
+업종/비즈니스 유형:
 제품/브랜드:
 캠페인 목표:
 타깃:
@@ -223,5 +361,6 @@ CTA:
 - 의류 실루엣, 구조, 색상, 패턴과 액세서리
 - UGC의 제품 노출, 크리에이터 일관성, 음성·자막 동기와 전환 흐름
 - 출력 비율, 채널 안전영역과 작은 화면 가독성
+- 업종별 필수 근거, 자격·수치·가격·일정·접근성·후원 표기가 확인 가능한 사실과 일치하는지
 
-치명적인 불일치가 있으면 승인하지 않고 관찰된 문제만 지정해 한 번 보정합니다. 확인할 수 없는 사항은 정확하다고 주장하지 않습니다.
+치명적인 불일치가 있으면 승인하지 않고 관찰된 문제만 지정해 한 번 보정합니다. 확인할 수 없는 사항은 정확하다고 주장하지 않습니다. 의료, 교육, 부동산, 전문 서비스, 자동차, 채용, 유료 협찬처럼 표시·규제 위험이 있는 콘텐츠는 법률 자문처럼 단정하지 않고 게시 전 담당자, 관할 기관과 채널의 최신 규정을 확인하는 단계로 넘깁니다.

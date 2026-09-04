@@ -1,7 +1,7 @@
 interface:
   display_name: "Chany's Ad Creative"
   short_description: "정적 광고·홍보 포스터·배너·채널 변형 제작 워크플로"
-  default_prompt: "$chany-ad-creative로 승인된 제품과 문구를 사용한 광고소재를 1:1, 4:5, 9:16 규격으로 같은 캠페인 톤에 맞춰 제작해줘."
+  default_prompt: "$chany-ad-creative로 업종별 증거 기준과 승인된 원본·문구를 사용한 광고소재를 1:1, 4:5, 9:16 규격으로 같은 캠페인 톤에 맞춰 제작해줘."
 dependencies:
   tools:
     - type: "mcp"

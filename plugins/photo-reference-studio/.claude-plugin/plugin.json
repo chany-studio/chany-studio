@@ -1,8 +1,8 @@
 {
   "name": "photo-reference-studio",
   "displayName": "Chany's Studio",
-  "version": "2.1.1",
-  "description": "Chany's cross-runtime advertising and commerce studio for project setup, campaign briefs, product assets, key visuals, detail pages, promotions, static ads, fashion, and UGC.",
+  "version": "2.2.0",
+  "description": "Chany's cross-runtime advertising studio with industry expert overlays, version-bound publication review, safe paid generation, existing Moai-context reuse, and capability-gated skill chaining.",
   "author": {
     "name": "Chany",
     "url": "https://github.com/chany-studio"
@@ -11,6 +11,7 @@
   "repository": "https://github.com/chany-studio/chany-studio",
   "license": "MIT",
   "keywords": [
+    "industry-marketing",
     "product-photography",
     "food-photography",
     "reference-board",
@@ -25,6 +26,10 @@
     "promotion",
     "ugc",
     "project-instructions",
+    "moai-project",
+    "moai-specialists",
+    "publication-review",
+    "paid-generation-safety",
     "agents"
   ],
   "mcpServers": "./.mcp.claude.json"

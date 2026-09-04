@@ -1,0 +1,6 @@
+interface:
+  display_name: "Chany's Healthcare Marketing"
+  short_description: "의료 광고의 환자 안전·근거·게시 전 검토 방향 설계"
+  default_prompt: "$chany-healthcare-marketing으로 사람의 게시 전 검토가 포함된 의료 마케팅 방향 패킷을 만들어줘."
+policy:
+  allow_implicit_invocation: true

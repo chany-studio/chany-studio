@@ -1,0 +1,6 @@
+interface:
+  display_name: "Chany's Publication Review"
+  short_description: "게시 전 근거·거래·권리·채널·최종 렌더 검수"
+  default_prompt: "$chany-publication-review로 이 광고의 관할, 채널, 근거, 권리와 최종 렌더를 검수하고 게시 상태를 판정해줘."
+policy:
+  allow_implicit_invocation: true

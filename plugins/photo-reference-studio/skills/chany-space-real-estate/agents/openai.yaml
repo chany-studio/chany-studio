@@ -1,0 +1,6 @@
+interface:
+  display_name: "Chany's Space & Real Estate"
+  short_description: "건축·인테리어·부동산 광고의 공간 증거와 연출을 전문 설계"
+  default_prompt: "$chany-space-real-estate로 이 공간이나 부동산의 고객 여정, 공간 증거, 촬영 방향과 제작 핸드오프를 설계해줘."
+policy:
+  allow_implicit_invocation: true

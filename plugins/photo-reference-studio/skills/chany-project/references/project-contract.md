@@ -1,6 +1,6 @@
 # Chany project contract
 
-Use this contract for setup, update, status, and doctor. Keep the workflow limited to advertising, marketing, detail pages, promotion, product content, model/fashion stills, and commerce UGC.
+Use this contract for setup with automatic existing-Moai-context detection and reuse, capability-gated Moai chaining, update, status, and doctor. Keep the workflow limited to advertising, marketing, detail pages, promotion, industry content, model/fashion stills, and commerce UGC. When Moai is present, also read [moai-chain.md](moai-chain.md).
 
 ## Compact interview
 
@@ -9,6 +9,8 @@ Derive answers from the user's invocation, attachments, and existing files first
 1. **Purpose and audience:** What product or brand is this for, what outcome matters, who is the audience, and what is the deadline?
 2. **Deliverables and channels:** Which assets are required, where will they appear, and what sizes, ratios, lengths, languages, and quantities are fixed?
 3. **Authority and constraints:** Which source images, logos, brand guides, approved facts, claims, prices, offers, CTA, rights, consent, visual references, and forbidden elements are authoritative? Is the project planning-only, connected-tool production, web handoff, or hybrid, and where must paid-generation approval occur?
+
+Existing Moai answers count as inputs, not questions to repeat. Confirm only missing campaign-specific facts and any contradiction between current instructions, `.moai/project/*`, and `.chany-studio/*`.
 
 If a field remains unknown but does not block setup, write `미정 — 확인 필요` instead of asking another question.
 
@@ -19,13 +21,18 @@ Show:
 - project name, purpose, audience, deadline, and completion condition
 - exact deliverables and channels
 - authoritative sources and unresolved rights or copy
-- the minimal skill chain and why each skill is present
+- one primary industry skill when the domain is known, the minimal production skill chain, and why each is present
+- Moai phase (`reuse existing`, `run first`, `unavailable`, or `not requested`), upstream paths to consume, and ownership boundaries
+- relevant installed Moai specialist handoffs, if any, with exact skill name, bounded purpose, reviewed-object version, and downstream owner
+- publication-review scope, named owner, and the live paid-generation approval boundary
 - one primary project-agent role, or a reason no recurring agent is needed
 - files to create, files to update, conflicts, and backup location
 
 Ask once: create, revise the blueprint, or cancel. Setup itself must not begin paid generation.
 
 ## Minimal routing
+
+Select the primary industry overlay before the production skills. Read `chany-studio/references/routing.md` for the complete industry table. Use at most one primary industry skill unless the requested campaign genuinely crosses domains; record why a secondary overlay is needed.
 
 | Need | Skill |
 |---|---|
@@ -39,6 +46,7 @@ Ask once: create, revise the blueprint, or cancel. Setup itself must not begin p
 | bounded repair of an accepted image | `chany-image-edit` |
 | adult model or source-locked fashion stills | `chany-model-fashion` |
 | review, unboxing, tutorial, SaaS demo, or try-on UGC | `chany-ugc-ads` |
+| version-bound final claims, offer, rights, disclosures, and release review | `chany-publication-review` |
 
 Use `chany-studio` only when two or more production families need shared sequencing. Do not list unneeded specialists in the generated project instructions.
 
@@ -57,6 +65,8 @@ Use `chany-studio` only when two or more production families need shared sequenc
 | `.codex/agents/<role>.toml` | Equivalent named project agent for local Codex clients | Create only with the Codex managed marker and valid TOML |
 
 Use templates in `../assets/templates/`. Replace every `{{PLACEHOLDER}}`; do not leave scaffold tokens in generated files.
+
+`.moai/**` is not a Chany generated-file target. Read existing Moai project records only as described in `moai-chain.md`. When no foundation exists, include a same-request Moai phase only after verifying that the current host exposes the exact skill as callable and can await its completion in-process; installation evidence or a visible name alone is insufficient. Otherwise ordinary setup continues Chany-only with the manual two-step handoff. `--chany-only` skips that phase, while `--with-moai` requires it and stops before Chany writes when the capability is unavailable.
 
 ## Agent selection
 
@@ -99,7 +109,7 @@ At the project root, Codex selects a non-empty `AGENTS.override.md` before `AGEN
 - `plugin`: `photo-reference-studio`
 - `pluginVersion`: current manifest base version
 - `projectName`, `projectType`, `executionMode`, `primaryAgent`
-- `activeSkills`: only selected Chany skill names
+- `activeSkills`: only selected Chany skill names; record optional Moai specialist names in the human-readable brief and state instead of claiming plugin ownership in this array
 - `createdAt`, `updatedAt`: ISO 8601 timestamps; preserve `createdAt` on update
 
 Expand the single `activeSkills` example entry in the JSON template into one properly escaped array item per selected skill. Escape all inserted strings as JSON values; never paste raw user text into JSON syntax.
@@ -115,11 +125,15 @@ After setup or update, verify:
 - `AGENTS.md` contains exactly one start marker and one end marker and stays at or below 200 lines unless pre-existing user content already exceeds that size
 - any same-directory `AGENTS.override.md` either contains exactly one valid Chany bridge or is reported as a runtime warning; user-owned override content remains unchanged
 - `CLAUDE.md` first non-empty line is exactly `@AGENTS.md`, not a code span or fenced block
+- any Moai harness marker pair and its enclosed bytes in `CLAUDE.md` remain unchanged
 - `project.json` parses as JSON and contains only known fields
 - the `AGENTS.md` hosted-work delegation contract and paired Claude/local-Codex agent definitions represent the same role and skill chain
 - the Claude agent frontmatter and Codex TOML parse successfully
 - exactly zero or one active Chany-managed primary agent pair exists; a retired pair is outside both runtime agent discovery directories
-- all referenced Chany skills are available in this plugin and no removed legacy skill is selected
+- the selected industry and production skills are available in this plugin and no removed legacy skill is selected
+- every recorded Moai source exists, no `.moai/**` path changed during the Chany phase, and newer upstream records are reported as stale context
+- every specialist handoff names its actual installed producer, reviewed-object version, source dates, and downstream owner; unavailable optional skills are skipped visibly and never emulated
+- paid-operation records preserve the approved version and unknown-charge recovery rule, and every gated final asset has a version-bound publication status
 - no secret-looking values, temporary upload URLs, or invented approval labels were written
 - files outside the target project were unchanged
 

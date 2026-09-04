@@ -1,0 +1,6 @@
+interface:
+  display_name: "Chany's Live Culture & Events"
+  short_description: "공연·전시·행사·축제의 단계별 홍보와 현장 연출을 전문 설계"
+  default_prompt: "$chany-live-culture-events로 이 공연, 전시, 행사 또는 축제의 관객 여정, 프로그램 증거, 연출 방향과 제작 핸드오프를 설계해줘."
+policy:
+  allow_implicit_invocation: true

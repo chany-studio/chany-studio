@@ -1,0 +1,6 @@
+interface:
+  display_name: "Chany's Digital Product Marketing"
+  short_description: "앱·플랫폼·B2B SaaS의 전략과 증거 체계"
+  default_prompt: "$chany-digital-product-marketing으로 이 디지털 제품의 업종 방향성과 증거·컴플라이언스 패킷을 만들어줘."
+policy:
+  allow_implicit_invocation: true

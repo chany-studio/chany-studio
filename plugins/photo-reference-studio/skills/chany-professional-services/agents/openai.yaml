@@ -1,0 +1,6 @@
+interface:
+  display_name: "Chany's Professional Services"
+  short_description: "서비스·전문가 광고의 전략·신뢰·컴플라이언스 방향 설계"
+  default_prompt: "$chany-professional-services로 서비스 업종의 증거 중심 광고 방향 패킷을 만들어줘."
+policy:
+  allow_implicit_invocation: true

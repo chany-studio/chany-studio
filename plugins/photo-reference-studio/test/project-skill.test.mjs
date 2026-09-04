@@ -36,6 +36,7 @@ test("project skill exposes cross-runtime entry points and all referenced resour
 
   for (const path of [
     "references/project-contract.md",
+    "references/moai-chain.md",
     "assets/templates/AGENTS.md.tmpl",
     "assets/templates/AGENTS.override.md.tmpl",
     "assets/templates/CLAUDE.md.tmpl",
@@ -69,6 +70,18 @@ test("user-facing docs distinguish ChatGPT and Codex skill sigils", async () => 
     "chany-image-edit",
     "chany-model-fashion",
     "chany-ugc-ads",
+    "chany-publication-review",
+    "chany-professional-services",
+    "chany-education-marketing",
+    "chany-healthcare-marketing",
+    "chany-food-dining",
+    "chany-hospitality-travel",
+    "chany-space-real-estate",
+    "chany-digital-product-marketing",
+    "chany-live-culture-events",
+    "chany-automotive-marketing",
+    "chany-consumer-tech-marketing",
+    "chany-corporate-employer",
   ];
 
   for (const document of [rootReadme, pluginReadme, userGuide]) {
@@ -80,7 +93,8 @@ test("user-facing docs distinguish ChatGPT and Codex skill sigils", async () => 
 
   const allDocs = [rootReadme, pluginReadme, userGuide, installGuide, troubleshooting].join("\n");
   assert.match(allDocs, /\/project-studio/);
-  assert.doesNotMatch(allDocs, /\/project(?=[\s`]|$)/m);
+  assert.match(allDocs, /Moai/i);
+  assert.match(allDocs, /\/project/);
   assert.doesNotMatch(allDocs, /photo-reference-studio:project(?=[\s`]|$)/m);
 });
 
@@ -89,6 +103,7 @@ test("Codex manifest default prompts use Codex skill sigils only", async () => {
     await readFile(join(pluginRoot, ".codex-plugin", "plugin.json"), "utf8"),
   );
 
+  assert.ok(manifest.interface.defaultPrompt.length <= 3);
   for (const prompt of manifest.interface.defaultPrompt) {
     assert.match(prompt, /^\$chany-[a-z-]+/);
     assert.doesNotMatch(prompt, /@chany-/);
@@ -104,6 +119,8 @@ test("AGENTS template has one bounded managed block and stays compact", async ()
   assert.match(template, /paid generations/i);
   assert.match(template, /ChatGPT Work:/);
   assert.match(template, /Hosted ChatGPT Work must not assume/);
+  assert.match(template, /\{\{UPSTREAM_PROJECT_CONTEXT\}\}/);
+  assert.match(template, /never edit `.moai\/\*\*`/i);
 });
 
 test("override bridge handles Codex precedence without duplicating project instructions", async () => {
@@ -118,6 +135,26 @@ test("Claude template imports the canonical file on the first non-empty line", a
   const template = await read("assets/templates/CLAUDE.md.tmpl");
   const firstNonEmpty = template.split("\n").find((line) => line.trim());
   assert.equal(firstNonEmpty, "@AGENTS.md");
+});
+
+test("Moai chain preserves command ownership and the Claude harness boundary", async () => {
+  const [skill, contract, chain] = await Promise.all([
+    read("SKILL.md"),
+    read("references/project-contract.md"),
+    read("references/moai-chain.md"),
+  ]);
+
+  assert.match(skill, /Keep `\/project` Moai-owned and `\/project-studio` Chany-owned/);
+  assert.match(skill, /Never edit `\.moai\/\*\*`/);
+  assert.match(contract, /Moai harness marker pair/);
+  assert.match(contract, /include a same-request Moai phase only after verifying that the current host exposes the exact skill as callable/i);
+  assert.match(contract, /installation evidence or a visible name alone is insufficient/i);
+  assert.match(chain, /<!-- moai:harness-start -->/);
+  assert.match(chain, /<!-- moai:harness-end -->/);
+  assert.match(chain, /--with-moai/);
+  assert.match(chain, /--chany-only/);
+  assert.match(chain, /standard `\/project-studio <description>` setup automatically detects the Moai state/i);
+  assert.match(chain, /conditional on both plugins being installed and visible/);
 });
 
 test("project snapshot template is valid JSON and contains no secret fields", async () => {

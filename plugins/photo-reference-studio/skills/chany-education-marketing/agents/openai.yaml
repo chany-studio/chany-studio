@@ -1,0 +1,6 @@
+interface:
+  display_name: "Chany's Education Marketing"
+  short_description: "교육 광고의 학습 여정·성과 증거·미성년자 보호 방향 설계"
+  default_prompt: "$chany-education-marketing으로 교육 프로그램의 증거 중심 마케팅 방향 패킷을 만들어줘."
+policy:
+  allow_implicit_invocation: true

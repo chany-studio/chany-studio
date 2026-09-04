@@ -1,7 +1,7 @@
 interface:
   display_name: "Chany's Detail Page"
   short_description: "사실 기반의 일관된 상품 상세페이지 이미지 모듈 제작"
-  default_prompt: "$chany-detail-page로 이 제품의 히어로, 핵심 특징, 디테일, 사용 장면과 마감 CTA 모듈을 같은 캠페인 톤으로 구성해줘."
+  default_prompt: "$chany-detail-page로 업종별 고객 여정과 근거를 반영해 히어로, 핵심 특징, 증거, 경험과 마감 CTA 모듈을 같은 캠페인 톤으로 구성해줘."
 dependencies:
   tools:
     - type: "mcp"

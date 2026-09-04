@@ -1,0 +1,6 @@
+interface:
+  display_name: "Chany's Consumer Tech Marketing"
+  short_description: "소비자 기술제품의 연출·증거·안전·호환 기준"
+  default_prompt: "$chany-consumer-tech-marketing으로 이 기술제품의 업종 방향성과 증거·안전·컴플라이언스 패킷을 만들어줘."
+policy:
+  allow_implicit_invocation: true

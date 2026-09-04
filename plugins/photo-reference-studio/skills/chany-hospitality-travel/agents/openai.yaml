@@ -1,0 +1,6 @@
+interface:
+  display_name: "Chany's Hospitality & Travel"
+  short_description: "호텔·여행 광고의 예약 여정·증거·연출 방향을 전문 설계"
+  default_prompt: "$chany-hospitality-travel로 이 호텔이나 여행 캠페인의 예약 여정, 사실 증거, 촬영 방향과 제작 핸드오프를 설계해줘."
+policy:
+  allow_implicit_invocation: true

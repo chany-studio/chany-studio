@@ -1,23 +1,31 @@
 ---
 name: chany-ugc-ads
-description: Plan and create product-focused Higgsfield UGC ads for reviews, unboxing, tutorials, SaaS demos, virtual try-on, and localized variants. Use for short testimonial or creator-style marketing video; not for polished static fashion imagery or cinematic brand films.
+description: Plan and create industry-aware Higgsfield UGC ads for reviews, demonstrations, visits, bookings, tutorials, SaaS demos, virtual try-on, and localized variants using approved evidence and disclosures. Use for short creator-style marketing video; not for polished static fashion imagery or cinematic brand films.
 ---
 
 # Chany UGC Ads
 
-Create credible short-form UGC advertising with a clear hook, truthful product demonstration, consistent creator identity, and one CTA.
+Create credible short-form UGC advertising with a clear hook, truthful demonstration or experience, consistent creator identity, visible required disclosures, and one CTA.
 
 Read [references/ugc-production.md](references/ugc-production.md) for format selection, script structure, input requirements, execution checkpoints, and QA.
 
+Before any paid operation, read and follow the shared [Higgsfield runtime contract](../chany-studio/references/higgsfield-runtime-contract.md). Read and follow the shared [creative quality loop](../chany-studio/references/creative-quality-loop.md) when defining acceptance, inspecting results, correcting defects, and deciding QA.
+
+For every named platform, placement, storefront, outbound channel, upload, schedule, or live publishing operation, read and follow the shared [platform publication adapter](../chany-studio/references/platform-publication-adapter.md). Do not treat creative approval as authority to upload, mutate, activate, or spend.
+
 ## Workflow
 
-1. Choose exactly one primary format: review, unboxing, tutorial, SaaS demo, or virtual try-on. Treat localization as a derivative of an approved master, not as its narrative format.
-2. Lock the approved product facts, offer, CTA, creator or avatar authority, language, locale, platform, duration, ratio, and required deliverables.
+1. Read the industry direction packet and choose exactly one primary format, journey stage, proof job, and desired action: review, visit, booking, unboxing, tutorial, SaaS demo, or virtual try-on. Treat localization as a derivative of an approved master, not as its narrative format.
+2. Lock the approved offer facts, evidence, limitations, disclosure, CTA, creator or avatar authority, language, locale, platform, duration, ratio, and required deliverables.
 3. Write a scene-level script with hook, proof or demonstration, and CTA. Mark proposed copy as draft until approved and never fabricate experience, results, testimonials, or scarcity.
 4. Inspect the active Higgsfield MCP tools and schemas. Use only capabilities actually exposed in the current connection; website availability alone does not prove MCP availability.
 5. Before paid generation, show the number of planned variants and generation steps. Generate only the approved scope.
-6. Review the final video for product fidelity, claim accuracy, identity and voice consistency, lip sync, timing, overlays, captions, audio, and platform framing.
+6. Review the final-resolution video through the shared bounded creative quality loop for authority fidelity, claim and experience accuracy, industry failure gates, identity and voice consistency, lip sync, timing, disclosures, overlays, captions, audio, accessibility, and platform framing. Must-pass failures cannot be averaged away.
 
 Obtain permission for an identifiable person's face or cloned voice and do not use a real person's likeness for deceptive endorsement. Approve one master before localization, then preserve meaning, brand pronunciation, offer values, legal copy, and timing rather than translating word for word.
 
 If a required UGC operation is not exposed through MCP, return the completed script, shot plan, asset-role map, and exact Higgsfield interface handoff. Do not claim generation succeeded.
+
+Paid submission, recovery, and scope changes follow the shared runtime contract exactly. Never blindly resubmit after a timeout, disconnect, or unknown charge state; inspect the original job or receipt first. A changed request requires a new preflight and approval under that contract.
+
+Draft scripts, shot plans, and draft renders may proceed while review inputs are incomplete. Before publication, route every applicable exact final script or copy, offer, platform placement, creator disclosure, video, crop or layout, subtitle, audio, and final-render version to `chany-publication-review`; a draft or a review of a different master or localized variant is not publication clearance.

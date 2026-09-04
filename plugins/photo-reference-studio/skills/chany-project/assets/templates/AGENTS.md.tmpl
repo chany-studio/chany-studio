@@ -10,6 +10,7 @@
 - Completion: {{COMPLETION_CRITERIA}}
 - Canonical brief: `.chany-studio/brief.md`
 - Mutable state: `.chany-studio/state.md`
+- Upstream project context: {{UPSTREAM_PROJECT_CONTEXT}}
 
 ## Authority and locks
 
@@ -27,7 +28,11 @@
 
 {{SKILL_ROUTING}}
 
-Use the smallest applicable skill. For work spanning multiple production families, coordinate through `chany-studio`; for one clear output, use its specialist directly.
+Use one primary industry skill when the domain is known, then the smallest applicable production skill chain. For work spanning multiple production families, coordinate through `chany-studio`; for one clear output, use its specialist directly.
+
+When `.moai/project/` is named above, treat it as read-only general project context. Never edit `.moai/**`; surface conflicts with this brief instead of silently choosing one source.
+
+When relevant Moai specialist skills are installed, chain only the smallest applicable commerce, marketing, legal, regulatory, or design review step. Preserve the exact Moai skill name and its sources in a structured handoff; do not treat it as blanket clearance or duplicate its command.
 
 ## Runtime orchestration
 
@@ -45,7 +50,8 @@ Use the smallest applicable skill. For work spanning multiple production familie
 
 ## Approval and cost
 
-- Before multiple paid generations, show the effective image, video, scene, and variant counts and the known approval points.
+- Before any paid generations, inspect the live tool schema and options. Use a free server quote when available, then show the final prompt, input roles, resolved model or workflow and options, count, server adjustments, provider-returned credit information, and batch ceiling for approval.
+- Never blindly resubmit an ambiguous paid operation. Inspect its existing job or history first; any changed prompt, input, model, billable option, count, duration, ratio, or locale requires a new preflight and approval.
 - Before approval, produce only the brief, plan, prompt, layout, or web handoff that the user requested.
 - Never claim a connected-tool or web-only action completed unless it actually completed and can be verified.
 - Record approvals and reversals in `.chany-studio/state.md` without upgrading an unknown value to approved.
@@ -55,7 +61,8 @@ Use the smallest applicable skill. For work spanning multiple production familie
 - Compare product shape, count, color, material, label, logo, model identity, garment structure, and approved copy against their authority sources.
 - Check channel ratio, safe area, mobile readability, CTA, language, and campaign-family consistency.
 - Reject unapproved claims, fabricated details, unintended source changes, broken copy, and unverifiable completion.
-- Name observed defects and the smallest repair path. Use `chany-image-edit` only for a bounded change to an accepted image.
+- Name observed defects and the smallest repair path. Default to one initial paid attempt plus at most one defect-specific correction, recheck all must-pass criteria for regressions, and stop at the approved attempt or credit ceiling. Use `chany-image-edit` only for a bounded change to an accepted image.
+- When a publication gate applies, review the exact copy, offer, destination, asset crop and final render with `chany-publication-review`. Draft work may proceed, but publication remains blocked until the recorded named-owner process is complete.
 
 ## Files and handoff
 

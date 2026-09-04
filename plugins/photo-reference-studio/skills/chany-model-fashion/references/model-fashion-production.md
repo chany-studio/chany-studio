@@ -22,6 +22,30 @@ body_proportions: ""
 fixed_makeup_and_styling: ""
 ```
 
+## Identity route before generation
+
+Choose the least persistent identity route that satisfies the campaign:
+
+```yaml
+identity_route: "one-use-reference | persistent-identity"
+identity_authority_id: ""
+consent_record_id: ""
+existing_identity_check: "not-run | none-authorized | authorized-match-found"
+existing_identity_reference: ""
+authorized_purpose_and_term: ""
+face_use_consent_status: "unknown | confirmed | not-applicable"
+paid_training_quote_reference: ""
+paid_approval_id: ""
+paid_training_approval_status: "not-applicable | pending | approved | invalidated"
+duplicate_training_status: "not-checked | blocked | not-a-duplicate | not-applicable"
+```
+
+Before proposing persistent identity training, inspect the identities already available through the current connection and check whether an authorized identity for the same person and permitted purpose already exists. Use a one-use reference for a single asset or bounded campaign when persistence is unnecessary. Use a persistent identity only when repeated continuity materially justifies it and the live workflow supports it.
+
+Do not train a duplicate merely to rename, restyle, or recreate an existing authorized identity. Reuse an existing identity only when its consent scope, permitted purpose, term, and current authority cover this job; otherwise stop for renewed authority rather than silently replacing it.
+
+Confirm face-use consent before any face upload. Treat consent and paid training as separate approvals: likeness consent does not authorize spending, and a cost approval does not grant likeness rights. Store the local `identity_authority_id`, `consent_record_id`, and `paid_approval_id` in the shared campaign state; never rely on an unlinked local approval. The paid-training approval must identify the resolved live workflow, the current quote and expected operations without relying on a static model name, price, or duration. A change to the subject or authority input, consent scope, identity route, resolved workflow, model, billable option, or requested output invalidates the affected identity and paid approvals. If either required approval is absent, unlinked, invalidated, or ambiguous, stop before upload or training.
+
 ## Consent and representation
 
 Use an identifiable real person's image only for the authorized purpose. Do not imply endorsement, transform a real person into a misleading identity, sexualize a person without authorization, or generate a minor or minor-looking subject in an adult commercial context. Keep body appearance realistic and do not create deceptive before-and-after claims.
