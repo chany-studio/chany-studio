@@ -79,6 +79,7 @@ industry_direction:
 - `chany-campaign-visual`: master event, performance, exhibition, program, or festival key visual.
 - `chany-ad-creative`: announcement, lineup, ticket, registration, countdown, poster, display, social, and sponsor placements.
 - `chany-detail-page`: event listing, program, schedule, artist, access, travel, FAQ, ticket, and impact modules.
+- `chany-campaign-video`: concept-led announcement, program, atmosphere, trailer, or recap films with cleared rights.
 - `chany-ugc-ads`: creator invitation, preview, attendee experience, backstage, recap, or vertical event video.
 
 This skill retains authority over program truth, phase and journey fit, cultural representation, artist and audience rights, accessibility, total-price, live-capture safety, and sponsor disclosure.

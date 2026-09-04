@@ -114,6 +114,7 @@ test("user-facing docs distinguish ChatGPT and Codex skill sigils", async () => 
     "chany-ad-creative",
     "chany-image-edit",
     "chany-model-fashion",
+    "chany-campaign-video",
     "chany-ugc-ads",
     "chany-video-assembly",
     "chany-preflight",

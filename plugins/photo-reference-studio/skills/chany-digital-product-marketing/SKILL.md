@@ -103,6 +103,7 @@ Run one L1 search first. Keep `l2` empty and `query_count: 1` when discovery sto
 - `$chany-campaign-visual`: approved key visual or campaign image system
 - `$chany-ad-creative`: placement-specific paid and organic ad variants
 - `$chany-detail-page`: product, solution, pricing, use-case, or conversion page structure
+- `$chany-campaign-video`: concept-led product launch, workflow, or brand motion using only approved interface evidence
 - `$chany-ugc-ads`: creator, customer, expert, tutorial, or workflow-led video concepts
 
 The handoff must carry the mode, audience role, journey stage, approved facts, evidence limits, reference route, prompt kernel, and unresolved approvals. Do not let a downstream skill invent functionality, customer results, integrations, availability, security posture, price, savings, user counts, or policy compliance.

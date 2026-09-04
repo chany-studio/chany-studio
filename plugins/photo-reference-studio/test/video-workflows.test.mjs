@@ -44,11 +44,16 @@ test("UGC binds each product clip to an approved first frame without unsafe paid
   assert.doesNotMatch(rule, /seedance_2_5|omni_reference|start_image/i);
 });
 
-test("UGC scenes carry approved message ownership and reference video timing is local-only", async () => {
-  const [production, teardown] = await Promise.all([
+test("campaign and UGC video share one local-only reference teardown", async () => {
+  const [ugc, campaign, production, teardown] = await Promise.all([
+    readPluginFile("skills/chany-ugc-ads/SKILL.md"),
+    readPluginFile("skills/chany-campaign-video/SKILL.md"),
     readPluginFile("skills/chany-ugc-ads/references/ugc-production.md"),
-    readPluginFile("skills/chany-ugc-ads/references/reference-teardown.md"),
+    readPluginFile("skills/chany-studio/references/video-reference-teardown.md"),
   ]);
+
+  assert.match(ugc, /\.\.\/chany-studio\/references\/video-reference-teardown\.md/);
+  assert.match(campaign, /\.\.\/chany-studio\/references\/video-reference-teardown\.md/);
 
   const scene = production.match(/```yaml\nscene: 1\n([\s\S]*?)```/)?.[1] ?? "";
   assert.match(scene, /^usp_role:/m);
@@ -59,8 +64,36 @@ test("UGC scenes carry approved message ownership and reference video timing is 
   assert.match(teardown, /user supplies a local video file or a screen recording they are authorized to use/i);
   assert.match(teardown, /Do not download from a platform, bypass access controls, scrape a feed/i);
   assert.match(teardown, /One second is a useful starting interval[\s\S]+not a fixed requirement/i);
-  assert.match(teardown, /Timing[\s\S]+may inform[\s\S]+do not transfer/i);
+  assert.match(teardown, /Pacing[\s\S]+may inform[\s\S]+do not transfer/i);
   assert.match(teardown, /L1-first, direct-L2-only policy/i);
+  await assert.rejects(
+    readPluginFile("skills/chany-ugc-ads/references/reference-teardown.md"),
+    (error) => error?.code === "ENOENT",
+  );
+});
+
+test("campaign video uses one evidence-led still-first motion contract", async () => {
+  const skillPath = "skills/chany-campaign-video/SKILL.md";
+  const [skill, contract, openai] = await Promise.all([
+    readPluginFile(skillPath),
+    readPluginFile("skills/chany-campaign-video/references/campaign-video-contract.md"),
+    readPluginFile("skills/chany-campaign-video/agents/openai.yaml"),
+  ]);
+
+  assert.equal(frontmatterName(skill, skillPath), "chany-campaign-video");
+  assert.match(skill, /non-UGC product commercials, brand films/i);
+  assert.match(skill, /GPT Image 2 \(`gpt-image-2`\)/i);
+  assert.match(skill, /least risky motion route/i);
+  assert.match(skill, /deterministic movement over an accurate still/i);
+  assert.match(skill, /Hand only accepted clip versions/i);
+  assert.match(contract, /^video_concept_packet:/m);
+  assert.match(contract, /^\s+motion_route: "generated-motion \| deterministic-still-move \| authorized-footage"/m);
+  assert.match(contract, /Do not use an expensive video attempt[\s\S]+a still could reveal/i);
+  assert.match(contract, /first-frame role actually exposed by the live tool schema/i);
+  assert.match(contract, /^production_attempt:/m);
+  assert.doesNotMatch(contract, /seedance|nano.banana|credits?\s*:\s*\d+/i);
+  assert.match(openai, /\$chany-campaign-video(?![a-z0-9-])/i);
+  assert.match(openai, /^\s*allow_implicit_invocation:\s*true\s*$/m);
 });
 
 test("image production and repair share one positive measurable correction contract", async () => {
@@ -97,6 +130,9 @@ test("video assembly is source-safe, measured, target-authorized, and one-variab
   assert.match(skill, /references\/assembly-contract\.md/i);
   assert.match(skill, /platform-publication-adapter\.md/i);
   assert.match(skill, /Probe every input before writing output/i);
+  for (const mode of ["assemble", "replace-segment", "variants", "verify"]) {
+    assert.match(skill, new RegExp("`" + mode + "`"));
+  }
   assert.match(skill, /Never overwrite source clips or an accepted master/i);
   assert.match(skill, /fail-on-existing\/no-clobber[\s\S]+`ffmpeg -n`/i);
   assert.match(skill, /never use blanket overwrite such as `-y` without it/i);
@@ -105,16 +141,20 @@ test("video assembly is source-safe, measured, target-authorized, and one-variab
   assert.match(skill, /renders every code point in the exact approved strings/i);
   assert.match(skill, /Do not silently substitute a fallback font/i);
   assert.match(skill, /Probe every final file/i);
-  assert.match(skill, /add exact probe, normalization, and assembly commands/i);
+  assert.match(skill, /Preserve the accepted source master's frame rate/i);
+  assert.match(skill, /Preserve untouched timing and audio by default/i);
+  assert.match(skill, /add exact probe, normalization, operation, and verification commands/i);
   assert.match(skill, /NOT EXECUTED — handoff command plan/);
 
   assert.match(contract, /current authoritative delivery source or remain unresolved/i);
   assert.match(contract, /constraint does not authorize one exact encode selection/i);
   assert.match(contract, /output duration is the accepted sum[\s\S]+fits an authoritative `max_duration_s`/i);
   assert.doesNotMatch(contract, /1080x1920|fps:\s*30|max_duration_s:\s*90/i);
-  assert.match(contract, /^\s+authority:\s*"user \| current-platform-source \| delivery-spec"/m);
-  assert.match(contract, /^version,file,variable,value,start_s,duration_s,impressions,clicks,ctr,conversions,cpa$/m);
-  assert.match(contract, /Treat either as a testable diagnosis, not a conclusion/i);
+  assert.match(contract, /^\s+authority:\s*"user \| accepted-source-master \| current-platform-source \| delivery-spec"/m);
+  assert.match(contract, /^campaign_id,variant_set_id,source_master_hash,copy_version_id,version,file,variable,value,start_s,duration_s,impressions,clicks,ctr,conversions,cpa$/m);
+  assert.match(contract, /Two different masters named `AD_FINAL\.mp4` must never share a namespace/i);
+  assert.match(contract, /Do not use a video-only encode that silently drops the source audio/i);
+  assert.match(contract, /Never convert 24 fps to 30 fps/i);
 
   assert.match(openai, /\$chany-video-assembly(?![a-z0-9-])/i);
   assert.match(openai, /^\s*allow_implicit_invocation:\s*true\s*$/m);
@@ -160,8 +200,9 @@ test("routers and project doctor expose assembly and check-only environment rout
   }
   for (const document of [routing, router, legacy, contract]) {
     assert.match(document, /chany-video-assembly/i);
+    assert.match(document, /chany-campaign-video/i);
   }
-  assert.match(routing, /only after every included clip version is accepted/i);
+  assert.match(routing, /only after every included clip version and replacement boundary is accepted/i);
   assert.match(project, /route only the required non-destructive environment checks[\s\S]+must not install/i);
   assert.match(contract, /doctor never installs, upgrades, writes project files, or leaves persistent tool-check artifacts/i);
 });
@@ -173,7 +214,10 @@ test("campaign state binds first frames and assembled renders to stable versions
     "governing_still_version_id",
     "resolved_first_frame_role",
     "output_clip_version_id",
+    "motion_route",
+    "accepted_output_clip_version_id",
     "assembly_id",
+    "source_master_content_hash",
     "source_clip_version_ids",
     "target_authority_reference",
     "output_render_version_id",
@@ -181,22 +225,42 @@ test("campaign state binds first frames and assembled renders to stable versions
   ]) {
     assert.match(state, new RegExp(`^\\s+(?:-\\s+)?${field}:`, "m"));
   }
+  for (const field of ["campaign_video_manifests", "production_attempt_log", "performance_reviews"]) {
+    assert.match(state, new RegExp(`^${field}:`, "m"));
+  }
   assert.match(state, /changed[\s\S]+accepted clip[\s\S]+delivery target[\s\S]+invalidates every affected record/i);
 });
 
-test("both manifests publish the 2.2.4 GPT Image 2-default release", async () => {
+test("marketing brief reviews observed performance without inventing causality", async () => {
+  const [skill, schema] = await Promise.all([
+    readPluginFile("skills/chany-marketing-brief/SKILL.md"),
+    readPluginFile("skills/chany-marketing-brief/references/brief-schema.md"),
+  ]);
+
+  assert.match(skill, /post-campaign learning/i);
+  assert.match(skill, /winner`, `inconclusive`, or `invalid`/i);
+  assert.match(schema, /\| campaign video \|[\s\S]+`chany-campaign-video`/i);
+  assert.match(schema, /^performance_review:/m);
+  assert.match(schema, /^\s+decision: "winner \| inconclusive \| invalid"/m);
+  assert.match(schema, /does not prove that diagnosis/i);
+  assert.match(schema, /^\s+next_single_variable:/m);
+});
+
+test("both manifests publish the 2.3.0 campaign-video release", async () => {
   const [claude, codex] = await Promise.all([
     readPluginFile(".claude-plugin/plugin.json").then(JSON.parse),
     readPluginFile(".codex-plugin/plugin.json").then(JSON.parse),
   ]);
 
-  assert.equal(claude.version, "2.2.4");
-  assert.match(codex.version, /^2\.2\.4\+codex\.[a-z0-9.-]+$/i);
+  assert.equal(claude.version, "2.3.0");
+  assert.match(codex.version, /^2\.3\.0\+codex\.[a-z0-9.-]+$/i);
   assert.ok(codex.interface.capabilities.includes("GPT Image 2 default for generative still images with scoped overrides"));
   assert.ok(codex.interface.capabilities.includes("Native Claude question-card interview and Chany-file approval"));
   assert.ok(codex.interface.capabilities.includes("Native in-chat Pinterest reference previews"));
   assert.doesNotMatch(JSON.stringify(codex.interface), /Behance/i);
-  assert.ok(codex.interface.capabilities.includes("Local clip assembly and hook-only variants"));
+  assert.ok(codex.interface.capabilities.includes("Concept-led campaign video with approved GPT Image 2 governing stills"));
+  assert.ok(codex.interface.capabilities.includes("Local video assembly, segment replacement, hook variants, and delivery verification"));
+  assert.ok(codex.interface.capabilities.includes("Bounded performance review and next one-variable experiment planning"));
   assert.ok(codex.interface.capabilities.includes("Runtime media-tool and Korean-font preflight"));
   assert.match(codex.interface.longDescription, /승인된 클립[\s\S]+로컬에서 조립/i);
 });
@@ -209,7 +273,7 @@ test("Claude marketplace metadata advertises the new video workflow without chan
 
   assert.equal(marketplace.name, "photo-reference-studio");
   assert.equal(marketplace.plugins[0].name, "photo-reference-studio");
-  for (const tag of ["reference-video-teardown", "approved-first-frame", "video-assembly", "environment-preflight"]) {
+  for (const tag of ["campaign-video", "reference-video-teardown", "approved-first-frame", "video-assembly", "segment-replacement", "performance-learning", "environment-preflight"]) {
     assert.ok(marketplace.plugins[0].tags.includes(tag), `Claude marketplace missing ${tag}`);
   }
 });
@@ -224,9 +288,9 @@ test("user docs place environment and paid checks before production and assembly
   const environmentCheck = pluginReadme.indexOf("로컬 영상·프레임·배치 작업이 있으면 먼저");
   const paidCheck = pluginReadme.indexOf("여러 유료 생성이 필요하면");
   const production = pluginReadme.indexOf("공통 제작 스킬이 승인된 패킷과 범위에서");
-  const assembly = pluginReadme.indexOf("복수 UGC 클립은 모두 승인된 뒤");
+  const assembly = pluginReadme.indexOf("캠페인 영상 또는 UGC 클립은 모두 승인된 뒤");
   assert.ok(environmentCheck < paidCheck && paidCheck < production && production < assembly);
 
-  assert.match(userGuide, /UGC 클립 승인 → 필요한 경우 로컬 환경 점검·영상 조립/i);
-  assert.ok(userGuide.indexOf("## 10. 실행 환경 점검") < userGuide.indexOf("## 11. 영상 조립과 훅 변형"));
+  assert.match(userGuide, /캠페인 영상 또는 UGC 클립 승인 → 필요한 경우 로컬 환경 점검·영상 조립/i);
+  assert.ok(userGuide.indexOf("## 10. 실행 환경 점검") < userGuide.indexOf("## 11. 영상 조립·컷 교체와 훅 변형"));
 });

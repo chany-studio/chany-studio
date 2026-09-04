@@ -15,7 +15,7 @@ For every named platform, placement, storefront, outbound channel, upload, sched
 
 ## Workflow
 
-1. When the user supplies a reference-video file, run the relevant non-destructive environment check through `chany-preflight` without persistent project changes, then read [references/reference-teardown.md](references/reference-teardown.md) and produce the beat table before writing the script. Timing may transfer; content does not.
+1. When the user supplies a reference-video file, run the relevant non-destructive environment check through `chany-preflight` without persistent project changes, then read the shared [video reference teardown](../chany-studio/references/video-reference-teardown.md) and produce the beat table before writing the script. Timing may transfer; content does not.
 2. Read the industry direction packet and choose exactly one primary format, journey stage, proof job, and desired action: review, visit, booking, unboxing, tutorial, SaaS demo, or virtual try-on. Treat localization as a derivative of an approved master, not as its narrative format.
 3. Lock the approved offer facts, evidence, limitations, disclosure, CTA, creator or avatar authority, language, locale, platform, duration, ratio, and required deliverables.
 4. Write a scene-level script with hook, proof or demonstration, and CTA. Mark proposed copy as draft until approved and never fabricate experience, results, testimonials, or scarcity.

@@ -1,4 +1,4 @@
-# Chany's Studio 2.2.4
+# Chany's Studio 2.3.0
 
 Claude와 ChatGPT Work/Codex에서 함께 쓰는 광고 프로젝트 지침을 설정하고, 업종별 여정·증거·연출·컴플라이언스와 공통 제작 워크플로를 결합해 광고·홍보·마케팅·상세/랜딩·콘텐츠를 기획·제작합니다.
 
@@ -32,7 +32,7 @@ ChatGPT Work에서는 `@스킬명`, Codex에서는 `$스킬명`으로 명시 호
 | --- | --- |
 | ChatGPT `@chany-studio` · Codex `$chany-studio` | 업종 오버레이와 여러 결과물을 연결하는 캠페인 라우터 |
 | ChatGPT `@chany-project` · Codex `$chany-project` | 프로젝트 인터뷰, `AGENTS.md`, 브리프·상태와 런타임별 에이전트 설정 |
-| ChatGPT `@chany-marketing-brief` · Codex `$chany-marketing-brief` | 목표, 타깃, 메시지, 채널과 에셋 매트릭스 |
+| ChatGPT `@chany-marketing-brief` · Codex `$chany-marketing-brief` | 캠페인 브리프 또는 실제 성과 기반 다음 한 변수 실험 |
 | ChatGPT `@chany-product-assets` · Codex `$chany-product-assets` | 투명 누끼, 순백 팩샷과 원본 클린업 |
 | ChatGPT `@chany-reference-board` · Codex `$chany-reference-board` | 제한된 업종 검색 경로의 Pinterest 레퍼런스 6장 직접 표시 |
 | ChatGPT `@chany-campaign-visual` · Codex `$chany-campaign-visual` | 연출컷과 마스터 키비주얼 |
@@ -40,8 +40,9 @@ ChatGPT Work에서는 `@스킬명`, Codex에서는 `$스킬명`으로 명시 호
 | ChatGPT `@chany-ad-creative` · Codex `$chany-ad-creative` | 정적 광고, 프로모션 포스터, 배너와 채널 변형 |
 | ChatGPT `@chany-image-edit` · Codex `$chany-image-edit` | 제한된 부분 수정과 복원 |
 | ChatGPT `@chany-model-fashion` · Codex `$chany-model-fashion` | 성인 모델과 원본 의류 착장 |
+| ChatGPT `@chany-campaign-video` · Codex `$chany-campaign-video` | 제품 광고·브랜드 필름·프로모션 영상의 콘셉트, 기준 스틸, 생성과 검수 |
 | ChatGPT `@chany-ugc-ads` · Codex `$chany-ugc-ads` | 리뷰, 언박싱, 튜토리얼, SaaS, Try-on과 현지화 UGC |
-| ChatGPT `@chany-video-assembly` · Codex `$chany-video-assembly` | 승인 클립 조립, 지정 규격 통일, 훅 변형과 빈 성과 입력표 |
+| ChatGPT `@chany-video-assembly` · Codex `$chany-video-assembly` | 승인 영상 조립, 지정 구간 교체, 규격 통일, 훅 변형과 검증 |
 | ChatGPT `@chany-preflight` · Codex `$chany-preflight` | 영상·프레임·배치 작업 전 실행 환경과 한글 폰트 점검 |
 | ChatGPT `@chany-publication-review` · Codex `$chany-publication-review` | 정확한 최종 카피·오퍼·에셋 버전의 근거·권리·채널·최종 렌더 게시 전 검수 |
 
@@ -91,8 +92,9 @@ Moai의 `project`를 먼저 실행한 뒤 Chany 설정을 이어가는 수동 2�
 4. 로컬 영상·프레임·배치 작업이 있으면 먼저 현재 환경의 실제 도구와 승인 문구의 한글 글리프를 점검합니다.
 5. Higgsfield 작업이 있으면 호스트의 로그인 화면에서 인증합니다.
 6. 여러 유료 생성이 필요하면 라이브 작업·입력 역할·비용·산출물 수와 승인 지점을 확인합니다.
-7. 공통 제작 스킬이 승인된 패킷과 범위에서 키비주얼, 광고, 상세/랜딩과 UGC를 만듭니다.
-8. 복수 UGC 클립은 모두 승인된 뒤 지정 규격으로 조립하고, 요청 시 훅 하나만 바꾼 변형과 빈 성과 입력표를 만듭니다.
+7. 공통 제작 스킬이 승인된 패킷과 범위에서 키비주얼, 광고, 상세/랜딩, 콘셉트형 캠페인 영상과 UGC를 만듭니다.
+8. 캠페인 영상 또는 UGC 클립은 모두 승인된 뒤 지정 규격으로 조립하거나 승인 구간만 교체하고, 요청 시 훅 하나만 바꾼 변형과 빈 성과 입력표를 만듭니다.
+9. 실제 성과가 제공되면 추적·비교 가능성·표본을 확인한 뒤 다음 라운드의 한 변수만 정합니다.
 
 아래에서 사용하는 플랫폼의 첫 줄 하나를 선택하고 나머지 요청을 이어 붙입니다.
 

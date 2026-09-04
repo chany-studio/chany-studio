@@ -285,7 +285,7 @@ test("campaign state keeps specialist handoffs and publication reviews version-b
   );
   assert.match(state, /Attribute optional Moai specialist results with the producer's exact installed name/i);
   assert.match(state, /reviewed-object version, sources and dates, findings, and unresolved questions/i);
-  assert.match(state, /Bind identity authority, consent, UGC manifests, assembly manifests, still-image model selection, paid-generation approval, and publication review to stable content and asset versions/i);
+  assert.match(state, /Bind identity authority, consent, UGC and campaign-video manifests, assembly manifests, still-image model selection, paid-generation approval, performance review, and publication review to stable content and asset versions/i);
   assert.match(state, /a version-bound publication status for every asset/i);
 });
 

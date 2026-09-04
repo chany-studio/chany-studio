@@ -1,7 +1,7 @@
 {
   "name": "photo-reference-studio",
-  "version": "2.2.4+codex.20260904161557",
-  "description": "Chany's cross-runtime advertising studio with GPT Image 2-default still production, native Claude project interviews, industry expert overlays, approved-still video production, local clip assembly, version-bound publication review, and capability-gated Moai chaining.",
+  "version": "2.3.0+codex.20260904170309",
+  "description": "Chany's cross-runtime advertising studio with industry overlays, GPT Image 2-first campaign and UGC video, safe local assembly, performance learning, publication review, and Moai chaining.",
   "author": {
     "name": "Chany",
     "url": "https://github.com/chany-studio"
@@ -20,6 +20,8 @@
     "promotion",
     "fashion",
     "UGC",
+    "campaign video",
+    "brand film",
     "video assembly",
     "environment preflight",
     "Higgsfield",
@@ -60,8 +62,10 @@
       "Promotional and multi-channel ad creative",
       "Consistent model and fashion imagery",
       "Bounded commerce image editing",
+      "Concept-led campaign video with approved GPT Image 2 governing stills",
       "Higgsfield UGC video production with approved first frames",
-      "Local clip assembly and hook-only variants",
+      "Local video assembly, segment replacement, hook variants, and delivery verification",
+      "Bounded performance review and next one-variable experiment planning",
       "Runtime media-tool and Korean-font preflight"
     ],
     "brandColor": "#2563EB",

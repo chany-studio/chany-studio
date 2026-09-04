@@ -42,6 +42,8 @@ claim_entry:
   disclosure_location_and_proximity: ""
   review_owner: ""
   expiry_or_recheck: ""
+  source_locator: "file, section, line, URL, or other stable locator"
+  checked_at: ""
   status: "missing | draft | verified | approved"
 ```
 
@@ -115,6 +117,7 @@ Create only the rows needed for the request:
 | master key visual | campaign system | master ratio | campaign idea | authority source + industry packet + selected reference | `chany-campaign-visual` | 1 |
 | detail or landing module | explain or prove | storefront/landing width | one fact or benefit | evidence + campaign master | `chany-detail-page` | named |
 | static ad | placement response | named ratio | one message + CTA | authority + industry packet + campaign + copy | `chany-ad-creative` | named |
+| campaign video | concept-led motion proof or persuasion | named placement, ratio, duration | one primary message across approved beats | evidence + source authority + copy + optional video teardown | `chany-campaign-video` | named |
 | UGC master | creator-led proof | platform, duration | hook + demo + CTA | evidence + creator + copy | `chany-ugc-ads` | named |
 
 Show the user the final number of paid assets or multi-stage video operations before execution. Do not silently add A/B variants, ratios, languages, or concepts.
@@ -142,6 +145,35 @@ measurement_plan:
   decision_rule: ""
 ```
 
+## Performance review
+
+Use this mode only when the user supplies observed results. Preserve the original creative, campaign, source-master, copy, audience, placement, spend window, and attribution identifiers; matching filenames are not proof that two rows belong to the same experiment.
+
+Before comparing variants, verify metric definitions, instrumentation ownership, attribution window, delivery dates, audience and placement comparability, spend or exposure imbalance, and minimum-sample logic. If those conditions are unavailable, return `inconclusive` or `invalid` rather than naming a winner.
+
+```yaml
+performance_review:
+  review_id: ""
+  campaign_id: ""
+  variant_set_id: ""
+  source_master_content_hash: ""
+  copy_version_id: ""
+  observation_window: ""
+  metric_definitions: {}
+  attribution_and_tracking: ""
+  comparable_delivery_conditions: "pass | fail | unknown"
+  sample_sufficiency: "sufficient | insufficient | unknown"
+  decision: "winner | inconclusive | invalid"
+  winning_variant_id: ""
+  observed_signal: ""
+  diagnosis_hypothesis: ""
+  next_single_variable: ""
+  fixed_properties: []
+  unresolved_questions: []
+```
+
+`winner` requires comparable conditions, usable tracking, and sufficient evidence under a supplied or defensibly calculated decision rule. A high CTR with weak acquisition may suggest that the opening earns attention while the later proof or offer fails; it does not prove that diagnosis. Carry the hypothesis into one controlled next-round change.
+
 ## Korean copy fact-anchor pass
 
 For Korean copy, first freeze names, direct quotations, dates, prices, quantities, percentages, units, specifications, qualifications, disclosures, and legal text as fact anchors. Then improve only the persuasive phrasing around those anchors for natural Korean, removing translation-like syntax and abstract promotional clichés. Recompare every anchor character-for-character. Never use direct personal-address language to imply a health condition, protected trait, or other sensitive attribute.
@@ -156,5 +188,5 @@ Return:
 4. channel and placement map
 5. six-element visual brief
 6. asset matrix and production order
-7. proposed test variables, if any
+7. proposed test variables, or a performance review and next single-variable plan when observed results were supplied
 8. human publication gate and unresolved approvals

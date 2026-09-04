@@ -48,7 +48,8 @@ Select the primary industry overlay before the production skills. Read `chany-st
 | bounded repair of an accepted image | `chany-image-edit` |
 | adult model or source-locked fashion stills | `chany-model-fashion` |
 | review, unboxing, tutorial, SaaS demo, or try-on UGC | `chany-ugc-ads` |
-| accepted-clip assembly, target normalization, hook-only variants | `chany-video-assembly` |
+| product commercial, brand film, promotional motion, or concept-led campaign video | `chany-campaign-video` |
+| accepted-clip assembly, segment replacement, target normalization, hook-only variants, or verification | `chany-video-assembly` |
 | local media-tool and Korean-font environment check | `chany-preflight` |
 | version-bound final claims, offer, rights, disclosures, and release review | `chany-publication-review` |
 

@@ -52,6 +52,11 @@ copy_lock:
   claims: []
   cta: ""
   legal_copy: ""
+  provenance:
+    - anchor: ""
+      source_locator: ""
+      checked_at: ""
+      status: "draft | verified | approved"
   status: "missing | draft | approved"
 model_authority: ""
 model_lock: []
@@ -83,9 +88,30 @@ ugc_manifests:
         resolved_first_frame_role: ""
         output_clip_version_id: ""
     status: "draft | approved | invalidated | not-applicable"
+campaign_video_manifests:
+  - manifest_id: ""
+    concept_version_id: ""
+    approved_copy_version_id: ""
+    authority_asset_version_ids: []
+    reference_teardown_id: ""
+    continuity_strategy: ""
+    paid_approval_id: ""
+    scene_bindings:
+      - scene_id: "s01"
+        usp_role: ""
+        message_rank: 0
+        motion_route: "generated-motion | deterministic-still-move | authorized-footage"
+        governing_still_version_id: ""
+        accepted_output_clip_version_id: ""
+    status: "draft | approved | invalidated | not-applicable"
 assembly_manifests:
   - assembly_id: ""
+    operation: "assemble | replace-segment | variants | verify"
+    project_id: ""
+    campaign_id: ""
     shot_plan_version_id: ""
+    source_master_version_id: ""
+    source_master_content_hash: ""
     source_clip_version_ids: []
     target_authority_reference: ""
     target_checked_at: ""
@@ -94,6 +120,27 @@ assembly_manifests:
     variant_set_id: ""
     performance_table_path: ""
     status: "draft | verified | invalidated | not-applicable"
+production_attempt_log:
+  - asset_version_id: ""
+    scene_id: ""
+    attempt: 1
+    observed_defect: ""
+    timestamp_or_region: ""
+    measured_target: ""
+    change_made: ""
+    frozen_properties: []
+    regression_findings: []
+    decision: "accepted | rejected | stopped"
+performance_reviews:
+  - review_id: ""
+    campaign_id: ""
+    variant_set_id: ""
+    source_master_content_hash: ""
+    copy_version_id: ""
+    decision: "winner | inconclusive | invalid"
+    diagnosis_hypothesis: ""
+    next_single_variable: ""
+    status: "draft | reviewed"
 selected_reference:
   provider: ""
   source_url: ""
@@ -175,10 +222,11 @@ publication_reviews:
 - Pass only approved copy as locked copy. Keep draft copy visibly marked.
 - The reference handoff contains its source page and transferable Visual DNA, not reusable pixels or implied rights.
 - The campaign-visual handoff contains the accepted master plus explicit campaign rules. Downstream skills may recompose for format but may not invent a new campaign direction.
-- The UGC handoff binds every product scene to its approved still version, resolved first-frame role, and accepted output clip. The assembly handoff names those exact clip versions, the target authority, verified final-render version, controlled variant set, and empty performance table.
+- The UGC handoff binds every product scene to its approved still version, resolved first-frame role, and accepted output clip. The campaign-video handoff binds concept, copy, authorities, motion route, governing still, and accepted clip for every scene. The assembly handoff names those exact versions plus the source-master hash, target authority, verified final render, controlled variant set, and empty performance table.
+- Keep copy provenance, failed production attempts, and observed performance attached to stable versions. A filename alone is not an asset identity, and a failed attempt is learning evidence rather than an accepted deliverable.
 - Each produced asset returns its effective ratio or duration, source/copy verification status, and observed unresolved defects.
 - Attribute optional Moai specialist results with the producer's exact installed name, reviewed-object version, sources and dates, findings, and unresolved questions; never collapse them into untraceable campaign truth.
-- Bind identity authority, consent, UGC manifests, assembly manifests, still-image model selection, paid-generation approval, and publication review to stable content and asset versions. A changed subject or authority input, consent scope, script, prompt, input role, identity or model, workflow, billable option, accepted clip, delivery target, copy, crop, disclosure, offer, destination, or final render invalidates every affected record and reopens its approval or review.
+- Bind identity authority, consent, UGC and campaign-video manifests, assembly manifests, still-image model selection, paid-generation approval, performance review, and publication review to stable content and asset versions. A changed subject or authority input, consent scope, script, prompt, input role, identity or model, workflow, billable option, accepted clip, source master, delivery target, copy, crop, disclosure, offer, destination, or final render invalidates every affected record and reopens its approval or review.
 - Do not expose temporary media handles, internal job IDs, or upload URLs to the user.
 
 ## Checkpoints

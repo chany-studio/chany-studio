@@ -18,8 +18,9 @@ Route the request as follows:
 - product detail-page modules → `chany-detail-page`
 - bounded edit or inpainting → `chany-image-edit`
 - static adult model or fashion try-on → `chany-model-fashion`
+- product commercial, cinematic brand film, promotional motion, or concept-led performance video → `chany-campaign-video`
 - review, unboxing, tutorial, SaaS, try-on, or localized UGC video → `chany-ugc-ads`
-- clip assembly, vertical normalization, or hook-only variants → `chany-video-assembly`
+- clip assembly, segment replacement, target normalization, hook-only variants, or delivery verification → `chany-video-assembly`
 - missing local tool or environment-readiness check → `chany-preflight`
 
 Tell the user which current skill now owns the request, then follow that skill. Preserve the original request and do not add deliverables during migration.

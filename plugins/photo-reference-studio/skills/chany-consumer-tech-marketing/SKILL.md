@@ -94,6 +94,7 @@ Run one L1 search first. Keep `l2` empty and `query_count: 1` when discovery sto
 - `$chany-campaign-visual`: approved launch or campaign key visual and image system
 - `$chany-ad-creative`: placement-specific awareness, feature, retail, offer, and retargeting variants
 - `$chany-detail-page`: product, specification, comparison, compatibility, setup, bundle, or conversion page structure
+- `$chany-campaign-video`: concept-led launch, feature, ecosystem, or product film using approved device and UI evidence
 - `$chany-ugc-ads`: creator review, unboxing, setup, tutorial, comparison, daily-use, or accessibility concepts
 
 The handoff must carry the product identity lock, audience and journey stage, approved facts, test conditions, package contents, safety boundaries, reference route, prompt kernel, and unresolved approvals. Do not let a downstream skill invent form, ports, controls, screen states, features, performance, compatibility, safety, certification, accessories, price, offer, review, or environmental benefit.

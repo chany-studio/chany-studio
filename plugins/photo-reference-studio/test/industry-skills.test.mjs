@@ -106,6 +106,11 @@ for (const skillName of industrySkills) {
     );
     assert.match(
       skill,
+      /chany-campaign-video/i,
+      `${skillPath} must route concept-led campaign video`,
+    );
+    assert.match(
+      skill,
       /^industry_direction:\s*$/m,
       `${skillPath} must expose the canonical industry_direction root`,
     );

@@ -2,7 +2,7 @@
 
 ![Chany's Studio](plugins/photo-reference-studio/assets/logo.png)
 
-업종별 구매 여정·증거·연출·컴플라이언스 판단과 공통 제작 워크플로를 결합해 **광고·홍보·마케팅·상세/랜딩·콘텐츠**를 기획하고 제작하는 ChatGPT Work/Codex 및 Claude 플러그인입니다. Chany's Studio 2.2.4는 업종 전문 오버레이가 방향과 검증 기준을 정하고, 공통 제작 스킬이 승인된 방향을 실제 산출물로 전환하는 2축 구조입니다.
+업종별 구매 여정·증거·연출·컴플라이언스 판단과 공통 제작 워크플로를 결합해 **광고·홍보·마케팅·상세/랜딩·콘텐츠**를 기획하고 제작하는 ChatGPT Work/Codex 및 Claude 플러그인입니다. Chany's Studio 2.3.0은 업종 전문 오버레이가 방향과 검증 기준을 정하고, 공통 제작 스킬이 승인된 방향을 실제 산출물로 전환하는 2축 구조입니다.
 
 > [공식 설치·사용설명서 (Notion)](https://jolly-phlox-79c.notion.site/Chany-s-Studio-3c783e9464668140b794ee076be24406) · [문제 해결](docs/TROUBLESHOOTING.md)
 
@@ -79,7 +79,7 @@ ChatGPT Work에서 스킬을 직접 고를 때는 `@스킬명`, Codex에서는 `
 | --- | --- |
 | ChatGPT `@chany-project` · Codex `$chany-project` | 프로젝트 인터뷰, 공통 `AGENTS.md`, 브리프·상태, ChatGPT Work 위임 규칙과 Claude·로컬 Codex 프로젝트 에이전트 설정 |
 | ChatGPT `@chany-studio` · Codex `$chany-studio` | 업종 오버레이와 두 분야 이상이 연결된 전체 캠페인 및 산출물 순서 관리 |
-| ChatGPT `@chany-marketing-brief` · Codex `$chany-marketing-brief` | 목표·타깃·메시지·승인 카피·채널·에셋 매트릭스 정리 |
+| ChatGPT `@chany-marketing-brief` · Codex `$chany-marketing-brief` | 목표·타깃·메시지·에셋 매트릭스 또는 성과 기반 다음 한 변수 실험 정리 |
 | ChatGPT `@chany-product-assets` · Codex `$chany-product-assets` | 투명 누끼, 순백 팩샷, 제품·음식 클린업 |
 | ChatGPT `@chany-reference-board` · Codex `$chany-reference-board` | 제한된 업종 검색 경로로 Pinterest 레퍼런스 6장과 Visual DNA 구성 |
 | ChatGPT `@chany-campaign-visual` · Codex `$chany-campaign-visual` | 연출컷과 텍스트 없는 마스터 키비주얼 |
@@ -87,8 +87,9 @@ ChatGPT Work에서 스킬을 직접 고를 때는 `@스킬명`, Codex에서는 `
 | ChatGPT `@chany-ad-creative` · Codex `$chany-ad-creative` | 정적 광고, 프로모션 포스터, 배너, 채널별 재구성 |
 | ChatGPT `@chany-image-edit` · Codex `$chany-image-edit` | 마스크 편집, 부분 수정, 문구 복원과 제한된 교체 |
 | ChatGPT `@chany-model-fashion` · Codex `$chany-model-fashion` | 성인 모델 일관성, 원본 의류·액세서리 착장 |
+| ChatGPT `@chany-campaign-video` · Codex `$chany-campaign-video` | 제품 광고·브랜드 필름·프로모션 영상의 콘셉트, 기준 스틸, 생성과 클립 검수 |
 | ChatGPT `@chany-ugc-ads` · Codex `$chany-ugc-ads` | 리뷰, 언박싱, 튜토리얼, SaaS, Try-on, 현지화 UGC |
-| ChatGPT `@chany-video-assembly` · Codex `$chany-video-assembly` | 승인 클립 조립, 지정 규격 정규화, 훅 변형과 빈 성과 입력표 |
+| ChatGPT `@chany-video-assembly` · Codex `$chany-video-assembly` | 승인 영상 조립, 지정 구간 교체, 규격 정규화, 훅 변형과 검증 |
 | ChatGPT `@chany-preflight` · Codex `$chany-preflight` | 영상·프레임·배치 작업 전 로컬 도구와 한글 폰트 환경 점검 |
 | ChatGPT `@chany-publication-review` · Codex `$chany-publication-review` | 정확한 최종 카피·오퍼·에셋 버전의 근거·권리·채널·최종 렌더 게시 전 검수 |
 
@@ -187,8 +188,11 @@ Codex: $chany-ad-creative로 이 프로모션의 1:1 피드와 9:16 스토리 �
 ChatGPT Work: @chany-ugc-ads로 이 제품의 자연스러운 9:16 언박싱 광고를 만들어줘.
 Codex: $chany-ugc-ads로 이 제품의 자연스러운 9:16 언박싱 광고를 만들어줘.
 
-ChatGPT Work: @chany-video-assembly로 승인된 UGC 클립을 지정 규격으로 조립하고 훅만 다른 2개 버전과 빈 성과표를 만들어줘.
-Codex: $chany-video-assembly로 승인된 UGC 클립을 지정 규격으로 조립하고 훅만 다른 2개 버전과 빈 성과표를 만들어줘.
+ChatGPT Work: @chany-campaign-video로 이 제품의 콘셉트형 15초 광고 영상을 기준 이미지부터 클립 검수까지 만들어줘.
+Codex: $chany-campaign-video로 이 제품의 콘셉트형 15초 광고 영상을 기준 이미지부터 클립 검수까지 만들어줘.
+
+ChatGPT Work: @chany-video-assembly로 승인된 캠페인 또는 UGC 클립을 조립하거나 지정 구간만 교체하고 결과를 검증해줘.
+Codex: $chany-video-assembly로 승인된 캠페인 또는 UGC 클립을 조립하거나 지정 구간만 교체하고 결과를 검증해줘.
 ```
 
 상세/랜딩페이지는 목적에 따라 `plan`, `audit`, `produce`로 요청할 수 있습니다. `plan`은 페이지 구조와 촬영 필요 항목, `audit`은 기존 페이지의 증거 범위와 누락된 촬영·자료, `produce`는 이름이 정해진 모듈 제작을 담당합니다. 생성 이미지는 누락된 사실 증거를 대신하지 않습니다.
@@ -211,9 +215,10 @@ Codex: $chany-publication-review로 최종 광고의 정확한 카피·오퍼·�
 4. 필요한 경우 제한된 업종 검색 경로로 Pinterest 레퍼런스 6장을 대화 안에 실제 이미지로 표시합니다.
 5. 마스터 키비주얼을 먼저 승인합니다.
 6. 승인된 패킷과 캠페인 규칙에서 상세/랜딩페이지와 채널 광고를 파생합니다.
-7. UGC가 포함되면 훅·대본·출연자·증거 노출·CTA를 잠그고 제품 장면마다 승인 스틸을 첫 프레임 권위로 연결해 클립을 제작합니다.
-8. 승인된 복수 클립을 지정 규격으로 조립하고, 요청한 경우 훅 하나만 바꾼 변형과 빈 성과 입력표를 만듭니다.
-9. 원본, 승인 카피, 비율, 안전영역, 업종별 실패 기준과 캠페인 일관성을 검수합니다.
+7. 콘셉트형 캠페인 영상은 USP별 장면 역할과 모션 방식을 정하고, UGC는 훅·대본·출연자·증거 노출·CTA를 잠급니다. 두 방식 모두 제품 장면의 승인 스틸을 첫 프레임 권위로 연결합니다.
+8. 승인된 복수 클립을 지정 규격으로 조립하거나 승인 구간만 교체하고, 요청한 경우 훅 하나만 바꾼 변형과 빈 성과 입력표를 만듭니다.
+9. 원본, 승인 카피, 프레임레이트, 오디오, 비율, 안전영역, 업종별 실패 기준과 캠페인 일관성을 검수합니다.
+10. 실제 성과가 제공되면 추적·비교 가능성·표본을 확인한 뒤 다음 라운드에서 바꿀 한 변수만 정합니다.
 
 기본값은 유료 생성 전에 사용자가 레퍼런스와 산출물 수를 확인하는 방식입니다. 자동 진행을 원하면 범위와 함께 `레퍼런스도 자동 선택해서 끝까지 진행해줘`라고 요청하세요.
 
@@ -261,7 +266,7 @@ Codex: $chany-publication-review로 최종 광고의 정확한 카피·오퍼·�
 /reload-plugins
 ```
 
-업데이트 후 버전이 **2.2.4**인지 확인하고 새 대화 또는 새 작업을 시작하세요.
+업데이트 후 버전이 **2.3.0**인지 확인하고 새 대화 또는 새 작업을 시작하세요.
 
 ## 외부 서비스와 데이터
 

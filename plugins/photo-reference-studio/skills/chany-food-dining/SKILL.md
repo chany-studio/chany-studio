@@ -80,6 +80,7 @@ industry_direction:
 - Send master food, dining, service, or location art direction to `chany-campaign-visual`.
 - Send finished paid-social, display, poster, menu-promotion, or local ad layouts to `chany-ad-creative`.
 - Send menu stories, reservation or ordering pages, and proof-rich long-form modules to `chany-detail-page`.
+- Send concept-led menu, dining, service, or brand films to `chany-campaign-video`.
 - Send creator-led tasting, preparation, review, visit, or delivery videos to `chany-ugc-ads`.
 
 The downstream skill owns its production mechanics. This skill retains authority over industry facts, journey fit, food and service truth, and the claims-rights-safety overlay.

@@ -1,0 +1,13 @@
+interface:
+  display_name: "Chany's Campaign Video"
+  short_description: "제품 광고·브랜드 필름의 기획·생성·클립 검수"
+  default_prompt: "$chany-campaign-video로 승인된 근거와 제품 원본을 지키며 콘셉트형 광고 영상의 장면을 설계하고, 기준 이미지부터 영상 생성과 클립 검수까지 진행해줘."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "higgsfield"
+      description: "Create video and related media exposed by the active Higgsfield connection"
+      transport: "streamable_http"
+      url: "https://mcp.higgsfield.ai/mcp"
+policy:
+  allow_implicit_invocation: true

@@ -1,6 +1,6 @@
 ---
 name: chany-studio
-description: Route end-to-end or multi-asset advertising and marketing requests through one industry expert overlay and the smallest production skill chain while maintaining shared evidence, source, copy, campaign, identity, and rights locks. Use for campaigns spanning strategy, visuals, ads, pages, promotion, or UGC; not for one clearly named specialist output.
+description: Route end-to-end or multi-asset advertising and marketing requests through one industry expert overlay and the smallest production skill chain while maintaining shared evidence, source, copy, campaign, identity, and rights locks. Use for campaigns spanning strategy, visuals, ads, pages, campaign video, or UGC; not for one clearly named specialist output.
 ---
 
 # Chany's Studio
@@ -26,11 +26,12 @@ Default dependency order when those assets are requested:
 3. prepare source-faithful assets when needed
 4. find and select art direction when needed
 5. approve one master campaign visual or design system
-6. derive page, static-ad, promotion, and UGC assets from that master
-7. after the included UGC clip versions are accepted, use `chany-video-assembly` to conform and assemble them when a delivered cut or controlled hook variants are requested
+6. derive page, static-ad, and promotion assets, plus concept-led video through `chany-campaign-video` or creator-led video through `chany-ugc-ads`, from that master
+7. after the included campaign-video or UGC clip versions are accepted, use `chany-video-assembly` for a requested delivered cut, segment replacement, controlled hook variants, or verification
 8. revise observed defects and complete family-level QA
-9. for every named platform or placement, build the current-source adapter record and keep any live operation read-only until its separate write, budget, and activation approvals
-10. when a publication gate applies, review the exact final copy and rendered asset through `chany-publication-review`
+9. when observed campaign results are supplied, return them to `chany-marketing-brief` for a bounded comparability review and next one-variable plan
+10. for every named platform or placement, build the current-source adapter record and keep any live operation read-only until its separate write, budget, and activation approvals
+11. when a publication gate applies, review the exact final copy and rendered asset through `chany-publication-review`
 
 Do not add deliverables that the user did not request. For every generative still-image creation or edit, first apply [references/image-generation-runtime.md](references/image-generation-runtime.md): GPT Image 2 (`gpt-image-2`) is the default and another model requires a scoped, disclosed reason. Before a paid generation, also apply [references/higgsfield-runtime-contract.md](references/higgsfield-runtime-contract.md) and [references/creative-quality-loop.md](references/creative-quality-loop.md). Show the requested default, live-resolved operation and model, inputs, prompt, options, count, server adjustments and provider-reported cost information when available. One accepted key visual should establish the palette, lighting, material language, copy zones, and crop-safe logic for downstream assets.
 

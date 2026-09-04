@@ -22,7 +22,7 @@ If the mode would change claims or approvals and cannot be inferred, ask one con
 2. Build the claim ledger defined in the playbook. Convert unsupported outcome claims into bounded process statements or mark them unresolved.
 3. Map the audience to one journey stage and choose the trust deficit that the work must resolve.
 4. Produce an `industry direction packet` using the canonical `industry_direction` root below. Do not rename or omit its shared fields.
-5. Delegate execution. Use `chany-marketing-brief` for the campaign brief, `chany-reference-board` for visual discovery, `chany-campaign-visual` or `chany-ad-creative` for campaign assets, `chany-detail-page` for a long-form conversion page, and `chany-ugc-ads` only for authorized testimonial or expert-led video.
+5. Delegate execution. Use `chany-marketing-brief` for the campaign brief, `chany-reference-board` for visual discovery, `chany-campaign-visual` or `chany-ad-creative` for campaign assets, `chany-detail-page` for a long-form conversion page, `chany-campaign-video` for concept-led service or brand film, and `chany-ugc-ads` only for authorized testimonial or expert-led video.
 6. Recheck profession-, jurisdiction-, and platform-specific rules immediately before publication. Present regulatory observations as review gates, not legal advice.
 
 Do not generate final production assets from this skill alone.

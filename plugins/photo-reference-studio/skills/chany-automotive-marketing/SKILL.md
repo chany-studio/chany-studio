@@ -94,6 +94,7 @@ Run one L1 search first. Keep `l2` empty and `query_count: 1` when discovery sto
 - `$chany-campaign-visual`: approved vehicle key visual or campaign image system
 - `$chany-ad-creative`: placement-specific launch, consideration, retail, finance, and retargeting variants
 - `$chany-detail-page`: model, trim, feature, range, finance, fleet, or ownership page structure
+- `$chany-campaign-video`: concept-led vehicle launch, feature, technology, or brand film within the approved safety boundary
 - `$chany-ugc-ads`: creator walkaround, owner story, feature tutorial, charging, utility, or test-drive concepts
 
 The handoff must carry the vehicle identity lock, audience and journey stage, approved facts, test conditions, safety boundaries, reference route, prompt kernel, and unresolved approvals. Do not let a downstream skill invent geometry, trim details, features, safety capability, performance, range, charging speed, price, finance, inventory, award, rating, certification, or environmental benefit.
