@@ -9,6 +9,8 @@ Find commercial visual direction while keeping every candidate traceable and dir
 
 Read [references/search-policy.md](references/search-policy.md) and the machine-readable [references/industry-taxonomy.json](references/industry-taxonomy.json) before searching. Read [references/reference-search-mcp-contract.md](references/reference-search-mcp-contract.md) when using, testing, or connecting the Claude Cowork preview path.
 
+In Claude Cowork, verify that `fetch_reference_preview_image` is callable before searching. The bundled preview server is configured to load its single tool at session start. If the host still presents it as deferred and exposes `ToolSearch`, call `ToolSearch(query: "select:fetch_reference_preview_image")` before the first preview call. If the tool is absent or disconnected, say so before search and do not return a link-only result as a completed board.
+
 ## Required result
 
 - Select one industry branch, run its L1 broad English query on Pinterest first, and optionally run one direct L2 subtype query on Pinterest. Never search an L3 term or synthesize a third query. Do not search any other provider.

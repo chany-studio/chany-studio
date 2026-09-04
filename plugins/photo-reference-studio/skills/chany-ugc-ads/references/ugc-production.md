@@ -180,7 +180,7 @@ For any UI, account, customer, workplace, or service-process demonstration:
 
 Do not generate a product scene from text alone when a source-faithful still can be approved first. A still is cheaper to reject, but creating that still can itself be a paid operation and must follow the shared cost contract.
 
-1. For every scene that shows the product, select or create an approved still before the paid video call. Prefer the accepted campaign master or an accepted `chany-campaign-visual` output rather than re-describing the subject in words.
+1. For every scene that shows the product, select or create an approved still before the paid video call. Prefer the accepted campaign master or an accepted `chany-campaign-visual` output rather than re-describing the subject in words. If a new still must be generated, apply the shared image model contract and default to GPT Image 2 (`gpt-image-2`); the later Higgsfield video model or workflow is resolved separately.
 2. Record the still's stable asset and version ID, then attach it using the conditioning first-frame role exposed by the active tool schema. Do not assume that a generic image role becomes the first frame.
 3. When the schema exposes a mode selector, resolve and use the image-conditioned mode. Never hardcode a remembered model, mode, or role name into the request.
 4. If an immediate validation response says the reference is unsupported for the selected mode or role, classify mode and role compatibility before changing the prompt. Preserve the same approved still and prompt meaning. Confirm from the response and provider records that no chargeable job was created; if the outcome or charge state is ambiguous, inspect the original job or receipt and do not resubmit.

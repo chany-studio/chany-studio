@@ -9,7 +9,8 @@
       "args": [
         "${CLAUDE_PLUGIN_ROOT}/mcp/reference-preview/server.mjs"
       ],
-      "cwd": "${CLAUDE_PLUGIN_ROOT}"
+      "cwd": "${CLAUDE_PLUGIN_ROOT}",
+      "alwaysLoad": true
     }
   }
 }

@@ -9,7 +9,7 @@ Turn approved authority sources, industry direction, and campaign rules into pla
 
 Read [references/ad-formats.md](references/ad-formats.md) for objective, template, prompt, multi-channel, exact-copy, and QA rules.
 
-Before any paid operation, read and follow the shared [Higgsfield runtime contract](../chany-studio/references/higgsfield-runtime-contract.md). Read and follow the shared [creative quality loop](../chany-studio/references/creative-quality-loop.md) when defining acceptance, inspecting results, correcting defects, and deciding QA.
+Before generating or generatively editing a still-image plate, read and follow the shared [image model default](../chany-studio/references/image-generation-runtime.md). Use GPT Image 2 (`gpt-image-2`) unless a scoped override meets that contract. Before any paid operation, also read and follow the shared [paid-media runtime contract](../chany-studio/references/higgsfield-runtime-contract.md). Read and follow the shared [creative quality loop](../chany-studio/references/creative-quality-loop.md) when defining acceptance, inspecting results, correcting defects, and deciding QA.
 
 ## Workflow
 
@@ -21,7 +21,7 @@ Before any paid operation, read and follow the shared [Higgsfield runtime contra
 
 Do not invent scarcity, discounts, prices, availability, outcomes, testimonials, claims, comparisons, qualifications, or legal statements. Apply the industry skill's prohibited-content and human-review gate. Generate one asset per named placement by default and never add unrequested variants.
 
-Inspect the connected tool schema before use. If a website-only Higgsfield feature is not exposed through the active MCP connection, complete the creative brief and input package, state that generation requires the Higgsfield interface, and do not claim it ran.
+Inspect the connected tool schema before use. If GPT Image 2 is unavailable or unsuitable for a required capability, do not silently switch to a website-only Higgsfield feature or another model. Complete the creative brief and input package, state the gap, and obtain the scoped override required by the image model contract before alternate generation.
 
 Paid submission, recovery, and scope changes follow the shared runtime contract exactly. Never blindly resubmit after a timeout, disconnect, or unknown charge state; inspect the original job or receipt first. A changed request requires a new paid-generation preflight and approval under that contract.
 

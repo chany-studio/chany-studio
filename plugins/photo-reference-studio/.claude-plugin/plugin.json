@@ -1,8 +1,8 @@
 {
   "name": "photo-reference-studio",
   "displayName": "Chany's Studio",
-  "version": "2.2.3",
-  "description": "Chany's cross-runtime advertising studio with native Claude project interviews, industry expert overlays, approved-still video production, local clip assembly, environment preflight, version-bound publication review, and capability-gated Moai chaining.",
+  "version": "2.2.4",
+  "description": "Chany's cross-runtime advertising studio with GPT Image 2-default still production, native Claude project interviews, industry expert overlays, approved-still video production, local clip assembly, version-bound publication review, and capability-gated Moai chaining.",
   "author": {
     "name": "Chany",
     "url": "https://github.com/chany-studio"
@@ -33,6 +33,7 @@
     "moai-specialists",
     "publication-review",
     "paid-generation-safety",
+    "gpt-image-2",
     "agents"
   ],
   "mcpServers": "./.mcp.claude.json"

@@ -9,7 +9,7 @@ Create credible short-form UGC advertising with a clear hook, truthful demonstra
 
 Read [references/ugc-production.md](references/ugc-production.md) for format selection, script structure, input requirements, execution checkpoints, and QA.
 
-Before any paid operation, read and follow the shared [Higgsfield runtime contract](../chany-studio/references/higgsfield-runtime-contract.md). Read and follow the shared [creative quality loop](../chany-studio/references/creative-quality-loop.md) when defining acceptance, inspecting results, correcting defects, and deciding QA.
+For any governing still created for a UGC scene, read and follow the shared [image model default](../chany-studio/references/image-generation-runtime.md). Use GPT Image 2 (`gpt-image-2`) unless a scoped override meets that contract. Video, avatar, voice, and localization operations remain governed by the live Higgsfield workflow. Before any paid operation, read and follow the shared [paid-media runtime contract](../chany-studio/references/higgsfield-runtime-contract.md). Read and follow the shared [creative quality loop](../chany-studio/references/creative-quality-loop.md) when defining acceptance, inspecting results, correcting defects, and deciding QA.
 
 For every named platform, placement, storefront, outbound channel, upload, schedule, or live publishing operation, read and follow the shared [platform publication adapter](../chany-studio/references/platform-publication-adapter.md). Do not treat creative approval as authority to upload, mutate, activate, or spend.
 

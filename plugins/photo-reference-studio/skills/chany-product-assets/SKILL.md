@@ -9,7 +9,7 @@ Prepare clean, reusable product or food sources for advertising, detail pages, a
 
 Read [references/asset-prep.md](references/asset-prep.md) for prompts, source locks, and QA.
 
-Before any paid operation, read and follow the shared [Higgsfield runtime contract](../chany-studio/references/higgsfield-runtime-contract.md). Read and follow the shared [creative quality loop](../chany-studio/references/creative-quality-loop.md) when defining acceptance, inspecting results, correcting defects, and deciding QA.
+When this workflow needs a generative still-image edit, read and follow the shared [image model default](../chany-studio/references/image-generation-runtime.md). Use GPT Image 2 (`gpt-image-2`) unless a scoped override meets that contract; this does not replace the non-generative preference below. Before any paid operation, also read and follow the shared [paid-media runtime contract](../chany-studio/references/higgsfield-runtime-contract.md). Read and follow the shared [creative quality loop](../chany-studio/references/creative-quality-loop.md) when defining acceptance, inspecting results, correcting defects, and deciding QA.
 
 ## Workflow
 
@@ -21,6 +21,6 @@ Before any paid operation, read and follow the shared [Higgsfield runtime contra
 
 Transparent cutouts have no floor, glow, contact shadow, or generated background. White packshots use pure `#FFFFFF`, safe margin, and at most a subtle natural contact shadow unless a shadowless output was requested.
 
-Inspect the connected tool schema before calling it. If Higgsfield authentication is required, direct the user to the host-provided login flow and never ask for credentials or tokens. If no suitable edit tool is available, return the source lock and production prompt and state the missing capability.
+Inspect the connected tool schema before calling it. If external authentication is required, direct the user to the host-provided login flow and never ask for credentials or tokens. If no suitable edit tool is available, return the source lock and production prompt and state the missing capability.
 
 Paid submission, recovery, and scope changes follow the shared runtime contract exactly. Never blindly resubmit after a timeout, disconnect, or unknown charge state; inspect the original job or receipt first. A changed request requires a new paid-generation preflight and approval under that contract.

@@ -23,3 +23,5 @@ Route the request as follows:
 - missing local tool or environment-readiness check → `chany-preflight`
 
 Tell the user which current skill now owns the request, then follow that skill. Preserve the original request and do not add deliverables during migration.
+
+For every generative still-image creation or edit, the routed owner must apply Chany's Studio's shared GPT Image 2 (`gpt-image-2`) default and controlled-override contract. Do not preserve an older prompt's implicit image-model default as though the user explicitly selected it.

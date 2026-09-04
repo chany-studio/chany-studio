@@ -95,6 +95,8 @@ Select exactly six distinct Pinterest candidates. When the metadata permits, avo
 
 Render every finalist as an actual image in the response. The user must be able to compare all candidates without opening another page.
 
+Before the first Pinterest query in Claude Cowork, confirm that `fetch_reference_preview_image` is callable. The plugin marks its one-tool preview server `alwaysLoad: true`; if a host still defers it and exposes `ToolSearch`, call `ToolSearch(query: "select:fetch_reference_preview_image")`. When the tool is absent, disconnected, or denied, report that transport blocker before search rather than spending the two-query budget on a board that cannot be displayed.
+
 Use this display order:
 
 1. in Claude Cowork, six successful separate `fetch_reference_preview_image` results returning MCP image content

@@ -55,6 +55,8 @@ The discovery layer must verify that the preview image and Pin page arrived as o
 
 ## Bundled Claude Cowork preview tool
 
+The Claude plugin config marks the `reference-preview` server `alwaysLoad: true` because its single small tool is required for every completed board. Confirm the tool is callable before discovery. If an older or restricted host still defers it and exposes `ToolSearch`, load it with `ToolSearch(query: "select:fetch_reference_preview_image")`; if it remains unavailable, stop before search and report the connection blocker.
+
 ### fetch_reference_preview_image
 
 Call this tool once per candidate. Continue from the unused Pinterest reserve until six calls have succeeded and all six image results are visible. A failed candidate is never retried blindly or counted toward six. Parallel calls are allowed when the host supports them, but each candidate is submitted at most once and each tool result contains one image.

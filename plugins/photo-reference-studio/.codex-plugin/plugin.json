@@ -1,7 +1,7 @@
 {
   "name": "photo-reference-studio",
-  "version": "2.2.3+codex.20260904154622",
-  "description": "Chany's cross-runtime advertising studio with native Claude project interviews, industry expert overlays, approved-still video production, local clip assembly, environment preflight, version-bound publication review, and capability-gated Moai chaining.",
+  "version": "2.2.4+codex.20260904161557",
+  "description": "Chany's cross-runtime advertising studio with GPT Image 2-default still production, native Claude project interviews, industry expert overlays, approved-still video production, local clip assembly, version-bound publication review, and capability-gated Moai chaining.",
   "author": {
     "name": "Chany",
     "url": "https://github.com/chany-studio"
@@ -29,6 +29,7 @@
     "Moai specialists",
     "publication review",
     "paid generation safety",
+    "GPT Image 2",
     "AGENTS.md"
   ],
   "skills": "./skills/",
@@ -49,6 +50,7 @@
       "Conditional Moai specialist chaining with attributed handoffs",
       "Eleven industry marketing and art-direction overlays",
       "Evidence and publication-review gates",
+      "GPT Image 2 default for generative still images with scoped overrides",
       "Live paid-generation preflight and safe job recovery",
       "Marketing campaign planning",
       "Source-faithful product assets",

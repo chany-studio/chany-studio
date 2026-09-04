@@ -2,6 +2,8 @@
 
 Apply this contract to Higgsfield and any other connected media service that can consume credits or create a paid job. The live tool schema and catalog are authoritative; website pages, remembered model names, examples, and this repository are not runtime capability guarantees.
 
+For generative still-image creation or editing, apply [image-generation-runtime.md](image-generation-runtime.md) first. GPT Image 2 (`gpt-image-2`) is the repository-level requested default for those operations. That policy does not prove runtime availability and does not apply to video, audio, or clip assembly. If the live tool cannot resolve the default, stop before generation or obtain approval for the smallest scoped override defined there.
+
 ## Resolve the live operation
 
 Before composing a paid call:
@@ -12,7 +14,7 @@ Before composing a paid call:
 4. use model- or workflow-specific prompt structure when the live documentation requires it; do not force one universal prompt formula across image, video, avatar, voice, editing, or UGC systems
 5. if the required capability exists only in a website interface, prepare an exact handoff and state that the connected runtime cannot execute it
 
-Do not hardcode or silently substitute model identifiers, templates, aspect ratios, durations, counts, option values, or prices. A server-selected default must be reported as a resolved value, not represented as the user's original choice.
+Except for the deliberate `gpt-image-2` still-image default defined in the shared image contract, do not hardcode or silently substitute model identifiers, templates, aspect ratios, durations, counts, option values, or prices. A server-selected default must be reported as a resolved value, not represented as the user's original choice or as GPT Image 2 without evidence.
 
 ## Cost preflight and approval
 

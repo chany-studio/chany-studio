@@ -110,6 +110,12 @@ campaign_lock:
 asset_matrix: []
 accepted_assets: []
 remaining_uncertainties: []
+still_image_model_policy:
+  default_model: "gpt-image-2"
+  active_override: ""
+  override_reason: ""
+  override_scope: []
+  status: "default | override-approved | unavailable"
 paid_generation_plan:
   - paid_approval_id: ""
     operation: ""
@@ -172,7 +178,7 @@ publication_reviews:
 - The UGC handoff binds every product scene to its approved still version, resolved first-frame role, and accepted output clip. The assembly handoff names those exact clip versions, the target authority, verified final-render version, controlled variant set, and empty performance table.
 - Each produced asset returns its effective ratio or duration, source/copy verification status, and observed unresolved defects.
 - Attribute optional Moai specialist results with the producer's exact installed name, reviewed-object version, sources and dates, findings, and unresolved questions; never collapse them into untraceable campaign truth.
-- Bind identity authority, consent, UGC manifests, assembly manifests, paid-generation approval, and publication review to stable content and asset versions. A changed subject or authority input, consent scope, script, prompt, input role, identity or model, workflow, billable option, accepted clip, delivery target, copy, crop, disclosure, offer, destination, or final render invalidates every affected record and reopens its approval or review.
+- Bind identity authority, consent, UGC manifests, assembly manifests, still-image model selection, paid-generation approval, and publication review to stable content and asset versions. A changed subject or authority input, consent scope, script, prompt, input role, identity or model, workflow, billable option, accepted clip, delivery target, copy, crop, disclosure, offer, destination, or final render invalidates every affected record and reopens its approval or review.
 - Do not expose temporary media handles, internal job IDs, or upload URLs to the user.
 
 ## Checkpoints
