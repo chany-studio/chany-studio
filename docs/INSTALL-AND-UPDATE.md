@@ -1,6 +1,6 @@
 # Chany's Studio 설치 및 업데이트
 
-[공식 설치·사용설명서 (Notion)](https://jolly-phlox-79c.notion.site/AI-Photo-Reference-Studio-v1-0-3c783e9464668140b794ee076be24406)
+[공식 설치·사용설명서 (Notion)](https://jolly-phlox-79c.notion.site/Chany-s-Studio-3c783e9464668140b794ee076be24406)
 
 ## 공통 마켓플레이스 주소
 

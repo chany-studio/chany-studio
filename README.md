@@ -4,7 +4,7 @@
 
 제품 원본과 승인 문구를 보존하면서 **광고·마케팅·상세페이지·홍보 콘텐츠**를 기획하고 제작하는 ChatGPT/Codex 및 Claude 플러그인입니다. 한 개의 거대한 지침 대신 캠페인 기획, 제품 에셋, 레퍼런스, 키비주얼, 상세페이지, 광고, 편집, 패션, UGC를 각각의 전문 스킬로 제공합니다.
 
-> [공식 설치·사용설명서 (Notion)](https://jolly-phlox-79c.notion.site/AI-Photo-Reference-Studio-v1-0-3c783e9464668140b794ee076be24406) · [문제 해결](docs/TROUBLESHOOTING.md)
+> [공식 설치·사용설명서 (Notion)](https://jolly-phlox-79c.notion.site/Chany-s-Studio-3c783e9464668140b794ee076be24406) · [문제 해결](docs/TROUBLESHOOTING.md)
 
 ## 설치할 때 입력할 마켓플레이스 주소
 
@@ -168,4 +168,4 @@ $chany-ugc-ads로 이 제품의 자연스러운 9:16 언박싱 광고를 만들�
 - [Claude Cowork: Install plugins](https://claude.com/docs/cowork/guide/plugins)
 - [Claude Code: Plugins reference](https://code.claude.com/docs/en/plugins-reference)
 - [Higgsfield MCP 도움말](https://higgsfield.ai/creator-hub/help-center/integrations/what-is-higgsfield-mcp)
-- [공식 설치·사용설명서](https://jolly-phlox-79c.notion.site/AI-Photo-Reference-Studio-v1-0-3c783e9464668140b794ee076be24406)
+- [공식 설치·사용설명서](https://jolly-phlox-79c.notion.site/Chany-s-Studio-3c783e9464668140b794ee076be24406)

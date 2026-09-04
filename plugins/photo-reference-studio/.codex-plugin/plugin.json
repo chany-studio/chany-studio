@@ -4,9 +4,9 @@
   "description": "Chany's advertising and commerce studio for campaign briefs, product assets, key visuals, detail pages, promotions, static ads, fashion, and UGC.",
   "author": {
     "name": "Chany",
-    "url": "https://jolly-phlox-79c.notion.site/AI-Photo-Reference-Studio-v1-0-3c783e9464668140b794ee076be24406"
+    "url": "https://github.com/chany-studio"
   },
-  "homepage": "https://jolly-phlox-79c.notion.site/AI-Photo-Reference-Studio-v1-0-3c783e9464668140b794ee076be24406",
+  "homepage": "https://jolly-phlox-79c.notion.site/Chany-s-Studio-3c783e9464668140b794ee076be24406",
   "repository": "https://github.com/chany-studio/chany-studio",
   "license": "MIT",
   "keywords": [
@@ -29,9 +29,9 @@
     "longDescription": "제품과 브랜드 정보를 캠페인 브리프로 정리하고, 원본과 승인 문구를 잠근 뒤 제품 에셋, Behance·Pinterest 레퍼런스 보드, 마스터 키비주얼, 상세페이지 모듈, 프로모션 포스터, 채널별 광고소재, 패션 이미지와 Higgsfield UGC 영상을 분야별 전문 스킬로 제작·검수합니다.",
     "developerName": "Chany",
     "category": "Productivity",
-    "websiteURL": "https://jolly-phlox-79c.notion.site/AI-Photo-Reference-Studio-v1-0-3c783e9464668140b794ee076be24406",
-    "privacyPolicyURL": "https://jolly-phlox-79c.notion.site/AI-Photo-Reference-Studio-3c783e94646681089a5dc4694a045cb3",
-    "termsOfServiceURL": "https://jolly-phlox-79c.notion.site/AI-Photo-Reference-Studio-3c783e9464668136822bf7f00201f429",
+    "websiteURL": "https://jolly-phlox-79c.notion.site/Chany-s-Studio-3c783e9464668140b794ee076be24406",
+    "privacyPolicyURL": "https://jolly-phlox-79c.notion.site/Chany-s-Studio-3c783e94646681089a5dc4694a045cb3",
+    "termsOfServiceURL": "https://jolly-phlox-79c.notion.site/Chany-s-Studio-3c783e9464668136822bf7f00201f429",
     "capabilities": [
       "Marketing campaign planning",
       "Source-faithful product assets",

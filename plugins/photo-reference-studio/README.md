@@ -48,6 +48,6 @@ $chany-studio로 이 제품의 마스터 키비주얼, 상세페이지 모듈 5�
 
 Higgsfield 기능 사용 시 선택한 원본과 레퍼런스가 Higgsfield로 전송될 수 있습니다. 로컬 `reference-preview`는 Behance·Pinterest의 공개 미리보기만 불러옵니다. 비밀번호, API 키, 액세스 토큰이나 인증 코드는 대화에 입력하지 말고 호스트의 인증 화면을 사용하세요.
 
-공식 설치·사용설명서: https://jolly-phlox-79c.notion.site/AI-Photo-Reference-Studio-v1-0-3c783e9464668140b794ee076be24406
+공식 설치·사용설명서: https://jolly-phlox-79c.notion.site/Chany-s-Studio-3c783e9464668140b794ee076be24406
 
 GitHub 마켓플레이스: https://github.com/chany-studio/chany-studio
