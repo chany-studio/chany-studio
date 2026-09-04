@@ -1,7 +1,7 @@
 {
   "name": "photo-reference-studio",
-  "version": "2.2.2+codex.20260904143452",
-  "description": "Chany's cross-runtime advertising studio with industry expert overlays, approved-still video production, local clip assembly, environment preflight, version-bound publication review, and capability-gated Moai chaining.",
+  "version": "2.2.3+codex.20260904154622",
+  "description": "Chany's cross-runtime advertising studio with native Claude project interviews, industry expert overlays, approved-still video production, local clip assembly, environment preflight, version-bound publication review, and capability-gated Moai chaining.",
   "author": {
     "name": "Chany",
     "url": "https://github.com/chany-studio"
@@ -24,6 +24,7 @@
     "environment preflight",
     "Higgsfield",
     "project instructions",
+    "interactive project interview",
     "Moai project",
     "Moai specialists",
     "publication review",
@@ -43,6 +44,7 @@
     "termsOfServiceURL": "https://jolly-phlox-79c.notion.site/Chany-s-Studio-3c783e9464668136822bf7f00201f429",
     "capabilities": [
       "Cross-runtime advertising project initialization",
+      "Native Claude question-card interview and Chany-file approval",
       "Automatic Moai-context detection with capability-gated project chaining",
       "Conditional Moai specialist chaining with attributed handoffs",
       "Eleven industry marketing and art-direction overlays",

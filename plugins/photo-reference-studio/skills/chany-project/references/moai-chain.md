@@ -49,6 +49,8 @@ When records are missing and ordinary `/project-studio` detects a supported in-p
 5. inspect the resulting files before preparing the Chany blueprint
 6. run the normal Chany approval and write phase
 
+Moai interview answers and existing `.moai/project/*` facts count as already answered general project context. During the Chany phase, apply [interactive-interview.md](interactive-interview.md) only to missing campaign-specific facts such as audience, deliverables, channels, authoritative claims or assets, rights, execution mode, and the paid-generation boundary. Do not replay Moai's general vision, structure, or technology interview in Chany question cards.
+
 If Moai or the same-request chaining mechanism is unavailable or unverified, do not imitate its output. A normal `/project-studio` request continues with Chany-only setup when that still satisfies the request and gives the manual two-step option. A required `--with-moai` or `moai-chain` request stops before Chany writes and gives the exact two-step fallback for a host where Moai is callable.
 
 ## Upstream files to inspect

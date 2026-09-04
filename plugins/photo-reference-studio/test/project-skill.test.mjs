@@ -18,6 +18,7 @@ test("project skill exposes cross-runtime entry points and all referenced resour
   const openai = await read("agents/openai.yaml");
 
   assert.match(skill, /^name: chany-project$/m);
+  assert.match(skill, /^allowed-tools: AskUserQuestion$/m);
   assert.match(skill, /ChatGPT Work: explicitly select `@chany-project`/);
   assert.match(skill, /\$chany-project/);
   assert.match(skill, /literal `\/project-studio <description>` reaches the model as an ordinary message/);
@@ -26,6 +27,8 @@ test("project skill exposes cross-runtime entry points and all referenced resour
   assert.match(skill, /Do not treat `\/project` as a Chany's Studio entry point/);
   assert.match(command, /Skill\("photo-reference-studio:chany-project"\)/);
   assert.match(command, /\$ARGUMENTS/);
+  assert.match(command, /^allowed-tools: Skill, AskUserQuestion$/m);
+  assert.match(command, /top-level `AskUserQuestion` interview and Chany-file approval gates/);
   assert.match(openai, /ChatGPT에서는 @chany-project/);
   assert.match(openai, /Codex에서는 \$chany-project/);
   assert.match(openai, /allow_implicit_invocation: true/);
@@ -37,6 +40,7 @@ test("project skill exposes cross-runtime entry points and all referenced resour
   for (const path of [
     "references/project-contract.md",
     "references/moai-chain.md",
+    "references/interactive-interview.md",
     "assets/templates/AGENTS.md.tmpl",
     "assets/templates/AGENTS.override.md.tmpl",
     "assets/templates/CLAUDE.md.tmpl",
@@ -48,6 +52,47 @@ test("project skill exposes cross-runtime entry points and all referenced resour
   ]) {
     assert.ok((await read(path)).length > 0, `${path} should not be empty`);
   }
+});
+
+test("Claude setup uses the native question card in the main conversation before writes", async () => {
+  const [skill, contract, interview, chain] = await Promise.all([
+    read("SKILL.md"),
+    read("references/project-contract.md"),
+    read("references/interactive-interview.md"),
+    read("references/moai-chain.md"),
+  ]);
+
+  assert.match(skill, /references\/interactive-interview\.md/);
+  assert.match(skill, /main conversation must use the host's `AskUserQuestion` tool/i);
+  assert.match(skill, /do not delegate the interview or approval to a subagent/i);
+  assert.match(interview, /main conversation must call it for every missing-fact interview and the final pre-write decision/i);
+  assert.match(interview, /ToolSearch\(query: "select:AskUserQuestion"\)/);
+  assert.match(interview, /one to three questions in one call/i);
+  assert.match(interview, /header of at most 12 characters/i);
+  assert.match(interview, /two to four options/i);
+  assert.match(interview, /built-in `Other` choice/i);
+  assert.match(interview, /subagent[\s\S]+must never conduct the interview/i);
+  assert.match(interview, /selects `취소`[\s\S]+stop the Chany phase immediately[\s\S]+do not turn that decision into a fallback question/i);
+  assert.match(interview, /empty result that is not an explicit user cancellation, a timeout, or a tool error[\s\S]+None supplies a fact or authorizes a Chany-managed write/i);
+  assert.match(interview, /final approval boundary[\s\S]+wait for explicit approval[\s\S]+never write on a fallback assumption/i);
+  assert.match(interview, /승인 후 생성 \(권장\)/);
+  assert.match(interview, /설계 수정/);
+  assert.match(interview, /취소/);
+  assert.match(interview, /취소`:[^\n]+no Chany-managed file changes[^\n]+preserve any separately approved Moai-owned files/i);
+  assert.match(interview, /Only `승인 후 생성 \(권장\)` authorizes the listed Chany-managed project-file writes/i);
+  assert.match(contract, /mandatory three-option Chany-file approval card/i);
+  assert.match(contract, /An empty result, timeout, or tool error is not an answer or approval/i);
+  assert.match(chain, /Do not replay Moai's general vision, structure, or technology interview/i);
+
+  const moaiPhase = skill.indexOf("Apply the Moai project decision");
+  const interviewPhase = skill.indexOf("Collect only the remaining campaign-specific");
+  const routingPhase = skill.indexOf("Select exactly one primary industry skill");
+  const approvalPhase = skill.indexOf("Show a concise blueprint");
+  assert.ok(moaiPhase >= 0, "Moai phase should be present");
+  assert.ok(moaiPhase < interviewPhase, "Moai should complete before the Chany interview");
+  assert.ok(interviewPhase < routingPhase, "the remaining interview should inform skill routing");
+  assert.ok(routingPhase < approvalPhase, "skill routing should precede Chany-file approval");
+  assert.match(interview, /same-request Moai chain[\s\S]+Moai's separate preview and approval/i);
 });
 
 test("user-facing docs distinguish ChatGPT and Codex skill sigils", async () => {

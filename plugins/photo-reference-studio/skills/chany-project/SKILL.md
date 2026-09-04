@@ -1,6 +1,7 @@
 ---
 name: chany-project
 description: Initialize, inspect, diagnose, or safely update a file-backed Chany's Studio advertising project with shared instructions, brief and state, industry routing, cross-runtime agents, existing Moai-context reuse, and capability-gated Moai chaining. Use for project setup or when invoking @chany-project, $chany-project, /project-studio, or its plain-text compatibility alias; not for producing one deliverable.
+allowed-tools: AskUserQuestion
 ---
 
 # Chany's Studio project setup
@@ -17,6 +18,12 @@ This skill configures the current project folder. It does not create a cloud Pro
 - Do not treat `/project` as a Chany's Studio entry point. It is intentionally left available to other project-management tools.
 - Treat the text after the invocation as project context. Do not ask for information already present there, in attached files, or in existing project records.
 
+## Structured interview channel
+
+For Claude project setup or update, read [references/interactive-interview.md](references/interactive-interview.md). The main conversation must use the host's `AskUserQuestion` tool for missing-fact interviews and the final pre-write decision whenever that tool is exposed. Do not replace an available question card with prose, and do not delegate the interview or approval to a subagent. If the tool is deferred and `ToolSearch` is exposed, load it immediately before the call as described in that contract.
+
+ChatGPT Work and Codex should use their native structured-input mechanism when one is exposed to the current conversation; otherwise use the same compact interview as concise prose. Never claim that a structured UI was displayed when the host did not expose one. `status` and `doctor` are read-only and do not force an interview when no decision is needed.
+
 ## Moai coexistence and chaining
 
 Read [references/moai-chain.md](references/moai-chain.md) whenever `.moai/` exists, the Moai skill is available, or the user mentions Moai, `/project`, `--with-moai`, or `moai-chain`.
@@ -29,7 +36,7 @@ Read [references/moai-chain.md](references/moai-chain.md) whenever `.moai/` exis
 
 ## Modes
 
-- **setup** is the default. Detect and reuse valid Moai records when present. When they are missing, include a same-request Moai phase only after confirming an in-process callable mechanism; otherwise perform Chany-only setup and show the manual two-step option. Show the applicable scope and obtain approval before writes.
+- **setup** is the default. Detect and reuse valid Moai records when present. When they are missing, include a same-request Moai phase only after confirming an in-process callable mechanism; otherwise perform Chany-only setup and show the manual two-step option. Show the applicable scope and obtain approval before Chany-managed writes. A same-request Moai phase keeps its own earlier preview and approval boundary.
 - **with-moai** requires the Moai phase and fails clearly instead of falling back when the skill or in-process chaining mechanism is unavailable.
 - **chany-only** skips Moai detection and creates only the Chany project layer.
 - **update** changes only Chany-managed content and the approved runtime delegation configuration after showing the proposed diff.
@@ -42,13 +49,14 @@ Do not implement automatic self-evolution. Corrections become project changes on
 
 1. Resolve the target to the current workspace or a directory explicitly named by the user. Do not write to a home directory, filesystem root, plugin cache, or any directory outside that target. Do not follow a symlink that escapes the target.
 2. Inspect the target read-only for `AGENTS.md`, `AGENTS.override.md`, `CLAUDE.md`, `.chany-studio/`, `.moai/project/`, `.claude/agents/`, `.codex/agents/`, obvious source assets, and user-provided brand documents. Also check for a non-empty `AGENTS.override.md` in each directory from the project root to the intended working directory because it changes Codex instruction precedence. Do not scan global plugin or agent directories.
-3. Read [references/project-contract.md](references/project-contract.md). Collect only missing high-impact facts using its compact interview. Ask at most three questions in one round and make at most one follow-up round for genuine blockers.
-4. Apply the Moai project decision and capability gate from `moai-chain.md`, then select exactly one primary industry skill when the domain is known, plus the smallest production skill chain that covers the requested deliverables. If relevant Moai commerce, marketing, legal, regulatory, or design skills are installed and actually callable in the current host, propose only the necessary specialist handoffs from the downstream chaining rules; do not include every specialist.
-5. Show a concise blueprint containing the project summary, assumptions, deliverables, selected skill chain, primary project agent, and every file to create or modify. Point out existing-file conflicts. Obtain one approval before the first write.
-6. Read and adapt only the templates needed from `assets/templates/`. Unknown business facts must remain `미정 — 확인 필요`; never invent claims, prices, dates, rights, or approval status.
-7. Create or update the files according to the contract. Before changing an existing file, copy its previous contents into the timestamped local backup directory described there.
-8. Validate every generated path and format. Report files created, files updated, files preserved, unresolved decisions, and one useful first production request.
-9. Tell the user to open a new task or session after setup so the host loads the new project instructions and its supported runtime delegation configuration.
+3. Apply the Moai project decision and capability gate from `moai-chain.md`. Reuse valid records immediately. If a same-request Moai phase is supported and selected, complete its own preview, approval, execution, and result inspection before starting the Chany interview; then reread only the generated upstream records needed for campaign setup.
+4. Read [references/project-contract.md](references/project-contract.md). Collect only the remaining campaign-specific high-impact facts using its compact interview and the runtime channel in `interactive-interview.md`. Ask at most three questions in one round and make at most one follow-up round for genuine blockers. Never repeat a successful Moai interview.
+5. Select exactly one primary industry skill when the domain is known, plus the smallest production skill chain that covers the requested deliverables. If relevant Moai commerce, marketing, legal, regulatory, or design skills are installed and actually callable in the current host, propose only the necessary specialist handoffs from the downstream chaining rules; do not include every specialist.
+6. Show a concise blueprint containing the project summary, assumptions, deliverables, selected skill chain, primary project agent, and every Chany-managed file to create or modify. Point out existing-file conflicts. Obtain one explicit approval before the first Chany-managed write through the runtime channel defined in `interactive-interview.md`. This approval does not retroactively authorize or undo a separately approved Moai phase.
+7. Read and adapt only the templates needed from `assets/templates/`. Unknown business facts must remain `미정 — 확인 필요`; never invent claims, prices, dates, rights, or approval status.
+8. Create or update the Chany-managed files according to the contract. Before changing an existing file, copy its previous contents into the timestamped local backup directory described there.
+9. Validate every generated path and format. Report files created, files updated, files preserved, unresolved decisions, and one useful first production request.
+10. Tell the user to open a new task or session after setup so the host loads the new project instructions and its supported runtime delegation configuration.
 
 ## Project authority
 

@@ -16,12 +16,13 @@ https://github.com/chany-studio/chany-studio
 
 다음 상태는 이전 설치본일 가능성이 높습니다.
 
-- 버전이 `2.2.2`보다 낮음
+- 버전이 `2.2.3`보다 낮음
 - 대표 스킬 `chany-studio`가 없음
 - 상세페이지·광고·UGC가 전문 스킬로 분리되어 있지 않음
 - 11개 업종 스킬이 보이지 않음
 - `chany-video-assembly` 또는 `chany-preflight`가 보이지 않음
 - 레퍼런스를 이미지 대신 링크나 HTML만 제공함
+- Claude `/project-studio` 초기화가 질문 카드 없이 바로 파일을 쓰려고 함
 
 Refresh 또는 Update 후 반드시 새 대화나 새 작업을 시작하세요. 이미 열린 대화는 시작할 때 읽은 이전 지침을 계속 사용할 수 있습니다.
 
@@ -39,11 +40,20 @@ Codex: $chany-studio로 이 제품의 광고 캠페인을 시작해줘.
 
 ## `/project-studio` 또는 `chany-project`가 보이지 않음
 
-- 설치 상세 버전이 `2.2.2`인지 확인하고 Refresh 또는 Update합니다.
+- 설치 상세 버전이 `2.2.3`인지 확인하고 Refresh 또는 Update합니다.
 - Claude Cowork에서 짧은 `/project-studio`가 보이지 않으면 `/photo-reference-studio:project-studio`를 사용합니다.
 - ChatGPT Work는 `@chany-project`, Codex는 `$chany-project` 또는 “현재 폴더를 광고 프로젝트로 설정해줘”라고 요청합니다.
 - ChatGPT에서 `/project-studio …`는 슬래시 메뉴에 등록되지 않습니다. 일반 메시지로 전송되면 호환 별칭으로 처리되며, 입력창에서 가로막히면 `@chany-project`를 사용합니다.
 - 업데이트 후 새 대화나 새 작업을 시작합니다. `AGENTS.md`, `CLAUDE.md`와 런타임별 설정은 다음 세션에서 확실히 로드됩니다. `.codex/agents/*.toml`은 로컬 Codex 클라이언트용이며 ChatGPT Work는 `AGENTS.md`의 호스팅 위임 규칙을 사용합니다.
+
+## Claude에서 Ask your question 카드가 나타나지 않음
+
+- 설치 상세 버전이 `2.2.3`인지 확인하고 플러그인을 Update한 뒤 새 Cowork 작업을 시작합니다.
+- `/project-studio <설명>` 또는 `/photo-reference-studio:project-studio <설명>`으로 **초기화**를 실행합니다. `status`와 `doctor`는 결정이 없으면 질문 카드를 강제로 열지 않습니다.
+- 입력과 기존 파일에 정보가 충분하면 누락 정보 카드는 생략될 수 있지만, 정확한 설계안 뒤의 `승인 후 생성 (권장)`·`설계 수정`·`취소` 카드는 파일 쓰기 전에 표시되어야 합니다.
+- 현재 호스트가 `AskUserQuestion`을 노출하지 않거나 빈 답·시간 초과·기술 오류를 반환하면 플러그인은 일반 텍스트 확인으로 전환합니다. 이 경우 카드를 표시했다고 주장하거나 빈 답을 승인으로 처리해서는 안 됩니다.
+- 사용자가 `취소`를 선택하거나 명시적으로 중단하면 일반 질문으로 되돌리지 않고 Chany 단계를 끝내야 합니다.
+- Chany 승인 전에 `AGENTS.md`, `CLAUDE.md` 또는 `.chany-studio/**`가 생겼다면 작업을 중단하고 `doctor`로 관리 구역과 백업 상태를 확인하세요. 단, 같은 요청에서 별도 승인한 Moai 단계가 먼저 만든 `.moai/**`는 정상일 수 있습니다.
 
 ## ChatGPT에서 `/project` 또는 `/project-studio`가 슬래시 명령으로 나오지 않음
 

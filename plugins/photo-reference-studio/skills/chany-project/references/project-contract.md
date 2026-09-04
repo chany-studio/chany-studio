@@ -6,6 +6,8 @@ Use this contract for setup with automatic existing-Moai-context detection and r
 
 Derive answers from the user's invocation, attachments, and existing files first. Ask no more than three questions in one round, grouping related fields. Use one follow-up round only when a missing answer blocks a safe project design.
 
+In an interactive Claude setup, render the missing axes through the top-level `AskUserQuestion` flow in [interactive-interview.md](interactive-interview.md), not as prose. Put one to three questions in the initial card, give each question two to four grounded options with concise consequence-oriented descriptions, and use `multiSelect` only when choices can genuinely coexist. The built-in `Other` path accepts free-form detail. An empty result, timeout, or tool error is not an answer or approval; an explicit cancellation ends the Chany phase without fallback questions or Chany-managed writes.
+
 1. **Purpose and audience:** What product or brand is this for, what outcome matters, who is the audience, and what is the deadline?
 2. **Deliverables and channels:** Which assets are required, where will they appear, and what sizes, ratios, lengths, languages, and quantities are fixed?
 3. **Authority and constraints:** Which source images, logos, brand guides, approved facts, claims, prices, offers, CTA, rights, consent, visual references, and forbidden elements are authoritative? Is the project planning-only, connected-tool production, web handoff, or hybrid, and where must paid-generation approval occur?
@@ -14,7 +16,7 @@ Existing Moai answers count as inputs, not questions to repeat. Confirm only mis
 
 If a field remains unknown but does not block setup, write `미정 — 확인 필요` instead of asking another question.
 
-## Blueprint before writing
+## Blueprint before Chany-managed writing
 
 Show:
 
@@ -28,7 +30,7 @@ Show:
 - one primary project-agent role, or a reason no recurring agent is needed
 - files to create, files to update, conflicts, and backup location
 
-Ask once: create, revise the blueprint, or cancel. Setup itself must not begin paid generation.
+Ask once: create, revise the blueprint, or cancel. In interactive Claude, this is the mandatory three-option Chany-file approval card defined in `interactive-interview.md`; on another host, use its native structured input when available or request equivalent explicit approval in prose. Setup itself must not begin paid generation. A same-request Moai phase uses its own earlier approval and may write only Moai-owned files before this Chany gate.
 
 ## Minimal routing
 

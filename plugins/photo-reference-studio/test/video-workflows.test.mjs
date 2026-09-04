@@ -184,14 +184,15 @@ test("campaign state binds first frames and assembled renders to stable versions
   assert.match(state, /changed[\s\S]+accepted clip[\s\S]+delivery target[\s\S]+invalidates every affected record/i);
 });
 
-test("both manifests publish the 2.2.2 Pinterest-only release", async () => {
+test("both manifests publish the 2.2.3 interactive-project release", async () => {
   const [claude, codex] = await Promise.all([
     readPluginFile(".claude-plugin/plugin.json").then(JSON.parse),
     readPluginFile(".codex-plugin/plugin.json").then(JSON.parse),
   ]);
 
-  assert.equal(claude.version, "2.2.2");
-  assert.match(codex.version, /^2\.2\.2\+codex\.[a-z0-9.-]+$/i);
+  assert.equal(claude.version, "2.2.3");
+  assert.match(codex.version, /^2\.2\.3\+codex\.[a-z0-9.-]+$/i);
+  assert.ok(codex.interface.capabilities.includes("Native Claude question-card interview and Chany-file approval"));
   assert.ok(codex.interface.capabilities.includes("Native in-chat Pinterest reference previews"));
   assert.doesNotMatch(JSON.stringify(codex.interface), /Behance/i);
   assert.ok(codex.interface.capabilities.includes("Local clip assembly and hook-only variants"));
