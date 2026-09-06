@@ -1,8 +1,8 @@
 {
   "name": "photo-reference-studio",
   "displayName": "Chany's Studio",
-  "version": "2.3.0",
-  "description": "Chany's cross-runtime advertising studio with industry overlays, GPT Image 2-first campaign and UGC video, safe local assembly, performance learning, publication review, and Moai chaining.",
+  "version": "2.4.0",
+  "description": "Chany's cross-runtime advertising studio with industry overlays, GPT Image 2-first media production, safe campaign-video assembly, performance learning, publication review, and Moai chaining.",
   "author": {
     "name": "Chany",
     "url": "https://github.com/chany-studio"
@@ -24,9 +24,10 @@
     "higgsfield",
     "marketing",
     "promotion",
-    "ugc",
     "campaign-video",
     "brand-film",
+    "media-production-loop",
+    "media-job-ledger",
     "video-assembly",
     "environment-preflight",
     "project-instructions",

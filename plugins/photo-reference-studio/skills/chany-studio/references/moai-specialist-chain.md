@@ -16,7 +16,7 @@ Use only the smallest route justified by the deliverable and jurisdiction:
 |---|---|---|
 | Korean advertising claim, comparison, superlative, listing, or substantiation review | `moai-seller:commerce-ad-claim-compliance-kr` | `chany-publication-review` claim lane |
 | Korean promotional SMS, email, push, or Kakao-style outbound message | `moai-seller:commerce-message-compliance-kr` | `chany-publication-review` delivery lane |
-| creator collaboration, sponsored content, testimonial, UGC disclosure, or usage rights | `moai-seller:commerce-influencer-collab` | `chany-publication-review` endorsement lane and `chany-ugc-ads` |
+| creator collaboration, sponsored content, testimonial disclosure, or usage rights | `moai-seller:commerce-influencer-collab` | `chany-publication-review` endorsement and rights lane |
 | current Korean law, regulation, effective date, or primary-source citation | `moai-lawyer:legal-law-research` | the relevant publication-review lane |
 | food, supplement, cosmetics, medicine, ingredient, or MFDS safety question | `moai-lawyer:legal-mfds-safety` | domain packet plus publication review |
 | campaign journey, channel, or experiment design needs deeper planning | `moai-marketer:marketing-campaign-planner` | `chany-marketing-brief` |
@@ -25,7 +25,7 @@ Use only the smallest route justified by the deliverable and jurisdiction:
 | acceptance criteria or evidence-driven revision design | `moai-designer:design-brief` or `moai-designer:design-iteration-loop` | the applicable Chany production owner |
 | Higgsfield live catalog, quote, job lifecycle, or recovery support | `moai-media:media-higgsfield-core` | Chany's paid runtime contract and campaign state |
 | supported Higgsfield image or video execution | `moai-media:media-higgsfield-image` or `moai-media:media-higgsfield-video` | the applicable Chany production owner |
-| persistent identity or one-use identity-reference execution | `moai-media:media-higgsfield-identity` | `chany-model-fashion` or `chany-ugc-ads` |
+| persistent identity or one-use identity-reference execution | `moai-media:media-higgsfield-identity` | `chany-model-fashion` or identity-sensitive `chany-campaign-video` |
 | supported 3D, audio, analysis, or other media-asset operation | `moai-media:media-higgsfield-assets` | the applicable Chany production owner |
 | coded or motion-rich landing experience explicitly requested | `moai-designer:design-landing-motion` | a separately scoped execution handoff, then `chany-publication-review` |
 

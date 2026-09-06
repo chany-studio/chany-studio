@@ -1,6 +1,6 @@
 ---
 name: chany-studio
-description: Route end-to-end or multi-asset advertising and marketing requests through one industry expert overlay and the smallest production skill chain while maintaining shared evidence, source, copy, campaign, identity, and rights locks. Use for campaigns spanning strategy, visuals, ads, pages, campaign video, or UGC; not for one clearly named specialist output.
+description: Route end-to-end or multi-asset advertising and marketing requests through one industry expert overlay and the smallest production skill chain while maintaining shared evidence, source, copy, campaign, identity, and rights locks. Use for campaigns spanning strategy, visuals, ads, pages, or campaign video; not for one clearly named specialist output.
 ---
 
 # Chany's Studio
@@ -11,7 +11,7 @@ Project initialization, `AGENTS.md`, project records, and runtime-specific deleg
 
 ## Route the request
 
-Read [references/industry-overlay.md](references/industry-overlay.md), [references/routing.md](references/routing.md), and [references/moai-specialist-chain.md](references/moai-specialist-chain.md). When any asset has a named platform, placement, storefront, outbound channel, or possible live publishing operation, also read and apply [references/platform-publication-adapter.md](references/platform-publication-adapter.md) before release or mutation. Choose one primary industry skill when the domain is known, then the smallest set of production specialists that covers the named deliverables. A single clearly named deliverable should go directly to its production owner after applying the industry packet when relevant. Use this router for ambiguous requests, complete campaigns, or work spanning two or more production categories.
+Read [references/industry-overlay.md](references/industry-overlay.md), [references/routing.md](references/routing.md), [references/runtime-boundaries.md](references/runtime-boundaries.md), and [references/moai-specialist-chain.md](references/moai-specialist-chain.md). When any asset has a named platform, placement, storefront, outbound channel, or possible live publishing operation, also read and apply [references/platform-publication-adapter.md](references/platform-publication-adapter.md) before release or mutation. Choose one primary industry skill when the domain is known, then the smallest set of production specialists that covers the named deliverables. A single clearly named deliverable should go directly to its production owner after applying the industry packet when relevant. Use this router for ambiguous requests, complete campaigns, or work spanning two or more production categories.
 
 The router owns industry selection, sequencing, checkpoints, and shared state. It does not own domain playbooks, production prompts, reference-search mechanics, or asset-specific QA.
 
@@ -26,14 +26,14 @@ Default dependency order when those assets are requested:
 3. prepare source-faithful assets when needed
 4. find and select art direction when needed
 5. approve one master campaign visual or design system
-6. derive page, static-ad, and promotion assets, plus concept-led video through `chany-campaign-video` or creator-led video through `chany-ugc-ads`, from that master
-7. after the included campaign-video or UGC clip versions are accepted, use `chany-video-assembly` for a requested delivered cut, segment replacement, controlled hook variants, or verification
+6. let each production owner, including `chany-campaign-video` when requested, define its asset specification, then use `chany-media-production-loop` for every requested generated still or campaign-video job
+7. after the included campaign-video clip versions are accepted, use `chany-video-assembly` for a requested delivered cut, segment replacement, controlled hook variants, or verification
 8. revise observed defects and complete family-level QA
 9. when observed campaign results are supplied, return them to `chany-marketing-brief` for a bounded comparability review and next one-variable plan
 10. for every named platform or placement, build the current-source adapter record and keep any live operation read-only until its separate write, budget, and activation approvals
 11. when a publication gate applies, review the exact final copy and rendered asset through `chany-publication-review`
 
-Do not add deliverables that the user did not request. For every generative still-image creation or edit, first apply [references/image-generation-runtime.md](references/image-generation-runtime.md): GPT Image 2 (`gpt-image-2`) is the default and another model requires a scoped, disclosed reason. Before a paid generation, also apply [references/higgsfield-runtime-contract.md](references/higgsfield-runtime-contract.md) and [references/creative-quality-loop.md](references/creative-quality-loop.md). Show the requested default, live-resolved operation and model, inputs, prompt, options, count, server adjustments and provider-reported cost information when available. One accepted key visual should establish the palette, lighting, material language, copy zones, and crop-safe logic for downstream assets.
+Do not add deliverables that the user did not request. For every generated still or campaign-video job, use `chany-media-production-loop` and its [media job ledger](references/media-job-ledger.md). For every generative still-image creation or edit, first apply [references/image-generation-runtime.md](references/image-generation-runtime.md): GPT Image 2 (`gpt-image-2`) is the default and another model requires a scoped, disclosed reason. Before a paid generation, also apply [references/higgsfield-runtime-contract.md](references/higgsfield-runtime-contract.md) and [references/creative-quality-loop.md](references/creative-quality-loop.md). Show the requested default, live-resolved operation and model, inputs, prompt, options, count, server adjustments and provider-reported cost information when available. One accepted key visual should establish the palette, lighting, material language, copy zones, and crop-safe logic for downstream assets.
 
 ## Preserve authority
 

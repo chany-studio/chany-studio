@@ -3,7 +3,7 @@
 Chany's Studio uses two independent axes:
 
 - an **industry skill** decides market logic, decision journey, proof, domain-specific visual language, claims risk, and the L1-to-L2 reference route
-- a **production skill** decides how to make and validate the requested brief, reference board, image, page, advertisement, edit, fashion still, or UGC video
+- a **production skill** decides how to make and validate the requested brief, reference board, image, page, advertisement, edit, fashion still, or campaign video
 
 An industry skill is an overlay, not a replacement production pipeline. Do not duplicate the production manuals inside an industry skill, and do not let a generic production skill invent domain expertise when an overlay exists.
 

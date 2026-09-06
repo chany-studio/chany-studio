@@ -1,6 +1,6 @@
 # Still Image Model Default
 
-Apply this contract to every generative still-image creation or edit owned by Chany's Studio, including campaign visuals, generative product cleanup, detail-page visual plates, static-ad plates, bounded image edits, model or fashion stills, and governing stills created for UGC scenes. Non-generative cutouts, deterministic layout, local compositing, video, audio, and clip assembly keep their own tools and are not forced through an image model.
+Apply this contract to every generative still-image creation or edit owned by Chany's Studio, including campaign visuals, generative product cleanup, detail-page visual plates, static-ad plates, bounded image edits, model or fashion stills, and governing stills created for campaign-video scenes. Non-generative cutouts, deterministic layout, local compositing, video, audio, and clip assembly keep their own tools and are not forced through an image model.
 
 ## Default selection
 

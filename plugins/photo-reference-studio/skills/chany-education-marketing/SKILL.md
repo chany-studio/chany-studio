@@ -15,7 +15,7 @@ Read [references/domain-playbook.md](references/domain-playbook.md) before makin
 2. Map the learner and payer separately when they differ. Choose one journey stage and one decision barrier.
 3. Build the claim ledger defined in the playbook. Block unsupported admission, grade, completion, employment, income, accreditation, and affiliation claims.
 4. Produce an `industry direction packet` using the canonical `industry_direction` root below. Do not rename or omit its shared fields.
-5. Delegate execution. Use `chany-marketing-brief` for the campaign brief, `chany-reference-board` for visual discovery, `chany-campaign-visual` or `chany-ad-creative` for campaign assets, `chany-detail-page` for course or enrollment pages, `chany-campaign-video` for concept-led program or institutional film, and `chany-ugc-ads` only for authorized educator or learner video.
+5. Delegate execution. Use `chany-marketing-brief` for the campaign brief, `chany-reference-board` for visual discovery, `chany-campaign-visual` or `chany-ad-creative` for campaign assets, `chany-detail-page` for course or enrollment pages, and `chany-campaign-video` for concept-led program, authorized educator, or institutional film.
 6. Recheck current jurisdiction, local education rules, youth protections, privacy duties, and platform policy immediately before publication. Present them as review gates, not legal advice.
 
 Do not generate final production assets from this skill alone.

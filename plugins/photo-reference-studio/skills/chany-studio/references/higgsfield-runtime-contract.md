@@ -11,7 +11,7 @@ Before composing a paid call:
 1. inspect the tools that are actually connected and the current schema of each candidate operation
 2. resolve the operation, model or workflow, supported inputs, input-role semantics, output format, options, and limits from live data
 3. assign every attachment an explicit authority or direction-only role
-4. use model- or workflow-specific prompt structure when the live documentation requires it; do not force one universal prompt formula across image, video, avatar, voice, editing, or UGC systems
+4. use model- or workflow-specific prompt structure when the live documentation requires it; do not force one universal prompt formula across image, campaign video, avatar, voice, or editing systems
 5. if the required capability exists only in a website interface, prepare an exact handoff and state that the connected runtime cannot execute it
 
 Except for the deliberate `gpt-image-2` still-image default defined in the shared image contract, do not hardcode or silently substitute model identifiers, templates, aspect ratios, durations, counts, option values, or prices. A server-selected default must be reported as a resolved value, not represented as the user's original choice or as GPT Image 2 without evidence.
@@ -43,9 +43,9 @@ An operating-system permission dialog, connector authorization, account login, f
 
 ## Submission and recovery
 
-Record the approved version and the provider receipt or job reference internally before continuing. Never submit more operations than the approved count or total-credit ceiling.
+Record the approved version and the provider receipt or job reference internally before continuing. Use the shared [media job ledger](media-job-ledger.md), keep each output index stable, and never submit more operations than the approved count or total-credit ceiling.
 
-If the paid submission has an ambiguous outcome—timeout, disconnected response, or unknown charge state—do not send it again. Inspect status, history, or the provider job list with the original receipt; resume or fetch that job when possible. Retry only after the prior outcome is proven not to have created a chargeable job, or after the user approves a newly quoted request.
+If the paid submission has an ambiguous outcome—timeout, disconnected response, or unknown charge state—do not send it again. Inspect status, history, or the provider job list with the original receipt; resume or fetch that job when possible. Follow provider retry guidance and a bounded polling cadence. Retry only the failed output index after the prior outcome is proven not to have created a chargeable job, or after the user approves a newly quoted request; never regenerate accepted siblings.
 
 Distinguish:
 

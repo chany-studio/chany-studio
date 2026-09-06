@@ -118,7 +118,7 @@ Create only the rows needed for the request:
 | detail or landing module | explain or prove | storefront/landing width | one fact or benefit | evidence + campaign master | `chany-detail-page` | named |
 | static ad | placement response | named ratio | one message + CTA | authority + industry packet + campaign + copy | `chany-ad-creative` | named |
 | campaign video | concept-led motion proof or persuasion | named placement, ratio, duration | one primary message across approved beats | evidence + source authority + copy + optional video teardown | `chany-campaign-video` | named |
-| UGC master | creator-led proof | platform, duration | hook + demo + CTA | evidence + creator + copy | `chany-ugc-ads` | named |
+| Campaign video | concept-led proof or demonstration | platform, duration | scene message + proof + CTA | evidence + subject + copy | `chany-campaign-video` then `chany-media-production-loop` | named |
 
 Show the user the final number of paid assets or multi-stage video operations before execution. Do not silently add A/B variants, ratios, languages, or concepts.
 

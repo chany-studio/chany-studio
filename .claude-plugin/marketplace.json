@@ -5,13 +5,13 @@
     "url": "https://github.com/chany-studio"
   },
   "metadata": {
-    "description": "Chany's cross-runtime advertising studio with native Claude project interviews, industry expert overlays, GPT Image 2-first campaign and UGC video, safe local assembly, performance learning, publication review, and capability-gated Moai chaining."
+    "description": "Chany's cross-runtime advertising studio with native Claude project interviews, industry expert overlays, GPT Image 2-first media production, safe campaign-video assembly, performance learning, publication review, and capability-gated Moai chaining."
   },
   "plugins": [
     {
       "name": "photo-reference-studio",
       "source": "./plugins/photo-reference-studio",
-      "description": "Initialize projects through native Claude question cards, then build industry-aware campaigns, references, landing pages, static ads, concept-led campaign video, and approved-first-frame UGC with safe assembly and publication gates.",
+      "description": "Initialize projects through native Claude question cards, then build industry-aware campaigns, references, landing pages, static ads, and concept-led campaign video through a bounded media-production loop with safe assembly and publication gates.",
       "author": {
         "name": "Chany"
       },
@@ -32,7 +32,8 @@
         "promotion",
         "campaign-video",
         "brand-film",
-        "ugc",
+        "media-production-loop",
+        "media-job-ledger",
         "reference-video-teardown",
         "approved-first-frame",
         "video-assembly",

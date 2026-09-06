@@ -22,7 +22,7 @@ Do not merge the customer/stakeholder journey with the candidate journey. If the
 2. In employer mode, audit whether the proposed EVP matches current employee policy and candidate experience. Do not invent culture.
 3. Build the claim ledger defined in the playbook. Block unsupported impact, culture, compensation, benefit, diversity, award, ranking, employee, or hiring claims.
 4. Produce an `industry direction packet` using the canonical `industry_direction` root below. Do not rename or omit its shared fields.
-5. Delegate execution. Use `chany-marketing-brief` for the campaign brief, `chany-reference-board` for visual discovery, `chany-campaign-visual` or `chany-ad-creative` for campaign assets, `chany-detail-page` for corporate or careers pages, `chany-campaign-video` for concept-led reputation, capability, or employer film, and `chany-ugc-ads` only for authorized employee or leadership stories.
+5. Delegate execution. Use `chany-marketing-brief` for the campaign brief, `chany-reference-board` for visual discovery, `chany-campaign-visual` or `chany-ad-creative` for campaign assets, `chany-detail-page` for corporate or careers pages, and `chany-campaign-video` for concept-led reputation, capability, authorized employee, leadership, or employer film.
 6. Recheck current employment, privacy, accessibility, jurisdiction, and platform rules immediately before publication. Present them as review gates, not legal advice.
 
 Do not generate final production assets from this skill alone.

@@ -9,7 +9,7 @@ Build only the requested image modules for a product-detail or conversion landin
 
 Read [references/detail-page-system.md](references/detail-page-system.md) for module selection, prompts, family locks, and QA.
 
-Before generating or generatively editing still-image modules, read and follow the shared [image model default](../chany-studio/references/image-generation-runtime.md). Use GPT Image 2 (`gpt-image-2`) unless a scoped override meets that contract. Before any paid operation, also read and follow the shared [paid-media runtime contract](../chany-studio/references/higgsfield-runtime-contract.md). Read and follow the shared [creative quality loop](../chany-studio/references/creative-quality-loop.md) when defining acceptance, inspecting results, correcting defects, and deciding QA.
+Before generating or generatively editing still-image modules, read and follow the shared [image model default](../chany-studio/references/image-generation-runtime.md). Use GPT Image 2 (`gpt-image-2`) unless a scoped override meets that contract. Execute and resume generated modules through `chany-media-production-loop`, which owns the stable job record, paid preflight, inline inspection, and bounded correction; keep this skill as the page owner.
 
 ## Workflow
 

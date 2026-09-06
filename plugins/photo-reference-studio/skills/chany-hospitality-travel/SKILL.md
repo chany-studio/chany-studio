@@ -80,7 +80,7 @@ industry_direction:
 - `chany-ad-creative`: paid ads, posters, offers, destination placements, and format variants.
 - `chany-detail-page`: booking landing, property story, room comparison, itinerary, amenity, FAQ, and proof modules.
 - `chany-campaign-video`: concept-led property, destination, amenity, or experience films.
-- `chany-ugc-ads`: creator stay, room tour, itinerary, service, local experience, or testimonial-style video.
+- `chany-campaign-video`: authorized stay story, room tour, itinerary, service, local experience, or presenter-led video.
 
 This skill retains authority over trip-stage fit, stay truth, room and amenity distinctions, sense of place, accessibility evidence, and disclosure gates.
 

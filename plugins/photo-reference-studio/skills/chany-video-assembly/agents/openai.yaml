@@ -1,6 +1,6 @@
 interface:
   display_name: "Chany's Video Assembly"
   short_description: "승인 영상 조립·컷 교체·규격 통일·변형 검증"
-  default_prompt: "$chany-video-assembly로 승인된 캠페인 또는 UGC 클립을 안전하게 조립하거나 지정 구간만 교체하고, 결과 규격과 오디오를 검증해줘."
+  default_prompt: "$chany-video-assembly로 승인된 캠페인 영상 클립을 안전하게 조립하거나 지정 구간만 교체하고, 결과 규격과 오디오를 검증해줘."
 policy:
   allow_implicit_invocation: true

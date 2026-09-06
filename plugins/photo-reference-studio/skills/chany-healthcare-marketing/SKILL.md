@@ -22,7 +22,7 @@ An unknown reviewer does not block the direction packet or downstream draft prod
 3. Build the claim ledger defined in the playbook. Block unsupported efficacy, safety, superiority, exclusivity, testimonial, before-and-after, credential, certification, price, or urgency claims.
 4. Map the patient journey and choose one information or access barrier without using fear, shame, or sensitive-condition targeting.
 5. Produce an `industry direction packet` using the canonical `industry_direction` root below. Do not rename or omit its shared fields.
-6. Delegate execution. Use `chany-marketing-brief` for the campaign brief, `chany-reference-board` for visual discovery, `chany-campaign-visual` or `chany-ad-creative` for campaign assets, `chany-detail-page` for patient-information or service pages, `chany-campaign-video` for concept-led education or access video within the human-review gate, and `chany-ugc-ads` only for authorized clinician education—not patient-result testimonials.
+6. Delegate execution. Use `chany-marketing-brief` for the campaign brief, `chany-reference-board` for visual discovery, `chany-campaign-visual` or `chany-ad-creative` for campaign assets, `chany-detail-page` for patient-information or service pages, and `chany-campaign-video` for concept-led education, access, or authorized clinician video within the human-review gate—not patient-result testimonials.
 7. Submit all proposed copy, visuals, targeting, landing content, and variations to the named human reviewer before publication.
 
 Do not generate final publishable assets from this skill alone.

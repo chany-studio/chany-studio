@@ -1,4 +1,4 @@
-# Chany's Studio 2.3.0
+# Chany's Studio 2.4.0
 
 Claude와 ChatGPT Work/Codex에서 함께 쓰는 광고 프로젝트 지침을 설정하고, 업종별 여정·증거·연출·컴플라이언스와 공통 제작 워크플로를 결합해 광고·홍보·마케팅·상세/랜딩·콘텐츠를 기획·제작합니다.
 
@@ -41,7 +41,7 @@ ChatGPT Work에서는 `@스킬명`, Codex에서는 `$스킬명`으로 명시 호
 | ChatGPT `@chany-image-edit` · Codex `$chany-image-edit` | 제한된 부분 수정과 복원 |
 | ChatGPT `@chany-model-fashion` · Codex `$chany-model-fashion` | 성인 모델과 원본 의류 착장 |
 | ChatGPT `@chany-campaign-video` · Codex `$chany-campaign-video` | 제품 광고·브랜드 필름·프로모션 영상의 콘셉트, 기준 스틸, 생성과 검수 |
-| ChatGPT `@chany-ugc-ads` · Codex `$chany-ugc-ads` | 리뷰, 언박싱, 튜토리얼, SaaS, Try-on과 현지화 UGC |
+| ChatGPT `@chany-media-production-loop` · Codex `$chany-media-production-loop` | 승인된 이미지·캠페인 영상의 작업 ID, 비용 승인, 화면 검수, 제한된 결함 교정과 안전한 재개 |
 | ChatGPT `@chany-video-assembly` · Codex `$chany-video-assembly` | 승인 영상 조립, 지정 구간 교체, 규격 통일, 훅 변형과 검증 |
 | ChatGPT `@chany-preflight` · Codex `$chany-preflight` | 영상·프레임·배치 작업 전 실행 환경과 한글 폰트 점검 |
 | ChatGPT `@chany-publication-review` · Codex `$chany-publication-review` | 정확한 최종 카피·오퍼·에셋 버전의 근거·권리·채널·최종 렌더 게시 전 검수 |
@@ -80,7 +80,7 @@ $chany-project로 반려동물 예약 플랫폼의 출시 광고와 랜딩페이
 
 Moai의 `project`를 먼저 실행한 뒤 Chany 설정을 이어가는 수동 2단계는 모든 런타임에서 사용할 수 있는 기본 대안입니다. `--with-moai`와 `moai-chain`은 Moai 단계를 필수로 요구하므로 같은 요청 내 호출 기능이 확인되지 않으면 중단하고 이 2단계를 안내합니다. `--chany-only`는 감지를 건너뜁니다. 모든 Moai 변경은 해당 워크플로의 미리보기와 승인을 거칩니다. ChatGPT의 정식 호출은 `@chany-project`이며 `/project-studio`를 ChatGPT 슬래시 메뉴 명령으로 안내하지 않습니다.
 
-업종과 산출물이 정해지면 `/project-studio`는 설치돼 실제 호출 가능한 Moai 전문 스킬 중 **가장 작은 관련 체인만** 승인안에 제안합니다. 주장 검수는 `moai-seller:commerce-ad-claim-compliance-kr`, 발송 메시지는 `moai-seller:commerce-message-compliance-kr`, 인플루언서·UGC·권리는 `moai-seller:commerce-influencer-collab`, 현행 법령과 MFDS 질문은 `moai-lawyer:legal-law-research`와 `moai-lawyer:legal-mfds-safety`로 연결할 수 있습니다. 마케팅·상세페이지·촬영 기획은 `moai-marketer:marketing-campaign-planner`, `moai-seller:commerce-detail-page-planner`, `moai-seller:commerce-product-photo-brief`, 디자인은 `moai-designer:design-brief`, `moai-designer:design-iteration-loop`, `moai-designer:design-landing-motion`, 미디어 실행은 `moai-media:media-higgsfield-core`, `moai-media:media-higgsfield-image`, `moai-media:media-higgsfield-video`, `moai-media:media-higgsfield-identity`, `moai-media:media-higgsfield-assets`가 설치된 경우에만 선택합니다.
+업종과 산출물이 정해지면 `/project-studio`는 설치돼 실제 호출 가능한 Moai 전문 스킬 중 **가장 작은 관련 체인만** 승인안에 제안합니다. 주장 검수는 `moai-seller:commerce-ad-claim-compliance-kr`, 발송 메시지는 `moai-seller:commerce-message-compliance-kr`, 협찬·추천·사용권은 `moai-seller:commerce-influencer-collab`, 현행 법령과 MFDS 질문은 `moai-lawyer:legal-law-research`와 `moai-lawyer:legal-mfds-safety`로 연결할 수 있습니다. 마케팅·상세페이지·촬영 기획은 `moai-marketer:marketing-campaign-planner`, `moai-seller:commerce-detail-page-planner`, `moai-seller:commerce-product-photo-brief`, 디자인은 `moai-designer:design-brief`, `moai-designer:design-iteration-loop`, `moai-designer:design-landing-motion`, 미디어 실행은 `moai-media:media-higgsfield-core`, `moai-media:media-higgsfield-image`, `moai-media:media-higgsfield-video`, `moai-media:media-higgsfield-identity`, `moai-media:media-higgsfield-assets`가 설치된 경우에만 선택합니다.
 
 전달 결과에는 정확한 Moai 스킬 이름, 목적, 검토 대상과 버전, 출처 날짜, 발견 사항, 미해결 항목과 후속 Chany 담당을 기록합니다. Chany's Studio는 캠페인 브리프, 원본 잠금, 최종 크리에이티브 QA와 버전 고정 게시 검수를 소유합니다. Moai가 없으면 Chany 단독으로 동작하고, Moai의 명령이나 결과를 흉내 내지 않습니다.
 
@@ -92,8 +92,8 @@ Moai의 `project`를 먼저 실행한 뒤 Chany 설정을 이어가는 수동 2�
 4. 로컬 영상·프레임·배치 작업이 있으면 먼저 현재 환경의 실제 도구와 승인 문구의 한글 글리프를 점검합니다.
 5. Higgsfield 작업이 있으면 호스트의 로그인 화면에서 인증합니다.
 6. 여러 유료 생성이 필요하면 라이브 작업·입력 역할·비용·산출물 수와 승인 지점을 확인합니다.
-7. 공통 제작 스킬이 승인된 패킷과 범위에서 키비주얼, 광고, 상세/랜딩, 콘셉트형 캠페인 영상과 UGC를 만듭니다.
-8. 캠페인 영상 또는 UGC 클립은 모두 승인된 뒤 지정 규격으로 조립하거나 승인 구간만 교체하고, 요청 시 훅 하나만 바꾼 변형과 빈 성과 입력표를 만듭니다.
+7. 공통 제작 스킬이 키비주얼, 광고, 상세/랜딩과 캠페인 영상 사양을 만들고, `chany-media-production-loop`가 승인된 이미지·영상 생성 작업을 안정적인 ID로 실행·검수합니다.
+8. 캠페인 영상 클립은 모두 승인된 뒤 지정 규격으로 조립하거나 승인 구간만 교체하고, 요청 시 훅 하나만 바꾼 변형과 빈 성과 입력표를 만듭니다.
 9. 실제 성과가 제공되면 추적·비교 가능성·표본을 확인한 뒤 다음 라운드의 한 변수만 정합니다.
 
 아래에서 사용하는 플랫폼의 첫 줄 하나를 선택하고 나머지 요청을 이어 붙입니다.
@@ -101,7 +101,7 @@ Moai의 `project`를 먼저 실행한 뒤 Chany 설정을 이어가는 수동 2�
 ```text
 ChatGPT Work: @chany-studio로 이 제품의 마스터 키비주얼, 상세페이지 모듈 5장,
 Codex: $chany-studio로 이 제품의 마스터 키비주얼, 상세페이지 모듈 5장,
-1:1·9:16 광고소재와 15초 리뷰형 UGC를 같은 캠페인으로 만들어줘.
+1:1·9:16 광고소재와 15초 제품 브랜드 필름을 같은 캠페인으로 만들어줘.
 ```
 
 ### 상세/랜딩페이지와 게시 전 검수
@@ -135,7 +135,7 @@ Codex: $chany-publication-review로 최종 광고의 정확한 카피·오퍼·�
 
 시간 초과, 연결 끊김 또는 결제·생성 여부가 불명확한 결과는 그대로 다시 제출하지 않고 원래 작업 영수증, 상태 또는 기록을 먼저 확인합니다. 프롬프트 의미, 입력 또는 역할, 모델·워크플로, 유료 옵션, 수량, 길이, 비율, 언어가 바뀌면 새 사전검토와 승인을 받아야 합니다.
 
-- 연결된 Higgsfield MCP에서는 영상·Soul 캐릭터·오디오와 지원되는 UGC 워크플로를 실행합니다. 정적 이미지는 승인된 범위별 대체 모델일 때만 Higgsfield로 전환합니다.
+- 연결된 Higgsfield MCP에서는 현재 스키마가 노출하는 영상·Soul 캐릭터·오디오 작업을 실행합니다. 정적 이미지는 승인된 범위별 대체 모델일 때만 Higgsfield로 전환합니다.
 - 새 Marketing Studio의 템플릿 방식은 현재 Higgsfield 웹에서 완료해야 합니다.
 - 기능이 도구에 노출되지 않았으면 사전 기획과 정확한 화면 안내까지만 제공하며 실행 완료로 표현하지 않습니다.
 - MCP와 자동화 채널의 생성은 일반 크레딧을 사용할 수 있으므로 다단계 작업 전에 범위를 확인합니다.

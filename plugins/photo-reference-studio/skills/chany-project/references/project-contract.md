@@ -1,6 +1,6 @@
 # Chany project contract
 
-Use this contract for setup with automatic existing-Moai-context detection and reuse, capability-gated Moai chaining, update, status, and doctor. Keep the workflow limited to advertising, marketing, detail pages, promotion, industry content, model/fashion stills, and commerce UGC. When Moai is present, also read [moai-chain.md](moai-chain.md).
+Use this contract for setup with automatic existing-Moai-context detection and reuse, capability-gated Moai chaining, update, status, and doctor. Keep the workflow limited to advertising, marketing, detail pages, promotion, industry content, model/fashion stills, and campaign video. When Moai is present, also read [moai-chain.md](moai-chain.md).
 
 ## Compact interview
 
@@ -47,8 +47,8 @@ Select the primary industry overlay before the production skills. Read `chany-st
 | static ads, promotion, posters, banners, channel variants | `chany-ad-creative` |
 | bounded repair of an accepted image | `chany-image-edit` |
 | adult model or source-locked fashion stills | `chany-model-fashion` |
-| review, unboxing, tutorial, SaaS demo, or try-on UGC | `chany-ugc-ads` |
 | product commercial, brand film, promotional motion, or concept-led campaign video | `chany-campaign-video` |
+| execute or resume generated still-image and campaign-video jobs | `chany-media-production-loop` |
 | accepted-clip assembly, segment replacement, target normalization, hook-only variants, or verification | `chany-video-assembly` |
 | local media-tool and Korean-font environment check | `chany-preflight` |
 | version-bound final claims, offer, rights, disclosures, and release review | `chany-publication-review` |
@@ -82,7 +82,7 @@ Create at most one paired named agent during initial setup. The same role must a
 | several production families | `campaign-producer.md` / `campaign-producer` | `campaign-producer.toml` / `campaign_producer` |
 | detail page | `detail-page-producer.md` / `detail-page-producer` | `detail-page-producer.toml` / `detail_page_producer` |
 | ads or promotion | `ad-producer.md` / `ad-producer` | `ad-producer.toml` / `ad_producer` |
-| UGC | `ugc-producer.md` / `ugc-producer` | `ugc-producer.toml` / `ugc_producer` |
+| campaign video | `video-producer.md` / `video-producer` | `video-producer.toml` / `video_producer` |
 | model or fashion stills | `fashion-producer.md` / `fashion-producer` | `fashion-producer.toml` / `fashion_producer` |
 | reusable product assets only | `asset-producer.md` / `asset-producer` | `asset-producer.toml` / `asset_producer` |
 

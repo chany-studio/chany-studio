@@ -92,7 +92,7 @@ The room quantity is an Expedia-derived listing baseline, not a universal law. V
 - **Direct booking:** differentiated story, room comparison, reasons to book, trust proof, FAQ, approved offer, and one checkout path.
 - **Destination campaign:** sense of place, itinerary, season, access, appropriate visitor behavior, community benefit, and save or plan action.
 - **Paid media:** one trip context, one differentiator, one supported proof, and one booking action per placement.
-- **Short-form/UGC:** immediate location and room identity, coherent walkthrough or itinerary, credible host experience, material-connection disclosure, and practical CTA.
+- **Short-form campaign video:** immediate location and room identity, coherent walkthrough or itinerary, credible authorized host experience, material-connection disclosure, and practical CTA.
 - **Pre-arrival:** approach, transport, check-in, access, weather, packing, reservation, and behavior guidance.
 - **Post-stay:** review, return, referral, membership, conservation, or community support with consented CRM use.
 

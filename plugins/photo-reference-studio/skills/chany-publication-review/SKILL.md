@@ -1,6 +1,6 @@
 ---
 name: chany-publication-review
-description: Review advertising, promotional, detail-page, outbound-message, and UGC assets before publication using jurisdiction-, channel-, evidence-, rights-, and final-render gates. Use when a draft needs a version-bound release review; not as legal advice, legal clearance, or authority to publish.
+description: Review advertising, promotional, detail-page, outbound-message, and campaign-video assets before publication using jurisdiction-, channel-, evidence-, rights-, and final-render gates. Use when a draft needs a version-bound release review; not as legal advice, legal clearance, or authority to publish.
 ---
 
 # Chany Publication Review
@@ -32,7 +32,7 @@ Missing inputs do not prevent draft ideation or draft production. They do preven
 1. Freeze the review candidate. Record stable identifiers for the exact copy, asset files, crop or layout variant, final render, offer terms, and landing destination.
 2. Identify the applicable jurisdiction, channel, placement, audience, domain, publication timing, and named review owner. Do not assume one market's rules apply elsewhere.
 3. At review time, look up current official primary sources for each applicable rule or platform requirement. Record source title, publisher, URL, published or updated date when available, effective date, access date, expiry or recheck trigger, scope, and the lane it supports. Treat secondary summaries only as discovery aids.
-4. Run all five lanes in the publication gate: claims and evidence; offer and transaction; outbound messaging; endorsement, UGC, and rights; domain, platform, and final render.
+4. Run all five lanes in the publication gate: claims and evidence; offer and transaction; outbound messaging; endorsement, creator, and rights; domain, platform, and final render.
 5. Separate confirmed facts, supported claims, draft proposals, missing evidence, review-owner decisions, and hard blockers. Never repair missing evidence by weakening labels or inventing a disclaimer.
 6. Assign exactly one status from the status model below. Return precise fixes and the owner for every unresolved item.
 7. When the named owner reviews the exact frozen version, record their name, role, decision, timestamp, and any expiry or recheck date. Do not imply broader approval than the recorded scope.
@@ -101,7 +101,7 @@ publication_review:
       findings: []
       missing: []
       required_actions: []
-    endorsement_ugc_and_rights:
+    endorsement_creator_and_rights:
       findings: []
       missing: []
       required_actions: []

@@ -1,6 +1,6 @@
 # Creative Quality Loop
 
-Use a bounded, evidence-driven loop for every generated or substantially edited asset. The goal is a publishable result within an approved scope, not unlimited regeneration.
+Use a bounded, evidence-driven loop for every generated or substantially edited asset. The goal is a publishable result within an approved scope, not unlimited regeneration. When generation is executed, bind this acceptance record to the stable output in [media-job-ledger.md](media-job-ledger.md) and let `chany-media-production-loop` own submission, recovery, preview, and retry state.
 
 ## Acceptance contract
 

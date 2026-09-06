@@ -101,7 +101,7 @@ Use appetizing imperfection deliberately: crumbs, condensation, sauce movement, 
 - **Delivery marketplace:** category cover, centered single-item images, actual bundle contents, legible scale, packaging, concise descriptions, and add-to-cart action.
 - **Owned site/reservation/order page:** occasion hero, signature menu, practical facts, proof, FAQ, and one conversion path.
 - **Paid social/display:** one appetite trigger, one supported reason, one exact offer if approved, and one CTA per placement.
-- **Organic short-form/UGC:** immediate item identity, credible preparation or tasting, honest reaction, disclosure, and action.
+- **Organic short-form:** immediate item identity, credible preparation or tasting, honest authorized reaction, disclosure, and action.
 - **CRM/loyalty:** reason to return, named window, real benefit, terms, and deep link.
 - **Print/menu/OOH:** distance-readable item, exact price or conditions when used, minimal copy, and location or action cue.
 

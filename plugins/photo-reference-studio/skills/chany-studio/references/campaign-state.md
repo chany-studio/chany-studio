@@ -73,21 +73,6 @@ identity_authorities:
     duplicate_training_status: "not-checked | blocked | not-a-duplicate | not-applicable"
     paid_approval_id: ""
     status: "missing | draft | confirmed | invalidated | not-applicable"
-ugc_manifests:
-  - manifest_id: ""
-    approved_script_version: ""
-    identity_authority_ids: []
-    input_asset_version_ids: []
-    resolved_workflow_family: ""
-    paid_approval_id: ""
-    scene_bindings:
-      - scene: 1
-        usp_role: ""
-        message_rank: 0
-        governing_still_version_id: ""
-        resolved_first_frame_role: ""
-        output_clip_version_id: ""
-    status: "draft | approved | invalidated | not-applicable"
 campaign_video_manifests:
   - manifest_id: ""
     concept_version_id: ""
@@ -102,6 +87,7 @@ campaign_video_manifests:
         message_rank: 0
         motion_route: "generated-motion | deterministic-still-move | authorized-footage"
         governing_still_version_id: ""
+        resolved_first_frame_role: ""
         accepted_output_clip_version_id: ""
     status: "draft | approved | invalidated | not-applicable"
 assembly_manifests:
@@ -120,17 +106,22 @@ assembly_manifests:
     variant_set_id: ""
     performance_table_path: ""
     status: "draft | verified | invalidated | not-applicable"
-production_attempt_log:
-  - asset_version_id: ""
-    scene_id: ""
-    attempt: 1
-    observed_defect: ""
-    timestamp_or_region: ""
-    measured_target: ""
-    change_made: ""
-    frozen_properties: []
-    regression_findings: []
-    decision: "accepted | rejected | stopped"
+media_jobs:
+  - media_job_id: ""
+    output_index: 1
+    owner_skill: ""
+    asset_type: "still-image | campaign-video"
+    asset_version_id: ""
+    specification_version_id: ""
+    prompt_version_id: ""
+    authority_input_version_ids: []
+    paid_approval_id: ""
+    provider_job_ref: "internal only"
+    status: "planned | quoted | approved | submitted | processing | retrieved | inspected | accepted | stopped | failed"
+    result_version_id: ""
+    actual_cost: "unavailable"
+    attempt_count: 0
+    unresolved_defects: []
 performance_reviews:
   - review_id: ""
     campaign_id: ""
@@ -163,32 +154,7 @@ still_image_model_policy:
   override_reason: ""
   override_scope: []
   status: "default | override-approved | unavailable"
-paid_generation_plan:
-  - paid_approval_id: ""
-    operation: ""
-    approved_version_id: ""
-    input_roles: []
-    resolved_model_or_workflow: ""
-    resolved_options: {}
-    quoted_credits: "unavailable"
-    retry_reserve: ""
-    batch_credit_ceiling: ""
-    approval_status: "not-requested | pending | approved | invalidated"
-    provider_job_ref: "internal only"
-    job_state: ""
-    server_adjustments: []
-    actual_credits: "unavailable"
-    result_location: ""
-    unresolved_defects: []
 specialist_handoffs: []
-creative_acceptance_records:
-  - asset_version_id: ""
-    must_pass_gates: []
-    accepted_properties: []
-    attempt_limit: 2
-    current_attempt: 0
-    regression_findings: []
-    status: "draft | accepted | stopped"
 paid_generation_approvals:
   - paid_approval_id: ""
     approved_version_id: ""
@@ -222,11 +188,11 @@ publication_reviews:
 - Pass only approved copy as locked copy. Keep draft copy visibly marked.
 - The reference handoff contains its source page and transferable Visual DNA, not reusable pixels or implied rights.
 - The campaign-visual handoff contains the accepted master plus explicit campaign rules. Downstream skills may recompose for format but may not invent a new campaign direction.
-- The UGC handoff binds every product scene to its approved still version, resolved first-frame role, and accepted output clip. The campaign-video handoff binds concept, copy, authorities, motion route, governing still, and accepted clip for every scene. The assembly handoff names those exact versions plus the source-master hash, target authority, verified final render, controlled variant set, and empty performance table.
+- The campaign-video handoff binds concept, copy, authorities, motion route, governing still, resolved first-frame role, and accepted clip for every scene. Every generated output points to its stable media-job record. The assembly handoff names those exact versions plus the source-master hash, target authority, verified final render, controlled variant set, and empty performance table.
 - Keep copy provenance, failed production attempts, and observed performance attached to stable versions. A filename alone is not an asset identity, and a failed attempt is learning evidence rather than an accepted deliverable.
 - Each produced asset returns its effective ratio or duration, source/copy verification status, and observed unresolved defects.
 - Attribute optional Moai specialist results with the producer's exact installed name, reviewed-object version, sources and dates, findings, and unresolved questions; never collapse them into untraceable campaign truth.
-- Bind identity authority, consent, UGC and campaign-video manifests, assembly manifests, still-image model selection, paid-generation approval, performance review, and publication review to stable content and asset versions. A changed subject or authority input, consent scope, script, prompt, input role, identity or model, workflow, billable option, accepted clip, source master, delivery target, copy, crop, disclosure, offer, destination, or final render invalidates every affected record and reopens its approval or review.
+- Bind identity authority, consent, campaign-video and assembly manifests, media jobs, still-image model selection, paid-generation approval, performance review, and publication review to stable content and asset versions. A changed subject or authority input, consent scope, script, prompt, input role, identity or model, workflow, billable option, accepted clip, source master, delivery target, copy, crop, disclosure, offer, destination, or final render invalidates every affected record and reopens its approval or review.
 - Do not expose temporary media handles, internal job IDs, or upload URLs to the user.
 
 ## Checkpoints
@@ -238,7 +204,7 @@ Pause only when the missing decision materially affects cost or business meaning
 - detail-page module list or multi-asset count
 - use of a supplied person versus a fictional adult creator or model
 - reference selection in `semi-auto`
-- planned UGC variants, locales, or multiple paid generation stages
+- multiple campaign-video variants, locales, or paid generation stages
 - the live paid-operation quote, server adjustments, or batch ceiling when a connected provider can consume credits
 
 If the user explicitly authorizes automatic selection within a named scope, apply it only to reversible creative choices inside that scope. It never waives claim substantiation, evidence or mandatory legal-copy checks, rights or upload authority, named-human publication review, a version-specific paid quote and approval, or the distinct approvals for a platform write, budget change, activation, or spend start.

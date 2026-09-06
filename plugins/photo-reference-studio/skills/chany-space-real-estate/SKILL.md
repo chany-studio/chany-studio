@@ -83,7 +83,7 @@ industry_direction:
 - `chany-ad-creative`: listing, leasing, visitation, open-house, display, social, OOH, or brochure-ready ad layouts.
 - `chany-detail-page`: property, project, leasing, case-study, amenity, floor-plan, FAQ, and inquiry modules.
 - `chany-campaign-video`: concept-led architecture, property, place, or leasing films.
-- `chany-ugc-ads`: guided tour, designer explanation, tenant story, neighborhood walkthrough, or creator-led place content.
+- `chany-campaign-video`: guided tour, designer explanation, authorized tenant story, neighborhood walkthrough, or place film.
 
 This skill retains authority over spatial truth, mode and journey fit, virtual-staging status, property and people rights, security, accessibility, and fair-advertising gates.
 

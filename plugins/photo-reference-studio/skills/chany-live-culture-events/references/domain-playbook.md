@@ -106,7 +106,7 @@ Resolve listing and social specifications from the current official source for t
 - **Launch and lineup:** save-the-date, reveal sequence, artist or work cards, program proof, early terms, and ticket action.
 - **Paid social/display/OOH:** one event promise, one approved program proof, one exact practical fact set, and one action.
 - **Email/CRM:** announcement, program proof, practical reminder, change notice, post-event thanks, and next relationship as separate messages.
-- **Organic and UGC:** creator invitation, rehearsal or installation preview, attendee guide, authorized live moments, and transparent recap.
+- **Organic and short-form video:** authorized invitation, rehearsal or installation preview, attendee guide, live moments, and transparent recap.
 - **On-site:** map, queue, entrance, access, schedule, change, weather, conduct, sponsor, and emergency-approved communication.
 - **Press and partner kit:** approved facts, captions, credits, rights status, spokespeople, key images, logos, and contact.
 - **Sponsor recap/impact report:** contracted deliverables, authentic exposure, audience context, measured result, community value, and methodology.

@@ -6,6 +6,11 @@ Use only the scope the user requested: reference analysis, concept planning, pro
 
 Start with the approved industry direction, brief, claim ledger, copy version, source assets, rights, consent, and delivery context. A creative metaphor may dramatize an approved benefit, but it cannot turn an unsupported claim into a visual implication.
 
+Consume the industry packet's `message_job`, `proof_objects`, `must_capture`,
+`directing_rules`, `required_disclosures`, `prohibited_or_high_risk`, and
+`human_review_gate` before creating the concept packet. Unknown or blocked fields
+remain unresolved rather than being replaced with generated evidence.
+
 ```yaml
 video_concept_packet:
   concept_version_id: ""
@@ -42,6 +47,7 @@ scene:
   required_disclosure: ""
   authority_asset_version_ids: []
   governing_still_version_id: ""
+  resolved_first_frame_role: ""
   continuity_group: ""
   opening_state: ""
   closing_state: ""
@@ -95,6 +101,10 @@ production_attempt:
 ```
 
 Stop under the shared creative quality loop when the attempt or credit ceiling is reached, the same defect persists, a new critical regression appears, or the next fix would change the approved concept, evidence, identity, model, workflow, input role, scope, or publication object.
+
+Record submission, provider state, result retrieval, inspection, and any correction
+through the shared media job ledger. Keep each scene output index stable and do
+not regenerate accepted sibling scenes when one scene fails.
 
 ## Assembly handoff
 

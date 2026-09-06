@@ -1,0 +1,6 @@
+interface:
+  display_name: "Chany Media Production Loop"
+  short_description: "이미지·캠페인 영상 생성 작업을 안전하게 실행하고 검수"
+  default_prompt: "$chany-media-production-loop로 승인된 이미지 또는 캠페인 영상 작업을 비용 확인부터 생성, 화면 검수, 한 번의 결함 교정까지 추적해줘."
+policy:
+  allow_implicit_invocation: true

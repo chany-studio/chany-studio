@@ -5,7 +5,7 @@ description: Plan evidence-led advertising, launch, retail, and ownership direct
 
 # Chany Automotive Marketing
 
-Create the automotive strategy, evidence, directing, and compliance overlay that other Chany's Studio skills use for production. Own the `industry direction packet`; do not make the final ad, image, detail page, or UGC asset from this skill alone.
+Create the automotive strategy, evidence, directing, and compliance overlay that other Chany's Studio skills use for production. Own the `industry direction packet`; do not make the final ad, image, detail page, or campaign-video asset from this skill alone.
 
 Read [references/domain-playbook.md](references/domain-playbook.md) before developing the packet.
 
@@ -95,7 +95,7 @@ Run one L1 search first. Keep `l2` empty and `query_count: 1` when discovery sto
 - `$chany-ad-creative`: placement-specific launch, consideration, retail, finance, and retargeting variants
 - `$chany-detail-page`: model, trim, feature, range, finance, fleet, or ownership page structure
 - `$chany-campaign-video`: concept-led vehicle launch, feature, technology, or brand film within the approved safety boundary
-- `$chany-ugc-ads`: creator walkaround, owner story, feature tutorial, charging, utility, or test-drive concepts
+- `$chany-campaign-video`: concept-led walkaround, authorized owner story, feature tutorial, charging, utility, or test-drive film
 
 The handoff must carry the vehicle identity lock, audience and journey stage, approved facts, test conditions, safety boundaries, reference route, prompt kernel, and unresolved approvals. Do not let a downstream skill invent geometry, trim details, features, safety capability, performance, range, charging speed, price, finance, inventory, award, rating, certification, or environmental benefit.
 

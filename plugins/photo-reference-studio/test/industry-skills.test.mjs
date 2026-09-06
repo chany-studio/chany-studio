@@ -266,7 +266,7 @@ test("production handoffs consume the canonical safety-critical industry fields"
     "skills/chany-campaign-visual/references/visual-production.md",
     "skills/chany-detail-page/references/detail-page-system.md",
     "skills/chany-ad-creative/references/ad-formats.md",
-    "skills/chany-ugc-ads/references/ugc-production.md",
+    "skills/chany-campaign-video/references/campaign-video-contract.md",
   ];
   const fields = [
     "message_job",

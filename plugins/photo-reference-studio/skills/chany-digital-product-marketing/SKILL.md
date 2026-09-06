@@ -5,7 +5,7 @@ description: Plan evidence-led advertising and marketing direction for consumer 
 
 # Chany Digital Product Marketing
 
-Create the digital-product strategy, evidence, and compliance overlay that other Chany's Studio skills use for production. Own the `industry direction packet`; do not make the final ad, image, detail page, or UGC asset from this skill alone.
+Create the digital-product strategy, evidence, and compliance overlay that other Chany's Studio skills use for production. Own the `industry direction packet`; do not make the final ad, image, detail page, or campaign-video asset from this skill alone.
 
 Read [references/domain-playbook.md](references/domain-playbook.md) before developing the packet.
 
@@ -104,7 +104,7 @@ Run one L1 search first. Keep `l2` empty and `query_count: 1` when discovery sto
 - `$chany-ad-creative`: placement-specific paid and organic ad variants
 - `$chany-detail-page`: product, solution, pricing, use-case, or conversion page structure
 - `$chany-campaign-video`: concept-led product launch, workflow, or brand motion using only approved interface evidence
-- `$chany-ugc-ads`: creator, customer, expert, tutorial, or workflow-led video concepts
+- `$chany-campaign-video`: concept-led customer story, expert, tutorial, or workflow demonstration film
 
 The handoff must carry the mode, audience role, journey stage, approved facts, evidence limits, reference route, prompt kernel, and unresolved approvals. Do not let a downstream skill invent functionality, customer results, integrations, availability, security posture, price, savings, user counts, or policy compliance.
 

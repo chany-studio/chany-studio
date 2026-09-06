@@ -71,7 +71,7 @@ test("publication review runs five named lanes against current dated sources and
     ["Lane A", "claims and evidence", "claims_and_evidence"],
     ["Lane B", "offer and transaction", "offer_and_transaction"],
     ["Lane C", "outbound messaging", "outbound_messaging"],
-    ["Lane D", "endorsement, UGC, and rights", "endorsement_ugc_and_rights"],
+    ["Lane D", "endorsement, creator, and rights", "endorsement_creator_and_rights"],
     ["Lane E", "domain, platform, and final render", "domain_platform_and_final_render"],
   ];
   for (const [label, title, recordKey] of lanes) {
@@ -173,15 +173,15 @@ test("platform live changes default to paused and split write, budget, and activ
 });
 
 test("every publish-capable route loads the platform adapter and preserves non-waivable approvals", async () => {
-  const [router, ugc, review, state] = await Promise.all([
+  const [router, campaign, review, state] = await Promise.all([
     readPluginFile("skills/chany-studio/SKILL.md"),
-    readPluginFile("skills/chany-ugc-ads/SKILL.md"),
+    readPluginFile("skills/chany-campaign-video/SKILL.md"),
     readPluginFile("skills/chany-publication-review/SKILL.md"),
     readPluginFile("skills/chany-studio/references/campaign-state.md"),
   ]);
 
   assert.match(router, /references\/platform-publication-adapter\.md/);
-  assert.match(ugc, /platform-publication-adapter\.md/);
+  assert.match(campaign, /platform-publication-adapter\.md/);
   assert.match(review, /platform-publication-adapter\.md/);
   assert.match(review, /no publish-capable flow may bypass it/i);
   assert.match(state, /automatic selection[\s\S]+only to reversible creative choices/i);
@@ -285,28 +285,28 @@ test("campaign state keeps specialist handoffs and publication reviews version-b
   );
   assert.match(state, /Attribute optional Moai specialist results with the producer's exact installed name/i);
   assert.match(state, /reviewed-object version, sources and dates, findings, and unresolved questions/i);
-  assert.match(state, /Bind identity authority, consent, UGC and campaign-video manifests, assembly manifests, still-image model selection, paid-generation approval, performance review, and publication review to stable content and asset versions/i);
+  assert.match(state, /Bind identity authority, consent, campaign-video and assembly manifests, media jobs, still-image model selection, paid-generation approval, performance review, and publication review to stable content and asset versions/i);
   assert.match(state, /a version-bound publication status for every asset/i);
 });
 
-test("campaign state binds identity, UGC manifests, and paid approvals to stable IDs", async () => {
-  const [state, modelFashion, ugc] = await Promise.all([
+test("campaign state binds identity, media jobs, and paid approvals to stable IDs", async () => {
+  const [state, modelFashion, media] = await Promise.all([
     readPluginFile("skills/chany-studio/references/campaign-state.md"),
     readPluginFile("skills/chany-model-fashion/references/model-fashion-production.md"),
-    readPluginFile("skills/chany-ugc-ads/references/ugc-production.md"),
+    readPluginFile("skills/chany-studio/references/media-job-ledger.md"),
   ]);
 
-  for (const root of ["identity_authorities", "ugc_manifests", "paid_generation_approvals"]) {
+  for (const root of ["identity_authorities", "media_jobs", "paid_generation_approvals"]) {
     assert.match(state, new RegExp(`^${root}:`, "m"));
   }
-  for (const stableId of ["identity_authority_id", "consent_record_id", "manifest_id", "paid_approval_id"]) {
+  for (const stableId of ["identity_authority_id", "consent_record_id", "media_job_id", "paid_approval_id"]) {
     assert.ok(state.includes(`${stableId}:`), `campaign state must preserve ${stableId}`);
   }
   assert.match(modelFashion, /face_use_consent_status: "unknown \| confirmed \| not-applicable"/);
   assert.match(modelFashion, /duplicate_training_status: "not-checked \| blocked \| not-a-duplicate \| not-applicable"/);
   assert.match(modelFashion, /shared campaign state/i);
-  assert.match(ugc, /^manifest_id:/m);
-  assert.match(ugc, /^paid_approval_id:/m);
-  assert.match(ugc, /shared campaign state/i);
+  assert.match(media, /^\s+media_job_id:/m);
+  assert.match(media, /^\s+paid_approval_id:/m);
+  assert.match(media, /shared campaign state/i);
   assert.match(state, /changed subject or authority input[\s\S]+invalidates every affected record/i);
 });

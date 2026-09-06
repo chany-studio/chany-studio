@@ -9,7 +9,7 @@ Create one commercially useful staged image or master key visual from authoritat
 
 Read [references/visual-production.md](references/visual-production.md) for formulas, prompt structure, campaign locks, and QA.
 
-Before generative still-image work, read and follow the shared [image model default](../chany-studio/references/image-generation-runtime.md). Use GPT Image 2 (`gpt-image-2`) unless a scoped override meets that contract. Before any paid operation, also read and follow the shared [paid-media runtime contract](../chany-studio/references/higgsfield-runtime-contract.md). Read and follow the shared [creative quality loop](../chany-studio/references/creative-quality-loop.md) when defining acceptance, inspecting results, correcting defects, and deciding QA.
+Before generative still-image work, read and follow the shared [image model default](../chany-studio/references/image-generation-runtime.md). Use GPT Image 2 (`gpt-image-2`) unless a scoped override meets that contract. Execute and resume generated visuals through `chany-media-production-loop`, which owns the stable job record, paid preflight, inline inspection, and bounded correction; keep this skill as the creative owner.
 
 ## Workflow
 
@@ -20,7 +20,7 @@ Before generative still-image work, read and follow the shared [image model defa
 5. For a master key visual, establish one campaign idea, palette, lighting logic, material or prop device, copy zones, and crop-safe area.
 6. Generate only the requested asset, inspect it against the original source and industry failure gates, and run the shared bounded creative quality loop. The default bound is one initial attempt plus at most one defect-specific correction within the approved attempt and credit ceiling; stop and return a labeled draft when its escalation conditions apply.
 
-When downstream assets are planned, approve the master direction before sending its campaign lock to `chany-ad-creative`, `chany-detail-page`, or `chany-ugc-ads`.
+When downstream assets are planned, approve the master direction before sending its campaign lock to `chany-ad-creative`, `chany-detail-page`, or `chany-campaign-video`.
 
 Inspect the connected tool schema before use. If authentication is required, use the host login flow and never request secrets. If the connected tool cannot produce the requested result, return the complete brief and prompt and state the exact missing capability.
 

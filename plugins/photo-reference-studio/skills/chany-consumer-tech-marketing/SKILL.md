@@ -5,7 +5,7 @@ description: Plan evidence-led launch, retail, comparison, and adoption directio
 
 # Chany Consumer Tech Marketing
 
-Create the consumer-technology strategy, evidence, directing, and compliance overlay that other Chany's Studio skills use for production. Own the `industry direction packet`; do not make the final ad, image, detail page, or UGC asset from this skill alone.
+Create the consumer-technology strategy, evidence, directing, and compliance overlay that other Chany's Studio skills use for production. Own the `industry direction packet`; do not make the final ad, image, detail page, or campaign-video asset from this skill alone.
 
 Read [references/domain-playbook.md](references/domain-playbook.md) before developing the packet.
 
@@ -95,7 +95,7 @@ Run one L1 search first. Keep `l2` empty and `query_count: 1` when discovery sto
 - `$chany-ad-creative`: placement-specific awareness, feature, retail, offer, and retargeting variants
 - `$chany-detail-page`: product, specification, comparison, compatibility, setup, bundle, or conversion page structure
 - `$chany-campaign-video`: concept-led launch, feature, ecosystem, or product film using approved device and UI evidence
-- `$chany-ugc-ads`: creator review, unboxing, setup, tutorial, comparison, daily-use, or accessibility concepts
+- `$chany-campaign-video`: concept-led setup, tutorial, comparison, daily-use, demonstration, or accessibility film
 
 The handoff must carry the product identity lock, audience and journey stage, approved facts, test conditions, package contents, safety boundaries, reference route, prompt kernel, and unresolved approvals. Do not let a downstream skill invent form, ports, controls, screen states, features, performance, compatibility, safety, certification, accessories, price, offer, review, or environmental benefit.
 

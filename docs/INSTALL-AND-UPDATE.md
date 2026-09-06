@@ -55,10 +55,10 @@ chany-studio/chany-studio
 
 - 표시 이름: `Chany's Studio`
 - 내부 식별자: `photo-reference-studio`
-- 버전: `2.3.0`
+- 버전: `2.4.0`
 - 대표 Skill: `chany-studio`
 - 프로젝트 Skill: `chany-project`
-- 전문 Skill: 마케팅 브리프, 제품 에셋, 레퍼런스, 키비주얼, 상세페이지, 광고, 편집, 패션, 콘셉트형 캠페인 영상(`chany-campaign-video`), UGC, 영상 조립·컷 교체(`chany-video-assembly`), 환경 점검(`chany-preflight`), 게시 전 검수(`chany-publication-review`)
+- 전문 Skill: 마케팅 브리프, 제품 에셋, 레퍼런스, 키비주얼, 상세페이지, 광고, 편집, 패션, 콘셉트형 캠페인 영상(`chany-campaign-video`), 미디어 생성 실행·재개(`chany-media-production-loop`), 영상 조립·컷 교체(`chany-video-assembly`), 환경 점검(`chany-preflight`), 게시 전 검수(`chany-publication-review`)
 - 업종 Skill: 전문 서비스, 교육, 헬스케어, 식당·카페/F&B, 호텔·여행, 공간·인테리어·부동산, 디지털 제품, 자동차·모빌리티, 소비자 기술, 기업·채용, 공연·전시·행사·지역축제
 - 연결: Higgsfield
 - Claude Cowork 추가 연결: 항상 로드되는 `reference-preview`
@@ -152,7 +152,7 @@ Chany 확인: Chany's Studio가 제공하는 chany-project와 업종 스킬을 �
 
 1. **Customize → Plugins**를 엽니다.
 2. `photo-reference-studio` 마켓플레이스에서 **Update**를 누릅니다.
-3. 버전 `2.3.0`, `chany-project`, `chany-campaign-video`, 공통 제작 스킬과 11개 업종 스킬 목록을 확인합니다.
+3. 버전 `2.4.0`, `chany-project`, `chany-campaign-video`, `chany-media-production-loop`, 공통 제작 스킬과 11개 업종 스킬 목록을 확인합니다.
 4. 새 Cowork 작업을 시작합니다.
 
 ### Claude Code
@@ -169,7 +169,6 @@ Chany 확인: Chany's Studio가 제공하는 chany-project와 업종 스킬을 �
 - 하나였던 `auto-photo-production` 제작 지침이 카테고리별 전문 스킬로 분리됐습니다.
 - 대표 진입점은 ChatGPT Work의 `@chany-studio`와 Codex의 `$chany-studio`입니다.
 - 기존 호출은 ChatGPT Work의 `@auto-photo-production`과 Codex의 `$auto-photo-production`에서 호환 안내용으로 한 버전 유지됩니다.
-- 정적 이미지뿐 아니라 Higgsfield 기반 UGC 광고 제작이 추가됐습니다.
 - 광고·마케팅·상세페이지·프로모션 워크플로가 우선 범위입니다.
 
 ## 2.1에서 추가된 기능
@@ -193,10 +192,17 @@ Chany 확인: Chany's Studio가 제공하는 chany-project와 업종 스킬을 �
 - 유료 생성은 현재 도구 스키마·무료 견적·버전별 승인을 따르고, 결과가 불명확할 때 기존 작업을 확인하기 전에는 재제출하지 않습니다.
 - 최종 게시 후보는 `chany-publication-review`의 공식 출처·증거·거래·메시지·권리·플랫폼·최종 렌더 게이트와 이름이 지정된 사람 검토를 거칩니다.
 
+## 2.4.0에서 변경된 기능
+
+- 이미지·캠페인 영상 생성의 작업 ID, 비용 승인, 공급자 상태, 화면 검수와 제한된 결함 교정을 `chany-media-production-loop`와 공통 미디어 작업 장부로 통합했습니다.
+- 코드 진단 반복은 외부 `moai-code-quality-loop`, 창작 생성 반복은 Chany 미디어 제작 루프로 분리해 Claude Code 훅 동작을 Codex나 생성 작업에 잘못 적용하지 않도록 했습니다.
+- 크리에이터 템플릿형 영상 전용 스킬을 플러그인에서 제거하고, 승인된 캠페인 영상만 콘셉트 설계 → 미디어 제작 루프 → 조립 단계로 연결합니다.
+- 배치 작업은 고정 인덱스를 유지하고 실패 항목만 재검토하며, 불명확한 유료 작업은 원래 작업 ID를 확인하기 전 다시 제출하지 않습니다.
+
 ## 2.3.0에서 변경된 기능
 
-- UGC가 아닌 제품 광고·브랜드 필름·프로모션 영상을 위한 `chany-campaign-video`를 추가했습니다. 업종 지침과 승인 브리프에서 장면별 메시지 역할, 기준 스틸, 모션 방식과 클립 검수를 연결합니다.
-- 영상 레퍼런스 분석을 공용 절차로 이동해 캠페인 영상과 UGC가 같은 로컬 권리·프레임·비트·비복제 규칙을 사용합니다.
+- 제품 광고·브랜드 필름·프로모션 영상을 위한 `chany-campaign-video`를 추가했습니다. 업종 지침과 승인 브리프에서 장면별 메시지 역할, 기준 스틸, 모션 방식과 클립 검수를 연결합니다.
+- 영상 레퍼런스 분석을 공용 절차로 이동해 모든 캠페인 영상이 같은 로컬 권리·프레임·비트·비복제 규칙을 사용합니다.
 - 영상 조립에 `assemble`, `replace-segment`, `variants`, `verify` 모드를 두고, 원본 프레임레이트·오디오 보존, 프로젝트·캠페인·마스터 해시별 출력, 컷 경계 검증을 추가했습니다.
 - 마케팅 브리프가 실제 성과의 추적·어트리뷰션·비교 가능성·표본을 확인하고 `winner`, `inconclusive`, `invalid` 중 하나와 다음 한 변수 실험을 기록할 수 있습니다.
 - 실패한 생성은 승인본과 분리된 제작 시도 기록으로 남기며, 모델명·가격·플랫폼 규격·폰트 경로는 실행 시점의 권위 없이 고정하지 않습니다.
@@ -205,7 +211,7 @@ Chany 확인: Chany's Studio가 제공하는 chany-project와 업종 스킬을 �
 
 - 생성형 정적 이미지와 부분 편집의 기본 모델을 GPT Image 2(`gpt-image-2`)로 고정했습니다.
 - 다른 모델은 사용자 지정, 승인된 프로젝트 정책 또는 검증된 필수 기능 부재가 있을 때만 범위를 기록하고 승인받아 사용합니다. 전환 시 견적과 유료·크리에이티브 승인을 다시 받습니다.
-- 프로젝트 지침, 브리프와 상태 파일에 정적 이미지 모델 정책을 기록합니다. 영상·음성·UGC 영상과 로컬 조립은 기존 도구 경계를 유지합니다.
+- 프로젝트 지침, 브리프와 상태 파일에 정적 이미지 모델 정책을 기록합니다. 영상·음성과 로컬 조립은 별도 도구 경계를 유지합니다.
 - Claude의 `reference-preview`를 항상 로드하고, Pinterest 검색 전에 미리보기 도구 호출 가능 여부를 확인하도록 보강했습니다.
 
 ## 2.2.3에서 변경된 기능
@@ -223,7 +229,7 @@ Chany 확인: Chany's Studio가 제공하는 chany-project와 업종 스킬을 �
 
 ## 2.2.1에서 추가된 기능
 
-- 제품이 등장하는 UGC 장면마다 승인 스틸을 현재 영상 도구가 노출하는 이미지 조건 첫 프레임 역할에 연결하고, 모드·역할 오류와 결제 상태가 불명확한 오류를 구분합니다.
+- 제품이 등장하는 생성 영상 장면마다 승인 스틸을 현재 영상 도구가 노출하는 이미지 조건 첫 프레임 역할에 연결하고, 모드·역할 오류와 결제 상태가 불명확한 오류를 구분합니다.
 - 영상 레퍼런스 파일을 로컬 프레임·컨택트시트·비트 표로 분해해 타이밍만 새 샷 플랜에 옮깁니다.
 - `chany-video-assembly`가 승인된 클립을 실제 측정값과 사용자 또는 최신 공식 납품 사양에 맞춰 조립하고 훅만 다른 변형과 빈 성과 입력표를 만듭니다.
 - `chany-preflight`가 영상·프레임·배치 작업에 필요한 도구와 한글 폰트를 현재 런타임에서 직접 확인합니다. 설치는 자동으로 시작하지 않습니다.
@@ -231,7 +237,7 @@ Chany 확인: Chany's Studio가 제공하는 chany-project와 업종 스킬을 �
 
 ## 업데이트가 반영되지 않을 때
 
-- 설치 상세의 버전이 `2.3.0`인지 확인합니다.
+- 설치 상세의 버전이 `2.4.0`인지 확인합니다.
 - Refresh 또는 Update 뒤 반드시 새 대화나 새 작업을 시작합니다.
 - Moai 체이닝을 사용할 때는 두 플러그인의 설치·활성화뿐 아니라 현재 호스트의 실제 플러그인 간 호출 기능도 확인합니다. 기능이 없으면 Moai project 완료 후 Chany를 실행하는 수동 2단계를 사용합니다. 필수 실행은 `--with-moai`, 단독 실행은 `--chany-only`입니다.
 - Claude Code에서는 `/plugin`의 Errors 탭을 확인합니다.

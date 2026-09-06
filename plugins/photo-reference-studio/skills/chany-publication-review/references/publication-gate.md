@@ -65,7 +65,7 @@ Apply this lane to email, SMS, messenger, push, direct message, lead outreach, r
 
 Do not send a test or live message as part of review. If recipient authority, consent, sender identity, required notice, or opt-out behavior is unknown, keep the work `draft-only` and block dispatch.
 
-## 6. Lane D — endorsement, UGC, and rights
+## 6. Lane D — endorsement, creator, and rights
 
 Review both the truth of the endorsement and the rights to use every element:
 

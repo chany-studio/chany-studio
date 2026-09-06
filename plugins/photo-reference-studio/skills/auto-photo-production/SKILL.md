@@ -1,6 +1,6 @@
 ---
 name: auto-photo-production
-description: Legacy compatibility shim for explicit auto-photo-production requests. Route old product-photo, key-visual, detail-page, advertising, fashion, UGC, assembly, and environment-check prompts to the matching Chany's Studio specialist; do not select this skill automatically.
+description: Legacy compatibility shim for explicit auto-photo-production requests. Route old product-photo, key-visual, detail-page, advertising, fashion, campaign-video, assembly, and environment-check prompts to the matching Chany's Studio specialist; do not select this skill automatically.
 ---
 
 # Auto Photo Production — Legacy
@@ -19,7 +19,7 @@ Route the request as follows:
 - bounded edit or inpainting → `chany-image-edit`
 - static adult model or fashion try-on → `chany-model-fashion`
 - product commercial, cinematic brand film, promotional motion, or concept-led performance video → `chany-campaign-video`
-- review, unboxing, tutorial, SaaS, try-on, or localized UGC video → `chany-ugc-ads`
+- generated still or campaign-video execution, status, recovery, or retry → `chany-media-production-loop`
 - clip assembly, segment replacement, target normalization, hook-only variants, or delivery verification → `chany-video-assembly`
 - missing local tool or environment-readiness check → `chany-preflight`
 

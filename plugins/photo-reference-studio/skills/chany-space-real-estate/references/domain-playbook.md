@@ -106,7 +106,7 @@ For real-estate portals, use the active platform's quantity and ordering rules. 
 - **Place marketing:** arrival, atmosphere, real occupancy, service touchpoints, practical access, event or reservation path, and local-search assets.
 - **Paid social/display/OOH:** one spatial promise, one visible proof, one approved fact, and one action.
 - **Brochure and long-form page:** story, evidence hierarchy, plan or map, specification, FAQ, contact, and representation labels.
-- **Guided short-form/UGC:** stable route, orientation cues, truthful space, presenter authority, disclosure, and inquiry or visit action.
+- **Guided short-form video:** stable route, orientation cues, truthful space, presenter authority, disclosure, and inquiry or visit action.
 
 Verify current aspect, duration, listing-order, label, and accessibility requirements for every channel.
 
