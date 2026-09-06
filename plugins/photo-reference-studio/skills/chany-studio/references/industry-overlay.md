@@ -70,7 +70,7 @@ Keep facts and proposals separate. `verified` means checked against a named curr
 
 ## Prompt compilation order
 
-Production skills compile the final prompt in this order:
+Production skills first apply [creative-direction-system.md](creative-direction-system.md) and [current-creative-signals.md](current-creative-signals.md), then compile the final prompt in this order:
 
 1. commercial objective, KPI, audience, decision role, and journey stage
 2. desired action, one message job, one CTA, and approved proof objects
@@ -85,6 +85,8 @@ Do not paste the whole playbook into a generation prompt. Pass only the packet f
 ## Reference-search handoff
 
 The industry skill may select only a domain branch and one direct subtype from `chany-reference-board/references/industry-taxonomy.json`.
+
+The production router selects exactly one source-isolated reference owner: broad Pinterest discovery, Production Paradise commercial photography, or the approved Ads of the World, D&AD, and The One Show archive lane. Never use Stocksy, ShotDeck, Death to Stock, a Pin's outbound destination, or official-document example imagery as a reference. A weak lane ends incomplete instead of borrowing another lane's provider.
 
 - Search L1 first.
 - Search zero or one L2 direct subtype second.

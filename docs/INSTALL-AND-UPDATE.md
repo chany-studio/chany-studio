@@ -55,10 +55,10 @@ chany-studio/chany-studio
 
 - 표시 이름: `Chany's Studio`
 - 내부 식별자: `photo-reference-studio`
-- 버전: `2.4.0`
+- 버전: `2.5.0`
 - 대표 Skill: `chany-studio`
 - 프로젝트 Skill: `chany-project`
-- 전문 Skill: 마케팅 브리프, 제품 에셋, 레퍼런스, 키비주얼, 상세페이지, 광고, 편집, 패션, 콘셉트형 캠페인 영상(`chany-campaign-video`), 미디어 생성 실행·재개(`chany-media-production-loop`), 영상 조립·컷 교체(`chany-video-assembly`), 환경 점검(`chany-preflight`), 게시 전 검수(`chany-publication-review`)
+- 전문 Skill: 마케팅 브리프, 기본 6장 또는 요청 수량의 Pinterest 레퍼런스, 전문 크리에이티브 디렉션(`chany-creative-direction`), 브라우저 캡처 영상 레퍼런스 준비(`chany-video-reference-ingest`), 제품 에셋, 키비주얼, 상세페이지, 광고, 편집, 패션, 콘셉트형 캠페인 영상(`chany-campaign-video`), 미디어 생성 실행·재개(`chany-media-production-loop`), 영상 조립·컷 교체(`chany-video-assembly`), 환경 점검(`chany-preflight`), 게시 전 검수(`chany-publication-review`)
 - 업종 Skill: 전문 서비스, 교육, 헬스케어, 식당·카페/F&B, 호텔·여행, 공간·인테리어·부동산, 디지털 제품, 자동차·모빌리티, 소비자 기술, 기업·채용, 공연·전시·행사·지역축제
 - 연결: Higgsfield
 - Claude Cowork 추가 연결: 항상 로드되는 `reference-preview`
@@ -102,6 +102,9 @@ Codex: $chany-hospitality-travel로 신규 호텔 예약 캠페인의 방향을 
 Claude Cowork(자연어 자동 선택): 제품 촬영 레퍼런스 6장을 Pinterest에서만 찾아 링크나 HTML이 아니라 이 대화에 이미지로 보여줘.
 ChatGPT Work: @chany-reference-board로 제품 촬영 레퍼런스 6장을 Pinterest에서만 찾아 링크나 HTML이 아니라 이 대화에 이미지로 보여줘.
 Codex: $chany-reference-board로 제품 촬영 레퍼런스 6장을 Pinterest에서만 찾아 링크나 HTML이 아니라 이 대화에 이미지로 보여줘.
+
+ChatGPT Work: @chany-commercial-photo-reference로 Production Paradise의 전문 광고사진 레퍼런스 6장을 대화에 보여줘.
+Codex: $chany-award-ad-reference로 Ads of the World, D&AD, The One Show의 수상 광고 레퍼런스를 비교해줘.
 ```
 
 프로젝트 설정 테스트:
@@ -152,7 +155,7 @@ Chany 확인: Chany's Studio가 제공하는 chany-project와 업종 스킬을 �
 
 1. **Customize → Plugins**를 엽니다.
 2. `photo-reference-studio` 마켓플레이스에서 **Update**를 누릅니다.
-3. 버전 `2.4.0`, `chany-project`, `chany-campaign-video`, `chany-media-production-loop`, 공통 제작 스킬과 11개 업종 스킬 목록을 확인합니다.
+3. 버전 `2.5.0`, `chany-project`, `chany-creative-direction`, `chany-campaign-video`, `chany-media-production-loop`, 공통 제작 스킬과 11개 업종 스킬 목록을 확인합니다.
 4. 새 Cowork 작업을 시작합니다.
 
 ### Claude Code
@@ -191,6 +194,17 @@ Chany 확인: Chany's Studio가 제공하는 chany-project와 업종 스킬을 �
 - 프로젝트 설정 뒤에는 설치된 Moai의 규제·마케팅·디자인·미디어 전문 스킬을 필요한 경우에만 정확한 이름·출처·버전과 함께 인계하고, 사용할 수 없으면 Chany 단독 초안 흐름과 명시적 검토 보류로 전환합니다.
 - 유료 생성은 현재 도구 스키마·무료 견적·버전별 승인을 따르고, 결과가 불명확할 때 기존 작업을 확인하기 전에는 재제출하지 않습니다.
 - 최종 게시 후보는 `chany-publication-review`의 공식 출처·증거·거래·메시지·권리·플랫폼·최종 렌더 게이트와 이름이 지정된 사람 검토를 거칩니다.
+
+## 2.5.0에서 변경된 기능
+
+- 시각 레퍼런스를 Pinterest 범용 보드, Production Paradise 상업사진 보드, Ads of the World·D&AD·The One Show 수상 광고 보드로 분리했습니다. 각 스킬은 자기 공급자만 사용하며 후보가 부족해도 다른 경로로 보충하지 않습니다. Stocksy, ShotDeck, Death to Stock은 제외했습니다.
+- 레퍼런스 표시 수량은 6장을 기본으로 사용하되 사용자가 양의 정수로 지정하면 정확히 그 수량을 따릅니다. 허용된 검색 풀이나 라이브 도구 한도로 채우지 못하면 임의로 수량을 줄이지 않고 미완성 수량을 보고합니다.
+- `chany-creative-direction`을 추가해 초보자의 일반 언어를 브랜드 코어·감성 에디토리얼·트렌드 포워드 세 콘셉트, 비교 점수, 추천 방향과 제작 프롬프트로 전환합니다.
+- `chany-video-reference-ingest`를 추가해 YouTube·Instagram 등 영상 페이지를 사용자 호출 브라우저 탭 캡처, 실제 미디어 URL 또는 첨부 파일로 분류하고 관찰 가능한 범위만 공용 영상 해체 절차에 넘깁니다.
+- 브라우저 확장 캡처는 로컬 저장과 명시적 사용자 동작을 기본으로 하며 플랫폼 다운로드·스트림 재구성·DRM 우회·인증정보 수집을 금지합니다. 외부 서비스 업로드와 움직임 전달·제품 교체·생성은 각각 별도 승인입니다.
+- 모든 제작 분야가 목적·입력 권위·장면·구도·조명·재질·타이포·보존·제외·출력·검수 순서의 공통 프롬프트 계약과 안티 제네릭 검수를 사용합니다.
+- Pinterest Predicts·Pinterest Palette 신호는 검색어가 아니라 후보 선별 뒤의 브랜드 적합성 판단에만 사용합니다. 플랫폼·상세페이지·GPT Image 2 규칙은 현재 공식 문서로 검증하되 승인된 세 레퍼런스 경로 밖의 예시 이미지는 사용하지 않습니다.
+- Claude 미리보기 서버는 비어 있지 않은 `original_source_url`을 거부하고 출력에서도 항상 `null`로 유지해 외부 Pin 목적지 우회를 차단합니다.
 
 ## 2.4.0에서 변경된 기능
 
@@ -237,7 +251,7 @@ Chany 확인: Chany's Studio가 제공하는 chany-project와 업종 스킬을 �
 
 ## 업데이트가 반영되지 않을 때
 
-- 설치 상세의 버전이 `2.4.0`인지 확인합니다.
+- 설치 상세의 버전이 `2.5.0`인지 확인합니다.
 - Refresh 또는 Update 뒤 반드시 새 대화나 새 작업을 시작합니다.
 - Moai 체이닝을 사용할 때는 두 플러그인의 설치·활성화뿐 아니라 현재 호스트의 실제 플러그인 간 호출 기능도 확인합니다. 기능이 없으면 Moai project 완료 후 Chany를 실행하는 수동 2단계를 사용합니다. 필수 실행은 `--with-moai`, 단독 실행은 `--chany-only`입니다.
 - Claude Code에서는 `/plugin`의 Errors 탭을 확인합니다.

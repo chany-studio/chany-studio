@@ -1,6 +1,6 @@
 interface:
   display_name: "Chany's Reference Board"
-  short_description: "Pinterest 레퍼런스 6장을 대화 안의 이미지로 비교"
-  default_prompt: "$chany-reference-board로 이 제품에 맞는 Pinterest 레퍼런스 6장을 찾아 현재 대화에 이미지로 보여주고 Visual DNA를 정리해줘."
+  short_description: "기본 6장 또는 요청 수량의 Pinterest 레퍼런스를 비교"
+  default_prompt: "$chany-reference-board로 Pinterest Pin 페이지만 검색해 이 제품에 맞는 레퍼런스를 기본 6장으로 현재 대화에 이미지로 보여주고 Visual DNA를 정리해줘. 내가 장수를 지정하면 그 수량을 따라줘. 외부 Pin 목적지나 다른 사이트는 열지 마."
 policy:
   allow_implicit_invocation: true

@@ -2,7 +2,7 @@
 
 ![Chany's Studio](plugins/photo-reference-studio/assets/logo.png)
 
-업종별 구매 여정·증거·연출·컴플라이언스 판단과 공통 제작 워크플로를 결합해 **광고·홍보·마케팅·상세/랜딩·콘텐츠**를 기획하고 제작하는 ChatGPT Work/Codex 및 Claude 플러그인입니다. Chany's Studio 2.4.0은 업종 전문 오버레이가 방향과 검증 기준을 정하고, 공통 제작 스킬이 승인된 방향을 실제 산출물로 전환하며, 이미지·캠페인 영상 생성은 별도의 제한된 미디어 제작 루프로 추적합니다.
+업종별 구매 여정·증거·연출·컴플라이언스 판단과 공통 제작 워크플로를 결합해 **광고·홍보·마케팅·상세/랜딩·콘텐츠**를 기획하고 제작하는 ChatGPT Work/Codex 및 Claude 플러그인입니다. Chany's Studio 2.5.0은 출처별 시각 레퍼런스, 사용자가 허가한 브라우저 탭 캡처 기반 영상 레퍼런스 분석, 초보자의 말로 세 가지 전문 콘셉트를 설계하는 크리에이티브 디렉션, 최신 공식 제작 규칙과 브랜드 적합 트렌드를 반영한 GPT Image 2 프롬프트, 제한된 미디어 제작 루프를 하나의 흐름으로 연결합니다.
 
 > [공식 설치·사용설명서 (Notion)](https://jolly-phlox-79c.notion.site/Chany-s-Studio-3c783e9464668140b794ee076be24406) · [문제 해결](docs/TROUBLESHOOTING.md)
 
@@ -81,7 +81,11 @@ ChatGPT Work에서 스킬을 직접 고를 때는 `@스킬명`, Codex에서는 `
 | ChatGPT `@chany-studio` · Codex `$chany-studio` | 업종 오버레이와 두 분야 이상이 연결된 전체 캠페인 및 산출물 순서 관리 |
 | ChatGPT `@chany-marketing-brief` · Codex `$chany-marketing-brief` | 목표·타깃·메시지·에셋 매트릭스 또는 성과 기반 다음 한 변수 실험 정리 |
 | ChatGPT `@chany-product-assets` · Codex `$chany-product-assets` | 투명 누끼, 순백 팩샷, 제품·음식 클린업 |
-| ChatGPT `@chany-reference-board` · Codex `$chany-reference-board` | 제한된 업종 검색 경로로 Pinterest 레퍼런스 6장과 Visual DNA 구성 |
+| ChatGPT `@chany-reference-board` · Codex `$chany-reference-board` | Pinterest 레퍼런스 기본 6장 또는 요청 수량을 대화에 표시하고 Visual DNA 구성 |
+| ChatGPT `@chany-commercial-photo-reference` · Codex `$chany-commercial-photo-reference` | Production Paradise의 전문 광고·라이프스타일 사진 레퍼런스 |
+| ChatGPT `@chany-award-ad-reference` · Codex `$chany-award-ad-reference` | Ads of the World·D&AD·The One Show의 수상 광고·캠페인 벤치마크 |
+| ChatGPT `@chany-creative-direction` · Codex `$chany-creative-direction` | 평범한 요청을 브랜드 코어·감성 에디토리얼·트렌드 포워드 콘셉트와 전문가용 제작 프롬프트로 전환 |
+| ChatGPT `@chany-video-reference-ingest` · Codex `$chany-video-reference-ingest` | YouTube·Instagram 등 영상 페이지를 브라우저에서 사용자 허가로 관찰·캡처하고 분석 가능한 레퍼런스 패킷으로 준비 |
 | ChatGPT `@chany-campaign-visual` · Codex `$chany-campaign-visual` | 연출컷과 텍스트 없는 마스터 키비주얼 |
 | ChatGPT `@chany-detail-page` · Codex `$chany-detail-page` | 히어로·특징·혜택·증거·사용 장면·CTA 상세/랜딩 모듈 |
 | ChatGPT `@chany-ad-creative` · Codex `$chany-ad-creative` | 정적 광고, 프로모션 포스터, 배너, 채널별 재구성 |
@@ -179,6 +183,9 @@ Codex: $chany-studio로 이 제품의 마케팅 캠페인을 만들어줘.
 한 가지 결과가 분명하면 해당 전문 스킬을 바로 호출합니다.
 
 ```text
+ChatGPT Work: @chany-creative-direction으로 이 브리프를 세 가지 세련된 콘셉트로 발전시키고 가장 적합한 방향과 제작 프롬프트를 추천해줘.
+Codex: $chany-creative-direction으로 이 브리프를 세 가지 세련된 콘셉트로 발전시키고 가장 적합한 방향과 제작 프롬프트를 추천해줘.
+
 ChatGPT Work: @chany-detail-page로 승인된 키비주얼을 사용해 상세페이지 모듈 5장을 만들어줘.
 Codex: $chany-detail-page로 승인된 키비주얼을 사용해 상세페이지 모듈 5장을 만들어줘.
 
@@ -190,6 +197,9 @@ Codex: $chany-media-production-loop로 승인된 키비주얼 3종의 생성 작
 
 ChatGPT Work: @chany-campaign-video로 이 제품의 콘셉트형 15초 광고 영상을 기준 이미지부터 클립 검수까지 만들어줘.
 Codex: $chany-campaign-video로 이 제품의 콘셉트형 15초 광고 영상을 기준 이미지부터 클립 검수까지 만들어줘.
+
+ChatGPT Work: @chany-video-reference-ingest로 이 Instagram Reel을 브라우저 캡처나 첨부 파일로 준비하고 확인된 구성만 내 제품 영상에 맞게 분석해줘.
+Codex: $chany-video-reference-ingest로 이 YouTube 영상을 브라우저 캡처나 첨부 파일로 준비하고 확인된 구성만 내 제품 영상에 맞게 분석해줘.
 
 ChatGPT Work: @chany-video-assembly로 승인된 캠페인 영상 클립을 조립하거나 지정 구간만 교체하고 결과를 검증해줘.
 Codex: $chany-video-assembly로 승인된 캠페인 영상 클립을 조립하거나 지정 구간만 교체하고 결과를 검증해줘.
@@ -212,19 +222,24 @@ Codex: $chany-publication-review로 최종 광고의 정확한 카피·오퍼·�
 1. 해당 업종 전문 스킬이 여정·증거·연출·주장 경계를 `industry direction packet`으로 정리합니다.
 2. 브랜드·타깃·채널·승인 문구를 공통 캠페인 브리프로 전환합니다.
 3. 원본에서 제품, 차량, 공간, UI, 사람, 프로그램과 카피 등 필요한 정체성 잠금을 만듭니다.
-4. 필요한 경우 제한된 업종 검색 경로로 Pinterest 레퍼런스 6장을 대화 안에 실제 이미지로 표시합니다.
-5. 마스터 키비주얼을 먼저 승인합니다.
-6. 승인된 패킷과 캠페인 규칙에서 상세/랜딩페이지와 채널 광고를 파생합니다.
-7. 콘셉트형 캠페인 영상은 USP별 장면 역할, 모션 방식, 대본·출연자·증거 노출·CTA를 잠그고 제품 장면의 승인 스틸을 첫 프레임 권위로 연결합니다.
-8. 승인된 복수 클립을 지정 규격으로 조립하거나 승인 구간만 교체하고, 요청한 경우 훅 하나만 바꾼 변형과 빈 성과 입력표를 만듭니다.
-9. 원본, 승인 카피, 프레임레이트, 오디오, 비율, 안전영역, 업종별 실패 기준과 캠페인 일관성을 검수합니다.
-10. 실제 성과가 제공되면 추적·비교 가능성·표본을 확인한 뒤 다음 라운드에서 바꿀 한 변수만 정합니다.
+4. 필요한 경우 목적에 맞는 레퍼런스 경로 하나를 골라 기본 6장 또는 사용자가 지정한 장수만큼 대화 안에 실제 이미지로 표시합니다.
+5. 영상 레퍼런스 링크가 있으면 사용자가 호출한 브라우저 확장 캡처, 실제 미디어 URL 또는 첨부 파일 중 관찰 가능한 경로로 레퍼런스 패킷을 만들고 확인한 타이밍만 분석합니다.
+6. 브리프와 선택한 레퍼런스 Visual DNA에서 서로 다른 세 가지 콘셉트를 만들고 브랜드 적합성·메시지 명확성·채널 적합성·트렌드 수명을 평가해 한 방향을 승인합니다.
+7. 승인 방향을 구도·조명·재질·팔레트·타이포 역할·카피 영역·보존·제외·검수 기준이 명확한 전문가용 프롬프트로 컴파일한 뒤 마스터 키비주얼을 승인합니다.
+8. 승인된 패킷과 캠페인 규칙에서 상세/랜딩페이지와 채널 광고를 파생합니다.
+9. 콘셉트형 캠페인 영상은 USP별 장면 역할, 모션 방식, 대본·출연자·증거 노출·CTA를 잠그고 제품 장면의 승인 스틸을 첫 프레임 권위로 연결합니다.
+10. 승인된 복수 클립을 지정 규격으로 조립하거나 승인 구간만 교체하고, 요청한 경우 훅 하나만 바꾼 변형과 빈 성과 입력표를 만듭니다.
+11. 원본, 승인 카피, 프레임레이트, 오디오, 비율, 안전영역, 업종별 실패 기준과 캠페인 일관성을 검수합니다.
+12. 실제 성과가 제공되면 추적·비교 가능성·표본을 확인한 뒤 다음 라운드에서 바꿀 한 변수만 정합니다.
 
 기본값은 유료 생성 전에 사용자가 레퍼런스와 산출물 수를 확인하는 방식입니다. 자동 진행을 원하면 범위와 함께 `레퍼런스도 자동 선택해서 끝까지 진행해줘`라고 요청하세요.
 
 ## 레퍼런스 검색 규칙
 
-- Pinterest에는 업종 taxonomy의 **L1 광역 카테고리 1개를 먼저** 검색합니다.
+- 레퍼런스는 목적별로 분리합니다. 범용 비주얼 탐색은 `chany-reference-board`의 Pinterest, 전문 광고·라이프스타일 사진은 `chany-commercial-photo-reference`의 Production Paradise, 수상 광고와 캠페인 벤치마크는 `chany-award-ad-reference`의 Ads of the World·D&AD·The One Show를 사용합니다.
+- 한 보드에서는 한 경로만 사용합니다. 후보가 부족해도 다른 경로로 몰래 보충하지 않으며 Stocksy, ShotDeck, Death to Stock은 사용하지 않습니다. Pinterest 경로의 로컬 인라인 미리보기 연결은 계속 공개 Pin 페이지와 `i.pinimg.com`만 허용합니다.
+- 표시 수량은 기본 `6장`입니다. 사용자가 “3장”, “10개”처럼 양의 정수로 지정하면 그 수량을 `target_count`로 사용합니다. 명시한 수량을 임의로 줄이거나 늘리지 않으며, 허용된 두 검색의 후보가 부족하면 요청·표시·부족 수량을 밝힌 미완성 보드로 끝냅니다.
+- 선택한 경로에는 업종 taxonomy의 **L1 광역 카테고리 1개를 먼저** 검색합니다.
 - 더 좁혀야 할 때만 같은 경로의 **직접 L2 하위 카테고리 0~1개**를 추가합니다. 한 작업에서 여러 L2 형제를 검색하지 않습니다.
 - 세 번째 의미 검색어와 스타일·렌즈·지역·색·무드·플랫폼 modifier를 검색어에 붙이지 않습니다.
 - 검색 뒤에는 선택한 이미지의 구도·조명·배경·재질·색 관계·정보 위계를 Visual DNA로 분석할 수 있지만, 그 분석어를 새 검색 쿼리로 확장하지 않습니다.
@@ -234,7 +249,9 @@ Codex: $chany-publication-review로 최종 광고의 정확한 카피·오퍼·�
 
 - 제품·음식·차량·공간·UI·프로그램·모델·의류의 승인 원본과 사실 자료가 정체성의 최종 기준입니다.
 - 가격, 할인율, 기간, 제품 효능, 비교 주장, CTA와 법적 고지는 임의로 만들지 않습니다.
-- Pinterest 레퍼런스는 복제 대상이 아니라 구도, 조명, 배경, 색 관계, 재질과 정보 위계를 이해하는 방향 자료로만 사용합니다.
+- 모든 온라인 레퍼런스는 복제 대상이 아니라 구도, 조명, 배경, 색 관계, 재질, 메시지 장치와 정보 위계를 이해하는 방향 자료로만 사용합니다.
+
+최신 트렌드는 검색어에 섞지 않습니다. Pinterest 후보를 모은 뒤 Pinterest Predicts·Pinterest Palette의 현재 신호 중 브랜드·고객·메시지·접근성에 맞는 요소만 한 가지 중심 장치 또는 보조 포인트로 번역합니다. 유행이 맞지 않으면 쓰지 않으며, 제품·로고·인물·공간의 권위 원본을 트렌드 색이나 스타일로 바꾸지 않습니다. 플랫폼 규격과 이미지 생성법은 각 공식 문서에서 확인하지만 그 문서의 예시 이미지는 레퍼런스로 사용하지 않습니다.
 - 마스터 키비주얼을 승인한 뒤 상세페이지와 광고 규격을 파생합니다.
 - 기존 결과의 부분 수정은 지정 영역과 한 가지 속성만 바꿉니다.
 - 라벨·로고·카피·제품 형상·모델 정체성·의류 구조가 바뀐 결과는 실패로 처리합니다.
@@ -266,7 +283,7 @@ Codex: $chany-publication-review로 최종 광고의 정확한 카피·오퍼·�
 /reload-plugins
 ```
 
-업데이트 후 버전이 **2.4.0**인지 확인하고 새 대화 또는 새 작업을 시작하세요.
+업데이트 후 버전이 **2.5.0**인지 확인하고 새 대화 또는 새 작업을 시작하세요.
 
 ## 외부 서비스와 데이터
 

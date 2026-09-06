@@ -2,17 +2,17 @@
 
 ## Core rule
 
-Search only Pinterest. Search terms identify what the source subject is, not how it should be photographed. The final reference board must show exactly six distinct reference images directly in the current conversation; a link-only board, HTML file, contact sheet, or separate artifact is not an inline reference board.
+Search only Pinterest. Search terms identify what the source subject is, not how it should be photographed. Resolve `target_count` as the user's explicit positive whole-number request or `6` when none is given. The final reference board must show exactly `target_count` distinct reference images directly in the current conversation; a link-only board, HTML file, contact sheet, or separate artifact is not an inline reference board.
 
 ## Approved provider
 
 | Provider | Domain | Purpose |
 |---|---|---|
-| Pinterest | pinterest.com | Broad visual discovery and traceable links to original creative sources |
+| Pinterest | `pinterest.com` Pin pages and `i.pinimg.com` previews | Broad visual discovery with Pin-page provenance |
 
-Do not use general web results, stock sites, social networks, agency sites, or any domain other than Pinterest as a fallback.
+This allowlist is exact. Every search call must be restricted to `pinterest.com`; every accepted source must be a public `pinterest.com/pin/...` page; every fetched preview must be on `i.pinimg.com`. Do not search, open, click, fetch, preview, retain, or expose visual-reference material from general web results, stock sites, social networks, agency sites, portfolio sites, mirrors, or any other domain. Never follow a Pin's outbound destination. If a redirect leaves the allowlist, reject it.
 
-Require a public Pinterest Pin page plus a visible creator or outbound original-source link. Reject orphaned Pins, inaccessible pages, login-gated content, scraped mirrors, and results without a directly displayable preview.
+Require a public Pinterest Pin page and a directly displayable Pinterest preview. A visible Pinterest creator or board may help diversity scoring but is not permission to leave Pinterest. Reject orphaned Pins, inaccessible pages, login-gated content, scraped mirrors, and results without a directly displayable preview.
 
 Pinterest content is direction-only. Do not treat it as licensed production pixels.
 
@@ -58,9 +58,10 @@ Provider and domain scope is routing metadata, not part of the semantic query.
 
 ## Collection
 
-- collect up to 8 Pinterest candidates per query
-- retain provider, preview image URL, Pin-page URL, reported Pinterest outbound-source URL when available, Pin title, creator when visible, source domain, dimensions when known, and query
-- merge duplicates by canonical Pin ID or URL, normalized `i.pinimg.com` asset URL with size and query removed, and outbound original-source URL; also merge perceptual near-duplicates and alternate crops from one image
+- collect enough Pinterest candidates across the permitted L1 and optional L2 calls to cover `target_count` plus reasonable replacements, within the live connector's per-call result limit
+- do not silently cap an explicit `target_count`; when the connector or permitted two-query pool cannot supply it, report an incomplete board with requested, visible, and missing counts
+- retain only provider, preview image URL, Pin-page URL, Pin title, Pinterest creator or board when visible, source domain, dimensions when known, and query
+- merge duplicates by canonical Pin ID or URL and normalized `i.pinimg.com` asset URL with size and query removed; also merge perceptual near-duplicates and alternate crops from one image
 - reject collages, screenshots, severe compression, watermarks over the subject, images dominated by text, inaccessible previews, missing source pages, orphaned Pins, and duplicate crops from one shoot
 - require an image preview that the conversation surface can render directly
 - never bypass access controls, scrape Pinterest, or bulk-download Pinterest content
@@ -80,7 +81,7 @@ Score each candidate from 0 to 100:
 
 ## Diversity and source spread
 
-Select six candidates that differ across at least three axes:
+For three or more requested candidates, build a set that differs across at least three axes; for one or two, maximize meaningful difference without inventing diversity:
 
 - centered vs asymmetrical composition
 - high-key vs low-key lighting
@@ -89,7 +90,7 @@ Select six candidates that differ across at least three axes:
 - minimal vs prop-supported scene
 - front view vs high angle vs top view
 
-Select exactly six distinct Pinterest candidates. When the metadata permits, avoid taking more than two candidates from the same creator, board, outbound source, or obvious shoot so that a single source does not masquerade as visual diversity. If fewer than six directly displayable candidates remain after the allowed L1 and optional L2 searches, mark the board incomplete, state the shortfall, and do not ask the user to choose or begin paid production. Do not search another site, add a third query, recycle a failed candidate, or lower the standard.
+Select exactly `target_count` distinct Pinterest candidates. When the metadata permits, prevent one Pinterest creator, board, or obvious shoot from dominating the set. If fewer than `target_count` directly displayable candidates remain after the allowed L1 and optional L2 searches, mark the board incomplete, state the requested count, visible count, and shortfall, and do not ask the user to choose or begin paid production. Do not search another site, add a third query, recycle a failed candidate, silently reduce the count, or lower the standard.
 
 ## Mandatory inline reference board
 
@@ -99,12 +100,12 @@ Before the first Pinterest query in Claude Cowork, confirm that `fetch_reference
 
 Use this display order:
 
-1. in Claude Cowork, six successful separate `fetch_reference_preview_image` results returning MCP image content
+1. in Claude Cowork, `target_count` successful separate `fetch_reference_preview_image` results returning MCP image content
 2. a fetched public preview returned as host-displayable image content
 3. an attached preview image file when the host can display that attachment in the current conversation
 4. a verified inline image embed supported by the host
 
-In Claude Cowork, call the bundled tool once per candidate rather than batching six images into one tool result. Continue through unused reserve candidates until six distinct calls succeed; never retry a failed candidate blindly. Each successful result starts with an MCP `ImageContent` block containing `type: image`, base64 `data`, and an accurate `mimeType`. Search-result metadata or `preview_image_url` alone is not image presentation. Do not create HTML as the primary answer, and do not ask the user to open six links just to compare candidates.
+In Claude Cowork, call the bundled tool once per candidate rather than batching the board into one tool result. Continue through unused reserve candidates until `target_count` distinct calls succeed; never retry a failed candidate blindly. For counts above the connection's concurrency limit, work in bounded waves without changing the requested count. Each successful result starts with an MCP `ImageContent` block containing `type: image`, base64 `data`, and an accurate `mimeType`. Search-result metadata or `preview_image_url` alone is not image presentation. Do not create HTML as the primary answer, and do not ask the user to open a list of links just to compare candidates.
 
 Before each preview call, confirm in the discovery result that the preview and Pin page are paired. The preview connection checks the Pinterest provider, URL shape, CDN, bytes, MIME, and dimensions. It does not scrape Pinterest to prove image-to-Pin membership, so do not convert a `provenance_mapping_verified: false` field into a claim that the connector independently verified the mapping.
 
@@ -113,21 +114,22 @@ For each candidate, present in this order:
 1. directly rendered image preview
 2. number and provider
 3. clickable Pinterest Pin-page link
-4. reported, unverified outbound-source link when available
-5. search query
-6. one-line fit note
-7. one-sentence Visual DNA
+4. search query
+5. one-line fit note
+6. one-sentence Visual DNA
 
 Do not substitute a text card, filename, placeholder, source-page thumbnail screenshot, or bare URL for the image. If search returns only a preview URL, fetch or import the publicly accessible preview through an approved read-only path and return the resulting image content. Fetch preview-size media only; do not fetch protected originals or bypass access controls.
 
 Treat the board as incomplete until every presented candidate has a visible image. Set `display_confirmed: true` only after actual image content appears in the current conversation. If one candidate cannot be displayed, reject it and use the next unused Pinterest reserve candidate before asking the user to choose. If the current host has no image-content or image-attachment path at all, state the limitation once and offer source links or an HTML board as an optional fallback. Never label that fallback as an inline board or continue the semi-auto selection checkpoint as though the images were visible.
 
-After exactly six distinct images are visible, ask for one number or 자동 선택. Do not begin paid staged generation before this checkpoint in semi-auto mode.
+After exactly `target_count` distinct images are visible, ask for one number or 자동 선택. Do not begin paid staged generation before this checkpoint in semi-auto mode.
 
 ## Visual DNA record
 
 Maintain:
 
+    target_count: 6
+    count_source: "default | user"
     composition: ""
     negative_space: ""
     camera: ""
@@ -141,7 +143,6 @@ Maintain:
     exclude_from_reference: []
     provider: "Pinterest"
     source_url: ""
-    original_source_url: ""
     preview_image_url: ""
     display_transport: "mcp-image-content | native-image-content | image-attachment | verified-inline-embed"
     display_confirmed: false
@@ -153,7 +154,7 @@ Exclude the reference subject, model identity, garments, packaging, logo, label,
 
 ## Rights and provenance
 
-Use online images only as visual direction. Keep the Pinterest Pin page and the reported outbound source when visible, and label the outbound mapping unverified.
+Use Pinterest images only as visual direction. Keep the Pinterest Pin page as the sole source link. Do not open, retain, or expose an outbound destination even when Pinterest reports one.
 
 Never infer that Pinterest content is licensed for commercial reuse. For any requested direct reuse of reference pixels, stop and verify rights separately.
 

@@ -4,6 +4,7 @@
     "Pinterest"
   ],
   "queryPolicy": {
+    "defaultReferenceCount": 6,
     "maxTaxonomyDepth": 2,
     "maxSemanticQueries": 2,
     "order": [

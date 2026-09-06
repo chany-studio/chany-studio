@@ -51,7 +51,33 @@ test("media production loop keeps stable jobs, bounded corrections, and visible 
   assert.match(openai, /^\s*allow_implicit_invocation:\s*true\s*$/m);
 });
 
-test("campaign video uses one local teardown and the shared media job ledger", async () => {
+test("video reference ingest distinguishes browser observation from inspectable capture", async () => {
+  const skillPath = "skills/chany-video-reference-ingest/SKILL.md";
+  const [skill, contract, openai, routing] = await Promise.all([
+    readPluginFile(skillPath),
+    readPluginFile("skills/chany-video-reference-ingest/references/browser-capture-contract.md"),
+    readPluginFile("skills/chany-video-reference-ingest/agents/openai.yaml"),
+    readPluginFile("skills/chany-studio/references/routing.md"),
+  ]);
+
+  assert.equal(frontmatterName(skill, skillPath), "chany-video-reference-ingest");
+  assert.match(skill, /live-browser-observation/i);
+  assert.match(skill, /authorized-tab-capture/i);
+  assert.match(skill, /direct-media-url/i);
+  assert.match(skill, /capture_required/i);
+  assert.match(skill, /Metadata or a player view[\s\S]+complete inspectable capture or local file/i);
+  assert.match(skill, /ChatCut[\s\S]+not a platform-link downloader/i);
+  assert.match(contract, /start only after the user clicks/i);
+  assert.match(contract, /save locally by default/i);
+  assert.match(contract, /never reconstruct platform streams/i);
+  assert.match(contract, /never claim that an extension[\s\S]+is connected/i);
+  assert.match(contract, /^browser_capture:/m);
+  assert.match(openai, /\$chany-video-reference-ingest(?![a-z0-9-])/i);
+  assert.match(openai, /^\s*allow_implicit_invocation:\s*true\s*$/m);
+  assert.match(routing, /video reference link[\s\S]+chany-video-reference-ingest/i);
+});
+
+test("campaign video uses the authorized ingest packet and shared media job ledger", async () => {
   const [campaign, contract, teardown, boundary] = await Promise.all([
     readPluginFile("skills/chany-campaign-video/SKILL.md"),
     readPluginFile("skills/chany-campaign-video/references/campaign-video-contract.md"),
@@ -60,10 +86,12 @@ test("campaign video uses one local teardown and the shared media job ledger", a
   ]);
 
   assert.match(campaign, /\.\.\/chany-studio\/references\/video-reference-teardown\.md/);
+  assert.match(campaign, /chany-video-reference-ingest/i);
   assert.match(campaign, /chany-media-production-loop/i);
   assert.match(contract, /shared media job ledger/i);
   assert.match(contract, /^\s+resolved_first_frame_role:/m);
-  assert.match(teardown, /user supplies a local video file or a screen recording they are authorized to use/i);
+  assert.match(teardown, /accepted `video_reference_packet` from `chany-video-reference-ingest`/i);
+  assert.match(teardown, /user-invoked active-tab recording/i);
   assert.match(teardown, /Do not download from a platform, bypass access controls, scrape a feed/i);
   assert.match(teardown, /One second is a useful starting interval[\s\S]+not a fixed requirement/i);
   assert.match(teardown, /Pacing[\s\S]+may inform[\s\S]+do not transfer/i);
@@ -243,6 +271,7 @@ test("campaign state binds media jobs, first frames, and assembled renders to st
     "media_job_id",
     "output_index",
     "motion_route",
+    "reference_packet_id",
     "accepted_output_clip_version_id",
     "assembly_id",
     "source_master_content_hash",
@@ -253,10 +282,10 @@ test("campaign state binds media jobs, first frames, and assembled renders to st
   ]) {
     assert.match(state, new RegExp(`^\\s+(?:-\\s+)?${field}:`, "m"));
   }
-  for (const field of ["campaign_video_manifests", "media_jobs", "performance_reviews"]) {
+  for (const field of ["video_reference_packets", "campaign_video_manifests", "media_jobs", "performance_reviews"]) {
     assert.match(state, new RegExp(`^${field}:`, "m"));
   }
-  assert.match(state, /changed[\s\S]+accepted clip[\s\S]+delivery target[\s\S]+invalidates every affected record/i);
+  assert.match(state, /changed reference capture range or file[\s\S]+accepted clip[\s\S]+delivery target[\s\S]+invalidates every affected record/i);
 });
 
 test("marketing brief reviews observed performance without inventing causality", async () => {
@@ -274,19 +303,21 @@ test("marketing brief reviews observed performance without inventing causality",
   assert.match(schema, /^\s+next_single_variable:/m);
 });
 
-test("both manifests publish the 2.4.0 bounded media-loop release", async () => {
+test("both manifests publish the 2.5.0 creative-direction release", async () => {
   const [claude, codex] = await Promise.all([
     readPluginFile(".claude-plugin/plugin.json").then(JSON.parse),
     readPluginFile(".codex-plugin/plugin.json").then(JSON.parse),
   ]);
 
-  assert.equal(claude.version, "2.4.0");
-  assert.match(codex.version, /^2\.4\.0(?:\+codex\.[a-z0-9.-]+)?$/i);
+  assert.equal(claude.version, "2.5.0");
+  assert.match(codex.version, /^2\.5\.0(?:\+codex\.[a-z0-9.-]+)?$/i);
   assert.ok(codex.interface.capabilities.includes("GPT Image 2 default for generative still images with scoped overrides"));
   assert.ok(codex.interface.capabilities.includes("Native Claude question-card interview and Chany-file approval"));
-  assert.ok(codex.interface.capabilities.includes("Native in-chat Pinterest reference previews"));
+  assert.ok(codex.interface.capabilities.includes("Source-isolated Pinterest, Production Paradise, and award-archive reference boards with in-chat previews"));
+  assert.ok(codex.interface.capabilities.includes("Beginner-friendly expert creative direction and anti-genericity review"));
   assert.doesNotMatch(JSON.stringify(codex.interface), /Behance/i);
   assert.ok(codex.interface.capabilities.includes("Concept-led campaign video with approved GPT Image 2 governing stills"));
+  assert.ok(codex.interface.capabilities.includes("Capability-labeled browser-extension capture intake for YouTube and Instagram video references"));
   assert.ok(codex.interface.capabilities.includes("Bounded still-image and campaign-video production loop with stable job ledger"));
   assert.ok(codex.interface.capabilities.includes("Local video assembly, segment replacement, hook variants, and delivery verification"));
   assert.ok(codex.interface.capabilities.includes("Bounded performance review and next one-variable experiment planning"));
@@ -302,9 +333,26 @@ test("Claude marketplace metadata advertises the new video workflow without chan
 
   assert.equal(marketplace.name, "photo-reference-studio");
   assert.equal(marketplace.plugins[0].name, "photo-reference-studio");
-  for (const tag of ["campaign-video", "media-production-loop", "media-job-ledger", "reference-video-teardown", "approved-first-frame", "video-assembly", "segment-replacement", "performance-learning", "environment-preflight"]) {
+  for (const tag of ["campaign-video", "video-reference-ingest", "browser-tab-capture", "youtube-video-reference", "instagram-video-reference", "media-production-loop", "media-job-ledger", "reference-video-teardown", "approved-first-frame", "video-assembly", "segment-replacement", "performance-learning", "environment-preflight"]) {
     assert.ok(marketplace.plugins[0].tags.includes(tag), `Claude marketplace missing ${tag}`);
   }
+});
+
+test("user docs route platform video links through authorized browser capture", async () => {
+  const repoRoot = join(pluginRoot, "..", "..");
+  const [repoReadme, pluginReadme, userGuide, troubleshooting] = await Promise.all([
+    readFile(join(repoRoot, "README.md"), "utf8"),
+    readPluginFile("README.md"),
+    readFile(join(repoRoot, "docs", "USER-GUIDE.md"), "utf8"),
+    readFile(join(repoRoot, "docs", "TROUBLESHOOTING.md"), "utf8"),
+  ]);
+
+  for (const surface of [repoReadme, pluginReadme, userGuide]) {
+    assert.match(surface, /chany-video-reference-ingest/i);
+    assert.match(surface, /브라우저[\s\S]+캡처/i);
+  }
+  assert.match(troubleshooting, /YouTube·Instagram 링크를 줬는데 전체 영상 분석이 되지 않음/i);
+  assert.match(troubleshooting, /플랫폼 영상 다운로드[\s\S]+DRM 우회로 해결하지 않습니다/i);
 });
 
 test("user docs place environment and paid checks before production and assembly", async () => {

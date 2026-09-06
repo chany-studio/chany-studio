@@ -2,6 +2,12 @@
 
 Keep code convergence and media production as separate systems.
 
+## Video-reference intake
+
+`chany-video-reference-ingest` owns the evidence boundary before any video teardown. A platform page, an observed player excerpt, a user-invoked browser capture, a direct media URL, and a local file are different input states and must not be collapsed into one another. Browser observation and local capture are not generation attempts, do not consume the media-production retry budget, and do not authorize external upload or reuse of captured pixels.
+
+The active host decides whether a browser or extension surface is observable. The existence of an intake skill never proves that a browser tab, extension, native bridge, or local file is connected. When no capture surface is callable, use the manual local-file handoff rather than a platform downloader.
+
 ## MoAI code-quality loop
 
 MoAI's code-quality loop scans a finite source-code issue queue and verifies

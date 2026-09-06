@@ -4,9 +4,9 @@ Use a user-supplied reference video to learn timing and attention structure, not
 
 ## Intake and rights boundary
 
-The user supplies a local video file or a screen recording they are authorized to use. Do not download from a platform, bypass access controls, scrape a feed, or reconstruct a protected asset from a link. When only a link is available, ask for the file or an authorized screen recording.
+Consume an accepted `video_reference_packet` from `chany-video-reference-ingest`, or create the equivalent record when the user already supplied a local video file. An inspectable source may be a local file, the user's own export, or a user-invoked active-tab recording they are authorized to analyze. Do not download from a platform, bypass access controls, scrape a feed, or reconstruct a protected asset from a link. When only a platform page link is available, route it through `chany-video-reference-ingest`; a visible player supports only the moments actually observed, while a full teardown requires an inspectable capture or file.
 
-Keep teardown local unless the user separately authorizes an external upload. Inspect the source for private screens, people, customer data, or confidential material before creating shareable frames or a contact sheet.
+Keep teardown local unless the user separately authorizes an external upload. Inspect the source for private screens, people, customer data, or confidential material before creating shareable frames or a contact sheet. Bind the teardown to the capture or file hash and the exact observed time range; never extend conclusions beyond captured coverage.
 
 ## Environment and extraction
 
@@ -27,4 +27,4 @@ Write one row per meaningful beat, not per sampled frame. Identify visual, narra
 
 Pacing, beat length, reveal timing, camera behavior, information order, sound-function, and the shape of the opening may inform a new shot plan. The reference product, person, packaging, copy, music, brand marks, distinctive artwork, exact sequence, and other protected expression do not transfer. Map useful timing to approved `usp_role` and `message_rank` values, then build new content from the user's own authorities.
 
-This teardown does not expand the Pinterest-only search scope. `chany-reference-board` remains the owner of static-image discovery and its L1-first, direct-L2-only policy.
+This teardown does not expand any online reference scope. Static-image discovery remains with the selected source-isolated reference owner and its L1-first, direct-L2-only policy. It does not authorize Stocksy, ShotDeck, Death to Stock, or another unlisted provider.

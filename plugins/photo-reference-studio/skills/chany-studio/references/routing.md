@@ -31,7 +31,11 @@ Do not add two overlays merely because two subjects appear in one scene. Use a s
 | initialize or update an advertising-production project | `chany-project` | shared project instructions, brief, state, and runtime-specific delegation configuration |
 | campaign strategy, launch plan, message hierarchy, asset plan | `chany-marketing-brief` | approved brief and asset matrix |
 | transparent cutout, background removal, white packshot, source cleanup | `chany-product-assets` | reusable source asset |
-| visual references, mood direction, Pinterest board | `chany-reference-board` | exactly six visible Pinterest candidates and Visual DNA |
+| broad visual references or a Pinterest moodboard | `chany-reference-board` | six visible Pinterest candidates by default, or the user's explicit positive count, with Visual DNA |
+| high-end commercial, advertising, or lifestyle photography references | `chany-commercial-photo-reference` | visible Production Paradise references with creator provenance and transferable photographic craft |
+| awarded advertising, campaign ideas, or commercial-photography benchmarks | `chany-award-ad-reference` | visible Ads of the World, D&AD, or The One Show cases with message mechanism and Visual DNA |
+| vague visual request, concept territories, trend translation, or expert prompt direction | `chany-creative-direction` | three brand-specific territories, one recommendation, and an approved creative-direction packet |
+| YouTube, Instagram, or other video reference link; browser capture; reference-video structure analysis | `chany-video-reference-ingest` | capability-labeled capture packet and, when inspectable, a non-copying beat table |
 | staged subject or experience image, hero art, campaign key visual | `chany-campaign-visual` | one staged image or accepted master visual |
 | static ad, sale or event poster, feed creative, story creative, banner | `chany-ad-creative` | one placement asset or named channel set |
 | e-commerce detail page, PDP, service/booking/launch landing modules | `chany-detail-page` | named evidence-led page modules |
@@ -48,7 +52,8 @@ Do not add two overlays merely because two subjects appear in one scene. Use a s
 
 - A request to configure the working project uses `chany-project`. A single known production output uses its owner directly. Use `chany-studio` when two or more production rows are required or when the user asks for a complete campaign.
 - `프롬프트만` is a mode of the owner skill. It does not automatically route to marketing strategy.
-- A reference plus one final output keeps the output skill as owner; `chany-reference-board` supplies only the selected source and Visual DNA.
+- A reference plus one final output keeps the output skill as owner. Select exactly one reference lane for the requested job, then pass its selected source page and Visual DNA to `chany-creative-direction` before production.
+- Reference providers are isolated by skill: `chany-reference-board` may use only public Pinterest Pin pages and `i.pinimg.com`; `chany-commercial-photo-reference` may use only public Production Paradise pages; `chany-award-ad-reference` may use only public Ads of the World, D&AD, and The One Show work pages. Never cross-fill a weak lane with another provider. Stocksy, ShotDeck, and Death to Stock are not permitted reference sources.
 - A product-page hero that sits inside a scrolling commerce page belongs to `chany-detail-page`. A standalone paid-media or social placement belongs to `chany-ad-creative`.
 - Static images, copy, and module plans for a landing page belong to `chany-detail-page`. Executable or motion-rich landing implementation is a separate capability-gated handoff to `moai-designer:design-landing-motion` when actually installed and callable; if it is unavailable, return the completed static plan and state that executable implementation was not performed.
 - A text-free master composition belongs to `chany-campaign-visual`. A finished layout with offer, CTA, legal copy, or placement constraints belongs to `chany-ad-creative`.
@@ -65,11 +70,12 @@ For a requested campaign family, propose only the needed stages:
 1. The selected industry skill fixes the domain mode, journey, proof, directing rules, claims gates, and L1-to-L2 reference route.
 2. `chany-marketing-brief` fixes objective, audience, claims, copy status, channels, and asset count using that packet.
 3. `chany-product-assets` creates clean source assets when the originals are not already production-ready.
-4. `chany-reference-board` runs only when art direction is missing or explicitly requested.
-5. `chany-campaign-visual` creates and locks one master direction.
-6. `chany-detail-page`, `chany-ad-creative`, `chany-model-fashion`, and `chany-campaign-video` derive only their named deliverables; `chany-media-production-loop` executes and records their requested generated assets.
-7. `chany-video-assembly` delivers or revises the cut only after every included clip version and replacement boundary is accepted.
-8. `chany-image-edit` repairs bounded image defects without changing the accepted campaign.
-9. `chany-publication-review` checks the exact final copy and rendered assets when jurisdiction, claims, offers, outbound delivery, endorsement, rights, disclosure, platform, or industry gates make release review relevant.
+4. When art direction is missing or explicitly requested, choose only the matching reference lane: Pinterest for broad visual discovery, Production Paradise for professional commercial photography, or the award archives for campaign benchmarks.
+5. `chany-creative-direction` translates the brief, optional selected reference Visual DNA, and current signals into three territories and one approved production packet.
+6. `chany-campaign-visual` creates and locks one master direction.
+7. `chany-detail-page`, `chany-ad-creative`, `chany-model-fashion`, and `chany-campaign-video` derive only their named deliverables; `chany-media-production-loop` executes and records their requested generated assets.
+8. `chany-video-assembly` delivers or revises the cut only after every included clip version and replacement boundary is accepted.
+9. `chany-image-edit` repairs bounded image defects without changing the accepted campaign.
+10. `chany-publication-review` checks the exact final copy and rendered assets when jurisdiction, claims, offers, outbound delivery, endorsement, rights, disclosure, platform, or industry gates make release review relevant.
 
 Apply `runtime-boundaries.md` before selecting any loop. Use `chany-media-production-loop` and `media-job-ledger.md` for generated still-image and campaign-video jobs, never a source-code diagnostic loop. Apply `image-generation-runtime.md` before every generative still-image creation or edit. Its default is GPT Image 2 (`gpt-image-2`); a different model is a scoped override, never a silent fallback. Apply `higgsfield-runtime-contract.md` and `creative-quality-loop.md` before paid operations. Show the effective paid-generation plan and live cost information when available; do not assume that one final video equals one paid generation call. When observed results arrive, `chany-marketing-brief` checks tracking, attribution, comparability, and sample sufficiency before recommending the next one-variable round. Installed Moai specialists may supply attributed evidence through `moai-specialist-chain.md`, but Chany retains campaign orchestration and never treats a specialist result as blanket legal clearance.

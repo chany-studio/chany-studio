@@ -9,6 +9,8 @@ Create a production-ready marketing brief before expensive or multi-asset work, 
 
 Read [references/brief-schema.md](references/brief-schema.md) for the decision framework and output schema.
 
+When the brief includes visual, page, ad, or video outputs, also read the shared [creative-direction system](../chany-studio/references/creative-direction-system.md) and [current creative signals](../chany-studio/references/current-creative-signals.md). Use them to turn plain-language preferences into production decisions; do not ask a beginner to supply design jargon.
+
 If a Chany industry skill applies, consume its industry direction packet before finalizing the brief. Keep the packet's journey, proof, claims, directing, and human-review gates intact; resolve conflicts instead of silently generalizing them.
 
 ## Essential rules

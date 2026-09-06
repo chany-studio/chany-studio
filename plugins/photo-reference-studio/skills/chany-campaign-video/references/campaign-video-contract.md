@@ -20,6 +20,7 @@ video_concept_packet:
   primary_message: ""
   approved_copy_version_id: ""
   authority_asset_version_ids: []
+  reference_packet_id: ""
   reference_teardown_id: ""
   narrative_device: "demonstration | reveal | transformation | comparison | metaphor | atmosphere | other"
   continuity_strategy: "independent-scenes | continuity-groups | one-take"

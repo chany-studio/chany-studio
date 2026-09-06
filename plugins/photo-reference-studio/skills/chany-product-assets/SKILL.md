@@ -9,6 +9,8 @@ Prepare clean, reusable product or food sources for advertising, detail pages, a
 
 Read [references/asset-prep.md](references/asset-prep.md) for prompts, source locks, and QA.
 
+Read the shared [creative-direction system](../chany-studio/references/creative-direction-system.md) when the output is more than a neutral technical cleanup. A trend or style direction may affect background, crop, light, and finish only after the product or food authority lock is satisfied; it may never recolor, reshape, relabel, or restyle the authoritative subject.
+
 When this workflow needs a generative still-image edit, read and follow the shared [image model default](../chany-studio/references/image-generation-runtime.md). Use GPT Image 2 (`gpt-image-2`) unless a scoped override meets that contract; this does not replace the non-generative preference below. Execute and resume the generated edit through `chany-media-production-loop`, which owns the stable job record, paid preflight, inline inspection, and bounded correction; keep this skill as the source-fidelity owner.
 
 ## Workflow

@@ -1,8 +1,8 @@
 {
   "name": "photo-reference-studio",
   "displayName": "Chany's Studio",
-  "version": "2.4.0",
-  "description": "Chany's cross-runtime advertising studio with industry overlays, GPT Image 2-first media production, safe campaign-video assembly, performance learning, publication review, and Moai chaining.",
+  "version": "2.5.0",
+  "description": "Chany's cross-runtime advertising studio with source-isolated visual references, user-authorized browser-capture intake for video references, expert creative direction, current trend-aware GPT Image 2 prompting, industry overlays, safe media production, publication review, and Moai chaining.",
   "author": {
     "name": "Chany",
     "url": "https://github.com/chany-studio"
@@ -15,6 +15,11 @@
     "product-photography",
     "food-photography",
     "reference-board",
+    "pinterest-reference",
+    "commercial-photography-reference",
+    "award-ad-reference",
+    "creative-direction",
+    "trend-aware-prompting",
     "cutout",
     "key-visual",
     "detail-page",
@@ -26,6 +31,10 @@
     "promotion",
     "campaign-video",
     "brand-film",
+    "video-reference-ingest",
+    "browser-tab-capture",
+    "youtube-video-reference",
+    "instagram-video-reference",
     "media-production-loop",
     "media-job-ledger",
     "video-assembly",

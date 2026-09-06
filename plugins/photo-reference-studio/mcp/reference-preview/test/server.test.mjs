@@ -66,7 +66,7 @@ function pinterestCandidate(overrides = {}) {
     title: "Clean skincare campaign",
     preview_image_url: "https://i.pinimg.com/originals/aa/bb/cc/image.png",
     source_url: "https://www.pinterest.com/pin/123456789/",
-    original_source_url: "https://example.com/editorial/source",
+    original_source_url: null,
     creator: "Studio Example",
     query: "Skincare Product Photography",
     fit_note: "Quiet palette and strong copy space",
@@ -105,6 +105,20 @@ test("normalizes only recognized Pinterest CDN paths to small preview variants",
 });
 
 test("accepts only Pinterest Pin provenance, provider agreement, and CDN host", () => {
+  assert.throws(
+    () =>
+      validateArguments(
+        pinterestCandidate({ original_source_url: "https://example.com/editorial/source" }),
+      ),
+    /original_source_url is disabled/,
+  );
+  assert.throws(
+    () =>
+      validateArguments(
+        pinterestCandidate({ original_source_url: "https://www.pinterest.com/ideas/skincare" }),
+      ),
+    /original_source_url is disabled/,
+  );
   assert.throws(
     () => validateArguments(pinterestCandidate({ source_url: "https://example.com/pin/123" })),
     /public Pinterest/,
@@ -190,7 +204,7 @@ test("returns the image first with accurate MIME and structured provenance", asy
   assert.equal(result.content[1].type, "text");
   assert.match(result.content[1].text, /Provided source page: https:\/\/www\.pinterest\.com/);
   assert.match(result.content[1].text, /Image-to-Pin mapping: supplied by discovery/);
-  assert.match(result.content[1].text, /Reported outbound source:/);
+  assert.doesNotMatch(result.content[1].text, /outbound source/i);
   assert.deepEqual(result.structuredContent.reference, {
     id: "pin-456",
     provider: "Pinterest",
@@ -199,7 +213,7 @@ test("returns the image first with accurate MIME and structured provenance", asy
     preview_image_url: "https://i.pinimg.com/originals/aa/bb/cc/image.png",
     fetched_preview_url: "https://i.pinimg.com/236x/aa/bb/cc/image.png",
     final_preview_url: "https://i.pinimg.com/236x/aa/bb/cc/image.png",
-    original_source_url: "https://example.com/editorial/source",
+    original_source_url: null,
     creator: "Studio Example",
     query: "Skincare Product Photography",
     fit_note: "Quiet palette and strong copy space",
@@ -360,7 +374,7 @@ test("keeps the largest permitted MCP tool result below 150,000 JSON characters"
       title: "t".repeat(300),
       source_url: `https://www.pinterest.com/pin/${"s".repeat(300)}--123456789/`,
       preview_image_url: `https://i.pinimg.com/originals/aa/bb/${"p".repeat(880)}.jpg`,
-      original_source_url: `https://example.com/${"o".repeat(900)}`,
+      original_source_url: null,
       creator: "c".repeat(300),
       query: "q".repeat(300),
       fit_note: "f".repeat(600),
@@ -482,6 +496,8 @@ test("implements initialize, ping, tools/list, tools/call, and MCP tool errors",
   });
   assert.equal(initialized.result.protocolVersion, "2025-06-18");
   assert.equal(initialized.result.serverInfo.name, "reference-preview");
+  assert.match(initialized.result.instructions, /defaults to six/i);
+  assert.match(initialized.result.instructions, /explicit positive user-requested count/i);
   assert.deepEqual((await handle({ jsonrpc: "2.0", id: 2, method: "ping" })).result, {});
 
   const listed = await handle({ jsonrpc: "2.0", id: 3, method: "tools/list" });

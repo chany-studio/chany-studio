@@ -9,13 +9,15 @@ Create one commercially useful staged image or master key visual from authoritat
 
 Read [references/visual-production.md](references/visual-production.md) for formulas, prompt structure, campaign locks, and QA.
 
+Read the shared [creative-direction system](../chany-studio/references/creative-direction-system.md) and [current creative signals](../chany-studio/references/current-creative-signals.md). If no direction has been approved, route through `chany-creative-direction` before paid production; it must propose three brand-specific territories and recommend one rather than defaulting to a generic premium render.
+
 Before generative still-image work, read and follow the shared [image model default](../chany-studio/references/image-generation-runtime.md). Use GPT Image 2 (`gpt-image-2`) unless a scoped override meets that contract. Execute and resume generated visuals through `chany-media-production-loop`, which owns the stable job record, paid preflight, inline inspection, and bounded correction; keep this skill as the creative owner.
 
 ## Workflow
 
 1. Read the applicable industry direction packet and carry forward its journey stage, proof objects, must-capture list, directing rules, claims gates, and human-review requirement.
 2. Build the subject lock from the original source and separate visible facts from uncertainty.
-3. Record a six-element production brief: subject, mood, composition and camera, light, environment, and output use.
+3. Compile the approved creative direction into an explicit production brief covering outcome, authority inputs, scene and subject, art direction, copy and layout, preservation locks, exclusions, output use, and measurable acceptance. Preserve the six production dimensions—subject, mood, composition and camera, light, environment, and output use—inside that structure.
 4. Use a selected reference only for composition, camera, light, palette, material, props, depth, and mood. Exclude its subject, person, packaging, logo, copy, price, and branded layout.
 5. For a master key visual, establish one campaign idea, palette, lighting logic, material or prop device, copy zones, and crop-safe area.
 6. Generate only the requested asset, inspect it against the original source and industry failure gates, and run the shared bounded creative quality loop. The default bound is one initial attempt plus at most one defect-specific correction within the approved attempt and credit ceiling; stop and return a labeled draft when its escalation conditions apply.

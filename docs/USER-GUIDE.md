@@ -4,7 +4,7 @@ Chany's Studio는 Claude와 ChatGPT Work에서 같은 프로젝트 지침을 사
 
 ## 어떤 스킬을 써야 하나요?
 
-Chany's Studio 2.4.0은 두 축과 하나의 공통 미디어 실행 루프를 함께 사용합니다.
+Chany's Studio 2.5.0은 두 축, 하나의 전문 크리에이티브 디렉션 계층과 하나의 공통 미디어 실행 루프를 함께 사용합니다.
 
 1. **업종 오버레이**는 고객이 왜 선택하는지, 어떤 근거가 필요한지, 어떤 표현을 피해야 하는지와 그 업종다운 촬영·연출 방향을 정합니다.
 2. **공통 제작 스킬**은 브리프, 레퍼런스 보드, 키비주얼, 상세페이지, 광고, 편집, 모델·패션과 콘셉트형 캠페인 영상 같은 실제 산출물을 설계합니다. 생성 실행과 재개는 `chany-media-production-loop`가 공통으로 추적합니다.
@@ -23,7 +23,11 @@ ChatGPT Work의 명시 호출은 `@스킬명`, Codex의 명시 호출은 `$스�
 | 전체 캠페인 또는 여러 산출물 | ChatGPT `@chany-studio` · Codex `$chany-studio` |
 | 캠페인 브리프 또는 성과 기반 다음 실험 | ChatGPT `@chany-marketing-brief` · Codex `$chany-marketing-brief` |
 | 누끼·순백 팩샷·제품 클린업 | ChatGPT `@chany-product-assets` · Codex `$chany-product-assets` |
-| Pinterest 레퍼런스 6장 비교 | ChatGPT `@chany-reference-board` · Codex `$chany-reference-board` |
+| Pinterest 레퍼런스 기본 6장 또는 요청 수량 비교 | ChatGPT `@chany-reference-board` · Codex `$chany-reference-board` |
+| 전문 광고·라이프스타일 사진 레퍼런스 | ChatGPT `@chany-commercial-photo-reference` · Codex `$chany-commercial-photo-reference` |
+| 수상 광고·캠페인 벤치마크 | ChatGPT `@chany-award-ad-reference` · Codex `$chany-award-ad-reference` |
+| 세련된 콘셉트 3안·추천 방향·전문 제작 프롬프트 | ChatGPT `@chany-creative-direction` · Codex `$chany-creative-direction` |
+| YouTube·Instagram 영상 레퍼런스의 브라우저 캡처·분석 준비 | ChatGPT `@chany-video-reference-ingest` · Codex `$chany-video-reference-ingest` |
 | 제품 연출컷·마스터 키비주얼 | ChatGPT `@chany-campaign-visual` · Codex `$chany-campaign-visual` |
 | 상세페이지 이미지 모듈 | ChatGPT `@chany-detail-page` · Codex `$chany-detail-page` |
 | 광고·포스터·배너·채널 변형 | ChatGPT `@chany-ad-creative` · Codex `$chany-ad-creative` |
@@ -59,10 +63,10 @@ Claude Cowork에서는 스킬 이름을 외울 필요 없이 “이 호텔의 �
 
 ```text
 식당 오픈 캠페인
-chany-food-dining → chany-marketing-brief → chany-reference-board → chany-campaign-visual → chany-ad-creative
+chany-food-dining → chany-marketing-brief → chany-reference-board → chany-creative-direction → chany-campaign-visual → chany-ad-creative
 
 호텔 예약 전환
-chany-hospitality-travel → chany-marketing-brief → chany-reference-board → chany-campaign-visual → chany-detail-page
+chany-hospitality-travel → chany-marketing-brief → chany-reference-board → chany-creative-direction → chany-campaign-visual → chany-detail-page
 
 병원·의원 홍보
 chany-healthcare-marketing → chany-marketing-brief → chany-ad-creative → chany-publication-review
@@ -77,8 +81,10 @@ chany-consumer-tech-marketing → chany-marketing-brief → chany-campaign-video
 chany-corporate-employer → chany-marketing-brief → chany-campaign-video 또는 chany-ad-creative
 
 지역축제 홍보
-chany-live-culture-events → chany-reference-board → chany-campaign-visual → chany-ad-creative
+chany-live-culture-events → chany-reference-board → chany-creative-direction → chany-campaign-visual → chany-ad-creative
 ```
+
+위 체인의 `chany-reference-board`는 기본 Pinterest 경로입니다. 전문 광고사진이 핵심이면 `chany-commercial-photo-reference`, 수상 광고 아이디어와 메시지 장치가 핵심이면 `chany-award-ad-reference`로 한 번만 교체합니다.
 
 명시 호출 예시:
 
@@ -197,7 +203,7 @@ Codex: $chany-studio로 이 제품의 광고 캠페인을 구성해줘.
 
 전체 캠페인의 기본 순서는 다음과 같습니다.
 
-`브리프 → 원본 잠금 → 레퍼런스 선택 → 키비주얼 승인 → 상세페이지 → 광고 변형 → 미디어 작업 장부·화면 검수 → 캠페인 영상 클립 승인 → 필요한 경우 로컬 환경 점검·영상 조립 → 전체 검수 → 필요한 최종 게시 검토`
+`브리프 → 원본 잠금 → 정적 레퍼런스 선택 → 필요한 경우 영상 레퍼런스 캡처·분석 → 크리에이티브 디렉션 승인 → 키비주얼 승인 → 상세페이지 → 광고 변형 → 미디어 작업 장부·화면 검수 → 캠페인 영상 클립 승인 → 필요한 경우 로컬 환경 점검·영상 조립 → 전체 검수 → 필요한 최종 게시 검토`
 
 유료 생성 전에는 현재 연결에서 실제로 제공되는 도구·모델·옵션을 다시 확인합니다. 무료 견적 기능이 있으면 먼저 사용하고, 최종 프롬프트, 입력별 역할, 선택된 워크플로와 옵션, 산출물 수, 서버 조정값, 제공자가 반환한 크레딧 정보와 전체 한도를 보여준 뒤 승인을 받습니다. 시간초과나 연결 끊김으로 결제 여부가 모호하면 같은 요청을 다시 보내지 않고 기존 작업 상태부터 확인합니다. 프롬프트·입력·모델·유료 옵션·수량이 달라지면 새 요청으로 다시 견적과 승인을 받습니다.
 
@@ -239,9 +245,17 @@ Pinterest 후보만 링크가 아니라 이 대화 안에 이미지 6장으로 �
 구도·조명·배경·색감·소품의 Visual DNA를 설명해줘.
 ```
 
-서로 다른 Pinterest 후보 6장이 실제로 표시된 뒤 번호 하나 또는 `자동 선택`을 기다립니다. 6장 미만이면 보드가 미완성이므로 선택이나 유료 제작으로 넘어가지 않습니다. 레퍼런스 속 제품, 모델, 로고, 패키지, 문구와 가격은 최종 결과로 가져오지 않습니다.
+수량을 말하지 않으면 서로 다른 Pinterest 후보 6장을 표시합니다. “3장”, “10개”처럼 양의 정수로 지정하면 그 장수가 `target_count`가 되며, 정확히 그 수량이 실제로 표시된 뒤 번호 하나 또는 `자동 선택`을 기다립니다. 허용된 검색 풀에서 목표 수량을 채우지 못하면 요청·표시·부족 수량을 밝힌 미완성 보드로 끝내고 선택이나 유료 제작으로 넘어가지 않습니다. 레퍼런스 속 제품, 모델, 로고, 패키지, 문구와 가격은 최종 결과로 가져오지 않습니다.
 
-검색은 업종 오버레이가 정한 분류를 따라 **L1 광역 카테고리부터 시작하고, 필요할 때 직접 연결된 L2 하위 카테고리 하나까지만** 추가합니다. 검색어 자체에는 지역, 플랫폼, 스타일, 무드, 색, 연도, 카메라, 렌즈, 조명, 비율, 타깃, 브랜드 또는 “고급·시네마틱” 같은 창작 수식어를 넣지 않습니다. 이런 연출 조건은 검색 결과를 고르는 Visual DNA와 제작 프롬프트에 적용합니다.
+목적에 따라 다음 중 하나만 선택합니다.
+
+- `@chany-reference-board` / `$chany-reference-board`: Pinterest 범용 비주얼·무드 탐색
+- `@chany-commercial-photo-reference` / `$chany-commercial-photo-reference`: Production Paradise의 전문 광고·라이프스타일 사진
+- `@chany-award-ad-reference` / `$chany-award-ad-reference`: Ads of the World·D&AD·The One Show의 수상 광고·캠페인 사례
+
+한 보드에서는 출처 경로를 섞지 않습니다. 후보가 부족해도 다른 경로로 자동 보충하지 않으며 Stocksy, ShotDeck, Death to Stock은 사용하지 않습니다. Pinterest 경로는 공개 Pin 페이지와 `i.pinimg.com` 미리보기만 열고 Pin의 외부 목적지를 따라가지 않습니다. 다른 두 경로도 승인된 공개 작업 페이지만 출처로 유지하며 외부 에이전시·브랜드·다운로드 링크를 따라가지 않습니다.
+
+모든 경로의 검색은 업종 오버레이가 정한 분류를 따라 **L1 광역 카테고리부터 시작하고, 필요할 때 직접 연결된 L2 하위 카테고리 하나까지만** 추가합니다. 검색어 자체에는 지역, 플랫폼, 스타일, 무드, 색, 연도, 카메라, 렌즈, 조명, 비율, 타깃, 브랜드 또는 “고급·시네마틱” 같은 창작 수식어를 넣지 않습니다. 이런 연출 조건은 검색 결과를 고르는 Visual DNA와 제작 프롬프트에 적용합니다.
 
 ```text
 허용
@@ -258,6 +272,24 @@ moody Seoul brunch cafe 85mm cinematic Instagram ad
 ```
 
 L2가 불분명하거나 결과가 약하면 세 번째 검색어나 더 세밀한 하위 분류로 내려가지 않고 L1 후보의 선별 기준을 개선합니다.
+
+## 3.1 크리에이티브 디렉션과 최신 감도
+
+디자인 용어를 몰라도 됩니다. 목표·고객·메시지·증거·브랜드 원본·채널을 주면 `chany-creative-direction`이 다음 세 방향을 서로 다른 아이디어로 설계합니다.
+
+1. `brand-core`: 오래 사용할 수 있는 브랜드 중심 방향
+2. `emotional-editorial`: 감각과 서사가 더 강한 에디토리얼 방향
+3. `trend-forward`: 현재 Pinterest 신호 하나를 브랜드답게 번역한 방향
+
+각 안은 브랜드 적합성, 고객 관련성, 메시지 명확성, 업종 차별성, 채널 적합성, 제작 가능성, 유행 수명을 평가하고 하나를 추천합니다. 승인 방향은 목적, 입력별 권위, 장면·피사체, 구도·조명·팔레트·재질, 타이포 역할·카피 영역, 보존 항목, 제외 항목, 출력 규격과 관찰 가능한 검수 기준 순서의 제작 프롬프트로 컴파일됩니다. “프리미엄·모던·시네마틱” 같은 모호한 형용사만 쌓거나 모든 결과를 같은 중앙 배치·그라데이션·유리 카드로 만드는 안은 재설계합니다.
+
+```text
+ChatGPT Work: @chany-creative-direction으로 이 브리프를 세 가지 세련된 콘셉트로 발전시키고 가장 적합한 방향과 제작 프롬프트를 추천해줘.
+Codex: $chany-creative-direction으로 이 브리프를 세 가지 세련된 콘셉트로 발전시키고 가장 적합한 방향과 제작 프롬프트를 추천해줘.
+Claude Cowork: 이 브리프를 초보자도 선택할 수 있는 세 가지 전문 콘셉트로 보여주고 추천안의 제작 프롬프트까지 만들어줘.
+```
+
+최신 신호는 Pinterest Predicts와 Pinterest Palette를 후보 선별 뒤에만 사용합니다. 검색어에는 연도·트렌드명·색·무드를 넣지 않습니다. 한 콘셉트에는 원칙적으로 중심 신호 하나와 선택적 보조 포인트 하나만 쓰며, 브랜드·메시지·제품 진실·접근성에 맞지 않으면 유행을 쓰지 않습니다. 플랫폼 규격, 상세페이지 구조와 GPT Image 2 프롬프팅은 실행 시점의 공식 문서로 확인하지만 그 문서의 예시 이미지는 레퍼런스로 취급하지 않습니다.
 
 ## 4. 캠페인 키비주얼
 
@@ -315,6 +347,16 @@ Codex: $chany-model-fashion으로 첨부한 성인 모델의 얼굴·헤어·체
 
 제품 광고, 시네마틱 브랜드 필름, 프로모션 모션과 제품 데모의 콘셉트·장면 설계는 `chany-campaign-video`가 담당합니다.
 
+YouTube·Instagram 등 브라우저에서 재생되는 영상의 구성을 참고하려면 먼저 `chany-video-reference-ingest`를 사용합니다. 사용자가 확장프로그램을 직접 눌러 활성 탭을 캡처하거나, 본인 소유 원본·허가된 화면 녹화·실제 영상 파일을 첨부합니다. 링크 화면만 볼 수 있으면 실제로 재생하며 확인한 타임코드까지만 `observed_excerpt`로 기록하고, 정밀 비트 분석은 캡처 파일이 준비된 뒤 진행합니다.
+
+```text
+ChatGPT Work: @chany-video-reference-ingest로 이 Instagram Reel을 브라우저 캡처로 준비하고 훅·컷·카메라·사운드 기능만 분석해줘.
+Codex: $chany-video-reference-ingest로 이 YouTube 영상을 브라우저 캡처나 첨부 파일로 준비하고 내 제품 광고에 옮길 수 있는 구성만 정리해줘.
+Claude Cowork: 이 영상 링크를 브라우저에서 내가 허가한 캡처로 확인하고, 실제 관찰 범위를 표시해서 제품 광고 구성으로 재설계해줘.
+```
+
+플러그인은 플랫폼 페이지에서 영상을 내려받거나 스트림을 재구성하지 않습니다. 확장프로그램·브라우저 연결이 현재 런타임에 노출되지 않으면 링크를 분석한 척하지 않고, 필요한 구간을 재생해 캡처한 `MP4` 또는 `WebM` 파일을 첨부하도록 안내합니다. 캡처는 로컬 저장이 기본이며 외부 분석·생성 서비스 업로드는 별도 승인입니다.
+
 ```text
 ChatGPT Work: @chany-campaign-video로 이 제품의 15초 콘셉트형 광고 영상을 기준 이미지부터 제작해줘.
 Codex: $chany-campaign-video로 이 제품의 15초 콘셉트형 광고 영상을 기준 이미지부터 제작해줘.
@@ -332,7 +374,7 @@ Codex: $chany-media-production-loop로 승인된 캠페인 영상 장면 3개의
 
 기본 반복 한도는 최초 생성 1회와 결함 하나를 고치는 교정 1회입니다. 시간 초과나 연결 끊김은 재생성 신호가 아니며 원래 작업 ID를 먼저 조회합니다. 배치 중 한 결과만 실패하면 승인된 나머지를 다시 만들지 않습니다. 공급자 성공 표시는 수신 완료일 뿐이며, 이미지 원본 해상도 또는 영상의 주요 타임스탬프를 실제로 확인해야 승인됩니다.
 
-사용자가 권한을 가진 로컬 레퍼런스 파일을 받으면 공용 분석 절차로 프레임·컨택트시트·영상과 음향의 비트별 변화·타이밍을 먼저 분석합니다. 플랫폼 영상을 직접 내려받거나 내용·인물·브랜드·음악·고유 시퀀스를 복제하지 않습니다. 연결된 MCP가 지원하는 작업은 현재 스키마와 비용을 확인한 뒤 실행하며, 웹 전용 기능은 입력과 작업안을 준비한 뒤 해당 화면에서 완료합니다.
+사용자가 권한을 가진 브라우저 캡처나 로컬 레퍼런스 파일을 받으면 공용 분석 절차로 프레임·컨택트시트·영상과 음향의 비트별 변화·타이밍을 먼저 분석합니다. 플랫폼 영상을 직접 내려받거나 내용·인물·브랜드·음악·고유 시퀀스를 복제하지 않습니다. 연결된 MCP가 실제 미디어 URL 가져오기, 움직임 전달, 제품 교체, 성과 예측 또는 편집을 지원하면 현재 스키마·권리·업로드·비용을 확인한 뒤 해당 단계만 실행합니다. 웹 전용 기능은 입력과 작업안을 준비한 뒤 해당 화면에서 완료합니다.
 
 ## 10. 실행 환경 점검
 

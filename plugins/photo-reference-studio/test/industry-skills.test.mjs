@@ -161,6 +161,7 @@ test("the central industry taxonomy enforces the two-level query contract", asyn
   );
 
   assert.equal(taxonomy.schemaVersion, 1);
+  assert.equal(taxonomy.queryPolicy?.defaultReferenceCount, 6);
   assert.equal(taxonomy.queryPolicy?.maxTaxonomyDepth, 2);
   assert.equal(taxonomy.queryPolicy?.maxSemanticQueries, 2);
   assert.ok(Array.isArray(taxonomy.domains), "taxonomy.domains must be an array");
@@ -304,7 +305,7 @@ test("reference search policy requires L1 first, at most one L2, and no third qu
   );
 });
 
-test("reference discovery is Pinterest-only and completes only with six visible finalists", async () => {
+test("reference discovery is Pinterest-only and honors a user count with six as the default", async () => {
   const [skill, policy, contract, ui, taxonomyText] = await Promise.all([
     readPluginFile("skills/chany-reference-board/SKILL.md"),
     readPluginFile("skills/chany-reference-board/references/search-policy.md"),
@@ -315,6 +316,7 @@ test("reference discovery is Pinterest-only and completes only with six visible 
   const taxonomy = JSON.parse(taxonomyText);
 
   assert.deepEqual(taxonomy.providers, ["Pinterest"]);
+  assert.equal(taxonomy.queryPolicy.defaultReferenceCount, 6);
   assert.equal(taxonomy.queryPolicy.maxTaxonomyDepth, 2);
   assert.equal(taxonomy.queryPolicy.maxSemanticQueries, 2);
   const generalProduct = taxonomy.domains.find((domain) => domain.id === "general-product");
@@ -344,11 +346,47 @@ test("reference discovery is Pinterest-only and completes only with six visible 
     assert.ok(taxonomyPairs.has(`${l1} -> ${l2}`), `${l1} -> ${l2} must exist in taxonomy`);
   }
   assert.doesNotMatch([skill, policy, contract, ui].join("\n"), /Behance/i);
+  assert.match(skill, /explicit `pinterest\.com` domain restriction/i);
+  assert.match(policy, /Every search call must be restricted to `pinterest\.com`/i);
+  assert.match(policy, /Never follow a Pin's outbound destination/i);
+  assert.match(contract, /non-null `original_source_url`/i);
+  assert.match(contract, /keep `original_source_url` null/i);
   assert.match(policy, /maximum of two search calls/i);
-  assert.match(policy, /Select exactly six distinct Pinterest candidates/i);
-  assert.match(skill, /Six successful visible results are required/i);
+  assert.match(policy, /user's explicit positive whole-number request or `6`/i);
+  assert.match(policy, /exactly `target_count` distinct Pinterest candidates/i);
+  assert.match(skill, /Use the user's explicit positive whole-number request when present; otherwise default to `6`/i);
+  assert.match(skill, /never silently cap or expand an explicit count/i);
+  assert.match(contract, /Resolve `target_count`.+default `6`/i);
+  assert.match(contract, /counts above the concurrency ceiling run in bounded waves/i);
   assert.match(contract, /each candidate is submitted at most once/i);
   assert.match(contract, /Do not[^.]*ask the user to choose[^.]*begin paid production/i);
+});
+
+test("specialist reference lanes stay source-isolated and exclude rejected providers", async () => {
+  const [commercial, commercialPolicy, award, awardPolicy, routing] = await Promise.all([
+    readPluginFile("skills/chany-commercial-photo-reference/SKILL.md"),
+    readPluginFile("skills/chany-commercial-photo-reference/references/source-policy.md"),
+    readPluginFile("skills/chany-award-ad-reference/SKILL.md"),
+    readPluginFile("skills/chany-award-ad-reference/references/source-policy.md"),
+    readPluginFile("skills/chany-studio/references/routing.md"),
+  ]);
+
+  assert.equal(frontmatterName(commercial, "commercial skill"), "chany-commercial-photo-reference");
+  assert.equal(frontmatterName(award, "award skill"), "chany-award-ad-reference");
+  assert.match(commercialPolicy, /only provider in this lane is Production Paradise/i);
+  assert.match(commercialPolicy, /restricted to `productionparadise\.com`/i);
+  assert.match(awardPolicy, /Ads of the World[\s\S]+D&AD[\s\S]+The One Show/i);
+  assert.match(awardPolicy, /Search or open only the approved domains/i);
+  for (const content of [commercial, commercialPolicy, award, awardPolicy, routing]) {
+    assert.match(content, /Stocksy/i);
+    assert.match(content, /ShotDeck/i);
+    assert.match(content, /Death to Stock/i);
+  }
+  for (const skill of [commercial, award]) {
+    assert.match(skill, /explicit positive whole number or default to `6`/i);
+    assert.match(skill, /actual images in the current conversation/i);
+    assert.match(skill, /L1[\s\S]+L2/i);
+  }
 });
 
 test("the Chany project skill detects Moai context but gates same-request execution by host capability", async () => {

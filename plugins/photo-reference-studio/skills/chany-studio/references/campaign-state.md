@@ -73,11 +73,24 @@ identity_authorities:
     duplicate_training_status: "not-checked | blocked | not-a-duplicate | not-applicable"
     paid_approval_id: ""
     status: "missing | draft | confirmed | invalidated | not-applicable"
+video_reference_packets:
+  - reference_id: ""
+    source_kind: "live-browser-observation | authorized-tab-capture | direct-media-url | local-file"
+    platform: ""
+    canonical_source_url: ""
+    capture_or_file_version: ""
+    content_hash: ""
+    observed_range: ""
+    evidence_state: "metadata_only | observed_excerpt | full_teardown_ready | capture_required | blocked"
+    external_upload_approved: false
+    teardown_id: ""
+    status: "draft | accepted | invalidated | blocked"
 campaign_video_manifests:
   - manifest_id: ""
     concept_version_id: ""
     approved_copy_version_id: ""
     authority_asset_version_ids: []
+    reference_packet_id: ""
     reference_teardown_id: ""
     continuity_strategy: ""
     paid_approval_id: ""
@@ -132,10 +145,39 @@ performance_reviews:
     diagnosis_hypothesis: ""
     next_single_variable: ""
     status: "draft | reviewed"
+reference_board:
+  source_lane: "pinterest | commercial-photo | award-ad"
+  target_count: 6
+  count_source: "default | user"
+  visible_count: 0
+  shortfall: 0
+  status: "not-requested | collecting | incomplete | complete"
 selected_reference:
-  provider: ""
+  provider: "Pinterest | Production Paradise | Ads of the World | D&AD | The One Show"
   source_url: ""
   visual_dna: {}
+creative_direction:
+  version_id: ""
+  selected_territory: ""
+  concept: ""
+  signature_device: ""
+  composition: ""
+  palette: []
+  lighting: ""
+  materials: []
+  typography: {}
+  copy_zone: ""
+  motion: ""
+  trend_fit:
+    signal: ""
+    reason: ""
+    translation: ""
+    reject_if: ""
+  preservation_locks: []
+  exclusions: []
+  channel_adaptations: []
+  acceptance: []
+  status: "missing | proposed | approved | invalidated"
 campaign_master: ""
 campaign_lock:
   idea: ""
@@ -186,13 +228,14 @@ publication_reviews:
 - Pass the approved industry direction packet first, then only its fields relevant to the next deliverable.
 - Pass original authority images, not merely an earlier generated approximation, whenever identity could change.
 - Pass only approved copy as locked copy. Keep draft copy visibly marked.
-- The reference handoff contains its source page and transferable Visual DNA, not reusable pixels or implied rights.
+- The reference handoff contains only its Pinterest Pin page and transferable Visual DNA, not an outbound destination, reusable pixels, or implied rights.
+- The creative-direction handoff contains the selected territory, durable concept device, explicit visual decisions, trend-fit rationale, preservation locks, exclusions, channel adaptations, and measurable acceptance criteria. Downstream skills may adapt format but may not silently replace it with a new trend or generic style.
 - The campaign-visual handoff contains the accepted master plus explicit campaign rules. Downstream skills may recompose for format but may not invent a new campaign direction.
-- The campaign-video handoff binds concept, copy, authorities, motion route, governing still, resolved first-frame role, and accepted clip for every scene. Every generated output points to its stable media-job record. The assembly handoff names those exact versions plus the source-master hash, target authority, verified final render, controlled variant set, and empty performance table.
+- The video-reference handoff binds the canonical page, capture or file version, hash, observed range, evidence state, upload approval, and teardown to one stable packet. A browser player observation never inherits the authority of a complete capture. The campaign-video handoff binds that packet plus concept, copy, authorities, motion route, governing still, resolved first-frame role, and accepted clip for every scene. Every generated output points to its stable media-job record. The assembly handoff names those exact versions plus the source-master hash, target authority, verified final render, controlled variant set, and empty performance table.
 - Keep copy provenance, failed production attempts, and observed performance attached to stable versions. A filename alone is not an asset identity, and a failed attempt is learning evidence rather than an accepted deliverable.
 - Each produced asset returns its effective ratio or duration, source/copy verification status, and observed unresolved defects.
 - Attribute optional Moai specialist results with the producer's exact installed name, reviewed-object version, sources and dates, findings, and unresolved questions; never collapse them into untraceable campaign truth.
-- Bind identity authority, consent, campaign-video and assembly manifests, media jobs, still-image model selection, paid-generation approval, performance review, and publication review to stable content and asset versions. A changed subject or authority input, consent scope, script, prompt, input role, identity or model, workflow, billable option, accepted clip, source master, delivery target, copy, crop, disclosure, offer, destination, or final render invalidates every affected record and reopens its approval or review.
+- Bind identity authority, consent, video-reference packet, campaign-video and assembly manifests, media jobs, still-image model selection, paid-generation approval, performance review, and publication review to stable content and asset versions. A changed reference capture range or file, subject or authority input, consent scope, script, prompt, input role, identity or model, workflow, billable option, accepted clip, source master, delivery target, copy, crop, disclosure, offer, destination, or final render invalidates every affected record and reopens its approval or review.
 - Do not expose temporary media handles, internal job IDs, or upload URLs to the user.
 
 ## Checkpoints

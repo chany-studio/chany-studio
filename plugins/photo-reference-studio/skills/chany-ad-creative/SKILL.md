@@ -9,6 +9,8 @@ Turn approved authority sources, industry direction, and campaign rules into pla
 
 Read [references/ad-formats.md](references/ad-formats.md) for objective, template, prompt, multi-channel, exact-copy, and QA rules.
 
+Read the shared [creative-direction system](../chany-studio/references/creative-direction-system.md) and [current creative signals](../chany-studio/references/current-creative-signals.md). Apply the named placement's current creative pattern—such as mobile hierarchy, safe zones, brand timing, modular asset rules, or CTA treatment—without converting platform guidance into a universal layout formula.
+
 Before generating or generatively editing a still-image plate, read and follow the shared [image model default](../chany-studio/references/image-generation-runtime.md). Use GPT Image 2 (`gpt-image-2`) unless a scoped override meets that contract. Execute and resume generated plates through `chany-media-production-loop`, which owns the stable job record, paid preflight, inline inspection, and bounded correction; keep this skill as the creative owner.
 
 ## Workflow

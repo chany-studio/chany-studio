@@ -9,6 +9,8 @@ Turn accepted clips into a measured, reproducible deliverable. Use only the requ
 
 Read [references/assembly-contract.md](references/assembly-contract.md) for the manifest, normalization, variant, verification, and performance-record contracts.
 
+Read the applicable typography, motion, safe-area, and channel-adaptation rules from the shared [creative-direction system](../chany-studio/references/creative-direction-system.md) and [current creative signals](../chany-studio/references/current-creative-signals.md). These may constrain implementation but may not authorize a new concept, edit rhythm, hook, or copy.
+
 When a platform or placement is named, read and apply the shared [platform publication adapter](../chany-studio/references/platform-publication-adapter.md) to resolve current delivery requirements. Route the exact final render to `chany-publication-review` whenever claims, offers, rights, disclosures, industry rules, or platform release gates apply. Assembly itself never uploads, publishes, activates, or spends.
 
 ## Workflow

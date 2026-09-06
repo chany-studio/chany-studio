@@ -1,0 +1,6 @@
+interface:
+  display_name: "Chany Creative Direction"
+  short_description: "초보자 요청을 전문 콘셉트와 제작 프롬프트로 전환"
+  default_prompt: "$chany-creative-direction으로 이 브리프를 브랜드에 맞는 세 가지 콘셉트로 발전시키고 가장 적합한 방향과 제작 프롬프트를 추천해줘."
+policy:
+  allow_implicit_invocation: true

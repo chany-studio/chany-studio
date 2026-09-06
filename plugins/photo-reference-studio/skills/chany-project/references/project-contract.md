@@ -41,7 +41,7 @@ Select the primary industry overlay before the production skills. Read `chany-st
 | cross-deliverable campaign coordination | `chany-studio` |
 | objective, audience, message, offer, channels, asset matrix | `chany-marketing-brief` |
 | cutout, white packshot, source cleanup | `chany-product-assets` |
-| exactly six visible Pinterest art-direction candidates | `chany-reference-board` |
+| six visible Pinterest art-direction candidates by default, or the user's explicit positive count | `chany-reference-board` |
 | staged master visual | `chany-campaign-visual` |
 | commerce detail-page modules | `chany-detail-page` |
 | static ads, promotion, posters, banners, channel variants | `chany-ad-creative` |

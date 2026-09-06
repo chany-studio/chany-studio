@@ -1,4 +1,4 @@
-# Chany's Studio 2.4.0
+# Chany's Studio 2.5.0
 
 Claude와 ChatGPT Work/Codex에서 함께 쓰는 광고 프로젝트 지침을 설정하고, 업종별 여정·증거·연출·컴플라이언스와 공통 제작 워크플로를 결합해 광고·홍보·마케팅·상세/랜딩·콘텐츠를 기획·제작합니다.
 
@@ -34,7 +34,11 @@ ChatGPT Work에서는 `@스킬명`, Codex에서는 `$스킬명`으로 명시 호
 | ChatGPT `@chany-project` · Codex `$chany-project` | 프로젝트 인터뷰, `AGENTS.md`, 브리프·상태와 런타임별 에이전트 설정 |
 | ChatGPT `@chany-marketing-brief` · Codex `$chany-marketing-brief` | 캠페인 브리프 또는 실제 성과 기반 다음 한 변수 실험 |
 | ChatGPT `@chany-product-assets` · Codex `$chany-product-assets` | 투명 누끼, 순백 팩샷과 원본 클린업 |
-| ChatGPT `@chany-reference-board` · Codex `$chany-reference-board` | 제한된 업종 검색 경로의 Pinterest 레퍼런스 6장 직접 표시 |
+| ChatGPT `@chany-reference-board` · Codex `$chany-reference-board` | Pinterest 레퍼런스 기본 6장 또는 요청 수량을 대화에 직접 표시 |
+| ChatGPT `@chany-commercial-photo-reference` · Codex `$chany-commercial-photo-reference` | Production Paradise 전문 광고·라이프스타일 사진 레퍼런스 |
+| ChatGPT `@chany-award-ad-reference` · Codex `$chany-award-ad-reference` | Ads of the World·D&AD·The One Show 수상 광고·캠페인 벤치마크 |
+| ChatGPT `@chany-creative-direction` · Codex `$chany-creative-direction` | 초보자 요청을 세 가지 브랜드 콘셉트, 추천 방향과 전문가 제작 프롬프트로 전환 |
+| ChatGPT `@chany-video-reference-ingest` · Codex `$chany-video-reference-ingest` | YouTube·Instagram 등 영상 페이지를 사용자 허가 브라우저 캡처나 첨부 파일로 분석 준비 |
 | ChatGPT `@chany-campaign-visual` · Codex `$chany-campaign-visual` | 연출컷과 마스터 키비주얼 |
 | ChatGPT `@chany-detail-page` · Codex `$chany-detail-page` | 상세/랜딩페이지 이미지 모듈 |
 | ChatGPT `@chany-ad-creative` · Codex `$chany-ad-creative` | 정적 광고, 프로모션 포스터, 배너와 채널 변형 |
@@ -89,12 +93,14 @@ Moai의 `project`를 먼저 실행한 뒤 Chany 설정을 이어가는 수동 2�
 1. 제품, 공간, 차량, UI, 프로그램, 사람 등 업종의 사실 기준이 되는 원본을 제공합니다.
 2. 목표, 채널, 필요한 산출물을 말하면 업종 오버레이가 `industry direction packet`을 만듭니다.
 3. 정확히 들어가야 하는 가격·할인·기간·CTA, 증거와 법적 문구를 텍스트로 제공합니다.
-4. 로컬 영상·프레임·배치 작업이 있으면 먼저 현재 환경의 실제 도구와 승인 문구의 한글 글리프를 점검합니다.
-5. Higgsfield 작업이 있으면 호스트의 로그인 화면에서 인증합니다.
-6. 여러 유료 생성이 필요하면 라이브 작업·입력 역할·비용·산출물 수와 승인 지점을 확인합니다.
-7. 공통 제작 스킬이 키비주얼, 광고, 상세/랜딩과 캠페인 영상 사양을 만들고, `chany-media-production-loop`가 승인된 이미지·영상 생성 작업을 안정적인 ID로 실행·검수합니다.
-8. 캠페인 영상 클립은 모두 승인된 뒤 지정 규격으로 조립하거나 승인 구간만 교체하고, 요청 시 훅 하나만 바꾼 변형과 빈 성과 입력표를 만듭니다.
-9. 실제 성과가 제공되면 추적·비교 가능성·표본을 확인한 뒤 다음 라운드의 한 변수만 정합니다.
+4. 영상 레퍼런스 페이지가 있으면 사용자가 호출한 브라우저 확장 캡처 또는 첨부 파일로 관찰 범위를 먼저 고정합니다.
+5. 로컬 영상·프레임·배치 작업이 있으면 먼저 현재 환경의 실제 도구와 승인 문구의 한글 글리프를 점검합니다.
+6. Higgsfield 작업이 있으면 호스트의 로그인 화면에서 인증합니다.
+7. 여러 유료 생성이 필요하면 라이브 작업·입력 역할·비용·산출물 수와 승인 지점을 확인합니다.
+8. `chany-creative-direction`이 일반 언어의 요청을 브랜드 코어·감성 에디토리얼·트렌드 포워드 세 방향으로 발전시키고 하나를 추천한 뒤, 구도·조명·재질·타이포·보존·제외·검수 조건이 명확한 프롬프트로 컴파일합니다.
+9. 공통 제작 스킬이 키비주얼, 광고, 상세/랜딩과 캠페인 영상 사양을 승인 방향에서 만들고, `chany-media-production-loop`가 승인된 이미지·영상 생성 작업을 안정적인 ID로 실행·검수합니다.
+10. 캠페인 영상 클립은 모두 승인된 뒤 지정 규격으로 조립하거나 승인 구간만 교체하고, 요청 시 훅 하나만 바꾼 변형과 빈 성과 입력표를 만듭니다.
+11. 실제 성과가 제공되면 추적·비교 가능성·표본을 확인한 뒤 다음 라운드의 한 변수만 정합니다.
 
 아래에서 사용하는 플랫폼의 첫 줄 하나를 선택하고 나머지 요청을 이어 붙입니다.
 
@@ -121,11 +127,17 @@ Codex: $chany-publication-review로 최종 광고의 정확한 카피·오퍼·�
 ## 레퍼런스와 원본
 
 - 승인 원본과 사실 자료는 제품, 음식, 차량, 공간, UI, 프로그램, 모델, 의류와 카피의 정체성을 결정합니다.
-- Pinterest에는 업종 taxonomy의 L1 광역 카테고리 1개를 먼저 검색하고, 필요할 때만 같은 경로의 직접 L2 하위 카테고리 0~1개를 추가합니다.
+- 범용 비주얼 보드는 `chany-reference-board`의 Pinterest, 전문 광고·라이프스타일 사진은 `chany-commercial-photo-reference`의 Production Paradise, 수상 광고·캠페인 사례는 `chany-award-ad-reference`의 Ads of the World·D&AD·The One Show로 분리합니다.
+- 한 보드는 한 출처 경로만 사용하며 후보가 부족해도 다른 경로로 보충하지 않습니다. Stocksy, ShotDeck, Death to Stock은 허용하지 않습니다. Pinterest용 `reference-preview` 연결은 계속 공개 Pin 페이지와 `i.pinimg.com`만 받습니다.
+- 기본 표시 수량은 6장이지만 사용자가 양의 정수로 장수를 지정하면 정확히 그 수량을 사용합니다. 허용된 두 검색에서 후보가 부족하면 수량을 조용히 줄이지 않고 미완성으로 보고합니다.
+- 모든 레퍼런스 경로는 업종 taxonomy의 L1 광역 카테고리 1개를 먼저 검색하고, 필요할 때만 같은 경로의 직접 L2 하위 카테고리 0~1개를 추가합니다.
 - 한 작업에서 여러 L2 형제나 세 번째 의미 검색어를 쓰지 않으며 스타일·렌즈·지역·색·무드·플랫폼 modifier도 검색어에 붙이지 않습니다.
 - 검색 결과는 복제하지 않고 구도, 조명, 배경, 재질, 색 관계와 정보 위계를 분석하는 방향 자료로 사용합니다. 분석어를 새 검색어로 확장하지 않습니다.
-- `chany-reference-board`는 Pinterest 후보 6장을 링크나 HTML이 아닌 현재 대화의 실제 이미지로 보여줍니다.
-- Claude Cowork의 직접 미리보기에는 Node.js 18 이상과 로컬 `reference-preview` 연결이 필요합니다.
+- 각 레퍼런스 스킬은 후보를 기본 6장 또는 요청 수량만큼 링크나 HTML이 아닌 현재 대화의 실제 이미지로 보여줍니다.
+- Claude Cowork의 Pinterest 직접 미리보기에는 Node.js 18 이상과 로컬 `reference-preview` 연결이 필요합니다. 다른 두 경로는 호스트가 제공하는 공개 이미지 표시 기능을 사용하며 Pinterest 전용 연결에 URL을 보내지 않습니다.
+- 최신 트렌드는 검색어에 넣지 않고 후보 선별 뒤 브랜드 적합성을 평가해 한 가지 중심 장치나 보조 포인트로만 번역합니다. 플랫폼 규격과 프롬프팅은 공식 문서로 확인하되 그 예시 이미지는 레퍼런스로 사용하지 않습니다.
+- YouTube·Instagram 등 영상 페이지는 다운로드하지 않습니다. 사용자가 브라우저에서 직접 호출한 활성 탭 캡처, 실제 미디어 URL로 확인된 파일 또는 첨부한 로컬 영상만 정밀 분석하며, 화면에서 일부만 관찰했다면 그 구간까지만 분석했다고 표시합니다.
+- 영상 레퍼런스에서는 훅·비트 길이·공개 순서·카메라와 사운드 기능만 새 제품에 맞게 재설계합니다. 원 영상의 인물·제품·카피·음악·브랜드·고유 시퀀스나 캡처 픽셀은 새 광고 자산으로 재사용하지 않습니다.
 
 ## 이미지 생성 기본 모델과 Higgsfield 경계
 
@@ -142,7 +154,7 @@ Codex: $chany-publication-review로 최종 광고의 정확한 카피·오퍼·�
 
 ## 연결과 데이터
 
-Higgsfield 기능 사용 시 선택한 원본과 레퍼런스가 Higgsfield로 전송될 수 있습니다. 로컬 `reference-preview`는 Pinterest의 공개 미리보기만 불러옵니다. 비밀번호, API 키, 액세스 토큰이나 인증 코드는 대화에 입력하지 말고 호스트의 인증 화면을 사용하세요.
+Higgsfield 기능 사용 시 선택한 원본과 레퍼런스가 Higgsfield로 전송될 수 있습니다. 브라우저 확장 캡처는 로컬 저장이 기본이며 Higgsfield나 다른 외부 서비스로 보내기 전에 별도 업로드 승인을 받습니다. 로컬 `reference-preview`는 Pinterest의 공개 미리보기만 불러옵니다. 비밀번호, API 키, 액세스 토큰이나 인증 코드는 대화에 입력하지 말고 호스트의 인증 화면을 사용하세요.
 
 공식 설치·사용설명서: https://jolly-phlox-79c.notion.site/Chany-s-Studio-3c783e9464668140b794ee076be24406
 

@@ -105,7 +105,7 @@ export const TOOL_DEFINITION = {
   name: TOOL_NAME,
   title: "Fetch Pinterest Reference Preview Image",
   description:
-    "Fetch one public Pinterest preview and return it as an inline MCP image with Pinterest-scoped provenance. Call once per finalist. Image-to-Pin mapping remains caller-supplied and must be verified by discovery. This read-only tool does not search, authenticate, scrape protected pages, or fetch full-resolution assets.",
+    "Fetch one public Pinterest preview and return it as an inline MCP image with Pinterest-scoped provenance. Call once per finalist. Image-to-Pin mapping remains caller-supplied and must be verified by discovery. This read-only tool accepts only Pinterest Pin pages and i.pinimg.com previews; it never follows outbound Pin destinations, searches other providers, authenticates, scrapes protected pages, or fetches full-resolution assets.",
   inputSchema: {
     type: "object",
     additionalProperties: false,
@@ -120,6 +120,8 @@ export const TOOL_DEFINITION = {
       preview_image_url: { type: "string", format: "uri", maxLength: 1024 },
       source_url: { type: "string", format: "uri", maxLength: 1024 },
       original_source_url: {
+        description:
+          "Disabled compatibility field. Omit it or pass null; outbound Pin destinations are never accepted or returned.",
         anyOf: [
           { type: "string", format: "uri", maxLength: 1024 },
           { type: "null" },
@@ -281,11 +283,10 @@ export function validateArguments(args) {
   const previewUrl = parseHttpsUrl(args.preview_image_url, "preview_image_url");
   const fetchedPreviewUrl = normalizePreviewUrl(previewUrl, provider);
 
-  let originalSourceUrl;
-  if (args.original_source_url === null) {
-    originalSourceUrl = null;
-  } else if (args.original_source_url !== undefined) {
-    originalSourceUrl = parseHttpsUrl(args.original_source_url, "original_source_url").href;
+  if (args.original_source_url !== undefined && args.original_source_url !== null) {
+    throw new UserFacingError(
+      "original_source_url is disabled; the Pinterest Pin page is the only allowed provenance.",
+    );
   }
 
   return {
@@ -296,7 +297,7 @@ export function validateArguments(args) {
     fetched_preview_url: fetchedPreviewUrl.href,
     provenance_mapping_verified: false,
     source_url: sourceUrl.href,
-    original_source_url: originalSourceUrl,
+    original_source_url: null,
     creator: boundedString(args.creator, "creator", { max: 300 }),
     query: boundedString(args.query, "query", { max: 300 }),
     fit_note: boundedString(args.fit_note, "fit_note", { max: 600 }),
@@ -707,9 +708,6 @@ function captionFor(candidate) {
     "Image-to-Pin mapping: supplied by discovery; not verified by preview fetch",
   ];
   if (candidate.title) lines.splice(1, 0, `Title: ${candidate.title}`);
-  if (candidate.original_source_url) {
-    lines.push(`Reported outbound source: ${candidate.original_source_url}`);
-  }
   if (candidate.creator) lines.push(`Creator: ${candidate.creator}`);
   if (candidate.query) lines.push(`Query: ${candidate.query}`);
   if (candidate.fit_note) lines.push(`Fit: ${candidate.fit_note}`);
@@ -799,7 +797,7 @@ export function createProtocolHandler(dependencies = {}) {
             capabilities: { tools: {} },
             serverInfo: { name: SERVER_NAME, version: "1.2.0" },
             instructions:
-              "Call fetch_reference_preview_image once for each of the six shortlisted Pinterest finalists.",
+              "Call fetch_reference_preview_image once for each shortlisted Pinterest finalist; the workflow defaults to six but honors an explicit positive user-requested count.",
           },
         };
       }

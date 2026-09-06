@@ -14,6 +14,8 @@ Before composing a paid call:
 4. use model- or workflow-specific prompt structure when the live documentation requires it; do not force one universal prompt formula across image, campaign video, avatar, voice, or editing systems
 5. if the required capability exists only in a website interface, prepare an exact handoff and state that the connected runtime cannot execute it
 
+For a web-media import operation, distinguish an actual HTTPS media-file response from a YouTube, Instagram, or other platform page. Never pass a post, watch, Reel, feed, login, redirect, or reconstructed stream URL as though it were a direct media file. Route page links through `chany-video-reference-ingest`; external import of a confirmed direct media file requires separate upload approval and must follow the live connector's current type and size limits.
+
 Except for the deliberate `gpt-image-2` still-image default defined in the shared image contract, do not hardcode or silently substitute model identifiers, templates, aspect ratios, durations, counts, option values, or prices. A server-selected default must be reported as a resolved value, not represented as the user's original choice or as GPT Image 2 without evidence.
 
 ## Cost preflight and approval

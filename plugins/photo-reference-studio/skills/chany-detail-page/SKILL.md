@@ -9,6 +9,8 @@ Build only the requested image modules for a product-detail or conversion landin
 
 Read [references/detail-page-system.md](references/detail-page-system.md) for module selection, prompts, family locks, and QA.
 
+Read the shared [creative-direction system](../chany-studio/references/creative-direction-system.md) and [current creative signals](../chany-studio/references/current-creative-signals.md). In `produce` mode, obtain an approved creative direction before paid generation; adapt it to the page journey and evidence hierarchy rather than applying a trend uniformly to every module.
+
 Before generating or generatively editing still-image modules, read and follow the shared [image model default](../chany-studio/references/image-generation-runtime.md). Use GPT Image 2 (`gpt-image-2`) unless a scoped override meets that contract. Execute and resume generated modules through `chany-media-production-loop`, which owns the stable job record, paid preflight, inline inspection, and bounded correction; keep this skill as the page owner.
 
 ## Workflow
