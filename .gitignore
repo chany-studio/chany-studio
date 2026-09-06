@@ -3,3 +3,6 @@
 .env.*
 !.env.example
 *.log
+
+# Local Moai runtime state
+.moai/
