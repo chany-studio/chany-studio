@@ -145,6 +145,23 @@ performance_reviews:
     diagnosis_hypothesis: ""
     next_single_variable: ""
     status: "draft | reviewed"
+conversion_brief:
+  version_id: ""
+  insight_version_id: ""
+  reference_packet_ids: []
+  claim_ledger_version_id: ""
+  creative_direction_version_id: ""
+  copy_version_id: ""
+  business_goal: ""
+  conversion_event: ""
+  primary_metric: ""
+  destination_check: "unverified | matched | mismatch"
+  ad_unit_ids: []
+  status: "draft | approved | invalidated | not-applicable"
+ad_reference_packets: []
+customer_insight_packets: []
+ad_copy_packets: []
+carousel_manifests: []
 reference_board:
   source_lane: "pinterest | commercial-photo | award-ad"
   target_count: 6
@@ -228,7 +245,8 @@ publication_reviews:
 - Pass the approved industry direction packet first, then only its fields relevant to the next deliverable.
 - Pass original authority images, not merely an earlier generated approximation, whenever identity could change.
 - Pass only approved copy as locked copy. Keep draft copy visibly marked.
-- The reference handoff contains only its Pinterest Pin page and transferable Visual DNA, not an outbound destination, reusable pixels, or implied rights.
+- Each static-reference handoff preserves its own lane's canonical page and transferable Visual DNA, not outbound destinations, reusable pixels or implied rights. Pinterest remains Pin-only. Meta `ad_reference_packets` are separate records with inspected creative/copy, evidence limits and adaptation maps; they do not become photography references or verified campaign results.
+- Conversion work binds the compact brief, customer insight, ad reference packets, canonical claim ledger, copy and direction versions. Carousel manifests bind complete card order/count, per-card claims, accepted asset versions, accompanying ad copy and destination status. A changed offer, insight, selected reference or copy invalidates affected descendants and reviews, not unrelated accepted siblings. Field definitions live in `performance-ad-contract.md`, `chany-meta-ad-research/references/meta-ad-research.md` and `chany-ad-creative/references/carousel-ad-contract.md`; do not invent parallel schemas.
 - The creative-direction handoff contains the selected territory, durable concept device, explicit visual decisions, trend-fit rationale, preservation locks, exclusions, channel adaptations, and measurable acceptance criteria. Downstream skills may adapt format but may not silently replace it with a new trend or generic style.
 - The campaign-visual handoff contains the accepted master plus explicit campaign rules. Downstream skills may recompose for format but may not invent a new campaign direction.
 - The video-reference handoff binds the canonical page, capture or file version, hash, observed range, evidence state, upload approval, and teardown to one stable packet. A browser player observation never inherits the authority of a complete capture. The campaign-video handoff binds that packet plus concept, copy, authorities, motion route, governing still, resolved first-frame role, and accepted clip for every scene. Every generated output points to its stable media-job record. The assembly handoff names those exact versions plus the source-master hash, target authority, verified final render, controlled variant set, and empty performance table.

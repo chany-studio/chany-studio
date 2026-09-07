@@ -1,5 +1,7 @@
 # Static Advertising and Promotion Formats
 
+Single-image prompts below produce one asset. For a requested carousel, use [carousel-ad-contract.md](carousel-ad-contract.md) to produce one ad unit containing all approved cards and its platform copy; do not apply the single-image output count to the whole set.
+
 Before layout, import the canonical industry packet's `message_job`, `proof_objects`, `claim_ledger`, `must_capture`, `directing_rules`, `required_disclosures`, `prohibited_or_high_risk`, and `human_review_gate`. Preserve the exact field meanings across channel variants so cropping or copy compression cannot remove evidence, qualifications, disclosures, or publication review.
 
 ## Objective and message

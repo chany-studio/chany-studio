@@ -1,8 +1,8 @@
 {
   "name": "photo-reference-studio",
   "displayName": "Chany's Studio",
-  "version": "2.5.0",
-  "description": "Chany's cross-runtime advertising studio with source-isolated visual references, user-authorized browser-capture intake for video references, expert creative direction, current trend-aware GPT Image 2 prompting, industry overlays, safe media production, publication review, and Moai chaining.",
+  "version": "2.6.0",
+  "description": "Chany's Claude and ChatGPT Work/Codex advertising studio: JTBD-led conversion video, single-image and carousel ads, official Meta Ad Library research, source-isolated photo references, GPT Image 2 stills, bounded production, publication review and optional MoAI specialists.",
   "author": {
     "name": "Chany",
     "url": "https://github.com/chany-studio"
@@ -11,6 +11,9 @@
   "repository": "https://github.com/chany-studio/chany-studio",
   "license": "MIT",
   "keywords": [
+    "jtbd",
+    "meta-ad-library",
+    "conversion-carousel",
     "industry-marketing",
     "product-photography",
     "food-photography",

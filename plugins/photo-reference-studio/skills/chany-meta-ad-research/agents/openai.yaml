@@ -1,0 +1,6 @@
+interface:
+  display_name: "Chany Meta Ad Research"
+  short_description: "Analyze Meta ad references for conversion-focused creative"
+  default_prompt: "Use $chany-meta-ad-research to find relevant Meta video, image and carousel ads and explain their hooks, design, copy and CTA without assuming their performance."
+policy:
+  allow_implicit_invocation: true

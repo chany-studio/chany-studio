@@ -1,11 +1,15 @@
 ---
 name: chany-campaign-video
-description: Plan and create evidence-led product commercials, brand films, promotional motion, demonstrations, and performance-ad video with approved stills and measured QA. Use for concept-led campaign video; not for casual creator-template production, assembly-only work, or static ads.
+description: Plan and create product or service commercials, reference-to-ad adaptations and purchase-oriented performance videos (전환 광고 영상), with JTBD, persuasive beats, approved stills and measured QA. Also supports brand films and promotion; not casual creator templates, assembly-only work or static ads.
 ---
 
 # Chany Campaign Video
 
 Create a concept-led campaign video without sacrificing product, service, place, interface, vehicle, event, or brand truth. Keep the user's approved evidence and copy authoritative, and make each scene perform a named marketing job.
+
+For conversion or reference + product/service → video, read the shared [performance-ad contract](../chany-studio/references/performance-ad-contract.md) and [thirteen-role adaptation](../chany-studio/references/thirteen-role-adaptation.md). This skill remains the output owner; reuse customer/Meta research packets and the selected direction rather than adding a second reference-to-video orchestrator. Use `chany-jtbd-persona` and `chany-meta-ad-research` only for missing analysis. Pinterest is not a video reference route.
+
+Bind `conversion_brief_version_id`, `insight_version_id` and `ad_reference_packet_ids` to the existing video concept; its `approved_copy_version_id` references the conversion brief's approved copy, not a second copy record. Keep the original `reference_packet_id` for the accepted video-intake packet. Build a compact source beat/page → general mechanism → our original scene map. Each scene retains the existing `usp_role`, `message_rank` and claim links, plus the relevant job and persuasion roles. Keep proposed timing distinct from observed reference timing, cover the target continuously, and verify narration/caption reading time. No mandatory thirteen scenes or fixed 25/50/25 timing split. Include primary ad text, platform headline/description/CTA and destination alongside the final video when this is an ad-package request.
 
 Read [references/campaign-video-contract.md](references/campaign-video-contract.md) for the concept packet, scene schema, still-first cost ladder, motion decision, attempt log, and handoff contract. When the user supplies a YouTube, Instagram, or other video-page link, browser capture, direct media URL, or local reference file, first obtain an accepted `video_reference_packet` through `chany-video-reference-ingest`, then read the shared [video reference teardown](../chany-studio/references/video-reference-teardown.md). Analyze-only work stops at the teardown unless the user also requested a new concept or production.
 

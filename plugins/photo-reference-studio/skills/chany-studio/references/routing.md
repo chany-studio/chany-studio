@@ -30,6 +30,8 @@ Do not add two overlays merely because two subjects appear in one scene. Use a s
 |---|---|---|
 | initialize or update an advertising-production project | `chany-project` | shared project instructions, brief, state, and runtime-specific delegation configuration |
 | campaign strategy, launch plan, message hierarchy, asset plan | `chany-marketing-brief` | approved brief and asset matrix |
+| customer purchase motivations, JTBD, persona or buying barriers | `chany-jtbd-persona` | evidence-labeled customer insight packet, not final copy |
+| Meta Ad Library research for video, single-image or carousel ads | `chany-meta-ad-research` | observed ad mechanisms, full copy-field analysis and original-adaptation map, not assumed winners |
 | transparent cutout, background removal, white packshot, source cleanup | `chany-product-assets` | reusable source asset |
 | broad visual references or a Pinterest moodboard | `chany-reference-board` | six visible Pinterest candidates by default, or the user's explicit positive count, with Visual DNA |
 | high-end commercial, advertising, or lifestyle photography references | `chany-commercial-photo-reference` | visible Production Paradise references with creator provenance and transferable photographic craft |
@@ -37,7 +39,7 @@ Do not add two overlays merely because two subjects appear in one scene. Use a s
 | vague visual request, concept territories, trend translation, or expert prompt direction | `chany-creative-direction` | three brand-specific territories, one recommendation, and an approved creative-direction packet |
 | YouTube, Instagram, or other video reference link; browser capture; reference-video structure analysis | `chany-video-reference-ingest` | capability-labeled capture packet and, when inspectable, a non-copying beat table |
 | staged subject or experience image, hero art, campaign key visual | `chany-campaign-visual` | one staged image or accepted master visual |
-| static ad, sale or event poster, feed creative, story creative, banner | `chany-ad-creative` | one placement asset or named channel set |
+| static ad, conversion carousel, sale or event poster, feed creative, story creative, banner | `chany-ad-creative` | single-image or ordered card assets plus accompanying ad copy |
 | e-commerce detail page, PDP, service/booking/launch landing modules | `chany-detail-page` | named evidence-led page modules |
 | executable, coded, or motion-rich landing experience | capability-gated `moai-designer:design-landing-motion` handoff when installed and callable | separate executable experience, then exact-version publication review |
 | inpaint, remove or replace one region, copy repair, “only change this” | `chany-image-edit` | one bounded revision |
@@ -52,8 +54,10 @@ Do not add two overlays merely because two subjects appear in one scene. Use a s
 
 - A request to configure the working project uses `chany-project`. A single known production output uses its owner directly. Use `chany-studio` when two or more production rows are required or when the user asks for a complete campaign.
 - `프롬프트만` is a mode of the owner skill. It does not automatically route to marketing strategy.
-- A reference plus one final output keeps the output skill as owner. Select exactly one reference lane for the requested job, then pass its selected source page and Visual DNA to `chany-creative-direction` before production.
+- A reference plus one final output keeps the output skill as owner. Select exactly one reference lane per research board, then pass its selected source and analysis to the production owner. Conversion work follows [performance-ad-contract.md](performance-ad-contract.md); Meta ad analysis may supply design direction directly without a second Pinterest board. Use creative-direction selection only once unless the approved direction changes.
 - Reference providers are isolated by skill: `chany-reference-board` may use only public Pinterest Pin pages and `i.pinimg.com`; `chany-commercial-photo-reference` may use only public Production Paradise pages; `chany-award-ad-reference` may use only public Ads of the World, D&AD, and The One Show work pages. Never cross-fill a weak lane with another provider. Stocksy, ShotDeck, and Death to Stock are not permitted reference sources.
+- `chany-meta-ad-research` is a separate official Meta Ad Library lane for video, image and carousel advertising, not a relaxation of those photography allowlists. Pinterest is for still photographic/style references, never video intake. User-supplied video files/links use `chany-video-reference-ingest`; other supplied reference files may be inspected directly without broadening discovery sources.
+- Public-library search is not Ads Manager reporting or operation. Requested performance data analysis belongs to `chany-marketing-brief`, optionally with a callable MoAI analyzer. Account writes, budgets and activation remain separately approved actions, not part of creative production.
 - A product-page hero that sits inside a scrolling commerce page belongs to `chany-detail-page`. A standalone paid-media or social placement belongs to `chany-ad-creative`.
 - Static images, copy, and module plans for a landing page belong to `chany-detail-page`. Executable or motion-rich landing implementation is a separate capability-gated handoff to `moai-designer:design-landing-motion` when actually installed and callable; if it is unavailable, return the completed static plan and state that executable implementation was not performed.
 - A text-free master composition belongs to `chany-campaign-visual`. A finished layout with offer, CTA, legal copy, or placement constraints belongs to `chany-ad-creative`.
@@ -64,6 +68,8 @@ Do not add two overlays merely because two subjects appear in one scene. Use a s
 - A new reference, offer, core composition, or campaign idea is not a local edit. Return it to the original production owner.
 
 ## Campaign sequencing
+
+For conversion-ad requests, use the smaller sequence in [performance-ad-contract.md](performance-ad-contract.md) instead of requiring every general stage below. Single-image and carousel share the static owner; video has its own production owner. Neither JTBD nor thirteen persuasion roles introduces a second campaign orchestrator.
 
 For a requested campaign family, propose only the needed stages:
 

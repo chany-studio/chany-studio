@@ -15,6 +15,8 @@ If a Chany industry skill applies, consume its industry direction packet before 
 
 ## Essential rules
 
+- For conversion creative, use the shared [performance-ad contract](../chany-studio/references/performance-ad-contract.md). Reuse its compact conversion brief and customer/reference packets instead of duplicating interviews. Actual Ads Manager data belongs to this skill's performance-review mode; public Meta Library observations alone cannot establish winners. Read [MoAI chaining](../chany-studio/references/moai-specialist-chain.md) for optional specialist analysis, never mandatory account connection.
+
 - Separate facts supplied by the user or visible in authoritative sources from proposals and draft copy.
 - Never invent a discount, price, date, availability, outcome, product or service benefit, comparison, certification, urgency, testimonial, safety statement, or legal statement.
 - Ask one concise question only when a missing choice would materially alter the campaign, such as the primary objective, audience, offer, channel, exact approved copy, or required asset list.

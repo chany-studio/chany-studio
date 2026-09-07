@@ -1,8 +1,10 @@
-# Chany's Studio 2.5.0
+# Chany's Studio 2.6.0
 
 Claude와 ChatGPT Work/Codex에서 함께 쓰는 광고 프로젝트 지침을 설정하고, 업종별 여정·증거·연출·컴플라이언스와 공통 제작 워크플로를 결합해 광고·홍보·마케팅·상세/랜딩·콘텐츠를 기획·제작합니다.
 
 ## 2축 스킬 구조
+
+2.6.0은 구매 동기 분석과 Meta 광고 벤치마킹을 영상·단일 이미지·캐러셀 제작에 연결합니다. 전체 광고 본문·제목·CTA와 연결 목적지 검수도 포함합니다. MoAI 없이 핵심 작업을 진행하며 필요한 전문 스킬만 조건부 연결합니다. [사용법과 프롬프트 예시](../../docs/PERFORMANCE-ADS.md).
 
 ChatGPT Work에서는 `@스킬명`, Codex에서는 `$스킬명`으로 명시 호출합니다. Claude Cowork에서는 `/project-studio`를 제외한 전문 작업을 자연어로 요청하면 설명에 맞는 스킬이 자동 선택됩니다.
 
@@ -33,6 +35,8 @@ ChatGPT Work에서는 `@스킬명`, Codex에서는 `$스킬명`으로 명시 호
 | ChatGPT `@chany-studio` · Codex `$chany-studio` | 업종 오버레이와 여러 결과물을 연결하는 캠페인 라우터 |
 | ChatGPT `@chany-project` · Codex `$chany-project` | 프로젝트 인터뷰, `AGENTS.md`, 브리프·상태와 런타임별 에이전트 설정 |
 | ChatGPT `@chany-marketing-brief` · Codex `$chany-marketing-brief` | 캠페인 브리프 또는 실제 성과 기반 다음 한 변수 실험 |
+| ChatGPT `@chany-jtbd-persona` · Codex `$chany-jtbd-persona` | 제품·서비스 구매 동기·장벽과 근거 기반 고객 분석 |
+| ChatGPT `@chany-meta-ad-research` · Codex `$chany-meta-ad-research` | Meta 광고 레퍼런스의 디자인·훅·카피·CTA 분석 |
 | ChatGPT `@chany-product-assets` · Codex `$chany-product-assets` | 투명 누끼, 순백 팩샷과 원본 클린업 |
 | ChatGPT `@chany-reference-board` · Codex `$chany-reference-board` | Pinterest 레퍼런스 기본 6장 또는 요청 수량을 대화에 직접 표시 |
 | ChatGPT `@chany-commercial-photo-reference` · Codex `$chany-commercial-photo-reference` | Production Paradise 전문 광고·라이프스타일 사진 레퍼런스 |
@@ -41,7 +45,7 @@ ChatGPT Work에서는 `@스킬명`, Codex에서는 `$스킬명`으로 명시 호
 | ChatGPT `@chany-video-reference-ingest` · Codex `$chany-video-reference-ingest` | YouTube·Instagram 등 영상 페이지를 사용자 허가 브라우저 캡처나 첨부 파일로 분석 준비 |
 | ChatGPT `@chany-campaign-visual` · Codex `$chany-campaign-visual` | 연출컷과 마스터 키비주얼 |
 | ChatGPT `@chany-detail-page` · Codex `$chany-detail-page` | 상세/랜딩페이지 이미지 모듈 |
-| ChatGPT `@chany-ad-creative` · Codex `$chany-ad-creative` | 정적 광고, 프로모션 포스터, 배너와 채널 변형 |
+| ChatGPT `@chany-ad-creative` · Codex `$chany-ad-creative` | 단일 이미지·캐러셀 광고, 게시물 카피·CTA, 포스터·배너 |
 | ChatGPT `@chany-image-edit` · Codex `$chany-image-edit` | 제한된 부분 수정과 복원 |
 | ChatGPT `@chany-model-fashion` · Codex `$chany-model-fashion` | 성인 모델과 원본 의류 착장 |
 | ChatGPT `@chany-campaign-video` · Codex `$chany-campaign-video` | 제품 광고·브랜드 필름·프로모션 영상의 콘셉트, 기준 스틸, 생성과 검수 |

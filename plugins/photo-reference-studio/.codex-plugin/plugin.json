@@ -1,7 +1,7 @@
 {
   "name": "photo-reference-studio",
-  "version": "2.5.0+codex.20260906080640",
-  "description": "Chany's cross-runtime advertising studio with source-isolated visual references, user-authorized browser-capture intake for video references, expert creative direction, current trend-aware GPT Image 2 prompting, industry overlays, safe media production, publication review, and Moai chaining.",
+  "version": "2.6.0+codex.20260907105414",
+  "description": "Chany's Claude and ChatGPT Work/Codex advertising studio: JTBD-led conversion video, single-image and carousel ads, official Meta Ad Library research, source-isolated photo references, GPT Image 2 stills, bounded production, publication review and optional MoAI specialists.",
   "author": {
     "name": "Chany",
     "url": "https://github.com/chany-studio"
@@ -10,6 +10,9 @@
   "repository": "https://github.com/chany-studio/chany-studio",
   "license": "MIT",
   "keywords": [
+    "JTBD",
+    "Meta Ad Library",
+    "conversion carousel",
     "industry marketing",
     "product photography",
     "marketing campaign",
@@ -56,6 +59,9 @@
     "privacyPolicyURL": "https://jolly-phlox-79c.notion.site/Chany-s-Studio-3c783e94646681089a5dc4694a045cb3",
     "termsOfServiceURL": "https://jolly-phlox-79c.notion.site/Chany-s-Studio-3c783e9464668136822bf7f00201f429",
     "capabilities": [
+      "JTBD-led product and service conversion creative without mandatory MoAI",
+      "Official Meta Ad Library research for video, single-image and carousel ads with performance-evidence limits",
+      "Conversion carousel card manifests, accompanying ad copy and destination-message checks",
       "Cross-runtime advertising project initialization",
       "Native Claude question-card interview and Chany-file approval",
       "Automatic Moai-context detection with capability-gated project chaining",

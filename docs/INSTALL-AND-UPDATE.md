@@ -55,10 +55,10 @@ chany-studio/chany-studio
 
 - 표시 이름: `Chany's Studio`
 - 내부 식별자: `photo-reference-studio`
-- 버전: `2.5.0`
+- 버전: `2.6.0`
 - 대표 Skill: `chany-studio`
 - 프로젝트 Skill: `chany-project`
-- 전문 Skill: 마케팅 브리프, 기본 6장 또는 요청 수량의 Pinterest 레퍼런스, 전문 크리에이티브 디렉션(`chany-creative-direction`), 브라우저 캡처 영상 레퍼런스 준비(`chany-video-reference-ingest`), 제품 에셋, 키비주얼, 상세페이지, 광고, 편집, 패션, 콘셉트형 캠페인 영상(`chany-campaign-video`), 미디어 생성 실행·재개(`chany-media-production-loop`), 영상 조립·컷 교체(`chany-video-assembly`), 환경 점검(`chany-preflight`), 게시 전 검수(`chany-publication-review`)
+- 전문 Skill: 마케팅 브리프, JTBD 고객 분석(`chany-jtbd-persona`), Meta 광고 리서치(`chany-meta-ad-research`), 기본 6장 또는 요청 수량의 Pinterest 레퍼런스, 전문 크리에이티브 디렉션(`chany-creative-direction`), 브라우저 캡처 영상 레퍼런스 준비(`chany-video-reference-ingest`), 제품 에셋, 키비주얼, 상세페이지, 광고, 편집, 패션, 콘셉트형 캠페인 영상(`chany-campaign-video`), 미디어 생성 실행·재개(`chany-media-production-loop`), 영상 조립·컷 교체(`chany-video-assembly`), 환경 점검(`chany-preflight`), 게시 전 검수(`chany-publication-review`)
 - 업종 Skill: 전문 서비스, 교육, 헬스케어, 식당·카페/F&B, 호텔·여행, 공간·인테리어·부동산, 디지털 제품, 자동차·모빌리티, 소비자 기술, 기업·채용, 공연·전시·행사·지역축제
 - 연결: Higgsfield
 - Claude Cowork 추가 연결: 항상 로드되는 `reference-preview`
@@ -155,7 +155,7 @@ Chany 확인: Chany's Studio가 제공하는 chany-project와 업종 스킬을 �
 
 1. **Customize → Plugins**를 엽니다.
 2. `photo-reference-studio` 마켓플레이스에서 **Update**를 누릅니다.
-3. 버전 `2.5.0`, `chany-project`, `chany-creative-direction`, `chany-campaign-video`, `chany-media-production-loop`, 공통 제작 스킬과 11개 업종 스킬 목록을 확인합니다.
+3. 버전 `2.6.0`, `chany-project`, `chany-jtbd-persona`, `chany-meta-ad-research`, `chany-creative-direction`, `chany-campaign-video`, `chany-media-production-loop`, 공통 제작 스킬과 11개 업종 스킬 목록을 확인합니다.
 4. 새 Cowork 작업을 시작합니다.
 
 ### Claude Code
@@ -194,6 +194,15 @@ Chany 확인: Chany's Studio가 제공하는 chany-project와 업종 스킬을 �
 - 프로젝트 설정 뒤에는 설치된 Moai의 규제·마케팅·디자인·미디어 전문 스킬을 필요한 경우에만 정확한 이름·출처·버전과 함께 인계하고, 사용할 수 없으면 Chany 단독 초안 흐름과 명시적 검토 보류로 전환합니다.
 - 유료 생성은 현재 도구 스키마·무료 견적·버전별 승인을 따르고, 결과가 불명확할 때 기존 작업을 확인하기 전에는 재제출하지 않습니다.
 - 최종 게시 후보는 `chany-publication-review`의 공식 출처·증거·거래·메시지·권리·플랫폼·최종 렌더 게이트와 이름이 지정된 사람 검토를 거칩니다.
+
+## 2.6.0에서 추가된 기능
+
+- `chany-jtbd-persona`와 `chany-meta-ad-research`를 추가해 고객 구매 동기와 공식 Meta 광고 라이브러리의 공개 광고 관찰을 분리했습니다.
+- 영상·단일 이미지·캐러셀에 한 구매 전략을 연결하고, 디자인·훅·본문·플랫폼 제목·설명·CTA와 카드 순서를 제품 또는 서비스에 맞게 변형하도록 구성했습니다.
+- 공개 게재 정보는 성과 증거로 단정하지 않으며, 실제 성과 자료가 있을 때만 정확한 소재 연결·추적·비교 검토를 별도로 수행합니다.
+- 핵심 제작은 MoAI 없이 동작하고, 설치·호출 가능한 전문 스킬만 필요한 범위에서 선택적으로 연결합니다.
+
+[2.6.0 상세 사용법과 예시](PERFORMANCE-ADS.md)
 
 ## 2.5.0에서 변경된 기능
 
@@ -251,7 +260,7 @@ Chany 확인: Chany's Studio가 제공하는 chany-project와 업종 스킬을 �
 
 ## 업데이트가 반영되지 않을 때
 
-- 설치 상세의 버전이 `2.5.0`인지 확인합니다.
+- 설치 상세의 버전이 `2.6.0`인지 확인합니다.
 - Refresh 또는 Update 뒤 반드시 새 대화나 새 작업을 시작합니다.
 - Moai 체이닝을 사용할 때는 두 플러그인의 설치·활성화뿐 아니라 현재 호스트의 실제 플러그인 간 호출 기능도 확인합니다. 기능이 없으면 Moai project 완료 후 Chany를 실행하는 수동 2단계를 사용합니다. 필수 실행은 `--with-moai`, 단독 실행은 `--chany-only`입니다.
 - Claude Code에서는 `/plugin`의 Errors 탭을 확인합니다.

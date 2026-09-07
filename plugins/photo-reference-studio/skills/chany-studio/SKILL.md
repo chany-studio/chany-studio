@@ -17,6 +17,8 @@ The router owns industry selection, sequencing, checkpoints, and shared state. I
 
 ## Coordinate a campaign
 
+For purchase-oriented video, single-image or carousel advertising, read [references/performance-ad-contract.md](references/performance-ad-contract.md) and use its minimal chain instead of expanding the general campaign sequence below. Meta is the ad-benchmark lane; Pinterest is optional still-photo styling only. Reuse one conversion brief and one selected direction for the requested set. A single output keeps its existing production owner; this router coordinates only multi-format or ambiguous work. MoAI is an optional specialist contribution, not a prerequisite for production in Claude or ChatGPT Work/Codex.
+
 For a multi-skill campaign, read [references/campaign-state.md](references/campaign-state.md) and maintain one shared state record. Pass only the fields the next specialist needs.
 
 Default dependency order when those assets are requested:

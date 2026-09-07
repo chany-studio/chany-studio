@@ -14,6 +14,9 @@ remain unresolved rather than being replaced with generated evidence.
 ```yaml
 video_concept_packet:
   concept_version_id: ""
+  conversion_brief_version_id: ""
+  insight_version_id: ""
+  ad_reference_packet_ids: []
   mode: "analysis | plan | produce"
   objective_and_kpi: ""
   audience_decision: ""
@@ -37,9 +40,15 @@ Approve the narrative device only when it helps the audience understand or feel 
 
 ## Scene contract
 
+For conversion work, the optional insight/brief/ad-reference IDs point to the shared records; the original `reference_packet_id` remains the video-intake packet. `approved_copy_version_id` is the approved conversion-copy version. Do not create parallel copy or research truth. See [performance-ad-contract.md](../../chany-studio/references/performance-ad-contract.md).
+
 ```yaml
 scene:
   scene_id: "s01"
+  job_id: ""
+  persuasion_role_ids: []
+  start_s: ""
+  end_s: ""
   duration_s: ""
   usp_role: ""
   message_rank: 0

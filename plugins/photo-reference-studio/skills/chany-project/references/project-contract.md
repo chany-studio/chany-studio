@@ -40,11 +40,13 @@ Select the primary industry overlay before the production skills. Read `chany-st
 |---|---|
 | cross-deliverable campaign coordination | `chany-studio` |
 | objective, audience, message, offer, channels, asset matrix | `chany-marketing-brief` |
+| customer buying motives, JTBD and evidence-based profiles | `chany-jtbd-persona` |
+| Meta video/image/carousel ad benchmarks and copy/CTA analysis | `chany-meta-ad-research` |
 | cutout, white packshot, source cleanup | `chany-product-assets` |
 | six visible Pinterest art-direction candidates by default, or the user's explicit positive count | `chany-reference-board` |
 | staged master visual | `chany-campaign-visual` |
 | commerce detail-page modules | `chany-detail-page` |
-| static ads, promotion, posters, banners, channel variants | `chany-ad-creative` |
+| single-image ads, conversion carousels, promotion, posters, banners, channel variants | `chany-ad-creative` |
 | bounded repair of an accepted image | `chany-image-edit` |
 | adult model or source-locked fashion stills | `chany-model-fashion` |
 | product commercial, brand film, promotional motion, or concept-led campaign video | `chany-campaign-video` |
@@ -54,6 +56,8 @@ Select the primary industry overlay before the production skills. Read `chany-st
 | version-bound final claims, offer, rights, disclosures, and release review | `chany-publication-review` |
 
 Use `chany-studio` only when two or more production families need shared sequencing. Do not list unneeded specialists in the generated project instructions.
+
+For performance-ad projects, have the `chany-studio` skill load its shared performance-ad contract from the managed production guidance instead of duplicating it or exposing a plugin-internal path in generated project files. Record actual business goal/conversion event, destination, requested ad-unit counts and carousel card counts separately. Reuse existing customer and MoAI records as attributed evidence, not approved claims. Keep production independent of MoAI; project `--with-moai` governs only initialization. Unknown values remain pending, and setup must not begin ad research or paid media execution.
 
 ## Generated files
 

@@ -117,8 +117,8 @@ Create only the rows needed for the request:
 | master key visual | campaign system | master ratio | campaign idea | authority source + industry packet + selected reference | `chany-campaign-visual` | 1 |
 | detail or landing module | explain or prove | storefront/landing width | one fact or benefit | evidence + campaign master | `chany-detail-page` | named |
 | static ad | placement response | named ratio | one message + CTA | authority + industry packet + campaign + copy | `chany-ad-creative` | named |
+| conversion carousel | one ordered purchase argument | currently supported carousel placement | primary job with card-specific message/proof | customer insight + Meta packet when requested + authority + approved copy | `chany-ad-creative` | ad units and cards counted separately |
 | campaign video | concept-led motion proof or persuasion | named placement, ratio, duration | one primary message across approved beats | evidence + source authority + copy + optional video teardown | `chany-campaign-video` | named |
-| Campaign video | concept-led proof or demonstration | platform, duration | scene message + proof + CTA | evidence + subject + copy | `chany-campaign-video` then `chany-media-production-loop` | named |
 
 Show the user the final number of paid assets or multi-stage video operations before execution. Do not silently add A/B variants, ratios, languages, or concepts.
 

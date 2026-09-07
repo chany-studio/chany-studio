@@ -136,7 +136,8 @@ test("campaign video uses one evidence-led still-first motion contract", async (
   ]);
 
   assert.equal(frontmatterName(skill, skillPath), "chany-campaign-video");
-  assert.match(skill, /product commercials, brand films/i);
+  assert.match(skill, /product or service commercials/i);
+  assert.match(skill, /brand films/i);
   assert.match(skill, /GPT Image 2 \(`gpt-image-2`\)/i);
   assert.match(skill, /least risky motion route/i);
   assert.match(skill, /deterministic movement over an accurate still/i);
@@ -303,14 +304,14 @@ test("marketing brief reviews observed performance without inventing causality",
   assert.match(schema, /^\s+next_single_variable:/m);
 });
 
-test("both manifests publish the 2.5.0 creative-direction release", async () => {
+test("both manifests publish the 2.6.0 conversion-creative release", async () => {
   const [claude, codex] = await Promise.all([
     readPluginFile(".claude-plugin/plugin.json").then(JSON.parse),
     readPluginFile(".codex-plugin/plugin.json").then(JSON.parse),
   ]);
 
-  assert.equal(claude.version, "2.5.0");
-  assert.match(codex.version, /^2\.5\.0(?:\+codex\.[a-z0-9.-]+)?$/i);
+  assert.equal(claude.version, "2.6.0");
+  assert.match(codex.version, /^2\.6\.0(?:\+codex\.[a-z0-9.-]+)?$/i);
   assert.ok(codex.interface.capabilities.includes("GPT Image 2 default for generative still images with scoped overrides"));
   assert.ok(codex.interface.capabilities.includes("Native Claude question-card interview and Chany-file approval"));
   assert.ok(codex.interface.capabilities.includes("Source-isolated Pinterest, Production Paradise, and award-archive reference boards with in-chat previews"));

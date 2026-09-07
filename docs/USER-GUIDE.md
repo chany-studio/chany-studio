@@ -4,7 +4,9 @@ Chany's Studio는 Claude와 ChatGPT Work에서 같은 프로젝트 지침을 사
 
 ## 어떤 스킬을 써야 하나요?
 
-Chany's Studio 2.5.0은 두 축, 하나의 전문 크리에이티브 디렉션 계층과 하나의 공통 미디어 실행 루프를 함께 사용합니다.
+구매 전환용 영상·단일 이미지·캐러셀은 [퍼포먼스 광고 제작 가이드](PERFORMANCE-ADS.md)에 요청 예시와 MoAI 선택 연계 기준을 모았습니다. 사진 연출은 Pinterest, 실제 광고 벤치마킹은 Meta 광고 라이브러리로 구분하며 공개 정보만으로 실제 광고 성과를 단정하지 않습니다.
+
+Chany's Studio 2.6.0은 두 축, 하나의 전문 크리에이티브 디렉션 계층과 하나의 공통 미디어 실행 루프를 함께 사용합니다.
 
 1. **업종 오버레이**는 고객이 왜 선택하는지, 어떤 근거가 필요한지, 어떤 표현을 피해야 하는지와 그 업종다운 촬영·연출 방향을 정합니다.
 2. **공통 제작 스킬**은 브리프, 레퍼런스 보드, 키비주얼, 상세페이지, 광고, 편집, 모델·패션과 콘셉트형 캠페인 영상 같은 실제 산출물을 설계합니다. 생성 실행과 재개는 `chany-media-production-loop`가 공통으로 추적합니다.
@@ -22,6 +24,8 @@ ChatGPT Work의 명시 호출은 `@스킬명`, Codex의 명시 호출은 `$스�
 | 새 프로젝트 지침·브리프·에이전트 설정 | ChatGPT `@chany-project` · Codex `$chany-project` |
 | 전체 캠페인 또는 여러 산출물 | ChatGPT `@chany-studio` · Codex `$chany-studio` |
 | 캠페인 브리프 또는 성과 기반 다음 실험 | ChatGPT `@chany-marketing-brief` · Codex `$chany-marketing-brief` |
+| 고객 구매 동기·JTBD·페르소나 분석 | ChatGPT `@chany-jtbd-persona` · Codex `$chany-jtbd-persona` |
+| Meta 영상·단일 이미지·캐러셀 광고 분석 | ChatGPT `@chany-meta-ad-research` · Codex `$chany-meta-ad-research` |
 | 누끼·순백 팩샷·제품 클린업 | ChatGPT `@chany-product-assets` · Codex `$chany-product-assets` |
 | Pinterest 레퍼런스 기본 6장 또는 요청 수량 비교 | ChatGPT `@chany-reference-board` · Codex `$chany-reference-board` |
 | 전문 광고·라이프스타일 사진 레퍼런스 | ChatGPT `@chany-commercial-photo-reference` · Codex `$chany-commercial-photo-reference` |
@@ -30,7 +34,7 @@ ChatGPT Work의 명시 호출은 `@스킬명`, Codex의 명시 호출은 `$스�
 | YouTube·Instagram 영상 레퍼런스의 브라우저 캡처·분석 준비 | ChatGPT `@chany-video-reference-ingest` · Codex `$chany-video-reference-ingest` |
 | 제품 연출컷·마스터 키비주얼 | ChatGPT `@chany-campaign-visual` · Codex `$chany-campaign-visual` |
 | 상세페이지 이미지 모듈 | ChatGPT `@chany-detail-page` · Codex `$chany-detail-page` |
-| 광고·포스터·배너·채널 변형 | ChatGPT `@chany-ad-creative` · Codex `$chany-ad-creative` |
+| 단일 이미지·캐러셀 광고, 본문·CTA, 포스터·배너 | ChatGPT `@chany-ad-creative` · Codex `$chany-ad-creative` |
 | 기존 이미지 부분 수정 | ChatGPT `@chany-image-edit` · Codex `$chany-image-edit` |
 | 성인 모델·패션 착장 | ChatGPT `@chany-model-fashion` · Codex `$chany-model-fashion` |
 | 제품 광고·브랜드 필름·프로모션 영상 | ChatGPT `@chany-campaign-video` · Codex `$chany-campaign-video` |

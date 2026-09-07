@@ -10,10 +10,18 @@ Do not register, alias, shadow, or emulate a Moai command. Invoke an available M
 
 ## Relevant specialist routes
 
+Production works without MoAI in Claude, ChatGPT Work and Codex. Preserve optional integration rather than coupling the core to an external package: use an existing result first; request one bounded contribution only for an explicit request or an unresolved specialist need. Reading an installed skill for this plugin's design review is not a runtime invocation. Project `--with-moai` does not automatically enable every production specialist.
+
 Use only the smallest route justified by the deliverable and jurisdiction:
 
 | Trigger | Preferred installed Moai specialist | Chany consumer |
 |---|---|---|
+| missing buying-motivation or customer-evidence analysis | `moai-seller:commerce-jtbd-persona` | `chany-jtbd-persona`; normalize hypotheses and source scope |
+| deeper persuasive copy or thirteen-role page reasoning | `moai-seller:commerce-detail-page-copy` or `moai-marketer:content-copywriting` | current static/video/page owner; no duplicate campaign plan |
+| supplied Meta Ads Manager export needing specialist diagnosis | `moai-marketer:marketing-meta-ads-analyzer` | `chany-marketing-brief`; not public Library discovery |
+| justified experimental-design question | `moai-marketer:marketing-growth-experiment` | `chany-marketing-brief` measurement plan |
+| supplied landing-page message mismatch or conversion friction | `moai-marketer:marketing-landing-page-conversion-audit` | current brief/page owner; diagnosis, not automatic site edits |
+| unresolved Korean promotional phrasing | `moai-writer:korean-humanize` | current copy owner; preserve fact anchors and reopen changed-copy review |
 | Korean advertising claim, comparison, superlative, listing, or substantiation review | `moai-seller:commerce-ad-claim-compliance-kr` | `chany-publication-review` claim lane |
 | Korean promotional SMS, email, push, or Kakao-style outbound message | `moai-seller:commerce-message-compliance-kr` | `chany-publication-review` delivery lane |
 | creator collaboration, sponsored content, testimonial disclosure, or usage rights | `moai-seller:commerce-influencer-collab` | `chany-publication-review` endorsement and rights lane |
@@ -61,6 +69,15 @@ specialist_handoff:
 ```
 
 Keep facts, proposals, and conclusions visibly distinct. Preserve the specialist's cautions and source dates. Do not reinterpret a narrow review as clearance for an entire campaign.
+
+## Normalize before adoption
+
+- Do not import fixed persona/job/section counts, 25/50/25 ratios, universal budgets, uplift percentages or sample-size benchmarks as Chany requirements. Use actual evidence and the requested format.
+- Keep one canonical claim ledger. Competitor reviews, hypothetical personas, copied sample statistics and specialist confidence scores are not product substantiation. Missing proof remains missing.
+- Accept relevant recommendations, not automatic downstream skill chains. Do not silently invoke content-polishing, project setup, account operation or a second campaign planner merely because an upstream result recommends it.
+- A requested MoAI contribution uses the host's exposed invocation mechanism and exact discovered name. If unavailable, report `unavailable` and offer Chany-only or a manual handoff. If the user explicitly requires MoAI execution, do not label a Chany fallback as satisfying that requirement. A pasted MoAI result is reusable attributed input, not proof of a current invocation.
+- Chany production owns final copy and visual acceptance. Any accepted rewrite invalidates affected approval versions; optional reviews must not erase qualifiers or change prices, metrics or promises.
+- `marketing-meta-ads-manager` is a separate live-operation capability, never a required step to research or create advertising. Do not add connector configuration or request account write scopes during creative work.
 
 ## Review boundaries
 

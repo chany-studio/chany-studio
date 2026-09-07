@@ -6,6 +6,8 @@
 
 This file separates visual-reference discovery from factual production knowledge.
 
+Scope: the photography/award board restrictions below do not replace the separate `chany-meta-ad-research` lane. For performance ads, official Meta Ad Library creative is the benchmark source for video, single images and carousels under [performance-ad-contract.md](performance-ad-contract.md). Pinterest is still-photo/style inspiration only, never the video route. User-supplied video analysis uses the existing intake contract. Do not cross-fill these lanes or widen the Pinterest preview server.
+
 - **Visual references:** use exactly one controlled lane per board: public Pinterest Pin pages, public Production Paradise work/profile pages, or public Ads of the World, D&AD, and The One Show work pages. Never mix lanes to fill a shortage. Stocksy, ShotDeck, Death to Stock, social networks, mirrors, general image results, and outbound destinations are not permitted.
 - **Trend signals:** Pinterest Predicts and Pinterest Palette may inform concept selection, but their editorial examples are not automatically reference candidates. A candidate must still come through one of the three source-isolated reference skills.
 - **Knowledge sources:** official product, platform, accessibility, or commerce documentation may be consulted only to verify current prompting, format, safe-area, accessibility, or conversion requirements. They are not visual-reference providers, and their example images must not be collected into a reference board.

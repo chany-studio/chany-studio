@@ -1,7 +1,7 @@
 interface:
   display_name: "Chany's Studio"
   short_description: "광고·마케팅 캠페인을 분야별 전문 제작 스킬로 연결"
-  default_prompt: "$chany-studio로 업종 전문 오버레이와 필요한 설치형 Moai 전문 인계를 선택하고 근거·원본·승인 문구를 잠근 뒤 키비주얼, 상세페이지, 광고와 홍보 콘텐츠를 하나의 캠페인으로 제작하고 해당 최종 버전을 게시 검토로 넘겨줘."
+  default_prompt: "$chany-studio로 우리 제품·서비스의 구매 이유와 실제 근거를 분석하고, 필요한 Meta 광고 레퍼런스를 참고해 요청한 영상·이미지·캐러셀을 하나의 전략으로 기획해줘. MoAI는 필요한 전문 검토에만 선택적으로 연결하고 승인 후 제작해줘."
 dependencies:
   tools:
     - type: "mcp"
