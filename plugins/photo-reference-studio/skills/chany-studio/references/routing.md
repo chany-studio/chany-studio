@@ -28,6 +28,8 @@ Do not add two overlays merely because two subjects appear in one scene. Use a s
 
 | User intent | Owner skill | Typical result |
 |---|---|---|
+| animated ad typography, benefit diagrams, logo reveal, CTA card, animate an approved still layout | `chany-motion-design` | capability-checked Higgsfield motion graphics or explicitly plan-only handoff |
+| Genjutsu object swap or motion transfer on authorized footage | `chany-campaign-video` using its Genjutsu revision mode | bounded generated revision, then accepted replacement to assembly |
 | initialize or update an advertising-production project | `chany-project` | shared project instructions, brief, state, and runtime-specific delegation configuration |
 | campaign strategy, launch plan, message hierarchy, asset plan | `chany-marketing-brief` | approved brief and asset matrix |
 | customer purchase motivations, JTBD, persona or buying barriers | `chany-jtbd-persona` | evidence-labeled customer insight packet, not final copy |
@@ -52,6 +54,8 @@ Do not add two overlays merely because two subjects appear in one scene. Use a s
 | final claims, offer, delivery, endorsement, rights, disclosure, and publication readiness | `chany-publication-review` | version-bound review record and named human-review status |
 
 ## Boundary decisions
+
+- Motion-only graphics belong to `chany-motion-design`; full-film planning stays with `chany-campaign-video`. Invoke motion only when requested or required by the approved output, never for static carousels. Generative object changes use the campaign-video Genjutsu mode, not deterministic assembly. Native After Effects work requires a verified Higgsfield bridge, not merely an advertised integration. GPT Image 2.5 is an optional override through the existing image runtime, never an automatic upgrade.
 
 - MeiGen is an additional source-isolated AI image/prompt lane owned by `chany-ai-prompt-reference`. Select it when requested or when prompt-backed AI execution is the research purpose. It is optional after Meta/JTBD strategy, never an automatic extra board. Use callable MeiGen tools or public browser access and supported inline image display; preserve the Pinterest preview allowlist. Do not cross-fill providers, treat engagement as conversion evidence, or change GPT Image 2 because the reference used another model.
 

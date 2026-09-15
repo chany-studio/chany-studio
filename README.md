@@ -2,7 +2,7 @@
 
 ![Chany's Studio](plugins/photo-reference-studio/assets/logo.png)
 
-업종별 구매 여정·증거·연출·컴플라이언스 판단과 공통 제작 워크플로를 결합해 **광고·홍보·마케팅·상세/랜딩·콘텐츠**를 기획하고 제작하는 ChatGPT Work/Codex 및 Claude 플러그인입니다. Chany's Studio 2.7.0은 출처별 시각 레퍼런스, 사용자가 허가한 브라우저 탭 캡처 기반 영상 레퍼런스 분석, 초보자의 말로 세 가지 전문 콘셉트를 설계하는 크리에이티브 디렉션, 최신 공식 제작 규칙과 브랜드 적합 트렌드를 반영한 GPT Image 2 프롬프트, 제한된 미디어 제작 루프를 하나의 흐름으로 연결합니다.
+업종별 구매 여정·증거·연출·컴플라이언스 판단과 공통 제작 워크플로를 결합해 **광고·홍보·마케팅·상세/랜딩·콘텐츠**를 기획하고 제작하는 ChatGPT Work/Codex 및 Claude 플러그인입니다. Chany's Studio 2.8.0은 출처별 시각 레퍼런스, 사용자가 허가한 브라우저 탭 캡처 기반 영상 레퍼런스 분석, 초보자의 말로 세 가지 전문 콘셉트를 설계하는 크리에이티브 디렉션, 최신 공식 제작 규칙과 브랜드 적합 트렌드를 반영한 GPT Image 2 프롬프트, 제한된 미디어 제작 루프를 하나의 흐름으로 연결합니다.
 
 > [공식 설치·사용설명서 (Notion)](https://jolly-phlox-79c.notion.site/Chany-s-Studio-3c783e9464668140b794ee076be24406) · [문제 해결](docs/TROUBLESHOOTING.md)
 
@@ -55,6 +55,8 @@ chany-studio/chany-studio
 
 ## 2축 스킬 구조
 
+2.8.0 추가: **Higgsfield 광고 모션 디자인·Genjutsu 영상 부분 수정·GPT Image 2.5 선택 지원**. GPT Image 2 기본값은 유지하고 실제 연결을 확인한 기능만 실행합니다. [사용법과 예시](docs/HIGGSFIELD-UPDATES.md).
+
 ChatGPT Work에서 스킬을 직접 고를 때는 `@스킬명`, Codex에서는 `$스킬명`을 사용합니다. Claude Cowork에서는 `/project-studio`를 제외한 전문 작업을 자연어로 요청하면 설명에 맞는 스킬이 자동 선택됩니다.
 
 ### 1축: 업종 전문 오버레이
@@ -81,6 +83,7 @@ ChatGPT Work에서 스킬을 직접 고를 때는 `@스킬명`, Codex에서는 `
 
 | 공통 스킬 | 담당 작업 |
 | --- | --- |
+| ChatGPT `@chany-motion-design` · Codex `$chany-motion-design` | Higgsfield 기반 광고 타이포·혜택 도식·로고·CTA 모션, 연결 확인 후 실행 |
 | ChatGPT `@chany-project` · Codex `$chany-project` | 프로젝트 인터뷰, 공통 `AGENTS.md`, 브리프·상태, ChatGPT Work 위임 규칙과 Claude·로컬 Codex 프로젝트 에이전트 설정 |
 | ChatGPT `@chany-studio` · Codex `$chany-studio` | 업종 오버레이와 두 분야 이상이 연결된 전체 캠페인 및 산출물 순서 관리 |
 | ChatGPT `@chany-marketing-brief` · Codex `$chany-marketing-brief` | 목표·타깃·메시지·에셋 매트릭스 또는 성과 기반 다음 한 변수 실험 정리 |
@@ -290,7 +293,7 @@ Codex: $chany-publication-review로 최종 광고의 정확한 카피·오퍼·�
 /reload-plugins
 ```
 
-업데이트 후 버전이 **2.7.0**인지 확인하고 새 대화 또는 새 작업을 시작하세요.
+업데이트 후 버전이 **2.8.0**인지 확인하고 새 대화 또는 새 작업을 시작하세요.
 
 ## 외부 서비스와 데이터
 

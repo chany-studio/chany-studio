@@ -1,6 +1,6 @@
 {
   "name": "photo-reference-studio",
-  "version": "2.7.0+codex.20260915000000",
+  "version": "2.8.0+codex.20260915000000",
   "description": "Chany's Claude and ChatGPT Work/Codex advertising studio: JTBD-led conversion video, single-image and carousel ads, official Meta Ad Library research, MeiGen image-and-prompt references, source-isolated photo references, GPT Image 2 stills, bounded production, publication review and optional MoAI specialists.",
   "author": {
     "name": "Chany",
@@ -60,6 +60,8 @@
     "privacyPolicyURL": "https://jolly-phlox-79c.notion.site/Chany-s-Studio-3c783e94646681089a5dc4694a045cb3",
     "termsOfServiceURL": "https://jolly-phlox-79c.notion.site/Chany-s-Studio-3c783e9464668136822bf7f00201f429",
     "capabilities": [
+      "Capability-gated Higgsfield advertising motion design and Genjutsu video revision",
+      "Optional Higgsfield GPT Image 2.5 with scoped approval; GPT Image 2 remains default",
       "JTBD-led product and service conversion creative without mandatory MoAI",
       "Official Meta Ad Library research for video, single-image and carousel ads with performance-evidence limits",
       "Conversion carousel card manifests, accompanying ad copy and destination-message checks",

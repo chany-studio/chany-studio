@@ -1,8 +1,10 @@
-# Chany's Studio 2.7.0
+# Chany's Studio 2.8.0
 
 Claude와 ChatGPT Work/Codex에서 함께 쓰는 광고 프로젝트 지침을 설정하고, 업종별 여정·증거·연출·컴플라이언스와 공통 제작 워크플로를 결합해 광고·홍보·마케팅·상세/랜딩·콘텐츠를 기획·제작합니다.
 
 ## 2축 스킬 구조
+
+2.8.0 추가: Higgsfield 광고 모션 디자인, Genjutsu 영상 부분 수정, GPT Image 2.5 선택 지원. GPT Image 2 기본값은 유지합니다. [사용법과 예시](../../docs/HIGGSFIELD-UPDATES.md).
 
 2.7.0 추가: `chany-ai-prompt-reference`가 Meigen 이미지·공개 프롬프트를 분석하고 제품별 제작 프롬프트로 연결합니다. 기본 6장 또는 요청 수량, L1→직접 L2 검색, 대화 안 이미지 표시를 적용합니다. [사용법과 예시](../../docs/MEIGEN-REFERENCES.md).
 
@@ -34,6 +36,7 @@ ChatGPT Work에서는 `@스킬명`, Codex에서는 `$스킬명`으로 명시 호
 
 | 공통 스킬 | 담당 작업 |
 | --- | --- |
+| ChatGPT `@chany-motion-design` · Codex `$chany-motion-design` | Higgsfield 기반 광고 타이포·혜택 도식·로고·CTA 모션, 연결 확인 후 실행 |
 | ChatGPT `@chany-studio` · Codex `$chany-studio` | 업종 오버레이와 여러 결과물을 연결하는 캠페인 라우터 |
 | ChatGPT `@chany-project` · Codex `$chany-project` | 프로젝트 인터뷰, `AGENTS.md`, 브리프·상태와 런타임별 에이전트 설정 |
 | ChatGPT `@chany-marketing-brief` · Codex `$chany-marketing-brief` | 캠페인 브리프 또는 실제 성과 기반 다음 한 변수 실험 |

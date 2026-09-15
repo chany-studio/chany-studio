@@ -2,6 +2,14 @@
 
 이 프로젝트는 사용자에게 보이는 기능 개편 단위로 버전을 관리합니다.
 
+## 2.8.0 - 2026-09-15
+
+- Higgsfield 기반 업데이트만 반영: 광고 타이포·혜택 도식·로고·CTA를 위한 `chany-motion-design`을 추가하고 프로젝트 초기화·캠페인 체인에 연결했습니다.
+- Higgsfield AI Motion Designer의 실제 연결과 편집·출력 능력을 확인한 경우에만 실행합니다. 연결이 없으면 기획 전달물로 명시하며 After Effects 설치나 유료 구독을 자동 진행하지 않습니다.
+- 기존 영상 제작에 Genjutsu Object Swap·Motion Transfer 모드를 추가했습니다. 사용 권한, 원본 버전, 제한된 수정 범위, 비용 승인과 프레임별 검수를 유지합니다.
+- GPT Image 2.5의 Flare·Sunburst를 선택형 모델로 지원합니다. GPT Image 2 기본값과 명시적 변경 승인은 유지합니다.
+- Adobe 자체 AI 기능, Runway, ElevenLabs, 신규 사운드 스킬은 포함하지 않았습니다. 실제 유료 생성·AE 연결 검증과 외부 배포는 별도입니다.
+
 ## 2.7.0 - 2026-09-15
 
 - `chany-ai-prompt-reference`를 추가했습니다. Meigen 이미지와 원본 프롬프트를 함께 분석하고 제품·서비스별 제작 프롬프트로 연결합니다.

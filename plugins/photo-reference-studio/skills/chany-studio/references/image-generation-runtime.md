@@ -35,6 +35,16 @@ When an override is needed, state the exact alternate model or workflow, why the
 
 Changing the model or provider invalidates the affected quote, paid-generation approval, and creative acceptance record. Run a new preflight and approval instead of silently falling back.
 
+## Higgsfield GPT Image 2.5 option
+
+GPT Image 2.5 is an optional, scoped override, not a new default. When selected under the approval rules above, inspect the live Higgsfield catalog: the model was exposed as `gpt_image_2_5` on 2026-09-15, with `variant` values `flare` and `sunburst`. Do not substitute a guessed hyphenated ID or assume this provider ID works on another host.
+
+Higgsfield positions Flare for fast concept exploration and Sunburst for detailed editing. Treat those as provider guidance, not tested quality guarantees. Choose the variant for the requested task and disclose it with the actual quality, resolution, background, reference-role/count limits and cost returned by the current schema. Do not silently accept low-quality provider defaults for a final asset or force maximum settings on every draft.
+
+Bind the variant/options to the existing asset/job record. Preserve original product, label, approved text and layout authorities; test those properties and cross-card consistency on the actual output. A model change does not allow changing reference sources or copy. If the model is absent, mark it unavailable and ask before choosing another model; do not silently revert or relabel results.
+
+Source checked 2026-09-15: [Higgsfield GPT Image 2.5 announcement, 2026-09-08](https://higgsfield.ai/blog/gpt-image-2-5-higgsfield). Catalog availability was observed; end-to-end quality was not established.
+
 ## State record
 
 Record the selection with the asset or paid-generation plan:

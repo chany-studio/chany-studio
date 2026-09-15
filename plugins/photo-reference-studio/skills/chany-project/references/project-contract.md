@@ -51,6 +51,8 @@ Select the primary industry overlay before the production skills. Read `chany-st
 | bounded repair of an accepted image | `chany-image-edit` |
 | adult model or source-locked fashion stills | `chany-model-fashion` |
 | product commercial, brand film, promotional motion, or concept-led campaign video | `chany-campaign-video` |
+| animated ad typography, benefit diagram, logo reveal or CTA card | `chany-motion-design` (Higgsfield execution capability checked; no mandatory AE installation) |
+| replace a product/object in authorized footage or transfer its motion | `chany-campaign-video` Genjutsu revision mode → `chany-media-production-loop` → assembly only if requested |
 | execute or resume generated still-image and campaign-video jobs | `chany-media-production-loop` |
 | accepted-clip assembly, segment replacement, target normalization, hook-only variants, or verification | `chany-video-assembly` |
 | local media-tool and Korean-font environment check | `chany-preflight` |

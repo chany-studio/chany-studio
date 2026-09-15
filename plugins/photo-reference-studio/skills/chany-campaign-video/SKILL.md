@@ -19,6 +19,12 @@ For every governing still, read and follow the shared [image model default](../c
 
 For every named platform, placement, storefront, outbound channel, upload, schedule, or live publishing operation, read and follow the shared [platform publication adapter](../chany-studio/references/platform-publication-adapter.md). This skill never treats creative approval as authority to upload, activate, publish, or spend.
 
+## Optional Higgsfield modes
+
+For a requested object swap or motion transfer in authorized footage, read [Genjutsu revision](references/genjutsu-edit.md). Keep this skill as owner of the bounded edit without forcing a new campaign strategy or regenerating accepted source stills. The media loop executes the verified operation; assembly receives only an accepted replacement version.
+
+For animated hook text, benefit graphics, logo reveals or CTA cards, call `chany-motion-design` only for those requested layers/clips. It checks Higgsfield execution capability and returns accepted graphics or an explicit plan-only handoff. Native motion graphics are optional, not a dependency of every campaign video.
+
 ## Workflow
 
 1. Consume the selected industry direction packet and approved marketing brief. Lock the objective, audience decision, primary message, CTA, claim ledger, required evidence, disclosures, source authorities, platform, duration or duration limit, ratio, and named deliverables.

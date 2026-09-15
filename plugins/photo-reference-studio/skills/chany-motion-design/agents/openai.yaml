@@ -1,0 +1,6 @@
+interface:
+  display_name: "Chany 광고 모션 디자인"
+  short_description: "승인된 광고의 훅·혜택·CTA를 읽기 쉬운 모션그래픽으로 제작"
+  default_prompt: "Use $chany-motion-design to animate this approved ad with readable hook typography and a clear CTA through an available Higgsfield workflow."
+policy:
+  allow_implicit_invocation: true

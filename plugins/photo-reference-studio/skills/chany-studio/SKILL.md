@@ -15,6 +15,8 @@ Read [references/industry-overlay.md](references/industry-overlay.md), [referenc
 
 The router owns industry selection, sequencing, checkpoints, and shared state. It does not own domain playbooks, production prompts, reference-search mechanics, or asset-specific QA.
 
+Use `chany-motion-design` for standalone advertising motion graphics or a named graphics handoff within campaign video. Authorized footage object swaps/motion transfer use the campaign-video Genjutsu mode before assembly. Neither path is mandatory for ordinary stills, carousels or video generation; GPT Image 2.5 remains a scoped image-model option.
+
 ## Coordinate a campaign
 
 For purchase-oriented video, single-image or carousel advertising, read [references/performance-ad-contract.md](references/performance-ad-contract.md) and use its minimal chain instead of expanding the general campaign sequence below. Meta is the ad-benchmark lane; Pinterest is optional still-photo styling only. Reuse one conversion brief and one selected direction for the requested set. A single output keeps its existing production owner; this router coordinates only multi-format or ambiguous work. MoAI is an optional specialist contribution, not a prerequisite for production in Claude or ChatGPT Work/Codex.
