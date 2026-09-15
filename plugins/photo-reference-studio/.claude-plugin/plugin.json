@@ -1,8 +1,8 @@
 {
   "name": "photo-reference-studio",
   "displayName": "Chany's Studio",
-  "version": "2.6.0",
-  "description": "Chany's Claude and ChatGPT Work/Codex advertising studio: JTBD-led conversion video, single-image and carousel ads, official Meta Ad Library research, source-isolated photo references, GPT Image 2 stills, bounded production, publication review and optional MoAI specialists.",
+  "version": "2.7.0",
+  "description": "Chany's Claude and ChatGPT Work/Codex advertising studio: JTBD-led conversion video, single-image and carousel ads, official Meta Ad Library research, MeiGen image-and-prompt references, source-isolated photo references, GPT Image 2 stills, bounded production, publication review and optional MoAI specialists.",
   "author": {
     "name": "Chany",
     "url": "https://github.com/chany-studio"
@@ -19,6 +19,7 @@
     "food-photography",
     "reference-board",
     "pinterest-reference",
+    "meigen-prompt-reference",
     "commercial-photography-reference",
     "award-ad-reference",
     "creative-direction",

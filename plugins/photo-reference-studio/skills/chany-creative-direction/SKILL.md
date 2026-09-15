@@ -20,9 +20,11 @@ Read the shared [commercial creative direction system](../chany-studio/reference
 
 ## Reference boundary
 
+For MeiGen image-and-source-prompt inspiration, use `chany-ai-prompt-reference` as the separate owner. Consume its selected visual DNA and original adaptation prompt; source-model choice does not override GPT Image 2. Keep approved direction and Meta/JTBD strategy intact. MeiGen research is optional and does not require another concept round.
+
 Conversion-ad benchmarks are handled separately by `chany-meta-ad-research`. Reuse its observed design/hook/copy mechanisms and the shared [performance-ad contract](../chany-studio/references/performance-ad-contract.md); do not require a second photo board or rerun concept selection after direction approval. Pinterest remains a still-photo/style source, not a video source.
 
-This skill does not browse for references. When real references are needed, hand the approved industry taxonomy route to exactly one owner: `chany-reference-board` for broad Pinterest discovery, `chany-commercial-photo-reference` for Production Paradise commercial photography, or `chany-award-ad-reference` for approved award and campaign archives. Each owner keeps its own hard source boundary; never blend providers to fill a weak board. Do not use a knowledge-source example image as a reference.
+This skill does not browse for references. When real references are needed, hand the approved industry taxonomy route to exactly one owner: `chany-reference-board` for broad Pinterest discovery, `chany-commercial-photo-reference` for Production Paradise commercial photography, `chany-award-ad-reference` for approved award and campaign archives, or `chany-ai-prompt-reference` for MeiGen image-and-prompt pairs. Each owner keeps its own hard source boundary; never blend providers to fill a weak board. Do not use a knowledge-source example image as a reference.
 
 ## Output
 

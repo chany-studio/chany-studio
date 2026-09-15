@@ -26,7 +26,7 @@ Default dependency order when those assets are requested:
 1. select the industry mode and create its direction packet
 2. approve the marketing brief, claim ledger, and asset matrix
 3. prepare source-faithful assets when needed
-4. find and select art direction through one source-isolated static-reference lane when needed: broad Pinterest, Production Paradise commercial photography, or approved award archives
+4. find and select art direction through one source-isolated static-reference lane when needed: broad Pinterest, Production Paradise commercial photography, approved award archives, or `chany-ai-prompt-reference` for MeiGen image-and-prompt research
 5. when a video reference link, browser capture, direct media URL, or local reference file is supplied, use `chany-video-reference-ingest` to establish the observable evidence level and produce the authorized capture packet before timing analysis
 6. compile and approve one brand-specific creative direction, then one master campaign visual or design system
 7. let each production owner, including `chany-campaign-video` when requested, define its asset specification, then use `chany-media-production-loop` for every requested generated still or campaign-video job

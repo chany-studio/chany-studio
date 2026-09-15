@@ -1,5 +1,9 @@
 # Chany's Studio 설치 및 업데이트
 
+## 2.7.0 Meigen 레퍼런스
+
+업데이트 후 `chany-ai-prompt-reference`가 표시되는지 확인하세요. Meigen MCP는 필수 설치 항목이 아닙니다. 연결된 Meigen 검색 도구 또는 브라우저·이미지 표시 기능으로 사용하며 Pinterest용 `reference-preview`와는 별도입니다. [사용법·복습 프롬프트](MEIGEN-REFERENCES.md).
+
 [공식 설치·사용설명서 (Notion)](https://jolly-phlox-79c.notion.site/Chany-s-Studio-3c783e9464668140b794ee076be24406)
 
 ## 공통 마켓플레이스 주소
@@ -55,7 +59,7 @@ chany-studio/chany-studio
 
 - 표시 이름: `Chany's Studio`
 - 내부 식별자: `photo-reference-studio`
-- 버전: `2.6.0`
+- 버전: `2.7.0`
 - 대표 Skill: `chany-studio`
 - 프로젝트 Skill: `chany-project`
 - 전문 Skill: 마케팅 브리프, JTBD 고객 분석(`chany-jtbd-persona`), Meta 광고 리서치(`chany-meta-ad-research`), 기본 6장 또는 요청 수량의 Pinterest 레퍼런스, 전문 크리에이티브 디렉션(`chany-creative-direction`), 브라우저 캡처 영상 레퍼런스 준비(`chany-video-reference-ingest`), 제품 에셋, 키비주얼, 상세페이지, 광고, 편집, 패션, 콘셉트형 캠페인 영상(`chany-campaign-video`), 미디어 생성 실행·재개(`chany-media-production-loop`), 영상 조립·컷 교체(`chany-video-assembly`), 환경 점검(`chany-preflight`), 게시 전 검수(`chany-publication-review`)
@@ -155,7 +159,7 @@ Chany 확인: Chany's Studio가 제공하는 chany-project와 업종 스킬을 �
 
 1. **Customize → Plugins**를 엽니다.
 2. `photo-reference-studio` 마켓플레이스에서 **Update**를 누릅니다.
-3. 버전 `2.6.0`, `chany-project`, `chany-jtbd-persona`, `chany-meta-ad-research`, `chany-creative-direction`, `chany-campaign-video`, `chany-media-production-loop`, 공통 제작 스킬과 11개 업종 스킬 목록을 확인합니다.
+3. 버전 `2.7.0`, `chany-project`, `chany-jtbd-persona`, `chany-meta-ad-research`, `chany-creative-direction`, `chany-campaign-video`, `chany-media-production-loop`, 공통 제작 스킬과 11개 업종 스킬 목록을 확인합니다.
 4. 새 Cowork 작업을 시작합니다.
 
 ### Claude Code
@@ -260,7 +264,7 @@ Chany 확인: Chany's Studio가 제공하는 chany-project와 업종 스킬을 �
 
 ## 업데이트가 반영되지 않을 때
 
-- 설치 상세의 버전이 `2.6.0`인지 확인합니다.
+- 설치 상세의 버전이 `2.7.0`인지 확인합니다.
 - Refresh 또는 Update 뒤 반드시 새 대화나 새 작업을 시작합니다.
 - Moai 체이닝을 사용할 때는 두 플러그인의 설치·활성화뿐 아니라 현재 호스트의 실제 플러그인 간 호출 기능도 확인합니다. 기능이 없으면 Moai project 완료 후 Chany를 실행하는 수동 2단계를 사용합니다. 필수 실행은 `--with-moai`, 단독 실행은 `--chany-only`입니다.
 - Claude Code에서는 `/plugin`의 Errors 탭을 확인합니다.

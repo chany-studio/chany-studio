@@ -1,8 +1,10 @@
-# Chany's Studio 2.6.0
+# Chany's Studio 2.7.0
 
 Claude와 ChatGPT Work/Codex에서 함께 쓰는 광고 프로젝트 지침을 설정하고, 업종별 여정·증거·연출·컴플라이언스와 공통 제작 워크플로를 결합해 광고·홍보·마케팅·상세/랜딩·콘텐츠를 기획·제작합니다.
 
 ## 2축 스킬 구조
+
+2.7.0 추가: `chany-ai-prompt-reference`가 Meigen 이미지·공개 프롬프트를 분석하고 제품별 제작 프롬프트로 연결합니다. 기본 6장 또는 요청 수량, L1→직접 L2 검색, 대화 안 이미지 표시를 적용합니다. [사용법과 예시](../../docs/MEIGEN-REFERENCES.md).
 
 2.6.0은 구매 동기 분석과 Meta 광고 벤치마킹을 영상·단일 이미지·캐러셀 제작에 연결합니다. 전체 광고 본문·제목·CTA와 연결 목적지 검수도 포함합니다. MoAI 없이 핵심 작업을 진행하며 필요한 전문 스킬만 조건부 연결합니다. [사용법과 프롬프트 예시](../../docs/PERFORMANCE-ADS.md).
 
@@ -41,6 +43,7 @@ ChatGPT Work에서는 `@스킬명`, Codex에서는 `$스킬명`으로 명시 호
 | ChatGPT `@chany-reference-board` · Codex `$chany-reference-board` | Pinterest 레퍼런스 기본 6장 또는 요청 수량을 대화에 직접 표시 |
 | ChatGPT `@chany-commercial-photo-reference` · Codex `$chany-commercial-photo-reference` | Production Paradise 전문 광고·라이프스타일 사진 레퍼런스 |
 | ChatGPT `@chany-award-ad-reference` · Codex `$chany-award-ad-reference` | Ads of the World·D&AD·The One Show 수상 광고·캠페인 벤치마크 |
+| ChatGPT `@chany-ai-prompt-reference` · Codex `$chany-ai-prompt-reference` | Meigen 이미지·원본 프롬프트 분석과 제품별 제작 프롬프트 |
 | ChatGPT `@chany-creative-direction` · Codex `$chany-creative-direction` | 초보자 요청을 세 가지 브랜드 콘셉트, 추천 방향과 전문가 제작 프롬프트로 전환 |
 | ChatGPT `@chany-video-reference-ingest` · Codex `$chany-video-reference-ingest` | YouTube·Instagram 등 영상 페이지를 사용자 허가 브라우저 캡처나 첨부 파일로 분석 준비 |
 | ChatGPT `@chany-campaign-visual` · Codex `$chany-campaign-visual` | 연출컷과 마스터 키비주얼 |

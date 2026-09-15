@@ -34,6 +34,7 @@ Do not add two overlays merely because two subjects appear in one scene. Use a s
 | Meta Ad Library research for video, single-image or carousel ads | `chany-meta-ad-research` | observed ad mechanisms, full copy-field analysis and original-adaptation map, not assumed winners |
 | transparent cutout, background removal, white packshot, source cleanup | `chany-product-assets` | reusable source asset |
 | broad visual references or a Pinterest moodboard | `chany-reference-board` | six visible Pinterest candidates by default, or the user's explicit positive count, with Visual DNA |
+| MeiGen references, AI images with source prompts, or prompt-backed visual inspiration | `chany-ai-prompt-reference` | six visible MeiGen image-and-prompt pairs by default, or requested count, with an original product-specific prompt handoff |
 | high-end commercial, advertising, or lifestyle photography references | `chany-commercial-photo-reference` | visible Production Paradise references with creator provenance and transferable photographic craft |
 | awarded advertising, campaign ideas, or commercial-photography benchmarks | `chany-award-ad-reference` | visible Ads of the World, D&AD, or The One Show cases with message mechanism and Visual DNA |
 | vague visual request, concept territories, trend translation, or expert prompt direction | `chany-creative-direction` | three brand-specific territories, one recommendation, and an approved creative-direction packet |
@@ -51,6 +52,8 @@ Do not add two overlays merely because two subjects appear in one scene. Use a s
 | final claims, offer, delivery, endorsement, rights, disclosure, and publication readiness | `chany-publication-review` | version-bound review record and named human-review status |
 
 ## Boundary decisions
+
+- MeiGen is an additional source-isolated AI image/prompt lane owned by `chany-ai-prompt-reference`. Select it when requested or when prompt-backed AI execution is the research purpose. It is optional after Meta/JTBD strategy, never an automatic extra board. Use callable MeiGen tools or public browser access and supported inline image display; preserve the Pinterest preview allowlist. Do not cross-fill providers, treat engagement as conversion evidence, or change GPT Image 2 because the reference used another model.
 
 - A request to configure the working project uses `chany-project`. A single known production output uses its owner directly. Use `chany-studio` when two or more production rows are required or when the user asks for a complete campaign.
 - `프롬프트만` is a mode of the owner skill. It does not automatically route to marketing strategy.

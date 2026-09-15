@@ -2,11 +2,13 @@
 
 ![Chany's Studio](plugins/photo-reference-studio/assets/logo.png)
 
-업종별 구매 여정·증거·연출·컴플라이언스 판단과 공통 제작 워크플로를 결합해 **광고·홍보·마케팅·상세/랜딩·콘텐츠**를 기획하고 제작하는 ChatGPT Work/Codex 및 Claude 플러그인입니다. Chany's Studio 2.6.0은 출처별 시각 레퍼런스, 사용자가 허가한 브라우저 탭 캡처 기반 영상 레퍼런스 분석, 초보자의 말로 세 가지 전문 콘셉트를 설계하는 크리에이티브 디렉션, 최신 공식 제작 규칙과 브랜드 적합 트렌드를 반영한 GPT Image 2 프롬프트, 제한된 미디어 제작 루프를 하나의 흐름으로 연결합니다.
+업종별 구매 여정·증거·연출·컴플라이언스 판단과 공통 제작 워크플로를 결합해 **광고·홍보·마케팅·상세/랜딩·콘텐츠**를 기획하고 제작하는 ChatGPT Work/Codex 및 Claude 플러그인입니다. Chany's Studio 2.7.0은 출처별 시각 레퍼런스, 사용자가 허가한 브라우저 탭 캡처 기반 영상 레퍼런스 분석, 초보자의 말로 세 가지 전문 콘셉트를 설계하는 크리에이티브 디렉션, 최신 공식 제작 규칙과 브랜드 적합 트렌드를 반영한 GPT Image 2 프롬프트, 제한된 미디어 제작 루프를 하나의 흐름으로 연결합니다.
 
 > [공식 설치·사용설명서 (Notion)](https://jolly-phlox-79c.notion.site/Chany-s-Studio-3c783e9464668140b794ee076be24406) · [문제 해결](docs/TROUBLESHOOTING.md)
 
 ## 설치할 때 입력할 마켓플레이스 주소
+
+2.7.0 추가: **Meigen 이미지·원본 프롬프트 분석 → 제품·서비스별 제작 프롬프트**. 기본 6장 또는 요청 수량을 대화에 표시하며 프로젝트 초기화와 기존 광고 제작에 연결합니다. [사용법·예시](docs/MEIGEN-REFERENCES.md).
 
 2.6.0 추가: **JTBD → Meta 광고 분석 → 구매 전환 영상·단일 이미지·캐러셀 → 전체 광고 카피·CTA 검수**. Claude와 ChatGPT Work/Codex에서 공통으로 사용하며 MoAI는 선택형 전문 확장입니다. [사용법·복습용 프롬프트·MoAI 검토 결과](docs/PERFORMANCE-ADS.md)를 확인하세요.
 
@@ -88,6 +90,7 @@ ChatGPT Work에서 스킬을 직접 고를 때는 `@스킬명`, Codex에서는 `
 | ChatGPT `@chany-reference-board` · Codex `$chany-reference-board` | Pinterest 레퍼런스 기본 6장 또는 요청 수량을 대화에 표시하고 Visual DNA 구성 |
 | ChatGPT `@chany-commercial-photo-reference` · Codex `$chany-commercial-photo-reference` | Production Paradise의 전문 광고·라이프스타일 사진 레퍼런스 |
 | ChatGPT `@chany-award-ad-reference` · Codex `$chany-award-ad-reference` | Ads of the World·D&AD·The One Show의 수상 광고·캠페인 벤치마크 |
+| ChatGPT `@chany-ai-prompt-reference` · Codex `$chany-ai-prompt-reference` | Meigen 이미지·원본 프롬프트 분석과 제품별 제작 프롬프트 |
 | ChatGPT `@chany-creative-direction` · Codex `$chany-creative-direction` | 평범한 요청을 브랜드 코어·감성 에디토리얼·트렌드 포워드 콘셉트와 전문가용 제작 프롬프트로 전환 |
 | ChatGPT `@chany-video-reference-ingest` · Codex `$chany-video-reference-ingest` | YouTube·Instagram 등 영상 페이지를 브라우저에서 사용자 허가로 관찰·캡처하고 분석 가능한 레퍼런스 패킷으로 준비 |
 | ChatGPT `@chany-campaign-visual` · Codex `$chany-campaign-visual` | 연출컷과 텍스트 없는 마스터 키비주얼 |
@@ -287,7 +290,7 @@ Codex: $chany-publication-review로 최종 광고의 정확한 카피·오퍼·�
 /reload-plugins
 ```
 
-업데이트 후 버전이 **2.6.0**인지 확인하고 새 대화 또는 새 작업을 시작하세요.
+업데이트 후 버전이 **2.7.0**인지 확인하고 새 대화 또는 새 작업을 시작하세요.
 
 ## 외부 서비스와 데이터
 

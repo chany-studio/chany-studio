@@ -44,6 +44,7 @@ Select the primary industry overlay before the production skills. Read `chany-st
 | Meta video/image/carousel ad benchmarks and copy/CTA analysis | `chany-meta-ad-research` |
 | cutout, white packshot, source cleanup | `chany-product-assets` |
 | six visible Pinterest art-direction candidates by default, or the user's explicit positive count | `chany-reference-board` |
+| MeiGen AI image references with source prompts and product-specific adaptation | `chany-ai-prompt-reference` |
 | staged master visual | `chany-campaign-visual` |
 | commerce detail-page modules | `chany-detail-page` |
 | single-image ads, conversion carousels, promotion, posters, banners, channel variants | `chany-ad-creative` |

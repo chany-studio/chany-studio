@@ -6,6 +6,8 @@
 
 This file separates visual-reference discovery from factual production knowledge.
 
+MeiGen extension, reviewed 2026-09-15: `chany-ai-prompt-reference` is a separate controlled lane for AI-generated images and their source prompts. It is outside the photography/award restrictions below, preserves the Pinterest-only preview tool, and never cross-fills those boards. Use its observed image/prompt mechanisms as optional execution signals; community engagement is not conversion performance. Do not infer a trend from an offline library result.
+
 Scope: the photography/award board restrictions below do not replace the separate `chany-meta-ad-research` lane. For performance ads, official Meta Ad Library creative is the benchmark source for video, single images and carousels under [performance-ad-contract.md](performance-ad-contract.md). Pinterest is still-photo/style inspiration only, never the video route. User-supplied video analysis uses the existing intake contract. Do not cross-fill these lanes or widen the Pinterest preview server.
 
 - **Visual references:** use exactly one controlled lane per board: public Pinterest Pin pages, public Production Paradise work/profile pages, or public Ads of the World, D&AD, and The One Show work pages. Never mix lanes to fill a shortage. Stocksy, ShotDeck, Death to Stock, social networks, mirrors, general image results, and outbound destinations are not permitted.
