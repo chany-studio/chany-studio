@@ -123,7 +123,7 @@ A public URL, Markdown link, HTML snippet, resource link, file path, or structur
 ## Separation of responsibilities
 
 - The search capability returns factual Pinterest candidate metadata and preview URLs, supplies the image-to-Pin pairing, and removes outbound destination data.
-- The model creates no more than the two allowed taxonomy queries, ranks and diversifies the Pinterest pool, and calls `fetch_reference_preview_image` until exactly `target_count` distinct finalists have succeeded.
+- The model keeps at most two subject categories (L1 and one direct L2), applies [automatic recovery](../../chany-studio/references/reference-recovery.md) for equivalent wording/pagination, and calls `fetch_reference_preview_image` on distinct candidates within that contract's preview bound.
 - The bundled preview connection validates and fetches one small public Pinterest preview, returns MCP image content, and preserves the supplied provenance metadata.
 - Higgsfield imports only the user-selected reference and creates the requested assets.
 
@@ -140,7 +140,7 @@ If one preview tool call fails:
 3. call `fetch_reference_preview_image` for the replacement
 4. ask for a number only after `target_count` successful image results are visible
 
-If the allowed pool is exhausted below `target_count`, label the result incomplete and state the requested count, visible count, and shortfall. Do not search another provider, create a third semantic query, count a duplicate, silently reduce the count, ask the user to choose, or begin paid production. If the connection itself is unavailable, say that native inline preview is unavailable and offer Pinterest Pin links or HTML as a clearly labeled fallback. Never claim that either fallback passed the inline checkpoint.
+After bounded recovery is exhausted below `target_count`, show valid images, label the board incomplete and state requested/visible/missing counts. Do not search another provider, count duplicates, silently reduce the count or begin paid production. Offer one consolidated decision under the recovery contract. If this connection is unavailable, check an actually supported native inline path allowed by the host; if none exists, report it once. Links or HTML may be offered as optional fallbacks, never as a passed inline checkpoint.
 
 ## Security, size, and provenance
 

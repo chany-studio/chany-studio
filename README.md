@@ -2,7 +2,7 @@
 
 ![Chany's Studio](plugins/photo-reference-studio/assets/logo.png)
 
-업종별 구매 여정·증거·연출·컴플라이언스 판단과 공통 제작 워크플로를 결합해 **광고·홍보·마케팅·상세/랜딩·콘텐츠**를 기획하고 제작하는 ChatGPT Work/Codex 및 Claude 플러그인입니다. Chany's Studio 2.8.0은 출처별 시각 레퍼런스, 사용자가 허가한 브라우저 탭 캡처 기반 영상 레퍼런스 분석, 초보자의 말로 세 가지 전문 콘셉트를 설계하는 크리에이티브 디렉션, 최신 공식 제작 규칙과 브랜드 적합 트렌드를 반영한 GPT Image 2 프롬프트, 제한된 미디어 제작 루프를 하나의 흐름으로 연결합니다.
+업종별 구매 여정·증거·연출·컴플라이언스 판단과 공통 제작 워크플로를 결합해 **광고·홍보·마케팅·상세/랜딩·콘텐츠**를 기획하고 제작하는 ChatGPT Work/Codex 및 Claude 플러그인입니다. Chany's Studio 2.8.1은 출처별 시각 레퍼런스, 사용자가 허가한 브라우저 탭 캡처 기반 영상 레퍼런스 분석, 초보자의 말로 세 가지 전문 콘셉트를 설계하는 크리에이티브 디렉션, 최신 공식 제작 규칙과 브랜드 적합 트렌드를 반영한 GPT Image 2 프롬프트, 제한된 미디어 제작 루프를 하나의 흐름으로 연결합니다.
 
 > [공식 설치·사용설명서 (Notion)](https://jolly-phlox-79c.notion.site/Chany-s-Studio-3c783e9464668140b794ee076be24406) · [문제 해결](docs/TROUBLESHOOTING.md)
 
@@ -54,6 +54,8 @@ chany-studio/chany-studio
 플랫폼별 세부 절차는 [설치 및 업데이트 가이드](docs/INSTALL-AND-UPDATE.md)를 확인하세요.
 
 ## 2축 스킬 구조
+
+2.8.1: 일반 레퍼런스는 **Pinterest 5장 + Meigen 5장, 총 10장을 대화에 표시**합니다. 동일 카테고리 재검색·후보 교체는 추가 허락 없이 자동 진행하고, 레퍼런스 선택과 생성 조건은 한 번에 확인합니다. [사용 예시](docs/REFERENCE-RECOVERY.md).
 
 2.8.0 추가: **Higgsfield 광고 모션 디자인·Genjutsu 영상 부분 수정·GPT Image 2.5 선택 지원**. GPT Image 2 기본값은 유지하고 실제 연결을 확인한 기능만 실행합니다. [사용법과 예시](docs/HIGGSFIELD-UPDATES.md).
 
@@ -293,7 +295,7 @@ Codex: $chany-publication-review로 최종 광고의 정확한 카피·오퍼·�
 /reload-plugins
 ```
 
-업데이트 후 버전이 **2.8.0**인지 확인하고 새 대화 또는 새 작업을 시작하세요.
+업데이트 후 버전이 **2.8.1**인지 확인하고 새 대화 또는 새 작업을 시작하세요.
 
 ## 외부 서비스와 데이터
 

@@ -51,6 +51,7 @@ Select the primary industry overlay before the production skills. Read `chany-st
 | bounded repair of an accepted image | `chany-image-edit` |
 | adult model or source-locked fashion stills | `chany-model-fashion` |
 | product commercial, brand film, promotional motion, or concept-led campaign video | `chany-campaign-video` |
+| generic visual references or Pinterest + MeiGen | `chany-reference-board` coordinates 10 inline images by default, Pinterest 5 + MeiGen 5, with bounded automatic search recovery; explicit provider/count overrides |
 | animated ad typography, benefit diagram, logo reveal or CTA card | `chany-motion-design` (Higgsfield execution capability checked; no mandatory AE installation) |
 | replace a product/object in authorized footage or transfer its motion | `chany-campaign-video` Genjutsu revision mode → `chany-media-production-loop` → assembly only if requested |
 | execute or resume generated still-image and campaign-video jobs | `chany-media-production-loop` |

@@ -6,12 +6,15 @@
   "queryPolicy": {
     "defaultReferenceCount": 6,
     "maxTaxonomyDepth": 2,
-    "maxSemanticQueries": 2,
+    "maxSubjectCategories": 2,
+    "maxDiscoveryCallsPerLane": 6,
+    "maxConsecutiveNoProgressCalls": 2,
+    "combinedDefaultReferenceCount": 10,
     "order": [
       "l1",
       "l2"
     ],
-    "l2Rule": "Use one direct subtype only. If no confident direct subtype exists, stop after L1.",
+    "l2Rule": "Use one direct subtype only. If uncertain, stay within L1; equivalent wording and pagination may retry automatically within the discovery budget.",
     "unlistedDirectSubtypeRule": "A user-named subject may be normalized into one direct subtype using the branch medium; do not add another noun or qualifier.",
     "prohibitedModifiers": [
       "color",

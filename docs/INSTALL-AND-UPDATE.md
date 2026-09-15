@@ -59,7 +59,7 @@ chany-studio/chany-studio
 
 - 표시 이름: `Chany's Studio`
 - 내부 식별자: `photo-reference-studio`
-- 버전: `2.8.0`
+- 버전: `2.8.1`
 - 대표 Skill: `chany-studio`
 - 프로젝트 Skill: `chany-project`
 - 전문 Skill: 마케팅 브리프, JTBD 고객 분석(`chany-jtbd-persona`), Meta 광고 리서치(`chany-meta-ad-research`), 기본 6장 또는 요청 수량의 Pinterest 레퍼런스, 전문 크리에이티브 디렉션(`chany-creative-direction`), 브라우저 캡처 영상 레퍼런스 준비(`chany-video-reference-ingest`), 제품 에셋, 키비주얼, 상세페이지, 광고, 편집, 패션, 콘셉트형 캠페인 영상(`chany-campaign-video`), 미디어 생성 실행·재개(`chany-media-production-loop`), 영상 조립·컷 교체(`chany-video-assembly`), 환경 점검(`chany-preflight`), 게시 전 검수(`chany-publication-review`)
@@ -159,7 +159,7 @@ Chany 확인: Chany's Studio가 제공하는 chany-project와 업종 스킬을 �
 
 1. **Customize → Plugins**를 엽니다.
 2. `photo-reference-studio` 마켓플레이스에서 **Update**를 누릅니다.
-3. 버전 `2.8.0`, `chany-project`, `chany-jtbd-persona`, `chany-meta-ad-research`, `chany-creative-direction`, `chany-campaign-video`, `chany-media-production-loop`, 공통 제작 스킬과 11개 업종 스킬 목록을 확인합니다.
+3. 버전 `2.8.1`, `chany-project`, `chany-jtbd-persona`, `chany-meta-ad-research`, `chany-creative-direction`, `chany-campaign-video`, `chany-media-production-loop`, 공통 제작 스킬과 11개 업종 스킬 목록을 확인합니다.
 4. 새 Cowork 작업을 시작합니다.
 
 ### Claude Code
@@ -252,7 +252,7 @@ Chany 확인: Chany's Studio가 제공하는 chany-project와 업종 스킬을 �
 
 - 레퍼런스 검색과 인라인 미리보기 소스를 Pinterest 하나로 제한했습니다.
 - L1 검색 1회와 선택적 직접 L2 검색 1회만 사용하며, 서로 다른 Pinterest 이미지 6장이 실제로 표시돼야 보드가 완료됩니다.
-- 후보가 실패하면 같은 검색 풀의 사용하지 않은 Pinterest 후보로 교체합니다. 6장 미만이면 미완성으로 표시하고 다른 사이트나 세 번째 검색어로 채우지 않습니다.
+- 후보가 실패하면 같은 출처의 미사용 후보로 교체하고 같은 L1·직접 L2 범위에서 제한된 재검색을 자동 진행합니다. 부족하면 실제 이미지를 먼저 보여주고 수량과 원인을 안내합니다. 기본 통합 보드는 Pinterest 5장 + Meigen 5장입니다. [복구 규칙](REFERENCE-RECOVERY.md).
 
 ## 2.2.1에서 추가된 기능
 
@@ -264,7 +264,7 @@ Chany 확인: Chany's Studio가 제공하는 chany-project와 업종 스킬을 �
 
 ## 업데이트가 반영되지 않을 때
 
-- 설치 상세의 버전이 `2.8.0`인지 확인합니다.
+- 설치 상세의 버전이 `2.8.1`인지 확인합니다.
 - Refresh 또는 Update 뒤 반드시 새 대화나 새 작업을 시작합니다.
 - Moai 체이닝을 사용할 때는 두 플러그인의 설치·활성화뿐 아니라 현재 호스트의 실제 플러그인 간 호출 기능도 확인합니다. 기능이 없으면 Moai project 완료 후 Chany를 실행하는 수동 2단계를 사용합니다. 필수 실행은 `--with-moai`, 단독 실행은 `--chany-only`입니다.
 - Claude Code에서는 `/plugin`의 Errors 탭을 확인합니다.

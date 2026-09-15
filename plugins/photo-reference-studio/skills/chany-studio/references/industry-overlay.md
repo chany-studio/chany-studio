@@ -91,7 +91,7 @@ The production router selects exactly one source-isolated reference owner: broad
 - Search L1 first.
 - Search zero or one L2 direct subtype second.
 - Never add audience, funnel stage, location, channel, color, style, mood, camera, lens, lighting, ratio, brand, year, or quality adjectives to either query.
-- If L2 is uncertain or results are weak, stop at L1 and improve curation. Do not descend or create a third query.
+- If L2 is uncertain, stay within L1. Weak results use bounded equivalent-wording searches, pagination and replacement without extra user approval under [reference recovery](reference-recovery.md); do not descend to L3.
 
 All visual specifics stay in ranking, Visual DNA, and the production prompt after discovery.
 

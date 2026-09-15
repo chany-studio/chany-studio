@@ -9,6 +9,8 @@ Use Production Paradise as a specialist commercial-photography lane. Read [refer
 
 ## Required result
 
+Apply [automatic recovery](../chany-studio/references/reference-recovery.md) within this source lane before reporting a shortfall. Equivalent wording, pagination and unused candidate replacement need no extra-search approval. Combine selection and production approval when both were requested.
+
 - Resolve `target_count` from the user's explicit positive whole number or default to `6`. Do not silently cap, expand, or reduce it.
 - Search only public `productionparadise.com` pages. Run the selected branch's exact L1 subject query first and optionally one direct L2 subject query. Never synthesize an L3 or long-tail style query.
 - Rank candidates for commercial craft, subject compatibility, transferable composition and lighting, production feasibility, source diversity, and low brand-contamination risk.

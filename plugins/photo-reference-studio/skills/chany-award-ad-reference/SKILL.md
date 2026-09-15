@@ -9,6 +9,8 @@ Use award and campaign archives as a distinct strategy lane. Read [references/so
 
 ## Required result
 
+Apply [automatic recovery](../chany-studio/references/reference-recovery.md) within this source lane before reporting a shortfall. Equivalent wording, pagination and unused candidate replacement need no extra-search approval. Combine selection and production approval when both were requested.
+
 - Resolve `target_count` from the user's explicit positive whole number or default to `6`.
 - Search only public pages on Ads of the World, D&AD, and The One Show. Use one exact L1 subject query first and optionally one direct L2 child; never construct an L3 or style-heavy phrase.
 - Prefer campaign cases with a legible hero asset, identifiable advertiser or entrant, visible source page, and an idea that can be abstracted without copying execution.

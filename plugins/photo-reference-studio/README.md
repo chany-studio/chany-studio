@@ -1,4 +1,6 @@
-# Chany's Studio 2.8.0
+# Chany's Studio 2.8.1
+
+일반 레퍼런스는 Pinterest 5장 + Meigen 5장, 총 10장을 대화에 표시합니다. 동일 L1·직접 L2 범위 재검색은 자동으로 진행하고 레퍼런스 선택·생성 조건 확인을 통합합니다. [사용법](../../docs/REFERENCE-RECOVERY.md).
 
 Claude와 ChatGPT Work/Codex에서 함께 쓰는 광고 프로젝트 지침을 설정하고, 업종별 여정·증거·연출·컴플라이언스와 공통 제작 워크플로를 결합해 광고·홍보·마케팅·상세/랜딩·콘텐츠를 기획·제작합니다.
 

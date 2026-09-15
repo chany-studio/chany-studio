@@ -163,7 +163,7 @@ test("the central industry taxonomy enforces the two-level query contract", asyn
   assert.equal(taxonomy.schemaVersion, 1);
   assert.equal(taxonomy.queryPolicy?.defaultReferenceCount, 6);
   assert.equal(taxonomy.queryPolicy?.maxTaxonomyDepth, 2);
-  assert.equal(taxonomy.queryPolicy?.maxSemanticQueries, 2);
+  assert.equal(taxonomy.queryPolicy?.maxSubjectCategories, 2);
   assert.ok(Array.isArray(taxonomy.domains), "taxonomy.domains must be an array");
 
   const requestedMappings = taxonomy.domains
@@ -287,7 +287,7 @@ test("production handoffs consume the canonical safety-critical industry fields"
   }
 });
 
-test("reference search policy requires L1 first, at most one L2, and no third query", async () => {
+test("reference search policy limits depth but permits bounded recovery", async () => {
   const searchPolicy = await readPluginFile(
     "skills/chany-reference-board/references/search-policy.md",
   );
@@ -301,7 +301,7 @@ test("reference search policy requires L1 first, at most one L2, and no third qu
   assert.match(
     searchPolicy,
     /Do not retry with a narrower phrase/i,
-    "search-policy.md must prohibit a third semantic query",
+    "search-policy.md must prohibit deeper narrowing, not same-scope recovery",
   );
 });
 
@@ -318,7 +318,10 @@ test("reference discovery is Pinterest-only and honors a user count with six as 
   assert.deepEqual(taxonomy.providers, ["Pinterest"]);
   assert.equal(taxonomy.queryPolicy.defaultReferenceCount, 6);
   assert.equal(taxonomy.queryPolicy.maxTaxonomyDepth, 2);
-  assert.equal(taxonomy.queryPolicy.maxSemanticQueries, 2);
+  assert.equal(taxonomy.queryPolicy.maxSubjectCategories, 2);
+  assert.equal(taxonomy.queryPolicy.maxDiscoveryCallsPerLane, 6);
+  assert.equal(taxonomy.queryPolicy.maxConsecutiveNoProgressCalls, 2);
+  assert.equal(taxonomy.queryPolicy.combinedDefaultReferenceCount, 10);
   const generalProduct = taxonomy.domains.find((domain) => domain.id === "general-product");
   const cosmetics = generalProduct.branches.find(
     (branch) => branch.l1 === "Cosmetic Photography",
@@ -351,7 +354,7 @@ test("reference discovery is Pinterest-only and honors a user count with six as 
   assert.match(policy, /Never follow a Pin's outbound destination/i);
   assert.match(contract, /non-null `original_source_url`/i);
   assert.match(contract, /keep `original_source_url` null/i);
-  assert.match(policy, /maximum of two search calls/i);
+  assert.match(policy, /at most 6 discovery calls per lane/i);
   assert.match(policy, /user's explicit positive whole-number request or `6`/i);
   assert.match(policy, /exactly `target_count` distinct Pinterest candidates/i);
   assert.match(skill, /Use the user's explicit positive whole-number request when present; otherwise default to `6`/i);
@@ -359,7 +362,7 @@ test("reference discovery is Pinterest-only and honors a user count with six as 
   assert.match(contract, /Resolve `target_count`.+default `6`/i);
   assert.match(contract, /counts above the concurrency ceiling run in bounded waves/i);
   assert.match(contract, /each candidate is submitted at most once/i);
-  assert.match(contract, /Do not[^.]*ask the user to choose[^.]*begin paid production/i);
+  assert.match(contract, /Do not[^.]*begin paid production/i);
 });
 
 test("specialist reference lanes stay source-isolated and exclude rejected providers", async () => {

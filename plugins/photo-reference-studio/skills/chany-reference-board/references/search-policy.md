@@ -41,7 +41,7 @@ The L2 term is a direct child, not the L1 phrase plus a string of modifiers. An 
 
 Additional valid pairs include `Professional Services Branding` → `Law Firm Branding`, `Hospitality Photography` → `Hotel Photography`, `Architecture Photography` → `Interior Photography`, and `Automotive Photography` → `Electric Vehicle Photography`.
 
-Run each approved semantic query once on Pinterest, for a maximum of two search calls: the required L1 call and at most one direct-L2 call. If the direct subtype cannot be identified confidently, run only the L1 query. Do not retry with a narrower phrase; improve filtering and ranking instead.
+Read [automatic recovery](../../chany-studio/references/reference-recovery.md). Use at most 6 discovery calls per lane, stopping after 2 consecutive calls without new usable candidates. Equivalent wording and pagination within the same L1/direct L2 scope are automatic; no extra-search approval is needed. Do not retry with a narrower phrase that adds L3 or creative modifiers. If L2 is uncertain, stay within L1.
 
 ## Prohibited query modifiers
 
@@ -59,7 +59,7 @@ Provider and domain scope is routing metadata, not part of the semantic query.
 ## Collection
 
 - collect enough Pinterest candidates across the permitted L1 and optional L2 calls to cover `target_count` plus reasonable replacements, within the live connector's per-call result limit
-- do not silently cap an explicit `target_count`; when the connector or permitted two-query pool cannot supply it, report an incomplete board with requested, visible, and missing counts
+- do not silently cap an explicit `target_count`; after automatic recovery is exhausted, report an incomplete board with requested, visible, and missing counts
 - retain only provider, preview image URL, Pin-page URL, Pin title, Pinterest creator or board when visible, source domain, dimensions when known, and query
 - merge duplicates by canonical Pin ID or URL and normalized `i.pinimg.com` asset URL with size and query removed; also merge perceptual near-duplicates and alternate crops from one image
 - reject collages, screenshots, severe compression, watermarks over the subject, images dominated by text, inaccessible previews, missing source pages, orphaned Pins, and duplicate crops from one shoot
@@ -90,13 +90,13 @@ For three or more requested candidates, build a set that differs across at least
 - minimal vs prop-supported scene
 - front view vs high angle vs top view
 
-Select exactly `target_count` distinct Pinterest candidates. When the metadata permits, prevent one Pinterest creator, board, or obvious shoot from dominating the set. If fewer than `target_count` directly displayable candidates remain after the allowed L1 and optional L2 searches, mark the board incomplete, state the requested count, visible count, and shortfall, and do not ask the user to choose or begin paid production. Do not search another site, add a third query, recycle a failed candidate, silently reduce the count, or lower the standard.
+Select exactly `target_count` distinct Pinterest candidates. Avoid one creator or shoot dominating when possible. After bounded recovery, show the actual passing subset, mark the board incomplete and state requested/visible/missing counts. Offer the single decision in the recovery contract; never start paid production without approval of the displayed scope. Do not cross-fill another provider, recycle failed candidates or lower standards.
 
 ## Mandatory inline reference board
 
 Render every finalist as an actual image in the response. The user must be able to compare all candidates without opening another page.
 
-Before the first Pinterest query in Claude Cowork, confirm that `fetch_reference_preview_image` is callable. The plugin marks its one-tool preview server `alwaysLoad: true`; if a host still defers it and exposes `ToolSearch`, call `ToolSearch(query: "select:fetch_reference_preview_image")`. When the tool is absent, disconnected, or denied, report that transport blocker before search rather than spending the two-query budget on a board that cannot be displayed.
+Before the first Pinterest query in Claude Cowork, confirm that `fetch_reference_preview_image` is callable. The plugin marks its one-tool preview server `alwaysLoad: true`; if a host still defers it and exposes `ToolSearch`, call `ToolSearch(query: "select:fetch_reference_preview_image")`. When the tool is absent, disconnected, or denied, report that transport blocker before search and continue the other lane of a combined board when available.
 
 Use this display order:
 
@@ -122,7 +122,7 @@ Do not substitute a text card, filename, placeholder, source-page thumbnail scre
 
 Treat the board as incomplete until every presented candidate has a visible image. Set `display_confirmed: true` only after actual image content appears in the current conversation. If one candidate cannot be displayed, reject it and use the next unused Pinterest reserve candidate before asking the user to choose. If the current host has no image-content or image-attachment path at all, state the limitation once and offer source links or an HTML board as an optional fallback. Never label that fallback as an inline board or continue the semi-auto selection checkpoint as though the images were visible.
 
-After exactly `target_count` distinct images are visible, ask for one number or 자동 선택. Do not begin paid staged generation before this checkpoint in semi-auto mode.
+After images are visible, recommend one direction. For research + production, combine the selected number or automatic-selection confirmation with the actual production options/cost approval under the recovery contract. Research-only stops at the board. Do not force a separate selection round when that selection can be included in the same decision.
 
 ## Visual DNA record
 
