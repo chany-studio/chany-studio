@@ -64,9 +64,9 @@ Reject a signal if it weakens legibility, authority fidelity, product truth, cul
 
 ## 3. Current production practices by output
 
-### GPT Image 2
+### GPT Image 2.5
 
-- Use `gpt-image-2` as the production default.
+- Use GPT Image 2.5 (Higgsfield ID `gpt_image_2_5`) as the production default; resolve other hosts through their live catalog.
 - Structure complex prompts with labelled sections and a stable order: intended use, scene/background, subject, concrete details, composition/light, copy, constraints, output and acceptance.
 - Describe real materials, texture, framing, viewpoint, placement and lighting. Treat lens specifications as look guidance, not exact optical simulation.
 - Index every input and state its authority role.

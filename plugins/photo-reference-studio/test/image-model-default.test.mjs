@@ -11,20 +11,23 @@ async function readPluginFile(relativePath) {
   return readFile(join(pluginRoot, relativePath), "utf8");
 }
 
-test("the shared still-image contract fixes GPT Image 2 as the honest default", async () => {
+test("the shared still-image contract fixes GPT Image 2.5 as the honest default", async () => {
   const contract = await readPluginFile(
     "skills/chany-studio/references/image-generation-runtime.md",
   );
 
-  assert.match(contract, /default still-image generation and editing model is \*\*GPT Image 2\*\*/i);
-  assert.match(contract, /exact model ID `gpt-image-2`/i);
-  assert.match(contract, /Do not relabel an unknown provider default as GPT Image 2/i);
-  assert.match(contract, /Do not replace `gpt-image-2` merely because another or newer model exists/i);
+  assert.match(contract, /default still-image generation and editing model is \*\*GPT Image 2.5\*\*/i);
+  assert.match(contract, /exact model ID `gpt_image_2_5`/i);
+  assert.match(contract, /Do not relabel an unknown provider default as GPT Image 2.5/i);
+  assert.match(contract, /Do not replace `gpt_image_2_5` merely because another or newer model exists/i);
   assert.match(contract, /user explicitly requests the alternate model or provider/i);
   assert.match(contract, /approved project brief already records that alternate default/i);
-  assert.match(contract, /live capability check proves that `gpt-image-2` is unavailable/i);
+  assert.match(contract, /live capability check proves that `gpt_image_2_5` is unavailable/i);
   assert.match(contract, /invalidates the affected quote, paid-generation approval, and creative acceptance record/i);
   assert.match(contract, /video, audio, and clip assembly keep their own tools/i);
+  assert.match(contract, /Higgsfield-specific; do not assume it works on another host/);
+  assert.match(contract, /native `4:5` support/);
+  assert.doesNotMatch(contract, /optional, scoped override, not a new default/);
   for (const field of [
     "requested_default",
     "resolved_model",
@@ -56,7 +59,7 @@ test("every generative still owner imports the shared model contract", async () 
       /\.\.\/chany-studio\/references\/image-generation-runtime\.md/,
       `${owner} must import the shared image model contract`,
     );
-    assert.match(skill, /GPT Image 2 \(`gpt-image-2`\)/i);
+    assert.match(skill, /GPT Image 2.5 \(`gpt_image_2_5`\)/i);
   }
 });
 
@@ -70,7 +73,7 @@ test("project and campaign state persist the default and scoped override", async
   const documents = await Promise.all(files.map(readPluginFile));
 
   for (let index = 0; index < documents.length; index += 1) {
-    assert.match(documents[index], /gpt-image-2/i, `${files[index]} must persist the default`);
+    assert.match(documents[index], /gpt_image_2_5/i, `${files[index]} must persist the default`);
   }
   assert.match(documents[3], /^still_image_model_policy:\s*$/m);
   assert.match(documents[3], /^  active_override:/m);
@@ -106,13 +109,13 @@ test("public docs and manifests publish the 2.8.1 default consistently", async (
     ]);
 
   for (const document of [rootReadme, pluginReadme, install, guide, troubleshooting]) {
-    assert.match(document, /GPT Image 2/i);
-    assert.match(document, /gpt-image-2/i);
+    assert.match(document, /GPT Image 2.5/i);
+    assert.match(document, /gpt_image_2_5/i);
   }
   assert.equal(claude.version, "2.8.1");
   assert.match(codex.version, /^2\.8\.1(?:\+codex\.)?/);
-  assert.ok(claude.keywords.includes("gpt-image-2"));
+  assert.ok(claude.keywords.includes("gpt_image_2_5"));
   assert.ok(codex.interface.capabilities.includes(
-    "GPT Image 2 default for generative still images with scoped overrides",
+    "GPT Image 2.5 default for generative still images with scoped overrides",
   ));
 });

@@ -138,7 +138,7 @@ test("campaign video uses one evidence-led still-first motion contract", async (
   assert.equal(frontmatterName(skill, skillPath), "chany-campaign-video");
   assert.match(skill, /product or service commercials/i);
   assert.match(skill, /brand films/i);
-  assert.match(skill, /GPT Image 2 \(`gpt-image-2`\)/i);
+  assert.match(skill, /GPT Image 2.5 \(`gpt_image_2_5`\)/i);
   assert.match(skill, /least risky motion route/i);
   assert.match(skill, /deterministic movement over an accurate still/i);
   assert.match(skill, /Hand only accepted clip versions/i);
@@ -312,12 +312,12 @@ test("both manifests publish the 2.8.1 conversion-creative release", async () =>
 
   assert.equal(claude.version, "2.8.1");
   assert.match(codex.version, /^2\.8\.1(?:\+codex\.[a-z0-9.-]+)?$/i);
-  assert.ok(codex.interface.capabilities.includes("GPT Image 2 default for generative still images with scoped overrides"));
+  assert.ok(codex.interface.capabilities.includes("GPT Image 2.5 default for generative still images with scoped overrides"));
   assert.ok(codex.interface.capabilities.includes("Native Claude question-card interview and Chany-file approval"));
   assert.ok(codex.interface.capabilities.includes("Source-isolated Pinterest, Production Paradise, and award-archive reference boards with in-chat previews"));
   assert.ok(codex.interface.capabilities.includes("Beginner-friendly expert creative direction and anti-genericity review"));
   assert.doesNotMatch(JSON.stringify(codex.interface), /Behance/i);
-  assert.ok(codex.interface.capabilities.includes("Concept-led campaign video with approved GPT Image 2 governing stills"));
+  assert.ok(codex.interface.capabilities.includes("Concept-led campaign video with approved GPT Image 2.5 governing stills"));
   assert.ok(codex.interface.capabilities.includes("Capability-labeled browser-extension capture intake for YouTube and Instagram video references"));
   assert.ok(codex.interface.capabilities.includes("Bounded still-image and campaign-video production loop with stable job ledger"));
   assert.ok(codex.interface.capabilities.includes("Local video assembly, segment replacement, hook variants, and delivery verification"));

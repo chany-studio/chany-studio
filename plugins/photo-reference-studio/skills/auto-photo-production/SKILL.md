@@ -29,6 +29,6 @@ Route the request as follows:
 
 Tell the user which current skill now owns the request, then follow that skill. Preserve the original request and do not add deliverables during migration.
 
-For every generative still-image creation or edit, the routed owner must apply Chany's Studio's shared GPT Image 2 (`gpt-image-2`) default and controlled-override contract. Do not preserve an older prompt's implicit image-model default as though the user explicitly selected it.
+For every generative still-image creation or edit, the routed owner must apply Chany's Studio's shared GPT Image 2.5 (`gpt_image_2_5`) default and controlled-override contract. Do not preserve an older prompt's implicit image-model default as though the user explicitly selected it.
 
 Every static-reference request stays inside the selected source-isolated owner: Pinterest Pin pages and `i.pinimg.com` previews for the broad board, Production Paradise for professional commercial photography, or Ads of the World, D&AD, and The One Show for award references. Never blend providers or follow a Pin's outbound destination. Video-page intake is a separate user-authorized browser-capture path and does not expand any static discovery lane.

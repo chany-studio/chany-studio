@@ -131,7 +131,7 @@ test("current signal ledger covers every production family without turning knowl
   assert.match(signals, /Reviewed:[*]* 2026-09-06/i);
   assert.match(signals, /Pinterest Predicts 2026/i);
   assert.match(signals, /Pinterest Palette/i);
-  assert.match(signals, /GPT Image 2/i);
+  assert.match(signals, /GPT Image 2.5/i);
   assert.match(signals, /Never convert a knowledge-source example image into a visual reference candidate/i);
   assert.match(signals, /Stocksy, ShotDeck, Death to Stock/i);
 });

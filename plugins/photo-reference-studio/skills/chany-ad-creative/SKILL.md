@@ -13,7 +13,7 @@ For purchase-oriented ads or reference + product/service adaptation, read the sh
 
 Read the shared [creative-direction system](../chany-studio/references/creative-direction-system.md) and [current creative signals](../chany-studio/references/current-creative-signals.md). Apply the named placement's current creative pattern—such as mobile hierarchy, safe zones, brand timing, modular asset rules, or CTA treatment—without converting platform guidance into a universal layout formula.
 
-Before generating or generatively editing a still-image plate, read and follow the shared [image model default](../chany-studio/references/image-generation-runtime.md). Use GPT Image 2 (`gpt-image-2`) unless a scoped override meets that contract. Execute and resume generated plates through `chany-media-production-loop`, which owns the stable job record, paid preflight, inline inspection, and bounded correction; keep this skill as the creative owner.
+Before generating or generatively editing a still-image plate, read and follow the shared [image model default](../chany-studio/references/image-generation-runtime.md). Use GPT Image 2.5 (`gpt_image_2_5`) unless a scoped override meets that contract. Execute and resume generated plates through `chany-media-production-loop`, which owns the stable job record, paid preflight, inline inspection, and bounded correction; keep this skill as the creative owner.
 
 ## Workflow
 
@@ -25,7 +25,7 @@ Before generating or generatively editing a still-image plate, read and follow t
 
 Do not invent scarcity, discounts, prices, availability, outcomes, testimonials, claims, comparisons, qualifications, or legal statements. Apply the industry skill's prohibited-content and human-review gate. Generate one ad unit per named placement by default and never add unrequested variants. A single-image unit has one asset; a carousel unit has the approved number of separate card assets, not one flattened collage. Deliver the accompanying ad-copy packet, not only on-image text.
 
-Inspect the connected tool schema before use. If GPT Image 2 is unavailable or unsuitable for a required capability, do not silently switch to a website-only Higgsfield feature or another model. Complete the creative brief and input package, state the gap, and obtain the scoped override required by the image model contract before alternate generation.
+Inspect the connected tool schema before use. If GPT Image 2.5 is unavailable or unsuitable for a required capability, do not silently switch to a website-only Higgsfield feature or another model. Complete the creative brief and input package, state the gap, and obtain the scoped override required by the image model contract before alternate generation.
 
 Paid submission, recovery, and scope changes follow the shared runtime contract exactly. Never blindly resubmit after a timeout, disconnect, or unknown charge state; inspect the original job or receipt first. A changed request requires a new paid-generation preflight and approval under that contract.
 

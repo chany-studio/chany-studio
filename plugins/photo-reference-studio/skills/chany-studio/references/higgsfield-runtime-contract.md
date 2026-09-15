@@ -2,7 +2,7 @@
 
 Apply this contract to Higgsfield and any other connected media service that can consume credits or create a paid job. The live tool schema and catalog are authoritative; website pages, remembered model names, examples, and this repository are not runtime capability guarantees.
 
-For generative still-image creation or editing, apply [image-generation-runtime.md](image-generation-runtime.md) first. GPT Image 2 (`gpt-image-2`) is the repository-level requested default for those operations. That policy does not prove runtime availability and does not apply to video, audio, or clip assembly. If the live tool cannot resolve the default, stop before generation or obtain approval for the smallest scoped override defined there.
+For generative still-image creation or editing, apply [image-generation-runtime.md](image-generation-runtime.md) first. GPT Image 2.5 (`gpt_image_2_5`) is the repository-level requested default for those operations. That policy does not prove runtime availability and does not apply to video, audio, or clip assembly. If the live tool cannot resolve the default, stop before generation or obtain approval for the smallest scoped override defined there.
 
 ## Resolve the live operation
 
@@ -16,7 +16,7 @@ Before composing a paid call:
 
 For a web-media import operation, distinguish an actual HTTPS media-file response from a YouTube, Instagram, or other platform page. Never pass a post, watch, Reel, feed, login, redirect, or reconstructed stream URL as though it were a direct media file. Route page links through `chany-video-reference-ingest`; external import of a confirmed direct media file requires separate upload approval and must follow the live connector's current type and size limits.
 
-Except for the deliberate `gpt-image-2` still-image default defined in the shared image contract, do not hardcode or silently substitute model identifiers, templates, aspect ratios, durations, counts, option values, or prices. A server-selected default must be reported as a resolved value, not represented as the user's original choice or as GPT Image 2 without evidence.
+Except for the deliberate `gpt_image_2_5` still-image default defined in the shared image contract, do not hardcode or silently substitute model identifiers, templates, aspect ratios, durations, counts, option values, or prices. A server-selected default must be reported as a resolved value, not represented as the user's original choice or as GPT Image 2.5 without evidence.
 
 ## Cost preflight and approval
 

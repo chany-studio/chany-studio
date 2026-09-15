@@ -13,7 +13,7 @@ lifecycle and its evidence.
 Read the shared [runtime boundaries](../chany-studio/references/runtime-boundaries.md),
 [media job ledger](../chany-studio/references/media-job-ledger.md), and
 [creative quality loop](../chany-studio/references/creative-quality-loop.md).
-For a generated still, also apply the [image-generation runtime](../chany-studio/references/image-generation-runtime.md): GPT Image 2 (`gpt-image-2`) is the default unless that contract authorizes a scoped override.
+For a generated still, also apply the [image-generation runtime](../chany-studio/references/image-generation-runtime.md): GPT Image 2.5 (`gpt_image_2_5`) is the default unless that contract authorizes a scoped override.
 For any billable provider operation, apply the [paid-media runtime contract](../chany-studio/references/higgsfield-runtime-contract.md).
 
 For Genjutsu revisions, consume the campaign-video owner's [edit contract](../chany-campaign-video/references/genjutsu-edit.md), retaining the source clip version, target and preserve list. Reuse approved source frames; do not force a redundant still generation. Native composition edits belong to `chany-motion-design`; only its generated source assets enter this loop.

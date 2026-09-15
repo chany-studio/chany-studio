@@ -11,7 +11,7 @@ Read [references/revision-routing.md](references/revision-routing.md) to classif
 
 Read the surgical-edit section of the shared [creative-direction system](../chany-studio/references/creative-direction-system.md). State the exact target, one requested change, and the repeated preserve list on every correction; never use a broad style refresh to disguise a local edit.
 
-Before a generative still-image edit, read and follow the shared [image model default](../chany-studio/references/image-generation-runtime.md). Use GPT Image 2 (`gpt-image-2`) unless a scoped override meets that contract. Execute and resume generated edits through `chany-media-production-loop`, which owns the stable job record, paid preflight, inline inspection, and bounded correction; keep this skill as the edit owner.
+Before a generative still-image edit, read and follow the shared [image model default](../chany-studio/references/image-generation-runtime.md). Use GPT Image 2.5 (`gpt_image_2_5`) unless a scoped override meets that contract. Execute and resume generated edits through `chany-media-production-loop`, which owns the stable job record, paid preflight, inline inspection, and bounded correction; keep this skill as the edit owner.
 
 ## Workflow
 

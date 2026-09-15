@@ -76,7 +76,7 @@ Every non-empty `usp_role` resolves to an approved benefit, objection, or claim-
 Work from the cheapest reversible decision to the most expensive:
 
 1. approve evidence, copy, concept, and shot order
-2. create and inspect the governing still with GPT Image 2 under the shared default contract
+2. create and inspect the governing still with GPT Image 2.5 under the shared default contract
 3. correct one still defect class while freezing accepted properties
 4. resolve the live video workflow and cost
 5. generate only the approved clip scope

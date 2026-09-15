@@ -11,7 +11,7 @@ Read [references/model-fashion-production.md](references/model-fashion-productio
 
 Read the shared [creative-direction system](../chany-studio/references/creative-direction-system.md) and [current creative signals](../chany-studio/references/current-creative-signals.md). Apply trend signals only after identity, age, consent, garment, accessory, fit, and body-integrity locks; never make a person look current by changing who they are or what they are wearing.
 
-Before generating or generatively editing a still image, read and follow the shared [image model default](../chany-studio/references/image-generation-runtime.md). Use GPT Image 2 (`gpt-image-2`) unless a scoped override meets that contract. Execute and resume generated fashion stills through `chany-media-production-loop`, which owns the stable job record, paid preflight, inline inspection, and bounded correction; keep this skill as the identity and wardrobe owner.
+Before generating or generatively editing a still image, read and follow the shared [image model default](../chany-studio/references/image-generation-runtime.md). Use GPT Image 2.5 (`gpt_image_2_5`) unless a scoped override meets that contract. Execute and resume generated fashion stills through `chany-media-production-loop`, which owns the stable job record, paid preflight, inline inspection, and bounded correction; keep this skill as the identity and wardrobe owner.
 
 ## Workflow
 

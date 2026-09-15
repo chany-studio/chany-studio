@@ -4,21 +4,21 @@ Apply this contract to every generative still-image creation or edit owned by Ch
 
 ## Default selection
 
-The default still-image generation and editing model is **GPT Image 2**, using the exact model ID `gpt-image-2`. This is a deliberate Chany's Studio default, not a claim that every host or connected provider exposes that model.
+The default still-image generation and editing model is **GPT Image 2.5**, using the exact model ID `gpt_image_2_5`. This is a deliberate Chany's Studio default, not a claim that every host or connected provider exposes that model.
 
 Before a generative still-image call:
 
 1. inspect the current host tool or connected provider schema and identify whether it exposes a model selector
-2. when an exact selector is available, choose `gpt-image-2`
-3. when the host hides model selection, treat GPT Image 2 as resolved only if current tool documentation or runtime metadata explicitly confirms it; otherwise record the resolved model as unavailable
+2. when an exact selector is available, choose `gpt_image_2_5`
+3. when the host hides model selection, treat GPT Image 2.5 as resolved only if current tool documentation or runtime metadata explicitly confirms it; otherwise record the resolved model as unavailable
 4. preserve every authority input, input role, requested count, format, quality setting, and paid-generation boundary from the owning skill
 5. show the requested default and the actually resolved model in the paid-generation approval packet or execution summary
 
-Do not relabel an unknown provider default as GPT Image 2. Do not replace `gpt-image-2` merely because another or newer model exists.
+Do not relabel an unknown provider default as GPT Image 2.5. Do not replace `gpt_image_2_5` merely because another or newer model exists.
 
 Official model references:
 
-- https://developers.openai.com/api/docs/models/gpt-image-2
+- https://higgsfield.ai/blog/gpt-image-2-5-higgsfield
 - https://developers.openai.com/api/docs/guides/image-generation
 
 ## Controlled override
@@ -27,17 +27,17 @@ Use another model or provider only when at least one condition is true:
 
 - the user explicitly requests the alternate model or provider for the current asset or project
 - an approved project brief already records that alternate default
-- a live capability check proves that `gpt-image-2` is unavailable or cannot perform a required operation, input role, format, or policy-constrained transformation
+- a live capability check proves that `gpt_image_2_5` is unavailable or cannot perform a required operation, input role, format, or policy-constrained transformation
 
 A quality defect, a timeout, a failed call, or the existence of a provider-selected default is not by itself permission to switch models. First inspect the original result or job state under the paid-media runtime contract.
 
-When an override is needed, state the exact alternate model or workflow, why the default cannot be used, which assets the change covers, and whether cost or authority inputs change. Obtain the user's approval before a paid alternate call. The override applies only to that recorded scope; `gpt-image-2` remains the plugin default elsewhere unless the user explicitly updates the project policy.
+When an override is needed, state the exact alternate model or workflow, why the default cannot be used, which assets the change covers, and whether cost or authority inputs change. Obtain the user's approval before a paid alternate call. The override applies only to that recorded scope; `gpt_image_2_5` remains the plugin default elsewhere unless the user explicitly updates the project policy.
 
 Changing the model or provider invalidates the affected quote, paid-generation approval, and creative acceptance record. Run a new preflight and approval instead of silently falling back.
 
-## Higgsfield GPT Image 2.5 option
+## Higgsfield GPT Image 2.5 default
 
-GPT Image 2.5 is an optional, scoped override, not a new default. When selected under the approval rules above, inspect the live Higgsfield catalog: the model was exposed as `gpt_image_2_5` on 2026-09-15, with `variant` values `flare` and `sunburst`. Do not substitute a guessed hyphenated ID or assume this provider ID works on another host.
+GPT Image 2.5 is the default by user policy as of 2026-09-15. The exact model ID `gpt_image_2_5` is Higgsfield-specific; do not assume it works on another host. Inspect the live catalog before execution. It was verified on 2026-09-15 with `variant` values `flare` and `sunburst` and native `4:5` support. Do not carry forward the previous model's crop workarounds or old quotes. Other hosts must resolve GPT Image 2.5 from their own live documentation, not a guessed ID.
 
 Higgsfield positions Flare for fast concept exploration and Sunburst for detailed editing. Treat those as provider guidance, not tested quality guarantees. Choose the variant for the requested task and disclose it with the actual quality, resolution, background, reference-role/count limits and cost returned by the current schema. Do not silently accept low-quality provider defaults for a final asset or force maximum settings on every draft.
 
@@ -51,7 +51,7 @@ Record the selection with the asset or paid-generation plan:
 
 ```yaml
 still_image_model:
-  requested_default: "gpt-image-2"
+  requested_default: "gpt_image_2_5"
   resolved_model: ""
   provider: ""
   selection_status: "exact-default | provider-confirmed-default | override-approved | unavailable"
