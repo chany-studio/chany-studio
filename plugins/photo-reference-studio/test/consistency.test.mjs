@@ -98,7 +98,8 @@ test("every skill follows the shared beginner experience contract", async () => 
   const contract = await readFile(join(pluginRoot, "skills", "chany-studio", "references", "beginner-experience.md"), "utf8");
   assert.match(contract, /Quick start is the default/);
   assert.match(contract, /이렇게 만들까요\?/);
-  assert.match(contract, /이대로 만들기 \(권장\)/);
+  assert.match(contract, /이대로 1장 만들기 \(권장\)/);
+  assert.match(contract, /2장 만들어 더 나은 것 고르기/);
   assert.match(contract, /never removes a paid-generation approval/);
   assert.match(contract, /Credits too low/);
   const skillDirs = (await readdir(join(pluginRoot, "skills"), { withFileTypes: true }))
@@ -126,4 +127,40 @@ test("beginner docs lead with a first-use guide, glossary and plain troubleshoot
   }
   assert.match(troubleshooting, /## 크레딧이 부족하다고 나와요/);
   assert.match(troubleshooting, /## Node\.js가 필요하다고 나와요/);
+});
+
+test("the product insertion pipeline covers the core product-to-ad flow", async () => {
+  const pipeline = await readFile(join(pluginRoot, "skills", "chany-studio", "references", "product-insertion.md"), "utf8");
+  for (const section of ["Product profile", "References chosen for this product", "Clean product source", "\"Like this reference\" generation", "Quality settings", "Product match check", "Ad-grade finishing", "Other ratios from the accepted image", "Video from the accepted image", "Higgsfield ad templates as references"]) {
+    assert.ok(pipeline.includes(section), `product-insertion.md must define ${section}`);
+  }
+  assert.match(pipeline, /제품 확인: ✓ 모양·비율/);
+  assert.match(pipeline, /Reject any result that could pass for the reference itself/);
+  assert.match(pipeline, /sends it to a third party/);
+  assert.match(pipeline, /Do not switch silently/);
+  assert.match(pipeline, /`quality: high` and `resolution: 2k`/);
+  assert.match(pipeline, /which image is which/);
+  for (const skill of ["chany-studio", "chany-campaign-visual", "chany-ad-creative", "chany-reference-board", "chany-campaign-video", "chany-ai-prompt-reference"]) {
+    const body = await readFile(join(pluginRoot, "skills", skill, "SKILL.md"), "utf8");
+    assert.match(body, /product-insertion\.md\)/, `${skill} must follow the product insertion pipeline`);
+  }
+  const beginner = await readFile(join(pluginRoot, "skills", "chany-studio", "references", "beginner-experience.md"), "utf8");
+  assert.match(beginner, /run the reference board automatically/, "quick start must find references for a supplied product");
+  const ranking = await readFile(join(pluginRoot, "skills", "chany-reference-board", "references", "search-policy.md"), "utf8");
+  assert.match(ranking, /hold this exact product/);
+});
+
+test("plain-language direction translates everyday words into professional terms", async () => {
+  const guide = await readFile(join(pluginRoot, "skills", "chany-studio", "references", "plain-language-direction.md"), "utf8");
+  assert.match(guide, /배경 흐리게[^|]*\| 아웃포커싱/);
+  assert.match(guide, /화장품 화보처럼[^|]*\| 뷰티디쉬 조명/);
+  assert.match(guide, /이렇게 이해했어요:/);
+  assert.match(guide, /전문가식으로 쓰면:/);
+  assert.match(guide, /AskUserQuestion/);
+  assert.match(guide, /ChatGPT Work/);
+  assert.match(guide, /never adds a checkpoint to quick start/);
+  for (const skill of ["chany-studio", "chany-creative-direction", "chany-campaign-visual", "chany-ad-creative", "chany-campaign-video", "chany-image-edit"]) {
+    const body = await readFile(join(pluginRoot, "skills", skill, "SKILL.md"), "utf8");
+    assert.match(body, /plain-language-direction\.md\)/, `${skill} must use plain-language direction`);
+  }
 });

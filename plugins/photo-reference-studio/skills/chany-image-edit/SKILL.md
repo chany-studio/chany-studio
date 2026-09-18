@@ -9,6 +9,8 @@ Revise an accepted product, campaign, advertising, detail-page, or model asset w
 
 Every user-facing turn follows the shared [beginner experience contract](../chany-studio/references/beginner-experience.md): quick start by default, plain Korean without internal field names, and one confirmation card before any paid generation.
 
+Translate everyday look words into professional photo and film direction, and offer the plain-words guided card when the user wants control, following [plain-language direction](../chany-studio/references/plain-language-direction.md).
+
 Read [references/revision-routing.md](references/revision-routing.md) to classify the change, choose its authority source, assemble the edit prompt, and validate the result.
 
 Read the surgical-edit section of the shared [creative-direction system](../chany-studio/references/creative-direction-system.md). State the exact target, one requested change, and the repeated preserve list on every correction; never use a broad style refresh to disguise a local edit.

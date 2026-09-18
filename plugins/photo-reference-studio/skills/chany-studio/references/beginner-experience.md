@@ -7,20 +7,21 @@ Most Chany's Studio users have never generated an AI image or video. Apply this 
 Unless the user asks to compare options ("여러 안 보여줘", "콘셉트 3안", "레퍼런스 먼저 보여줘", "자세히"), or an approved direction already exists, run **quick start** for a single requested deliverable:
 
 1. Inspect the attachments and the request. Ask a question only when a missing fact would make the output wrong, such as which product to show. Do not ask about price, offer, or CTA wording that the user did not mention; write copy only from supplied facts and leave out any price, discount, or claim that was not given.
-2. Skip external reference research unless the user asked for references. Work from product analysis and the shared creative-direction system instead.
-3. Choose the recommended concept territory internally. Do not show the three-territory scorecard.
-4. Show **one** confirmation card (§3) that contains the direction in one sentence, the exact copy, and the paid-generation details. This single card is the concept approval, the copy approval, and the paid-generation approval for that displayed version.
-5. After generation, show the result first, then at most three short next-step suggestions in plain Korean.
+2. When the subject is a product the user supplied, follow [product-insertion.md](product-insertion.md): profile the product, run the reference board automatically, rank references for this product, show them as numbered images with one recommended, and continue to the card without waiting. For a service or when no product photo exists, work from the request and the shared creative-direction system.
+3. Choose the recommended reference and concept territory internally. Do not show the three-territory scorecard.
+4. Show **one** confirmation card (§3) that contains the chosen reference, the direction in one sentence, the exact copy, and the paid-generation details. This single card is the reference choice, the concept approval, the copy approval, and the paid-generation approval for that displayed version. The user may answer with another reference number instead.
+5. After generation, show the result and the product match check first, then at most three short next-step suggestions in plain Korean, such as 광고용 고화질로 키우기, 다른 비율로 늘리기, 이 이미지로 영상 만들기.
 
 Video keeps its still-first order, but tell the user once, before starting, that there will be two confirmation cards: one for the governing still image and one for the video. Do not add other checkpoints.
 
-**Detailed mode** is the previous full flow: reference board, three scored territories, separate copy approval. Use it when the user asks for options, for a multi-deliverable campaign through `chany-studio`, or for a regulated industry (healthcare, finance, education for minors, automotive safety or finance claims) where the overlay requires it. Offer it in one line after a quick-start result: "여러 안을 비교하고 싶으면 '여러 안 보여줘'라고 말씀하세요."
+**Detailed mode** is the previous full flow: reference board with a separate pick, three scored territories, separate copy approval. Use it when the user asks for options, for a multi-deliverable campaign through `chany-studio`, or for a regulated industry (healthcare, finance, education for minors, automotive safety or finance claims) where the overlay requires it. Offer it in one line after a quick-start result: "여러 안을 비교하고 싶으면 '여러 안 보여줘'라고 말씀하세요."
 
 ## 2. Plain Korean on every screen
 
 - Reply in the user's language. For a Korean user, write natural, polite Korean (해요체) at the level of someone who has never made an AI image.
 - Never show YAML, JSON, internal field names, packet names, version IDs, job IDs, or English placeholders such as `target_count`, `resolved_model_or_workflow`, `server_adjustments`, `brand-core`, `Visual DNA`, `L1/L2`, `JTBD`, or `claim_ledger`. Those records stay internal (project files and the job ledger).
 - When a concept must be named, use plain words: 기본에 충실한 안, 감성 연출 안, 요즘 유행을 살린 안. Use 레퍼런스 분석 instead of Visual DNA, 검색 범위 instead of L1/L2, 구매 이유 분석 instead of JTBD, 사진 배경 제거(누끼) instead of cutout, 행동 유도 문구(버튼 문구) instead of CTA.
+- A photography or film term may appear only next to its plain meaning, as a learning aid (for example 아웃포커싱(배경만 흐리게)). Translate the user's everyday words into professional direction and reflect it back once, as described in [plain-language-direction.md](plain-language-direction.md).
 - Keep a turn short: result or question first, explanation after, no tables unless the user is comparing options.
 - Name the model once as "GPT Image 2.5" in the confirmation card. Do not explain model routing.
 
@@ -31,19 +32,22 @@ Before any paid generation, keep the full `paid_generation_approval` record inte
 ```text
 이렇게 만들까요?
 - 만들 것: 인스타그램 피드 광고 이미지 1장 (4:5)
+- 레퍼런스: 3번 사진 느낌으로 (다른 번호를 말씀하셔도 돼요)
+- 준비: 제품 배경을 먼저 깔끔하게 지워요 · 레퍼런스 사진을 Higgsfield에 참고용으로 보냅니다
 - 방향: 흰 대리석 위에 제품을 두고 아침 햇살로 깨끗하게 보여줘요
 - 들어갈 문구: "하루 한 번, 촉촉하게" / 버튼: 지금 구매하기
-- 사용 도구: Higgsfield · GPT Image 2.5
+- 사용 도구: Higgsfield · GPT Image 2.5 · 고화질 2K
 - 비용: 약 12 크레딧 (현재 잔액 240 → 생성 후 228)
 ```
 
 Use the server-returned cost and balance. When they are unavailable, write "비용: 확인할 수 없어요. 생성 전에 Higgsfield에서 잔액을 확인해 주세요" and do not guess. The illustrative numbers above are examples only and never a price reference.
 
-Offer exactly three choices through the host's question tool, or as numbered text if none exists:
+Omit the 레퍼런스 and 준비 lines when they do not apply. Offer these choices through the host's question tool, or as numbered text if none exists:
 
-1. 이대로 만들기 (권장)
-2. 방향이나 문구 바꾸기
-3. 취소
+1. 이대로 1장 만들기 (권장)
+2. 2장 만들어 더 나은 것 고르기 (비용 약 2배)
+3. 레퍼런스·방향·문구 바꾸기 (느낌을 직접 고르는 쉬운 질문 카드로 이어집니다)
+4. 취소
 
 A changed card needs a new approval. An empty or unclear response is not approval.
 

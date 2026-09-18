@@ -11,7 +11,7 @@ Before a generative still-image call:
 1. inspect the current host tool or connected provider schema and identify whether it exposes a model selector
 2. when an exact selector is available, choose `gpt_image_2_5`
 3. when the host hides model selection, treat GPT Image 2.5 as resolved only if current tool documentation or runtime metadata explicitly confirms it; otherwise record the resolved model as unavailable
-4. preserve every authority input, input role, requested count, format, quality setting, and paid-generation boundary from the owning skill
+4. preserve every authority input, input role, requested count, format, quality setting, and paid-generation boundary from the owning skill; for ad work set quality and resolution explicitly as in [product-insertion.md](product-insertion.md) §5 instead of accepting the provider's speed-oriented defaults
 5. show the requested default and the actually resolved model in the paid-generation approval packet or execution summary
 
 Do not relabel an unknown provider default as GPT Image 2.5. Do not replace `gpt_image_2_5` merely because another or newer model exists.

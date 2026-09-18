@@ -115,7 +115,7 @@ Never stretch the product, distort logos, blind-crop the focal point, or treat a
 
 ## Higgsfield Marketing Studio boundary
 
-Treat Marketing Studio or a one-click advertising template as an execution backend, not a separate strategy skill. Inspect the active MCP tool list and schema. If the requested template is available only in the Higgsfield web interface, prepare the exact product input, copy lock, format, template choice, and creative direction for handoff; do not claim the interface action ran.
+Treat Marketing Studio or a one-click advertising template as an execution backend, not a separate strategy skill. Inspect the active MCP tool list and schema. When the connector exposes the preset feed and create operation, follow [product insertion](../../chany-studio/references/product-insertion.md) §12. If the requested template is available only in the Higgsfield web interface, prepare the exact product input, copy lock, format, template choice, and creative direction for handoff; do not claim the interface action ran.
 
 ## QA
 

@@ -9,6 +9,8 @@ Coordinate industry-aware advertising, promotion, and content production without
 
 Every user-facing turn follows the shared [beginner experience contract](references/beginner-experience.md): quick start by default, plain Korean without internal field names, and one confirmation card before any paid generation.
 
+Everyday look words are translated into professional direction through [plain-language direction](references/plain-language-direction.md). The core job is [product insertion](references/product-insertion.md): a user's product photo, references chosen for that product, and an ad-grade image or video with the real product in the reference's style.
+
 Project initialization, `AGENTS.md`, project records, and runtime-specific delegation configuration belong to `chany-project`. Once a project is configured, use this router for its multi-deliverable production work.
 
 ## Route the request

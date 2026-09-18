@@ -9,6 +9,8 @@ Create one commercially useful staged image or master key visual from authoritat
 
 Every user-facing turn follows the shared [beginner experience contract](../chany-studio/references/beginner-experience.md): quick start by default, plain Korean without internal field names, and one confirmation card before any paid generation.
 
+Translate everyday look words into professional photo and film direction, and offer the plain-words guided card when the user wants control, following [plain-language direction](../chany-studio/references/plain-language-direction.md).
+
 Read [references/visual-production.md](references/visual-production.md) for formulas, prompt structure, campaign locks, and QA.
 
 Read the shared [creative-direction system](../chany-studio/references/creative-direction-system.md) and [current creative signals](../chany-studio/references/current-creative-signals.md). If no direction has been approved, route through `chany-creative-direction` before paid production; it must propose three brand-specific territories and recommend one rather than defaulting to a generic premium render.
@@ -20,7 +22,7 @@ Before generative still-image work, read and follow the shared [image model defa
 1. Read the applicable industry direction packet and carry forward its journey stage, proof objects, must-capture list, directing rules, claims gates, and human-review requirement.
 2. Build the subject lock from the original source and separate visible facts from uncertainty.
 3. Compile the approved creative direction into an explicit production brief covering outcome, authority inputs, scene and subject, art direction, copy and layout, preservation locks, exclusions, output use, and measurable acceptance. Preserve the six production dimensions—subject, mood, composition and camera, light, environment, and output use—inside that structure.
-4. Use a selected reference only for composition, camera, light, palette, material, props, depth, and mood. Exclude its subject, person, packaging, logo, copy, price, and branded layout.
+4. Use a selected reference only for composition, camera, light, palette, material, props, depth, and mood. Exclude its subject, person, packaging, logo, copy, price, and branded layout. For a supplied product, follow [product insertion](../chany-studio/references/product-insertion.md): clean product source, product and reference as separately roled inputs when supported, product match check, then optional upscale and extra ratios.
 5. For a master key visual, establish one campaign idea, palette, lighting logic, material or prop device, copy zones, and crop-safe area.
 6. Generate only the requested asset, inspect it against the original source and industry failure gates, and run the shared bounded creative quality loop. The default bound is one initial attempt plus at most one defect-specific correction within the approved attempt and credit ceiling; stop and return a labeled draft when its escalation conditions apply.
 

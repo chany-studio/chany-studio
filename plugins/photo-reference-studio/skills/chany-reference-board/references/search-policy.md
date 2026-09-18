@@ -68,11 +68,13 @@ Provider and domain scope is routing metadata, not part of the semantic query.
 
 ## Visual ranking
 
+When a product photo was supplied, first build the product profile in [product-insertion.md](../../chany-studio/references/product-insertion.md) §1 and judge subject compatibility against that specific product: room of the right shape for its silhouette, a palette that keeps its colors and label readable, and lighting that suits its material.
+
 Score each candidate from 0 to 100:
 
 | Criterion | Weight | Question |
 |---|---:|---|
-| Subject compatibility | 25 | Can this visual system plausibly hold the source subject? |
+| Subject compatibility | 25 | Can this visual system plausibly hold this exact product: its silhouette, colors, label, and material? |
 | Transferable composition | 20 | Are framing, scale, and negative space clear enough to reapply? |
 | Lighting legibility | 20 | Can direction, source size, contrast, and shadow be inferred? |
 | Material or food compatibility | 15 | Will the treatment support the source surface and texture? |

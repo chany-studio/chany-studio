@@ -9,6 +9,8 @@ When JTBD-led persuasive structure or thirteen-section planning is requested, re
 
 Every user-facing turn follows the shared [beginner experience contract](../chany-studio/references/beginner-experience.md): quick start by default, plain Korean without internal field names, and one confirmation card before any paid generation.
 
+Translate everyday look words into professional photo and film direction, and offer the plain-words guided card when the user wants control, following [plain-language direction](../chany-studio/references/plain-language-direction.md).
+
 Build only the requested image modules for a product-detail or conversion landing page and keep them coherent as one evidence-based decision narrative.
 
 Read [references/detail-page-system.md](references/detail-page-system.md) for module selection, prompts, family locks, and QA.

@@ -9,6 +9,10 @@ Turn approved authority sources, industry direction, and campaign rules into pla
 
 Every user-facing turn follows the shared [beginner experience contract](../chany-studio/references/beginner-experience.md): quick start by default, plain Korean without internal field names, and one confirmation card before any paid generation.
 
+Translate everyday look words into professional photo and film direction, and offer the plain-words guided card when the user wants control, following [plain-language direction](../chany-studio/references/plain-language-direction.md).
+
+For a supplied physical product, follow the shared [product insertion pipeline](../chany-studio/references/product-insertion.md): references ranked for this product, clean product source, reference-style generation with the product as the authority, visible product match check, and optional upscale, extra ratios, or video.
+
 Read [references/ad-formats.md](references/ad-formats.md) for objective, template, prompt, multi-channel, exact-copy, and QA rules.
 
 For purchase-oriented ads or reference + product/service adaptation, read the shared [performance-ad contract](../chany-studio/references/performance-ad-contract.md). Keep this skill as output owner: request `chany-meta-ad-research` only for needed ad discovery/analysis and `chany-jtbd-persona` only for unresolved customer decisions. Reuse their packets instead of restarting strategy. For a carousel, also read [references/carousel-ad-contract.md](references/carousel-ad-contract.md).

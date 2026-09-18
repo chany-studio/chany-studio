@@ -9,6 +9,8 @@ Prepare clean, reusable product or food sources for advertising, detail pages, a
 
 Every user-facing turn follows the shared [beginner experience contract](../chany-studio/references/beginner-experience.md): quick start by default, plain Korean without internal field names, and one confirmation card before any paid generation.
 
+Translate everyday look words into professional photo and film direction, and offer the plain-words guided card when the user wants control, following [plain-language direction](../chany-studio/references/plain-language-direction.md).
+
 Read [references/asset-prep.md](references/asset-prep.md) for prompts, source locks, and QA.
 
 Read the shared [creative-direction system](../chany-studio/references/creative-direction-system.md) when the output is more than a neutral technical cleanup. A trend or style direction may affect background, crop, light, and finish only after the product or food authority lock is satisfied; it may never recolor, reshape, relabel, or restyle the authoritative subject.
@@ -19,7 +21,7 @@ When this workflow needs a generative still-image edit, read and follow the shar
 
 1. Inspect the highest-resolution original and record visible shape, proportions, orientation, materials, colors, transparency, gloss, texture, logo, label, package geometry, or food composition. Record unreadable or hidden details as uncertain.
 2. Choose only the requested result: transparent cutout, pure-white packshot, cleanup, or minimal capture correction.
-3. Prefer non-generative background removal when exact pixels, text, fine edges, or ingredients matter.
+3. Prefer non-generative background removal when exact pixels, text, fine edges, or ingredients matter. When the connected service exposes a dedicated background-removal operation (for example Higgsfield `remove_background`, image or video, no prompt), use it for the cutout and quote its cost first; this is also the product-preparation step of [product insertion](../chany-studio/references/product-insertion.md).
 4. Preserve the source framing and geometry unless the user requested correction or a clear capture defect prevents commercial use.
 5. Compare the result with the original at high zoom and run the shared bounded creative quality loop. The default bound is one initial attempt plus at most one defect-specific correction within the approved attempt and credit ceiling; stop and return a labeled draft when its escalation conditions apply.
 

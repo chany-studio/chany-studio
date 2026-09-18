@@ -85,7 +85,7 @@ For a requested campaign family, propose only the needed stages:
 1. The selected industry skill fixes the domain mode, journey, proof, directing rules, claims gates, and L1-to-L2 reference route.
 2. `chany-marketing-brief` fixes objective, audience, claims, copy status, channels, and asset count using that packet.
 3. `chany-product-assets` creates clean source assets when the originals are not already production-ready.
-4. When references are explicitly requested, or detailed mode needs art direction (quick start in [beginner-experience.md](beginner-experience.md) skips external reference research), choose only the matching reference lane: Pinterest for broad visual discovery, Production Paradise for professional commercial photography, or the award archives for campaign benchmarks.
+4. For a supplied product, quick start runs the generic board automatically through [product-insertion.md](product-insertion.md). Otherwise, when references are explicitly requested or detailed mode needs art direction, choose only the matching reference lane: Pinterest for broad visual discovery, Production Paradise for professional commercial photography, or the award archives for campaign benchmarks.
 5. `chany-creative-direction` translates the brief, optional selected reference Visual DNA, and current signals into three territories and one approved production packet.
 6. `chany-campaign-visual` creates and locks one master direction.
 7. `chany-detail-page`, `chany-ad-creative`, `chany-model-fashion`, and `chany-campaign-video` derive only their named deliverables; `chany-media-production-loop` executes and records their requested generated assets.

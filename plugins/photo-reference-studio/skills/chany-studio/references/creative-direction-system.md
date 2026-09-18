@@ -4,7 +4,7 @@ Use this contract whenever a Chany skill plans, prompts, generates, edits, assem
 
 ## 1. Beginner autopilot
 
-Do not ask the user to choose lenses, palettes, typography genres, composition devices, or trend names. Infer those from the offer, audience decision, channel, evidence, brand assets, and industry packet. Ask only when a missing business fact or taste boundary would materially change the result.
+Do not ask the user to choose lenses, palettes, typography genres, composition devices, or trend names by their technical names. When the user wants control, use the plain-words guided card in [plain-language-direction.md](plain-language-direction.md), whose options lead with everyday words and show the term only as a learning aid. Infer those from the offer, audience decision, channel, evidence, brand assets, and industry packet. Ask only when a missing business fact or taste boundary would materially change the result.
 
 When direction is not already approved, create three genuinely different concept territories:
 

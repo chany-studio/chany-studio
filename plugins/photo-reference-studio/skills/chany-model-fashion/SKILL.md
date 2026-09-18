@@ -9,6 +9,8 @@ Create polished static campaign imagery in which adult model identity and every 
 
 Every user-facing turn follows the shared [beginner experience contract](../chany-studio/references/beginner-experience.md): quick start by default, plain Korean without internal field names, and one confirmation card before any paid generation.
 
+Translate everyday look words into professional photo and film direction, and offer the plain-words guided card when the user wants control, following [plain-language direction](../chany-studio/references/plain-language-direction.md).
+
 Read [references/model-fashion-production.md](references/model-fashion-production.md) for authority roles, locks, prompts, and QA.
 
 Read the shared [creative-direction system](../chany-studio/references/creative-direction-system.md) and [current creative signals](../chany-studio/references/current-creative-signals.md). Apply trend signals only after identity, age, consent, garment, accessory, fit, and body-integrity locks; never make a person look current by changing who they are or what they are wearing.
