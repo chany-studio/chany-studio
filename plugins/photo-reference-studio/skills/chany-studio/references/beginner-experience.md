@@ -6,6 +6,7 @@ Most Chany's Studio users have never generated an AI image or video. Apply this 
 
 Unless the user asks to compare options ("여러 안 보여줘", "콘셉트 3안", "자세히"), or an approved direction already exists, run **quick start** for a single requested deliverable. "레퍼런스 먼저 보여줘" keeps quick start but waits for the user's reference pick before the card; "레퍼런스 없이 바로 만들어줘" skips reference search and works from the product profile alone.
 
+0. If the project brief records `Studio preferences`, use them as this job's defaults (look, reference source, quality and count, reference-upload default, ratio) unless the request says otherwise. They never replace the confirmation card.
 1. Inspect the attachments and the request. Ask a question only when a missing fact would make the output wrong, such as which product to show. Do not ask about price, offer, or CTA wording that the user did not mention; write copy only from supplied facts and leave out any price, discount, or claim that was not given.
 2. When the subject is a product the user supplied, follow [product-insertion.md](product-insertion.md): profile the product, run the reference board automatically, rank references for this product, show them as numbered images with one recommended, and continue to the card without waiting. For a service or when no product photo exists, work from the request and the shared creative-direction system.
 3. Choose the recommended reference and concept territory internally. Do not show the three-territory scorecard.
@@ -70,4 +71,4 @@ For an ordinary product or service post, deliver the draft with a short plain-Ko
 
 ## 6. Project setup for beginners
 
-`chany-project` asks only what a beginner can answer: what they sell, who buys it, and where they will post. Use the recommended defaults for execution mode, approval location, file layout, and MoAI chaining, and mention MoAI only when it is already detected. End setup with one ready-to-copy first request, for example: "이 제품 사진으로 인스타 광고 이미지 한 장 만들어줘".
+`chany-project` asks only what a beginner can answer: what they sell, who buys it, where they will post, and the plain-Korean project preference cards (what to make, look, reference source, quality, reference-photo upload, ratio). Use the recommended defaults for execution mode, approval location, file layout, and MoAI chaining, and mention MoAI only when it is already detected. End setup with one ready-to-copy first request, for example: "이 제품 사진으로 인스타 광고 이미지 한 장 만들어줘".

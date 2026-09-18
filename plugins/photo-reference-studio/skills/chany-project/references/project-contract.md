@@ -4,7 +4,7 @@ Use this contract for setup with automatic existing-Moai-context detection and r
 
 ## Compact interview
 
-Derive answers from the user's invocation, attachments, and existing files first. Ask no more than three questions in one round, grouping related fields. Use one follow-up round only when a missing answer blocks a safe project design.
+Derive answers from the user's invocation, attachments, and existing files first. Ask no more than three questions in one round, grouping related fields. Use one follow-up round only when a missing answer blocks a safe project design. The optional project preference cards in [interactive-interview.md](interactive-interview.md) are separate from this limit: up to two cards of four plain-Korean choices that let the user pick deliverables, channels, look, reference source, quality, reference-upload default, and ratio.
 
 In an interactive Claude setup, render the missing axes through the top-level `AskUserQuestion` flow in [interactive-interview.md](interactive-interview.md), not as prose. Put one to three questions in the initial card, give each question two to four grounded options with concise consequence-oriented descriptions, and use `multiSelect` only when choices can genuinely coexist. The built-in `Other` path accepts free-form detail. An empty result, timeout, or tool error is not an answer or approval; an explicit cancellation ends the Chany phase without fallback questions or Chany-managed writes.
 

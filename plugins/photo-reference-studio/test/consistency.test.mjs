@@ -196,3 +196,28 @@ test("contracts do not contradict each other on money, uploads, models and waits
   assert.match(beginner, /regulated context/);
   assert.match(beginner, /레퍼런스 없이 바로 만들어줘/);
 });
+
+test("project setup offers plain-Korean preference cards that never pre-approve spending", async () => {
+  const read = (path) => readFile(join(pluginRoot, ...path.split("/")), "utf8");
+  const [interview, skill, brief, beginner, command] = await Promise.all([
+    read("skills/chany-project/references/interactive-interview.md"),
+    read("skills/chany-project/SKILL.md"),
+    read("skills/chany-project/assets/templates/brief.md.tmpl"),
+    read("skills/chany-studio/references/beginner-experience.md"),
+    read("commands/project-studio.md"),
+  ]);
+  assert.match(interview, /## Project preference cards/);
+  for (const header of ["`업종`", "`만들 것`", "`올릴 곳`", "`분위기`", "`레퍼런스`", "`품질`", "`참고 사진`", "`비율`"]) {
+    assert.ok(interview.includes(header), `preference cards must ask ${header}`);
+  }
+  for (const header of ["`업종`", "`만들 것`", "`분위기`", "`레퍼런스`", "`품질`", "`참고 사진`", "`비율`"]) {
+    const row = interview.split("\n").find((line) => line.startsWith(`| ${header}`)) ?? "";
+    assert.ok(header === "`업종`" || row.includes("(권장)"), `${header} must lead with a recommended option`);
+  }
+  assert.match(interview, /No option may pre-approve spending or uploads/);
+  assert.doesNotMatch(interview, /항상 보내기|자동으로 보내기/, "no preference may auto-approve reference uploads");
+  assert.match(skill, /project preference cards/);
+  assert.match(brief, /## Studio preferences/);
+  assert.match(beginner, /Studio preferences/);
+  assert.match(command, /allowed-tools: Skill, AskUserQuestion/);
+});
