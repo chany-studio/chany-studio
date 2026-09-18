@@ -7,7 +7,7 @@ description: Inspect the current runtime for local media tools and Korean-capabl
 
 Report what the current runtime can actually do before promising local media work. This environment preflight is separate from the paid-generation preflight in the Higgsfield runtime contract.
 
-Every user-facing turn follows the shared [beginner experience contract](../chany-studio/references/beginner-experience.md): quick start by default, plain Korean without internal field names, and one confirmation card before any paid generation.
+Every user-facing turn follows the plain-Korean rules of the shared [beginner experience contract](../chany-studio/references/beginner-experience.md); this skill generates no media, so its confirmation-card rules do not apply here.
 
 ## Check only what the task needs
 

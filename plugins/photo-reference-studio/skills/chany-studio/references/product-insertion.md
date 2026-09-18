@@ -39,9 +39,9 @@ Pass both images to the image model as reference inputs. Inspect the model's inp
 
 When a model exposes separate roles, use them instead of relying on order.
 
-Importing a web reference into the generation service sends it to a third party. Show that in the confirmation card ("레퍼런스 사진을 Higgsfield에 참고용으로 보냅니다"). If import or a reference role is unavailable, or the user declines, describe the reference in the prompt instead and say the result may resemble it less closely.
+Every reference source (Pinterest, MeiGen, Production Paradise, award archives, Higgsfield templates) may be passed as a generation reference input, but only with the user's explicit approval. The reference is usually someone else's work, and importing it sends it to a third party. Put a dedicated line in the confirmation card that names the source and the risk, for example "참고 사진: 3번(Pinterest, 다른 사람의 작품)을 Higgsfield에 참고 입력으로 보냅니다. 결과가 원본과 너무 비슷하면 광고에 쓰지 마세요." Approving the card with that line is the separate upload approval the runtime contract requires; without that line in the approved card, do not import the reference. If the user says "사진은 보내지 마" or "레퍼런스 사진 없이", or import or a reference role is unavailable, describe the reference in the prompt instead and say the result may resemble it less closely.
 
-The prompt must replace the reference's subject with our product and must exclude every brand mark, person, text, packaging, and distinctive branded execution from the reference. Reject any result that could pass for the reference itself: the goal is the reference's look with our product, not a copy of someone else's photo.
+The prompt must replace the reference's subject with our product and must exclude every brand mark, person, text, packaging, and distinctive branded execution from the reference. Reject any result that could pass for the reference itself: the goal is the reference's look with our product, not a copy of someone else's photo. When a reference was passed as an input, add one plain line under the result: "원본 레퍼런스와 너무 비슷하지 않은지 확인한 뒤 광고에 써 주세요."
 
 ## 5. Quality settings
 
@@ -49,7 +49,7 @@ Ad work needs explicit quality settings; provider defaults are tuned for speed. 
 
 ## 6. How many to make
 
-Default to one image. The confirmation card also offers "2장 만들어 더 나은 것 고르기"; when chosen, request two variants of the same prompt and inputs in one call (live `count`, up to 4 when the user asks), show the quoted total cost, and let the user pick or accept the recommended one. This is an approved variant set, not a speculative variant.
+Default to one image. Before showing the card, get the live quote for both one image and two images of the same prompt and inputs, and show both totals in the card, so choosing "2장 만들어 더 나은 것 고르기" approves an exact quoted total rather than an estimate. If the two-image quote is unavailable, do not offer that option. When chosen, request two variants in one call (live `count`; up to 4 only after a new quote and approval) and let the user pick or accept the recommended one. This is an approved variant set, not a speculative variant.
 
 ## 7. Product match check
 

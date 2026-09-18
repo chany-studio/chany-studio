@@ -14,7 +14,7 @@ This allowlist is exact. Every search call must be restricted to `pinterest.com`
 
 Require a public Pinterest Pin page and a directly displayable Pinterest preview. A visible Pinterest creator or board may help diversity scoring but is not permission to leave Pinterest. Reject orphaned Pins, inaccessible pages, login-gated content, scraped mirrors, and results without a directly displayable preview.
 
-Pinterest content is direction-only. Do not treat it as licensed production pixels.
+Pinterest content is direction-only. Do not treat it as licensed production pixels. It may be used as a generation reference input only through [product insertion](../../chany-studio/references/product-insertion.md) §4, after the user approves the confirmation card that names it as someone else's photo; never deliver its pixels, and reject any output that could pass for it.
 
 ## Query depth
 

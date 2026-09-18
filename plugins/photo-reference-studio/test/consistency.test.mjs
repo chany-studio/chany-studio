@@ -45,7 +45,15 @@ test("the legacy auto-photo-production shim routes every current non-industry sk
   const skillNames = (await readdir(join(pluginRoot, "skills"), { withFileTypes: true }))
     .filter((entry) => entry.isDirectory() && entry.name !== "auto-photo-production")
     .map((entry) => entry.name);
-  const industryOverlays = skillNames.filter((name) => routing.includes(name) && /marketing|employer|dining|travel|events|services|real-estate/.test(name));
+  const industryOverlays = [
+    "chany-automotive-marketing", "chany-consumer-tech-marketing", "chany-corporate-employer",
+    "chany-digital-product-marketing", "chany-education-marketing", "chany-food-dining",
+    "chany-healthcare-marketing", "chany-hospitality-travel", "chany-live-culture-events",
+    "chany-professional-services", "chany-space-real-estate",
+  ];
+  for (const overlay of industryOverlays) {
+    assert.ok(routing.includes(overlay), `routing.md must route ${overlay}`);
+  }
   const missing = skillNames
     .filter((name) => !industryOverlays.includes(name))
     .filter((name) => !shim.includes(`\`${name}\``));
@@ -120,7 +128,9 @@ test("beginner docs lead with a first-use guide, glossary and plain troubleshoot
     readFile(join(repoRoot, "docs", "GLOSSARY.md"), "utf8"),
     readFile(join(repoRoot, "docs", "TROUBLESHOOTING.md"), "utf8"),
   ]);
-  assert.ok(readme.indexOf("## 처음 쓰는 분께") < readme.indexOf("## 설치"), "first-use guide must come before installation");
+  const firstUse = readme.indexOf("## 처음 쓰는 분께");
+  const install = readme.indexOf("## 설치");
+  assert.ok(firstUse >= 0 && install >= 0 && firstUse < install, "first-use guide must exist and come before installation");
   assert.match(readme.split("## 설치")[0], /Claude Cowork[\s\S]+ChatGPT Work/);
   for (const term of ["누끼", "CTA", "크레딧", "Visual DNA", "L1", "JTBD", "MCP", "Node.js"]) {
     assert.ok(glossary.includes(term), `glossary must define ${term}`);
@@ -163,4 +173,26 @@ test("plain-language direction translates everyday words into professional terms
     const body = await readFile(join(pluginRoot, "skills", skill, "SKILL.md"), "utf8");
     assert.match(body, /plain-language-direction\.md\)/, `${skill} must use plain-language direction`);
   }
+});
+
+test("contracts do not contradict each other on money, uploads, models and waits", async () => {
+  const read = (path) => readFile(join(pluginRoot, "skills", ...path.split("/")), "utf8");
+  const [beginner, pipeline, runtime, lane, searchPolicy] = await Promise.all([
+    read("chany-studio/references/beginner-experience.md"),
+    read("chany-studio/references/product-insertion.md"),
+    read("chany-studio/references/higgsfield-runtime-contract.md"),
+    read("chany-studio/references/specialist-reference-lane.md"),
+    read("chany-reference-board/references/search-policy.md"),
+  ]);
+  assert.doesNotMatch(beginner, /약 2배/, "the two-image option must show a live quote, not an estimate");
+  assert.match(pipeline, /get the live quote for both one image and two images/);
+  assert.match(runtime, /deliberate ad-quality settings in \[product-insertion\.md\]/, "runtime contract must allow the ad-quality settings");
+  assert.match(runtime, /counts as this approval/, "runtime contract must accept the card's dedicated upload line");
+  assert.match(beginner, /참고 사진: /);
+  assert.match(beginner, /approving a card without it never authorizes that upload/);
+  assert.doesNotMatch(beginner, /Name the model once as "GPT Image 2\.5"/, "the card must name the model actually used");
+  assert.doesNotMatch(lane, /wait for a number/, "specialist lanes must not add a separate selection stop");
+  assert.match(searchPolicy, /only through \[product insertion\]/, "Pinterest input use must go through the consented path");
+  assert.match(beginner, /regulated context/);
+  assert.match(beginner, /레퍼런스 없이 바로 만들어줘/);
 });

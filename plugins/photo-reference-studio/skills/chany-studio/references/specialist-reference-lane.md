@@ -22,10 +22,10 @@ Resolve `target_count` from the user's explicit positive whole number or default
 
 ## Use and rights
 
-- Every result is direction-only. Never imply reuse rights, effectiveness, award status, or commercial results beyond what the source page states.
+- Every result is direction-only. Never imply reuse rights, effectiveness, award status, or commercial results beyond what the source page states. A selected result may be used as a generation reference input only through [product insertion](product-insertion.md) §4, after the user approves the confirmation card that names it as someone else's photo; never deliver its pixels, and reject any output that could pass for it.
 - Transfer composition, light, hierarchy, proof device, metaphor, sequencing, and attention mechanics. Never copy subject identity, packaging, logo, slogan, copy, branded characters, people, proprietary art, or distinctive campaign execution.
 - Every accepted record keeps at least `provider`, `source_url`, `search_query`, `fit_note`, `visual_dna`, `exclude_from_reference`, `display_confirmed`, and `rights_status: "direction-only"`.
-- In `semi-auto`, wait for a number or `자동 선택` before reference-directed paid production. Combine selection and production approval when both were requested.
+- Show the images and recommend one; the reference choice is answered together with the production plan in one question, as [reference recovery](reference-recovery.md) describes. A reply of one number or `자동 선택` answers the reference part.
 
 ## Shortfall
 
