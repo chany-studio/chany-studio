@@ -1,5 +1,5 @@
 interface:
-  display_name: "Chany Project"
+  display_name: "Chany's Project"
   short_description: "광고 프로젝트 지침과 런타임별 위임 설정"
   default_prompt: "ChatGPT에서는 @chany-project, Codex에서는 $chany-project로 기존 Moai 프로젝트 기록을 자동 감지해 읽기 전용으로 재사용하고, 현재 호스트에서 실제 호출 가능한 Moai 전문 스킬만 출처·버전이 남게 조건부 연결해 현재 폴더에 업종별 광고 프로젝트 지침, 게시 검토와 런타임별 위임 구성을 만들어줘."
 policy:

@@ -1,4 +1,4 @@
-# Chany's Studio 2.8.1
+# Chany's Studio 2.8.2
 
 일반 레퍼런스는 Pinterest 5장 + Meigen 5장, 총 10장을 대화에 표시합니다. 동일 L1·직접 L2 범위 재검색은 자동으로 진행하고 레퍼런스 선택·생성 조건 확인을 통합합니다. [사용법](../../docs/REFERENCE-RECOVERY.md).
 
@@ -6,7 +6,7 @@ Claude와 ChatGPT Work/Codex에서 함께 쓰는 광고 프로젝트 지침을 �
 
 ## 2축 스킬 구조
 
-2.8.0 추가: Higgsfield 광고 모션 디자인, Genjutsu 영상 부분 수정, GPT Image 2.5 선택 지원. GPT Image 2.5 기본값은 유지합니다. [사용법과 예시](../../docs/HIGGSFIELD-UPDATES.md).
+2.8.0 추가: Higgsfield 광고 모션 디자인, Genjutsu 영상 부분 수정, GPT Image 2.5 Flare·Sunburst 지원. 현재 이미지 기본값은 GPT Image 2.5입니다. [사용법과 예시](../../docs/HIGGSFIELD-UPDATES.md).
 
 2.7.0 추가: `chany-ai-prompt-reference`가 Meigen 이미지·공개 프롬프트를 분석하고 제품별 제작 프롬프트로 연결합니다. 기본 6장 또는 요청 수량, L1→직접 L2 검색, 대화 안 이미지 표시를 적용합니다. [사용법과 예시](../../docs/MEIGEN-REFERENCES.md).
 
@@ -45,7 +45,7 @@ ChatGPT Work에서는 `@스킬명`, Codex에서는 `$스킬명`으로 명시 호
 | ChatGPT `@chany-jtbd-persona` · Codex `$chany-jtbd-persona` | 제품·서비스 구매 동기·장벽과 근거 기반 고객 분석 |
 | ChatGPT `@chany-meta-ad-research` · Codex `$chany-meta-ad-research` | Meta 광고 레퍼런스의 디자인·훅·카피·CTA 분석 |
 | ChatGPT `@chany-product-assets` · Codex `$chany-product-assets` | 투명 누끼, 순백 팩샷과 원본 클린업 |
-| ChatGPT `@chany-reference-board` · Codex `$chany-reference-board` | Pinterest 레퍼런스 기본 6장 또는 요청 수량을 대화에 직접 표시 |
+| ChatGPT `@chany-reference-board` · Codex `$chany-reference-board` | 사이트 미지정 시 Pinterest 5장 + Meigen 5장(총 10장), Pinterest만 지정 시 기본 6장, 또는 요청 수량을 대화에 직접 표시 |
 | ChatGPT `@chany-commercial-photo-reference` · Codex `$chany-commercial-photo-reference` | Production Paradise 전문 광고·라이프스타일 사진 레퍼런스 |
 | ChatGPT `@chany-award-ad-reference` · Codex `$chany-award-ad-reference` | Ads of the World·D&AD·The One Show 수상 광고·캠페인 벤치마크 |
 | ChatGPT `@chany-ai-prompt-reference` · Codex `$chany-ai-prompt-reference` | Meigen 이미지·원본 프롬프트 분석과 제품별 제작 프롬프트 |
@@ -139,13 +139,14 @@ Codex: $chany-publication-review로 최종 광고의 정확한 카피·오퍼·�
 ## 레퍼런스와 원본
 
 - 승인 원본과 사실 자료는 제품, 음식, 차량, 공간, UI, 프로그램, 모델, 의류와 카피의 정체성을 결정합니다.
-- 범용 비주얼 보드는 `chany-reference-board`의 Pinterest, 전문 광고·라이프스타일 사진은 `chany-commercial-photo-reference`의 Production Paradise, 수상 광고·캠페인 사례는 `chany-award-ad-reference`의 Ads of the World·D&AD·The One Show로 분리합니다.
-- 한 보드는 한 출처 경로만 사용하며 후보가 부족해도 다른 경로로 보충하지 않습니다. Stocksy, ShotDeck, Death to Stock은 허용하지 않습니다. Pinterest용 `reference-preview` 연결은 계속 공개 Pin 페이지와 `i.pinimg.com`만 받습니다.
-- 기본 표시 수량은 6장이지만 사용자가 양의 정수로 장수를 지정하면 정확히 그 수량을 사용합니다. 허용된 두 검색에서 후보가 부족하면 수량을 조용히 줄이지 않고 미완성으로 보고합니다.
+- 사이트를 정하지 않은 범용 비주얼 보드는 `chany-reference-board`가 Pinterest 5장 + Meigen 5장(총 10장)으로 보여주며, 두 사이트는 서로 후보를 대신 채우지 않습니다.
+- 사이트를 지정하면 경로 하나만 씁니다. Pinterest만은 `chany-reference-board`, Meigen 이미지·원본 프롬프트는 `chany-ai-prompt-reference`, 전문 광고·라이프스타일 사진은 `chany-commercial-photo-reference`의 Production Paradise, 수상 광고·캠페인 사례는 `chany-award-ad-reference`의 Ads of the World·D&AD·The One Show로 분리합니다.
+- 사이트를 지정한 보드는 그 경로만 사용하며 후보가 부족해도 다른 경로로 보충하지 않습니다. Stocksy, ShotDeck, Death to Stock은 허용하지 않습니다. Pinterest용 `reference-preview` 연결은 계속 공개 Pin 페이지와 `i.pinimg.com`만 받습니다.
+- 기본 표시 수량은 사이트 미지정 시 10장(Pinterest 5 + Meigen 5), 사이트 하나를 지정하면 6장이며, 사용자가 양의 정수로 장수를 지정하면 정확히 그 수량을 사용합니다. 허용된 두 검색에서 후보가 부족하면 수량을 조용히 줄이지 않고 미완성으로 보고합니다.
 - 모든 레퍼런스 경로는 업종 taxonomy의 L1 광역 카테고리 1개를 먼저 검색하고, 필요할 때만 같은 경로의 직접 L2 하위 카테고리 0~1개를 추가합니다.
 - 한 작업에서 여러 L2 형제나 세 번째 의미 검색어를 쓰지 않으며 스타일·렌즈·지역·색·무드·플랫폼 modifier도 검색어에 붙이지 않습니다.
 - 검색 결과는 복제하지 않고 구도, 조명, 배경, 재질, 색 관계와 정보 위계를 분석하는 방향 자료로 사용합니다. 분석어를 새 검색어로 확장하지 않습니다.
-- 각 레퍼런스 스킬은 후보를 기본 6장 또는 요청 수량만큼 링크나 HTML이 아닌 현재 대화의 실제 이미지로 보여줍니다.
+- 각 레퍼런스 스킬은 후보를 기본 수량(통합 10장, 단일 사이트 6장) 또는 요청 수량만큼 링크나 HTML이 아닌 현재 대화의 실제 이미지로 보여줍니다.
 - Claude Cowork의 Pinterest 직접 미리보기에는 Node.js 18 이상과 로컬 `reference-preview` 연결이 필요합니다. 다른 두 경로는 호스트가 제공하는 공개 이미지 표시 기능을 사용하며 Pinterest 전용 연결에 URL을 보내지 않습니다.
 - 최신 트렌드는 검색어에 넣지 않고 후보 선별 뒤 브랜드 적합성을 평가해 한 가지 중심 장치나 보조 포인트로만 번역합니다. 플랫폼 규격과 프롬프팅은 공식 문서로 확인하되 그 예시 이미지는 레퍼런스로 사용하지 않습니다.
 - YouTube·Instagram 등 영상 페이지는 다운로드하지 않습니다. 사용자가 브라우저에서 직접 호출한 활성 탭 캡처, 실제 미디어 URL로 확인된 파일 또는 첨부한 로컬 영상만 정밀 분석하며, 화면에서 일부만 관찰했다면 그 구간까지만 분석했다고 표시합니다.

@@ -17,7 +17,7 @@ Read [references/industry-overlay.md](references/industry-overlay.md), [referenc
 
 The router owns industry selection, sequencing, checkpoints, and shared state. It does not own domain playbooks, production prompts, reference-search mechanics, or asset-specific QA.
 
-Use `chany-motion-design` for standalone advertising motion graphics or a named graphics handoff within campaign video. Authorized footage object swaps/motion transfer use the campaign-video Genjutsu mode before assembly. Neither path is mandatory for ordinary stills, carousels or video generation; GPT Image 2.5 remains a scoped image-model option.
+Use `chany-motion-design` for standalone advertising motion graphics or a named graphics handoff within campaign video. Authorized footage object swaps/motion transfer use the campaign-video Genjutsu mode before assembly. Neither path is mandatory for ordinary stills, carousels or video generation.
 
 ## Coordinate a campaign
 

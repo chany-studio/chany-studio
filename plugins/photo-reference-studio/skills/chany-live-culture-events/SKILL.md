@@ -27,49 +27,19 @@ Read [references/domain-playbook.md](references/domain-playbook.md) before subst
 
 ## Industry direction packet
 
-Return exactly one root `industry_direction` object with every canonical field below. Use an empty string or empty list for unresolved values; do not omit fields or add domain-specific sibling keys. Map event type and phase, program truth, cultural authority, live capture, copy logic, gates, and approvals into the canonical fields rather than renaming the schema.
+Return exactly one root `industry_direction` object with every canonical field. Use an empty string or empty list for unresolved values; do not omit fields, and put domain-only detail under `domain_extensions` rather than another root key. Map event type and phase, program truth, cultural authority, live capture, copy logic, gates, and approvals into the canonical fields rather than renaming the schema.
+
+Start from the canonical packet in [industry-overlay.md](../chany-studio/references/industry-overlay.md) and include every field it lists, including the full `claim_ledger` item structure, even when a value is empty or `unknown`. The block below sets only this skill's values; every canonical field it omits keeps the overlay's structure and default.
 
 ```yaml
 industry_direction:
   primary_skill: "chany-live-culture-events"
   mode_or_subtype: "performance | exhibition | conference | event | local-or-cultural-festival"
-  jurisdiction: "unknown | named"
-  last_policy_check: "not checked | ISO-8601 timestamp"
-  objective_and_kpi: ""
-  audience_and_decision_unit: []
-  journey_stage: ""
-  desired_action: ""
-  message_job: ""
-  proof_objects: []
-  claim_ledger:
-    - claim: ""
-      expression_mode: "express | implied | visual | demonstration | testimonial"
-      placements: []
-      evidence: ""
-      evidence_scope:
-        method: ""
-        population_or_subject: ""
-        conditions: ""
-        period: ""
-      limitation: ""
-      required_qualification: ""
-      disclosure_location_and_proximity: ""
-      review_owner: ""
-      expiry_or_recheck: ""
-      status: "missing | draft | verified | approved"
-  visual_narrative: ""
-  must_capture: []
-  directing_rules: []
-  channel_deliverables: []
   reference_route:
     domain_id: "live-culture-events"
     l1: "Event Photography"
     l2: ""
     query_count: 1
-  required_disclosures: []
-  prohibited_or_high_risk: []
-  human_review_gate: "none | before generation | before publication"
-  unresolved_decisions: []
 ```
 
 ## Delegation

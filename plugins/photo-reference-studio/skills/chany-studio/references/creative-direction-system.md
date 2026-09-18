@@ -114,7 +114,7 @@ For a surgical edit, reduce the prompt to `Change`, `Preserve`, `Constraints`, a
 |---|---|---|
 | campaign strategy | one audience decision, one message hierarchy, one proof plan, one measurable variable | channel list without a decision or evidence model |
 | product and food assets | clean authority view plus truthful detail and use context; material, label and ingredient fidelity | floating object, invented back label, over-smoothed food, decorative clutter |
-| reference board | six Pinterest Pins by default or the user's explicit positive count; extract composition, light, colour, material and hierarchy only | copying subject, packaging, logo, copy, branded pixels or an outbound site |
+| reference board | 10 inline images by default for a generic board (Pinterest 5 + MeiGen 5), six for an explicit single-provider board, or the user's explicit positive count; extract composition, light, colour, material and hierarchy only | copying subject, packaging, logo, copy, branded pixels or an outbound site |
 | key visual | one campaign idea and signature device with reusable crop and copy-zone logic | a pretty isolated image with no system or message |
 | detail and landing | answer the next buyer question with the nearest real proof; mix overview, use and detail views | fixed template, unsupported proof, endless feature cards, fake review or scarcity |
 | static ad, poster and banner | one goal, one message, one CTA; placement-native hierarchy at real display size | feature dump, tiny copy, fake UI button, generic gradient and collage noise |

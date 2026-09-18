@@ -22,47 +22,17 @@ Read [references/domain-playbook.md](references/domain-playbook.md) before devel
 
 Return one explicit root `industry_direction` object. Keep every canonical field even when its value is empty or unknown; keep useful product detail under `domain_extensions` inside that root.
 
+Start from the canonical packet in [industry-overlay.md](../chany-studio/references/industry-overlay.md) and include every field it lists, including the full `claim_ledger` item structure, even when a value is empty or `unknown`. The block below sets only this skill's values; every canonical field it omits keeps the overlay's structure and default.
+
 ```yaml
 industry_direction:
   primary_skill: "chany-consumer-tech-marketing"
   mode_or_subtype: "smartphone | laptop | audio | wearable | smart-home | other-consumer-tech"
-  jurisdiction: "unknown | named"
-  last_policy_check: "not checked | ISO-8601 timestamp"
-  objective_and_kpi: ""
-  audience_and_decision_unit: []
-  journey_stage: ""
-  desired_action: ""
-  message_job: ""
-  proof_objects: []
-  claim_ledger:
-    - claim: ""
-      expression_mode: "express | implied | visual | demonstration | testimonial"
-      placements: []
-      evidence: ""
-      evidence_scope:
-        method: ""
-        population_or_subject: ""
-        conditions: ""
-        period: ""
-      limitation: ""
-      required_qualification: ""
-      disclosure_location_and_proximity: ""
-      review_owner: ""
-      expiry_or_recheck: ""
-      status: "missing | draft | verified | approved"
-  visual_narrative: ""
-  must_capture: []
-  directing_rules: []
-  channel_deliverables: []
   reference_route:
     domain_id: "consumer-tech"
     l1: "Consumer Electronics Photography"
     l2: ""
     query_count: 1
-  required_disclosures: []
-  prohibited_or_high_risk: []
-  human_review_gate: "none | before generation | before publication"
-  unresolved_decisions: []
   domain_extensions:
     domain: "consumer-tech"
     product_identity_lock: {}
@@ -90,7 +60,7 @@ Run one L1 search first. Keep `l2` empty and `query_count: 1` when discovery sto
 ## Production handoff
 
 - `$chany-marketing-brief`: objective, message hierarchy, approved-fact ledger, offer, asset matrix, and tests
-- one source-isolated reference owner: `$chany-reference-board` for Pinterest, `$chany-commercial-photo-reference` for Production Paradise photography, or `$chany-award-ad-reference` for approved award archives; all remain L1-first with one optional direct L2 and six inline previews by default or the user's explicit positive count
+- one reference route: the generic combined board through `$chany-reference-board` (Pinterest 5 + MeiGen 5 by default), or one explicitly requested source-isolated owner — `$chany-reference-board` for Pinterest only, `$chany-ai-prompt-reference` for MeiGen, `$chany-commercial-photo-reference` for Production Paradise photography, or `$chany-award-ad-reference` for approved award archives; every lane stays L1-first with one optional direct L2, and a single-provider lane shows six inline previews by default or the user's explicit positive count
 - `$chany-campaign-visual`: approved launch or campaign key visual and image system
 - `$chany-ad-creative`: placement-specific awareness, feature, retail, offer, and retargeting variants
 - `$chany-detail-page`: product, specification, comparison, compatibility, setup, bundle, or conversion page structure

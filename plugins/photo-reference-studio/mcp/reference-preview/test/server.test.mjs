@@ -497,6 +497,7 @@ test("implements initialize, ping, tools/list, tools/call, and MCP tool errors",
   assert.equal(initialized.result.protocolVersion, "2025-06-18");
   assert.equal(initialized.result.serverInfo.name, "reference-preview");
   assert.match(initialized.result.instructions, /defaults to six/i);
+  assert.match(initialized.result.instructions, /five inside the combined Pinterest \+ MeiGen board/i);
   assert.match(initialized.result.instructions, /explicit positive user-requested count/i);
   assert.deepEqual((await handle({ jsonrpc: "2.0", id: 2, method: "ping" })).result, {});
 

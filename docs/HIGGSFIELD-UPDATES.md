@@ -1,6 +1,6 @@
 # Higgsfield 업데이트 — 2.8.0
 
-Higgsfield 기반 광고 모션 디자인, 영상 부분 수정, 선택형 이미지 모델을 추가했습니다. Claude에서는 자연어로 요청하고 ChatGPT Work는 `@chany-motion-design`, Codex는 `$chany-motion-design`으로도 선택할 수 있습니다. `/project-studio`에서도 원하는 산출물에 맞춰 필요한 단계만 선택합니다.
+Higgsfield 기반 광고 모션 디자인, 영상 부분 수정, GPT Image 2.5 Flare·Sunburst 옵션을 추가했습니다. 기본 이미지 모델은 이후 GPT Image 2.5로 바뀌었습니다(아래 참고). Claude에서는 자연어로 요청하고 ChatGPT Work는 `@chany-motion-design`, Codex는 `$chany-motion-design`으로도 선택할 수 있습니다. `/project-studio`에서도 원하는 산출물에 맞춰 필요한 단계만 선택합니다.
 
 ## 광고 모션 디자인
 
@@ -18,7 +18,7 @@ Higgsfield 기반 광고 모션 디자인, 영상 부분 수정, 선택형 이�
 
 ## GPT Image 2.5 기본 모델
 
-> 이번 제품 광고 시안만 Higgsfield GPT Image 2.5 Flare로 만들어줘. 생성 전 품질·해상도·비용을 보여줘. 다른 작업의 기본 모델은 유지해줘.
+> 이번 제품 광고 시안만 Higgsfield GPT Image 2.5 Flare로 만들어줘. 생성 전 품질·해상도·비용을 보여줘. 다른 작업은 기본 설정 그대로 둬줘.
 
 > 이 승인된 광고의 지정 영역만 GPT Image 2.5 Sunburst로 수정해줘. 제품 라벨과 카피는 원본 기준으로 검수해줘.
 

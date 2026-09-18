@@ -111,34 +111,25 @@ for (const skillName of industrySkills) {
     );
     assert.match(
       skill,
-      /^industry_direction:\s*$/m,
-      `${skillPath} must expose the canonical industry_direction root`,
+      /\(\.\.\/chany-studio\/references\/industry-overlay\.md\)/,
+      `${skillPath} must link to the single canonical packet schema`,
     );
-    for (const field of requiredIndustryDirectionFields) {
-      assert.match(
-        skill,
-        new RegExp(`^\\s+${field}:`, "m"),
-        `${skillPath} must expose canonical industry_direction.${field}`,
+    const packetBlock = skill.match(/```yaml\n(industry_direction:\n[\s\S]*?)```/)?.[1] ?? "";
+    assert.ok(packetBlock, `${skillPath} must state its own industry_direction values`);
+    assert.match(
+      packetBlock,
+      new RegExp(`^  primary_skill: "${skillName}"$`, "m"),
+      `${skillPath} must set primary_skill to itself`,
+    );
+    assert.match(packetBlock, /^  reference_route:\n    domain_id: "[a-z-]+"\n    l1: "[^"]+"\n    l2: ""\n    query_count: 1$/m);
+    for (const copiedField of ["claim_ledger", "must_capture", "required_disclosures", "unresolved_decisions"]) {
+      assert.doesNotMatch(
+        packetBlock,
+        new RegExp(`^  ${copiedField}:`, "m"),
+        `${skillPath} must not copy canonical ${copiedField}; the overlay is the only schema copy`,
       );
     }
-
-    const claimLedger = skill.match(/^  claim_ledger:\s*\n([\s\S]*?)^  visual_narrative:/m)?.[1] ?? "";
-    assert.ok(claimLedger, `${skillPath} must expose a claim_ledger entry`);
-    for (const field of requiredClaimLedgerFields) {
-      assert.match(
-        claimLedger,
-        new RegExp(`^\\s+(?:-\\s+)?${field}:`, "m"),
-        `${skillPath} must expose claim_ledger.${field}`,
-      );
-    }
-    const evidenceScope = claimLedger.match(/^\s+evidence_scope:\s*\n([\s\S]*?)^\s+limitation:/m)?.[1] ?? "";
-    for (const field of requiredEvidenceScopeFields) {
-      assert.match(
-        evidenceScope,
-        new RegExp(`^\\s+${field}:`, "m"),
-        `${skillPath} must expose claim_ledger.evidence_scope.${field}`,
-      );
-    }
+    assert.doesNotMatch(skill, /l2: null|`l2` null/, `${skillPath} must keep l2 as an empty string`);
 
     const defaultPrompt = openai.match(/^\s*default_prompt:\s*(.+?)\s*$/m);
     assert.ok(defaultPrompt, `${openaiPath} must declare default_prompt`);
@@ -154,6 +145,25 @@ for (const skillName of industrySkills) {
     );
   });
 }
+
+test("the industry overlay is the single complete industry_direction schema", async () => {
+  const overlayPath = "skills/chany-studio/references/industry-overlay.md";
+  const overlay = await readPluginFile(overlayPath);
+  const schema = overlay.match(/```yaml\n(industry_direction:\n[\s\S]*?)```/)?.[1] ?? "";
+  assert.ok(schema, `${overlayPath} must contain the canonical industry_direction block`);
+  for (const field of [...requiredIndustryDirectionFields, "domain_extensions"]) {
+    assert.match(schema, new RegExp(`^  ${field}:`, "m"), `${overlayPath} must define ${field}`);
+  }
+  const claimLedger = schema.match(/^  claim_ledger:\s*\n([\s\S]*?)^  visual_narrative:/m)?.[1] ?? "";
+  for (const field of requiredClaimLedgerFields) {
+    assert.match(claimLedger, new RegExp(`^\\s+(?:-\\s+)?${field}:`, "m"), `${overlayPath} must define claim_ledger.${field}`);
+  }
+  const evidenceScope = claimLedger.match(/^\s+evidence_scope:\s*\n([\s\S]*?)^\s+limitation:/m)?.[1] ?? "";
+  for (const field of requiredEvidenceScopeFields) {
+    assert.match(evidenceScope, new RegExp(`^\\s+${field}:`, "m"), `${overlayPath} must define evidence_scope.${field}`);
+  }
+  assert.match(schema, /^    l2: ""$/m);
+});
 
 test("the central industry taxonomy enforces the two-level query contract", async () => {
   const taxonomy = JSON.parse(
@@ -305,7 +315,7 @@ test("reference search policy limits depth but permits bounded recovery", async 
   );
 });
 
-test("reference discovery is Pinterest-only and honors a user count with six as the default", async () => {
+test("the Pinterest lane honors a user count with six as its single-provider default and 10 for the combined board", async () => {
   const [skill, policy, contract, ui, taxonomyText] = await Promise.all([
     readPluginFile("skills/chany-reference-board/SKILL.md"),
     readPluginFile("skills/chany-reference-board/references/search-policy.md"),

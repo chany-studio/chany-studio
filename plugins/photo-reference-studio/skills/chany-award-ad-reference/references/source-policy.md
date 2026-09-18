@@ -16,9 +16,7 @@ Stocksy, ShotDeck, Death to Stock, unapproved award mirrors, inspiration aggrega
 
 ## Query and count contract
 
-Use one exact L1 subject label from the central industry taxonomy and zero or one direct L2 child. Apply the same semantic phrase across the approved archives instead of adding source-specific adjectives. Never add award, winner, best, creative, luxury, cinematic, trendy, platform, mood, color, lighting, camera, agency, brand, or campaign modifiers.
-
-Resolve `target_count` from the user's explicit positive whole number or default to `6`. Deduplicate the same campaign across archives and alternate crops or formats of one execution. For three or more results, use at least two archives when the qualifying pool permits; source spread never justifies a weak or untraceable candidate.
+Follow the query and count rules in the [specialist reference lane contract](../../chany-studio/references/specialist-reference-lane.md). Apply the same semantic phrase across the approved archives; never add award, winner, best, creative, luxury, cinematic, or trendy modifiers. Deduplicate the same campaign across archives. For three or more results, use at least two archives when the qualifying pool permits; source spread never justifies a weak or untraceable candidate.
 
 ## Acceptance and presentation
 
@@ -38,7 +36,7 @@ For each accepted reference retain:
     display_confirmed: false
     rights_status: "direction-only"
 
-Separate what transfers—composition, hierarchy, proof device, visual metaphor, sequencing, and attention mechanic—from what does not—logo, slogan, copy, branded characters, packaging, people, proprietary art, and distinctive campaign execution. If the approved pool is exhausted before the target is visible, report `requested`, `visible`, and `shortfall` without widening scope.
+Record `message_mechanism` as the transferable idea. What transfers, what never transfers, and shortfall reporting follow the shared contract.
 
 Authoritative archive entry points:
 

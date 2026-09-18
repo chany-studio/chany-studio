@@ -1,6 +1,6 @@
 ---
 name: chany-campaign-visual
-description: Create authority-faithful staged commercial imagery and master campaign key visuals using the applicable industry direction packet, with reusable palette, lighting, material, copy-zone, and crop-safe rules. Use for hero imagery and campaign art direction; not for finished text-heavy ads or page-module sets.
+description: Create authority-faithful staged commercial imagery and master campaign key visuals using the applicable industry direction packet, with reusable palette, lighting, material, copy-zone, and crop-safe rules. Use for hero imagery and campaign art direction; not for posters, banners, or ads with finished copy and CTA (use chany-ad-creative) or page-module sets.
 ---
 
 # Chany Campaign Visual

@@ -22,47 +22,18 @@ Do not generate final production assets from this skill alone.
 
 ## Industry direction packet
 
+Start from the canonical packet in [industry-overlay.md](../chany-studio/references/industry-overlay.md) and include every field it lists, including the full `claim_ledger` item structure, even when a value is empty or `unknown`. The block below sets only this skill's values; every canonical field it omits keeps the overlay's structure and default.
+
 ```yaml
 industry_direction:
   primary_skill: "chany-education-marketing"
   mode_or_subtype: ""
-  jurisdiction: ""
-  last_policy_check: "not checked"
-  objective_and_kpi: ""
-  audience_and_decision_unit: []
-  journey_stage: ""
-  desired_action: ""
-  message_job: ""
-  proof_objects: []
-  claim_ledger:
-    - claim: ""
-      expression_mode: "express | implied | visual | demonstration | testimonial"
-      placements: []
-      evidence: ""
-      evidence_scope:
-        method: ""
-        population_or_subject: ""
-        conditions: ""
-        period: ""
-      limitation: ""
-      required_qualification: ""
-      disclosure_location_and_proximity: ""
-      review_owner: ""
-      expiry_or_recheck: ""
-      status: "missing | draft | verified | approved"
-  visual_narrative: ""
-  must_capture: []
-  directing_rules: []
-  channel_deliverables: []
   reference_route:
     domain_id: "education"
     l1: "Education Campaign Design"
-    l2: null
+    l2: ""
     query_count: 1
-  required_disclosures: []
-  prohibited_or_high_risk: []
   human_review_gate: "before publication"
-  unresolved_decisions: []
   domain_extensions:
     domain: "education"
     education_type: ""
@@ -79,7 +50,7 @@ industry_direction:
       human_review_owner: ""
 ```
 
-Pass the complete `industry_direction` object to downstream production skills. Shared fields are the stable interface; keep education-only detail under `domain_extensions`. `reference_route` must match the central taxonomy exactly. Keep `l2` null and `query_count` at `1` unless one direct subtype is confidently applicable, then set the count to `2`. Do not put learner demographics, style, location, mood, camera, lighting, color, emotion, campaign, platform, or layout words in the route.
+Pass the complete `industry_direction` object to downstream production skills. Shared fields are the stable interface; keep education-only detail under `domain_extensions`. `reference_route` must match the central taxonomy exactly. Keep `l2` an empty string and `query_count` at `1` unless one direct subtype is confidently applicable, then set the count to `2`. Do not put learner demographics, style, location, mood, camera, lighting, color, emotion, campaign, platform, or layout words in the route.
 
 ## Stop conditions
 

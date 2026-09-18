@@ -14,9 +14,7 @@ Never use Stocksy, ShotDeck, Death to Stock, a stock library, a social network, 
 
 ## Query and count contract
 
-Use exactly one L1 subject label from the central industry taxonomy and zero or one direct L2 child. Provider/domain restriction is routing metadata, not part of the semantic phrase. Do not add quality, style, trend, platform, audience, location, mood, color, lighting, camera, brand, agency, or campaign modifiers.
-
-Resolve `target_count` as the user's explicit positive whole number or `6`. Collect enough candidates for replacements, deduplicate alternate crops and one-shoot near-duplicates, and select exactly the target count. For three or more results, avoid allowing one creator or shoot to dominate when metadata permits.
+Follow the query and count rules in the [specialist reference lane contract](../../chany-studio/references/specialist-reference-lane.md). For three or more results, avoid allowing one creator or shoot to dominate when metadata permits.
 
 ## Acceptance and presentation
 
@@ -34,6 +32,6 @@ For each accepted reference retain:
     display_confirmed: false
     rights_status: "direction-only"
 
-The board is complete only after the requested number of actual images is visible. If a host cannot display the public preview, replace it from the permitted pool. If the pool is exhausted, report `requested`, `visible`, and `shortfall` instead of widening the source scope.
+Display, replacement, and shortfall reporting follow the shared contract.
 
 Production Paradise states that displayed images and video remain the property of their respective owners. Keep the provider page visible and never present a reference as a reusable production asset: https://www.productionparadise.com/about

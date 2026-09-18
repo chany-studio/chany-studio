@@ -1,6 +1,6 @@
 ---
 name: chany-marketing-brief
-description: Turn industry, brand, audience, offer, evidence, channel, and observed campaign inputs into a production brief or bounded next-round plan. Use for pre-production strategy and post-campaign learning; not for final media generation or raw attribution claims.
+description: Turn industry, brand, audience, offer, evidence, channel, and observed campaign inputs into a production brief or bounded next-round plan. Use for pre-production strategy and post-campaign learning; not for choosing concept territories or the visual look (use chany-creative-direction), final media generation, or raw attribution claims.
 ---
 
 # Chany Marketing Brief

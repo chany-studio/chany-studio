@@ -797,7 +797,7 @@ export function createProtocolHandler(dependencies = {}) {
             capabilities: { tools: {} },
             serverInfo: { name: SERVER_NAME, version: "1.2.0" },
             instructions:
-              "Call fetch_reference_preview_image once for each shortlisted Pinterest finalist; the workflow defaults to six but honors an explicit positive user-requested count.",
+              "Call fetch_reference_preview_image once for each shortlisted Pinterest finalist; a Pinterest-only board defaults to six (five inside the combined Pinterest + MeiGen board) but honors an explicit positive user-requested count.",
           },
         };
       }

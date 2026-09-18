@@ -1,5 +1,5 @@
 interface:
-  display_name: "Chany JTBD · 고객 분석"
+  display_name: "Chany's JTBD & Persona"
   short_description: "제품·서비스의 구매 동기와 고객 유형을 근거·가설로 구분해 분석"
   default_prompt: "$chany-jtbd-persona로 첨부한 제품 또는 서비스와 고객 자료를 분석하고, 핵심 구매 동기와 페르소나를 근거와 가설로 구분해줘."
 policy:

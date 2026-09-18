@@ -21,7 +21,7 @@ If the domain is genuinely ambiguous and the choice would materially change clai
 
 ## Industry direction packet
 
-Every industry skill returns this compact handoff before production. The root key and field names below are normative: use `industry_direction` exactly and include every listed field, even when its value is empty or `unknown`. Domain-specific fields may be added, but they never replace, rename, or nest away a canonical field. Production skills consume only this canonical contract.
+Every industry skill returns this compact handoff before production. The root key and field names below are normative: use `industry_direction` exactly and include every listed field, even when its value is empty or `unknown`. This file is the single copy of the schema: each industry skill links here and states only its own values (`primary_skill`, `mode_or_subtype`, `reference_route`, any stricter `human_review_gate`, and `domain_extensions`). Domain-only detail goes under `domain_extensions`; it never replaces, renames, or nests away a canonical field. Leave `reference_route.l2` as an empty string, not `null`, until a direct subtype is chosen. Production skills consume only the canonical fields.
 
 ```yaml
 industry_direction:
@@ -64,6 +64,7 @@ industry_direction:
   prohibited_or_high_risk: []
   human_review_gate: "none | before generation | before publication"
   unresolved_decisions: []
+  domain_extensions: {}
 ```
 
 Keep facts and proposals separate. `verified` means checked against a named current source; it does not mean the user approved publication. `approved` requires user or named-reviewer approval. If a claim lacks evidence or a necessary limitation, lower the message to a process, feature, philosophy, or invitation that can be supported.
@@ -86,7 +87,7 @@ Do not paste the whole playbook into a generation prompt. Pass only the packet f
 
 The industry skill may select only a domain branch and one direct subtype from `chany-reference-board/references/industry-taxonomy.json`.
 
-The production router selects exactly one source-isolated reference owner: broad Pinterest discovery, Production Paradise commercial photography, or the approved Ads of the World, D&AD, and The One Show archive lane. Never use Stocksy, ShotDeck, Death to Stock, a Pin's outbound destination, or official-document example imagery as a reference. A weak lane ends incomplete instead of borrowing another lane's provider.
+The production router selects one reference route: the generic combined board (Pinterest 5 + MeiGen 5 through `chany-reference-board`, see [combined-reference-board.md](combined-reference-board.md)), or one explicitly requested source-isolated owner — Pinterest only, MeiGen (`chany-ai-prompt-reference`), Production Paradise commercial photography, or the approved Ads of the World, D&AD, and The One Show archive lane. Never use Stocksy, ShotDeck, Death to Stock, a Pin's outbound destination, or official-document example imagery as a reference. A weak lane ends incomplete instead of borrowing another lane's provider.
 
 - Search L1 first.
 - Search zero or one L2 direct subtype second.

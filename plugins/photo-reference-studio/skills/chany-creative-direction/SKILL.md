@@ -1,6 +1,6 @@
 ---
 name: chany-creative-direction
-description: Turn a plain-language marketing brief into three professional concept territories, recommend one, and compile a current, brand-specific art-direction and prompting packet. Use before visual, page, ad, fashion, or campaign-video production when the creative direction is missing or generic; not for reference searching, media generation, or publication approval.
+description: Turn a plain-language marketing brief into three professional concept territories, recommend one, and compile a current, brand-specific art-direction and prompting packet. Use before visual, page, ad, fashion, or campaign-video production when the creative direction is missing or generic; not for campaign strategy, audience or asset planning (use chany-marketing-brief), reference searching, media generation, or publication approval.
 ---
 
 # Chany Creative Direction
@@ -20,7 +20,7 @@ Read the shared [commercial creative direction system](../chany-studio/reference
 
 ## Reference boundary
 
-For MeiGen image-and-source-prompt inspiration, use `chany-ai-prompt-reference` as the separate owner. Consume its selected visual DNA and original adaptation prompt; source-model choice does not override GPT Image 2. Keep approved direction and Meta/JTBD strategy intact. MeiGen research is optional and does not require another concept round.
+For MeiGen image-and-source-prompt inspiration, use `chany-ai-prompt-reference` as the separate owner. Consume its selected visual DNA and original adaptation prompt; source-model choice does not override the GPT Image 2.5 (`gpt_image_2_5`) default. Keep approved direction and Meta/JTBD strategy intact. MeiGen research is optional and does not require another concept round.
 
 Conversion-ad benchmarks are handled separately by `chany-meta-ad-research`. Reuse its observed design/hook/copy mechanisms and the shared [performance-ad contract](../chany-studio/references/performance-ad-contract.md); do not require a second photo board or rerun concept selection after direction approval. Pinterest remains a still-photo/style source, not a video source.
 

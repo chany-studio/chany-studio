@@ -1,6 +1,6 @@
 ---
 name: chany-ad-creative
-description: Create single-image ads, conversion carousels (캐러셀 광고), promotional posters and banners with design, hook, primary copy and CTA. Use for static performance advertising or Meta-reference adaptation as well as awareness and promotion; not for full pages or motion video.
+description: Create single-image ads, conversion carousels (캐러셀 광고), promotional posters and banners that carry finished design, hook, primary copy and CTA. Use for static performance advertising or Meta-reference adaptation as well as awareness and promotion; not for a text-free hero image or master key visual (use chany-campaign-visual), full pages, or motion video.
 ---
 
 # Chany Ad Creative
