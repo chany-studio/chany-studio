@@ -33,7 +33,3 @@ Return `customer_insight_packet` with:
 - `claim_ledger_version_id` referencing the canonical [claim ledger](../chany-marketing-brief/references/brief-schema.md), retaining every applicable field and its `missing | draft | verified | approved` status. Add stable `claim_id` values for downstream references; do not replace the ledger with a simplified schema. A supported customer need does not approve a product promise.
 
 Return the packet to the requesting owner: `chany-ad-creative`, `chany-campaign-video`, `chany-detail-page` or `chany-marketing-brief`. Conversion creative uses the shared [performance-ad contract](../chany-studio/references/performance-ad-contract.md) and its selective thirteen-role guide. This skill never generates media.
-
-## Optional MoAI collaboration
-
-Read [MoAI specialist chaining](../chany-studio/references/moai-specialist-chain.md) when MoAI is available or the user requests it. Reuse an existing `commerce-jtbd-persona` result instead of rerunning the analysis. Invoke `moai-seller:commerce-jtbd-persona` only if that exact capability is exposed and callable; installed files alone do not prove execution. Preserve its attributed handoff, evidence gaps, and hypotheses. If unavailable, perform the Chany analysis above without claiming MoAI ran or requiring installation.

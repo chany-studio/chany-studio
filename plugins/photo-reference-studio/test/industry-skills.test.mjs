@@ -401,31 +401,3 @@ test("specialist reference lanes stay source-isolated and exclude rejected provi
     assert.match(skill, /L1[\s\S]+L2/i);
   }
 });
-
-test("the Chany project skill detects Moai context but gates same-request execution by host capability", async () => {
-  const [projectSkill, moaiChain] = await Promise.all([
-    readPluginFile("skills/chany-project/SKILL.md"),
-    readPluginFile("skills/chany-project/references/moai-chain.md"),
-  ]);
-
-  assert.match(projectSkill, /references\/moai-chain\.md/i);
-  assert.match(projectSkill, /`\/project` Moai-owned/i);
-  assert.match(projectSkill, /`\/project-studio` Chany-owned/i);
-  assert.match(projectSkill, /Never edit `\.moai\/\*\*`/i);
-
-  assert.match(moaiChain, /`\/project` belongs to Moai/i);
-  assert.match(moaiChain, /`\/project-studio` belongs to Chany's Studio/i);
-  assert.match(moaiChain, /`\.moai\/\*\*` files are upstream, read-only context/i);
-  assert.match(moaiChain, /conditional on both plugins being installed and visible/i);
-  assert.match(moaiChain, /manual two-step flow is the portable fallback across runtimes/i);
-  assert.match(moaiChain, /installed directory, documentation mention, or skill name alone is insufficient/i);
-  assert.match(projectSkill, /\*\*setup\*\* is the default\. Detect and reuse valid Moai records/i);
-  assert.match(projectSkill, /in-process callable mechanism/i);
-
-  const claude = moaiChain.match(/^- Claude Cowork:.*$/m)?.[0] ?? "";
-  const chatgpt = moaiChain.match(/^- ChatGPT Work:.*$/m)?.[0] ?? "";
-  const codex = moaiChain.match(/^- Codex:.*$/m)?.[0] ?? "";
-  assert.match(claude, /`\/project <description>`.*`\/project-studio <advertising scope>`/i);
-  assert.match(chatgpt, /Moai skill.*`project <description>`.*`@chany-project`/i);
-  assert.match(codex, /`\$moai project <description>`.*`\$chany-project`/i);
-});

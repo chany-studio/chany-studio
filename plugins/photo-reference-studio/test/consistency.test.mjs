@@ -221,3 +221,36 @@ test("project setup offers plain-Korean preference cards that never pre-approve 
   assert.match(beginner, /Studio preferences/);
   assert.match(command, /allowed-tools: Skill, AskUserQuestion/);
 });
+
+test("MoAI integration stays removed from live instructions and docs", async () => {
+  const forbidden = /--with-moai|moai-chain|moai-seller|moai-marketer|moai-lawyer|moai-media|moai-writer|moai-designer|moai-specialist/i;
+  const docs = (await readdir(join(repoRoot, "docs")))
+    .filter((name) => name.endsWith(".md"))
+    .map((name) => join(repoRoot, "docs", name));
+  const files = [
+    ...(await listFiles(join(pluginRoot, "skills"), [".md", ".yaml", ".tmpl", ".json", ".toml"])),
+    ...(await listFiles(join(pluginRoot, "commands"), [".md"])),
+    join(pluginRoot, "README.md"),
+    join(repoRoot, "README.md"),
+    ...docs,
+  ];
+  const hits = [];
+  for (const file of files) {
+    let content = await readFile(file, "utf8");
+    if (relative(repoRoot, file) === join("docs", "ADVANCED.md")) {
+      // Version-history lines describe past releases and may name retired options.
+      content = content.replace(/^## 버전별 변경 요약$[\s\S]*?(?=^## )/m, "");
+    }
+    for (const [index, line] of content.split("\n").entries()) {
+      if (forbidden.test(line)) hits.push(`${relative(repoRoot, file)}:${index + 1}`);
+    }
+  }
+  assert.deepEqual(hits, [], "retired MoAI integration must not reappear");
+
+  for (const removed of [
+    "skills/chany-project/references/moai-chain.md",
+    "skills/chany-studio/references/moai-specialist-chain.md",
+  ]) {
+    await assert.rejects(readFile(join(pluginRoot, removed), "utf8"), (error) => error?.code === "ENOENT");
+  }
+});

@@ -1,6 +1,6 @@
 # Thirteen persuasion roles, not thirteen mandatory outputs
 
-This is a Chany adaptation informed by MoAI Seller's `commerce-jtbd-persona` and `commerce-detail-page-copy` (including its `13-sections.md`), inspected in the installed Seller 1.3.0 package on 2026-09-07. The local workflow is independently usable and does not require or impersonate MoAI. It replaces fixed counts, commerce-only assumptions, fixed page heights, and universal copy ratios with evidence-sensitive editorial choices.
+This is Chany's own editorial guide. It treats the thirteen roles as a checklist, not a template, and replaces fixed counts, commerce-only assumptions, fixed page heights, and universal copy ratios with evidence-sensitive editorial choices.
 
 | Role ID | Decision purpose | Product or service adaptation |
 |---|---|---|

@@ -62,7 +62,7 @@ Put the subject and non-negotiable output requirements first. State the desired 
 
 ## Brand authority boundary
 
-Record only the brand controls needed for this campaign. An existing brand guide, design system, approved voice sheet, or adopted Moai brand artifact remains the source; the campaign brief does not silently replace it.
+Record only the brand controls needed for this campaign. An existing brand guide, design system, or approved voice sheet remains the source; the campaign brief does not silently replace it.
 
 ```yaml
 brand_authority:

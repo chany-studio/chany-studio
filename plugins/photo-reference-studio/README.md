@@ -1,4 +1,4 @@
-# Chany's Studio 2.11.0
+# Chany's Studio 2.12.0
 
 > **처음 쓰시나요?** 준비물, 첫 요청 예시, 비용 안내는 [저장소 README의 처음 쓰는 분께](../../README.md#처음-쓰는-분께)에 정리돼 있습니다.
 > 요청하면 확인 카드 한 장으로 만들 것과 비용을 먼저 보여주고, 승인해야 생성이 시작됩니다.
@@ -14,7 +14,7 @@ Claude와 ChatGPT Work/Codex에서 함께 쓰는 광고 프로젝트 지침을 �
 
 2.7.0 추가: `chany-ai-prompt-reference`가 Meigen 이미지·공개 프롬프트를 분석하고 제품별 제작 프롬프트로 연결합니다. 기본 6장 또는 요청 수량, L1→직접 L2 검색, 대화 안 이미지 표시를 적용합니다. [사용법과 예시](../../docs/MEIGEN-REFERENCES.md).
 
-2.6.0은 구매 동기 분석과 Meta 광고 벤치마킹을 영상·단일 이미지·캐러셀 제작에 연결합니다. 전체 광고 본문·제목·CTA와 연결 목적지 검수도 포함합니다. MoAI 없이 핵심 작업을 진행하며 필요한 전문 스킬만 조건부 연결합니다. [사용법과 프롬프트 예시](../../docs/PERFORMANCE-ADS.md).
+2.6.0은 구매 동기 분석과 Meta 광고 벤치마킹을 영상·단일 이미지·캐러셀 제작에 연결합니다. 전체 광고 본문·제목·CTA와 연결 목적지 검수도 포함합니다. [사용법과 프롬프트 예시](../../docs/PERFORMANCE-ADS.md).
 
 ChatGPT Work에서는 `@스킬명`, Codex에서는 `$스킬명`으로 명시 호출합니다. Claude Cowork에서는 `/project-studio`를 제외한 전문 작업을 자연어로 요청하면 설명에 맞는 스킬이 자동 선택됩니다.
 
@@ -81,11 +81,11 @@ Codex: $chany-project로 현재 폴더를 같은 프로젝트로 설정해줘.
 
 ChatGPT의 `/project-studio`는 슬래시 메뉴 명령이 아니라 일반 메시지로 전달될 때 동작하는 호환 별칭입니다.
 
-Claude Cowork에서는 프로젝트 입력·첨부·기존 기록을 먼저 읽고, 부족한 캠페인 정보만 네이티브 **Ask your question** 카드로 묻습니다. 첫 화면은 최대 3개 질문이며 Moai에서 이미 확인한 내용은 다시 묻지 않습니다. 설계안 뒤에는 `승인 후 생성 (권장)`·`설계 수정`·`취소` 카드가 나타나고, 생성 승인을 선택하기 전에는 Chany 관리 파일을 쓰지 않습니다. 해당 UI가 노출되지 않거나 빈 응답을 반환하면 승인으로 추정하지 않고 최소 텍스트 질문으로 전환하며, 명시적으로 취소하면 재질문하지 않습니다. 같은 요청의 Moai 단계는 별도의 선행 미리보기와 승인 뒤 Moai 소유 파일을 먼저 작성할 수 있습니다.
+Claude Cowork에서는 프로젝트 입력·첨부·기존 기록을 먼저 읽고, 부족한 캠페인 정보만 네이티브 **Ask your question** 카드로 묻습니다. 첫 화면은 최대 3개 질문이며 이미 확인한 내용은 다시 묻지 않습니다. 설계안 뒤에는 `승인 후 생성 (권장)`·`설계 수정`·`취소` 카드가 나타나고, 생성 승인을 선택하기 전에는 Chany 관리 파일을 쓰지 않습니다. 해당 UI가 노출되지 않거나 빈 응답을 반환하면 승인으로 추정하지 않고 최소 텍스트 질문으로 전환하며, 명시적으로 취소하면 재질문하지 않습니다.
 
-### `/project-studio`의 Moai 문맥 감지와 조건부 체이닝
+### `/project-studio`로 시작하기
 
-보통 `/project-studio <설명>` 하나로 시작합니다. 기존 `.moai/project/*`가 있으면 읽기 전용으로 재사용합니다. 기록이 없을 때는 현재 호스트가 정확한 Moai project 스킬을 같은 요청 안에서 실제 호출하고 기다릴 수 있음을 확인한 경우에만 통합 승인안에 넣습니다. 설치 흔적만 있고 그 기능이 없으면 Chany 단독 설정과 수동 2단계 안내를 제공합니다. Chany 단계는 `.moai/**`를 수정·삭제·이동하지 않습니다.
+보통 `/project-studio <설명>` 하나로 시작합니다. 설정은 작업 폴더에 있는 다른 도구의 파일을 수정·삭제·이동하지 않고, `CLAUDE.md`·`AGENTS.md` 안의 다른 도구 구역도 그대로 둡니다.
 
 ```text
 Claude Cowork:
@@ -98,11 +98,7 @@ Codex:
 $chany-project로 반려동물 예약 플랫폼의 출시 광고와 랜딩페이지 제작 구조를 설정해줘.
 ```
 
-Moai의 `project`를 먼저 실행한 뒤 Chany 설정을 이어가는 수동 2단계는 모든 런타임에서 사용할 수 있는 기본 대안입니다. `--with-moai`와 `moai-chain`은 Moai 단계를 필수로 요구하므로 같은 요청 내 호출 기능이 확인되지 않으면 중단하고 이 2단계를 안내합니다. `--chany-only`는 감지를 건너뜁니다. 모든 Moai 변경은 해당 워크플로의 미리보기와 승인을 거칩니다. ChatGPT의 정식 호출은 `@chany-project`이며 `/project-studio`를 ChatGPT 슬래시 메뉴 명령으로 안내하지 않습니다.
-
-업종과 산출물이 정해지면 `/project-studio`는 설치돼 실제 호출 가능한 Moai 전문 스킬 중 **가장 작은 관련 체인만** 승인안에 제안합니다. 주장 검수는 `moai-seller:commerce-ad-claim-compliance-kr`, 발송 메시지는 `moai-seller:commerce-message-compliance-kr`, 협찬·추천·사용권은 `moai-seller:commerce-influencer-collab`, 현행 법령과 MFDS 질문은 `moai-lawyer:legal-law-research`와 `moai-lawyer:legal-mfds-safety`로 연결할 수 있습니다. 마케팅·상세페이지·촬영 기획은 `moai-marketer:marketing-campaign-planner`, `moai-seller:commerce-detail-page-planner`, `moai-seller:commerce-product-photo-brief`, 디자인은 `moai-designer:design-brief`, `moai-designer:design-iteration-loop`, `moai-designer:design-landing-motion`, 미디어 실행은 `moai-media:media-higgsfield-core`, `moai-media:media-higgsfield-image`, `moai-media:media-higgsfield-video`, `moai-media:media-higgsfield-identity`, `moai-media:media-higgsfield-assets`가 설치된 경우에만 선택합니다.
-
-전달 결과에는 정확한 Moai 스킬 이름, 목적, 검토 대상과 버전, 출처 날짜, 발견 사항, 미해결 항목과 후속 Chany 담당을 기록합니다. Chany's Studio는 캠페인 브리프, 원본 잠금, 최종 크리에이티브 QA와 버전 고정 게시 검수를 소유합니다. Moai가 없으면 Chany 단독으로 동작하고, Moai의 명령이나 결과를 흉내 내지 않습니다.
+ChatGPT의 정식 호출은 `@chany-project`이며 `/project-studio`를 ChatGPT 슬래시 메뉴 명령으로 안내하지 않습니다.
 
 설정 후 새 작업을 열고 다음 순서로 제작합니다.
 

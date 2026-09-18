@@ -64,7 +64,7 @@ Node.js는 컴퓨터에서 작은 도우미 프로그램을 실행해 주는 무
 
 - 표시 이름: `Chany's Studio`
 - 내부 식별자: `photo-reference-studio`
-- 버전: `2.11.0`
+- 버전: `2.12.0`
 - 대표 Skill: `chany-studio`
 - 프로젝트 Skill: `chany-project`
 - 전문 Skill: 마케팅 브리프, JTBD 고객 분석(`chany-jtbd-persona`), Meta 광고 리서치(`chany-meta-ad-research`), 레퍼런스 보드(사이트 미지정 시 Pinterest 5장 + Meigen 5장, Pinterest만 지정 시 기본 6장, 또는 요청 수량), Meigen 이미지·프롬프트 레퍼런스(`chany-ai-prompt-reference`), 전문 크리에이티브 디렉션(`chany-creative-direction`), 브라우저 캡처 영상 레퍼런스 준비(`chany-video-reference-ingest`), 제품 에셋, 키비주얼, 상세페이지, 광고, 편집, 패션, 콘셉트형 캠페인 영상(`chany-campaign-video`), 광고 모션 디자인(`chany-motion-design`), 미디어 생성 실행·재개(`chany-media-production-loop`), 영상 조립·컷 교체(`chany-video-assembly`), 환경 점검(`chany-preflight`), 게시 전 검수(`chany-publication-review`)
@@ -125,11 +125,7 @@ Codex: $chany-project로 테스트 광고 프로젝트를 설정해줘.
 일반 메시지 호환 별칭: /project-studio 테스트 광고 프로젝트를 설정해줘.
 ```
 
-Claude Cowork에서는 빠진 캠페인 정보가 **Ask your question** 카드로 표시되고, 설계안 뒤에 `승인 후 생성 (권장)`·`설계 수정`·`취소` 카드가 나타나는지 확인합니다. 입력이나 기존 기록에 이미 있는 내용은 재질문하지 않으며, 질문 카드가 노출되지 않거나 빈 응답이면 일반 텍스트 확인으로 안전하게 전환해야 합니다. `취소`는 재질문 없이 Chany 단계를 끝내며, 같은 요청의 Moai 초기화는 그 자체의 선행 미리보기와 승인을 사용합니다.
-
-## Moai 연동 설치 확인
-
-Moai와 함께 쓰는 설치 확인(개발자용)은 [고급·개발자 안내](ADVANCED.md#moai-연동-설치-확인)로 옮겼습니다. Chany's Studio는 Moai 없이도 단독으로 동작합니다.
+Claude Cowork에서는 빠진 캠페인 정보가 **Ask your question** 카드로 표시되고, 설계안 뒤에 `승인 후 생성 (권장)`·`설계 수정`·`취소` 카드가 나타나는지 확인합니다. 입력이나 기존 기록에 이미 있는 내용은 재질문하지 않으며, 질문 카드가 노출되지 않거나 빈 응답이면 일반 텍스트 확인으로 안전하게 전환해야 합니다. `취소`는 재질문 없이 Chany 단계를 끝냅니다.
 
 ## 유료 생성과 최종 게시 계약 확인
 
@@ -151,7 +147,7 @@ Moai와 함께 쓰는 설치 확인(개발자용)은 [고급·개발자 안내](
 
 1. **Customize → Plugins**를 엽니다.
 2. `photo-reference-studio` 마켓플레이스에서 **Update**를 누릅니다.
-3. 버전 `2.11.0`, `chany-project`, `chany-jtbd-persona`, `chany-meta-ad-research`, `chany-creative-direction`, `chany-campaign-video`, `chany-media-production-loop`, 공통 제작 스킬과 11개 업종 스킬 목록을 확인합니다.
+3. 버전 `2.12.0`, `chany-project`, `chany-jtbd-persona`, `chany-meta-ad-research`, `chany-creative-direction`, `chany-campaign-video`, `chany-media-production-loop`, 공통 제작 스킬과 11개 업종 스킬 목록을 확인합니다.
 4. 새 Cowork 작업을 시작합니다.
 
 ### Claude Code
@@ -168,9 +164,8 @@ Moai와 함께 쓰는 설치 확인(개발자용)은 [고급·개발자 안내](
 
 ## 업데이트가 반영되지 않을 때
 
-- 설치 상세의 버전이 `2.11.0`인지 확인합니다.
+- 설치 상세의 버전이 `2.12.0`인지 확인합니다.
 - Refresh 또는 Update 뒤 반드시 새 대화나 새 작업을 시작합니다.
-- Moai 체이닝을 사용할 때는 두 플러그인의 설치·활성화뿐 아니라 현재 호스트의 실제 플러그인 간 호출 기능도 확인합니다. 기능이 없으면 Moai project 완료 후 Chany를 실행하는 수동 2단계를 사용합니다. 필수 실행은 `--with-moai`, 단독 실행은 `--chany-only`입니다.
 - Claude Code에서는 `/plugin`의 Errors 탭을 확인합니다.
 - Claude Cowork에서 레퍼런스 이미지가 안 보이면 Node.js 18 이상과 `reference-preview` 연결을 확인합니다. Node.js 설치 방법은 [문제 해결의 Node.js 안내](TROUBLESHOOTING.md#nodejs가-필요하다고-나와요-claude-cowork-이미지-미리보기)를 보세요.
 - Higgsfield 실행이 안 되면 연결을 해제한 뒤 호스트의 로그인 화면에서 다시 인증합니다.

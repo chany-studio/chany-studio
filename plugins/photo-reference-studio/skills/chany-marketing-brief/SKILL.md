@@ -17,7 +17,7 @@ If a Chany industry skill applies, consume its industry direction packet before 
 
 ## Essential rules
 
-- For conversion creative, use the shared [performance-ad contract](../chany-studio/references/performance-ad-contract.md). Reuse its compact conversion brief and customer/reference packets instead of duplicating interviews. Actual Ads Manager data belongs to this skill's performance-review mode; public Meta Library observations alone cannot establish winners. Read [MoAI chaining](../chany-studio/references/moai-specialist-chain.md) for optional specialist analysis, never mandatory account connection.
+- For conversion creative, use the shared [performance-ad contract](../chany-studio/references/performance-ad-contract.md). Reuse its compact conversion brief and customer/reference packets instead of duplicating interviews. Actual Ads Manager data belongs to this skill's performance-review mode; public Meta Library observations alone cannot establish winners.
 
 - Separate facts supplied by the user or visible in authoritative sources from proposals and draft copy.
 - Never invent a discount, price, date, availability, outcome, product or service benefit, comparison, certification, urgency, testimonial, safety statement, or legal statement.
@@ -30,4 +30,4 @@ If a Chany industry skill applies, consume its industry direction packet before 
 
 ## Deliver
 
-For planning, return the applied industry and mode, campaign objective, audience and decision context, journey and decision map, approved-fact and claim ledger, message hierarchy, channel plan, asset matrix, six-element visual brief, proposed one-variable test plan, production order, publication gate, and unresolved approvals. For observed results, return the performance-review record and next single-variable plan defined in the schema. Do not generate final media from this skill alone. When an installed Moai specialist contributes research or planning, preserve it as an attributed structured handoff rather than implicit campaign truth.
+For planning, return the applied industry and mode, campaign objective, audience and decision context, journey and decision map, approved-fact and claim ledger, message hierarchy, channel plan, asset matrix, six-element visual brief, proposed one-variable test plan, production order, publication gate, and unresolved approvals. For observed results, return the performance-review record and next single-variable plan defined in the schema. Do not generate final media from this skill alone.

@@ -120,12 +120,6 @@ publication_review:
 
 If `recheck_by` has passed, a relied-on source or evidence item has expired, or a future rule becomes effective on or before the intended publication date, the existing status is invalidated. Reset the candidate to at most `draft-only`, refresh the affected source and evidence records, rerun the affected lanes, and obtain a new decision for the exact version.
 
-## Optional Moai handoff
-
-When `/project-studio` selected Moai specialist chaining or the user asks for it, and compatible Moai skills are installed and visible, this skill may chain relevant lanes to `moai-seller:commerce-ad-claim-compliance-kr`, `moai-seller:commerce-message-compliance-kr`, `moai-seller:commerce-influencer-collab`, `moai-lawyer:legal-law-research`, or `moai-lawyer:legal-mfds-safety`. Those remain Moai-owned skills and commands. Do not alias, shadow, emulate, or claim ownership of them, and do not claim they ran when unavailable.
-
-Import any returned findings as attributed inputs, then complete Chany's version binding, final-render review, status calculation, and named-owner gate. Moai output does not replace current official-source verification or human review.
-
 ## Stop conditions
 
 - Stop publication when the jurisdiction, channel, exact reviewed version, material facts, evidence, rights, required disclosures, official-source record, or named review owner is missing.

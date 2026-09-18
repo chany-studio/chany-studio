@@ -9,7 +9,7 @@ Own read-only ad discovery and reference analysis, not customer truth, media pro
 
 Every user-facing turn follows the shared [beginner experience contract](../chany-studio/references/beginner-experience.md): quick start by default, plain Korean without internal field names, and one confirmation card before any paid generation.
 
-1. Reuse the supplied product/service brief, market, language, requested formats and references. Identify the customer decision and actual offer; missing customer evidence remains a hypothesis. Do not force project initialization or MoAI installation.
+1. Reuse the supplied product/service brief, market, language, requested formats and references. Identify the customer decision and actual offer; missing customer evidence remains a hypothesis. Do not force project initialization.
 2. Inspect the current host's real browser/extension or supported read-only connector. Search the official Meta Ad Library only for ad discovery; use supplied library links directly. A reference request does not authorize connecting an ad account, changing it or spending.
 3. Select relevant, inspectable ads with a recorded reason, not invented performance rankings. Default to six ad candidates per requested board, or the user's positive count; a carousel is one candidate, not one per card. State format coverage and any shortfall. Never cross-fill from Pinterest, award archives, spy tools or another website.
 4. Inspect actual creatives and their visible copy. Separate observed facts, interpretation and proposed adaptations. For video timing, use `chany-video-reference-ingest`; for carousel, inspect the available cards and record their observed order and completeness. Never infer unseen cards, unplayed audio, cut timing or missing CTA text.
@@ -17,4 +17,4 @@ Every user-facing turn follows the shared [beginner experience contract](../chan
 
 Public delivery metadata is not proof of purchases, CPA or ROAS. Use `unverified`, `reported` or `matched-account-data` performance evidence labels as defined in the reference, independent of media inspection completeness. No “winning ad” claim without matched observed performance and a valid comparison.
 
-An analysis-only request ends here. A production request returns to `chany-ad-creative` for single images/carousels, `chany-campaign-video` for video, or `chany-studio` for a requested multi-format set. Preserve the source, packet version, limitations and selection. MoAI is optional; its report analyzer is not a replacement for this public-library research owner.
+An analysis-only request ends here. A production request returns to `chany-ad-creative` for single images/carousels, `chany-campaign-video` for video, or `chany-studio` for a requested multi-format set. Preserve the source, packet version, limitations and selection.

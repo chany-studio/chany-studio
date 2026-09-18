@@ -1,12 +1,14 @@
 # 고급·개발자 안내
 
-> 초보자는 읽지 않아도 됩니다. 처음 쓰는 분은 [README의 처음 쓰는 분께](../README.md#처음-쓰는-분께)부터 보세요. 여기에는 버전별 변경 내용과 개발자·Moai 사용자를 위한 설명을 모았습니다.
+> 초보자는 읽지 않아도 됩니다. 처음 쓰는 분은 [README의 처음 쓰는 분께](../README.md#처음-쓰는-분께)부터 보세요. 여기에는 버전별 변경 내용과 개발자를 위한 설명을 모았습니다.
 
 ## 버전별 변경 요약
 
 전체 변경 이력은 [CHANGELOG](../CHANGELOG.md)에 있습니다.
 
 ### 최근 버전 안내 (README에서 옮김)
+
+2.12.0: 이미지·영상 제작에 집중하기 위해 MoAI 연동을 제거했습니다. 예전 옵션을 입력해도 무시되고 챠니스튜디오 설정만 진행하며, 작업 폴더의 다른 도구 파일은 계속 건드리지 않습니다.
 
 2.11.0: `/project-studio`에서 질문 카드로 만들 것·올릴 곳·분위기·레퍼런스·품질·참고 사진·비율을 골라 프로젝트 기본값으로 저장합니다.
 
@@ -24,7 +26,7 @@
 
 2.7.0 추가: **Meigen 이미지·원본 프롬프트 분석 → 제품·서비스별 제작 프롬프트**. 기본 6장 또는 요청 수량을 대화에 표시하며 프로젝트 초기화와 기존 광고 제작에 연결합니다. [사용법·예시](MEIGEN-REFERENCES.md).
 
-2.6.0 추가: **JTBD → Meta 광고 분석 → 구매 전환 영상·단일 이미지·캐러셀 → 전체 광고 카피·CTA 검수**. Claude와 ChatGPT Work/Codex에서 공통으로 사용하며 MoAI는 선택형 전문 확장입니다. [사용법·복습용 프롬프트·MoAI 검토 결과](PERFORMANCE-ADS.md)를 확인하세요.
+2.6.0 추가: **JTBD → Meta 광고 분석 → 구매 전환 영상·단일 이미지·캐러셀 → 전체 광고 카피·CTA 검수**. Claude와 ChatGPT Work/Codex에서 공통으로 사용하며 MoAI는 선택형 전문 확장입니다. [사용법·복습용 프롬프트](PERFORMANCE-ADS.md)를 확인하세요.
 
 ### 2.7.0 Meigen 레퍼런스
 
@@ -129,88 +131,6 @@
 /plugin install photo-reference-studio@photo-reference-studio
 /reload-plugins
 ```
-
-## Moai 연동 설치 확인
-
-Chany's Studio는 Moai 없이도 단독으로 동작합니다. 두 플러그인을 함께 쓰려면 설치 화면에서 **Chany's Studio (`photo-reference-studio`)**와 **Moai**가 각각 설치·활성화됐는지 확인하고, 설치 또는 업데이트 뒤 새 대화나 새 작업을 시작합니다.
-
-각 플러그인을 별도로 먼저 확인하세요.
-
-```text
-Moai 확인: Moai가 제공하는 project 기능과 현재 설치 상태를 알려줘.
-Chany 확인: Chany's Studio가 제공하는 chany-project와 업종 스킬을 알려줘.
-```
-
-`/project`는 Moai 소유, `/project-studio`는 Chany's Studio 소유입니다. 일반 `/project-studio`는 기존 Moai 산출물을 자동으로 읽어 재사용합니다. 산출물이 없을 때는 현재 호스트가 정확한 Moai project 스킬을 같은 요청 안에서 실제 호출·대기할 수 있는 경우에만 승인안에 그 단계를 포함하며, 그렇지 않으면 Chany 단독 설정과 수동 2단계 안내를 제공합니다. Chany 단계는 `.moai/**`를 수정하지 않습니다. `--with-moai` 또는 `moai-chain`은 실제 Moai 단계를 필수로 요구하고, `--chany-only`는 감지를 건너뜁니다.
-
-`/project-studio`로 프로젝트를 설정한 뒤 실제 광고·콘텐츠 작업에서는 요청한 산출물과 위험에 직접 필요한 **설치·활성화된 Moai 전문 스킬만** 조건부로 연결합니다. 예를 들어 한국 광고 주장·메시지·인플루언서, 현행 법령·MFDS 안전, 캠페인 기획, 상세페이지, 디자인 반복, 미디어 제작 검토가 해당합니다. 모든 전문 결과는 실행한 정확한 스킬 이름, 설치 출처와 버전, 검토한 입력·산출물 버전, 근거 출처와 확인 날짜를 포함한 인계 기록으로 Chany 흐름에 돌아옵니다. Moai 결과는 상위 근거일 뿐 게시 승인이나 법률적 승인으로 취급하지 않습니다.
-
-관련 Moai 스킬이 설치되지 않았거나 현재 세션에서 보이지 않으면 Chany's Studio는 이를 모방하지 않고 단독 흐름으로 계속합니다. 이때 만들 수 있는 브리프와 초안은 진행하되, 전문 검토나 공식 근거가 필요한 항목은 미해결 상태로 남기고 게시를 보류합니다. Moai를 설치한 뒤에는 새 대화나 새 작업에서 다시 확인해야 합니다.
-
-## `/project-studio`에서 Moai 문맥 감지와 조건부 체이닝
-
-보통 `/project-studio <설명>` 하나로 시작하면 됩니다. 기존 `.moai/project/*`가 있으면 바로 재사용합니다. 기록이 없을 때는 현재 호스트가 Moai의 정확한 project 스킬을 같은 요청 안에서 실제로 호출하고 완료까지 기다릴 수 있음을 확인한 경우에만 통합 승인안에 Moai 단계를 넣습니다. 설치 폴더나 문서에 이름이 보이는 것만으로 자동 실행을 약속하지 않습니다. 해당 기능이 없으면 Chany 단독 설정과 수동 2단계 안내를 제공합니다. Chany 단계는 `.moai/**`를 수정·삭제·이동하지 않습니다.
-
-플랫폼별 Chany 설정 호출 예시는 다음과 같습니다. Moai의 같은 요청 내 실행 여부는 각 호스트의 실제 호출 기능에 따라 달라집니다.
-
-```text
-Claude Cowork:
-/project-studio 반려동물 예약 플랫폼의 출시 광고와 랜딩페이지 제작 구조를 설정해줘.
-
-ChatGPT Work:
-@chany-project로 반려동물 예약 플랫폼의 출시 광고와 랜딩페이지 제작 구조를 설정해줘.
-
-Codex:
-$chany-project로 반려동물 예약 플랫폼의 출시 광고와 랜딩페이지 제작 구조를 설정해줘.
-```
-
-모든 런타임에서 확실한 방식은 Moai의 `project`를 먼저 완료하고 Chany 설정을 이어가는 수동 2단계입니다. `--with-moai` 또는 `moai-chain`은 Moai 단계를 필수로 요구하며, Moai 자체 또는 같은 요청 내 호출 기능이 없으면 Chany 단독으로 조용히 넘어가지 않고 수동 2단계를 안내합니다. `--chany-only`는 Moai 감지를 건너뜁니다. 어떤 방식도 Moai 자체의 변경 미리보기와 승인 절차를 생략하지 않습니다. ChatGPT에서는 `/project-studio`를 정식 슬래시 메뉴로 안내하지 말고 `@chany-project`를 사용합니다.
-
-프로젝트의 업종과 산출물이 정해지면 `/project-studio`는 현재 설치돼 실제 호출 가능한 Moai 전문 스킬 중 **가장 작은 관련 체인만** 승인안에 제안합니다. 예를 들어 주장 검수는 `moai-seller:commerce-ad-claim-compliance-kr`, 발송 메시지는 `moai-seller:commerce-message-compliance-kr`, 협찬·추천·사용권은 `moai-seller:commerce-influencer-collab`, 현행 법령과 MFDS 질문은 `moai-lawyer:legal-law-research`와 `moai-lawyer:legal-mfds-safety`에 연결할 수 있습니다. 더 깊은 기획·상세페이지·촬영은 `moai-marketer:marketing-campaign-planner`, `moai-seller:commerce-detail-page-planner`, `moai-seller:commerce-product-photo-brief`, 디자인 반복은 `moai-designer:design-brief`, `moai-designer:design-iteration-loop`, `moai-designer:design-landing-motion`, Higgsfield 실행은 `moai-media:media-higgsfield-core`, `moai-media:media-higgsfield-image`, `moai-media:media-higgsfield-video`, `moai-media:media-higgsfield-identity`, `moai-media:media-higgsfield-assets`가 설치된 경우에만 제안됩니다.
-
-각 결과는 정확한 Moai 스킬 이름, 목적, 검토 대상과 버전, 출처 날짜, 발견 사항, 미해결 항목과 후속 Chany 담당을 붙인 인용 가능한 전달물로 받습니다. Chany's Studio는 캠페인 브리프, 원본 잠금, 최종 크리에이티브 QA와 버전 고정 게시 검수를 계속 소유합니다. Moai 전문 스킬이 없으면 이를 흉내 내거나 필수로 만들지 않고 Chany 단독으로 진행하며, 빠진 근거나 사람 검토가 있으면 게시만 보류합니다.
-
-## Moai와 함께 쓸 때
-
-(사용 가이드에서 옮김)
-
-두 플러그인의 프로젝트 명령은 역할이 다릅니다.
-
-- `/project`는 **Moai**가 소유하며 일반 프로젝트 구조와 개발 맥락을 만듭니다.
-- `/project-studio`는 **Chany's Studio**가 소유하며 광고·콘텐츠 제작 맥락을 만듭니다.
-- 기존 `.moai/**`는 Moai의 정본이므로 Chany's Studio가 수정·삭제·이동하거나 백업하지 않고 읽기 전용으로 재사용합니다.
-- 이미 성공적으로 만들어진 Moai 산출물이 있으면 Chany's Studio가 제품·구조·기술 맥락을 자동으로 읽어 같은 질문을 반복하지 않습니다.
-
-기본은 프로젝트와 광고 범위를 한 번에 말하는 것입니다. 이 호출은 기존 Moai 상태를 자동 감지하지만, 새 Moai 실행은 현재 호스트가 정확한 스킬을 같은 요청 안에서 호출하고 기다릴 수 있다고 확인된 경우에만 체인합니다.
-
-```text
-Claude Cowork
-/project-studio 신규 호텔 예약 사이트의 예약 전환 광고와 상세페이지 제작 환경을 설정해줘.
-
-ChatGPT Work
-@chany-project로 신규 호텔 예약 사이트의 광고·콘텐츠 제작 환경을 설정해줘.
-
-Codex
-$chany-project로 신규 호텔 예약 사이트의 광고·콘텐츠 제작 환경을 설정해줘.
-```
-
-일반 `/project-studio` 초기화가 Moai 상태를 자동 감지합니다. 기존 `.moai/project/*`가 있으면 다시 실행하지 않고 읽어 재사용합니다. 기록이 없으면 단순 설치 표시가 아니라 현재 호스트의 실제 in-process 호출 기능을 확인한 경우에만 통합 승인안에 Moai `project` 단계를 포함합니다. 기능이 없으면 Chany 단독 설정을 진행하고 아래 수동 2단계를 안내합니다.
-
-```text
-Claude Cowork: /project-studio --with-moai 신규 호텔 예약·광고 프로젝트를 함께 설정해줘.
-ChatGPT Work: @chany-project moai-chain으로 신규 호텔 예약·광고 프로젝트를 함께 설정해줘.
-Codex: $chany-project --with-moai 신규 호텔 예약·광고 프로젝트를 함께 설정해줘.
-```
-
-Moai가 설치되지 않았거나 현재 세션에서 실제 호출할 수 없으면 Chany's Studio가 `/project`를 흉내 내지 않습니다. 이 경우 Chany 전용 설정만 계속하거나, Moai가 callable한 세션에서 Moai project를 먼저 완료한 뒤 `@chany-project` 또는 `$chany-project`를 실행합니다.
-
-`--with-moai` 또는 `moai-chain`은 Moai 단계를 필수로 요구하므로 Moai나 같은 요청 내 호출 기능이 확인되지 않으면 Chany 쓰기 전에 중단하고 수동 2단계를 알려줍니다. `--chany-only`는 Moai 감지를 건너뜁니다. 플래그가 없어도 Moai의 변경 미리보기와 승인 절차는 항상 유지됩니다.
-
-Moai의 일반 프로젝트 기반을 별도로 검토하고 싶거나 현재 호스트가 플러그인 간 같은 요청 내 호출을 지원하지 않을 때는 Moai `project`를 먼저 실행한 뒤 Chany 프로젝트 설정을 이어가는 수동 2단계를 사용합니다.
-
-프로젝트 기반이 준비된 뒤에는 요청 범위에 맞는 Moai 전문 스킬도 자동으로 확인합니다. 한국 광고 주장, 문자·이메일·푸시 발송 조건, 협찬·추천·사용권, 최신 법령·MFDS 검토, 캠페인·디자인 보강, Higgsfield 실행처럼 실제로 필요한 단계만 제안합니다. 설치되어 있지 않으면 결과를 흉내 내지 않고 Chany 단독 체인으로 진행하며, 근거나 검토자가 부족한 산출물은 초안 상태에 둡니다.
-
-Moai 결과는 `사용한 정확한 스킬 이름 → 검토 대상 버전 → 확인한 출처와 날짜 → 발견사항 → Chany의 다음 담당 스킬` 형태로 넘깁니다. Moai가 일반 프로젝트나 전문 검토를 맡더라도 Chany's Studio는 캠페인 브리프, 원본·카피 잠금, 유료 생성 승인, 최종 렌더와 게시 상태를 계속 관리합니다.
 
 ## 저장소 구조
 

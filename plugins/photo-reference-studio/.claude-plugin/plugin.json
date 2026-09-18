@@ -1,8 +1,8 @@
 {
   "name": "photo-reference-studio",
   "displayName": "Chany's Studio",
-  "version": "2.11.0",
-  "description": "Chany's Claude and ChatGPT Work/Codex advertising studio: JTBD-led conversion video, single-image and carousel ads, official Meta Ad Library research, MeiGen image-and-prompt references, source-isolated photo references, GPT Image 2.5 stills, bounded production, publication review and optional MoAI specialists.",
+  "version": "2.12.0",
+  "description": "Chany's Claude and ChatGPT Work/Codex advertising studio: JTBD-led conversion video, single-image and carousel ads, official Meta Ad Library research, MeiGen image-and-prompt references, source-isolated photo references, GPT Image 2.5 stills, bounded production and publication review.",
   "author": {
     "name": "Chany",
     "url": "https://github.com/chany-studio"
@@ -45,8 +45,6 @@
     "environment-preflight",
     "project-instructions",
     "interactive-project-interview",
-    "moai-project",
-    "moai-specialists",
     "publication-review",
     "paid-generation-safety",
     "gpt_image_2_5",

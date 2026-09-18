@@ -1,13 +1,13 @@
 # Conversion creative: one brief, format-specific execution
 
-Use for performance marketing, purchase-oriented ads, Meta reference adaptation, or supplied reference + product/service → advertising. This is a mode of existing owners, not another orchestrator or a compulsory full campaign. Read [thirteen-role adaptation](thirteen-role-adaptation.md) when structuring the argument; read [MoAI chaining](moai-specialist-chain.md) only for a relevant optional contribution.
+Use for performance marketing, purchase-oriented ads, Meta reference adaptation, or supplied reference + product/service → advertising. This is a mode of existing owners, not another orchestrator or a compulsory full campaign. Read [thirteen-role adaptation](thirteen-role-adaptation.md) when structuring the argument.
 
 ## Ownership and runtime
 
 - Single image/carousel: `chany-ad-creative`; video: `chany-campaign-video`; multi-format set: `chany-studio`. The requesting owner keeps responsibility after each research handoff.
 - Customer decisions that need analysis: `chany-jtbd-persona`; public ad research: `chany-meta-ad-research`; observed account results: `chany-marketing-brief`. Do not confuse these evidence classes.
-- Run the Chany core in Claude, ChatGPT Work and Codex without requiring MoAI. Reuse approved upstream work and call a MoAI specialist only when requested or a specific unresolved specialist need warrants it and it is actually callable. No all-skills chain, automatic MoAI installation, or claimed activation from cached files.
-- Use natural-language requests in both hosts. Use host-exposed skill selection/invocation, not hardcoded Claude commands in ChatGPT. New skills do not register a portable slash command. Project setup remains optional and owned by `chany-project`; `--with-moai` applies to its project phase, not automatic execution of every specialist.
+- Run the Chany core the same way in Claude, ChatGPT Work and Codex. Reuse approved upstream work. No all-skills chain or claimed activation from cached files.
+- Use natural-language requests in both hosts. Use host-exposed skill selection/invocation, not hardcoded Claude commands in ChatGPT. New skills do not register a portable slash command. Project setup remains optional and owned by `chany-project`.
 - Read project/attachments before asking questions. Ask only for missing business decisions; use Claude's question tool or the active ChatGPT/Codex structured-input tool when exposed and allowed, otherwise concise text. Empty responses are not approval. Do not ask beginners for lenses, palettes or copy formulas.
 - Check actual browser, preview, image, video and editing capabilities separately. A local machine's installed extension or CLI does not prove access from hosted ChatGPT or Cowork. Keep plan-ready, media-produced, assembled, displayed and published as distinct states. Missing tools permit honest planning/handoff, not fabricated execution.
 
@@ -40,7 +40,7 @@ Compile production prompts with the shared creative-direction sections plus `ad_
 
 Maintain an `ad_copy_packet`: exact `in_creative_copy`, `primary_text`, `platform_headline`, `platform_description`, `platform_cta`, `destination_url`, required qualifications, `claim_refs` and approval/version. Include card-level copy where applicable. Fields unsupported by the current placement are `not_applicable`; unknown source fields are `not_observed`, not invented. Validate current limits and supported CTA labels through the platform adapter. Separate image plates from exact typesetting when needed.
 
-For Korean copy, remove abstract clichés and translation-like syntax while preserving every approved fact anchor. Optional MoAI copy/humanize suggestions are drafts; any accepted wording change creates a new copy version and reopens affected layout/claim review. Never “humanize” numbers, offers or mandatory qualifiers away.
+For Korean copy, remove abstract clichés and translation-like syntax while preserving every approved fact anchor. Outside copy or humanize suggestions are drafts; any accepted wording change creates a new copy version and reopens affected layout/claim review. Never “humanize” numbers, offers or mandatory qualifiers away.
 
 ## Message match and learning
 

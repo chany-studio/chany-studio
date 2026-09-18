@@ -127,19 +127,7 @@ A changed derivative starts at no higher than `draft-only`. Rerun the affected l
 
 Treat a passed `recheck_by`, an expired evidence or rights record, an expired or superseded source, or a rule that becomes effective on or before the intended publication date as an invalidation trigger even when the asset files did not change. Reset the candidate to at most `draft-only` until the affected sources and lanes are refreshed and the named owner records a new scoped decision.
 
-## 10. Optional installed Moai chain
-
-When `/project-studio` selected Moai specialist chaining or the user requests it, and the applicable Moai skills are installed and visible, route bounded questions as follows:
-
-- `moai-seller:commerce-ad-claim-compliance-kr`: Korean commerce advertising claims, evidence, offer, and display questions;
-- `moai-seller:commerce-message-compliance-kr`: Korean outbound-message classification, consent, sender, opt-out, and sending-rule questions;
-- `moai-seller:commerce-influencer-collab`: creator collaboration, material connection, contract, deliverable, and disclosure questions;
-- `moai-lawyer:legal-law-research`: primary-law and official-guidance research for a named jurisdiction and issue;
-- `moai-lawyer:legal-mfds-safety`: Korean MFDS-sensitive food, cosmetic, health, medical, or safety questions within that skill's scope.
-
-These are Moai-owned skills and commands. Chany's Studio does not rename, shadow, emulate, or take ownership of them. If unavailable, say so and continue with a Chany review record that clearly holds publication for missing expert or source review. Attribute returned findings to Moai, retain their scope and dates, and independently bind the final Chany review to the exact copy and asset versions.
-
-## 11. Reviewer handoff
+## 10. Reviewer handoff
 
 Give the named owner a compact decision packet:
 

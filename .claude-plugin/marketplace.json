@@ -5,7 +5,7 @@
     "url": "https://github.com/chany-studio"
   },
   "metadata": {
-    "description": "Chany's cross-runtime advertising studio with source-isolated visual references, user-authorized browser-capture intake for video references, beginner-friendly expert creative direction, current trend-aware GPT Image 2.5 prompting, industry overlays, safe media production, publication review, and capability-gated Moai chaining."
+    "description": "Chany's cross-runtime advertising studio with source-isolated visual references, user-authorized browser-capture intake for video references, beginner-friendly expert creative direction, current trend-aware GPT Image 2.5 prompting, industry overlays, safe media production, and publication review."
   },
   "plugins": [
     {
@@ -53,7 +53,6 @@
         "project-instructions",
         "interactive-project-interview",
         "agents",
-        "moai-project",
         "publication-review",
         "compliance-workflow",
         "paid-generation-safety",

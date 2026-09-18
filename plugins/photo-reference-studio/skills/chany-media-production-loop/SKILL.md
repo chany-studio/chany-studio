@@ -55,5 +55,5 @@ For Genjutsu revisions, consume the campaign-video owner's [edit contract](../ch
 An approved variant set from the confirmation card (for example two images of the same prompt) is not speculative. Follow [product-insertion.md](../chany-studio/references/product-insertion.md) for the product match check, upscaling, and extra ratios.
 
 Do not silently switch providers or models, submit speculative variants, retry a
-whole batch because one item failed, or apply MoAI's source-code diagnostic loop
+whole batch because one item failed, or apply a source-code diagnostic loop
 to creative generation.

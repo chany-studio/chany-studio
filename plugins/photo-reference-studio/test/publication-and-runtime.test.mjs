@@ -93,39 +93,6 @@ test("publication review runs five named lanes against current dated sources and
   assert.match(gate, /future rule (?:will be|becomes) effective on (?:or before|the) intended publication date/i);
 });
 
-test("Moai mapping includes all regulatory specialists with an unresolved fallback and no legal clearance", async () => {
-  const chain = await readPluginFile("skills/chany-studio/references/moai-specialist-chain.md");
-  const specialists = [
-    "moai-seller:commerce-ad-claim-compliance-kr",
-    "moai-seller:commerce-message-compliance-kr",
-    "moai-seller:commerce-influencer-collab",
-    "moai-lawyer:legal-law-research",
-    "moai-lawyer:legal-mfds-safety",
-  ];
-
-  for (const specialist of specialists) {
-    assert.ok(chain.includes(`\`${specialist}\``), `missing Moai route ${specialist}`);
-  }
-  assert.match(
-    chain,
-    /If a relevant specialist is unavailable, continue with the Chany workflow, keep the affected facts or review status unresolved/i,
-  );
-  assert.match(chain, /Their result is upstream evidence, not an automatic approval and not permission to publish/i);
-  assert.match(chain, /never replace it with “legally compliant,” “cleared,” or another blanket conclusion/i);
-  for (const provenanceField of ["producer_source", "package_version", "producer_checked_at"]) {
-    assert.match(chain, new RegExp(`^  ${provenanceField}:`, "m"));
-  }
-  for (const reviewedType of [
-    "runtime",
-    "media-execution",
-    "identity",
-    "asset-operation",
-    "coded-experience",
-  ]) {
-    assert.match(chain, new RegExp(`\\b${reviewedType}\\b`));
-  }
-});
-
 test("platform adapter distinguishes requirement classes and keeps unresolved work out of publication", async () => {
   const adapter = await readPluginFile(
     "skills/chany-studio/references/platform-publication-adapter.md",
@@ -283,7 +250,7 @@ test("campaign state keeps specialist handoffs and publication reviews version-b
     state,
     /^\s+status:\s*["']blocked \| draft-only \| ready-for-named-human-review \| reviewed-by-named-owner["']\s*$/m,
   );
-  assert.match(state, /Attribute optional Moai specialist results with the producer's exact installed name/i);
+  assert.match(state, /Attribute any specialist or external review result with the producer's name/i);
   assert.match(state, /reviewed-object version, sources and dates, findings, and unresolved questions/i);
   assert.match(state, /Bind identity authority, consent, video-reference packet, campaign-video and assembly manifests, media jobs, still-image model selection, paid-generation approval, performance review, and publication review to stable content and asset versions/i);
   assert.match(state, /a version-bound publication status for every asset/i);

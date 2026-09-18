@@ -71,4 +71,4 @@ For an ordinary product or service post, deliver the draft with a short plain-Ko
 
 ## 6. Project setup for beginners
 
-`chany-project` asks only what a beginner can answer: what they sell, who buys it, where they will post, and the plain-Korean project preference cards (what to make, look, reference source, quality, reference-photo upload, ratio). Use the recommended defaults for execution mode, approval location, file layout, and MoAI chaining, and mention MoAI only when it is already detected. End setup with one ready-to-copy first request, for example: "이 제품 사진으로 인스타 광고 이미지 한 장 만들어줘".
+`chany-project` asks only what a beginner can answer: what they sell, who buys it, where they will post, and the plain-Korean project preference cards (what to make, look, reference source, quality, reference-photo upload, ratio). Use the recommended defaults for execution mode, approval location, and file layout. End setup with one ready-to-copy first request, for example: "이 제품 사진으로 인스타 광고 이미지 한 장 만들어줘".

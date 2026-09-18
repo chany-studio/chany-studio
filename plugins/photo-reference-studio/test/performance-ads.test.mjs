@@ -106,16 +106,12 @@ test("ad package separates platform copy and image copy with independent counts"
   assert.match(carousel, /not only appear on the last card/);
 });
 
-test("both runtime branches have optional MoAI and no implicit account operation", async () => {
+test("both runtime branches share one core and no implicit account operation", async () => {
   const common = await read(shared + "performance-ad-contract.md");
-  assert.match(common, /Claude, ChatGPT Work and Codex without requiring MoAI/);
+  assert.match(common, /Run the Chany core the same way in Claude, ChatGPT Work and Codex/);
   assert.match(common, /otherwise concise text/);
   assert.match(common, /Empty responses are not approval/);
   assert.match(common, /not a portable slash command|do not register a portable slash command/);
-  const moai = await read(shared + "moai-specialist-chain.md");
-  assert.match(moai, /explicitly requires MoAI execution/);
-  assert.match(moai, /not public Library discovery/);
-  assert.match(moai, /never a required step to research or create advertising/);
 });
 
 test("JTBD and learning preserve evidence scope and common ledger authority", async () => {
@@ -132,8 +128,8 @@ test("both plugin manifests publish the same feature release without changing id
   const claude = JSON.parse(await read(".claude-plugin/plugin.json"));
   const codex = JSON.parse(await read(".codex-plugin/plugin.json"));
   assert.equal(claude.name, codex.name);
-  assert.equal(claude.version, "2.11.0");
+  assert.equal(claude.version, "2.12.0");
   assert.equal(codex.version.split("+")[0], claude.version);
   assert.equal(codex.skills, "./skills/");
-  assert.match(claude.description, /optional MoAI/);
+  assert.doesNotMatch(claude.description, /moai/i);
 });

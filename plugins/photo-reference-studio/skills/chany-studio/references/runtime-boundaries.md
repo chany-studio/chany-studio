@@ -8,19 +8,11 @@ Keep code convergence and media production as separate systems.
 
 The active host decides whether a browser or extension surface is observable. The existence of an intake skill never proves that a browser tab, extension, native bridge, or local file is connected. When no capture surface is callable, use the manual local-file handoff rather than a platform downloader.
 
-## MoAI code-quality loop
+## Source-code quality loops
 
-MoAI's code-quality loop scans a finite source-code issue queue and verifies
-diagnostics, lint, tests, and requested review lenses. It may be used to validate
-plugin source code, tests, or scripts, but it never controls image or video
+A source-code quality loop (diagnostics, lint, tests, review) may be used to
+validate plugin source code, tests, or scripts, but it never controls image or video
 generation, creative acceptance, paid retries, or publication decisions.
-
-Use the installed `moai-code-quality-loop` only when it is actually callable.
-Do not infer active hooks from the presence of a skill or plugin name. Claude
-Code automatic turn-end continuation depends on registered MoAI hooks; Codex
-uses its own task and goal controls and must not copy Claude hook exit semantics.
-The terminal `moai loop` lifecycle controller and conversational `/moai loop`
-code-quality preset are different interfaces.
 
 ## Chany media-production loop
 

@@ -39,7 +39,6 @@ test("project skill exposes cross-runtime entry points and all referenced resour
 
   for (const path of [
     "references/project-contract.md",
-    "references/moai-chain.md",
     "references/interactive-interview.md",
     "assets/templates/AGENTS.md.tmpl",
     "assets/templates/AGENTS.override.md.tmpl",
@@ -55,11 +54,10 @@ test("project skill exposes cross-runtime entry points and all referenced resour
 });
 
 test("Claude setup uses the native question card in the main conversation before writes", async () => {
-  const [skill, contract, interview, chain] = await Promise.all([
+  const [skill, contract, interview] = await Promise.all([
     read("SKILL.md"),
     read("references/project-contract.md"),
     read("references/interactive-interview.md"),
-    read("references/moai-chain.md"),
   ]);
 
   assert.match(skill, /references\/interactive-interview\.md/);
@@ -78,21 +76,17 @@ test("Claude setup uses the native question card in the main conversation before
   assert.match(interview, /승인 후 생성 \(권장\)/);
   assert.match(interview, /설계 수정/);
   assert.match(interview, /취소/);
-  assert.match(interview, /취소`:[^\n]+no Chany-managed file changes[^\n]+preserve any separately approved Moai-owned files/i);
+  assert.match(interview, /취소`:[^\n]+no Chany-managed file changes/i);
   assert.match(interview, /Only `승인 후 생성 \(권장\)` authorizes the listed Chany-managed project-file writes/i);
   assert.match(contract, /mandatory three-option Chany-file approval card/i);
   assert.match(contract, /An empty result, timeout, or tool error is not an answer or approval/i);
-  assert.match(chain, /Do not replay Moai's general vision, structure, or technology interview/i);
 
-  const moaiPhase = skill.indexOf("Apply the Moai project decision");
   const interviewPhase = skill.indexOf("Collect only the remaining campaign-specific");
   const routingPhase = skill.indexOf("Select exactly one primary industry skill");
   const approvalPhase = skill.indexOf("Show a concise blueprint");
-  assert.ok(moaiPhase >= 0, "Moai phase should be present");
-  assert.ok(moaiPhase < interviewPhase, "Moai should complete before the Chany interview");
+  assert.ok(interviewPhase >= 0, "the remaining interview should be present");
   assert.ok(interviewPhase < routingPhase, "the remaining interview should inform skill routing");
   assert.ok(routingPhase < approvalPhase, "skill routing should precede Chany-file approval");
-  assert.match(interview, /same-request Moai chain[\s\S]+Moai's separate preview and approval/i);
 });
 
 test("user-facing docs distinguish ChatGPT and Codex skill sigils", async () => {
@@ -141,7 +135,7 @@ test("user-facing docs distinguish ChatGPT and Codex skill sigils", async () => 
 
   const allDocs = [rootReadme, pluginReadme, userGuide, installGuide, troubleshooting].join("\n");
   assert.match(allDocs, /\/project-studio/);
-  assert.match(allDocs, /Moai/i);
+  assert.doesNotMatch(allDocs, /--with-moai|moai-chain/i);
   assert.match(allDocs, /\/project/);
   assert.doesNotMatch(allDocs, /photo-reference-studio:project(?=[\s`]|$)/m);
 });
@@ -167,8 +161,8 @@ test("AGENTS template has one bounded managed block and stays compact", async ()
   assert.match(template, /paid generations/i);
   assert.match(template, /ChatGPT Work:/);
   assert.match(template, /Hosted ChatGPT Work must not assume/);
-  assert.match(template, /\{\{UPSTREAM_PROJECT_CONTEXT\}\}/);
-  assert.match(template, /never edit `.moai\/\*\*`/i);
+  assert.doesNotMatch(template, /moai/i);
+  assert.match(template, /Never edit files owned by another tool/);
 });
 
 test("override bridge handles Codex precedence without duplicating project instructions", async () => {
@@ -185,24 +179,28 @@ test("Claude template imports the canonical file on the first non-empty line", a
   assert.equal(firstNonEmpty, "@AGENTS.md");
 });
 
-test("Moai chain preserves command ownership and the Claude harness boundary", async () => {
-  const [skill, contract, chain] = await Promise.all([
+test("project setup protects other tools' files and ignores retired MoAI options", async () => {
+  const [skill, contract, command] = await Promise.all([
     read("SKILL.md"),
     read("references/project-contract.md"),
-    read("references/moai-chain.md"),
+    readFile(join(pluginRoot, "commands", "project-studio.md"), "utf8"),
   ]);
 
-  assert.match(skill, /Keep `\/project` Moai-owned and `\/project-studio` Chany-owned/);
-  assert.match(skill, /Never edit `\.moai\/\*\*`/);
-  assert.match(contract, /Moai harness marker pair/);
-  assert.match(contract, /include a same-request Moai phase only after verifying that the current host exposes the exact skill as callable/i);
-  assert.match(contract, /installation evidence or a visible name alone is insufficient/i);
-  assert.match(chain, /<!-- moai:harness-start -->/);
-  assert.match(chain, /<!-- moai:harness-end -->/);
-  assert.match(chain, /--with-moai/);
-  assert.match(chain, /--chany-only/);
-  assert.match(chain, /standard `\/project-studio <description>` setup automatically detects the Moai state/i);
-  assert.match(chain, /conditional on both plugins being installed and visible/);
+  assert.match(skill, /Never edit, delete, move, or back up files owned by another tool in the workspace \(for example `\.moai\/\*\*`\)/);
+  assert.match(skill, /Preserve another tool's bounded region in `CLAUDE\.md` or `AGENTS\.md` byte-for-byte/);
+  assert.match(skill, /Never modify another tool's files/);
+  assert.match(skill, /Treat an unrecognized `--` option as unknown[\s\S]+Ignore it, continue normal Chany setup/);
+  assert.match(skill, /MoAI 연동은 2\.12\.0에서 제거되어서, 입력하신 옵션은 무시하고 챠니스튜디오 설정만 진행할게요/);
+  assert.equal(skill.match(/\.moai/g)?.length, 1, "mention .moai/** once, only as an example");
+  assert.match(contract, /Files owned by another tool in the workspace are never Chany generated-file targets/);
+  assert.match(contract, /any other tool's bounded region in `CLAUDE\.md` or `AGENTS\.md`[^\n]+remains unchanged/);
+  assert.match(contract, /no file owned by another tool changed during the Chany phase/);
+  assert.match(command, /^argument-hint: "\[update\|status\|doctor\] <프로젝트 설명>"$/m);
+  assert.doesNotMatch(command, /moai/i);
+  for (const template of ["brief.md.tmpl", "state.md.tmpl", "claude-agent.md.tmpl", "codex-agent.toml.tmpl"]) {
+    const text = await read(`assets/templates/${template}`);
+    assert.doesNotMatch(text, /moai/i, `${template} must not mention MoAI`);
+  }
 });
 
 test("project snapshot template is valid JSON and contains no secret fields", async () => {

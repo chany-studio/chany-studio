@@ -1,6 +1,6 @@
 ---
 name: chany-project
-description: Initialize, inspect, diagnose, or safely update a file-backed Chany's Studio advertising project with shared instructions, brief and state, industry routing, cross-runtime agents, existing Moai-context reuse, and capability-gated Moai chaining. Use for project setup or when invoking @chany-project, $chany-project, /project-studio, or its plain-text compatibility alias; not for producing one deliverable.
+description: Initialize, inspect, diagnose, or safely update a file-backed Chany's Studio advertising project with shared instructions, brief and state, industry routing, and cross-runtime agents. Use for project setup or when invoking @chany-project, $chany-project, /project-studio, or its plain-text compatibility alias; not for producing one deliverable.
 allowed-tools: AskUserQuestion
 ---
 
@@ -26,21 +26,15 @@ For Claude project setup or update, read [references/interactive-interview.md](r
 
 ChatGPT Work and Codex should use their native structured-input mechanism when one is exposed to the current conversation; otherwise use the same compact interview as concise prose. Never claim that a structured UI was displayed when the host did not expose one. `status` and `doctor` are read-only and do not force an interview when no decision is needed.
 
-## Moai coexistence and chaining
+## Other tools in the workspace
 
-Read [references/moai-chain.md](references/moai-chain.md) whenever `.moai/` exists, the Moai skill is available, or the user mentions Moai, `/project`, `--with-moai`, or `moai-chain`.
-
-- Keep `/project` Moai-owned and `/project-studio` Chany-owned.
-- Reuse existing successful Moai project records as read-only upstream context by default.
-- If no Moai foundation exists, run a same-request Moai `project` phase only when the current host exposes an actually callable in-process Moai skill mechanism. Installation files, documentation, or a visible name alone are not proof. Otherwise continue Chany-only for normal setup and give the exact manual two-step handoff.
-- `--with-moai` requires a real combined phase; `moai-chain` is its natural-language equivalent. If the host cannot call Moai in-process, stop that required phase and give the manual two-step handoff. `--chany-only` skips Moai detection.
-- Never edit `.moai/**` or silently reproduce Moai behavior. Preserve its `CLAUDE.md` harness markers byte-for-byte.
+- Chany's Studio owns only its marked sections, `.chany-studio/**`, and approved paired runtime-agent files. Never edit, delete, move, or back up files owned by another tool in the workspace (for example `.moai/**`), and never imitate another tool's setup.
+- Preserve another tool's bounded region in `CLAUDE.md` or `AGENTS.md` byte-for-byte.
+- Treat an unrecognized `--` option as unknown, including a leftover MoAI linking option from before 2.12.0. Ignore it, continue normal Chany setup, and say once in plain Korean: "MoAI 연동은 2.12.0에서 제거되어서, 입력하신 옵션은 무시하고 챠니스튜디오 설정만 진행할게요."
 
 ## Modes
 
-- **setup** is the default. Detect and reuse valid Moai records when present. When they are missing, include a same-request Moai phase only after confirming an in-process callable mechanism; otherwise perform Chany-only setup and show the manual two-step option. Show the applicable scope and obtain approval before Chany-managed writes. A same-request Moai phase keeps its own earlier preview and approval boundary.
-- **with-moai** requires the Moai phase and fails clearly instead of falling back when the skill or in-process chaining mechanism is unavailable.
-- **chany-only** skips Moai detection and creates only the Chany project layer.
+- **setup** is the default. Show the applicable scope and obtain approval before Chany-managed writes.
 - **update** changes only Chany-managed content and the approved runtime delegation configuration after showing the proposed diff.
 - **status** summarizes the brief, approvals, pending decisions, active skill chain, and next action without writing.
 - **doctor** checks structure, instruction precedence, imports, formats, runtime delegation, skill references, secrets, and stale state without writing project files. When active project work includes assembly, reference-video extraction, or batch image processing, route only the required non-destructive environment checks to `chany-preflight`; doctor must not install, upgrade, or leave persistent tool-check artifacts. Apply project-file repairs only when the user separately approves them.
@@ -50,15 +44,14 @@ Do not implement automatic self-evolution. Corrections become project changes on
 ## Set up the project
 
 1. Resolve the target to the current workspace or a directory explicitly named by the user. Do not write to a home directory, filesystem root, plugin cache, or any directory outside that target. Do not follow a symlink that escapes the target.
-2. Inspect the target read-only for `AGENTS.md`, `AGENTS.override.md`, `CLAUDE.md`, `.chany-studio/`, `.moai/project/`, `.claude/agents/`, `.codex/agents/`, obvious source assets, and user-provided brand documents. Also check for a non-empty `AGENTS.override.md` in each directory from the project root to the intended working directory because it changes Codex instruction precedence. Do not scan global plugin or agent directories.
-3. Apply the Moai project decision and capability gate from `moai-chain.md`. Reuse valid records immediately. If a same-request Moai phase is supported and selected, complete its own preview, approval, execution, and result inspection before starting the Chany interview; then reread only the generated upstream records needed for campaign setup.
-4. Read [references/project-contract.md](references/project-contract.md). Collect only the remaining campaign-specific high-impact facts using its compact interview and the runtime channel in `interactive-interview.md`. Ask at most three questions in one round and make at most one follow-up round for genuine blockers. Never repeat a successful Moai interview. Then show the project preference cards from `interactive-interview.md` so the user chooses deliverables, channels, look, reference source, quality, reference-upload default, and ratio; skip anything already known.
-5. Select exactly one primary industry skill when the domain is known, plus the smallest production skill chain that covers the requested deliverables. If relevant Moai commerce, marketing, legal, regulatory, or design skills are installed and actually callable in the current host, propose only the necessary specialist handoffs from the downstream chaining rules; do not include every specialist.
-6. Show a concise blueprint containing the project summary, assumptions, deliverables, selected skill chain, primary project agent, and every Chany-managed file to create or modify. Point out existing-file conflicts. Obtain one explicit approval before the first Chany-managed write through the runtime channel defined in `interactive-interview.md`. This approval does not retroactively authorize or undo a separately approved Moai phase.
-7. Read and adapt only the templates needed from `assets/templates/`. Unknown business facts must remain `미정 — 확인 필요`; never invent claims, prices, dates, rights, or approval status.
-8. Create or update the Chany-managed files according to the contract. Before changing an existing file, copy its previous contents into the timestamped local backup directory described there.
-9. Validate every generated path and format. Report in plain Korean what was saved, what was kept as-is, and what is still undecided, then end with one ready-to-copy first production request such as "이 제품 사진으로 인스타 광고 이미지 한 장 만들어줘".
-10. Tell the user to open a new task or session after setup so the host loads the new project instructions and its supported runtime delegation configuration.
+2. Inspect the target read-only for `AGENTS.md`, `AGENTS.override.md`, `CLAUDE.md`, `.chany-studio/`, `.claude/agents/`, `.codex/agents/`, obvious source assets, and user-provided brand documents. Also check for a non-empty `AGENTS.override.md` in each directory from the project root to the intended working directory because it changes Codex instruction precedence. Do not scan global plugin or agent directories.
+3. Read [references/project-contract.md](references/project-contract.md). Collect only the remaining campaign-specific high-impact facts using its compact interview and the runtime channel in `interactive-interview.md`. Ask at most three questions in one round and make at most one follow-up round for genuine blockers. Then show the project preference cards from `interactive-interview.md` so the user chooses deliverables, channels, look, reference source, quality, reference-upload default, and ratio; skip anything already known.
+4. Select exactly one primary industry skill when the domain is known, plus the smallest production skill chain that covers the requested deliverables.
+5. Show a concise blueprint containing the project summary, assumptions, deliverables, selected skill chain, primary project agent, and every Chany-managed file to create or modify. Point out existing-file conflicts. Obtain one explicit approval before the first Chany-managed write through the runtime channel defined in `interactive-interview.md`.
+6. Read and adapt only the templates needed from `assets/templates/`. Unknown business facts must remain `미정 — 확인 필요`; never invent claims, prices, dates, rights, or approval status.
+7. Create or update the Chany-managed files according to the contract. Before changing an existing file, copy its previous contents into the timestamped local backup directory described there.
+8. Validate every generated path and format. Report in plain Korean what was saved, what was kept as-is, and what is still undecided, then end with one ready-to-copy first production request such as "이 제품 사진으로 인스타 광고 이미지 한 장 만들어줘".
+9. Tell the user to open a new task or session after setup so the host loads the new project instructions and its supported runtime delegation configuration.
 
 ## Project authority
 
@@ -66,7 +59,6 @@ Do not implement automatic self-evolution. Corrections become project changes on
 - `CLAUDE.md` imports `AGENTS.md`; it must not contain a second copy of the shared instructions.
 - `.chany-studio/brief.md` is the human-editable source for approved project facts, copy, audience, deliverables, rights, and constraints.
 - `.chany-studio/state.md` tracks mutable approvals, locks, attributed specialist handoffs, version-bound publication reviews, outputs, paid-generation plan, pending decisions, and next action.
-- Existing `.moai/project/*` records remain Moai-owned upstream context. Record which ones were consumed, but never copy their authority status into a campaign approval.
 - The managed `AGENTS.md` block contains the portable role and delegation contract used by ChatGPT Work hosted subagents and as the fallback in any runtime.
 - Generate one paired named project role only when the project has a recurring production workflow: `.claude/agents/<role>.md` for Claude and `.codex/agents/<role>.toml` for local Codex clients. Both describe the same responsibility and skill chain in their host-native format. Do not claim that hosted ChatGPT Work loads the local Codex TOML file.
 
@@ -75,7 +67,7 @@ The project agent is a thin orchestrator. It must read the project brief and sta
 ## Preserve existing work
 
 - Never silently replace an existing `AGENTS.md`, `CLAUDE.md`, project record, or agent definition.
-- Never modify `.moai/**`. Preserve any bounded Moai harness region in `CLAUDE.md` exactly while adding or maintaining the Chany import outside that region.
+- Never modify another tool's files. Preserve any other tool's bounded region in `CLAUDE.md` exactly while adding or maintaining the Chany import outside that region.
 - In `AGENTS.md`, own only the content between `<!-- chany-studio:project:start schema=1 -->` and `<!-- chany-studio:project:end -->`. Preserve everything outside those markers byte-for-byte when practical.
 - When `AGENTS.md` exists without the markers, propose appending one managed block. When markers are malformed, duplicated, or nested, stop and report the conflict.
 - When a non-empty same-directory `AGENTS.override.md` exists, explain that Codex will prefer it over `AGENTS.md`. Do not silently edit or rename it. Offer to append or update only the small Chany-managed bridge from `assets/templates/AGENTS.override.md.tmpl`, after approval, so it explicitly loads the canonical project files while preserving all user-owned override content and precedence. If the user declines, finish with a visible warning that ChatGPT Work/Codex project guidance may not load.
