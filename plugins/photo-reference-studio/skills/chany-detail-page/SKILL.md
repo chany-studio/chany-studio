@@ -17,7 +17,7 @@ Read [references/detail-page-system.md](references/detail-page-system.md) for mo
 
 Read the shared [creative-direction system](../chany-studio/references/creative-direction-system.md) and [current creative signals](../chany-studio/references/current-creative-signals.md). In `produce` mode, obtain an approved creative direction before paid generation; adapt it to the page journey and evidence hierarchy rather than applying a trend uniformly to every module.
 
-Before generating or generatively editing still-image modules, read and follow the shared [image model default](../chany-studio/references/image-generation-runtime.md). Use GPT Image 2.5 (`gpt_image_2_5`) unless a scoped override meets that contract. Execute and resume generated modules through `chany-media-production-loop`, which owns the stable job record, paid preflight, inline inspection, and bounded correction; keep this skill as the page owner.
+Before generating or generatively editing still-image modules, read and follow the shared [image model default](../chany-studio/references/image-generation-runtime.md) and [live model routing](../chany-studio/references/latest-model-routing.md). Use GPT Image 2.5 (`gpt_image_2_5`) unless a scoped override meets that contract. Recraft V4.1 may be a scoped route for vector icons, diagrams, controlled brand palettes, or flat mockups, but not for source-faithful product insertion when its live contract lacks reference images. Execute and resume generated modules through `chany-media-production-loop`, which owns the stable job record, paid preflight, inline inspection, and bounded correction; keep this skill as the page owner.
 
 ## Workflow
 

@@ -19,7 +19,7 @@ For purchase-oriented ads or reference + product/service adaptation, read the sh
 
 Read the shared [creative-direction system](../chany-studio/references/creative-direction-system.md) and [current creative signals](../chany-studio/references/current-creative-signals.md). Apply the named placement's current creative pattern—such as mobile hierarchy, safe zones, brand timing, modular asset rules, or CTA treatment—without converting platform guidance into a universal layout formula.
 
-Before generating or generatively editing a still-image plate, read and follow the shared [image model default](../chany-studio/references/image-generation-runtime.md). Use GPT Image 2.5 (`gpt_image_2_5`) unless a scoped override meets that contract. Execute and resume generated plates through `chany-media-production-loop`, which owns the stable job record, paid preflight, inline inspection, and bounded correction; keep this skill as the creative owner.
+Before generating or generatively editing a still-image plate, read and follow the shared [image model default](../chany-studio/references/image-generation-runtime.md) and [live model routing](../chany-studio/references/latest-model-routing.md). Use GPT Image 2.5 (`gpt_image_2_5`) unless a scoped override meets that contract. OpenAI Hazel may be considered for typography-heavy editing and Recraft V4.1 for logos, icons, vectors, or flat mockups only when the live capability and input needs fit; neither replaces GPT Image 2.5 for source-faithful product insertion. Execute and resume generated plates through `chany-media-production-loop`, which owns the stable job record, paid preflight, inline inspection, and bounded correction; keep this skill as the creative owner.
 
 ## Workflow
 

@@ -1,4 +1,13 @@
-# Higgsfield 업데이트 — 2.8.0
+# Higgsfield 업데이트 — 2.13.0
+
+## 2026-09-18 광고 제작 업데이트
+
+- `chany-ad-variants`: Ad Multiplier를 이용한 순서 있는 광고 변형. 원본의 컷·타이밍·움직임·오디오·자막·브랜딩을 보존하고 승인된 변수만 바꿉니다.
+- `chany-shortform-recut`: 허가된 YouTube 또는 지원되는 장편 소스를 Clipify 같은 현재 연결로 릴스·쇼츠화하고, 구간·자막·크롭·주장 의미를 검수합니다.
+- `chany-product-3d`: 최신 이미지→3D 모델이나 3D Jutsu를 이용해 제품 GLB, 턴테이블용 자산, 가상 광고 세트, 카메라 프리비즈를 만듭니다. 단일 사진에서 보이지 않는 면이나 정확한 치수를 사실로 간주하지 않습니다.
+- 영상 제작은 Seedance 2.5를 일반 경로로 검토하고, FLUX 3 Video/Edit·Kling 3.0 Omni Edit·Gemini Omni Flash 1.1·Grok Video 1.5는 필요한 기능에 맞을 때만 선택합니다.
+- OpenAI Hazel은 타이포 중심 편집, Recraft V4.1은 로고·아이콘·벡터·평면 목업의 선택형 경로입니다. GPT Image 2.5는 제품 충실도가 필요한 정적 이미지의 기본값으로 유지합니다.
+- Higgsfield API는 MCP·웹과 별도 계정·달러 잔액·가격·보관 기간을 쓰는 개발자용 선택 경로이며 기본 연결로 자동 전환하지 않습니다.
 
 Higgsfield 기반 광고 모션 디자인, 영상 부분 수정, GPT Image 2.5 Flare·Sunburst 옵션을 추가했습니다. 기본 이미지 모델은 이후 GPT Image 2.5로 바뀌었습니다(아래 참고). Claude에서는 자연어로 요청하고 ChatGPT Work는 `@chany-motion-design`, Codex는 `$chany-motion-design`으로도 선택할 수 있습니다. `/project-studio`에서도 원하는 산출물에 맞춰 필요한 단계만 선택합니다.
 

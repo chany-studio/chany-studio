@@ -49,6 +49,9 @@ Select the primary industry overlay before the production skills. Read `chany-st
 | bounded repair of an accepted image | `chany-image-edit` |
 | adult model or source-locked fashion stills | `chany-model-fashion` |
 | product commercial, brand film, promotional motion, or concept-led campaign video | `chany-campaign-video` |
+| controlled versions of one approved 4–30 second source ad | `chany-ad-variants` |
+| authorized long-form or YouTube video recut into reviewed Reels, Shorts, or social clips | `chany-shortform-recut` |
+| product image to reusable 3D asset, editable advertising scene, turntable, or camera previs | `chany-product-3d` |
 | generic visual references or Pinterest + MeiGen | `chany-reference-board` coordinates 10 inline images by default, Pinterest 5 + MeiGen 5, with bounded automatic search recovery; explicit provider/count overrides |
 | animated ad typography, benefit diagram, logo reveal or CTA card | `chany-motion-design` (Higgsfield execution capability checked; no mandatory AE installation) |
 | replace a product/object in authorized footage or transfer its motion | `chany-campaign-video` Genjutsu revision mode → `chany-media-production-loop` → assembly only if requested |
@@ -89,6 +92,7 @@ Create at most one paired named agent during initial setup. The same role must a
 | detail page | `detail-page-producer.md` / `detail-page-producer` | `detail-page-producer.toml` / `detail_page_producer` |
 | ads or promotion | `ad-producer.md` / `ad-producer` | `ad-producer.toml` / `ad_producer` |
 | campaign video | `video-producer.md` / `video-producer` | `video-producer.toml` / `video_producer` |
+| ad variants, short-form recuts, or product 3D motion | `video-producer.md` / `video-producer` | `video-producer.toml` / `video_producer` |
 | model or fashion stills | `fashion-producer.md` / `fashion-producer` | `fashion-producer.toml` / `fashion_producer` |
 | reusable product assets only | `asset-producer.md` / `asset-producer` | `asset-producer.toml` / `asset_producer` |
 

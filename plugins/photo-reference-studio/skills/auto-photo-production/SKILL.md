@@ -29,6 +29,9 @@ Route the request as follows:
 - YouTube, Instagram, or another browser video reference link, authorized tab capture, or local reference-video intake → `chany-video-reference-ingest`
 - product commercial, cinematic brand film, promotional motion, concept-led performance video, or Genjutsu object swap / motion transfer → `chany-campaign-video`
 - animated ad typography, benefit diagram, logo reveal, or CTA end card → `chany-motion-design`
+- multiple controlled edits of one approved source ad or Ad Multiplier → `chany-ad-variants`
+- authorized YouTube/long-form video into reviewed Reels or Shorts clips → `chany-shortform-recut`
+- product mesh, turntable asset, editable 3D ad scene, or camera previs → `chany-product-3d`
 - generated still or campaign-video execution, status, recovery, or retry → `chany-media-production-loop`
 - clip assembly, segment replacement, target normalization, hook-only variants, or delivery verification → `chany-video-assembly`
 - missing local tool or environment-readiness check → `chany-preflight`

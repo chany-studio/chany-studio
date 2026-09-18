@@ -1,0 +1,4 @@
+interface:
+  display_name: "제품 3D 제작"
+  short_description: "제품 사진을 광고용 3D 자산과 장면으로 만듭니다"
+  default_prompt: "Use $chany-product-3d to plan and create a verified 3D product asset from my images."

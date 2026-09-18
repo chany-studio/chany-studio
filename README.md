@@ -49,7 +49,7 @@ ChatGPT Work에서는 앞에 `@chany-studio`를 붙이거나, 똑같이 평소 �
 
 ![Chany's Studio](plugins/photo-reference-studio/assets/logo.png)
 
-업종별 구매 여정·증거·연출·컴플라이언스 판단과 공통 제작 워크플로를 결합해 **광고·홍보·마케팅·상세/랜딩·콘텐츠**를 기획하고 제작하는 ChatGPT Work/Codex 및 Claude 플러그인입니다. Chany's Studio 2.12.0은 출처별 시각 레퍼런스, 사용자가 허가한 브라우저 탭 캡처 기반 영상 레퍼런스 분석, 초보자의 말로 세 가지 전문 콘셉트를 설계하는 크리에이티브 디렉션, 최신 공식 제작 규칙과 브랜드 적합 트렌드를 반영한 GPT Image 2.5 프롬프트, 제한된 미디어 제작 루프를 하나의 흐름으로 연결합니다.
+업종별 구매 여정·증거·연출·컴플라이언스 판단과 공통 제작 워크플로를 결합해 **광고·홍보·마케팅·상세/랜딩·콘텐츠**를 기획하고 제작하는 ChatGPT Work/Codex 및 Claude 플러그인입니다. Chany's Studio 2.13.0은 GPT Image 2.5 정적 제작에 최신 영상 모델 라우팅, 통제된 광고 변형, 숏폼 재가공, 제품 3D 자산·장면 제작을 더하고, 모든 유료 실행 전에 현재 연결·입력·비용을 다시 확인합니다.
 
 > [공식 설치·사용설명서 (Notion)](https://jolly-phlox-79c.notion.site/Chany-s-Studio-3c783e9464668140b794ee076be24406) · [문제 해결](docs/TROUBLESHOOTING.md)
 
@@ -123,6 +123,9 @@ ChatGPT Work에서 스킬을 직접 고를 때는 `@스킬명`, Codex에서는 `
 | 공통 스킬 | 담당 작업 |
 | --- | --- |
 | ChatGPT `@chany-motion-design` · Codex `$chany-motion-design` | Higgsfield 기반 광고 타이포·혜택 도식·로고·CTA 모션, 연결 확인 후 실행 |
+| ChatGPT `@chany-ad-variants` · Codex `$chany-ad-variants` | 승인된 광고 영상 한 편에서 한 변수씩 바꾼 순서 있는 변형 제작 |
+| ChatGPT `@chany-shortform-recut` · Codex `$chany-shortform-recut` | 허가된 YouTube·장편 영상을 자막·크롭 검수된 릴스·쇼츠로 재가공 |
+| ChatGPT `@chany-product-3d` · Codex `$chany-product-3d` | 제품 사진으로 광고용 3D 자산·턴테이블·가상 세트·카메라 프리비즈 제작 |
 | ChatGPT `@chany-project` · Codex `$chany-project` | 프로젝트 인터뷰, 공통 `AGENTS.md`, 브리프·상태, ChatGPT Work 위임 규칙과 Claude·로컬 Codex 프로젝트 에이전트 설정 |
 | ChatGPT `@chany-studio` · Codex `$chany-studio` | 업종 오버레이와 두 분야 이상이 연결된 전체 캠페인 및 산출물 순서 관리 |
 | ChatGPT `@chany-marketing-brief` · Codex `$chany-marketing-brief` | 목표·타깃·메시지·에셋 매트릭스 또는 성과 기반 다음 한 변수 실험 정리 |
@@ -321,7 +324,7 @@ Codex(개발자용): $chany-publication-review로 최종 광고의 정확한 카
 /reload-plugins
 ```
 
-업데이트 후 버전이 **2.12.0**인지 확인하고 새 대화 또는 새 작업을 시작하세요.
+업데이트 후 버전이 **2.13.0**인지 확인하고 새 대화 또는 새 작업을 시작하세요.
 
 ## 외부 서비스와 데이터
 

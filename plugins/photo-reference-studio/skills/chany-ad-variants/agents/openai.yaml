@@ -1,0 +1,4 @@
+interface:
+  display_name: "광고 변형 제작"
+  short_description: "검증된 광고에서 통제된 영상 변형을 제작합니다"
+  default_prompt: "Use $chany-ad-variants to create controlled ad variants from my approved source video."

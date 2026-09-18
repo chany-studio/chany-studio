@@ -29,6 +29,9 @@ Do not add two overlays merely because two subjects appear in one scene. Use a s
 | User intent | Owner skill | Typical result |
 |---|---|---|
 | animated ad typography, benefit diagrams, logo reveal, CTA card, animate an approved still layout | `chany-motion-design` | capability-checked Higgsfield motion graphics or explicitly plan-only handoff |
+| multiple ordered edits of one approved 4–30 second ad while preserving its structure | `chany-ad-variants` | controlled Ad Multiplier outputs, stable order, restored/preserved audio, and experiment labels |
+| one authorized YouTube or supplied long video into reviewed Reels/Shorts clips | `chany-shortform-recut` | stable clip set with source ranges, reviewed subtitles/crops, and publication status |
+| product mesh, turntable asset, editable 3D advertising scene, or camera previs | `chany-product-3d` | verified GLB or settled 3D Jutsu scene with reconstruction limits |
 | Genjutsu object swap or motion transfer on authorized footage | `chany-campaign-video` using its Genjutsu revision mode | bounded generated revision, then accepted replacement to assembly |
 | initialize or update an advertising-production project | `chany-project` | shared project instructions, brief, state, and runtime-specific delegation configuration |
 | campaign strategy, launch plan, message hierarchy, asset plan | `chany-marketing-brief` | approved brief and asset matrix |
@@ -58,6 +61,7 @@ Do not add two overlays merely because two subjects appear in one scene. Use a s
 - Generic visual-reference requests now use `chany-reference-board` as coordinator under [combined-reference-board.md](combined-reference-board.md): 10 total, Pinterest 5 + MeiGen 5, displayed inline. Explicit provider/count requests override this default. Keep each lane's source and preview restrictions; combined research is not cross-filling missing candidates. All reference lanes use [reference-recovery.md](reference-recovery.md) for automatic bounded same-category searches and one consolidated selection/production decision.
 
 - Motion-only graphics belong to `chany-motion-design`; full-film planning stays with `chany-campaign-video`. Invoke motion only when requested or required by the approved output, never for static carousels. Generative object changes use the campaign-video Genjutsu mode, not deterministic assembly. Native After Effects work requires a verified Higgsfield bridge, not merely an advertised integration. GPT Image 2.5 is the still-image default through the existing image runtime; other models require a scoped override.
+- Choose paid image, video, editing, recut, and 3D routes with [latest-model-routing.md](latest-model-routing.md). The listed IDs are a dated capability snapshot and never replace live schema, cost, account, input-role, or availability checks. Optional API integration follows [higgsfield-api-boundary.md](higgsfield-api-boundary.md); API balance and pricing never inherit from MCP or the website.
 
 - MeiGen is an additional source-isolated AI image/prompt lane owned by `chany-ai-prompt-reference`. Select it when requested or when prompt-backed AI execution is the research purpose. Apart from its 5-image lane inside the generic combined board above, it is optional after Meta/JTBD strategy and is never added as an automatic extra board to an explicit single-provider or specialist request. Use callable MeiGen tools or public browser access and supported inline image display; preserve the Pinterest preview allowlist. Do not cross-fill providers, treat engagement as conversion evidence, or change GPT Image 2.5 because the reference used another model.
 
@@ -73,7 +77,7 @@ Do not add two overlays merely because two subjects appear in one scene. Use a s
 - Source cleanup before any composition belongs to `chany-product-assets`. A local change to an already accepted composition belongs to `chany-image-edit`.
 - Static editorial, lookbook, and fashion try-on belong to `chany-model-fashion`. Concept-led product demonstrations, authorized presenter footage, brand films, and promotional motion belong to `chany-campaign-video`; casual creator-template production is outside this plugin.
 - Campaign-video narrative and scene design belong to `chany-campaign-video`; the generated-media job lifecycle belongs to `chany-media-production-loop`. Both may use the shared local video teardown when an authorized reference file is supplied, and neither turns analysis into unrequested production.
-- Conforming, segment replacement, concatenation, variants, and technical verification of accepted campaign-video clip versions belong to `chany-video-assembly`. Environment readiness belongs to `chany-preflight`, which is not the paid-generation cost preflight.
+- Conforming, deterministic segment replacement, concatenation, one-variable text/layout variants, and technical verification of accepted campaign-video clip versions belong to `chany-video-assembly`. Generative independent edits of one source ad belong to `chany-ad-variants`; automated YouTube-to-social extraction belongs to `chany-shortform-recut`. Environment readiness belongs to `chany-preflight`, which is not the paid-generation cost preflight.
 - A new reference, offer, core composition, or campaign idea is not a local edit. Return it to the original production owner.
 
 ## Campaign sequencing

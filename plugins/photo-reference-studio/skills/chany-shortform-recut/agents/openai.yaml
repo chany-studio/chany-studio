@@ -1,0 +1,4 @@
+interface:
+  display_name: "숏폼 재가공"
+  short_description: "긴 영상을 릴스·쇼츠용 클립으로 안전하게 재구성합니다"
+  default_prompt: "Use $chany-shortform-recut to turn my YouTube video into reviewed short-form clips."

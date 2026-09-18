@@ -45,7 +45,7 @@ Chany's Studio는 Claude와 ChatGPT Work에서 같은 프로젝트 지침을 사
 
 구매 전환용 영상·단일 이미지·캐러셀은 [퍼포먼스 광고 제작 가이드](PERFORMANCE-ADS.md)에 요청 예시를 모았습니다. 사진 연출은 Pinterest, 실제 광고 벤치마킹은 Meta 광고 라이브러리로 구분하며 공개 정보만으로 실제 광고 성과를 단정하지 않습니다.
 
-Chany's Studio 2.12.0은 두 축, 하나의 전문 크리에이티브 디렉션 계층과 하나의 공통 미디어 실행 루프를 함께 사용합니다.
+Chany's Studio 2.13.0은 두 축, 하나의 전문 크리에이티브 디렉션 계층과 하나의 공통 미디어 실행 루프를 함께 사용합니다. 여기에 광고 변형, 숏폼 재가공, 제품 3D를 서로 분리된 전문 스킬로 연결합니다.
 
 1. **업종 오버레이**는 고객이 왜 선택하는지, 어떤 근거가 필요한지, 어떤 표현을 피해야 하는지와 그 업종다운 촬영·연출 방향을 정합니다.
 2. **공통 제작 스킬**은 브리프, 레퍼런스 보드, 키비주얼, 상세페이지, 광고, 편집, 모델·패션과 콘셉트형 캠페인 영상 같은 실제 산출물을 설계합니다. 생성 실행과 재개는 `chany-media-production-loop`가 공통으로 추적합니다.
@@ -79,6 +79,9 @@ ChatGPT Work의 명시 호출은 `@스킬명`, Codex의 명시 호출은 `$스�
 | 성인 모델·패션 착장 | ChatGPT `@chany-model-fashion` · Codex `$chany-model-fashion` |
 | 제품 광고·브랜드 필름·프로모션 영상 | ChatGPT `@chany-campaign-video` · Codex `$chany-campaign-video` |
 | 광고 모션 타이포·혜택 도식·로고 등장·CTA 엔드카드 | ChatGPT `@chany-motion-design` · Codex `$chany-motion-design` |
+| 승인된 광고 한 편에서 제품·배경·인물·의상·문구를 통제해 여러 버전 제작 | ChatGPT `@chany-ad-variants` · Codex `$chany-ad-variants` |
+| 허가된 YouTube·장편 영상을 릴스·쇼츠로 재가공 | ChatGPT `@chany-shortform-recut` · Codex `$chany-shortform-recut` |
+| 제품 사진을 3D 자산·턴테이블·가상 세트·카메라 프리비즈로 제작 | ChatGPT `@chany-product-3d` · Codex `$chany-product-3d` |
 | 이미지·캠페인 영상 생성 실행·재개·화면 검수 | ChatGPT `@chany-media-production-loop` · Codex `$chany-media-production-loop` |
 | 승인 영상 조립·컷 교체·훅 변형·검증 | ChatGPT `@chany-video-assembly` · Codex `$chany-video-assembly` |
 | 로컬 미디어 도구·한글 폰트 점검 | ChatGPT `@chany-preflight` · Codex `$chany-preflight` |

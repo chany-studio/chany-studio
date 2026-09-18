@@ -1,4 +1,4 @@
-# Chany's Studio 2.12.0
+# Chany's Studio 2.13.0
 
 > **처음 쓰시나요?** 준비물, 첫 요청 예시, 비용 안내는 [저장소 README의 처음 쓰는 분께](../../README.md#처음-쓰는-분께)에 정리돼 있습니다.
 > 요청하면 확인 카드 한 장으로 만들 것과 비용을 먼저 보여주고, 승인해야 생성이 시작됩니다.
@@ -43,6 +43,9 @@ ChatGPT Work에서는 `@스킬명`, Codex에서는 `$스킬명`으로 명시 호
 | 공통 스킬 | 담당 작업 |
 | --- | --- |
 | ChatGPT `@chany-motion-design` · Codex `$chany-motion-design` | Higgsfield 기반 광고 타이포·혜택 도식·로고·CTA 모션, 연결 확인 후 실행 |
+| ChatGPT `@chany-ad-variants` · Codex `$chany-ad-variants` | 승인된 광고 영상의 통제된 다중 변형과 오디오·자막·브랜딩 검수 |
+| ChatGPT `@chany-shortform-recut` · Codex `$chany-shortform-recut` | 허가된 장편 영상을 검수된 릴스·쇼츠 클립으로 재가공 |
+| ChatGPT `@chany-product-3d` · Codex `$chany-product-3d` | 제품 3D 자산·턴테이블·가상 세트·카메라 프리비즈 제작 |
 | ChatGPT `@chany-studio` · Codex `$chany-studio` | 업종 오버레이와 여러 결과물을 연결하는 캠페인 라우터 |
 | ChatGPT `@chany-project` · Codex `$chany-project` | 프로젝트 인터뷰, `AGENTS.md`, 브리프·상태와 런타임별 에이전트 설정 |
 | ChatGPT `@chany-marketing-brief` · Codex `$chany-marketing-brief` | 캠페인 브리프 또는 실제 성과 기반 다음 한 변수 실험 |

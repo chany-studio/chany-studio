@@ -7,6 +7,8 @@ description: Assemble or replace segments in approved local campaign video, norm
 
 Turn accepted clips into a measured, reproducible deliverable. Use only the requested mode: `assemble`, `replace-segment`, `variants`, or `verify`. Sequencing and replacement boundaries come from the approved shot plan, target specifications come from an approved authority, and text comes from the approved copy lock.
 
+This skill owns deterministic editing of accepted files. Route generative independent source-ad edits to `chany-ad-variants` and automated YouTube-to-social extraction to `chany-shortform-recut`; do not hide those paid transformations inside local assembly.
+
 Every user-facing turn follows the shared [beginner experience contract](../chany-studio/references/beginner-experience.md): quick start by default, plain Korean without internal field names, and one confirmation card before any paid generation.
 
 Read [references/assembly-contract.md](references/assembly-contract.md) for the manifest, normalization, variant, verification, and performance-record contracts.

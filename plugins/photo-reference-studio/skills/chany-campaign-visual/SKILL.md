@@ -15,7 +15,7 @@ Read [references/visual-production.md](references/visual-production.md) for form
 
 Read the shared [creative-direction system](../chany-studio/references/creative-direction-system.md) and [current creative signals](../chany-studio/references/current-creative-signals.md). If no direction has been approved, route through `chany-creative-direction` before paid production; it must propose three brand-specific territories and recommend one rather than defaulting to a generic premium render.
 
-Before generative still-image work, read and follow the shared [image model default](../chany-studio/references/image-generation-runtime.md). Use GPT Image 2.5 (`gpt_image_2_5`) unless a scoped override meets that contract. Execute and resume generated visuals through `chany-media-production-loop`, which owns the stable job record, paid preflight, inline inspection, and bounded correction; keep this skill as the creative owner.
+Before generative still-image work, read and follow the shared [image model default](../chany-studio/references/image-generation-runtime.md) and [live model routing](../chany-studio/references/latest-model-routing.md). Use GPT Image 2.5 (`gpt_image_2_5`) unless a scoped override meets that contract. Use typography/vector specialists only for the precise layer they improve, not as an unreviewed replacement for the master product image. Execute and resume generated visuals through `chany-media-production-loop`, which owns the stable job record, paid preflight, inline inspection, and bounded correction; keep this skill as the creative owner.
 
 ## Workflow
 
