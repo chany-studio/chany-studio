@@ -45,3 +45,5 @@ For animated hook text, benefit graphics, logo reveals or CTA cards, call `chany
 8. Hand only accepted clip versions, the approved shot order and in/out points, copy version, target authority, and unresolved defects to `chany-video-assembly` for assembly, segment replacement, variants, or delivery verification.
 
 This skill owns concept, scene design, and clip acceptance; `chany-media-production-loop` owns the generation job lifecycle. It does not own casual creator-template production, deterministic post-production, publication, or campaign performance interpretation. If a required generation capability is unavailable, return the completed concept packet, shot plan, governing-still prompts, live-interface handoff, and exact unavailable capability without claiming that media was created.
+
+When `chany-viral-product-remake` hands off a short product-video job, consume its accepted fast remake brief without restarting strategy or re-interviewing the user. Preserve its chosen original-remake versus authorized-product-swap path, then own only scene design, clip acceptance, and the Genjutsu revision when applicable.

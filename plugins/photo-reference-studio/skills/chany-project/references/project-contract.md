@@ -49,6 +49,7 @@ Select the primary industry overlay before the production skills. Read `chany-st
 | bounded repair of an accepted image | `chany-image-edit` |
 | adult model or source-locked fashion stills | `chany-model-fashion` |
 | product commercial, brand film, promotional motion, or concept-led campaign video | `chany-campaign-video` |
+| short Reel/Short reference link plus the user's product, including “제품만 바꾸기” | `chany-viral-product-remake` → reference ingest → original campaign-video remake by default, or authorized Genjutsu swap when source rights and media are confirmed |
 | controlled versions of one approved 4–30 second source ad | `chany-ad-variants` |
 | authorized long-form or YouTube video recut into reviewed Reels, Shorts, or social clips | `chany-shortform-recut` |
 | product image to reusable 3D asset, editable advertising scene, turntable, or camera previs | `chany-product-3d` |

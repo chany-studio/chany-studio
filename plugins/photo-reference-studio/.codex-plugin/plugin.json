@@ -1,7 +1,7 @@
 {
   "name": "photo-reference-studio",
-  "version": "2.13.0+codex.20260918144759",
-  "description": "Chany's Claude and ChatGPT Work/Codex advertising studio: JTBD-led conversion creative, controlled ad variants, reviewed short-form recuts, product 3D, current Higgsfield routing, GPT Image 2.5 stills, bounded production and publication review.",
+  "version": "2.14.0+codex.20260918150904",
+  "description": "Chany's Claude and ChatGPT Work/Codex advertising studio: JTBD-led conversion creative, one-step short product-video remakes, controlled ad variants, product 3D, GPT Image 2.5 stills, bounded production and publication review.",
   "author": {
     "name": "Chany",
     "url": "https://github.com/chany-studio"
@@ -42,6 +42,8 @@
     "browser tab capture",
     "YouTube video reference",
     "Instagram video reference",
+    "viral product remake",
+    "Reel product swap",
     "media production loop",
     "media job ledger",
     "video assembly",
@@ -98,6 +100,7 @@
       "Live capability routing for Seedance 2.5 and current video edit models",
       "Optional Higgsfield API boundary with separate balance and secret handling",
       "Capability-labeled browser-extension capture intake for YouTube and Instagram video references",
+      "One-step Reel or Short plus product remakes with rights-aware original recreation or authorized object replacement",
       "Local video assembly, segment replacement, hook variants, and delivery verification",
       "Bounded performance review and next one-variable experiment planning",
       "Runtime media-tool and Korean-font preflight"
@@ -108,7 +111,7 @@
     "defaultPrompt": [
       "$chany-studio\ub85c \uc774 \uc5c5\uc885\uc758 \uace0\uac1d \uc5ec\uc815\u00b7\uc99d\uac70\u00b7\uc804\ubb38 \uc5f0\ucd9c\uc744 \uba3c\uc800 \uc124\uacc4\ud558\uace0 \ud0a4\ube44\uc8fc\uc5bc, \uc0c1\uc138\u00b7\ub79c\ub529 \ud398\uc774\uc9c0\uc640 \ucc44\ub110 \uad11\uace0\ub97c \ub9cc\ub4e0 \ub4a4 \uc815\ud655\ud55c \ucd5c\uc885 \ubc84\uc804\uc744 $chany-publication-review\ub85c \uac80\uc218\ud574\uc918.",
       "$chany-creative-direction\uc73c\ub85c \ucd08\ubcf4\uc790\uc758 \uc694\uccad\uc744 \uc11c\ub85c \ub2e4\ub978 \uc138 \uac00\uc9c0 \ud604\ud589\ud615 \ucf58\uc149\ud2b8\uc640 \uc804\ubb38 \uc81c\uc791 \ud504\ub86c\ud504\ud2b8\ub85c \ubc1c\uc804\uc2dc\ud0a4\uace0 \uac00\uc7a5 \uc801\ud569\ud55c \ubc29\ud5a5\uc744 \ucd94\ucc9c\ud574\uc918.",
-      "$chany-video-reference-ingest\ub85c \uc774 YouTube \ub610\ub294 Instagram \uc601\uc0c1\uc744 \uc0ac\uc6a9\uc790\uac00 \ud5c8\uac00\ud55c \ube0c\ub77c\uc6b0\uc800 \ud0ed \ucea1\ucc98\ub85c \uc900\ube44\ud558\uace0, \ud655인\ud55c \uad6c\uc131\uacfc \ud0c0\uc774\ubc0d\ub9cc \ub0b4 \uc81c\ud488 \uad11\uace0\uc5d0 \ub9de\uac8c \uc7ac\uc124\uacc4\ud574\uc918."
+      "$chany-viral-product-remake\ub85c \uc774 \ub9b4\uc2a4 \ub9c1\ud06c\uc758 \ud6c5\uacfc \uc804\uac1c\ub9cc \ubd84\uc11d\ud558\uace0, \ub0b4 \uc81c\ud488 \uc0ac\uc9c4\uc73c\ub85c \uc0c8\ub85c\uc6b4 9:16 \ubc14\uc774\ub7f4 \uc601\uc0c1\uc744 \ub9cc\ub4e4\uc5b4\uc918."
     ]
   }
 }

@@ -1,0 +1,4 @@
+interface:
+  display_name: "바이럴 제품 영상 리메이크"
+  short_description: "릴스 링크와 내 제품으로 빠르게 광고 영상을 재제작합니다"
+  default_prompt: "Use $chany-viral-product-remake to analyze this short product-video reference and remake its transferable structure with my product."

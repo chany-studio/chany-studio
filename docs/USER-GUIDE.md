@@ -45,7 +45,7 @@ Chany's Studio는 Claude와 ChatGPT Work에서 같은 프로젝트 지침을 사
 
 구매 전환용 영상·단일 이미지·캐러셀은 [퍼포먼스 광고 제작 가이드](PERFORMANCE-ADS.md)에 요청 예시를 모았습니다. 사진 연출은 Pinterest, 실제 광고 벤치마킹은 Meta 광고 라이브러리로 구분하며 공개 정보만으로 실제 광고 성과를 단정하지 않습니다.
 
-Chany's Studio 2.13.0은 두 축, 하나의 전문 크리에이티브 디렉션 계층과 하나의 공통 미디어 실행 루프를 함께 사용합니다. 여기에 광고 변형, 숏폼 재가공, 제품 3D를 서로 분리된 전문 스킬로 연결합니다.
+Chany's Studio 2.14.0은 두 축, 하나의 전문 크리에이티브 디렉션 계층과 하나의 공통 미디어 실행 루프를 함께 사용합니다. 여기에 릴스·쇼츠 제품 바이럴 리메이크, 광고 변형, 숏폼 재가공, 제품 3D를 서로 분리된 전문 스킬로 연결합니다.
 
 1. **업종 오버레이**는 고객이 왜 선택하는지, 어떤 근거가 필요한지, 어떤 표현을 피해야 하는지와 그 업종다운 촬영·연출 방향을 정합니다.
 2. **공통 제작 스킬**은 브리프, 레퍼런스 보드, 키비주얼, 상세페이지, 광고, 편집, 모델·패션과 콘셉트형 캠페인 영상 같은 실제 산출물을 설계합니다. 생성 실행과 재개는 `chany-media-production-loop`가 공통으로 추적합니다.
@@ -72,6 +72,7 @@ ChatGPT Work의 명시 호출은 `@스킬명`, Codex의 명시 호출은 `$스�
 | Meigen 이미지·원본 프롬프트 분석과 제품별 제작 프롬프트 | ChatGPT `@chany-ai-prompt-reference` · Codex `$chany-ai-prompt-reference` |
 | 세련된 콘셉트 3안·추천 방향·전문 제작 프롬프트 | ChatGPT `@chany-creative-direction` · Codex `$chany-creative-direction` |
 | YouTube·Instagram 영상 레퍼런스의 브라우저 캡처·분석 준비 | ChatGPT `@chany-video-reference-ingest` · Codex `$chany-video-reference-ingest` |
+| 릴스·쇼츠 링크와 내 제품으로 빠른 제품 바이럴 영상 제작 | ChatGPT `@chany-viral-product-remake` · Codex `$chany-viral-product-remake` |
 | 제품 연출컷·마스터 키비주얼 | ChatGPT `@chany-campaign-visual` · Codex `$chany-campaign-visual` |
 | 상세페이지 이미지 모듈 | ChatGPT `@chany-detail-page` · Codex `$chany-detail-page` |
 | 단일 이미지·캐러셀 광고, 본문·CTA, 포스터·배너 | ChatGPT `@chany-ad-creative` · Codex `$chany-ad-creative` |
@@ -364,6 +365,16 @@ Codex: $chany-model-fashion으로 첨부한 성인 모델의 얼굴·헤어·체
 제품 광고, 시네마틱 브랜드 필름, 프로모션 모션과 제품 데모의 콘셉트·장면 설계는 `chany-campaign-video`가 담당합니다.
 
 YouTube·Instagram 등 브라우저에서 재생되는 영상의 구성을 참고하려면 먼저 `chany-video-reference-ingest`를 사용합니다. 사용자가 확장프로그램을 직접 눌러 활성 탭을 캡처하거나, 본인 소유 원본·허가된 화면 녹화·실제 영상 파일을 첨부합니다. 링크 화면만 볼 수 있으면 실제로 재생하며 확인한 타임코드까지만 `observed_excerpt`로 기록하고, 정밀 비트 분석은 캡처 파일이 준비된 뒤 진행합니다.
+
+### 릴스 링크 + 내 제품으로 빠르게 만들기
+
+단순 제품 바이럴 영상은 `chany-viral-product-remake` 하나로 시작하면 됩니다. 링크와 제품 사진을 함께 주면 화면에서 확인 가능한 훅·전개·카메라·재질 변화·사운드 역할을 짧게 분석하고, 내 제품 특성과 맞는 3~6개 비트의 새 9:16 영상으로 연결합니다. 타사 릴스는 원본 픽셀·음악·카피·브랜드를 복제하지 않고 구조만 새로 해석합니다. 제품만 실제로 교체하려면 본인 소유 또는 수정 허가된 원본 영상 파일이 필요합니다.
+
+```text
+ChatGPT Work: @chany-viral-product-remake로 이 Instagram Reel 링크와 첨부한 제품 사진을 사용해 9:16 제품 바이럴 영상을 만들어줘.
+Codex: $chany-viral-product-remake로 이 쇼츠의 훅과 제품 등장 방식만 분석해서 내 제품에 맞는 새 영상으로 만들어줘.
+Claude Cowork: 이 릴스 링크의 구성으로 첨부한 제품을 보여주는 짧은 영상을 만들어줘. 타사 영상이면 새 장면으로 재제작해줘.
+```
 
 ```text
 ChatGPT Work: @chany-video-reference-ingest로 이 Instagram Reel을 브라우저 캡처로 준비하고 훅·컷·카메라·사운드 기능만 분석해줘.

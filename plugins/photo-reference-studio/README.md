@@ -1,4 +1,4 @@
-# Chany's Studio 2.13.0
+# Chany's Studio 2.14.0
 
 > **처음 쓰시나요?** 준비물, 첫 요청 예시, 비용 안내는 [저장소 README의 처음 쓰는 분께](../../README.md#처음-쓰는-분께)에 정리돼 있습니다.
 > 요청하면 확인 카드 한 장으로 만들 것과 비용을 먼저 보여주고, 승인해야 생성이 시작됩니다.
@@ -58,6 +58,7 @@ ChatGPT Work에서는 `@스킬명`, Codex에서는 `$스킬명`으로 명시 호
 | ChatGPT `@chany-ai-prompt-reference` · Codex `$chany-ai-prompt-reference` | Meigen 이미지·원본 프롬프트 분석과 제품별 제작 프롬프트 |
 | ChatGPT `@chany-creative-direction` · Codex `$chany-creative-direction` | 초보자 요청을 세 가지 브랜드 콘셉트, 추천 방향과 전문가 제작 프롬프트로 전환 |
 | ChatGPT `@chany-video-reference-ingest` · Codex `$chany-video-reference-ingest` | YouTube·Instagram 등 영상 페이지를 사용자 허가 브라우저 캡처나 첨부 파일로 분석 준비 |
+| ChatGPT `@chany-viral-product-remake` · Codex `$chany-viral-product-remake` | 릴스·쇼츠 링크와 내 제품으로 원본형 새 영상을 만들거나, 권리가 있는 원본의 제품만 교체 |
 | ChatGPT `@chany-campaign-visual` · Codex `$chany-campaign-visual` | 연출컷과 마스터 키비주얼 |
 | ChatGPT `@chany-detail-page` · Codex `$chany-detail-page` | 상세/랜딩페이지 이미지 모듈 |
 | ChatGPT `@chany-ad-creative` · Codex `$chany-ad-creative` | 단일 이미지·캐러셀 광고, 게시물 카피·CTA, 포스터·배너 |
@@ -154,6 +155,7 @@ Codex: $chany-publication-review로 최종 광고의 정확한 카피·오퍼·�
 - 최신 트렌드는 검색어에 넣지 않고 후보 선별 뒤 브랜드 적합성을 평가해 한 가지 중심 장치나 보조 포인트로만 번역합니다. 플랫폼 규격과 프롬프팅은 공식 문서로 확인하되 그 예시 이미지는 레퍼런스로 사용하지 않습니다.
 - YouTube·Instagram 등 영상 페이지는 다운로드하지 않습니다. 사용자가 브라우저에서 직접 호출한 활성 탭 캡처, 실제 미디어 URL로 확인된 파일 또는 첨부한 로컬 영상만 정밀 분석하며, 화면에서 일부만 관찰했다면 그 구간까지만 분석했다고 표시합니다.
 - 영상 레퍼런스에서는 훅·비트 길이·공개 순서·카메라와 사운드 기능만 새 제품에 맞게 재설계합니다. 원 영상의 인물·제품·카피·음악·브랜드·고유 시퀀스나 캡처 픽셀은 새 광고 자산으로 재사용하지 않습니다.
+- 짧은 제품 릴스·쇼츠는 `chany-viral-product-remake` 하나로 시작합니다. 타사 링크는 훅·재질 은유·전개·카메라·사운드 기능만 가져와 내 제품에 맞는 새 장면으로 만들고, 실제 제품 교체는 수정 권리와 사용 가능한 원본 영상이 확인된 경우에만 진행합니다.
 
 ## 이미지 생성 기본 모델과 Higgsfield 경계
 

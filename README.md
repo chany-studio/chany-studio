@@ -49,7 +49,7 @@ ChatGPT Work에서는 앞에 `@chany-studio`를 붙이거나, 똑같이 평소 �
 
 ![Chany's Studio](plugins/photo-reference-studio/assets/logo.png)
 
-업종별 구매 여정·증거·연출·컴플라이언스 판단과 공통 제작 워크플로를 결합해 **광고·홍보·마케팅·상세/랜딩·콘텐츠**를 기획하고 제작하는 ChatGPT Work/Codex 및 Claude 플러그인입니다. Chany's Studio 2.13.0은 GPT Image 2.5 정적 제작에 최신 영상 모델 라우팅, 통제된 광고 변형, 숏폼 재가공, 제품 3D 자산·장면 제작을 더하고, 모든 유료 실행 전에 현재 연결·입력·비용을 다시 확인합니다.
+업종별 구매 여정·증거·연출·컴플라이언스 판단과 공통 제작 워크플로를 결합해 **광고·홍보·마케팅·상세/랜딩·콘텐츠**를 기획하고 제작하는 ChatGPT Work/Codex 및 Claude 플러그인입니다. Chany's Studio 2.14.0은 짧은 릴스·쇼츠 링크와 내 제품만으로 원본 권리에 맞는 제품 바이럴 영상을 빠르게 재제작하고, GPT Image 2.5 정적 제작·광고 변형·숏폼 재가공·제품 3D와 모든 유료 실행의 현재 연결·입력·비용 확인을 함께 제공합니다.
 
 > [공식 설치·사용설명서 (Notion)](https://jolly-phlox-79c.notion.site/Chany-s-Studio-3c783e9464668140b794ee076be24406) · [문제 해결](docs/TROUBLESHOOTING.md)
 
@@ -138,6 +138,7 @@ ChatGPT Work에서 스킬을 직접 고를 때는 `@스킬명`, Codex에서는 `
 | ChatGPT `@chany-ai-prompt-reference` · Codex `$chany-ai-prompt-reference` | Meigen 이미지·원본 프롬프트 분석과 제품별 제작 프롬프트 |
 | ChatGPT `@chany-creative-direction` · Codex `$chany-creative-direction` | 평범한 요청을 브랜드 코어·감성 에디토리얼·트렌드 포워드 콘셉트와 전문가용 제작 프롬프트로 전환 |
 | ChatGPT `@chany-video-reference-ingest` · Codex `$chany-video-reference-ingest` | YouTube·Instagram 등 영상 페이지를 브라우저에서 사용자 허가로 관찰·캡처하고 분석 가능한 레퍼런스 패킷으로 준비 |
+| ChatGPT `@chany-viral-product-remake` · Codex `$chany-viral-product-remake` | 짧은 릴스·쇼츠 링크와 내 제품으로 훅·전개를 새로 재제작하거나, 권리가 확인된 원본의 제품만 교체 |
 | ChatGPT `@chany-campaign-visual` · Codex `$chany-campaign-visual` | 연출컷과 텍스트 없는 마스터 키비주얼 |
 | ChatGPT `@chany-detail-page` · Codex `$chany-detail-page` | 히어로·특징·혜택·증거·사용 장면·CTA 상세/랜딩 모듈 |
 | ChatGPT `@chany-ad-creative` · Codex `$chany-ad-creative` | 단일 이미지·캐러셀 광고와 게시물 카피, 포스터·배너·채널 재구성 |
@@ -239,6 +240,8 @@ ChatGPT Work: @chany-campaign-video로 이 제품의 콘셉트형 15초 광고 �
 Codex(개발자용): $chany-campaign-video로 이 제품의 콘셉트형 15초 광고 영상을 기준 이미지부터 클립 검수까지 만들어줘.
 
 ChatGPT Work: @chany-video-reference-ingest로 이 Instagram Reel을 브라우저 캡처나 첨부 파일로 준비하고 확인된 구성만 내 제품 영상에 맞게 분석해줘.
+ChatGPT Work: @chany-viral-product-remake로 이 릴스 링크와 내 제품 사진을 사용해 9:16 제품 바이럴 영상을 빠르게 만들어줘.
+Codex: $chany-viral-product-remake로 이 쇼츠의 훅과 장면 전개만 분석해 내 제품으로 새롭게 만들어줘.
 Codex(개발자용): $chany-video-reference-ingest로 이 YouTube 영상을 브라우저 캡처나 첨부 파일로 준비하고 확인된 구성만 내 제품 영상에 맞게 분석해줘.
 
 ChatGPT Work: @chany-video-assembly로 승인된 캠페인 영상 클립을 조립하거나 지정 구간만 교체하고 결과를 검증해줘.
@@ -324,7 +327,7 @@ Codex(개발자용): $chany-publication-review로 최종 광고의 정확한 카
 /reload-plugins
 ```
 
-업데이트 후 버전이 **2.13.0**인지 확인하고 새 대화 또는 새 작업을 시작하세요.
+업데이트 후 버전이 **2.14.0**인지 확인하고 새 대화 또는 새 작업을 시작하세요.
 
 ## 외부 서비스와 데이터
 

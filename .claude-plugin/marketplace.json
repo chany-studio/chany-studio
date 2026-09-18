@@ -5,7 +5,7 @@
     "url": "https://github.com/chany-studio"
   },
   "metadata": {
-    "description": "Chany's cross-runtime advertising studio with source-isolated visual references, user-authorized browser-capture intake for video references, beginner-friendly expert creative direction, current trend-aware GPT Image 2.5 prompting, industry overlays, safe media production, and publication review."
+    "description": "Chany's cross-runtime advertising studio with source-isolated references, one-step short product-video remakes, beginner-friendly expert creative direction, GPT Image 2.5 prompting, industry overlays, safe media production, and publication review."
   },
   "plugins": [
     {
@@ -50,6 +50,8 @@
         "browser-tab-capture",
         "youtube-video-reference",
         "instagram-video-reference",
+        "viral-product-remake",
+        "reel-product-swap",
         "media-production-loop",
         "media-job-ledger",
         "reference-video-teardown",

@@ -64,7 +64,7 @@ Node.js는 컴퓨터에서 작은 도우미 프로그램을 실행해 주는 무
 
 - 표시 이름: `Chany's Studio`
 - 내부 식별자: `photo-reference-studio`
-- 버전: `2.13.0`
+- 버전: `2.14.0`
 - 대표 Skill: `chany-studio`
 - 프로젝트 Skill: `chany-project`
 - 전문 Skill: 마케팅 브리프, JTBD 고객 분석(`chany-jtbd-persona`), Meta 광고 리서치(`chany-meta-ad-research`), 레퍼런스 보드(사이트 미지정 시 Pinterest 5장 + Meigen 5장, Pinterest만 지정 시 기본 6장, 또는 요청 수량), Meigen 이미지·프롬프트 레퍼런스(`chany-ai-prompt-reference`), 전문 크리에이티브 디렉션(`chany-creative-direction`), 브라우저 캡처 영상 레퍼런스 준비(`chany-video-reference-ingest`), 제품 에셋, 키비주얼, 상세페이지, 광고, 편집, 패션, 콘셉트형 캠페인 영상(`chany-campaign-video`), 광고 모션 디자인(`chany-motion-design`), 미디어 생성 실행·재개(`chany-media-production-loop`), 영상 조립·컷 교체(`chany-video-assembly`), 환경 점검(`chany-preflight`), 게시 전 검수(`chany-publication-review`)
@@ -147,7 +147,7 @@ Claude Cowork에서는 빠진 캠페인 정보가 **Ask your question** 카드�
 
 1. **Customize → Plugins**를 엽니다.
 2. `photo-reference-studio` 마켓플레이스에서 **Update**를 누릅니다.
-3. 버전 `2.13.0`, `chany-project`, `chany-jtbd-persona`, `chany-meta-ad-research`, `chany-creative-direction`, `chany-campaign-video`, `chany-ad-variants`, `chany-shortform-recut`, `chany-product-3d`, `chany-media-production-loop`, 공통 제작 스킬과 11개 업종 스킬 목록을 확인합니다.
+3. 버전 `2.14.0`, `chany-project`, `chany-jtbd-persona`, `chany-meta-ad-research`, `chany-creative-direction`, `chany-campaign-video`, `chany-viral-product-remake`, `chany-ad-variants`, `chany-shortform-recut`, `chany-product-3d`, `chany-media-production-loop`, 공통 제작 스킬과 11개 업종 스킬 목록을 확인합니다.
 4. 새 Cowork 작업을 시작합니다.
 
 ### Claude Code
@@ -164,7 +164,7 @@ Claude Cowork에서는 빠진 캠페인 정보가 **Ask your question** 카드�
 
 ## 업데이트가 반영되지 않을 때
 
-- 설치 상세의 버전이 `2.13.0`인지 확인합니다.
+- 설치 상세의 버전이 `2.14.0`인지 확인합니다.
 - Refresh 또는 Update 뒤 반드시 새 대화나 새 작업을 시작합니다.
 - Claude Code에서는 `/plugin`의 Errors 탭을 확인합니다.
 - Claude Cowork에서 레퍼런스 이미지가 안 보이면 Node.js 18 이상과 `reference-preview` 연결을 확인합니다. Node.js 설치 방법은 [문제 해결의 Node.js 안내](TROUBLESHOOTING.md#nodejs가-필요하다고-나와요-claude-cowork-이미지-미리보기)를 보세요.

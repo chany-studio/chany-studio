@@ -28,6 +28,7 @@ If only a platform page link is available and no observable browser or capture c
 4. Create one `video_reference_packet` using the contract below. Bind every frame, transcript, timestamp, or beat table to the exact captured or attached source version.
 5. For an inspectable file, run `chany-preflight` for only the required probe, extraction, transcription, or contact-sheet capabilities, then apply the shared teardown. Separate observation from interpretation and label incomplete coverage.
 6. When the user requests a new ad, hand the accepted packet and transferable timing grammar to `chany-campaign-video`. Transfer pacing, reveal logic, camera behavior, information order, and sound function only; rebuild the product, people, setting, copy, music, branding, and distinctive sequence from the user's own authorities.
+   When the request is specifically one short Reel/Short plus the user's product, hand the packet to `chany-viral-product-remake` as the beginner-facing coordinator instead of asking the user to manage the chain.
 7. Use optional connections only when their live tools are installed and applicable. A direct media file may be imported into Higgsfield after upload approval; motion transfer or object replacement requires separate creative, rights, cost, and generation approval. ChatCut may receive an attached or captured local file for transcription and editing, but it is not a platform-link downloader.
 
 ```yaml

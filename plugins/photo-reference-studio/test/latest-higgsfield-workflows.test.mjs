@@ -55,7 +55,7 @@ test("live model routing covers the verified 2026-09-18 task families without re
   assert.match(apiBoundary, /Never request, print, store, or commit an API secret/i);
 });
 
-test("2.13 manifests and public guides publish the new production families", async () => {
+test("2.14 manifests and public guides publish the current production families", async () => {
   const [claude, codex, marketplace, rootReadme, userGuide, updates] = await Promise.all([
     readPlugin(".claude-plugin/plugin.json").then(JSON.parse),
     readPlugin(".codex-plugin/plugin.json").then(JSON.parse),
@@ -65,7 +65,7 @@ test("2.13 manifests and public guides publish the new production families", asy
     readFile(join(repoRoot, "docs", "HIGGSFIELD-UPDATES.md"), "utf8"),
   ]);
 
-  assert.equal(claude.version, "2.13.0");
+  assert.equal(claude.version, "2.14.0");
   assert.equal(codex.version.split("+")[0], claude.version);
   for (const keyword of ["ad-variants", "shortform-recut", "product-3d"]) {
     assert.ok(claude.keywords.includes(keyword));

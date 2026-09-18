@@ -27,6 +27,7 @@ Route the request as follows:
 - bounded edit or inpainting → `chany-image-edit`
 - static adult model or fashion try-on → `chany-model-fashion`
 - YouTube, Instagram, or another browser video reference link, authorized tab capture, or local reference-video intake → `chany-video-reference-ingest`
+- short product Reel/Short link plus the user's product, or “이 영상에서 제품만 바꿔줘” → `chany-viral-product-remake`
 - product commercial, cinematic brand film, promotional motion, concept-led performance video, or Genjutsu object swap / motion transfer → `chany-campaign-video`
 - animated ad typography, benefit diagram, logo reveal, or CTA end card → `chany-motion-design`
 - multiple controlled edits of one approved source ad or Ad Multiplier → `chany-ad-variants`

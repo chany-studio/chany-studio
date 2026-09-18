@@ -1,8 +1,8 @@
 {
   "name": "photo-reference-studio",
   "displayName": "Chany's Studio",
-  "version": "2.13.0",
-  "description": "Chany's Claude and ChatGPT Work/Codex advertising studio: JTBD-led conversion creative, controlled ad variants, reviewed short-form recuts, product 3D, current Higgsfield routing, GPT Image 2.5 stills, bounded production and publication review.",
+  "version": "2.14.0",
+  "description": "Chany's Claude and ChatGPT Work/Codex advertising studio: JTBD-led conversion creative, one-step short product-video remakes, controlled ad variants, product 3D, GPT Image 2.5 stills, bounded production and publication review.",
   "author": {
     "name": "Chany",
     "url": "https://github.com/chany-studio"
@@ -47,6 +47,8 @@
     "browser-tab-capture",
     "youtube-video-reference",
     "instagram-video-reference",
+    "viral-product-remake",
+    "reel-product-swap",
     "media-production-loop",
     "media-job-ledger",
     "video-assembly",

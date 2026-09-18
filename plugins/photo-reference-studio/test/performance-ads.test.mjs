@@ -128,7 +128,7 @@ test("both plugin manifests publish the same feature release without changing id
   const claude = JSON.parse(await read(".claude-plugin/plugin.json"));
   const codex = JSON.parse(await read(".codex-plugin/plugin.json"));
   assert.equal(claude.name, codex.name);
-  assert.equal(claude.version, "2.13.0");
+  assert.equal(claude.version, "2.14.0");
   assert.equal(codex.version.split("+")[0], claude.version);
   assert.equal(codex.skills, "./skills/");
   assert.doesNotMatch(claude.description, /moai/i);

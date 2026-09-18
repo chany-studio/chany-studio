@@ -23,6 +23,8 @@ The router owns industry selection, sequencing, checkpoints, and shared state. I
 
 Use `chany-motion-design` for standalone advertising motion graphics or a named graphics handoff within campaign video. Authorized footage object swaps/motion transfer use the campaign-video Genjutsu mode before assembly. Ordered independent edits of one approved ad use `chany-ad-variants`; YouTube-to-social extraction uses `chany-shortform-recut`; product meshes and editable 3D advertising scenes use `chany-product-3d`. None is mandatory for ordinary stills, carousels, or one-off video generation.
 
+For the common single-output request “short Reel/Short link + my product,” route directly to `chany-viral-product-remake`. It gives beginners one intake while chaining reference ingest, product authority, original campaign scenes or an authorized product swap, generation, and assembly. Do not expand it into the full campaign sequence unless the user asks for additional formats.
+
 ## Coordinate a campaign
 
 For purchase-oriented video, single-image or carousel advertising, read [references/performance-ad-contract.md](references/performance-ad-contract.md) and use its minimal chain instead of expanding the general campaign sequence below. Meta is the ad-benchmark lane; Pinterest is optional still-photo styling only. Reuse one conversion brief and one selected direction for the requested set. A single output keeps its existing production owner; this router coordinates only multi-format or ambiguous work.
@@ -35,7 +37,7 @@ Default dependency order when those assets are requested:
 2. approve the marketing brief, claim ledger, and asset matrix
 3. prepare source-faithful assets when needed
 4. find and select art direction through one source-isolated static-reference lane when needed: broad Pinterest, Production Paradise commercial photography, approved award archives, or `chany-ai-prompt-reference` for MeiGen image-and-prompt research
-5. when a video reference link, browser capture, direct media URL, or local reference file is supplied, use `chany-video-reference-ingest` to establish the observable evidence level and produce the authorized capture packet before timing analysis
+5. when a video reference link, browser capture, direct media URL, or local reference file is supplied, use `chany-video-reference-ingest` to establish the observable evidence level and produce the authorized capture packet before timing analysis; a short product-video reference plus the user's product uses `chany-viral-product-remake` as the simple front door
 6. compile and approve one brand-specific creative direction, then one master campaign visual or design system
 7. let each production owner, including `chany-campaign-video` when requested, define its asset specification, then use `chany-media-production-loop` for every requested generated still or campaign-video job
 8. after the included campaign-video clip versions are accepted, use `chany-video-assembly` for a requested delivered cut, segment replacement, controlled deterministic hook variants, or verification; route generative multi-edit ad variants to `chany-ad-variants` and automated long-to-short extraction to `chany-shortform-recut`
