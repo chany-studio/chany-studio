@@ -7,6 +7,8 @@ description: Plan evidence-led launch, retail, comparison, and adoption directio
 
 Create the consumer-technology strategy, evidence, directing, and compliance overlay that other Chany's Studio skills use for production. Own the `industry direction packet`; do not make the final ad, image, detail page, or campaign-video asset from this skill alone.
 
+Every user-facing turn follows the shared [beginner experience contract](../chany-studio/references/beginner-experience.md): quick start by default, plain Korean without internal field names, and one confirmation card before any paid generation.
+
 Read [references/domain-playbook.md](references/domain-playbook.md) before developing the packet.
 
 ## Workflow

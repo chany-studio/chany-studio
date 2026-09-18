@@ -10,7 +10,7 @@ In an interactive Claude setup, render the missing axes through the top-level `A
 
 1. **Purpose and audience:** What product or brand is this for, what outcome matters, who is the audience, and what is the deadline?
 2. **Deliverables and channels:** Which assets are required, where will they appear, and what sizes, ratios, lengths, languages, and quantities are fixed?
-3. **Authority and constraints:** Which source images, logos, brand guides, approved facts, claims, prices, offers, CTA, rights, consent, visual references, and forbidden elements are authoritative? Is the project planning-only, connected-tool production, web handoff, or hybrid, and where must paid-generation approval occur?
+3. **Authority and constraints:** Which source images, logos, brand guides, approved facts, claims, prices, offers, CTA, rights, consent, visual references, and forbidden elements are authoritative? Do not ask beginners about execution mode or where paid approval happens: default to connected-tool production when a media connection exists (otherwise planning with a web handoff) and to a confirmation card in chat before every paid generation, and record both as setup defaults the user can change later ([beginner experience](../../chany-studio/references/beginner-experience.md) §6).
 
 Existing Moai answers count as inputs, not questions to repeat. Confirm only missing campaign-specific facts and any contradiction between current instructions, `.moai/project/*`, and `.chany-studio/*`.
 

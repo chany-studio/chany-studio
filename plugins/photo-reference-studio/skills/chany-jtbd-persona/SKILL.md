@@ -7,6 +7,8 @@ description: Analyze purchase motivations (구매 동기), JTBD and personas for
 
 Explain the progress a customer wants in a specific situation, then turn that insight into a usable creative brief. Support products and services equally: the desired action can be purchase, consultation, booking, trial, enrollment, or adoption.
 
+Every user-facing turn follows the shared [beginner experience contract](../chany-studio/references/beginner-experience.md): quick start by default, plain Korean without internal field names, and one confirmation card before any paid generation.
+
 ## Inputs and evidence
 
 Read the supplied offer information and existing project brief first. Separate **offer facts**, **customer evidence**, and **creative references**. A reference ad is evidence of its construction, not proof that our customers share its motivations or that our offer delivers its claims.

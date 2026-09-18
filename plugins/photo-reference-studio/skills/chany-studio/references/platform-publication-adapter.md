@@ -2,6 +2,10 @@
 
 Use this adapter when a Chany asset is intended for a named platform, placement, storefront, outbound channel, or live publishing operation. It converts current primary-source requirements into asset-level controls; it is not a timeless catalog of platform specifications and does not grant release approval.
 
+## Everyday posts in quick start
+
+When a beginner names a platform only to describe where a draft will go (for example "인스타 광고") and has not asked to publish or review, use the platform only for production constraints such as ratio, safe area, and text length. At delivery, give the short plain-Korean checklist from [beginner-experience.md](beginner-experience.md) §5 and offer the full review in one line. Run the full adapter below when the user asks to publish, upload, schedule, or review, or when an industry overlay or platform rule requires a named reviewer.
+
 ## Runtime identity
 
 Resolve the publication context before reviewing an asset:

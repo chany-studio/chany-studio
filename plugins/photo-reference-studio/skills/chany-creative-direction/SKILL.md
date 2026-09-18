@@ -7,6 +7,8 @@ description: Turn a plain-language marketing brief into three professional conce
 
 Give beginners an expert art director's decision layer without asking them to speak in design jargon.
 
+Every user-facing turn follows the shared [beginner experience contract](../chany-studio/references/beginner-experience.md): quick start by default, plain Korean without internal field names, and one confirmation card before any paid generation.
+
 Read the shared [commercial creative direction system](../chany-studio/references/creative-direction-system.md) and [current creative signals](../chany-studio/references/current-creative-signals.md). Consume the approved industry direction and marketing brief when available.
 
 ## Workflow

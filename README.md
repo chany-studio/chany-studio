@@ -1,16 +1,54 @@
 # Chany's Studio
 
+## 처음 쓰는 분께
+
+Chany's Studio는 제품 사진이나 짧은 설명만 있으면 광고 이미지, 상세페이지, 짧은 광고 영상을 기획하고 만들어 주는 플러그인(AI 앱에 기능을 더해 주는 추가 프로그램)입니다. 복잡한 설정 없이 평소 말투로 요청하면 됩니다.
+
+AI로 이미지나 영상을 한 번도 만들어 본 적 없는 분, 개발을 모르는 사장님·마케터·수강생을 위해 만들었습니다.
+
+**준비물**
+
+- Claude Cowork 또는 ChatGPT Work를 쓸 수 있는 계정
+- 이미지·영상을 실제로 만들 때만: Higgsfield(이미지·영상 생성 서비스) 계정과 크레딧. 요금은 Higgsfield에서 확인하세요.
+- 레퍼런스 찾기, 기획, 프로젝트 설정은 크레딧을 쓰지 않습니다.
+
+**설치**: 아래 [설치](#설치) 순서를 따르거나 [설치 및 업데이트 가이드](docs/INSTALL-AND-UPDATE.md)를 보세요.
+
+**첫 요청 해 보기**
+
+Claude Cowork에서는 기호 없이 평소 말투로 요청합니다.
+
+```text
+(제품 사진을 첨부한 뒤) 이 제품으로 인스타 광고 이미지 한 장 만들어줘.
+이 제품에 어울리는 광고 사진 레퍼런스 찾아줘.
+```
+
+ChatGPT Work에서는 앞에 `@chany-studio`를 붙이거나, 똑같이 평소 말투로 요청합니다.
+
+```text
+(제품 사진을 첨부한 뒤) @chany-studio 이 제품으로 인스타 광고 이미지 한 장 만들어줘.
+@chany-studio 이 제품에 어울리는 광고 사진 레퍼런스 찾아줘.
+```
+
+**요청하면 이렇게 진행됩니다**
+
+1. **빠른 시작**: 플러그인이 가장 잘 어울리는 방향을 골라 둡니다. 광고 문구는 알려 주신 사실로만 쓰고, 말하지 않은 가격이나 할인은 넣지 않습니다.
+2. **확인 카드 1장**: 만들 것, 방향, 들어갈 문구, 사용 도구, 비용을 한 번에 보여줍니다. "이대로 만들기"를 골라야 생성이 시작됩니다.
+3. **결과**: 완성본을 먼저 보여주고, 이어서 할 만한 일을 짧게 제안합니다.
+
+영상은 기준 이미지와 영상, 이렇게 확인 카드가 두 번 나옵니다. 여러 방향을 비교해 보고 싶다면 "여러 안 보여줘", "콘셉트 3안", "레퍼런스 먼저 보여줘"라고 말하세요. 자세히 보기 방식으로 바뀝니다. 레퍼런스는 사이트를 정하지 않으면 Pinterest 5장 + Meigen 5장, 총 10장을 보여줍니다.
+
+**비용**: 플러그인에는 크레딧이 들어 있지 않습니다. 이미지·영상 생성에는 본인의 Higgsfield 크레딧이 쓰이며, 이번 작업의 실제 비용과 현재 잔액은 생성 직전 확인 카드에 표시됩니다. 카드에서 승인하지 않으면 크레딧은 쓰이지 않습니다.
+
+막히면 [문제 해결](docs/TROUBLESHOOTING.md)을, 모르는 단어는 [용어 사전](docs/GLOSSARY.md)을 보세요.
+
 ![Chany's Studio](plugins/photo-reference-studio/assets/logo.png)
 
-업종별 구매 여정·증거·연출·컴플라이언스 판단과 공통 제작 워크플로를 결합해 **광고·홍보·마케팅·상세/랜딩·콘텐츠**를 기획하고 제작하는 ChatGPT Work/Codex 및 Claude 플러그인입니다. Chany's Studio 2.8.2는 출처별 시각 레퍼런스, 사용자가 허가한 브라우저 탭 캡처 기반 영상 레퍼런스 분석, 초보자의 말로 세 가지 전문 콘셉트를 설계하는 크리에이티브 디렉션, 최신 공식 제작 규칙과 브랜드 적합 트렌드를 반영한 GPT Image 2.5 프롬프트, 제한된 미디어 제작 루프를 하나의 흐름으로 연결합니다.
+업종별 구매 여정·증거·연출·컴플라이언스 판단과 공통 제작 워크플로를 결합해 **광고·홍보·마케팅·상세/랜딩·콘텐츠**를 기획하고 제작하는 ChatGPT Work/Codex 및 Claude 플러그인입니다. Chany's Studio 2.9.0은 출처별 시각 레퍼런스, 사용자가 허가한 브라우저 탭 캡처 기반 영상 레퍼런스 분석, 초보자의 말로 세 가지 전문 콘셉트를 설계하는 크리에이티브 디렉션, 최신 공식 제작 규칙과 브랜드 적합 트렌드를 반영한 GPT Image 2.5 프롬프트, 제한된 미디어 제작 루프를 하나의 흐름으로 연결합니다.
 
 > [공식 설치·사용설명서 (Notion)](https://jolly-phlox-79c.notion.site/Chany-s-Studio-3c783e9464668140b794ee076be24406) · [문제 해결](docs/TROUBLESHOOTING.md)
 
 ## 설치할 때 입력할 마켓플레이스 주소
-
-2.7.0 추가: **Meigen 이미지·원본 프롬프트 분석 → 제품·서비스별 제작 프롬프트**. 기본 6장 또는 요청 수량을 대화에 표시하며 프로젝트 초기화와 기존 광고 제작에 연결합니다. [사용법·예시](docs/MEIGEN-REFERENCES.md).
-
-2.6.0 추가: **JTBD → Meta 광고 분석 → 구매 전환 영상·단일 이미지·캐러셀 → 전체 광고 카피·CTA 검수**. Claude와 ChatGPT Work/Codex에서 공통으로 사용하며 MoAI는 선택형 전문 확장입니다. [사용법·복습용 프롬프트·MoAI 검토 결과](docs/PERFORMANCE-ADS.md)를 확인하세요.
 
 ```text
 https://github.com/chany-studio/chany-studio
@@ -43,23 +81,15 @@ chany-studio/chany-studio
 4. Higgsfield 로그인을 마치고 `reference-preview` 연결이 활성화됐는지 확인합니다.
 5. 새 Cowork 작업을 시작합니다.
 
-### Claude Code
+### Claude Code (개발자용)
 
-```text
-/plugin marketplace add chany-studio/chany-studio
-/plugin install photo-reference-studio@photo-reference-studio
-/reload-plugins
-```
+Claude Code 설치 명령은 [고급·개발자 안내](docs/ADVANCED.md)로 옮겼습니다.
 
 플랫폼별 세부 절차는 [설치 및 업데이트 가이드](docs/INSTALL-AND-UPDATE.md)를 확인하세요.
 
 ## 2축 스킬 구조
 
-2.8.2: 기본 이미지 모델을 **GPT Image 2.5**로 전환한 내용을 모든 안내에 맞추고, 옛 문구·누락된 스킬 안내를 정리했습니다. 업종 스킬의 공통 양식과 전문 레퍼런스 규칙은 한 곳에서 관리합니다.
-
-2.8.1: 일반 레퍼런스는 **Pinterest 5장 + Meigen 5장, 총 10장을 대화에 표시**합니다. 동일 카테고리 재검색·후보 교체는 추가 허락 없이 자동 진행하고, 레퍼런스 선택과 생성 조건은 한 번에 확인합니다. [사용 예시](docs/REFERENCE-RECOVERY.md).
-
-2.8.0 추가: **Higgsfield 광고 모션 디자인·Genjutsu 영상 부분 수정·GPT Image 2.5 지원**. 현재 이미지 기본값은 GPT Image 2.5이며 실제 연결을 확인한 기능만 실행합니다. [사용법과 예시](docs/HIGGSFIELD-UPDATES.md).
+버전별 변경 내용은 [변경 이력](CHANGELOG.md)에서 확인하세요. 예전 버전 안내 모음은 [고급·개발자 안내](docs/ADVANCED.md)에 있습니다.
 
 ChatGPT Work에서 스킬을 직접 고를 때는 `@스킬명`, Codex에서는 `$스킬명`을 사용합니다. Claude Cowork에서는 `/project-studio`를 제외한 전문 작업을 자연어로 요청하면 설명에 맞는 스킬이 자동 선택됩니다.
 
@@ -149,28 +179,7 @@ ChatGPT 또는 Codex에 아래 문장이 일반 메시지로 전달되면 같은
 /project-studio 신제품 선크림 광고 프로젝트를 설정해줘.
 ```
 
-### `/project-studio`에서 Moai 문맥 감지와 조건부 체이닝
-
-보통 `/project-studio <설명>` 하나로 시작하면 됩니다. 기존 `.moai/project/*`가 있으면 바로 재사용합니다. 기록이 없을 때는 현재 호스트가 Moai의 정확한 project 스킬을 같은 요청 안에서 실제로 호출하고 완료까지 기다릴 수 있음을 확인한 경우에만 통합 승인안에 Moai 단계를 넣습니다. 설치 폴더나 문서에 이름이 보이는 것만으로 자동 실행을 약속하지 않습니다. 해당 기능이 없으면 Chany 단독 설정과 수동 2단계 안내를 제공합니다. Chany 단계는 `.moai/**`를 수정·삭제·이동하지 않습니다.
-
-플랫폼별 Chany 설정 호출 예시는 다음과 같습니다. Moai의 같은 요청 내 실행 여부는 각 호스트의 실제 호출 기능에 따라 달라집니다.
-
-```text
-Claude Cowork:
-/project-studio 반려동물 예약 플랫폼의 출시 광고와 랜딩페이지 제작 구조를 설정해줘.
-
-ChatGPT Work:
-@chany-project로 반려동물 예약 플랫폼의 출시 광고와 랜딩페이지 제작 구조를 설정해줘.
-
-Codex:
-$chany-project로 반려동물 예약 플랫폼의 출시 광고와 랜딩페이지 제작 구조를 설정해줘.
-```
-
-모든 런타임에서 확실한 방식은 Moai의 `project`를 먼저 완료하고 Chany 설정을 이어가는 수동 2단계입니다. `--with-moai` 또는 `moai-chain`은 Moai 단계를 필수로 요구하며, Moai 자체 또는 같은 요청 내 호출 기능이 없으면 Chany 단독으로 조용히 넘어가지 않고 수동 2단계를 안내합니다. `--chany-only`는 Moai 감지를 건너뜁니다. 어떤 방식도 Moai 자체의 변경 미리보기와 승인 절차를 생략하지 않습니다. ChatGPT에서는 `/project-studio`를 정식 슬래시 메뉴로 안내하지 말고 `@chany-project`를 사용합니다.
-
-프로젝트의 업종과 산출물이 정해지면 `/project-studio`는 현재 설치돼 실제 호출 가능한 Moai 전문 스킬 중 **가장 작은 관련 체인만** 승인안에 제안합니다. 예를 들어 주장 검수는 `moai-seller:commerce-ad-claim-compliance-kr`, 발송 메시지는 `moai-seller:commerce-message-compliance-kr`, 협찬·추천·사용권은 `moai-seller:commerce-influencer-collab`, 현행 법령과 MFDS 질문은 `moai-lawyer:legal-law-research`와 `moai-lawyer:legal-mfds-safety`에 연결할 수 있습니다. 더 깊은 기획·상세페이지·촬영은 `moai-marketer:marketing-campaign-planner`, `moai-seller:commerce-detail-page-planner`, `moai-seller:commerce-product-photo-brief`, 디자인 반복은 `moai-designer:design-brief`, `moai-designer:design-iteration-loop`, `moai-designer:design-landing-motion`, Higgsfield 실행은 `moai-media:media-higgsfield-core`, `moai-media:media-higgsfield-image`, `moai-media:media-higgsfield-video`, `moai-media:media-higgsfield-identity`, `moai-media:media-higgsfield-assets`가 설치된 경우에만 제안됩니다.
-
-각 결과는 정확한 Moai 스킬 이름, 목적, 검토 대상과 버전, 출처 날짜, 발견 사항, 미해결 항목과 후속 Chany 담당을 붙인 인용 가능한 전달물로 받습니다. Chany's Studio는 캠페인 브리프, 원본 잠금, 최종 크리에이티브 QA와 버전 고정 게시 검수를 계속 소유합니다. Moai 전문 스킬이 없으면 이를 흉내 내거나 필수로 만들지 않고 Chany 단독으로 진행하며, 빠진 근거나 사람 검토가 있으면 게시만 보류합니다.
+Moai와 함께 쓰는 방법(개발자용)은 [고급·개발자 안내](docs/ADVANCED.md)를 보세요.
 
 설정이 승인되면 다음을 만듭니다.
 
@@ -187,8 +196,9 @@ ChatGPT Work는 로컬 Codex의 TOML 에이전트 파일을 전제로 하지 않
 전체 캠페인은 다음처럼 요청할 수 있습니다. 플랫폼에 맞는 첫 줄 하나를 선택하고 나머지 요청을 이어 붙입니다.
 
 ```text
+Claude Cowork: 이 제품의 마케팅 캠페인을 만들어줘.
 ChatGPT Work: @chany-studio로 이 제품의 마케팅 캠페인을 만들어줘.
-Codex: $chany-studio로 이 제품의 마케팅 캠페인을 만들어줘.
+Codex(개발자용): $chany-studio로 이 제품의 마케팅 캠페인을 만들어줘.
 제품 누끼와 팩샷, 마스터 키비주얼, 상세페이지 모듈 5장,
 1:1·4:5·9:16 광고소재와 15초 제품 브랜드 필름을 같은 방향으로 구성해줘.
 유료 생성 전에 산출물 수와 승인 지점을 먼저 보여줘.
@@ -196,37 +206,39 @@ Codex: $chany-studio로 이 제품의 마케팅 캠페인을 만들어줘.
 
 한 가지 결과가 분명하면 해당 전문 스킬을 바로 호출합니다.
 
+Claude Cowork에서는 스킬 이름 없이 원하는 결과를 평소 말투로 요청하면 됩니다. 아래 예시는 ChatGPT Work와 개발자용 Codex에서 스킬을 직접 고르는 방법입니다.
+
 ```text
 ChatGPT Work: @chany-creative-direction으로 이 브리프를 세 가지 세련된 콘셉트로 발전시키고 가장 적합한 방향과 제작 프롬프트를 추천해줘.
-Codex: $chany-creative-direction으로 이 브리프를 세 가지 세련된 콘셉트로 발전시키고 가장 적합한 방향과 제작 프롬프트를 추천해줘.
+Codex(개발자용): $chany-creative-direction으로 이 브리프를 세 가지 세련된 콘셉트로 발전시키고 가장 적합한 방향과 제작 프롬프트를 추천해줘.
 
 ChatGPT Work: @chany-detail-page로 승인된 키비주얼을 사용해 상세페이지 모듈 5장을 만들어줘.
-Codex: $chany-detail-page로 승인된 키비주얼을 사용해 상세페이지 모듈 5장을 만들어줘.
+Codex(개발자용): $chany-detail-page로 승인된 키비주얼을 사용해 상세페이지 모듈 5장을 만들어줘.
 
 ChatGPT Work: @chany-ad-creative로 이 프로모션의 1:1 피드와 9:16 스토리 광고를 만들어줘.
-Codex: $chany-ad-creative로 이 프로모션의 1:1 피드와 9:16 스토리 광고를 만들어줘.
+Codex(개발자용): $chany-ad-creative로 이 프로모션의 1:1 피드와 9:16 스토리 광고를 만들어줘.
 
 ChatGPT Work: @chany-media-production-loop로 승인된 키비주얼 3종의 생성 작업과 화면 검수를 추적해줘.
-Codex: $chany-media-production-loop로 승인된 키비주얼 3종의 생성 작업과 화면 검수를 추적해줘.
+Codex(개발자용): $chany-media-production-loop로 승인된 키비주얼 3종의 생성 작업과 화면 검수를 추적해줘.
 
 ChatGPT Work: @chany-campaign-video로 이 제품의 콘셉트형 15초 광고 영상을 기준 이미지부터 클립 검수까지 만들어줘.
-Codex: $chany-campaign-video로 이 제품의 콘셉트형 15초 광고 영상을 기준 이미지부터 클립 검수까지 만들어줘.
+Codex(개발자용): $chany-campaign-video로 이 제품의 콘셉트형 15초 광고 영상을 기준 이미지부터 클립 검수까지 만들어줘.
 
 ChatGPT Work: @chany-video-reference-ingest로 이 Instagram Reel을 브라우저 캡처나 첨부 파일로 준비하고 확인된 구성만 내 제품 영상에 맞게 분석해줘.
-Codex: $chany-video-reference-ingest로 이 YouTube 영상을 브라우저 캡처나 첨부 파일로 준비하고 확인된 구성만 내 제품 영상에 맞게 분석해줘.
+Codex(개발자용): $chany-video-reference-ingest로 이 YouTube 영상을 브라우저 캡처나 첨부 파일로 준비하고 확인된 구성만 내 제품 영상에 맞게 분석해줘.
 
 ChatGPT Work: @chany-video-assembly로 승인된 캠페인 영상 클립을 조립하거나 지정 구간만 교체하고 결과를 검증해줘.
-Codex: $chany-video-assembly로 승인된 캠페인 영상 클립을 조립하거나 지정 구간만 교체하고 결과를 검증해줘.
+Codex(개발자용): $chany-video-assembly로 승인된 캠페인 영상 클립을 조립하거나 지정 구간만 교체하고 결과를 검증해줘.
 ```
 
 상세/랜딩페이지는 목적에 따라 `plan`, `audit`, `produce`로 요청할 수 있습니다. `plan`은 페이지 구조와 촬영 필요 항목, `audit`은 기존 페이지의 증거 범위와 누락된 촬영·자료, `produce`는 이름이 정해진 모듈 제작을 담당합니다. 생성 이미지는 누락된 사실 증거를 대신하지 않습니다.
 
 ```text
 ChatGPT Work: @chany-detail-page로 기존 랜딩페이지를 audit하고 증거·촬영 공백을 정리해줘.
-Codex: $chany-detail-page로 기존 랜딩페이지를 audit하고 증거·촬영 공백을 정리해줘.
+Codex(개발자용): $chany-detail-page로 기존 랜딩페이지를 audit하고 증거·촬영 공백을 정리해줘.
 
 ChatGPT Work: @chany-publication-review로 최종 광고의 정확한 카피·오퍼·에셋 버전을 게시 전 검수해줘.
-Codex: $chany-publication-review로 최종 광고의 정확한 카피·오퍼·에셋 버전을 게시 전 검수해줘.
+Codex(개발자용): $chany-publication-review로 최종 광고의 정확한 카피·오퍼·에셋 버전을 게시 전 검수해줘.
 ```
 
 게시 검수는 정확한 카피, 오퍼, 목적지, 에셋, 크롭, 레이아웃과 최종 렌더 버전에 묶입니다. 초안 기획과 제작은 계속할 수 있지만 근거, 권리, 검토 시점의 공식 1차 출처 또는 이름이 확인된 책임 검토자가 빠지면 공개는 보류됩니다. 카피·크롭·레이아웃이 바뀌면 새 버전으로 다시 검수해야 하며, 이 절차를 법률 자문이나 법적 승인으로 표현하지 않습니다.
@@ -298,7 +310,7 @@ Codex: $chany-publication-review로 최종 광고의 정확한 카피·오퍼·�
 /reload-plugins
 ```
 
-업데이트 후 버전이 **2.8.2**인지 확인하고 새 대화 또는 새 작업을 시작하세요.
+업데이트 후 버전이 **2.9.0**인지 확인하고 새 대화 또는 새 작업을 시작하세요.
 
 ## 외부 서비스와 데이터
 
@@ -317,21 +329,7 @@ Codex: $chany-publication-review로 최종 광고의 정확한 카피·오퍼·�
 
 ## 저장소 구조
 
-```text
-.
-├── .agents/plugins/marketplace.json
-├── .claude-plugin/marketplace.json
-├── docs/
-└── plugins/photo-reference-studio/
-    ├── .codex-plugin/plugin.json
-    ├── .claude-plugin/plugin.json
-    ├── .mcp.claude.json
-    ├── .mcp.json
-    ├── assets/
-    ├── commands/project-studio.md
-    ├── mcp/reference-preview/
-    └── skills/
-```
+개발자용 저장소 구조는 [고급·개발자 안내](docs/ADVANCED.md)에 있습니다.
 
 ## 라이선스와 공식 참고
 

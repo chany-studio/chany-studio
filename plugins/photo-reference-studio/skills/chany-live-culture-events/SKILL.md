@@ -7,6 +7,8 @@ description: Design evidence-led advertising, promotion, art direction, and cont
 
 Create an industry direction packet that connects program truth, audience anticipation, live experience, safe participation, cultural legitimacy, and post-event value. Own event strategy, evidence, phase-based visual direction, and the claims-rights-safety overlay. Delegate final production.
 
+Every user-facing turn follows the shared [beginner experience contract](../chany-studio/references/beginner-experience.md): quick start by default, plain Korean without internal field names, and one confirmation card before any paid generation.
+
 Read [references/domain-playbook.md](references/domain-playbook.md) before substantive planning or handoff.
 
 ## Scope and boundary

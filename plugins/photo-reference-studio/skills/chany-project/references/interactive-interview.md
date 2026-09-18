@@ -14,7 +14,7 @@ Use this contract for `setup`, `with-moai`, `chany-only`, and any `update` that 
 
 ## Initial interview card
 
-- Include only the missing axes from the compact interview: purpose/audience/deadline; deliverables/channels/specifications; authoritative assets/claims/rights/constraints/execution mode/paid-generation boundary.
+- Include only the missing axes from the compact interview: purpose/audience/deadline; deliverables/channels/specifications; authoritative assets/claims/rights/constraints. Ask in plain Korean that a first-time user can answer (what they sell, who buys it, where they will post). Execution mode, paid-approval location, file layout and MoAI chaining use recommended defaults and are not asked unless the user raises them or MoAI is already detected ([beginner experience](../../chany-studio/references/beginner-experience.md) §6).
 - Put one to three questions in one call. Each question uses the user's language, a header of at most 12 characters, two to four options, and `multiSelect: true` only for choices that can coexist.
 - Ground options in the invocation and inspected project context. Put a defensible default first and suffix its label with `(권장)`; every option needs a short, neutral description of its immediate effect or trade-off. If no evidence supports a preference, use the least-committal reversible option as a disclosed setup default instead of pretending it reflects the user's preference.
 - Let the built-in `Other` choice collect free-form detail. Do not add a duplicate `Other` option.
@@ -24,7 +24,7 @@ Use this contract for `setup`, `with-moai`, `chany-only`, and any `update` that 
 
 ## Mandatory blueprint decision
 
-After presenting the exact blueprint and before the first Chany-managed file write, interactive Claude must show one single-select `AskUserQuestion` card:
+Present the blueprint in plain Korean first (what will be saved and why, in a few lines), then list the exact file paths below it. After presenting the exact blueprint and before the first Chany-managed file write, interactive Claude must show one single-select `AskUserQuestion` card:
 
 - header: `설정 승인`
 - question: `이 설계대로 현재 폴더에 프로젝트 지침을 생성할까요?`

@@ -7,6 +7,8 @@ description: Prepare source-faithful product or food assets for commerce, includ
 
 Prepare clean, reusable product or food sources for advertising, detail pages, and promotion. The original attachment is the identity authority.
 
+Every user-facing turn follows the shared [beginner experience contract](../chany-studio/references/beginner-experience.md): quick start by default, plain Korean without internal field names, and one confirmation card before any paid generation.
+
 Read [references/asset-prep.md](references/asset-prep.md) for prompts, source locks, and QA.
 
 Read the shared [creative-direction system](../chany-studio/references/creative-direction-system.md) when the output is more than a neutral technical cleanup. A trend or style direction may affect background, crop, light, and finish only after the product or food authority lock is satisfied; it may never recolor, reshape, relabel, or restyle the authoritative subject.

@@ -20,7 +20,7 @@ Except for the deliberate `gpt_image_2_5` still-image default defined in the sha
 
 ## Cost preflight and approval
 
-When a free quote, cost preview, dry run, or validation operation exists, call it before the paid operation. Present one approval packet containing:
+When a free quote, cost preview, dry run, or validation operation exists, call it before the paid operation. Record one approval packet containing the fields below, and show it to the user only as the plain-language confirmation card in [beginner-experience.md](beginner-experience.md) §3; never display the raw packet:
 
 ```yaml
 paid_generation_approval:
@@ -37,7 +37,7 @@ paid_generation_approval:
   approved_version_id: ""
 ```
 
-Use the server-returned cost and balance when available; do not estimate them from an old price table. If cost is unavailable, say so and stop at the user's stated credit boundary. Approval may use a structured question when the host supports it, ordinary conversation when it does not, or an explicit blocker when an outer orchestrator owns user interaction.
+Use the server-returned cost and balance when available; do not estimate them from an old price table. If cost is unavailable, say so and stop at the user's stated credit boundary. If the returned balance is lower than the quoted cost, do not submit any part of the batch; explain the shortfall and offer to top up credits, reduce the count, or keep the direction and copy for later, as worded in [beginner-experience.md](beginner-experience.md) §4. Approval may use a structured question when the host supports it, ordinary conversation when it does not, or an explicit blocker when an outer orchestrator owns user interaction.
 
 One approval covers only the displayed version. A change to prompt meaning, authoritative inputs or roles, model or workflow, billable options, count, duration, ratios, locales, or batch ceiling requires a new paid-generation preflight and approval. A harmless display-format change does not.
 

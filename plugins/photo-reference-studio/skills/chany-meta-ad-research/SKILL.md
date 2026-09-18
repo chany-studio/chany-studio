@@ -7,6 +7,8 @@ description: Find and analyze Meta Ad Library (메타 광고 라이브러리) vi
 
 Own read-only ad discovery and reference analysis, not customer truth, media production or account operation. Read [research and handoff rules](references/meta-ad-research.md). For production requests, return the selected evidence to the existing output owner under the shared [performance-ad contract](../chany-studio/references/performance-ad-contract.md).
 
+Every user-facing turn follows the shared [beginner experience contract](../chany-studio/references/beginner-experience.md): quick start by default, plain Korean without internal field names, and one confirmation card before any paid generation.
+
 1. Reuse the supplied product/service brief, market, language, requested formats and references. Identify the customer decision and actual offer; missing customer evidence remains a hypothesis. Do not force project initialization or MoAI installation.
 2. Inspect the current host's real browser/extension or supported read-only connector. Search the official Meta Ad Library only for ad discovery; use supplied library links directly. A reference request does not authorize connecting an ad account, changing it or spending.
 3. Select relevant, inspectable ads with a recorded reason, not invented performance rankings. Default to six ad candidates per requested board, or the user's positive count; a carousel is one candidate, not one per card. State format coverage and any shortfall. Never cross-fill from Pinterest, award archives, spy tools or another website.

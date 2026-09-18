@@ -7,6 +7,8 @@ description: Design evidence-led advertising, promotion, art direction, and cont
 
 Create an industry direction packet that makes space legible, desirable, and truthful for a specific business decision. Own the domain strategy, spatial evidence, directing system, and claims-rights-safety overlay. Delegate final asset production.
 
+Every user-facing turn follows the shared [beginner experience contract](../chany-studio/references/beginner-experience.md): quick start by default, plain Korean without internal field names, and one confirmation card before any paid generation.
+
 Read [references/domain-playbook.md](references/domain-playbook.md) before substantive planning or handoff.
 
 ## Scope and mode

@@ -7,6 +7,8 @@ description: Find and display visual references inline, defaulting to ten total 
 
 Find commercial visual direction while keeping every candidate traceable and directly visible.
 
+Every user-facing turn follows the shared [beginner experience contract](../chany-studio/references/beginner-experience.md): quick start by default, plain Korean without internal field names, and one confirmation card before any paid generation.
+
 For an unspecified provider or Pinterest + MeiGen request, first follow the [combined board contract](../chany-studio/references/combined-reference-board.md): default 10 total, 5 from each source. Coordinate the MeiGen lane through `chany-ai-prompt-reference`; the Pinterest-only rules below govern only Pinterest operations. An explicit Pinterest-only request keeps a single lane. Read [automatic recovery](../chany-studio/references/reference-recovery.md) for all searches and the combined selection/production decision.
 
 Read [references/search-policy.md](references/search-policy.md) and the machine-readable [references/industry-taxonomy.json](references/industry-taxonomy.json) before searching. Read [references/reference-search-mcp-contract.md](references/reference-search-mcp-contract.md) when using, testing, or connecting the Claude Cowork preview path. After the Pinterest candidate pool exists, use the shared [current creative signals](../chany-studio/references/current-creative-signals.md) only as a ranking lens; trend names, years, palette names, moods, and style words must never enter the L1 or L2 search query.
@@ -22,6 +24,6 @@ In Claude Cowork, verify that `fetch_reference_preview_image` is callable before
 - Present exactly `target_count` distinct Pinterest finalists as actual images in the current conversation. A URL, HTML page, contact sheet, filename, or metadata object alone does not satisfy this checkpoint.
 - Under each image, retain its number, provider, source-page link, query, fit note, and concise Visual DNA.
 - Treat every reference as direction-only. Never imply commercial reuse rights. Keep the source link on the Pinterest Pin page and never follow or expose its outbound destination.
-- In `semi-auto`, wait for one number or `자동 선택` before paid reference-directed production. A user-supplied reference is already selected.
+- In `semi-auto`, show the images and recommend one; then ask a single combined question (reference choice plus production plan) as [reference recovery](../chany-studio/references/reference-recovery.md) describes. A reply of one number or `자동 선택` answers the reference part. A user-supplied reference is already selected.
 
 If a candidate cannot be displayed, replace it and use bounded automatic recovery before reporting a shortfall. Exactly `target_count` visible results complete the lane. If recovery is exhausted, show valid images and requested/visible/missing counts, then offer one combined scope/production decision under the recovery contract. Never silently reduce the target, lower quality or count links as images.

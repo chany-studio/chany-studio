@@ -7,6 +7,8 @@ description: Review advertising, promotional, detail-page, outbound-message, and
 
 Create a traceable, version-bound publication review for a specific copy and asset set. Allow strategy, copy, and creative work to continue as clearly marked drafts, but do not clear publication when a material fact, evidence item, official source, right, disclosure, or named reviewer is missing.
 
+Every user-facing turn follows the shared [beginner experience contract](../chany-studio/references/beginner-experience.md): quick start by default, plain Korean without internal field names, and one confirmation card before any paid generation.
+
 Read [references/publication-gate.md](references/publication-gate.md) before conducting a review. If the candidate has a named platform, placement, storefront, outbound channel, upload, schedule, or live operation, also read and complete the shared [platform publication adapter](../chany-studio/references/platform-publication-adapter.md); no publish-capable flow may bypass it.
 
 ## Boundary
@@ -25,7 +27,7 @@ Establish these before assigning a publishable status:
 - the current evidence, price and transaction terms, rights and consent records, disclosures, domain controls, and platform requirements;
 - the named human reviewer, their role, and the scope they are authorized to review.
 
-Missing inputs do not prevent draft ideation or draft production. They do prevent publication and must appear in `unresolved_items`.
+Missing inputs do not prevent draft ideation or draft production. They do prevent publication and must appear in `unresolved_items`. Explain the result to the user in plain Korean: what is ready, what is still needed, and who needs to check it, without status codes or field names ([beginner experience](../chany-studio/references/beginner-experience.md)).
 
 ## Workflow
 

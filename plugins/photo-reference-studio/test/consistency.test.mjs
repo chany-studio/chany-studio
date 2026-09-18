@@ -93,3 +93,37 @@ test("overlapping skills name each other in their boundaries", async () => {
   assert.match(await description("chany-ad-creative"), /not for[^.]*chany-campaign-visual/);
   assert.match(await description("chany-campaign-visual"), /not for[^.]*chany-ad-creative/);
 });
+
+test("every skill follows the shared beginner experience contract", async () => {
+  const contract = await readFile(join(pluginRoot, "skills", "chany-studio", "references", "beginner-experience.md"), "utf8");
+  assert.match(contract, /Quick start is the default/);
+  assert.match(contract, /이렇게 만들까요\?/);
+  assert.match(contract, /이대로 만들기 \(권장\)/);
+  assert.match(contract, /never removes a paid-generation approval/);
+  assert.match(contract, /Credits too low/);
+  const skillDirs = (await readdir(join(pluginRoot, "skills"), { withFileTypes: true }))
+    .filter((entry) => entry.isDirectory() && entry.name.startsWith("chany-"))
+    .map((entry) => entry.name);
+  for (const skill of skillDirs) {
+    const body = await readFile(join(pluginRoot, "skills", skill, "SKILL.md"), "utf8");
+    assert.match(body, /beginner-experience\.md\)/, `${skill} must point to the beginner experience contract`);
+  }
+  const runtime = await readFile(join(pluginRoot, "skills", "chany-studio", "references", "higgsfield-runtime-contract.md"), "utf8");
+  assert.match(runtime, /never display the raw packet/);
+  assert.match(runtime, /balance is lower than the quoted cost, do not submit any part of the batch/);
+});
+
+test("beginner docs lead with a first-use guide, glossary and plain troubleshooting", async () => {
+  const [readme, glossary, troubleshooting] = await Promise.all([
+    readFile(join(repoRoot, "README.md"), "utf8"),
+    readFile(join(repoRoot, "docs", "GLOSSARY.md"), "utf8"),
+    readFile(join(repoRoot, "docs", "TROUBLESHOOTING.md"), "utf8"),
+  ]);
+  assert.ok(readme.indexOf("## 처음 쓰는 분께") < readme.indexOf("## 설치"), "first-use guide must come before installation");
+  assert.match(readme.split("## 설치")[0], /Claude Cowork[\s\S]+ChatGPT Work/);
+  for (const term of ["누끼", "CTA", "크레딧", "Visual DNA", "L1", "JTBD", "MCP", "Node.js"]) {
+    assert.ok(glossary.includes(term), `glossary must define ${term}`);
+  }
+  assert.match(troubleshooting, /## 크레딧이 부족하다고 나와요/);
+  assert.match(troubleshooting, /## Node\.js가 필요하다고 나와요/);
+});

@@ -7,6 +7,8 @@ description: Design and produce advertising motion typography, benefit diagrams,
 
 Turn approved advertising assets and copy into readable, brand-specific motion. A standalone motion card stays with this skill; a full commercial keeps `chany-campaign-video` as owner and calls this skill only for named graphics. Do not introduce motion into a static-image or carousel request.
 
+Every user-facing turn follows the shared [beginner experience contract](../chany-studio/references/beginner-experience.md): quick start by default, plain Korean without internal field names, and one confirmation card before any paid generation.
+
 Read the shared [Higgsfield motion adapter](../chany-studio/references/higgsfield-motion-adapter.md) before choosing an execution route. Use its observed capability gate in Claude and ChatGPT Work/Codex alike; an advertised integration is not an available connection.
 
 ## Design and execution

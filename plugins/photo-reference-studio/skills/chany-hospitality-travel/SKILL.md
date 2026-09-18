@@ -7,6 +7,8 @@ description: Design evidence-led advertising, promotion, art direction, and cont
 
 Create an industry direction packet that turns a real stay or destination into a credible promise across inspiration, comparison, booking, arrival, experience, and return. Own hospitality strategy, evidence, visual direction, and the claims-rights-safety overlay. Delegate final production.
 
+Every user-facing turn follows the shared [beginner experience contract](../chany-studio/references/beginner-experience.md): quick start by default, plain Korean without internal field names, and one confirmation card before any paid generation.
+
 Read [references/domain-playbook.md](references/domain-playbook.md) before substantive planning or handoff.
 
 ## Scope and boundary

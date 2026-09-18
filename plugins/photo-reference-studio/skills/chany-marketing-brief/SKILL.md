@@ -7,6 +7,8 @@ description: Turn industry, brand, audience, offer, evidence, channel, and obser
 
 Create a production-ready marketing brief before expensive or multi-asset work, or review supplied campaign results to design the next controlled round. Inspect attached products, spaces, interfaces, vehicles, event materials, people, logos, brand sources, and result exports directly; do not ask the user to re-describe visible facts.
 
+Every user-facing turn follows the shared [beginner experience contract](../chany-studio/references/beginner-experience.md): quick start by default, plain Korean without internal field names, and one confirmation card before any paid generation.
+
 Read [references/brief-schema.md](references/brief-schema.md) for the decision framework and output schema.
 
 When the brief includes visual, page, ad, or video outputs, also read the shared [creative-direction system](../chany-studio/references/creative-direction-system.md) and [current creative signals](../chany-studio/references/current-creative-signals.md). Use them to turn plain-language preferences into production decisions; do not ask a beginner to supply design jargon.

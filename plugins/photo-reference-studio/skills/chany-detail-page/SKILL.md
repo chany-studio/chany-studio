@@ -7,6 +7,8 @@ description: Plan and create coherent product-detail or conversion-landing modul
 
 When JTBD-led persuasive structure or thirteen-section planning is requested, reuse the existing customer packet (or `chany-jtbd-persona` if missing) and read the shared [thirteen-role adaptation](../chany-studio/references/thirteen-role-adaptation.md). Keep this skill as the page owner. Roles can merge or be omitted; do not invent proof, impose thirteen rendered modules or generate unrequested persona variants.
 
+Every user-facing turn follows the shared [beginner experience contract](../chany-studio/references/beginner-experience.md): quick start by default, plain Korean without internal field names, and one confirmation card before any paid generation.
+
 Build only the requested image modules for a product-detail or conversion landing page and keep them coherent as one evidence-based decision narrative.
 
 Read [references/detail-page-system.md](references/detail-page-system.md) for module selection, prompts, family locks, and QA.

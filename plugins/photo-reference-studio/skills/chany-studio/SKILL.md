@@ -7,6 +7,8 @@ description: Route end-to-end or multi-asset advertising and marketing requests 
 
 Coordinate industry-aware advertising, promotion, and content production without duplicating specialist instructions. Keep the user's source materials, approved business facts, evidence, and accepted campaign direction authoritative across every handoff.
 
+Every user-facing turn follows the shared [beginner experience contract](references/beginner-experience.md): quick start by default, plain Korean without internal field names, and one confirmation card before any paid generation.
+
 Project initialization, `AGENTS.md`, project records, and runtime-specific delegation configuration belong to `chany-project`. Once a project is configured, use this router for its multi-deliverable production work.
 
 ## Route the request

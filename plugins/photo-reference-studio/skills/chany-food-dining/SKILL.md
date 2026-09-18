@@ -7,6 +7,8 @@ description: Design evidence-led advertising, promotion, art direction, and cont
 
 Turn a real food-and-beverage offer into an industry direction packet that makes appetite, choice, trust, and action work together. Own the industry strategy, evidence model, directing logic, and compliance overlay. Do not create final campaign media from this skill alone.
 
+Every user-facing turn follows the shared [beginner experience contract](../chany-studio/references/beginner-experience.md): quick start by default, plain Korean without internal field names, and one confirmation card before any paid generation.
+
 Read [references/domain-playbook.md](references/domain-playbook.md) before doing substantive planning or handing work to another skill.
 
 ## Scope and boundary

@@ -7,6 +7,8 @@ description: Prepare YouTube, Instagram, and other video references for lawful s
 
 Turn an authorized video reference into an honest, traceable input for Chany's campaign-video workflow. This skill owns acquisition-state classification and the reference packet; it does not download platform videos, generate footage, edit a cut, or claim full analysis from metadata alone.
 
+Every user-facing turn follows the shared [beginner experience contract](../chany-studio/references/beginner-experience.md): quick start by default, plain Korean without internal field names, and one confirmation card before any paid generation.
+
 When the input is a browser page, extension capture, or page link, read [references/browser-capture-contract.md](references/browser-capture-contract.md). For any captured or attached file that can be inspected, also read and apply the shared [video reference teardown](../chany-studio/references/video-reference-teardown.md).
 
 ## Choose the available intake mode

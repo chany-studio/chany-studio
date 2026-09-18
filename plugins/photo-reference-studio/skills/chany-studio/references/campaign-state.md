@@ -268,6 +268,8 @@ Pause only when the missing decision materially affects cost or business meaning
 - multiple campaign-video variants, locales, or paid generation stages
 - the live paid-operation quote, server adjustments, or batch ceiling when a connected provider can consume credits
 
+In quick start ([beginner-experience.md](beginner-experience.md)), do not pause separately for these. Write copy only from supplied facts and omit any price, offer, or claim the user did not give; show copy, placement, and the paid quote together in the single confirmation card. Pause on its own only for a missing fact that would make the output wrong, or for a gate that the industry overlay or platform rule makes mandatory.
+
 If the user explicitly authorizes automatic selection within a named scope, apply it only to reversible creative choices inside that scope. It never waives claim substantiation, evidence or mandatory legal-copy checks, rights or upload authority, named-human publication review, a version-specific paid quote and approval, or the distinct approvals for a platform write, budget change, activation, or spend start.
 
 ## Family QA and delivery
@@ -281,7 +283,7 @@ Each specialist performs its own asset QA. The router then checks the family for
 - no member with a critical specialist failure
 - a version-bound publication status for every asset whose industry, claim, transaction, endorsement, rights, disclosure, or channel rules require review
 
-Deliver only the requested assets, followed by a compact note:
+Deliver only the requested assets. After a quick-start result, add at most three plain-Korean lines instead of the note below: 만든 것, 확인한 것, 다음에 해 볼 수 있는 것. For a multi-asset campaign or detailed mode, follow with the compact note below, written in plain Korean without internal field names:
 
 ```text
 보존: [authoritative identities checked]

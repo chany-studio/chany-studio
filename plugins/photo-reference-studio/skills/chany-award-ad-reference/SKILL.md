@@ -7,6 +7,8 @@ description: Find and compare award-level advertising and commercial-photography
 
 Use award and campaign archives as a distinct strategy lane. Before discovery, read the shared [specialist reference lane contract](../chany-studio/references/specialist-reference-lane.md) and this lane's [source policy](references/source-policy.md). The contract owns the L1-then-optional-direct-L2 query, count, display, rights, recovery, and shortfall rules; this file adds only what is specific to the award archives.
 
+Every user-facing turn follows the shared [beginner experience contract](../chany-studio/references/beginner-experience.md): quick start by default, plain Korean without internal field names, and one confirmation card before any paid generation.
+
 ## Required result
 
 - Resolve `target_count` from the user's explicit positive whole number or default to `6`.

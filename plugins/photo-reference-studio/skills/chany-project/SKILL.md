@@ -8,6 +8,8 @@ allowed-tools: AskUserQuestion
 
 Turn the current file-backed workspace into a focused advertising or commerce production project. The setup must work in both ChatGPT Work/Codex and Claude Cowork without duplicating the project instructions.
 
+Every user-facing turn follows the shared [beginner experience contract](../chany-studio/references/beginner-experience.md): quick start by default, plain Korean without internal field names, and one confirmation card before any paid generation.
+
 This skill configures the current project folder. It does not create a cloud Project object, a new Codex task, a repository, or a Higgsfield project on the user's behalf.
 
 ## Entry points
@@ -55,7 +57,7 @@ Do not implement automatic self-evolution. Corrections become project changes on
 6. Show a concise blueprint containing the project summary, assumptions, deliverables, selected skill chain, primary project agent, and every Chany-managed file to create or modify. Point out existing-file conflicts. Obtain one explicit approval before the first Chany-managed write through the runtime channel defined in `interactive-interview.md`. This approval does not retroactively authorize or undo a separately approved Moai phase.
 7. Read and adapt only the templates needed from `assets/templates/`. Unknown business facts must remain `미정 — 확인 필요`; never invent claims, prices, dates, rights, or approval status.
 8. Create or update the Chany-managed files according to the contract. Before changing an existing file, copy its previous contents into the timestamped local backup directory described there.
-9. Validate every generated path and format. Report files created, files updated, files preserved, unresolved decisions, and one useful first production request.
+9. Validate every generated path and format. Report in plain Korean what was saved, what was kept as-is, and what is still undecided, then end with one ready-to-copy first production request such as "이 제품 사진으로 인스타 광고 이미지 한 장 만들어줘".
 10. Tell the user to open a new task or session after setup so the host loads the new project instructions and its supported runtime delegation configuration.
 
 ## Project authority

@@ -12,7 +12,7 @@ When direction is not already approved, create three genuinely different concept
 2. `emotional-editorial`: a more sensory or narrative interpretation of the same message
 3. `trend-forward`: one current signal translated into the brand's own visual language
 
-Recommend one territory. Score each from 1–5 for brand fit, audience relevance, message clarity, category distinction, channel fitness, production feasibility, and trend longevity. Never make three cosmetic variations of the same layout. If the user asked for automatic production, continue with the highest-scoring territory after showing the decision record; otherwise wait for selection before paid work.
+Recommend one territory. Score each from 1–5 for brand fit, audience relevance, message clarity, category distinction, channel fitness, production feasibility, and trend longevity. Never make three cosmetic variations of the same layout. In quick start (the default in [beginner-experience.md](beginner-experience.md)), choose the recommended territory internally and state it as one plain sentence in the single confirmation card; do not show the scorecard. In detailed mode, show the decision record; if the user asked for automatic production, continue with the highest-scoring territory, otherwise wait for selection before paid work.
 
 ## 2. Creative direction packet
 

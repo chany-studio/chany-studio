@@ -7,6 +7,8 @@ description: Build safety-first marketing direction for hospitals, clinics, dent
 
 Create the healthcare strategy, evidence, patient-safety, and compliance overlay. Own the industry direction packet; delegate briefs, reference discovery, and asset production to existing production skills.
 
+Every user-facing turn follows the shared [beginner experience contract](../chany-studio/references/beginner-experience.md): quick start by default, plain Korean without internal field names, and one confirmation card before any paid generation.
+
 Read [references/domain-playbook.md](references/domain-playbook.md) before making strategic, visual, copy, or channel decisions.
 
 ## Human publication gate

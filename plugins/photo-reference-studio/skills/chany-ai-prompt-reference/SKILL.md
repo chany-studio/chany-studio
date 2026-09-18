@@ -7,6 +7,8 @@ description: Find MeiGen AI image references with their source prompts, show six
 
 Use MeiGen to learn how an AI visual was constructed. Deliver a visible reference board and a product-specific prompt handoff; do not generate media during research.
 
+Every user-facing turn follows the shared [beginner experience contract](../chany-studio/references/beginner-experience.md): quick start by default, plain Korean without internal field names, and one confirmation card before any paid generation.
+
 Read [automatic recovery](../chany-studio/references/reference-recovery.md). When called as a lane of the [combined board](../chany-studio/references/combined-reference-board.md), use its allocated count (normally 5 of 10), return visible results and prompt analysis, and do not run a separate selection checkpoint. A direct MeiGen-only request retains its requested count and single-source behavior.
 
 ## Search and display

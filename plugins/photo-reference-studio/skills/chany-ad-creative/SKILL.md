@@ -7,6 +7,8 @@ description: Create single-image ads, conversion carousels (캐러셀 광고), p
 
 Turn approved authority sources, industry direction, and campaign rules into placement-ready static advertising and promotional layouts.
 
+Every user-facing turn follows the shared [beginner experience contract](../chany-studio/references/beginner-experience.md): quick start by default, plain Korean without internal field names, and one confirmation card before any paid generation.
+
 Read [references/ad-formats.md](references/ad-formats.md) for objective, template, prompt, multi-channel, exact-copy, and QA rules.
 
 For purchase-oriented ads or reference + product/service adaptation, read the shared [performance-ad contract](../chany-studio/references/performance-ad-contract.md). Keep this skill as output owner: request `chany-meta-ad-research` only for needed ad discovery/analysis and `chany-jtbd-persona` only for unresolved customer decisions. Reuse their packets instead of restarting strategy. For a carousel, also read [references/carousel-ad-contract.md](references/carousel-ad-contract.md).

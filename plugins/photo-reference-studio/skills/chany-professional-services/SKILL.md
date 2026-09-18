@@ -7,6 +7,8 @@ description: Build evidence-led advertising and marketing direction for general 
 
 Create the professional-services strategy, evidence, and compliance overlay. Own the industry direction packet; delegate briefs, reference discovery, and final asset production to the existing production skills.
 
+Every user-facing turn follows the shared [beginner experience contract](../chany-studio/references/beginner-experience.md): quick start by default, plain Korean without internal field names, and one confirmation card before any paid generation.
+
 Read [references/domain-playbook.md](references/domain-playbook.md) before making strategic, visual, copy, or channel decisions.
 
 ## Select one mode

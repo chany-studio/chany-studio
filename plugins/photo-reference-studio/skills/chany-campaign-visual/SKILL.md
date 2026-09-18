@@ -7,6 +7,8 @@ description: Create authority-faithful staged commercial imagery and master camp
 
 Create one commercially useful staged image or master key visual from authoritative subject, place, interface, person, or event sources. The result should define a reusable campaign system, not merely an attractive isolated render.
 
+Every user-facing turn follows the shared [beginner experience contract](../chany-studio/references/beginner-experience.md): quick start by default, plain Korean without internal field names, and one confirmation card before any paid generation.
+
 Read [references/visual-production.md](references/visual-production.md) for formulas, prompt structure, campaign locks, and QA.
 
 Read the shared [creative-direction system](../chany-studio/references/creative-direction-system.md) and [current creative signals](../chany-studio/references/current-creative-signals.md). If no direction has been approved, route through `chany-creative-direction` before paid production; it must propose three brand-specific territories and recommend one rather than defaulting to a generic premium render.

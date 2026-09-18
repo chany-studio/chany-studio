@@ -6,6 +6,8 @@ description: Execute and track bounded still-image and campaign-video generation
 # Chany Media Production Loop
 
 Turn an approved image or campaign-video specification into an inspected asset
+
+Every user-facing turn follows the shared [beginner experience contract](../chany-studio/references/beginner-experience.md): quick start by default, plain Korean without internal field names, and one confirmation card before any paid generation.
 without unlimited regeneration. The production owner keeps authority over the
 concept, copy, identity, and deliverable; this skill owns the generation job
 lifecycle and its evidence.
