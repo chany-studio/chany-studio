@@ -4,16 +4,20 @@ Most Chany's Studio users have never generated an AI image or video. Apply this 
 
 ## 1. Quick start is the default
 
+Do not run site-trend scouting as part of production, including social-feed or trend-report searches. Existing requested visual references and necessary official capability/delivery-spec verification remain available. Use approved references and design craft, not a claim of fresh trends from an old ledger.
+
+First apply [content-intent.md](content-intent.md): reuse known purpose, audience, placement and authority inputs; ask only one to three missing high-impact questions. Bounded edits, cutouts and assembly need no new campaign interview. This is the same quick-start intake, not an extra stage.
+
 Unless the user asks to compare options ("여러 안 보여줘", "콘셉트 3안", "자세히"), or an approved direction already exists, run **quick start** for a single requested deliverable. "레퍼런스 먼저 보여줘" keeps quick start but waits for the user's reference pick before the card; "레퍼런스 없이 바로 만들어줘" skips reference search and works from the product profile alone.
 
 0. If the project brief records `Studio preferences`, use them as this job's defaults (look, reference source, quality and count, reference-upload default, ratio) unless the request says otherwise. They never replace the confirmation card.
 1. Inspect the attachments and the request. Ask a question only when a missing fact would make the output wrong, such as which product to show. Do not ask about price, offer, or CTA wording that the user did not mention; write copy only from supplied facts and leave out any price, discount, or claim that was not given.
-2. When the subject is a product the user supplied, follow [product-insertion.md](product-insertion.md): profile the product, run the reference board automatically, rank references for this product, show them as numbered images with one recommended, and continue to the card without waiting. For a service or when no product photo exists, work from the request and the shared creative-direction system.
-3. Choose the recommended reference and concept territory internally. Do not show the three-territory scorecard.
+2. For a new scene, if the user supplied a style reference, inspect it and follow [reference-led-design.md](reference-led-design.md); skip new discovery unless alternatives were requested. Otherwise, when the subject is a supplied product, follow [product-insertion.md](product-insertion.md): profile the product, run the reference board, rank and show numbered images with one recommended, and continue to the card. For a service or when no product photo exists, work from the request and shared creative direction. Bounded edits, cutouts, accepted-still animation and supplied-video-reference work reuse their existing authorities and skip this new-photo-discovery step.
+3. Choose the recommended reference and concept territory internally. Use [latest-model-routing.md](latest-model-routing.md) to choose generation versus editing versus a dedicated non-generative operation and recommend one currently supported route. Do not show the three-territory scorecard or a model comparison table.
 4. Show **one** confirmation card (§3) that contains the chosen reference, the direction in one sentence, the exact copy, and the paid-generation details. This single card is the reference choice, the concept approval, the copy approval, and the paid-generation approval for that displayed version. The user may answer with another reference number instead.
 5. After generation, show the result and the product match check first, then at most three short next-step suggestions in plain Korean, such as 다른 비율로 늘리기 and 이 이미지로 영상 만들기. Suggest 광고용 고화질로 키우기 only when the result is smaller than its intended use needs (see [product-insertion.md](product-insertion.md) §8).
 
-Video keeps its still-first order, but tell the user once, before starting, that there will be two confirmation cards: one for the governing still image and one for the video. Do not add other checkpoints.
+New identity-sensitive generated video keeps its still-first order: tell the user once that there will be two confirmation cards when both stages require paid generation, one for the governing still image and one for the video. Reuse an already accepted governing still; an authorized source-video edit does not require a redundant paid still stage. Do not add other checkpoints beyond actual changed scope or mandatory safety gates.
 
 **Detailed mode** is the previous full flow: reference board with a separate pick, three scored territories, separate copy approval. Use it when the user asks for options, for a multi-deliverable campaign through `chany-studio`, or for a **regulated context**: any industry overlay packet with a `before generation` gate or a named human reviewer, and in any case healthcare, finance or lending, alcohol, anything aimed at children or minors, sensitive personal data, before/after or health claims, and automotive safety or finance claims. Offer it in one line after a quick-start result: "여러 안을 비교하고 싶으면 '여러 안 보여줘'라고 말씀하세요."
 
@@ -21,8 +25,8 @@ Video keeps its still-first order, but tell the user once, before starting, that
 
 - Reply in the user's language. For a Korean user, write natural, polite Korean (해요체) at the level of someone who has never made an AI image.
 - Never show YAML, JSON, internal field names, packet names, version IDs, job IDs, or English placeholders such as `target_count`, `resolved_model_or_workflow`, `server_adjustments`, `brand-core`, `Visual DNA`, `L1/L2`, `JTBD`, or `claim_ledger`. Those records stay internal (project files and the job ledger).
-- When a concept must be named, use plain words: 기본에 충실한 안, 감성 연출 안, 요즘 유행을 살린 안. Use 레퍼런스 분석 instead of Visual DNA, 검색 범위 instead of L1/L2, 구매 이유 분석 instead of JTBD, 사진 배경 제거(누끼) instead of cutout, 행동 유도 문구(버튼 문구) instead of CTA.
-- A photography or film term may appear only next to its plain meaning, as a learning aid (for example 아웃포커싱(배경만 흐리게)). Translate the user's everyday words into professional direction and reflect it back once, as described in [plain-language-direction.md](plain-language-direction.md).
+- When a concept must be named, use plain words: 기본에 충실한 안, 감성 연출 안, 제품 특징을 강조한 안. Use 레퍼런스 분석 instead of Visual DNA, 검색 범위 instead of L1/L2, 구매 이유 분석 instead of JTBD, 사진 배경 제거(누끼) instead of cutout, 행동 유도 문구(버튼 문구) instead of CTA.
+- Keep photography, film and design terminology and production prompts internal unless the user asks to see or learn them. Describe the visible outcome in everyday words through [plain-language-direction.md](plain-language-direction.md); users do not need to study vocabulary.
 - Keep a turn short: result or question first, explanation after, no tables unless the user is comparing options.
 - Name the model or template actually resolved for this job once in the confirmation card (GPT Image 2.5 by default, or for example Marketing Studio Image or a named Higgsfield template). If the host hides the model, write "기본 모델(확인 불가)" rather than claiming GPT Image 2.5. Do not explain model routing.
 
@@ -33,6 +37,7 @@ Before any paid generation, keep the full `paid_generation_approval` record inte
 ```text
 이렇게 만들까요?
 - 만들 것: 인스타그램 피드 광고 이미지 1장 (4:5)
+- 목적: 처음 보는 고객이 제품의 특징을 이해하고 구매 페이지로 이동하도록
 - 레퍼런스: 3번 사진 느낌으로 (다른 번호를 말씀하셔도 돼요)
 - 준비: 제품 배경을 먼저 깔끔하게 지워요
 - 참고 사진: 3번(Pinterest, 다른 사람의 작품)을 Higgsfield에 참고 입력으로 보냅니다. 결과가 원본과 너무 비슷하면 광고에 쓰지 마세요
@@ -43,6 +48,8 @@ Before any paid generation, keep the full `paid_generation_approval` record inte
 ```
 
 Use the server-returned cost and balance. When they are unavailable, write "비용: 확인할 수 없어요. 생성 전에 Higgsfield에서 잔액을 확인해 주세요" and do not guess. The illustrative numbers above are examples only and never a price reference.
+
+For a task-fit alternate, add one line explaining the concrete reason and any trade-off, for example "추천 이유: 배경만 고치도록 영역을 지정할 수 있는 도구를 제안해요. 제품은 원본과 비교해 확인해요." Show the requested default, exact proposed model/mode and affected assets with the current quote in this same card. No separate model-selection interview; no alternate execution until this card is approved. For deterministic or free local work, show the bounded change without inventing a paid generation stage. Exact technical prompts stay in the internal record and are shown only on request.
 
 Omit the 레퍼런스, 준비, and 참고 사진 lines when they do not apply. The 참고 사진 line is mandatory whenever a reference image will be sent to the generation service; approving a card without it never authorizes that upload. Offer these choices through the host's question tool, or as numbered text if none exists:
 
@@ -71,4 +78,4 @@ For an ordinary product or service post, deliver the draft with a short plain-Ko
 
 ## 6. Project setup for beginners
 
-`chany-project` asks only what a beginner can answer: what they sell, who buys it, where they will post, and the plain-Korean project preference cards (what to make, look, reference source, quality, reference-photo upload, ratio). Use the recommended defaults for execution mode, approval location, and file layout. End setup with one ready-to-copy first request, for example: "이 제품 사진으로 인스타 광고 이미지 한 장 만들어줘".
+`chany-project` uses the same compact purpose-led intake: what response they want, who it is for, and what/where to make, only when unknown. Do not append a separate preference questionnaire. Recommend look, ratio and working defaults in the blueprint; collect optional preferences only when requested or when they materially change the result. Defaults do not approve uploads or spending. End setup with one ready-to-copy first request, for example: "이 제품 사진으로 인스타 광고 이미지 한 장 만들어줘".

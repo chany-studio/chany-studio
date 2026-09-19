@@ -11,7 +11,7 @@ Record only what is relevant:
 | Area | Decision |
 |---|---|
 | Industry direction | primary industry skill, subtype or mode, jurisdiction, journey stage, proof objects, prohibited claims, and human-review gate |
-| Business objective | awareness, consideration, conversion, or retargeting |
+| Business objective | awareness, consideration, conversion, retargeting, inquiry/booking, or educational/editorial understanding and saving; retain the requested purpose rather than forcing a sales funnel |
 | Audience | who, purchase context, awareness level, and objections supplied by the user |
 | Offer truth | visible and user-approved product, service, place, interface, event, employment, operational, benefit, evidence, and restriction facts |
 | Offer | exact price, discount, dates, availability, bundle, conditions, and legal copy |
@@ -79,7 +79,7 @@ Treat imported proposals as non-authoritative until the user adopts them. Do not
 
 ## Message hierarchy
 
-Use one primary message and one CTA per placement.
+Use one primary message per placement. For ads, use one primary CTA; for editorial, educational or cover work, include a next action only when appropriate to the requested purpose. Do not add a buy button by default.
 
 ```yaml
 primary_message: ""

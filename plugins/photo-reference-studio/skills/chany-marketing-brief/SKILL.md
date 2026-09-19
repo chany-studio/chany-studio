@@ -11,6 +11,8 @@ Every user-facing turn follows the shared [beginner experience contract](../chan
 
 Read [references/brief-schema.md](references/brief-schema.md) for the decision framework and output schema.
 
+Apply [purpose-led intake](../chany-studio/references/content-intent.md) before selecting a production direction. Reuse project and upstream decisions; map the same intent into this brief, not a second interview. Do not force a full campaign brief onto a bounded edit or a one-off asset with sufficient context. Non-ad editorial, educational and cover work need not have a purchase CTA.
+
 When the brief includes visual, page, ad, or video outputs, also read the shared [creative-direction system](../chany-studio/references/creative-direction-system.md) and [current creative signals](../chany-studio/references/current-creative-signals.md). Use them to turn plain-language preferences into production decisions; do not ask a beginner to supply design jargon.
 
 If a Chany industry skill applies, consume its industry direction packet before finalizing the brief. Keep the packet's journey, proof, claims, directing, and human-review gates intact; resolve conflicts instead of silently generalizing them.

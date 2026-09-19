@@ -30,6 +30,8 @@ When rights or source quality are unclear, select 새로 만들기. Never ask a 
 
 ## Beginner interaction
 
+Reuse the accepted video observations and product inputs across every handoff. Do not run a second photo-reference search or ask the same look questions when designing governing stills. Describe any necessary adaptation to the new product in everyday words; if a source action depends on unseen geometry, use a supported visible action instead of inventing the hidden product structure.
+
 If the user already supplied a link and product images, do not start a long interview. Infer 9:16 and the observed reference duration for a Reel/Short unless the user names another placement. Ask only one bundled question when a blocking item is missing: the product source, the intended product/service, or whether the supplied source clip is theirs to modify.
 
 Before paid work, tell the user once that two cards will appear: first the governing product image, then the video. The first card shows the chosen reference construction in one sentence, exact product/copy, upload disclosure, live model/workflow, output count, and live cost. The second card shows the accepted still, scene count, duration, ratio, audio plan, actual video operation, and live cost. A changed product, reference, copy, duration, model, count, or source upload requires a new card.

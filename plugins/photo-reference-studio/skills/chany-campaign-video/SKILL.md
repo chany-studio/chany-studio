@@ -1,6 +1,6 @@
 ---
 name: chany-campaign-video
-description: Plan and create product or service commercials, reference-to-ad adaptations and purchase-oriented performance videos (전환 광고 영상), with JTBD, persuasive beats, approved stills and measured QA. Also supports brand films and promotion; not casual creator templates, assembly-only work or static ads.
+description: Plan and create product or service commercials, brand films, reference-to-ad adaptations and purchase-oriented performance videos (전환 광고 영상), or make bounded AI edits to authorized source footage (영상 배경·조명 수정, 제품 교체, 연장). Reuse approved stills and evidence; not casual creator templates, deterministic assembly-only work or static ads.
 ---
 
 # Chany Campaign Video
@@ -10,6 +10,8 @@ Create a concept-led campaign video without sacrificing product, service, place,
 Every user-facing turn follows the shared [beginner experience contract](../chany-studio/references/beginner-experience.md): quick start by default, plain Korean without internal field names, and one confirmation card before any paid generation.
 
 Translate everyday look words into professional photo and film direction, and offer the plain-words guided card when the user wants control, following [plain-language direction](../chany-studio/references/plain-language-direction.md).
+
+First distinguish new video from editing existing footage. For a bounded source-video change, read [video editing](references/video-edit.md) and follow that branch instead of the new-film workflow below. Reuse source evidence and accepted decisions; do not force product-photo discovery, a full conversion brief or new governing-still generation. Pure trims, subtitles and timeline changes route directly to `chany-video-assembly`.
 
 For a supplied physical product, follow the shared [product insertion pipeline](../chany-studio/references/product-insertion.md): references ranked for this product, clean product source, reference-style generation with the product as the authority, visible product match check, and optional upscale, extra ratios, or video.
 
@@ -34,6 +36,8 @@ For a requested object swap or motion transfer in authorized footage, read [Genj
 For animated hook text, benefit graphics, logo reveals or CTA cards, call `chany-motion-design` only for those requested layers/clips. It checks Higgsfield execution capability and returns accepted graphics or an explicit plan-only handoff. Native motion graphics are optional, not a dependency of every campaign video.
 
 ## Workflow
+
+For simple reference remakes, reuse the accepted reference and brief without new photo discovery. In each scene distinguish product movement from camera movement and keep only the motion needed to communicate the idea. Lock product state and position at cuts when continuity matters; an intentional discontinuity should be part of the plan. Apply the output-specific playback checks in creative-quality-loop.md, including the final frame and interaction moments.
 
 1. Consume the selected industry direction packet and approved marketing brief. Lock the objective, audience decision, primary message, CTA, claim ledger, required evidence, disclosures, source authorities, platform, duration or duration limit, ratio, and named deliverables.
 2. If a video reference is supplied, classify it through `chany-video-reference-ingest`. A player or browser view supports only observed timestamps; an inspectable extension capture or local file may proceed through the relevant non-destructive `chany-preflight` checks and shared beat table. Transfer timing logic only, not protected expression.

@@ -86,3 +86,10 @@ For campaign video, technical checks include duration, dimensions, frame rate,
 codec, audio presence, and playable output. Creative checks include the approved
 first frame, temporal continuity, product or identity stability, physical
 plausibility, copy and disclosure timing, message order, and scene acceptance.
+
+For a source-video edit, `specification_version_id` identifies the owner's bounded
+edit specification instead of requiring a new-film concept. Keep source timing,
+target region and audio/preserve policy in that specification; bind the original
+clip as an authority input. The operation/model/options fields hold the resolved
+edit mode. Compare changed and untouched intervals against the source, including
+audio and cut boundaries; do not create a redundant still job to fill this ledger.

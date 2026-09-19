@@ -7,6 +7,8 @@ description: Legacy compatibility shim for explicit auto-photo-production reques
 
 This name remains temporarily available so existing saved prompts do not fail. Do not reproduce the former all-in-one workflow.
 
+Follow the shared [beginner experience](../chany-studio/references/beginner-experience.md), including purpose-led intake and reuse of accepted decisions. This shim adds no interview or approval stage.
+
 Route the request as follows:
 
 - multi-asset or end-to-end campaign → `chany-studio`
@@ -22,13 +24,13 @@ Route the request as follows:
 - awarded advertising and campaign benchmarks from Ads of the World, D&AD, or The One Show → `chany-award-ad-reference`
 - vague direction, design concept, current trend translation, or expert-quality prompt → `chany-creative-direction`
 - staged image or master key visual → `chany-campaign-visual`
-- static ad, carousel, poster, banner, or channel set → `chany-ad-creative`
+- static ad, promotional/editorial carousel, YouTube thumbnail, Instagram cover, poster, banner, or channel set → `chany-ad-creative`
 - product detail-page modules → `chany-detail-page`
 - bounded edit or inpainting → `chany-image-edit`
 - static adult model or fashion try-on → `chany-model-fashion`
 - YouTube, Instagram, or another browser video reference link, authorized tab capture, or local reference-video intake → `chany-video-reference-ingest`
 - short product Reel/Short link plus the user's product, or “이 영상에서 제품만 바꿔줘” → `chany-viral-product-remake`
-- product commercial, cinematic brand film, promotional motion, concept-led performance video, or Genjutsu object swap / motion transfer → `chany-campaign-video`
+- product commercial, cinematic brand film, promotional motion, concept-led performance video, bounded AI source-video edit/extension, or Genjutsu object swap / motion transfer → `chany-campaign-video`
 - animated ad typography, benefit diagram, logo reveal, or CTA end card → `chany-motion-design`
 - multiple controlled edits of one approved source ad or Ad Multiplier → `chany-ad-variants`
 - authorized YouTube/long-form video into reviewed Reels or Shorts clips → `chany-shortform-recut`

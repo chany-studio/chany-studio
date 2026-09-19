@@ -2,6 +2,8 @@
 
 Maintain one compact state record for a multi-skill campaign. Unknown values stay empty or explicitly uncertain; never fill them by guessing.
 
+Apply [content-intent.md](content-intent.md): reuse this record's objective, audience, channels, authority and asset matrix rather than creating a second brief. Keep each material decision's source and supplied/observed/proposed/approved/unknown status beside it. Per-output intent can differ from the shared campaign purpose (for example editorial versus conversion). Carry the operation/model decision from [latest-model-routing.md](latest-model-routing.md) inside the existing asset or paid plan. An accepted recommendation is not proof of a claim or approval for a new paid scope.
+
 ```yaml
 campaign_id: ""
 industry_direction:

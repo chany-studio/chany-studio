@@ -1,7 +1,7 @@
 {
   "name": "photo-reference-studio",
-  "version": "2.14.0+codex.20260918150904",
-  "description": "Chany's Claude and ChatGPT Work/Codex advertising studio: JTBD-led conversion creative, one-step short product-video remakes, controlled ad variants, product 3D, GPT Image 2.5 stills, bounded production and publication review.",
+  "version": "2.15.0+codex.20260919145835",
+  "description": "Chany's Claude and ChatGPT Work/Codex studio: plain-language, purpose-led image and video creation, reference-led design, task-fit model recommendations, scoped editing, GPT Image 2.5 default and paid-production review.",
   "author": {
     "name": "Chany",
     "url": "https://github.com/chany-studio"
@@ -22,7 +22,7 @@
     "commercial photography reference",
     "award ad reference",
     "creative direction",
-    "trend aware prompting",
+    "purpose-led production",
     "key visual",
     "detail page",
     "ad creative",
@@ -79,7 +79,8 @@
       "Native Claude question-card interview and Chany-file approval",
       "Eleven industry marketing and art-direction overlays",
       "Beginner-friendly expert creative direction and anti-genericity review",
-      "Current Pinterest trend translation with brand-fit scoring",
+      "Reference-led design craft without site-trend scouting",
+      "Purpose-led model recommendations with scoped image and video editing",
       "Evidence and publication-review gates",
       "GPT Image 2.5 default for generative still images with scoped overrides",
       "Bounded still-image and campaign-video production loop with stable job ledger",

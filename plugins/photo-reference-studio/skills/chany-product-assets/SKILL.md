@@ -27,6 +27,8 @@ When this workflow needs a generative still-image edit, read and follow the shar
 
 Transparent cutouts have no floor, glow, contact shadow, or generated background. White packshots use pure `#FFFFFF`, safe margin, and at most a subtle natural contact shadow unless a shadowless output was requested.
 
+For a transparent cutout, verify an actual alpha channel and inspect edges on both light and dark backgrounds, including glass, holes and fine parts. A checkerboard painted into pixels is not transparency. Deliver a format that preserves alpha; do not silently flatten it to JPEG. Keep the untouched original alongside the new output.
+
 Inspect the connected tool schema before calling it. If external authentication is required, direct the user to the host-provided login flow and never ask for credentials or tokens. If no suitable edit tool is available, return the source lock and production prompt and state the missing capability.
 
 Paid submission, recovery, and scope changes follow the shared runtime contract exactly. Never blindly resubmit after a timeout, disconnect, or unknown charge state; inspect the original job or receipt first. A changed request requires a new paid-generation preflight and approval under that contract.

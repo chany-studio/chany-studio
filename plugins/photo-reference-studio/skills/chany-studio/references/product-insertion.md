@@ -17,7 +17,9 @@ Before searching, read the product photo and record internally:
 
 ## 2. References chosen for this product
 
-Run the generic reference board automatically (Pinterest 5 + MeiGen 5 by default, see [combined-reference-board.md](combined-reference-board.md)) using the product's category as the search subject. Rank candidates for this specific product, not just the category, using the product-fit criteria in `chany-reference-board/references/search-policy.md`:
+A supplied video-reference packet already supplies the visual direction for its governing stills. Reuse observed frames/description and the approved scene plan; do not launch a Pinterest/MeiGen photo board unless the user requests alternate looks. An accepted image reused for animation likewise needs no new board.
+
+First inspect any user-supplied reference image/file/link under [reference-led-design.md](reference-led-design.md). An existing reference replaces automatic discovery unless the user asks for alternatives; a product photo alone is not a style reference. Otherwise run the generic reference board (Pinterest 5 + MeiGen 5 by default, see [combined-reference-board.md](combined-reference-board.md)) using the product category. Rank candidates for this specific product using `chany-reference-board/references/search-policy.md`:
 
 - the reference leaves room of the right shape for this silhouette (a tall bottle needs vertical space; a wide pouch needs a horizontal surface)
 - its palette flatters or contrasts cleanly with the product colors, and its background keeps the label readable

@@ -5,12 +5,9 @@ description: Execute and track bounded still-image and campaign-video generation
 
 # Chany Media Production Loop
 
-Turn an approved image or campaign-video specification into an inspected asset
+Turn an approved image or campaign-video specification into an inspected asset without unlimited regeneration. The production owner keeps authority over concept, copy, identity and deliverable; this skill owns the generation lifecycle and its evidence.
 
 Every user-facing turn follows the shared [beginner experience contract](../chany-studio/references/beginner-experience.md): quick start by default, plain Korean without internal field names, and one confirmation card before any paid generation.
-without unlimited regeneration. The production owner keeps authority over the
-concept, copy, identity, and deliverable; this skill owns the generation job
-lifecycle and its evidence.
 
 Read the shared [runtime boundaries](../chany-studio/references/runtime-boundaries.md),
 [media job ledger](../chany-studio/references/media-job-ledger.md), and
@@ -18,7 +15,7 @@ Read the shared [runtime boundaries](../chany-studio/references/runtime-boundari
 For a generated still, also apply the [image-generation runtime](../chany-studio/references/image-generation-runtime.md): GPT Image 2.5 (`gpt_image_2_5`) is the default unless that contract authorizes a scoped override.
 For any billable provider operation, apply the [paid-media runtime contract](../chany-studio/references/higgsfield-runtime-contract.md).
 
-For Genjutsu revisions, consume the campaign-video owner's [edit contract](../chany-campaign-video/references/genjutsu-edit.md), retaining the source clip version, target and preserve list. Reuse approved source frames; do not force a redundant still generation. Native composition edits belong to `chany-motion-design`; only its generated source assets enter this loop.
+For source-video revisions, consume the campaign-video owner's [bounded edit contract](../chany-campaign-video/references/video-edit.md), plus [Genjutsu rules](../chany-campaign-video/references/genjutsu-edit.md) when applicable. Retain the source clip version, time range, target, audio policy and preserve list. The approved edit specification replaces a new-film concept/still prerequisite. Reuse approved source frames; do not force a redundant still generation. Native composition edits belong to `chany-motion-design`; only its generated source assets enter this loop.
 
 ## Workflow
 
@@ -28,10 +25,13 @@ For Genjutsu revisions, consume the campaign-video owner's [edit contract](../ch
 2. Create one stable ledger record per requested output. Import or upload each
    authority input once when the runtime allows reuse, then bind its reusable
    reference to the ledger without exposing temporary handles.
-3. Resolve the cheapest useful proof before an expensive call: a low-cost image
-   draft for image work, or an approved governing still and shot contract for
-   generated video. Show the actual preview in the conversation when the host
-   can render it; a link-only handoff is a fallback.
+3. Reuse accepted assets as proof. A still-image request does not require an
+   additional paid draft before its approved final image. Generate a draft only
+   when requested or included in the approved scope; preserve approved quality
+   settings. New generated video uses the accepted governing still and shot contract;
+   source-video editing uses the approved source and bounded edit specification.
+   Do not generate another still merely because the workflow changed owners.
+   Show the actual preview in the conversation when the host supports it; links are a fallback.
 4. Resolve the live operation, model or workflow, input roles, options, count,
    quote, and recovery controls. Obtain version-specific approval before a paid
    submission.

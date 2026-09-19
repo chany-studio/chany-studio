@@ -1,6 +1,6 @@
 ---
 name: chany-ad-creative
-description: Create single-image ads, conversion carousels (캐러셀 광고), promotional posters and banners that carry finished design, hook, primary copy and CTA. Use for static performance advertising or Meta-reference adaptation as well as awareness and promotion; not for a text-free hero image or master key visual (use chany-campaign-visual), full pages, or motion video.
+description: Create single-image ads, conversion carousels (캐러셀 광고), editorial magazine carousels, YouTube thumbnails, Instagram covers, posters and banners from everyday requests or supplied references. Use for finished static marketing and branding design; not for text-free master visuals (use chany-campaign-visual), full pages or motion video.
 ---
 
 # Chany Ad Creative
@@ -14,6 +14,8 @@ Translate everyday look words into professional photo and film direction, and of
 For a supplied physical product, follow the shared [product insertion pipeline](../chany-studio/references/product-insertion.md): references ranked for this product, clean product source, reference-style generation with the product as the authority, visible product match check, and optional upscale, extra ratios, or video.
 
 Read [references/ad-formats.md](references/ad-formats.md) for objective, template, prompt, multi-channel, exact-copy, and QA rules.
+
+For editorial carousels, thumbnails, covers and static ads, read [social design modes](references/social-design-formats.md) and shared [design craft](../chany-studio/references/design-intelligence.md). Their non-ad modes override sales-only CTA/ad-copy requirements. Keep this skill as owner without another strategy interview. Supplied reference images follow [reference-led design](../chany-studio/references/reference-led-design.md) before discovery.
 
 For purchase-oriented ads or reference + product/service adaptation, read the shared [performance-ad contract](../chany-studio/references/performance-ad-contract.md). Keep this skill as output owner: request `chany-meta-ad-research` only for needed ad discovery/analysis and `chany-jtbd-persona` only for unresolved customer decisions. Reuse their packets instead of restarting strategy. For a carousel, also read [references/carousel-ad-contract.md](references/carousel-ad-contract.md).
 

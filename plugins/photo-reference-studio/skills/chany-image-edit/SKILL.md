@@ -19,6 +19,8 @@ Before a generative still-image edit, read and follow the shared [image model de
 
 ## Workflow
 
+Interpret everyday revisions as the smallest affected change: "더 밝게" is not permission to redesign the composition; "글자만 크게" should prefer editable typography; "덜 광고 같게" may need one short choice about copy density versus visual styling. Compare unchanged regions after editing. Generative preservation is a target to verify, never a guarantee of pixel identity; if the request requires exact untouched pixels, use a supported mask/composite workflow or disclose the limitation before execution.
+
 1. Identify the accepted asset, exact mask or named region, one requested change, and every property that must stay fixed.
 2. Reattach the original authority when the edit touches a product, food, label, approved copy, model, garment, or accessory.
 3. Use a mask or an unambiguous target region when supported. Change only the named property and preserve all other pixels and locks.

@@ -4,17 +4,19 @@ Use this contract for setup, update, status, and doctor. Keep the workflow limit
 
 ## Compact interview
 
-Derive answers from the user's invocation, attachments, and existing files first. Ask no more than three questions in one round, grouping related fields. Use one follow-up round only when a missing answer blocks a safe project design. The optional project preference cards in [interactive-interview.md](interactive-interview.md) are separate from this limit: up to two cards of four plain-Korean choices that let the user pick deliverables, channels, look, reference source, quality, reference-upload default, and ratio.
+Derive answers from the user's invocation, attachments, and existing files first through [content-intent.md](../../chany-studio/references/content-intent.md). Ask no more than three short questions in one round. Use one follow-up round only when a missing answer blocks a safe project design. Preferences share this question budget; do not append another questionnaire. Persist supplied preferences and label recommended defaults in the blueprint, never as user answers. The axes below are an internal checklist, not three overloaded questions to read aloud.
 
 In an interactive Claude setup, render the missing axes through the top-level `AskUserQuestion` flow in [interactive-interview.md](interactive-interview.md), not as prose. Put one to three questions in the initial card, give each question two to four grounded options with concise consequence-oriented descriptions, and use `multiSelect` only when choices can genuinely coexist. The built-in `Other` path accepts free-form detail. An empty result, timeout, or tool error is not an answer or approval; an explicit cancellation ends the Chany phase without fallback questions or Chany-managed writes.
 
-1. **Purpose and audience:** What product or brand is this for, what outcome matters, who is the audience, and what is the deadline?
+1. **Purpose and audience:** What should the viewer understand, feel or do, and who is it for? Resolve purchase, inquiry/booking, awareness, educational/editorial or bounded production intent before choosing a workflow. Keep deadline and measurable success only when supplied or necessary; do not invent customer facts or force a sales goal.
 2. **Deliverables and channels:** Which assets are required, where will they appear, and what sizes, ratios, lengths, languages, and quantities are fixed?
 3. **Authority and constraints:** Which source images, logos, brand guides, approved facts, claims, prices, offers, CTA, rights, consent, visual references, and forbidden elements are authoritative? Do not ask beginners about execution mode or where paid approval happens: default to connected-tool production when a media connection exists (otherwise planning with a web handoff) and to a confirmation card in chat before every paid generation, and record both as setup defaults the user can change later ([beginner experience](../../chany-studio/references/beginner-experience.md) §6).
 
 Answers already present in the invocation, attachments, or project files count as inputs, not questions to repeat. Confirm only missing campaign-specific facts and any contradiction between current instructions and `.chany-studio/*`.
 
 If a field remains unknown but does not block setup, write `미정 — 확인 필요` instead of asking another question.
+
+Record per-deliverable purpose/placement and decision provenance in the existing brief, not a second brief or new JSON schema. Save creative/model preferences as defaults, not a frozen model allocation or paid approval. Production resolves the actual operation, connected model and quote later. Existing projects reuse their recorded decisions; migrate managed instructions only through an approved update blueprint.
 
 ## Blueprint before Chany-managed writing
 
@@ -45,8 +47,9 @@ Select the primary industry overlay before the production skills. Read `chany-st
 | MeiGen AI image references with source prompts and product-specific adaptation | `chany-ai-prompt-reference` |
 | staged master visual | `chany-campaign-visual` |
 | commerce detail-page modules | `chany-detail-page` |
-| single-image ads, conversion carousels, promotion, posters, banners, channel variants | `chany-ad-creative` |
+| single-image ads, conversion/editorial magazine carousels, YouTube thumbnails, Instagram covers, posters, banners | `chany-ad-creative` |
 | bounded repair of an accepted image | `chany-image-edit` |
+| bounded AI change to an authorized source video's background, lighting, object or length | `chany-campaign-video` video-edit branch; deterministic trims/captions go to `chany-video-assembly` |
 | adult model or source-locked fashion stills | `chany-model-fashion` |
 | product commercial, brand film, promotional motion, or concept-led campaign video | `chany-campaign-video` |
 | short Reel/Short reference link plus the user's product, including “제품만 바꾸기” | `chany-viral-product-remake` → reference ingest → original campaign-video remake by default, or authorized Genjutsu swap when source rights and media are confirmed |

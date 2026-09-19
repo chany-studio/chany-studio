@@ -14,6 +14,12 @@
 
 A ratio adaptation that changes placement deliberately may remain `layout-local`. A substantially new composition is `new-direction`.
 
+## Choose the edit operation before the model
+
+Apply the shared [model router](../../chany-studio/references/latest-model-routing.md). Typography, cropping, color adjustment or exact pixel preservation should use a supported layout/mask/composite tool when sufficient. Raw-source cutout belongs to `chany-product-assets`; frame expansion prefers bounded outpaint over recreating the whole scene. Generative edits keep GPT Image 2.5 as default. A verified mask-input advantage may justify recommending Nano Banana 2 or another supported editor, only with scoped confirmation under the image runtime. Do not equate "image references" or an `is_inpaint` flag with actual mask support without checking the live input roles.
+
+The image and requested change supply the intent for a bounded edit. Do not run a new audience interview or reference search. A mask is a control, not proof of preservation: compare outside the changed region and disclose any unsupported exact-pixel requirement before execution.
+
 ## Revision state
 
 ```yaml

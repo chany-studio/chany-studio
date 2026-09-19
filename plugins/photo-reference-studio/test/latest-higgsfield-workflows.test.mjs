@@ -65,7 +65,7 @@ test("2.14 manifests and public guides publish the current production families",
     readFile(join(repoRoot, "docs", "HIGGSFIELD-UPDATES.md"), "utf8"),
   ]);
 
-  assert.equal(claude.version, "2.14.0");
+  assert.equal(claude.version, "2.15.0");
   assert.equal(codex.version.split("+")[0], claude.version);
   for (const keyword of ["ad-variants", "shortform-recut", "product-3d"]) {
     assert.ok(claude.keywords.includes(keyword));

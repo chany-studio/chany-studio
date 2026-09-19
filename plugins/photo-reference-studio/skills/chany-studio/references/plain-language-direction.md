@@ -1,31 +1,33 @@
 # Plain words to professional direction
 
-Beginners describe what they want in everyday words ("배경 흐리게", "화장품 화보처럼"). Professionals get better results because they know the exact photography and film term, and the model responds to that term. This contract lets any Chany skill translate the user's words into professional direction, show the translation so the user learns it, and, when the user wants control, guide them through a short plain-language question card. It works in Claude Cowork (the `AskUserQuestion` card) and ChatGPT Work (its structured input when exposed, otherwise numbered choices in text). It never adds a checkpoint to quick start.
+Users never need to learn photography, film, design vocabulary or prompt writing. Interpret everyday words and supplied reference images into concrete production decisions internally. Use Claude's AskUserQuestion or the current host's callable structured question tool when available, otherwise short numbered choices. Never assume tool availability from the platform name, simulate a tool call, or change operating mode to obtain a question widget. This guidance is shared by Claude and ChatGPT Work/Codex.
 
 ## 1. Translate and reflect back
 
-When a request contains a plain-language look, map each phrase with §4 and use the professional clause in the internal prompt. Reflect the translation back once, in one short line, before the confirmation card:
+When a request contains a plain-language look, use §4 as possible interpretations, not a fixed dictionary. Keep terminology in the internal production prompt. Reflect only the visible result in one sentence when useful:
 
 ```text
-이렇게 이해했어요: 배경 흐리게 → 아웃포커싱(배경만 흐리고 제품은 선명하게) · 화장품 화보 조명 → 뷰티디쉬 조명(부드럽지만 또렷한 광택)
+제품과 글자는 선명하게 두고, 배경만 부드럽게 흐리게 만들게요.
 ```
 
-Always pair a term with its plain meaning. Never answer a plain request with a bare term, and never correct the user's wording. If a phrase could mean two different looks (for example "고급스럽게" as dark and moody, or as bright and minimal), choose the one that fits the product and reference, say which one you chose, and let the card's change option cover the other.
+Do not teach terminology or show a rewritten expert brief unless asked. For a material ambiguity, ask about visible differences: background blur versus motion blur versus hiding a face. For minor choices, infer from the supplied reference and product and recommend a default. "화장품 화보" does not imply beauty-dish lighting; choose light size, direction and reflections from the desired finish and material. A still reference does not establish an exact lens, light fixture or original prompt.
 
 ## 2. Guided look card
 
-Offer "느낌 직접 고르기" when the user asks how to describe a look, asks for more control, says the result feels wrong without saying why, or picks the card's change option. Ask one card of at most four questions, each with three or four options:
+This guidance never adds a checkpoint to quick start; reuse the existing confirmation for paid production.
+
+Offer "느낌 직접 고르기" when useful, not as a mandatory interview. Ask only 1–3 unresolved questions at a time, within the live tool's limits, with 2–3 plain-language choices. Include a recommendation and allow "알아서 추천해 줘" or free text:
 
 - 빛 (lighting), 각도·거리 (angle and shot size), 배경·색감 (background and tone), and for video 카메라 움직임 (camera movement)
-- option label: plain words first, the term in parentheses, for example `배경만 흐리게 (아웃포커싱)`
+- option label: visible effect only, for example `배경만 흐리게` or `움직이는 느낌으로`
 - option description: what the picture will look like and when it suits a product, in one sentence
 - first option: the recommendation for this product and reference, marked `(권장)`
 - skip any question the request or chosen reference already answers
 
-After the answers, show the user their request rewritten as a professional brief in Korean, so they can reuse it next time:
+After the answers, summarize the intended appearance, not the professional vocabulary:
 
 ```text
-전문가식으로 쓰면: "골든아워 역광, 아웃포커싱, 45도 3/4 앵글, 오른쪽에 문구 여백, 웜톤"
+따뜻한 햇빛 아래 제품은 선명하게, 배경은 부드럽게 만들고 오른쪽에 문구 자리를 남길게요.
 ```
 
 Then continue to the normal confirmation card. The guided card replaces the change step; it is not an extra approval.
@@ -42,8 +44,8 @@ Use the closest row. The prompt clause is guidance for the internal prompt, not 
 
 | 이렇게 말하면 | 전문 용어 | 프롬프트에 넣는 뜻 |
 |---|---|---|
-| 배경 흐리게, 블러, 제품만 또렷하게 | 아웃포커싱(얕은 심도, 보케) | shallow depth of field, background softly out of focus, creamy bokeh, product tack-sharp |
-| 화장품 화보처럼, 반짝이는 고급 조명 | 뷰티디쉬 조명 | beauty-dish key light, soft yet crisp specular highlights, even illumination |
+| 배경만 흐리게, 제품만 또렷하게 | 얕은 심도 | shallow depth of field, background softly out of focus, product and label sharp; ambiguous blur requires clarification |
+| 화장품 화보처럼, 반짝이는 고급 조명 | 소재에 맞는 반사광 제어 | select diffused light and controlled highlights from the reference and product finish; beauty dish is only one possible setup |
 | 그림자 없이 부드럽게 | 확산광(소프트박스) | large diffused softbox light, soft gradual shadows |
 | 그림자 진하게, 선명하게 | 하드 라이트 | hard direct light, crisp defined shadows |
 | 테두리가 빛나게 | 림 라이트 | rim light tracing the product edges |
@@ -100,6 +102,9 @@ Use the closest row. The prompt clause is guidance for the internal prompt, not 
 | 휙 넘어가게 | 휩팬 전환 | whip-pan transition |
 
 ## 5. Boundaries
+
+- A supplied reference file/link takes priority over discovery. Follow [reference-led-design.md](reference-led-design.md): inspect it, separate style authority from product authority, and skip the automatic board unless alternatives were requested. Show existing reference previews when supported; never invent a visual option or claim a link was inspected when it was not.
+- Revision requests such as "덜 광고 같게" change only the relevant copy density, layout or lighting while preserving accepted product, text and other locks. Ask only if the intended difference is genuinely unclear.
 
 - Do not quiz the user or ask them to pick terms they do not know; options always lead with plain words.
 - A term never overrides product truth: if a look would hide the label or change the product, say so and suggest the nearest look that keeps it.

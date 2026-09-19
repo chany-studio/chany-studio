@@ -2,6 +2,10 @@
 
 Choose the industry overlay by the offer and desired action, then choose the production owner by the final deliverable—not merely by a tool name mentioned in the request.
 
+Supplied style references follow [reference-led-design.md](reference-led-design.md) and replace automatic discovery unless alternatives were requested. [design-intelligence.md](design-intelligence.md) supplies internal design craft, not site-trend search or new source lanes. Format-specific editorial and cover rules override conversion-only requirements for non-ad work.
+
+Resolve [content intent](content-intent.md) before production routing. Existing image edits use `chany-image-edit`; existing footage's generative changes use `chany-campaign-video`'s [bounded video-edit branch](../../chany-campaign-video/references/video-edit.md). Trims, subtitle/copy overlays and timeline assembly use `chany-video-assembly`, not an image/video generation model. Reuse known decisions and skip new campaign interviews for bounded changes.
+
 Project setup is a separate concern: requests to create or update project instructions, briefs, state, `AGENTS.md`, `CLAUDE.md`, or project-specific agents belong to `chany-project` before production routing begins.
 
 ## Industry overlay routing
@@ -40,6 +44,7 @@ Do not add two overlays merely because two subjects appear in one scene. Use a s
 | transparent cutout, background removal, white packshot, source cleanup | `chany-product-assets` | reusable source asset |
 | broad visual references, Pinterest + MeiGen, or a Pinterest-only moodboard | `chany-reference-board` | default 10 inline candidates across Pinterest + MeiGen; explicit provider/count respected |
 | MeiGen references, AI images with source prompts, or prompt-backed visual inspiration | `chany-ai-prompt-reference` | six visible MeiGen image-and-prompt pairs by default, or requested count, with an original product-specific prompt handoff |
+| editorial magazine carousel, YouTube thumbnail or Instagram cover | `chany-ad-creative` | social-design-formats.md modes without mandatory sales CTA |
 | high-end commercial, advertising, or lifestyle photography references | `chany-commercial-photo-reference` | visible Production Paradise references with creator provenance and transferable photographic craft |
 | awarded advertising, campaign ideas, or commercial-photography benchmarks | `chany-award-ad-reference` | visible Ads of the World, D&AD, or The One Show cases with message mechanism and Visual DNA |
 | vague visual request, concept territories, trend translation, or expert prompt direction | `chany-creative-direction` | three brand-specific territories, one recommendation, and an approved creative-direction packet |

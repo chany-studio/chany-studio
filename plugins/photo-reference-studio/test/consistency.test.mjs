@@ -155,17 +155,16 @@ test("the product insertion pipeline covers the core product-to-ad flow", async 
     assert.match(body, /product-insertion\.md\)/, `${skill} must follow the product insertion pipeline`);
   }
   const beginner = await readFile(join(pluginRoot, "skills", "chany-studio", "references", "beginner-experience.md"), "utf8");
-  assert.match(beginner, /run the reference board automatically/, "quick start must find references for a supplied product");
+  assert.match(beginner, /reference-led-design\.md/, "supplied style references must bypass redundant discovery");
   const ranking = await readFile(join(pluginRoot, "skills", "chany-reference-board", "references", "search-policy.md"), "utf8");
   assert.match(ranking, /hold this exact product/);
 });
 
-test("plain-language direction translates everyday words into professional terms", async () => {
+test("plain-language direction keeps terminology optional and handles ambiguous requests", async () => {
   const guide = await readFile(join(pluginRoot, "skills", "chany-studio", "references", "plain-language-direction.md"), "utf8");
-  assert.match(guide, /배경 흐리게[^|]*\| 아웃포커싱/);
-  assert.match(guide, /화장품 화보처럼[^|]*\| 뷰티디쉬 조명/);
-  assert.match(guide, /이렇게 이해했어요:/);
-  assert.match(guide, /전문가식으로 쓰면:/);
+  assert.match(guide, /Do not teach terminology/);
+  assert.match(guide, /background blur versus motion blur/);
+  assert.match(guide, /does not imply beauty-dish/);
   assert.match(guide, /AskUserQuestion/);
   assert.match(guide, /ChatGPT Work/);
   assert.match(guide, /never adds a checkpoint to quick start/);
@@ -197,7 +196,7 @@ test("contracts do not contradict each other on money, uploads, models and waits
   assert.match(beginner, /레퍼런스 없이 바로 만들어줘/);
 });
 
-test("project setup offers plain-Korean preference cards that never pre-approve spending", async () => {
+test("project setup shares one compact question budget and never pre-approves spending", async () => {
   const read = (path) => readFile(join(pluginRoot, ...path.split("/")), "utf8");
   const [interview, skill, brief, beginner, command] = await Promise.all([
     read("skills/chany-project/references/interactive-interview.md"),
@@ -206,17 +205,16 @@ test("project setup offers plain-Korean preference cards that never pre-approve 
     read("skills/chany-studio/references/beginner-experience.md"),
     read("commands/project-studio.md"),
   ]);
-  assert.match(interview, /## Project preference cards/);
-  for (const header of ["`업종`", "`만들 것`", "`올릴 곳`", "`분위기`", "`레퍼런스`", "`품질`", "`참고 사진`", "`비율`"]) {
-    assert.ok(interview.includes(header), `preference cards must ask ${header}`);
+  assert.match(interview, /## Purpose and optional preferences in the same card/);
+  for (const header of ["`목적`", "`보는 사람`", "`만들 것`", "`올릴 곳`", "`분위기`"]) {
+    assert.ok(interview.includes(header), `compact question pool must cover ${header}`);
   }
-  for (const header of ["`업종`", "`만들 것`", "`분위기`", "`레퍼런스`", "`품질`", "`참고 사진`", "`비율`"]) {
-    const row = interview.split("\n").find((line) => line.startsWith(`| ${header}`)) ?? "";
-    assert.ok(header === "`업종`" || row.includes("(권장)"), `${header} must lead with a recommended option`);
-  }
-  assert.match(interview, /No option may pre-approve spending or uploads/);
+  assert.match(interview, /at most three unresolved high-impact choices total/i);
+  assert.match(interview, /Do not append separate project preference cards/);
+  assert.doesNotMatch(interview, /up to two cards|at most four questions|하이키|로우키|골든아워/);
+  assert.match(interview, /never pre-approves spending or uploads/);
   assert.doesNotMatch(interview, /항상 보내기|자동으로 보내기/, "no preference may auto-approve reference uploads");
-  assert.match(skill, /project preference cards/);
+  assert.match(skill, /do not append separate preference cards/);
   assert.match(brief, /## Studio preferences/);
   assert.match(beginner, /Studio preferences/);
   assert.match(command, /allowed-tools: Skill, AskUserQuestion/);
