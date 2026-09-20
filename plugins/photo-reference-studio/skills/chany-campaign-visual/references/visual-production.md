@@ -36,7 +36,7 @@ downstream_ratios: []
 
 ## Reference roles
 
-The authoritative source controls every applicable subject count, form, proportion, material, color, logo, label, packaging, food composition, spatial geometry, view, interface state, vehicle trim, person identity, event fact, and evidence object. A selected reference may control only composition, negative space, camera, background, lighting, shadow, palette, props, effects, depth, and commercial mood.
+The authoritative source controls every applicable physical form/proportion, material, color, logo, label, packaging, food composition, real spatial geometry, interface state, vehicle trim, person identity, event fact, and evidence object. Count follows the requested/approved scene. A selected reference may control only composition, negative space, camera, background, lighting, shadow, palette, props, effects, depth, and commercial mood. For product reshoots, the source photograph's camera view, pose and projected outline are observations, not identity locks; use [reference-led design](../../chany-studio/references/reference-led-design.md) to plan the new view without inventing unseen facts. An explicitly bounded edit or already accepted campaign master can lock a view within that scope.
 
 Explicitly exclude the reference subject, model, ingredients, garments, architecture, interface, vehicle, artwork, logo, packaging, copy, price, and branded layout. If identity or evidence preservation conflicts with art direction, the authority source wins.
 
@@ -58,10 +58,12 @@ A retry prompt that only adds another "do not" is a failed correction. Rewrite i
 ## Production prompt
 
 ```text
-작업 유형: 원본 피사체를 보존한 [상업용 연출컷/캠페인 마스터 키비주얼] 제작.
+작업 유형: 실제 피사체의 정체성을 보존한 [상업용 연출컷/캠페인 마스터 키비주얼] 제작.
+제품 레퍼런스 재촬영이면 원본을 잘라 붙이지 않고 같은 제품을 아래 구도·시점·빛으로 새로 촬영하듯 만듭니다.
 
 [입력 역할]
 - 이미지 1은 최종 피사체의 권위 원본입니다.
+- 제품 재촬영에서 이미지 1의 촬영 각도·방향·화면 위치·크기까지 고정하지 않습니다. 사용자가 따로 고정한 항목: [EXPLICIT VIEW LOCKS OR NONE].
 - 이미지 2가 있다면 방향 전용 레퍼런스이며 [VISUAL DNA]만 참고합니다.
 - 그 밖의 입력 역할: [ROLE MAP].
 
@@ -83,6 +85,7 @@ A retry prompt that only adds another "do not" is a failed correction. Rewrite i
 - 출력 비율: [RATIO].
 - 피사체 위치·크기와 카피 안전 영역: [LAYOUT].
 - 카메라, 원근, 심도: [CAMERA].
+- 제품 방향·기울기, 표면과의 접점, 앞뒤 거리: [OBSERVED REFERENCE COMPOSITION ADAPTED TO THE PRODUCT].
 - 키라이트, 필, 림, 그림자, 하이라이트: [LIGHTING].
 
 [물리 연결]
@@ -111,7 +114,7 @@ Staged image weights:
 | industry proof and material or environment realism | 10 |
 | artifact control | 5 |
 
-Accept at 85 or higher.
+Accept at 85 or higher, only when both product identity and the approved reference composition pass. Correct identity with a background-only change does not satisfy a reshoot whose planned view/framing differs.
 
 Key-visual weights:
 
@@ -124,6 +127,6 @@ Key-visual weights:
 | physical realism | 15 |
 | artifact and contamination control | 10 |
 
-Accept at 86 or higher. Any changed authority identity, leaked reference brand, duplicated subject, impossible physical contact, invented hidden detail, space or UI state, unsupported outcome, missing required disclosure, or unverified fidelity claim is an automatic failure.
+Accept at 86 or higher, with both identity and requested composition passing. Any changed authority identity, leaked reference brand, unapproved duplicate subject, impossible physical contact, invented hidden detail, space or UI state, unsupported outcome, missing required disclosure, or unverified fidelity claim is an automatic failure.
 
 For a correction, convert the highest-impact visible defect into one positive, measurable target, keep every passed authority, composition, and light clause fixed, and compare the retry with the original authority rather than the failed generation.

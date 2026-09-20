@@ -72,6 +72,8 @@ Professional polish comes from decisions and restraint, not adjective density.
 
 Use short labelled sections. This follows current GPT Image guidance: stable structure, explicit intended use, concrete visual details, indexed inputs, and clear change-versus-preserve constraints are more reliable than clever syntax or a long adjective chain.
 
+For reference-led product scenes, compile the [reference reshoot plan](reference-led-design.md): the source controls physical identity, while the approved reference controls shooting variables. Do not put source camera perspective, pose, frame position or scale in the preserve list unless the user explicitly fixed them or they belong to an accepted master being reused. A local edit keeps its stated preserve scope.
+
 ```text
 [OUTCOME]
 Create [exact deliverable] for [audience, decision stage, channel and intended use].
@@ -96,7 +98,7 @@ Colour/material: [base, accent, tactile detail and controlled current signal].
 Exact text, typography roles, hierarchy, copy zone and safe area—or `no text in image`.
 
 [PRESERVE]
-[Identity, geometry, label, garment, product count, perspective, approved palette, copy and evidence locks].
+[Physical identity/geometry, label, garment, approved product count, palette, copy and evidence locks; camera/pose/layout only when explicitly fixed for this operation].
 
 [EXCLUDE]
 [Only concrete failure classes: extra objects, text drift, logo drift, plastic skin, implausible mechanics, watermark, unapproved claim].

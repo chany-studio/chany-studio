@@ -68,7 +68,7 @@ Provider and domain scope is routing metadata, not part of the semantic query.
 
 ## Visual ranking
 
-When a product photo was supplied, first build the product profile in [product-insertion.md](../../chany-studio/references/product-insertion.md) §1 and judge subject compatibility against that specific product: room of the right shape for its silhouette, a palette that keeps its colors and label readable, and lighting that suits its material.
+When a product photo was supplied, first build the product profile in [product-insertion.md](../../chany-studio/references/product-insertion.md) §1 and judge subject compatibility against that specific product: plausible framing for its physical geometry in the reference's target view, a palette that keeps its colors and required label information readable, and lighting that suits its material. Do not constrain references to the original photo's pose, scale or centered front view; a new composition is expected for a reference reshoot when the selected image calls for it.
 
 Score each candidate from 0 to 100:
 

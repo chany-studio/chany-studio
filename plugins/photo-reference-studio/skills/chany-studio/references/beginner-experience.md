@@ -13,9 +13,9 @@ Unless the user asks to compare options ("여러 안 보여줘", "콘셉트 3안
 0. If the project brief records `Studio preferences`, use them as this job's defaults (look, reference source, quality and count, reference-upload default, ratio) unless the request says otherwise. They never replace the confirmation card.
 1. Inspect the attachments and the request. Ask a question only when a missing fact would make the output wrong, such as which product to show. Do not ask about price, offer, or CTA wording that the user did not mention; write copy only from supplied facts and leave out any price, discount, or claim that was not given.
 2. For a new scene, if the user supplied a style reference, inspect it and follow [reference-led-design.md](reference-led-design.md); skip new discovery unless alternatives were requested. Otherwise, when the subject is a supplied product, follow [product-insertion.md](product-insertion.md): profile the product, run the reference board, rank and show numbered images with one recommended, and continue to the card. For a service or when no product photo exists, work from the request and shared creative direction. Bounded edits, cutouts, accepted-still animation and supplied-video-reference work reuse their existing authorities and skip this new-photo-discovery step.
-3. Choose the recommended reference and concept territory internally. Use [latest-model-routing.md](latest-model-routing.md) to choose generation versus editing versus a dedicated non-generative operation and recommend one currently supported route. Do not show the three-territory scorecard or a model comparison table.
+3. Choose the recommended reference and concept territory internally. For a new reference-led product scene, default to rephotographing the same product with the reference's composition under [reference-led-design.md](reference-led-design.md); preserve the source pose only when the user requests a bounded edit or that pose matches the intended reference. Use [latest-model-routing.md](latest-model-routing.md) to choose generation versus editing versus a dedicated non-generative operation and recommend one currently supported route. Do not show the three-territory scorecard or a model comparison table.
 4. Show **one** confirmation card (§3) that contains the chosen reference, the direction in one sentence, the exact copy, and the paid-generation details. This single card is the reference choice, the concept approval, the copy approval, and the paid-generation approval for that displayed version. The user may answer with another reference number instead.
-5. After generation, show the result and the product match check first, then at most three short next-step suggestions in plain Korean, such as 다른 비율로 늘리기 and 이 이미지로 영상 만들기. Suggest 광고용 고화질로 키우기 only when the result is smaller than its intended use needs (see [product-insertion.md](product-insertion.md) §8).
+5. After generation, show the result, the product match check and the separate requested-composition check first, then at most three short next-step suggestions in plain Korean, such as 다른 비율로 늘리기 and 이 이미지로 영상 만들기. Do not call a reference reshoot complete when only its background changed. Suggest 광고용 고화질로 키우기 only when the result is smaller than its intended use needs (see [product-insertion.md](product-insertion.md) §8).
 
 New identity-sensitive generated video keeps its still-first order: tell the user once that there will be two confirmation cards when both stages require paid generation, one for the governing still image and one for the video. Reuse an already accepted governing still; an authorized source-video edit does not require a redundant paid still stage. Do not add other checkpoints beyond actual changed scope or mandatory safety gates.
 
@@ -39,9 +39,9 @@ Before any paid generation, keep the full `paid_generation_approval` record inte
 - 만들 것: 인스타그램 피드 광고 이미지 1장 (4:5)
 - 목적: 처음 보는 고객이 제품의 특징을 이해하고 구매 페이지로 이동하도록
 - 레퍼런스: 3번 사진 느낌으로 (다른 번호를 말씀하셔도 돼요)
-- 준비: 제품 배경을 먼저 깔끔하게 지워요
+- 준비: 제품이 잘 보여서 첨부한 원본을 그대로 참고해요
 - 참고 사진: 3번(Pinterest, 다른 사람의 작품)을 Higgsfield에 참고 입력으로 보냅니다. 결과가 원본과 너무 비슷하면 광고에 쓰지 마세요
-- 방향: 흰 대리석 위에 제품을 두고 아침 햇살로 깨끗하게 보여줘요
+- 방향: 제품의 모양과 라벨은 지키고, 참고 사진처럼 오른쪽 아래에 두어 약간 아래에서 새로 촬영한 느낌으로 만들어요
 - 들어갈 문구: "하루 한 번, 촉촉하게" / 버튼: 지금 구매하기
 - 사용 도구: Higgsfield · GPT Image 2.5 · 고화질 2K (실제로 쓰는 모델·템플릿 이름)
 - 비용: 1장 12 크레딧 · 2장 24 크레딧 (현재 잔액 240)
@@ -51,7 +51,7 @@ Use the server-returned cost and balance. When they are unavailable, write "비�
 
 For a task-fit alternate, add one line explaining the concrete reason and any trade-off, for example "추천 이유: 배경만 고치도록 영역을 지정할 수 있는 도구를 제안해요. 제품은 원본과 비교해 확인해요." Show the requested default, exact proposed model/mode and affected assets with the current quote in this same card. No separate model-selection interview; no alternate execution until this card is approved. For deterministic or free local work, show the bounded change without inventing a paid generation stage. Exact technical prompts stay in the internal record and are shown only on request.
 
-Omit the 레퍼런스, 준비, and 참고 사진 lines when they do not apply. The 참고 사진 line is mandatory whenever a reference image will be sent to the generation service; approving a card without it never authorizes that upload. Offer these choices through the host's question tool, or as numbered text if none exists:
+Omit the 레퍼런스, 준비, and 참고 사진 lines when they do not apply. Do not make paid background removal a default preparation stage; include it only when actually needed/requested. The direction line must describe this reference's observable composition, not reuse the example angle or promise background-only work for a reshoot. The 참고 사진 line is mandatory whenever a reference image will be sent to the generation service; approving a card without it never authorizes that upload. Offer these choices through the host's question tool, or as numbered text if none exists:
 
 1. 이대로 1장 만들기 (권장)
 2. 2장 만들어 더 나은 것 고르기 (카드에 적힌 2장 비용)

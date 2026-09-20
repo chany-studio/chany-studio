@@ -25,7 +25,7 @@ Offer everyday outcomes, not model names, lens lengths, lighting terminology or 
 
 ## Proportional paths
 
-- **Known single output:** "내 제품 + 이 사진 느낌 + 인스타 구매 광고 1장" → use those facts; no new purpose interview or automatic replacement reference search.
+- **Known single output:** "내 제품 + 이 사진 느낌 + 인스타 구매 광고 1장" → use those facts; no new purpose interview or automatic replacement reference search. Default to a same-product reference reshoot under [reference-led-design.md](reference-led-design.md), not preservation of the uploaded photo's camera view. Explicit background/light-only or pose-preservation instructions narrow that scope.
 - **Editorial/educational content:** optimize understanding, reading and saving; do not force a discount or buy button. Required price, date or benefit facts remain pending until supplied.
 - **Bounded edit/cutout/assembly:** "이 사진 배경만 지워줘", "영상 끝 2초 잘라줘" → the change itself supplies the job. Ask only about an ambiguous target or preserve boundary; no campaign interview, reference board or new key visual.
 - **Reference-led video:** reuse the observed reference packet and selected remake/edit path. A public Reel link alone is not an editable source or upload permission. A missing source may block editing but not an honest planning handoff.

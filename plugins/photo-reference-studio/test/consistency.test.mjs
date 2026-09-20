@@ -141,7 +141,7 @@ test("beginner docs lead with a first-use guide, glossary and plain troubleshoot
 
 test("the product insertion pipeline covers the core product-to-ad flow", async () => {
   const pipeline = await readFile(join(pluginRoot, "skills", "chany-studio", "references", "product-insertion.md"), "utf8");
-  for (const section of ["Product profile", "References chosen for this product", "Clean product source", "\"Like this reference\" generation", "Quality settings", "Product match check", "Ad-grade finishing", "Other ratios from the accepted image", "Video from the accepted image", "Higgsfield ad templates as references"]) {
+  for (const section of ["Product profile", "References chosen for this product", "Clean product source", "\"Like this reference\" generation", "Quality settings", "Product and composition checks", "Ad-grade finishing", "Other ratios from the accepted image", "Video from the accepted image", "Higgsfield ad templates as references"]) {
     assert.ok(pipeline.includes(section), `product-insertion.md must define ${section}`);
   }
   assert.match(pipeline, /제품 확인: ✓ 모양·비율/);

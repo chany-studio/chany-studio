@@ -40,7 +40,7 @@ Check in this order:
 
 Apply only the checks relevant to the requested asset; keep this internal instead of another user questionnaire.
 
-- Product photos: compare silhouette, proportions, label/logo, color and count to the source, then separately compare composition/light/material to the style reference. Inspect edges, shadows and reflective surfaces; a beautiful image with a changed product fails.
+- Product photos: follow [reference-led-design.md](reference-led-design.md). Compare physical geometry/proportions, label/logo, color/material and approved count to the source, allowing perspective changes, then independently compare camera/view, orientation, position/scale/negative space, depth/contact and light to the approved composition plan. Both identity and requested composition are must-pass gates. A changed product fails; a requested reshoot that only changes the background/light while missing the planned view/framing also fails. A frontal reference does not require invented rotation, and an explicit background-only edit instead must retain the original pose. Inspect edges, shadows and reflective surfaces; attach each finding to visible evidence.
 - Carousel/detail-page families: inspect each card/module at intended reading size and the ordered set. Check margins, type hierarchy, repeated product scale, continuity and non-redundant information. Verify each delivered file, not only a contact sheet. Repair only affected cards/modules.
 - Thumbnail/poster: inspect at its actual small preview size or intended viewing distance. The subject and main message must remain clear without zoom; inspect placement crops before delivery.
 - Generated video/product swap: review playback over the full available duration plus first/last frames, cut boundaries and interaction/occlusion moments. Check changing labels, duplicated parts, grip/contact, reflections, flicker, unintended camera movement and end-frame readability. Sparse still sampling is only a partial check; disclose inaccessible motion/audio rather than claiming full review.
@@ -51,7 +51,7 @@ When review capability is missing, label the specific unchecked dimension. Keep 
 
 ## Correct one defect class
 
-If a correction is permitted, select the highest-impact observable defect that can be changed without invalidating the approved concept. Freeze every already accepted property, name the target region or timestamp, and change one defect class per attempt. Reattach the relevant authority source whenever identity, product, garment, UI, place, evidence, or exact copy could drift.
+If a correction is permitted, select the highest-impact observable defect that can be changed without invalidating the approved concept. Freeze every already accepted property within its intended scope, not an unapproved source pose or the composition that failed. A composition failure can require whole-scene rephotography within the already approved plan; do not route it into background-only repair. Name the target region, spatial relationship or timestamp, and change one defect class per attempt. Reattach the relevant authority source whenever identity, product, garment, UI, place, evidence, or exact copy could drift.
 
 After the correction, run the complete must-pass list again and compare against both the authority source and the last accepted version. A fix that causes a new critical defect is a regression and cannot pass.
 

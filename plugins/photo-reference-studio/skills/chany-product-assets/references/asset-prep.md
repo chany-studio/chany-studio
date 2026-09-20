@@ -4,6 +4,8 @@
 
 For products, record count, silhouette, proportions, orientation, structure, materials, color, transparency, gloss, texture, logo, label, package geometry, and readable text. For food, also record visible ingredients, their relative position and amount, cooking state, sauce flow, toppings, and irregular silhouette.
 
+Orientation and source-pixel preservation below apply to this requested cutout/packshot asset, not to all later production. When this asset becomes an identity input for a new reference-led scene, pass physical identity locks separately from its observed camera view; follow [reference-led design](../../chany-studio/references/reference-led-design.md) for reshooting. Do not propagate a cutout's pose lock into that new composition.
+
 Record hidden sides, occlusions, glare-distorted colors, and unreadable text as uncertain. Never rebuild them as facts.
 
 ## Output rules

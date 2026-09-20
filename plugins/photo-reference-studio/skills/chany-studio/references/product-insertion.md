@@ -1,6 +1,6 @@
 # Product insertion pipeline
 
-This is the core Chany's Studio job: the user uploads a product photo, the studio finds references that suit that product, and it places the real product into an ad-grade image or video in the reference's visual style. Apply it to every still or video whose subject is a physical product the user supplied. It works inside the [beginner experience contract](beginner-experience.md), the [paid runtime contract](higgsfield-runtime-contract.md) and the [image model default](image-generation-runtime.md); it never relaxes their approvals.
+This is the core Chany's Studio job: the user uploads a product photo, the studio finds references that suit that product, and it depicts the same real product as newly photographed in the reference's shooting approach. It is not a default cut-and-paste/background-replacement workflow. Apply it to every still or video whose subject is a physical product the user supplied, respecting the reshoot versus bounded-edit boundary in [reference-led-design.md](reference-led-design.md). It works inside the [beginner experience contract](beginner-experience.md), the [paid runtime contract](higgsfield-runtime-contract.md) and the [image model default](image-generation-runtime.md); it never relaxes their approvals.
 
 Tool names below describe capabilities. Resolve the actual operation from the live tool list and schema each time; if a capability is missing, use the stated fallback and say so in one plain sentence.
 
@@ -9,7 +9,8 @@ Tool names below describe capabilities. Resolve the actual operation from the li
 Before searching, read the product photo and record internally:
 
 - category and use (e.g. 세럼 병, 텀블러, 과자 봉지)
-- silhouette and proportion: tall, wide, flat, round, multi-part; approximate height-to-width ratio
+- physical geometry and proportion: tall, wide, flat, round, multi-part; distinguish observed projected proportions from actual dimensions
+- source camera view, orientation and placement as observations, not default preservation locks for a reshoot
 - dominant and accent colors, and whether the packaging is light, dark, or transparent
 - material and finish: glass, matte plastic, metal, paper, fabric, glossy, reflective
 - label and logo areas that must stay readable
@@ -21,7 +22,7 @@ A supplied video-reference packet already supplies the visual direction for its 
 
 First inspect any user-supplied reference image/file/link under [reference-led-design.md](reference-led-design.md). An existing reference replaces automatic discovery unless the user asks for alternatives; a product photo alone is not a style reference. Otherwise run the generic reference board (Pinterest 5 + MeiGen 5 by default, see [combined-reference-board.md](combined-reference-board.md)) using the product category. Rank candidates for this specific product using `chany-reference-board/references/search-policy.md`:
 
-- the reference leaves room of the right shape for this silhouette (a tall bottle needs vertical space; a wide pouch needs a horizontal surface)
+- the reference can accommodate the real product's geometry in its target view; do not limit discovery to the source photo's orientation or centered framing
 - its palette flatters or contrasts cleanly with the product colors, and its background keeps the label readable
 - its lighting suits the material (soft wrap light for gloss and glass, directional light for matte texture)
 - the scene is buildable around the product without hiding or redesigning it
@@ -30,16 +31,18 @@ Show the board as numbered inline images with one short plain-Korean line each, 
 
 ## 3. Clean product source
 
-When the photo has a cluttered background, harsh color cast, or the new scene differs from the original setting, prepare a clean product source first with the live background-removal operation (for example Higgsfield `remove_background`, which needs no prompt). Treat the cutout as the product authority and compare it with the original at high zoom for edge loss, missing parts, and label damage. Include this step and its cost in the confirmation card. If the photo is already clean, or background removal is unavailable, use the original photo and skip this step. Background removal keeps the source resolution (a 487×580 photo gave a 487×580 cutout in the 2026-09-18 test), so when the product photo is small, say once that a larger, sharper photo will give a better result; generation itself can still output 2K from a small source.
+Use the original photo directly when its product is clear. Prepare a cutout only when requested or when background clutter materially obscures the subject and the live background-removal operation helps (for example Higgsfield `remove_background`, which needs no prompt). A different intended scene alone does not require background removal; removal does not repair a color cast or reveal hidden surfaces. Compare any prepared cutout with the original at high zoom for edge loss, missing parts, and label damage; the original remains the identity authority. A cutout is an optional identity input, not a locked pose or a layer that must be pasted into a reshoot. Include any needed step and its cost in the existing confirmation card. If removal is unavailable, use the original when adequate and state any material limitation. Background removal keeps the source resolution (a 487×580 photo gave a 487×580 cutout in the 2026-09-18 test), so when the product photo is small, say once that a larger, sharper photo will give a better result; generation itself can still output 2K from a small source.
 
 ## 4. "Like this reference" generation
 
 Pass both images to the image model as reference inputs. Inspect the model's input roles first: GPT Image 2.5 on Higgsfield exposes a single `image_references` role (checked 2026-09-18), so both images share that role and the prompt must say which image is which, in input order:
 
-- image 1, the product photo or cutout: the subject authority — shape, proportion, color, label, logo, and count must match exactly
-- image 2, the selected reference: composition, camera angle, lighting, palette, surface, props, and mood only
+- image 1, the product photo or verified cutout: the subject authority — actual geometry/proportions, construction, color/material and logo/label facts must be preserved; its original camera view, pose, position, scale and lighting are not locked for a reshoot
+- image 2, the selected reference: the observed composition, camera angle, lighting, palette, surface, props and mood, adapted to the user's product and approved count; never its product family or branding
 
 When a model exposes separate roles, use them instead of relying on order.
+
+Compile the composition plan and explicit reshoot prompt from [reference-led-design.md](reference-led-design.md). Do not reduce "이 레퍼런스처럼" to "배경과 조명만 변경". If the tool cannot recompose the product while preserving its identity, disclose that limitation instead of silently delivering a background-only edit.
 
 Every reference source (Pinterest, MeiGen, Production Paradise, award archives, Higgsfield templates) may be passed as a generation reference input, but only with the user's explicit approval. The reference is usually someone else's work, and importing it sends it to a third party. Put a dedicated line in the confirmation card that names the source and the risk, for example "참고 사진: 3번(Pinterest, 다른 사람의 작품)을 Higgsfield에 참고 입력으로 보냅니다. 결과가 원본과 너무 비슷하면 광고에 쓰지 마세요." Approving the card with that line is the separate upload approval the runtime contract requires; without that line in the approved card, do not import the reference. If the user says "사진은 보내지 마" or "레퍼런스 사진 없이", or import or a reference role is unavailable, describe the reference in the prompt instead and say the result may resemble it less closely.
 
@@ -53,15 +56,16 @@ Ad work needs explicit quality settings; provider defaults are tuned for speed. 
 
 Default to one image. Before showing the card, get the live quote for both one image and two images of the same prompt and inputs, and show both totals in the card, so choosing "2장 만들어 더 나은 것 고르기" approves an exact quoted total rather than an estimate. If the two-image quote is unavailable, do not offer that option. When chosen, request two variants in one call (live `count`; up to 4 only after a new quote and approval) and let the user pick or accept the recommended one. This is an approved variant set, not a speculative variant.
 
-## 7. Product match check
+## 7. Product and composition checks
 
-After each result, compare it with the original product and show a short check in plain Korean before anything else:
+After each result, compare identity with the original and composition with the approved reference plan. Show the actual result first, then two short checks in plain Korean, with only verified items marked passed:
 
 ```text
 제품 확인: ✓ 모양·비율  ✓ 색상  ✓ 라벨 글자  ✓ 로고  ✓ 개수
+구도 확인: ✓ 촬영 각도·제품 방향  ✓ 위치·크기·여백  ✓ 공간감·빛·그림자
 ```
 
-Mark a failed item with ✗ and one plain sentence. A ✗ triggers the bounded correction in [creative-quality-loop.md](creative-quality-loop.md), fixing that one defect class while freezing everything that passed. Never mark ✓ for something that cannot be verified at the displayed resolution; write "확인 어려움" instead.
+Judge physical proportions with perspective in mind, not by identical 2D outline. Mark a failed item with ✗ and one plain sentence. A reshoot that misses the planned composition and changes only background/light fails the second check even if the product is accurate. For an explicit background-only edit, instead check that the requested background changed and the original pose stayed fixed. A ✗ triggers the bounded correction in [creative-quality-loop.md](creative-quality-loop.md) only within the approved attempt and credit ceiling. Keep passed identity properties, but do not freeze the source pose or composition that failed. Never mark ✓ for something that cannot be verified at the displayed resolution; write "확인 어려움" instead.
 
 ## 8. Ad-grade finishing
 
@@ -69,7 +73,7 @@ Generate at the needed resolution in the first place when the model supports it 
 
 ## 9. Other ratios from the accepted image
 
-When more ratios are needed (1:1, 4:5, 9:16, 16:9), extend the accepted image with the live outpainting operation (for example Higgsfield `outpaint_image`) instead of generating a new scene, so the product stays pixel-identical. Check that the product, label, and copy area remain inside the new safe area. If extending cannot keep the product placement sensible, crop, or regenerate with the approved prompt, and say which one you used. For video, change the ratio with the live video reframe operation (for example Higgsfield `reframe`). Bundle all extra ratios into one confirmation card.
+When only more ratios are needed (1:1, 4:5, 9:16, 16:9), extend the accepted image with the live outpainting operation (for example Higgsfield `outpaint_image`) instead of generating a new scene. This preserves an accepted view; it is not the default for a new reference reshoot. Verify the original region rather than promising pixel identity. Check that the product, label, and copy area remain inside the new safe area. If extending cannot keep the product placement sensible, propose a crop or regeneration with the approved prompt and obtain the affected approval before execution. For video, change the ratio with the live video reframe operation (for example Higgsfield `reframe`). Bundle all extra ratios into one confirmation card.
 
 ## 10. Video from the accepted image
 

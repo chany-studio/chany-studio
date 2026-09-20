@@ -107,5 +107,5 @@ Use the closest row. The prompt clause is guidance for the internal prompt, not 
 - Revision requests such as "덜 광고 같게" change only the relevant copy density, layout or lighting while preserving accepted product, text and other locks. Ask only if the intended difference is genuinely unclear.
 
 - Do not quiz the user or ask them to pick terms they do not know; options always lead with plain words.
-- A term never overrides product truth: if a look would hide the label or change the product, say so and suggest the nearest look that keeps it.
+- A term never overrides product truth. Preserve real geometry and label content, not the original photo's angle or 2D outline. Keep label information visible when the brief requires it; do not force every reference into a frontal pose merely to show every letter. If an essential view needs unsupported hidden details, request the relevant source view or disclose a supported alternative under [reference-led-design.md](reference-led-design.md).
 - Physically risky or misleading motion (impossible pours, exaggerated food size, fake speed) follows the industry overlay and creative-direction rules.

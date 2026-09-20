@@ -7,6 +7,8 @@ description: Make bounded local edits to accepted or generated commerce composit
 
 Revise an accepted product, campaign, advertising, detail-page, or model asset without allowing a local request to regenerate the whole design.
 
+A product source plus "이 레퍼런스처럼 만들어줘" is not inherently a local edit. Route that new scene to its production owner using [reference-led design](../chany-studio/references/reference-led-design.md); preserve product identity without locking the original camera/pose. This skill retains the existing view only within an explicitly bounded edit request.
+
 Every user-facing turn follows the shared [beginner experience contract](../chany-studio/references/beginner-experience.md): quick start by default, plain Korean without internal field names, and one confirmation card before any paid generation.
 
 Translate everyday look words into professional photo and film direction, and offer the plain-words guided card when the user wants control, following [plain-language direction](../chany-studio/references/plain-language-direction.md).
