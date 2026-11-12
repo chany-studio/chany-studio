@@ -1,0 +1,4 @@
+interface:
+  display_name: "Premiere 편집·마감"
+  short_description: "프리미어 타임라인·AE 연동·음향·자막·색을 점검하고 납품 준비"
+  default_prompt: "Use $adobe-premiere-finishing to work on the current video project with editable outputs and verified results."

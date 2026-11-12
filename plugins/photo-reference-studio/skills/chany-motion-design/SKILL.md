@@ -24,3 +24,7 @@ Read the shared [Higgsfield motion adapter](../chany-studio/references/higgsfiel
 7. Return the actual preview, verified output file and editable project only when created, with source/version, unresolved defects and capability status. For inclusion in a film, hand the accepted graphics, timing/alpha requirements and copy version to `chany-video-assembly`. Apply `chany-publication-review` when required; creative approval is not publication authority.
 
 If no suitable execution route exists, deliver the completed motion packet and tool-ready instructions marked **plan-only**. Do not call it a rendered video or claim an editable After Effects project exists.
+
+## Native production handoff
+
+For an explicitly requested After Effects or editable AEP route, hand the approved motion packet to `adobe-after-effects-production`. Keep this skill as the message/layout owner; do not force Higgsfield when native Adobe production was requested. Follow [native production integration](../chany-studio/references/native-production-integration.md).

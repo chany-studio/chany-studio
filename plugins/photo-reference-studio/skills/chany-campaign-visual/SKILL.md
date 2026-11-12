@@ -31,3 +31,7 @@ When downstream assets are planned, approve the master direction before sending 
 Inspect the connected tool schema before use. If authentication is required, use the host login flow and never request secrets. If the connected tool cannot produce the requested result, return the complete brief and prompt and state the exact missing capability.
 
 Paid submission, recovery, and scope changes follow the shared runtime contract exactly. Never blindly resubmit after a timeout, disconnect, or unknown charge state; inspect the original job or receipt first. A changed request requires a new paid-generation preflight and approval under that contract.
+
+## Native production handoff
+
+Use `image-asset-production` when the deliverable needs a consistent character, expression, pose or scene-source set for animation. Keep the accepted visual brief and reference roles authoritative. Follow [native production integration](../chany-studio/references/native-production-integration.md).

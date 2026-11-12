@@ -1,0 +1,4 @@
+interface:
+  display_name: "After Effects 모션·합성"
+  short_description: "편집 가능한 모션그래픽·한글 타이포·지도 합성을 만들고 렌더 검증"
+  default_prompt: "Use $adobe-after-effects-production to work on the current video project with editable outputs and verified results."

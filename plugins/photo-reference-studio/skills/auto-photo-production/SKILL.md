@@ -45,3 +45,9 @@ Tell the user which current skill now owns the request, then follow that skill. 
 For every generative still-image creation or edit, the routed owner must apply Chany's Studio's shared GPT Image 2.5 (`gpt_image_2_5`) default and controlled-override contract. Do not preserve an older prompt's implicit image-model default as though the user explicitly selected it.
 
 Every reference request keeps each provider's own rules: Pinterest Pin pages and `i.pinimg.com` previews for Pinterest, the inspected MeiGen tool or entry for MeiGen, Production Paradise for professional commercial photography, and Ads of the World, D&AD, and The One Show for award references. The generic board combines the Pinterest and MeiGen lanes as described in `chany-studio/references/combined-reference-board.md`, but no lane fills another lane's missing candidates, and a Pin's outbound destination is never followed. Video-page intake is a separate user-authorized browser-capture path and does not expand any static discovery lane.
+
+Native production routes also follow `chany-studio/references/native-production-integration.md`:
+- cross-app Adobe workflow and native delivery → `adobe-video-pipeline`
+- editable After Effects shots and character motion → `adobe-after-effects-production`
+- Premiere editorial, sound, color, captions and finishing → `adobe-premiere-finishing`
+- consistent animation-ready character/background/prop sets → `image-asset-production`

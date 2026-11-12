@@ -15,7 +15,7 @@ Read the shared [runtime boundaries](../chany-studio/references/runtime-boundari
 For a generated still, also apply the [image-generation runtime](../chany-studio/references/image-generation-runtime.md): GPT Image 2.5 (`gpt_image_2_5`) is the default unless that contract authorizes a scoped override.
 For any billable provider operation, apply the [paid-media runtime contract](../chany-studio/references/higgsfield-runtime-contract.md).
 
-For source-video revisions, consume the campaign-video owner's [bounded edit contract](../chany-campaign-video/references/video-edit.md), plus [Genjutsu rules](../chany-campaign-video/references/genjutsu-edit.md) when applicable. Retain the source clip version, time range, target, audio policy and preserve list. The approved edit specification replaces a new-film concept/still prerequisite. Reuse approved source frames; do not force a redundant still generation. Native composition edits belong to `chany-motion-design`; only its generated source assets enter this loop.
+For source-video revisions, consume the campaign-video owner's [bounded edit contract](../chany-campaign-video/references/video-edit.md), plus [Genjutsu rules](../chany-campaign-video/references/genjutsu-edit.md) when applicable. Retain the source clip version, time range, target, audio policy and preserve list. The approved edit specification replaces a new-film concept/still prerequisite. Reuse approved source frames; do not force a redundant still generation. Native composition direction belongs to `chany-motion-design`, with explicit AE execution delegated to `adobe-after-effects-production`; only generated source assets enter this loop.
 
 ## Workflow
 

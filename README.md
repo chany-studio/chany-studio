@@ -55,7 +55,7 @@ ChatGPT Work에서는 앞에 `@chany-studio`를 붙이거나, 똑같이 평소 �
 
 ![Chany's Studio](plugins/photo-reference-studio/assets/logo.png)
 
-업종별 구매 여정·증거·연출·컴플라이언스 판단과 공통 제작 워크플로를 결합해 **광고·홍보·마케팅·상세/랜딩·콘텐츠**를 기획하고 제작하는 ChatGPT Work/Codex 및 Claude 플러그인입니다. Chany's Studio 2.15.0은 목적을 쉬운 말로 파악해 생성·편집 방식과 모델을 추천하고, 첨부 레퍼런스·잡지형 캐러셀·썸네일·영상 부분 편집을 연결합니다. GPT Image 2.5 기본값, 제품 바이럴 리메이크·광고 변형·숏폼 재가공·제품 3D와 유료 실행의 현재 연결·입력·비용 확인을 유지합니다.
+업종별 구매 여정·증거·연출·컴플라이언스 판단과 공통 제작 워크플로를 결합해 **광고·홍보·마케팅·상세/랜딩·콘텐츠**를 기획하고 제작하는 ChatGPT Work/Codex 및 Claude 플러그인입니다. Chany's Studio 2.16.0은 목적을 쉬운 말로 파악해 생성·편집 방식과 모델을 추천하고, 첨부 레퍼런스·잡지형 캐러셀·썸네일·영상 부분 편집을 연결합니다. GPT Image 2.5 기본값, 제품 바이럴 리메이크·광고 변형·숏폼 재가공·제품 3D와 유료 실행의 현재 연결·입력·비용 확인을 유지합니다.
 
 **처음 쓰는 분:** [왕초보 실습 교안](https://chany-studio.chanjunpark.chatgpt.site/learn.html)에서 플러그인 사용법과 기본 개념부터 첫 이미지·영상, 수정·저장까지 따라 하세요. [교안 원문](docs/BEGINNER-WORKBOOK.md)에는 14종 범용 상세 요청문과 90분 수업안도 있습니다.
 
@@ -335,7 +335,7 @@ Codex(개발자용): $chany-publication-review로 최종 광고의 정확한 카
 /reload-plugins
 ```
 
-업데이트 후 버전이 **2.15.0**인지 확인하고 새 대화 또는 새 작업을 시작하세요.
+업데이트 후 버전이 **2.16.0**인지 확인하고 새 대화 또는 새 작업을 시작하세요.
 
 ## 외부 서비스와 데이터
 
@@ -365,3 +365,16 @@ Codex(개발자용): $chany-publication-review로 최종 광고의 정확한 카
 - [Claude Code: Plugins reference](https://code.claude.com/docs/en/plugins-reference)
 - [Higgsfield MCP 도움말](https://higgsfield.ai/creator-hub/help-center/integrations/what-is-higgsfield-mcp)
 - [공식 설치·사용설명서](https://jolly-phlox-79c.notion.site/Chany-s-Studio-3c783e9464668140b794ee076be24406)
+
+## Adobe 편집과 애니메이션용 이미지 제작
+
+기존 기획·생성·검수 흐름에 네 가지 제작 스킬을 추가했습니다. 자연어로 원하는 결과를 요청하면 해당 작업으로 연결합니다.
+
+| 스킬 | 요청 예시 |
+|---|---|
+| `adobe-video-pipeline` | “AE와 Premiere로 편집 가능한 영상 제작 흐름을 잡아줘.” |
+| `adobe-after-effects-production` | “이 캐릭터와 자막을 에펙에서 움직이고 AEP도 남겨줘.” |
+| `adobe-premiere-finishing` | “프리미어에서 대사·자막·색을 정리하고 원본 프로젝트와 함께 내보내줘.” |
+| `image-asset-production` | “같은 캐릭터의 표정과 포즈를 만들고 애니메이션용 파츠로 준비해줘.” |
+
+설치된 스킬은 총 43개입니다. Adobe 앱을 직접 제어할 수 있는지는 실행 환경에서 별도로 확인합니다. 제어할 수 없으면 준비한 소재와 작업 지시, 직접 실행하지 못한 부분을 구분해 전달합니다. 기존 이미지 모델 정책, 유료 생성 비용 확인, 승인된 원본 보존과 게시 전 검수는 그대로 적용합니다.

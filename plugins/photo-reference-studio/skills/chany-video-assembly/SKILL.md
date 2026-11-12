@@ -35,3 +35,7 @@ Do not expose codec, frame-rate or pixel-format choices as a beginner interview.
 Do not generate new footage, rewrite the script, invent hook copy, add music, extend duration, change clip order, change frame rate without authority, or conceal a failed probe.
 
 When an operation runs, record the commands or equivalent settings that actually executed and keep them distinct from any proposed handoff. When a required local tool is unavailable, return the completed manifest, the unblocking instruction supported by the observed environment, and the work that remains possible without that tool. If every source path and required target selection is resolved, add exact probe, normalization, operation, and verification commands with safely quoted paths and no-clobber behavior under a visible `NOT EXECUTED — handoff command plan` label. Otherwise return a clearly labeled command template whose unresolved values remain placeholders. When the operating system, package manager, or execution surface is not observable, provide only a diagnostic command for the user to run and request its result, or write `해결안: none pending observation`; never guess an installation command.
+
+## Native production handoff
+
+For a native Premiere/PRPROJ deliverable or editorial, mix, color and caption finishing beyond approved-file assembly, use `adobe-premiere-finishing`. Coordinate AE turnover through `adobe-video-pipeline` when needed. Simple measured file assembly retains this skill. Follow [native production integration](../chany-studio/references/native-production-integration.md).

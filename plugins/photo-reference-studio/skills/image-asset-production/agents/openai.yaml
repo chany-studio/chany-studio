@@ -1,0 +1,4 @@
+interface:
+  display_name: "Image Asset Production"
+  short_description: "Create consistent art assets ready for motion and compositing"
+  default_prompt: "Use $image-asset-production to prepare consistent characters and motion-ready image assets from the approved art direction."

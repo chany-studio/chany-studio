@@ -1,6 +1,6 @@
 {
   "name": "photo-reference-studio",
-  "version": "2.15.0+codex.20260920010259",
+  "version": "2.16.0",
   "description": "Chany's Claude and ChatGPT Work/Codex studio: plain-language, purpose-led image and video creation, reference-led design, task-fit model recommendations, scoped editing, GPT Image 2.5 default and paid-production review.",
   "author": {
     "name": "Chany",
@@ -70,6 +70,7 @@
     "privacyPolicyURL": "https://jolly-phlox-79c.notion.site/Chany-s-Studio-3c783e94646681089a5dc4694a045cb3",
     "termsOfServiceURL": "https://jolly-phlox-79c.notion.site/Chany-s-Studio-3c783e9464668136822bf7f00201f429",
     "capabilities": [
+      "Editable Adobe workflow, After Effects production, Premiere finishing and animation-ready image assets",
       "Capability-gated Higgsfield advertising motion design and Genjutsu video revision",
       "Optional Higgsfield GPT Image 2.5 with scoped approval; GPT Image 2.5 remains default",
       "JTBD-led product and service conversion creative",

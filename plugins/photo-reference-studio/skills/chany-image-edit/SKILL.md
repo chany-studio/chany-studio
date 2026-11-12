@@ -34,3 +34,7 @@ If the request changes the reference, core composition, offer, campaign concept,
 Inspect the connected tool schema before use. If masked editing is unavailable, return the exact mask description and edit prompt and state the missing capability.
 
 Paid submission, recovery, and scope changes follow the shared runtime contract exactly. Never blindly resubmit after a timeout, disconnect, or unknown charge state; inspect the original job or receipt first. A changed request requires a new paid-generation preflight and approval under that contract.
+
+## Native production handoff
+
+Use `image-asset-production` when a requested revision must propagate across a character or scene-source set. Keep single bounded edits here and preserve the accepted identity and unaffected regions. Follow [native production integration](../chany-studio/references/native-production-integration.md).

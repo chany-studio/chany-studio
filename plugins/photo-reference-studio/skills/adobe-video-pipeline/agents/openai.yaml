@@ -1,0 +1,4 @@
+interface:
+  display_name: "Adobe 영상 제작 총괄"
+  short_description: "공식 문서·제작자 원본·실제 테스트를 연결하는 영상 제작 워크플로우"
+  default_prompt: "Use $adobe-video-pipeline to work on the current video project with editable outputs and verified results."

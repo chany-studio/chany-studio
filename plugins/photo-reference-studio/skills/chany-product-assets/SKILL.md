@@ -32,3 +32,7 @@ For a transparent cutout, verify an actual alpha channel and inspect edges on bo
 Inspect the connected tool schema before calling it. If external authentication is required, direct the user to the host-provided login flow and never ask for credentials or tokens. If no suitable edit tool is available, return the source lock and production prompt and state the missing capability.
 
 Paid submission, recovery, and scope changes follow the shared runtime contract exactly. Never blindly resubmit after a timeout, disconnect, or unknown charge state; inspect the original job or receipt first. A changed request requires a new paid-generation preflight and approval under that contract.
+
+## Native production handoff
+
+Use `image-asset-production` for registered, layered or animation-ready source sets. A single cutout remains here; never invent product geometry or claim a flattened PNG is an editable rig. Follow [native production integration](../chany-studio/references/native-production-integration.md).

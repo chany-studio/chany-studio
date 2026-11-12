@@ -62,3 +62,7 @@ Do not add deliverables that the user did not request. For every generated still
 - A specialist may change only the fields its deliverable owns.
 
 If a connected production or local assembly capability is missing, continue with the brief, prompt, layout, clip manifest, and handoff state that can be completed honestly, then name the single unavailable capability. Use `chany-preflight` for an observed local-environment report when assembly, extraction, or batch image work is requested. Never claim that an asset was generated, assembled, displayed, verified, or delivered when it was not.
+
+## Editable Adobe and animation assets
+
+For an editable Adobe production request, use `adobe-video-pipeline` to coordinate `adobe-after-effects-production` and `adobe-premiere-finishing`; use `image-asset-production` for coherent animation-ready source sets. Read [native production integration](references/native-production-integration.md). Explicit app/native-project requests take precedence over generic motion or assembly routing. Retain this studio's brief, cost controls and publication review; verify actual host access before claiming execution.

@@ -105,3 +105,16 @@ For a requested campaign family, propose only the needed stages:
 10. `chany-publication-review` checks the exact final copy and rendered assets when jurisdiction, claims, offers, outbound delivery, endorsement, rights, disclosure, platform, or industry gates make release review relevant.
 
 Apply `runtime-boundaries.md` before selecting any loop. Use `chany-media-production-loop` and `media-job-ledger.md` for generated still-image and campaign-video jobs, never a source-code diagnostic loop. Apply `image-generation-runtime.md` before every generative still-image creation or edit. Its default is GPT Image 2.5 (`gpt_image_2_5`); a different model is a scoped override, never a silent fallback. Apply `higgsfield-runtime-contract.md` and `creative-quality-loop.md` before paid operations. Show the effective paid-generation plan and live cost information when available; do not assume that one final video equals one paid generation call. When observed results arrive, `chany-marketing-brief` checks tracking, attribution, comparability, and sample sufficiency before recommending the next one-variable round. Chany retains campaign orchestration and never treats a specialist or external review as blanket legal clearance.
+
+## Adobe and animation-asset routing
+
+Explicit editable Adobe deliverables take precedence over the generic motion and assembly rows above. Follow [native-production-integration.md](native-production-integration.md) for shared state, generation and release boundaries.
+
+| User intent | Owner skill | Typical result |
+|---|---|---|
+| AE/Premiere cross-app production or editable-project delivery | `adobe-video-pipeline` | locally verified workflow, native trial and delivery evidence |
+| After Effects, AEP, editable typography/composite or character animation | `adobe-after-effects-production` | editable native shot and inspected render, when host control exists |
+| Premiere, PRPROJ, editorial/conform/mix/color/caption finishing | `adobe-premiere-finishing` | native sequence, verified export and media package |
+| consistent character, expression, pose, background or animation-ready image set | `image-asset-production` | source-locked assets and motion handoff |
+
+Simple approved-clip assembly stays with `chany-video-assembly`. Single bounded image edits stay with `chany-image-edit`; generated inputs still use `chany-media-production-loop`.
