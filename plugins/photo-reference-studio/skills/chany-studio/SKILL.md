@@ -1,6 +1,6 @@
 ---
 name: chany-studio
-description: Route end-to-end or multi-asset advertising and marketing requests through one industry expert overlay and the smallest production skill chain while maintaining shared evidence, source, copy, campaign, identity, and rights locks. Use for campaigns spanning strategy, visuals, ads, pages, or campaign video; not for one clearly named specialist output.
+description: Route end-to-end or multi-asset campaigns and narrative production through an applicable industry expert overlay and the smallest production skill chain while maintaining shared evidence, source, copy, campaign, identity, and rights locks. Use for campaigns spanning strategy, visuals, ads, pages, or campaign video; not for one clearly named specialist output.
 ---
 
 # Chany's Studio
@@ -66,3 +66,7 @@ If a connected production or local assembly capability is missing, continue with
 ## Editable Adobe and animation assets
 
 For an editable Adobe production request, use `adobe-video-pipeline` to coordinate `adobe-after-effects-production` and `adobe-premiere-finishing`; use `image-asset-production` for coherent animation-ready source sets. Read [native production integration](references/native-production-integration.md). Explicit app/native-project requests take precedence over generic motion or assembly routing. Retain this studio's brief, cost controls and publication review; verify actual host access before claiming execution.
+
+## Narrative drama
+
+For narrative AI films, episodic shorts or branded drama, use `ai-drama-production` as the creative owner and `cinematic-director` only for needed directing support. Read [drama production integration](references/drama-production-integration.md). Reuse the current brief, media loop, asset sets, assembly/Adobe route and publication review; do not add the campaign sequence to a script-only request.

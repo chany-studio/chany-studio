@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "title": "Example planning draft; 24 fps is provisional",
+  "fps": {
+    "num": 24,
+    "den": 1
+  },
+  "duration_frames": 240,
+  "audio_required": true,
+  "audio_mix": null,
+  "shots": [
+    {
+      "id": "SH001",
+      "scene": "SC01",
+      "kind": "generated",
+      "start": 0,
+      "end": 120,
+      "references": [],
+      "output": null
+    },
+    {
+      "id": "SH002",
+      "scene": "SC01",
+      "kind": "generated",
+      "start": 120,
+      "end": 240,
+      "references": [],
+      "output": null
+    }
+  ],
+  "dialogue": [
+    {
+      "id": "D001",
+      "speaker": "character_a",
+      "start": 48,
+      "end": 144,
+      "measured_frames": null,
+      "audio": null
+    }
+  ],
+  "claims": [],
+  "budget": {
+    "unit": "credits",
+    "authorized_limit": null,
+    "spent": 0,
+    "reserved": 0,
+    "next_batch": 0
+  },
+  "final_output": null,
+  "reviews": {
+    "story": {
+      "status": "pending",
+      "evidence": null,
+      "notes": "",
+      "asset_sha256": null
+    },
+    "performance": {
+      "status": "pending",
+      "evidence": null,
+      "notes": "",
+      "asset_sha256": null
+    },
+    "visual_continuity": {
+      "status": "pending",
+      "evidence": null,
+      "notes": "",
+      "asset_sha256": null
+    },
+    "audio_sync": {
+      "status": "pending",
+      "evidence": null,
+      "notes": "",
+      "asset_sha256": null
+    },
+    "full_playback": {
+      "status": "pending",
+      "evidence": null,
+      "notes": "",
+      "asset_sha256": null
+    },
+    "business_claims": {
+      "status": "pending",
+      "evidence": null,
+      "notes": "",
+      "asset_sha256": null
+    },
+    "delivery": {
+      "status": "pending",
+      "evidence": null,
+      "notes": "",
+      "asset_sha256": null
+    }
+  }
+}

@@ -50,3 +50,5 @@ python3 scripts/probe_image_assets.py /absolute/path/character.png --require-alp
 ```
 
 Keep source, candidate and accepted files distinct; preserve IDs, references, prompts, actual output properties and review state. Deliver the images and an asset contract when subsequent production needs them. Identify what was generated, visually checked, technically measured and tested in motion separately. Do not promise a reference channel's quality based on skill installation.
+
+For narrative drama, consume `ai-drama-production`'s accepted cast, scene and shot versions under [drama production integration](../chany-studio/references/drama-production-integration.md). Reuse its brief and continuity decisions; return assets and project revisions to that owner.

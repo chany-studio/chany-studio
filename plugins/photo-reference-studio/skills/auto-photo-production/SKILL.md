@@ -51,3 +51,7 @@ Native production routes also follow `chany-studio/references/native-production-
 - editable After Effects shots and character motion → `adobe-after-effects-production`
 - Premiere editorial, sound, color, captions and finishing → `adobe-premiere-finishing`
 - consistent animation-ready character/background/prop sets → `image-asset-production`
+
+Narrative routes follow [drama production integration](../chany-studio/references/drama-production-integration.md):
+- narrative films, episodic shorts and branded drama → `ai-drama-production`
+- scoped acting, blocking, camera and continuity support → `cinematic-director`

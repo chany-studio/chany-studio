@@ -68,3 +68,5 @@ python3 scripts/probe_media.py /absolute/path/render.mov --ffprobe /absolute/pat
 ```
 
 Finish with actual artifact links, what was executed, what was inspected, and remaining checks. Never report downloaded material as installed, a static inspection as a successful render, or documented API support as tested automation.
+
+For narrative drama, consume `ai-drama-production`'s accepted cast, scene and shot versions under [drama production integration](../chany-studio/references/drama-production-integration.md). Reuse its brief and continuity decisions; return assets and project revisions to that owner.

@@ -9,14 +9,14 @@ media_job:
   media_job_id: ""
   output_index: 1
   owner_skill: ""
-  asset_type: "still-image | campaign-video"
+  asset_type: "still-image | campaign-video | narrative-video"
   asset_version_id: ""
   specification_version_id: ""
   prompt_version_id: ""
   final_prompt: ""
   authority_inputs:
     - asset_version_id: ""
-      role: "authority | conditioning-first-frame | direction-only"
+      role: "authority | conditioning-first-frame | character-reference | environment-reference | direction-only"
       reusable_input_ref: "internal only"
   requested_default: ""
   provider: ""
@@ -93,3 +93,5 @@ target region and audio/preserve policy in that specification; bind the original
 clip as an authority input. The operation/model/options fields hold the resolved
 edit mode. Compare changed and untouched intervals against the source, including
 audio and cut boundaries; do not create a redundant still job to fill this ledger.
+
+For narrative-video jobs, retain the drama owner's episode/scene/shot/block IDs and conditioning mode under [drama-production-integration.md](drama-production-integration.md). Reference mode binds accepted role-mapped assets without forcing a conditioning first frame. The production manifest links this record and derives budget values from its receipts; it cannot grant spending or duplicate job submission.

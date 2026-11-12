@@ -51,3 +51,7 @@ For simple reference remakes, reuse the accepted reference and brief without new
 This skill owns concept, scene design, and clip acceptance; `chany-media-production-loop` owns the generation job lifecycle. It does not own casual creator-template production, deterministic post-production, publication, or campaign performance interpretation. If a required generation capability is unavailable, return the completed concept packet, shot plan, governing-still prompts, live-interface handoff, and exact unavailable capability without claiming that media was created.
 
 When `chany-viral-product-remake` hands off a short product-video job, consume its accepted fast remake brief without restarting strategy or re-interviewing the user. Preserve its chosen original-remake versus authorized-product-swap path, then own only scene design, clip acceptance, and the Genjutsu revision when applicable.
+
+## Narrative drama handoff
+
+An episodic or character-driven drama request uses `ai-drama-production` for story, performance and shot ownership under [drama production integration](../chany-studio/references/drama-production-integration.md). Reuse the existing brand brief and sources. Commercial concepts and bounded source-video edits remain here; do not impose this commercial still-first process on a drama-owned reference-mode shot.

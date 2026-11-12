@@ -1,6 +1,6 @@
 {
   "name": "photo-reference-studio",
-  "version": "2.16.0",
+  "version": "2.17.0",
   "description": "Chany's Claude and ChatGPT Work/Codex studio: plain-language, purpose-led image and video creation, reference-led design, task-fit model recommendations, scoped editing, GPT Image 2.5 default and paid-production review.",
   "author": {
     "name": "Chany",
@@ -56,7 +56,10 @@
     "GPT Image 2.5",
     "AGENTS.md",
     "motion-design",
-    "genjutsu"
+    "genjutsu",
+    "ai-drama",
+    "episodic-storytelling",
+    "performance-continuity"
   ],
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",

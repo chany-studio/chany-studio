@@ -54,6 +54,8 @@ clips:
 
 If the named platform source provides a range, maximum, safe area, recommendation, or list of supported values, store it in `constraints`. A constraint does not authorize one exact encode selection. For an accepted master revision or derivative, its measured dimensions, frame rate, codec, pixel format, and audio layout may be recorded as `accepted-source-master` authority when the requested operation should preserve them. Otherwise keep unresolved selections empty and stop before encoding until the user or an approved delivery specification selects them. The output duration is the accepted sum of the shot-plan in/out points; it may proceed when it fits an authoritative `max_duration_s`. An unresolved hard requirement remains a publication blocker under the platform adapter.
 
+For a drama-owned shot plan, follow [drama production integration](../../chany-studio/references/drama-production-integration.md). Use the approved script version as copy authority and retain episode/scene/shot IDs, narrative beat and dialogue timing. Advertising-only `usp_role` and `message_rank` may be omitted; do not reorder fiction around a sales message. The existing target, probe, no-clobber and render-verification requirements still apply. Performance tables are needed only for requested advertising measurement.
+
 ## Input probe
 
 Probe every source file and store its observed values before choosing a normalization command:

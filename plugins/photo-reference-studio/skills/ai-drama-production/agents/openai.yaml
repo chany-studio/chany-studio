@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI 드라마 제작"
+  short_description: "서사·연기·연속성부터 편집·음향 검수까지 연결하는 AI 영화 제작"
+  default_prompt: "$ai-drama-production을 사용해 대본, 콘티, 제작 자산과 검수 상태를 확인하고 다음 제작 단계를 진행해줘."

@@ -29,6 +29,8 @@ For source-video revisions, consume the campaign-video owner's [bounded edit con
    additional paid draft before its approved final image. Generate a draft only
    when requested or included in the approved scope; preserve approved quality
    settings. New generated video uses the accepted governing still and shot contract;
+   a drama-owned reference-mode shot instead uses its accepted role-mapped reference pack
+   under [drama production integration](../chany-studio/references/drama-production-integration.md);
    source-video editing uses the approved source and bounded edit specification.
    Do not generate another still merely because the workflow changed owners.
    Show the actual preview in the conversation when the host supports it; links are a fallback.

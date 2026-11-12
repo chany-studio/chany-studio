@@ -79,3 +79,5 @@ For an ordinary product or service post, deliver the draft with a short plain-Ko
 ## 6. Project setup for beginners
 
 `chany-project` uses the same compact purpose-led intake: what response they want, who it is for, and what/where to make, only when unknown. Do not append a separate preference questionnaire. Recommend look, ratio and working defaults in the blueprint; collect optional preferences only when requested or when they materially change the result. Defaults do not approve uploads or spending. End setup with one ready-to-copy first request, for example: "이 제품 사진으로 인스타 광고 이미지 한 장 만들어줘".
+
+For drama-owned reference-mode generation, apply [drama-production-integration.md](drama-production-integration.md): accepted character and environment references may replace a governing first frame when the live operation supports them. Explain only the actual paid stages; do not add a paid still or a second confirmation card for a stage that is not needed.

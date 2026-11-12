@@ -118,3 +118,12 @@ Explicit editable Adobe deliverables take precedence over the generic motion and
 | consistent character, expression, pose, background or animation-ready image set | `image-asset-production` | source-locked assets and motion handoff |
 
 Simple approved-clip assembly stays with `chany-video-assembly`. Single bounded image edits stay with `chany-image-edit`; generated inputs still use `chany-media-production-loop`.
+
+## Narrative production routes
+
+| User intent | Owner skill | Typical result |
+|---|---|---|
+| narrative AI film, episodic short drama, branded character story | `ai-drama-production` | series/episode script, performance and continuity plan, shot packet, accepted takes and version-bound review |
+| a specific performance beat, blocking, camera plan or continuity defect | `cinematic-director` | scoped directing notes and templates for the existing production owner |
+
+Apply [drama-production-integration.md](drama-production-integration.md). The drama owner reuses current project decisions and delegates execution to the existing media loop, coherent assets to `image-asset-production`, and requested post-production to assembly or Adobe. Ordinary commercials remain with `chany-campaign-video`; narrative drama does not require an extra campaign concept.
