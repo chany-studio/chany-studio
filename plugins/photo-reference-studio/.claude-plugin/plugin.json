@@ -1,13 +1,13 @@
 {
   "name": "photo-reference-studio",
   "displayName": "Chany's Studio",
-  "version": "2.17.0",
-  "description": "Chany's Claude and ChatGPT Work/Codex studio: plain-language, purpose-led image and video creation, reference-led design, task-fit model recommendations, scoped editing, GPT Image 2.5 default and paid-production review.",
+  "version": "2.18.0",
+  "description": "Chany's Studio: put real products and services into chosen references, discover fitting examples, and create images and videos with source fidelity, current model checks and bounded revisions.",
   "author": {
     "name": "Chany",
     "url": "https://github.com/chany-studio"
   },
-  "homepage": "https://jolly-phlox-79c.notion.site/Chany-s-Studio-3c783e9464668140b794ee076be24406",
+  "homepage": "https://chany-studio.chanjunpark.chatgpt.site/",
   "repository": "https://github.com/chany-studio/chany-studio",
   "license": "MIT",
   "keywords": [
@@ -57,7 +57,7 @@
     "interactive-project-interview",
     "publication-review",
     "paid-generation-safety",
-    "gpt_image_2_5",
+    "gpt_image_2_6",
     "agents",
     "after-effects",
     "premiere-pro",
@@ -65,7 +65,10 @@
     "native-video-production",
     "ai-drama",
     "episodic-storytelling",
-    "performance-continuity"
+    "performance-continuity",
+    "reference-insertion",
+    "service-visuals",
+    "metricool-optional"
   ],
   "mcpServers": "./.mcp.claude.json"
 }

@@ -1,57 +1,18 @@
 ---
 name: auto-photo-production
-description: Legacy compatibility shim for explicit auto-photo-production requests. Route old product-photo, key-visual, detail-page, advertising, fashion, video-reference, campaign-video, assembly, and environment-check prompts to the matching Chany's Studio specialist; do not select this skill automatically.
+description: Legacy compatibility shim for explicit auto-photo-production requests. Load the current shared routing table and delegate to the matching Chany's Studio owner; do not select this skill automatically.
 ---
 
 # Auto Photo Production — Legacy
 
-This name remains temporarily available so existing saved prompts do not fail. Do not reproduce the former all-in-one workflow.
+This saved-prompt entry point remains compatible. Its former duplicated routing list is removed; the current source of truth is [specialist routing](../chany-studio/references/routing.md). Read that table and load the matching owner's SKILL.md before continuing. Do not recreate the former all-in-one workflow.
 
-Follow the shared [beginner experience](../chany-studio/references/beginner-experience.md), including purpose-led intake and reuse of accepted decisions. This shim adds no interview or approval stage.
+Existing specialized calls remain reachable through that table: `chany-ad-variants`, `chany-shortform-recut`, `chany-product-3d`, `chany-viral-product-remake`, `chany-campaign-video`, `chany-video-assembly`, `chany-preflight`, `ai-drama-production` and `cinematic-director`. Their rules live only in their current owners.
 
-Route the request as follows:
+1. Preserve the user's original request, supplied assets, selected references, project model policy and accepted decisions.
+2. Apply [beginner experience](../chany-studio/references/beginner-experience.md). This shim adds no interview, deliverable or approval stage.
+3. Route by actual output and scope using the shared table, including narrative, Adobe, reference-insertion and service work. A single clear deliverable goes directly to its owner.
+4. Generic discovery still means 10 inline images by default (Pinterest 5 + MeiGen 5); explicit source/count wins. Named curated sources and optional Metricool follow their own labelled lanes, never cross-fill Pinterest.
+5. Apply [image model policy](../chany-studio/references/image-generation-runtime.md) in the owner. New unpinned work uses GPT Image 2.6; recorded existing project choices continue unchanged. A model update never rewrites in-flight jobs or approved costs.
 
-- multi-asset or end-to-end campaign → `chany-studio`
-- project setup, shared instructions, or project state → `chany-project`
-- industry-specific direction → the matching industry overlay listed in `chany-studio/references/routing.md`
-- marketing plan or asset brief → `chany-marketing-brief`
-- purchase motivation, JTBD, or persona analysis → `chany-jtbd-persona`
-- Meta Ad Library video, single-image, or carousel benchmarks → `chany-meta-ad-research`
-- cutout, white packshot, or source cleanup → `chany-product-assets`
-- generic visual references with no named provider → `chany-reference-board`, which shows 10 inline images by default (Pinterest 5 + MeiGen 5); an explicit Pinterest-only board shows six by default; an explicit positive count overrides either default
-- MeiGen AI images with their source prompts → `chany-ai-prompt-reference`
-- professional commercial or lifestyle photography references from Production Paradise → `chany-commercial-photo-reference`
-- awarded advertising and campaign benchmarks from Ads of the World, D&AD, or The One Show → `chany-award-ad-reference`
-- vague direction, design concept, current trend translation, or expert-quality prompt → `chany-creative-direction`
-- staged image or master key visual → `chany-campaign-visual`
-- static ad, promotional/editorial carousel, YouTube thumbnail, Instagram cover, poster, banner, or channel set → `chany-ad-creative`
-- product detail-page modules → `chany-detail-page`
-- bounded edit or inpainting → `chany-image-edit`
-- static adult model or fashion try-on → `chany-model-fashion`
-- YouTube, Instagram, or another browser video reference link, authorized tab capture, or local reference-video intake → `chany-video-reference-ingest`
-- short product Reel/Short link plus the user's product, or “이 영상에서 제품만 바꿔줘” → `chany-viral-product-remake`
-- product commercial, cinematic brand film, promotional motion, concept-led performance video, bounded AI source-video edit/extension, or Genjutsu object swap / motion transfer → `chany-campaign-video`
-- animated ad typography, benefit diagram, logo reveal, or CTA end card → `chany-motion-design`
-- multiple controlled edits of one approved source ad or Ad Multiplier → `chany-ad-variants`
-- authorized YouTube/long-form video into reviewed Reels or Shorts clips → `chany-shortform-recut`
-- product mesh, turntable asset, editable 3D ad scene, or camera previs → `chany-product-3d`
-- generated still or campaign-video execution, status, recovery, or retry → `chany-media-production-loop`
-- clip assembly, segment replacement, target normalization, hook-only variants, or delivery verification → `chany-video-assembly`
-- missing local tool or environment-readiness check → `chany-preflight`
-- pre-publication claim, rights, disclosure, or channel review → `chany-publication-review`
-
-Tell the user which current skill now owns the request, then follow that skill. Preserve the original request and do not add deliverables during migration.
-
-For every generative still-image creation or edit, the routed owner must apply Chany's Studio's shared GPT Image 2.5 (`gpt_image_2_5`) default and controlled-override contract. Do not preserve an older prompt's implicit image-model default as though the user explicitly selected it.
-
-Every reference request keeps each provider's own rules: Pinterest Pin pages and `i.pinimg.com` previews for Pinterest, the inspected MeiGen tool or entry for MeiGen, Production Paradise for professional commercial photography, and Ads of the World, D&AD, and The One Show for award references. The generic board combines the Pinterest and MeiGen lanes as described in `chany-studio/references/combined-reference-board.md`, but no lane fills another lane's missing candidates, and a Pin's outbound destination is never followed. Video-page intake is a separate user-authorized browser-capture path and does not expand any static discovery lane.
-
-Native production routes also follow `chany-studio/references/native-production-integration.md`:
-- cross-app Adobe workflow and native delivery → `adobe-video-pipeline`
-- editable After Effects shots and character motion → `adobe-after-effects-production`
-- Premiere editorial, sound, color, captions and finishing → `adobe-premiere-finishing`
-- consistent animation-ready character/background/prop sets → `image-asset-production`
-
-Narrative routes follow [drama production integration](../chany-studio/references/drama-production-integration.md):
-- narrative films, episodic shorts and branded drama → `ai-drama-production`
-- scoped acting, blocking, camera and continuity support → `cinematic-director`
+Tell the user the next action in plain Korean, then follow the current owner. Existing generation, upload, recovery and publication boundaries remain in force. Do not expose migration mechanics unless asked.

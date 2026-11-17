@@ -9,6 +9,8 @@ Follow the shared [beginner experience contract](../chany-studio/references/begi
 
 Produce images that support the intended shot, survive revision, and remain coherent across a sequence. A beautiful still is not proof of character continuity or animation readiness.
 
+Apply [reference roles and continuity](../chany-studio/references/reference-roles-and-continuity.md) when multiple shots or assets share identity, location or props. Reuse original identity plus inspected current scene state; do not create redundant paid reference sheets or carry forward drift.
+
 ## Establish the asset contract
 
 Read the current brief, accepted art direction, actual reference images, latest corrections and intended edit. Reuse accepted decisions. Establish which image is the identity master, which controls material/style, which controls composition, and which is the edit target. Do not let a pose reference replace the character's identity.
@@ -17,7 +19,7 @@ Record the shot purpose, framing, output canvas, maximum visible size, motion, a
 
 ## Generate through the selected surface
 
-Use Chany's Studio's shared [image-generation runtime](../chany-studio/references/image-generation-runtime.md) and the host's image instructions when available. Preserve the GPT Image 2.5 default and approved scoped overrides; report unavailable model selection honestly. Honor the user's chosen provider within that contract. Route generated assets through `chany-media-production-loop`; use current tool arguments, not guessed model IDs or APIs. Do not silently switch to a paid service or CLI to fix ordinary quality issues.
+Use Chany's Studio's shared [image-generation runtime](../chany-studio/references/image-generation-runtime.md) and the host's image instructions when available. Preserve the GPT Image 2.6 default and approved scoped overrides; report unavailable model selection honestly. Honor the user's chosen provider within that contract. Route generated assets through `chany-media-production-loop`; use current tool arguments, not guessed model IDs or APIs. Do not silently switch to a paid service or CLI to fix ordinary quality issues.
 
 Inspect local edit targets with the available image viewer first. Use local reference paths when supported and all targets have paths; otherwise use the smallest supported recent-image selection containing the targets. Follow the live schema if it differs. Request actual transparency for cutouts and verify the returned alpha. A checkerboard painted into RGB pixels is not transparency.
 

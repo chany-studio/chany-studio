@@ -1,5 +1,7 @@
 # Reference Search Policy
 
+Scope: this file governs Pinterest-lane operations only. Named sites/accounts and broader curated discovery follow [curated-reference-sources.md](../../chany-studio/references/curated-reference-sources.md) as a separate lane. They never use the Pinterest preview server or fill its missing slots.
+
 ## Core rule
 
 Search only Pinterest. Search terms identify what the source subject is, not how it should be photographed. Resolve `target_count` as the user's explicit positive whole-number request or `6` when none is given. The final reference board must show exactly `target_count` distinct reference images directly in the current conversation; a link-only board, HTML file, contact sheet, or separate artifact is not an inline reference board.

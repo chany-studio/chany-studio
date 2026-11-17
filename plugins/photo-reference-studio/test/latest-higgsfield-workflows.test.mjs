@@ -17,6 +17,7 @@ test("dedicated current-Higgsfield workflows are discoverable and beginner-safe"
     readPlugin("skills/chany-project/assets/templates/AGENTS.md.tmpl"),
   ]);
 
+  assert.match(shim, /specialist routing.*routing\.md/);
   for (const skill of skillNames) {
     const [body, openai] = await Promise.all([
       readPlugin(`skills/${skill}/SKILL.md`),
@@ -25,13 +26,13 @@ test("dedicated current-Higgsfield workflows are discoverable and beginner-safe"
     assert.match(body, new RegExp(`^name: ${skill}$`, "m"));
     assert.match(body, /beginner-experience\.md\)/);
     assert.match(openai, new RegExp(`\\$${skill}`));
-    for (const document of [router, shim, projectContract, projectInstructions]) {
+    for (const document of [router, projectContract, projectInstructions]) {
       assert.ok(document.includes(skill), `${skill} must be routed by every entry point`);
     }
   }
 });
 
-test("live model routing covers the verified 2026-09-18 task families without replacing GPT Image 2.5", async () => {
+test("live model routing covers the updated and legacy task families without replacing GPT Image 2.6", async () => {
   const [routing, apiBoundary, adCreative, detailPage] = await Promise.all([
     readPlugin("skills/chany-studio/references/latest-model-routing.md"),
     readPlugin("skills/chany-studio/references/higgsfield-api-boundary.md"),
@@ -41,13 +42,13 @@ test("live model routing covers the verified 2026-09-18 task families without re
 
   for (const id of [
     "seedance_2_5", "ad_multiplier", "flux_3_video", "flux_3_video_edit",
-    "kling_video_edit", "gemini_omni_flash_1_1", "grok_video_v15",
+    "kling_video_edit", "gemini_omni_flash_1_2", "grok_video_v15",
     "openai_hazel", "recraft_v4_1", "clipify", "meshy_v7_image_to_3d",
   ]) {
     assert.ok(routing.includes(id), `latest model routing missing ${id}`);
   }
   assert.match(routing, /inspect[^.]+current model\/tool contract[^.]+cost[^.]+availability/i);
-  assert.match(routing, /GPT Image 2\.5 remains the default/);
+  assert.match(routing, /GPT Image 2\.6 remains the default/);
   assert.match(routing, /no reference images[\s\S]+do not use for source-faithful product insertion/i);
   assert.match(adCreative, /OpenAI Hazel/);
   assert.match(detailPage, /Recraft V4\.1/);
@@ -65,7 +66,7 @@ test("2.14 manifests and public guides publish the current production families",
     readFile(join(repoRoot, "docs", "HIGGSFIELD-UPDATES.md"), "utf8"),
   ]);
 
-  assert.equal(claude.version, "2.17.0");
+  assert.equal(claude.version, "2.18.0");
   assert.equal(codex.version.split("+")[0], claude.version);
   for (const keyword of ["ad-variants", "shortform-recut", "product-3d"]) {
     assert.ok(claude.keywords.includes(keyword));

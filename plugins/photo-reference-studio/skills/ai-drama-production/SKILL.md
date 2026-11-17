@@ -1,6 +1,6 @@
 ---
 name: ai-drama-production
-description: Develop and produce narrative AI films and episodic short dramas, from story and performance through continuity, shot generation, editing, sound, and evidence-based quality review. Use for fiction or branded drama production, not generic social posts or motion graphics alone.
+description: Develop and produce narrative AI films, episodic short dramas and branded fiction. Use for scripts, scenes, dialogue and storyboards (드라마 대본·콘티), including text-only planning, as well as continuity, shot production, editing and quality review.
 metadata:
   version: "2.0.1"
 ---
@@ -8,6 +8,8 @@ metadata:
 # AI 드라마 제작
 
 이야기·연기·영상·소리·제작 기록을 함께 관리한다. ‘넷플릭스급’은 높은 완성도를 요구하는 목표로 해석한다. 스킬 설치, 프롬프트, 해상도나 검사 점수가 특정 작품 수준 또는 Netflix 납품 승인을 보장한다고 말하지 않는다.
+
+Apply [reference roles and continuity](../chany-studio/references/reference-roles-and-continuity.md) when multiple shots or assets share identity, location or props. Reuse original identity plus inspected current scene state; do not create redundant paid reference sheets or carry forward drift.
 
 ## Chany’s Studio 연결
 

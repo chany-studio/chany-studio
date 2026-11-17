@@ -11,18 +11,18 @@ async function readPluginFile(relativePath) {
   return readFile(join(pluginRoot, relativePath), "utf8");
 }
 
-test("the shared still-image contract fixes GPT Image 2.5 as the honest default", async () => {
+test("the shared still-image contract fixes GPT Image 2.6 as the honest default", async () => {
   const contract = await readPluginFile(
     "skills/chany-studio/references/image-generation-runtime.md",
   );
 
-  assert.match(contract, /default still-image generation and editing model is \*\*GPT Image 2.5\*\*/i);
-  assert.match(contract, /exact model ID `gpt_image_2_5`/i);
-  assert.match(contract, /Do not relabel an unknown provider default as GPT Image 2.5/i);
-  assert.match(contract, /Do not replace `gpt_image_2_5` merely because another or newer model exists/i);
+  assert.match(contract, /default still-image generation and editing model is \*\*GPT Image 2.6\*\*/i);
+  assert.match(contract, /exact model ID `gpt_image_2_6`/i);
+  assert.match(contract, /Do not relabel an unknown provider default as GPT Image 2.6/i);
+  assert.match(contract, /Do not replace `gpt_image_2_6` merely because another or newer model exists/i);
   assert.match(contract, /user explicitly requests the alternate model or provider/i);
   assert.match(contract, /approved project brief already records that alternate default/i);
-  assert.match(contract, /live capability check proves that `gpt_image_2_5` is unavailable/i);
+  assert.match(contract, /live capability check proves that `gpt_image_2_6` is unavailable/i);
   assert.match(contract, /invalidates the affected quote, paid-generation approval, and creative acceptance record/i);
   assert.match(contract, /video, audio, and clip assembly keep their own tools/i);
   assert.match(contract, /Higgsfield-specific; do not assume it works on another host/);
@@ -59,7 +59,7 @@ test("every generative still owner imports the shared model contract", async () 
       /\.\.\/chany-studio\/references\/image-generation-runtime\.md/,
       `${owner} must import the shared image model contract`,
     );
-    assert.match(skill, /GPT Image 2.5 \(`gpt_image_2_5`\)/i);
+    assert.match(skill, /GPT Image 2.6 \(`gpt_image_2_6`\)/i);
   }
 });
 
@@ -73,7 +73,7 @@ test("project and campaign state persist the default and scoped override", async
   const documents = await Promise.all(files.map(readPluginFile));
 
   for (let index = 0; index < documents.length; index += 1) {
-    assert.match(documents[index], /gpt_image_2_5/i, `${files[index]} must persist the default`);
+    assert.match(documents[index], /gpt_image_2_6/i, `${files[index]} must persist the default`);
   }
   assert.match(documents[3], /^still_image_model_policy:\s*$/m);
   assert.match(documents[3], /^  active_override:/m);
@@ -96,7 +96,7 @@ test("Claude loads the one-tool reference preview before Pinterest discovery", a
   }
 });
 
-test("public docs and manifests publish the 2.17.0 default consistently", async () => {
+test("public docs and manifests publish the 2.18.0 default consistently", async () => {
   const [rootReadme, pluginReadme, install, guide, troubleshooting, claude, codex] =
     await Promise.all([
       readFile(join(repoRoot, "README.md"), "utf8"),
@@ -109,13 +109,13 @@ test("public docs and manifests publish the 2.17.0 default consistently", async 
     ]);
 
   for (const document of [rootReadme, pluginReadme, install, guide, troubleshooting]) {
-    assert.match(document, /GPT Image 2.5/i);
-    assert.match(document, /gpt_image_2_5/i);
+    assert.match(document, /GPT Image 2.6/i);
+    assert.match(document, /gpt_image_2_6/i);
   }
-  assert.equal(claude.version, "2.17.0");
-  assert.match(codex.version, /^2\.17\.0(?:\+codex\.)?/);
-  assert.ok(claude.keywords.includes("gpt_image_2_5"));
+  assert.equal(claude.version, "2.18.0");
+  assert.match(codex.version, /^2\.18\.0(?:\+codex\.)?/);
+  assert.ok(claude.keywords.includes("gpt_image_2_6"));
   assert.ok(codex.interface.capabilities.includes(
-    "GPT Image 2.5 default for generative still images with scoped overrides",
+    "GPT Image 2.6 default for generative still images with scoped overrides",
   ));
 });

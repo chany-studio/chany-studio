@@ -36,10 +36,10 @@ test("live instructions and docs never name GPT Image 2 as the still-image model
       }
     }
   }
-  assert.deepEqual(stale, [], "GPT Image 2.5 (gpt_image_2_5) is the only default still-image model");
+  assert.deepEqual(stale, [], "GPT Image 2.6 (gpt_image_2_6) is the only default still-image model");
 });
 
-test("the legacy auto-photo-production shim routes every current non-industry skill", async () => {
+test("the legacy shim loads the shared table covering every current non-industry skill", async () => {
   const shim = await readFile(join(pluginRoot, "skills", "auto-photo-production", "SKILL.md"), "utf8");
   const routing = await readFile(join(pluginRoot, "skills", "chany-studio", "references", "routing.md"), "utf8");
   const skillNames = (await readdir(join(pluginRoot, "skills"), { withFileTypes: true }))
@@ -56,8 +56,8 @@ test("the legacy auto-photo-production shim routes every current non-industry sk
   }
   const missing = skillNames
     .filter((name) => !industryOverlays.includes(name))
-    .filter((name) => !shim.includes(`\`${name}\``));
-  assert.deepEqual(missing, [], "auto-photo-production must route every current skill");
+    .filter((name) => !routing.includes(`\`${name}\``));
+  assert.deepEqual(missing, [], "the shared legacy destination must route every current skill");
   assert.match(shim, /chany-studio\/references\/routing\.md/, "industry overlays are routed through routing.md");
   assert.doesNotMatch(shim, /six visible candidates by default/i);
   assert.match(shim, /10 inline images by default \(Pinterest 5 \+ MeiGen 5\)/);
@@ -145,7 +145,8 @@ test("the product insertion pipeline covers the core product-to-ad flow", async 
     assert.ok(pipeline.includes(section), `product-insertion.md must define ${section}`);
   }
   assert.match(pipeline, /제품 확인: ✓ 모양·비율/);
-  assert.match(pipeline, /Reject any result that could pass for the reference itself/);
+  assert.match(pipeline, /For third-party inspiration[\s\S]+exclude unrelated brands/);
+  assert.match(pipeline, /user-authorized template or base-image edit[\s\S]+preserve the explicitly requested layout/);
   assert.match(pipeline, /sends it to a third party/);
   assert.match(pipeline, /Do not switch silently/);
   assert.match(pipeline, /`quality: high` and `resolution: 2k`/);
@@ -189,7 +190,7 @@ test("contracts do not contradict each other on money, uploads, models and waits
   assert.match(runtime, /counts as this approval/, "runtime contract must accept the card's dedicated upload line");
   assert.match(beginner, /참고 사진: /);
   assert.match(beginner, /approving a card without it never authorizes that upload/);
-  assert.doesNotMatch(beginner, /Name the model once as "GPT Image 2\.5"/, "the card must name the model actually used");
+  assert.doesNotMatch(beginner, /Name the model once as "GPT Image 2\.6"/, "the card must name the model actually used");
   assert.doesNotMatch(lane, /wait for a number/, "specialist lanes must not add a separate selection stop");
   assert.match(searchPolicy, /only through \[product insertion\]/, "Pinterest input use must go through the consented path");
   assert.match(beginner, /regulated context/);

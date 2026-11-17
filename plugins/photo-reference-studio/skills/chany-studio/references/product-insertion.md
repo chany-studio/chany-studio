@@ -1,6 +1,6 @@
 # Product insertion pipeline
 
-This is the core Chany's Studio job: the user uploads a product photo, the studio finds references that suit that product, and it depicts the same real product as newly photographed in the reference's shooting approach. It is not a default cut-and-paste/background-replacement workflow. Apply it to every still or video whose subject is a physical product the user supplied, respecting the reshoot versus bounded-edit boundary in [reference-led-design.md](reference-led-design.md). It works inside the [beginner experience contract](beginner-experience.md), the [paid runtime contract](higgsfield-runtime-contract.md) and the [image model default](image-generation-runtime.md); it never relaxes their approvals.
+This is the core Chany's Studio job: the user supplies a product photo or service evidence and a desired reference, or the studio finds one. Put the actual offer into the selected composition. Follow the user's requested boundary: preserve the reference layout and replace its subject through [reference insertion](reference-insertion.md), create a new reference reshoot, or make a bounded edit under [reference-led-design.md](reference-led-design.md). Services use actual UI, space, logo, approved copy or process assets; never require a physical product photo for a service. The [beginner experience](beginner-experience.md), [paid runtime](higgsfield-runtime-contract.md) and [image model default](image-generation-runtime.md) still apply.
 
 Tool names below describe capabilities. Resolve the actual operation from the live tool list and schema each time; if a capability is missing, use the stated fallback and say so in one plain sentence.
 
@@ -35,22 +35,22 @@ Use the original photo directly when its product is clear. Prepare a cutout only
 
 ## 4. "Like this reference" generation
 
-Pass both images to the image model as reference inputs. Inspect the model's input roles first: GPT Image 2.5 on Higgsfield exposes a single `image_references` role (checked 2026-09-18), so both images share that role and the prompt must say which image is which, in input order:
+Pass both images to the image model as reference inputs. Inspect the model's input roles first: GPT Image 2.6 on the direct Higgsfield MCP exposes `image_references` (checked 2026-11-17), so both images share that role and the prompt must say which image is which, in input order. The Apps connector may instead require canonical `image` roles; translate only through its actual schema. Never pass model-native roles blindly across hosts:
 
 - image 1, the product photo or verified cutout: the subject authority — actual geometry/proportions, construction, color/material and logo/label facts must be preserved; its original camera view, pose, position, scale and lighting are not locked for a reshoot
 - image 2, the selected reference: the observed composition, camera angle, lighting, palette, surface, props and mood, adapted to the user's product and approved count; never its product family or branding
 
 When a model exposes separate roles, use them instead of relying on order.
 
-Compile the composition plan and explicit reshoot prompt from [reference-led-design.md](reference-led-design.md). Do not reduce "이 레퍼런스처럼" to "배경과 조명만 변경". If the tool cannot recompose the product while preserving its identity, disclose that limitation instead of silently delivering a background-only edit.
+Compile the chosen operation's composition plan: use the insertion prompt for a retained reference layout, or the explicit reshoot prompt from [reference-led-design.md](reference-led-design.md) for a new scene. Do not reduce "이 레퍼런스처럼" to "배경과 조명만 변경". If the tool cannot perform the requested composition while preserving identity, disclose that limitation instead of silently delivering a background-only edit.
 
 Every reference source (Pinterest, MeiGen, Production Paradise, award archives, Higgsfield templates) may be passed as a generation reference input, but only with the user's explicit approval. The reference is usually someone else's work, and importing it sends it to a third party. Put a dedicated line in the confirmation card that names the source and the risk, for example "참고 사진: 3번(Pinterest, 다른 사람의 작품)을 Higgsfield에 참고 입력으로 보냅니다. 결과가 원본과 너무 비슷하면 광고에 쓰지 마세요." Approving the card with that line is the separate upload approval the runtime contract requires; without that line in the approved card, do not import the reference. If the user says "사진은 보내지 마" or "레퍼런스 사진 없이", or import or a reference role is unavailable, describe the reference in the prompt instead and say the result may resemble it less closely.
 
-The prompt must replace the reference's subject with our product and must exclude every brand mark, person, text, packaging, and distinctive branded execution from the reference. Reject any result that could pass for the reference itself: the goal is the reference's look with our product, not a copy of someone else's photo. When a reference was passed as an input, add one plain line under the result: "원본 레퍼런스와 너무 비슷하지 않은지 확인한 뒤 광고에 써 주세요."
+For third-party inspiration, replace its subject with the user's offer and exclude unrelated brands, people, copy and claims. For a user-authorized template or base-image edit, preserve the explicitly requested layout under [reference insertion](reference-insertion.md); do not reject a correct layout match simply because it is close to the authorized reference. Reuse rights and protected elements follow the actual task scope, not a blanket ban on faithful editing. Mention an unresolved reuse limitation only when it is material to the requested delivery.
 
 ## 5. Quality settings
 
-Ad work needs explicit quality settings; provider defaults are tuned for speed. Inspect the model's parameters and, for GPT Image 2.5, request `quality: high` and `resolution: 2k` for social placements, or `resolution: 4k` for print and large placements, instead of the provider defaults (`low`, `1k` when checked on 2026-09-18). Use the `sunburst` variant for detailed edits of an existing image. Show the resolution in the confirmation card and take the price only from the live quote.
+Ad work needs explicit quality settings. Inspect the model's parameters and, for GPT Image 2.6, request `quality: high` and `resolution: 2k` for social placements, or `resolution: 4k` when the delivery size needs it, instead of the provider defaults (`low`, `1k` when checked on 2026-11-17). Sunburst is `gpt_image_2_6`, not a `variant` field. Use a supported raster format for product/service references; SVG does not accept them. Actual print readiness also requires suitable pixel dimensions and layout. Show the resolution in the confirmation card and take the price only from the live quote.
 
 ## 6. How many to make
 
@@ -81,9 +81,9 @@ When only more ratios are needed (1:1, 4:5, 9:16, 16:9), extend the accepted ima
 
 ## 11. Model choice
 
-GPT Image 2.5 (`gpt_image_2_5`) remains the still-image default. The live Higgsfield catalog also recommends a dedicated product and advertising route (`marketing_studio_image`). Do not switch silently: use it only when the user chooses it or when a recorded comparison test shows better product fidelity, and name the model used in the confirmation card.
+GPT Image 2.6 (`gpt_image_2_6`) remains the still-image default. The live Higgsfield catalog also recommends a dedicated product and advertising route (`marketing_studio_image`). Do not switch silently: use it only when the user chooses it or when a recorded comparison test shows better product fidelity, and name the model used in the confirmation card.
 
-Recorded comparison (2026-09-18, one packaged-food product, same two inputs and prompt, 4:5 at 2K): GPT Image 2.5 at `quality: high` kept the logo, small printed text, and contents closest to the original and followed the reference lighting most faithfully; `marketing_studio_image` also scored well and cost less, but changed the product contents (fewer, differently shaped items). One test is not a benchmark; keep GPT Image 2.5 as the default and offer the cheaper model only as a named alternative.
+Historical comparison (2026-09-18) used GPT Image 2.5 and `marketing_studio_image`, not 2.6. It cannot establish 2.6 quality or current relative prices. The 2.18 default is a checked capability/policy update; assess product fidelity on the actual output and never describe this as a completed 2.6 benchmark.
 
 ## 12. Higgsfield ad templates as references
 

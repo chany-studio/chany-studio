@@ -1,6 +1,6 @@
 ---
 name: chany-studio
-description: Route end-to-end or multi-asset campaigns and narrative production through an applicable industry expert overlay and the smallest production skill chain while maintaining shared evidence, source, copy, campaign, identity, and rights locks. Use for campaigns spanning strategy, visuals, ads, pages, or campaign video; not for one clearly named specialist output.
+description: Route end-to-end or multi-asset campaigns through the relevant industry and production skills. For narrative film, short drama, scripts or storyboards (드라마 대본·콘티), load the installed ai-drama-production skill before drafting, including for text-only requests.
 ---
 
 # Chany's Studio
@@ -13,7 +13,15 @@ Everyday look words are translated into professional direction through [plain-la
 
 Project initialization, `AGENTS.md`, project records, and runtime-specific delegation configuration belong to `chany-project`. Once a project is configured, use this router for its multi-deliverable production work.
 
+## Narrative drama
+
+For fiction, episodic or branded drama, and requests for a drama script, scene or storyboard (드라마 대본·콘티), **load the installed `ai-drama-production` skill before drafting**, even for a single scene or text-only plan. In Claude, select `photo-reference-studio:ai-drama-production` with the skill loader. In file-based hosts, read its [SKILL.md](../ai-drama-production/SKILL.md) from this plugin if there is no skill loader. Apply its story and continuity workflow to the requested deliverable. If the skill cannot be loaded, say so and continue with the planning work you can support.
+
+Use `cinematic-director` when a separate directing task needs it. Apply the [drama production integration](references/drama-production-integration.md) for handoffs to media generation, editing and publication review when those stages are requested.
+
 ## Route the request
+
+For “이 구도 그대로 제품만” or a service screen in a chosen reference, apply [reference insertion](references/reference-insertion.md). Preserve a supplied base layout when that is the request; service evidence is as valid as a product photo. For requested broader discovery or Instagram competitor evidence, use [curated sources](references/curated-reference-sources.md) and [optional Metricool](references/metricool-reference-research.md) through the existing reference owner.
 
 Resolve the intended effect, viewer and placement through [content intent](references/content-intent.md) before choosing a concept or model. Read existing brief/state first; hand the same decisions to specialists. A product photo alone does not establish a conversion campaign, and a local edit does not require a marketing interview.
 
@@ -50,7 +58,7 @@ Default dependency order when those assets are requested:
 11. for every named platform or placement, build the current-source adapter record and keep any live operation read-only until its separate write, budget, and activation approvals
 12. when a publication gate applies, review the exact final copy and rendered asset through `chany-publication-review`
 
-Do not add deliverables that the user did not request. For every generated still or campaign-video job, use `chany-media-production-loop` and its [media job ledger](references/media-job-ledger.md). For every generative still-image creation or edit, first apply [references/image-generation-runtime.md](references/image-generation-runtime.md): GPT Image 2.5 (`gpt_image_2_5`) is the default and another model requires a scoped, disclosed reason. Before a paid generation, also apply [references/higgsfield-runtime-contract.md](references/higgsfield-runtime-contract.md) and [references/creative-quality-loop.md](references/creative-quality-loop.md). Show the requested default, live-resolved operation and model, inputs, prompt, options, count, server adjustments and provider-reported cost information when available. One accepted key visual should establish the palette, lighting, material language, copy zones, and crop-safe logic for downstream assets.
+Do not add deliverables that the user did not request. For every generated still or campaign-video job, use `chany-media-production-loop` and its [media job ledger](references/media-job-ledger.md). For every generative still-image creation or edit, first apply [references/image-generation-runtime.md](references/image-generation-runtime.md): GPT Image 2.6 (`gpt_image_2_6`) is the default and another model requires a scoped, disclosed reason. Before a paid generation, also apply [references/higgsfield-runtime-contract.md](references/higgsfield-runtime-contract.md) and [references/creative-quality-loop.md](references/creative-quality-loop.md). Show the requested default, live-resolved operation and model, inputs, prompt, options, count, server adjustments and provider-reported cost information when available. One accepted key visual should establish the palette, lighting, material language, copy zones, and crop-safe logic for downstream assets.
 
 ## Preserve authority
 
@@ -66,7 +74,3 @@ If a connected production or local assembly capability is missing, continue with
 ## Editable Adobe and animation assets
 
 For an editable Adobe production request, use `adobe-video-pipeline` to coordinate `adobe-after-effects-production` and `adobe-premiere-finishing`; use `image-asset-production` for coherent animation-ready source sets. Read [native production integration](references/native-production-integration.md). Explicit app/native-project requests take precedence over generic motion or assembly routing. Retain this studio's brief, cost controls and publication review; verify actual host access before claiming execution.
-
-## Narrative drama
-
-For narrative AI films, episodic shorts or branded drama, use `ai-drama-production` as the creative owner and `cinematic-director` only for needed directing support. Read [drama production integration](references/drama-production-integration.md). Reuse the current brief, media loop, asset sets, assembly/Adobe route and publication review; do not add the campaign sequence to a script-only request.

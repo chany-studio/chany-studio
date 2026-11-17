@@ -1,4 +1,12 @@
-# Higgsfield 업데이트 — 2.14.0
+# Higgsfield 업데이트
+
+## 2.18.0 · 2026-11-17
+
+새 작업의 기본값은 GPT Image 2.6 Sunburst(`gpt_image_2_6`)입니다. Flare는 별도 ID를 사용하며 기존 프로젝트의 2.5 선택은 보존합니다. Gemini Omni 1.2, Seedance 2.5/Flash, 네이티브 GIF/SVG, Genjutsu Flash와 Ad Multiplier Recreate는 실제 연결의 입력·길이·비용을 확인한 뒤 작업에 맞게 사용합니다. [제품·서비스 삽입 사용법](REFERENCE-INSERTION-GUIDE.md)을 참고하세요.
+
+아래는 당시 기능과 모델을 설명하는 과거 기록입니다. 현재 기본값이나 현재 지원 한도로 사용하지 않습니다.
+
+## 2.14.0 기록
 
 - `chany-viral-product-remake`: 짧은 릴스·쇼츠 링크와 제품 사진을 한 번에 받아, 타사 링크는 전달 가능한 훅·전개만 새 장면으로 재제작하고 권리가 확인된 원본 파일은 Genjutsu 제품 교체로 연결합니다.
 

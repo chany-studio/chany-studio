@@ -5,6 +5,8 @@ description: Find and display visual references inline, defaulting to ten total 
 
 # Chany Reference Board
 
+For named sites/accounts, the user’s curated directory, or broader product/service research, use the separate [curated source lane](../chany-studio/references/curated-reference-sources.md). For known Instagram competitor accounts, use [Metricool](../chany-studio/references/metricool-reference-research.md) only when available and useful; it is not required or a universal search engine. These branches do not expand Pinterest access or cross-fill the default board. A supplied selected reference skips discovery and goes to [reference insertion](../chany-studio/references/reference-insertion.md) when the user wants its layout retained.
+
 Find commercial visual direction while keeping every candidate traceable and directly visible.
 
 Every user-facing turn follows the shared [beginner experience contract](../chany-studio/references/beginner-experience.md): quick start by default, plain Korean without internal field names, and one confirmation card before any paid generation.

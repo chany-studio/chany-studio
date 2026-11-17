@@ -7,9 +7,10 @@ Use this mode for an authorized source clip plus a requested object replacement 
 | Requested change | Higgsfield catalog candidate |
 |---|---|
 | Replace one object in an existing clip | `generate_video` with `hf_mult_replace_object` |
+| Scoped faster replacement candidate | `generate_video` with `hf_mult_replace_object_flash` |
 | Transfer motion from a driving clip into a new scene | `generate_video` with `hf_mult_motion_control` |
 
-These IDs were documented by the connected Higgsfield tools on 2026-09-15. Inspect the live model schema before submission: input roles, source length, reference count, supported output, cost and recovery may change. Do not guess parameter names or reuse legacy `motion_control` or `ad-multiplier` for a single Genjutsu edit. Multiple independently edited versions require inspecting the current `ad-multiplier` workflow and separate output/approval records, not multiplying a single request silently.
+These IDs were checked through the connected Higgsfield catalog on 2026-11-17. Full replacement takes one 4–30s source and 1–30 images; Flash takes one 4–30s source and 1–10 images. Motion transfer has a different reference limit; see [current capabilities](../../chany-studio/references/current-generation-capabilities.md). Inspect the live model schema before submission: input roles, source length, reference count, supported output, cost and recovery may change. Do not guess parameter names or reuse legacy `motion_control` or `ad-multiplier` for a single Genjutsu edit. Multiple independently edited versions require the current `chany-ad-variants` output/approval records, not multiplying a single request silently.
 
 ## Edit contract
 

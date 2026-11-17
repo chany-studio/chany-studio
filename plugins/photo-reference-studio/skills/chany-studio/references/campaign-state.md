@@ -210,7 +210,7 @@ asset_matrix: []
 accepted_assets: []
 remaining_uncertainties: []
 still_image_model_policy:
-  default_model: "gpt_image_2_5"
+  default_model: "gpt_image_2_6"
   active_override: ""
   override_reason: ""
   override_scope: []

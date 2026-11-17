@@ -5,6 +5,8 @@ description: Turn industry, brand, audience, offer, evidence, channel, and obser
 
 # Chany Marketing Brief
 
+When observed results or Instagram peers are requested, optionally use [Metricool evidence](../chany-studio/references/metricool-reference-research.md). Discover the exact metrics, keep competitor and own-account data separate, compare like periods/formats, and never infer conversion from engagement. No publishing or account changes are implied.
+
 Create a production-ready marketing brief before expensive or multi-asset work, or review supplied campaign results to design the next controlled round. Inspect attached products, spaces, interfaces, vehicles, event materials, people, logos, brand sources, and result exports directly; do not ask the user to re-describe visible facts.
 
 Every user-facing turn follows the shared [beginner experience contract](../chany-studio/references/beginner-experience.md): quick start by default, plain Korean without internal field names, and one confirmation card before any paid generation.

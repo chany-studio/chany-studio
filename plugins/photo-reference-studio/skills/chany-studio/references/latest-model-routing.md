@@ -2,14 +2,14 @@
 
 This is a task router, not a frozen catalog or automatic permission to change models. Before every paid operation, inspect the connected host's current model/tool contract, input roles, limits, cost, availability, and account. If a named route is absent, do not invent the model ID or silently fall back.
 
-GPT Image 2.5 remains the default generative still model under [image-generation-runtime.md](image-generation-runtime.md). Keep it when it meets the job and no concrete reason favors a scoped alternative. A task-fit recommendation is a proposal, not permission to switch; obtain approval in the existing paid confirmation card. Do not force still-image policy onto video or non-generative editing.
+GPT Image 2.6 remains the default generative still model for new unpinned work under [image-generation-runtime.md](image-generation-runtime.md). Existing recorded project policies keep their model. Keep the applicable default when it meets the job and no concrete reason favors a scoped alternative. A task-fit recommendation is a proposal, not permission to switch; obtain approval in the existing paid confirmation card. Do not force still-image policy onto video or non-generative editing. Read [current generation capabilities](current-generation-capabilities.md) for the checked 2026-11-17 options, mode-specific lengths and input constraints.
 
 ## Select a workflow before a model
 
 1. Reuse [content intent](content-intent.md), authoritative inputs, approved direction and acceptance criteria. Infer the operation from the requested change: create a new scene, edit an existing asset, remove a background, extend a frame/clip, set type/layout, or assemble footage. Do not regenerate an accepted asset for a deterministic text, crop or timing change.
 2. Filter for actual execution support: source media roles/counts, required mask or first/last frame, edit mode, source duration, ratio, output format/resolution, audio, rights, account and writable/rendering capability. A genre label alone never passes this filter. A web feature is not proof of connector access. Reject routes that cannot accept product authority; do not drop an input to make a model fit. A reference reshoot under [reference-led-design.md](reference-led-design.md) needs support for the planned viewpoint/composition changes while retaining identity; cutout/background-only tools cannot satisfy it. An image-to-image/edit API may still perform a reshoot if its actual capabilities fit; select by operation, not endpoint name.
 3. Among feasible routes, prioritize source fidelity and the requested deliverable, then the user's budget/deadline. Prefer a dedicated tool for cutout, outpaint, reframe, type, subtitles, upscale or assembly when it changes less and meets the job. Upscaling cannot repair false labels or broken geometry. Do not use an opaque `image_auto` route as a substitute for a resolved model.
-4. Recommend one route and one plain-language reason. For stills, evaluate GPT Image 2.5 first; compare at most one relevant alternate when there is a task-specific advantage, not an unsupported "best" ranking. For video, Seedance 2.5 is the first general-purpose candidate when its live mode fits, not a universal winner. User/project model preferences remain authoritative unless infeasible, in which case explain the limitation and propose an alternative.
+4. Recommend one route and one plain-language reason. For stills, evaluate GPT Image 2.6 first; compare at most one relevant alternate when there is a task-specific advantage, not an unsupported "best" ranking. For video, Seedance 2.5 is the first general-purpose candidate when its live mode fits, not a universal winner. User/project model preferences remain authoritative unless infeasible, in which case explain the limitation and propose an alternative.
 5. Bind the actual model, mode, variant, authority inputs, options, requested count, total stages, quote and reason to the existing asset/job plan. Confirm them once with direction/copy/cost under the beginner and paid-runtime contracts. "알아서 해줘" authorizes recommendation and preparation, not unlimited paid calls or a hidden model switch. Setup only records a provisional workflow; model resolution happens at production time.
 6. Execute through the existing owner and media loop, inspect the actual result against the intended effect and preservation criteria, and use only bounded approved corrections. Failed or ambiguous jobs require job-state recovery, not another model call. A model change invalidates the affected quote and approval. Keep unrelated accepted outputs locked.
 
@@ -17,11 +17,12 @@ Do not send a model catalog to the user or add a separate skill per model. Do no
 
 ## Image candidates, not automatic genre assignments
 
-Verified Higgsfield catalog snapshot — 2026-09-19; exact IDs and options must be rechecked live. Recommendations below are task-fit hypotheses, not same-condition quality benchmark results.
+GPT Image 2.6, Seedream 5.5, Gemini Omni 1.2, Seedance 2.5/Flash, Genjutsu and Ad Multiplier Recreate were checked on 2026-11-17. Other rows are previously supported task-family examples from 2026-09-19, not newly verified availability; rediscover them live when needed. Recommendations are task-fit hypotheses, not same-condition quality benchmark results.
 
 | Need | Candidate route | Decision boundary |
 | --- | --- | --- |
-| Product advertising, reference-led stills, general generative edits | `gpt_image_2_5`, Flare/Sunburst as exposed | default; choose actual quality/resolution explicitly; check label, shape and reference roles |
+| Product advertising, reference-led stills, general generative edits | Sunburst `gpt_image_2_6`; scoped alternate `gpt_image_2_6_flare` | default; separate IDs, no variant argument; reference SVG is unsupported |
+| Transparent generated design with references | `seedream_5_5` | optional PNG route, not an exact-source cutout guarantee |
 | Dense information, diagrams or integrated text | `nano_banana_pro`; `seedream_v5_pro` for instruction-led alternatives | compare only if helpful to the concrete brief; exact Korean/price/legal text still needs proofing or deterministic typesetting |
 | Masked local edit | `nano_banana_2` or supported masked/composite tool | verified mask and image roles are a concrete reason to propose an override; untouched pixels still require comparison |
 | Brand-color/material/composition instruction | `flux_2` | candidate when the stated controls help; no exact color-match or superior fidelity guarantee |
@@ -34,15 +35,17 @@ Verified Higgsfield catalog snapshot — 2026-09-19; exact IDs and options must 
 
 | Need | Candidate route | Why it may fit | Boundary |
 | --- | --- | --- | --- |
-| General reference-led video, edit, or extension | `seedance_2_5` | multimodal references, video edit/extension, native audio option | resolve mode and source duration live |
+| General reference-led video, edit, or extension | `seedance_2_5`; scoped `seedance_2_5_flash` | multimodal references, video edit/extension, explicit native audio | Flash is limited to 480p/720p; full 4K and optional draft/final lifecycle need their own quote |
 | Source-preserving video change, not a new commercial | campaign-video [bounded video edit](../../chany-campaign-video/references/video-edit.md) | selects edit operation and preserve scope before a model | no mandatory new still, strategy interview or photo board |
 | Product/person motion with first/last frames | `kling3_0` | keyframes and audio controls | test interactions and continuity; do not assume web multi-shot UI is exposed |
 | Short cinematic scene or atmosphere | `veo3_1` | source-frame and cinematic/audio candidate | verified connector durations were 4/6/8s; do not import website limits |
 | Ordered independent edits of one 4–30s ad | `ad_multiplier` through `chany-ad-variants` | preserves source structure while changing targeted content | not ordinary generation or Cartesian combinations |
+| Whole-ad remake or hook/CTA regeneration | `ad_multiplier_v2` through `chany-ad-variants` | recreate or sections with source reuse | inspect inserted length, preserved regions, partial completion and charges; not exact full-source preservation |
+| Product replacement in an authorized source clip | `hf_mult_replace_object` or scoped `hf_mult_replace_object_flash` | reference-guided replacement | full: 30 images; Flash: 10; one 4–30s source, whole-clip QA |
 | Start/end-frame storyboard or synchronized audio | `flux_3_video` | multi-frame generation and audio | verify duration and required media roles |
 | Edit up to the supported source window | `flux_3_video_edit` | prompt-led source-video edit | no automatic full-length assumption |
 | High-resolution source-video edit | `kling_video_edit` | optional references and up to the live quality modes | validate source fidelity and text/audio preservation |
-| Native-audio multimodal generation/edit | `gemini_omni_flash_1_1` | keyframes, references, edit, up to live 4K mode | only supported ratios and modes |
+| Native-audio multimodal generation/edit/extend | `gemini_omni_flash_1_2` | first/last frames, references and source edits | text/single first 3–15s; references/first+last 3–10s; edit source 3–15s; extend source 1–30s + 3–10s |
 | Short expressive video with image/audio reference | `grok_video_v15` | multimodal short-form generation | no default preference over product-fidelity routes |
 | Typography-heavy still editing | `openai_hazel` | live catalog describes stronger text rendering/editing | limited live aspect ratios; not the default still model |
 | Logo, icon, vector, flat product mockup | `recraft_v4_1` | vector/utility modes and palette control | no reference images in the verified contract; do not use for source-faithful product insertion |

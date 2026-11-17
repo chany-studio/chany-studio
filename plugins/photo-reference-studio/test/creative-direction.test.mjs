@@ -49,7 +49,7 @@ test("creative direction turns beginner language into three scored territories a
   }
   assert.match(system, /Do not ask the user to choose lenses, palettes, typography genres/i);
   assert.match(system, /^## 6\. Anti-genericity gate$/m);
-  assert.match(signals, /Visual references:[*]* use exactly one controlled lane per board/i);
+  assert.match(signals, /Photography\/award lanes:[*]* use exactly one controlled lane per specialist board/i);
   assert.match(signals, /public Production Paradise work\/profile pages/i);
   assert.match(signals, /public Ads of the World, D&AD, and The One Show work pages/i);
   assert.match(signals, /Knowledge sources:[*]* official product, platform, accessibility, or commerce documentation/i);
@@ -88,7 +88,7 @@ test("routing keeps source-isolated reference discovery before approved creative
   ]);
 
   assert.match(routing, /`chany-creative-direction`/);
-  assert.match(routing, /Reference providers are isolated by skill/i);
+  assert.match(routing, /Reference providers are isolated by lane/i);
   assert.match(routing, /`chany-commercial-photo-reference`/i);
   assert.match(routing, /`chany-award-ad-reference`/i);
   assert.match(routing, /Stocksy, ShotDeck, and Death to Stock are not permitted/i);
@@ -131,7 +131,7 @@ test("current signal ledger covers every production family without turning knowl
   assert.match(signals, /Reviewed:[*]* 2026-09-06/i);
   assert.match(signals, /Pinterest Predicts 2026/i);
   assert.match(signals, /Pinterest Palette/i);
-  assert.match(signals, /GPT Image 2.5/i);
+  assert.match(signals, /GPT Image 2.6/i);
   assert.match(signals, /Never convert a knowledge-source example image into a visual reference candidate/i);
   assert.match(signals, /Stocksy, ShotDeck, Death to Stock/i);
 });

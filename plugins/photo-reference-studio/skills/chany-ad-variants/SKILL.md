@@ -16,7 +16,7 @@ Use `chany-jtbd-persona`, `chany-meta-ad-research`, or `chany-marketing-brief` o
 - Accept exactly one source video. Ad Multiplier currently requires a measured 4–30 second source; inspect the live model contract before quoting or submitting.
 - Preserve camera, cuts, timing, motion, performance, lighting, aspect ratio, default audio, captions, UI, labels, logos, and untargeted text. Change only the approved variable for each output.
 - Keep outputs ordered and independent. `N` means final videos, not assets or operations. Never create a Cartesian product unless the user explicitly requests and approves that expanded count.
-- Use the connected host's dedicated Ad Multiplier workflow when callable. Do not imitate it with unrelated generation or silently fall back to another model.
+- Distinguish bounded object edits from whole-ad recreation or hook/CTA regeneration. Use the live dedicated workflow only when its preservation behavior meets the requested scope. Do not imitate it with unrelated generation or silently fall back to another model.
 - If the source is outside the live duration range, identity/reference mapping is ambiguous, or the provider cannot preserve required audio/text, stop before paid work and return the smallest correction.
 
 ## Workflow
@@ -24,8 +24,8 @@ Use `chany-jtbd-persona`, `chany-meta-ad-research`, or `chany-marketing-brief` o
 1. Lock the source, requested output count, one variable per output, target mapping, reference-image authority, resolution, and whether any on-screen text is intentionally targeted.
 2. Analyze the source once. Record scenes and natural edit ranges; do not create repeated analyses for each output.
 3. Build an ordered variant table: output label, hypothesis, exact change, preserved elements, required reference, acceptance gate, and tracking name.
-4. Inspect the live `ad_multiplier` schema and obtain the current cost for the exact count, duration, resolution, and inputs. Show one confirmation card; approval covers only that table.
-5. Submit stable-index batches within the live tool limit. Freeze completed indices and retry only a failed index once after its original state is known.
+4. Inspect the live `ad_multiplier` or `ad_multiplier_v2` schema for the selected operation and obtain the current cost for the exact count, duration, resolution, and inputs. Show one confirmation card; approval covers only that table. Read [current capabilities](../chany-studio/references/current-generation-capabilities.md): v2 `recreate` regenerates the whole source; `sections` chooses hook, cta or both. If no existing section is detected, a new section may be added, changing the final length. Exact-preserve requests stay on a supported bounded edit/composite path.
+5. Submit stable-index batches within the live tool limit. Freeze completed indices and retry only a failed index once after its original state is known and the approved credit ceiling permits it. A v2 sections job may deliver only one successful section, keep the other original section and charge only the delivered part. Inspect delivered sections, ledger and actual timeline before proposing a correction; never resubmit the whole completed job automatically.
 6. Restore or preserve the source's default audio when the connected workflow renders silent edits. Verify duration, ratio, audio, target replacement across cuts/occlusions/reflections, captions, logos, labels, and every preserved element before delivery.
 7. Return outputs in approved order with their hypothesis and tracking name. Performance claims require observed data and `chany-marketing-brief`; generation success is not a winning-ad result.
 

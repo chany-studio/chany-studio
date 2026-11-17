@@ -51,7 +51,7 @@ test("task-fit alternates keep default identity, input fidelity and scoped paid 
     read(`${shared}image-generation-runtime.md`), read(`${shared}latest-model-routing.md`),
   ]);
   assert.match(runtime, /user approves that scoped alternate in the existing direction\/copy\/cost confirmation card/);
-  assert.match(runtime, /If the trade-off is uncertain, keep GPT Image 2\.5/);
+  assert.match(runtime, /If the trade-off is uncertain, keep GPT Image 2\.6/);
   assert.match(runtime, /Obtain the user's approval before a paid alternate call/);
   assert.match(router, /do not drop an input to make a model fit/);
   assert.match(router, /Do not use an opaque `image_auto` route/);

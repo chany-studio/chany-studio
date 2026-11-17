@@ -1,5 +1,7 @@
 # Chany's Studio 설치 및 업데이트
 
+**2.18.0 새 기능:** 내 제품·서비스를 선택한 레퍼런스 구도에 넣기, 선별한 참고 사이트와 선택형 Metricool 분석, 최신 모델의 실제 입력 제약을 연결했습니다. [바로 쓰는 요청문과 사용법](REFERENCE-INSERTION-GUIDE.md). 기존 프로젝트의 모델과 승인 자료는 유지합니다.
+
 [공식 설치·사용설명서 (Notion)](https://jolly-phlox-79c.notion.site/Chany-s-Studio-3c783e9464668140b794ee076be24406)
 
 ## 공통 마켓플레이스 주소
@@ -64,14 +66,14 @@ Node.js는 컴퓨터에서 작은 도우미 프로그램을 실행해 주는 무
 
 - 표시 이름: `Chany's Studio`
 - 내부 식별자: `photo-reference-studio`
-- 버전: `2.17.0`
+- 버전: `2.18.0`
 - 대표 Skill: `chany-studio`
 - 프로젝트 Skill: `chany-project`
 - 전문 Skill: 마케팅 브리프, JTBD 고객 분석(`chany-jtbd-persona`), Meta 광고 리서치(`chany-meta-ad-research`), 레퍼런스 보드(사이트 미지정 시 Pinterest 5장 + Meigen 5장, Pinterest만 지정 시 기본 6장, 또는 요청 수량), Meigen 이미지·프롬프트 레퍼런스(`chany-ai-prompt-reference`), 전문 크리에이티브 디렉션(`chany-creative-direction`), 브라우저 캡처 영상 레퍼런스 준비(`chany-video-reference-ingest`), 제품 에셋, 키비주얼, 상세페이지, 광고, 편집, 패션, 콘셉트형 캠페인 영상(`chany-campaign-video`), 광고 모션 디자인(`chany-motion-design`), 미디어 생성 실행·재개(`chany-media-production-loop`), 영상 조립·컷 교체(`chany-video-assembly`), 환경 점검(`chany-preflight`), 게시 전 검수(`chany-publication-review`)
 - 업종 Skill: 전문 서비스, 교육, 헬스케어, 식당·카페/F&B, 호텔·여행, 공간·인테리어·부동산, 디지털 제품, 자동차·모빌리티, 소비자 기술, 기업·채용, 공연·전시·행사·지역축제
 - 연결: Higgsfield
 - Claude Cowork 추가 연결: 항상 로드되는 `reference-preview`
-- 생성형 정적 이미지 기본 모델: GPT Image 2.5 (`gpt_image_2_5`)
+- 생성형 정적 이미지 기본 모델: GPT Image 2.6 (`gpt_image_2_6`)
 
 명시 호출은 ChatGPT Work에서 `@스킬명`, Codex에서 `$스킬명`을 사용합니다. Claude Cowork에서는 `/project-studio` 슬래시 명령을 제공하며, 나머지 전문 스킬은 자연어 요청에 맞춰 자동 선택합니다. 2.2.0부터는 업종 스킬이 전략·증거·규정 확인 방향을 정하고 공통 제작 스킬이 실제 산출물을 만드는 2축 구조입니다.
 
@@ -129,9 +131,9 @@ Claude Cowork에서는 빠진 캠페인 정보가 **Ask your question** 카드�
 
 ## 유료 생성과 최종 게시 계약 확인
 
-생성형 정적 이미지와 부분 편집의 플러그인 기본값은 GPT Image 2.5이며 정확한 모델 ID는 `gpt_image_2_5`입니다. 현재 도구가 이 모델을 선택할 수 있는지 먼저 확인하고, 요청 기본값과 실제 해석 모델을 함께 보여줍니다. 확인되지 않은 공급자 기본값을 GPT Image 2.5라고 표시하지 않습니다. 사용자의 명시적 요청, 승인된 프로젝트 정책 또는 라이브 검증된 필수 기능 부재가 있을 때만 다른 모델을 해당 범위에 한해 승인받아 사용합니다. 영상·음성·클립 조립은 이 정적 이미지 정책의 대상이 아닙니다.
+생성형 정적 이미지와 부분 편집의 플러그인 기본값은 GPT Image 2.6이며 정확한 모델 ID는 `gpt_image_2_6`입니다. 현재 도구가 이 모델을 선택할 수 있는지 먼저 확인하고, 요청 기본값과 실제 해석 모델을 함께 보여줍니다. 확인되지 않은 공급자 기본값을 GPT Image 2.6라고 표시하지 않습니다. 사용자의 명시적 요청, 승인된 프로젝트 정책 또는 라이브 검증된 필수 기능 부재가 있을 때만 다른 모델을 해당 범위에 한해 승인받아 사용합니다. 영상·음성·클립 조립은 이 정적 이미지 정책의 대상이 아닙니다.
 
-유료 미디어 생성 전에는 연결된 서비스의 **현재 도구 스키마와 카탈로그**를 다시 읽습니다. 무료 견적·비용 미리보기·검증 기능이 있으면 먼저 실행하고, 최종 프롬프트, 입력별 역할, 실제 선택된 모델·워크플로와 옵션, 서버 조정값, 생성 수량, 제공자가 반환한 크레딧 정보를 한 번에 보여준 뒤 해당 버전에 대한 승인을 받습니다. `gpt_image_2_5` 기본 정책을 제외한 정적 모델명·가격표·플랫폼 수치를 플러그인 문서에서 현재 값처럼 사용하지 않습니다. 모델이나 공급자 변경은 기존 견적과 승인을 무효화하므로 새 사전검토를 거칩니다.
+유료 미디어 생성 전에는 연결된 서비스의 **현재 도구 스키마와 카탈로그**를 다시 읽습니다. 무료 견적·비용 미리보기·검증 기능이 있으면 먼저 실행하고, 최종 프롬프트, 입력별 역할, 실제 선택된 모델·워크플로와 옵션, 서버 조정값, 생성 수량, 제공자가 반환한 크레딧 정보를 한 번에 보여준 뒤 해당 버전에 대한 승인을 받습니다. `gpt_image_2_6` 기본 정책을 제외한 정적 모델명·가격표·플랫폼 수치를 플러그인 문서에서 현재 값처럼 사용하지 않습니다. 모델이나 공급자 변경은 기존 견적과 승인을 무효화하므로 새 사전검토를 거칩니다.
 
 타임아웃이나 연결 해제로 결제·생성 결과가 불명확하면 같은 요청을 다시 제출하지 않습니다. 원래 작업 영수증과 상태·기록을 먼저 확인해 기존 결과를 이어받고, 요청 의미·입력 역할·모델·옵션·수량·길이·비율·언어·크레딧 한도가 바뀌면 새 견적과 승인을 받습니다.
 
@@ -147,7 +149,7 @@ Claude Cowork에서는 빠진 캠페인 정보가 **Ask your question** 카드�
 
 1. **Customize → Plugins**를 엽니다.
 2. `photo-reference-studio` 마켓플레이스에서 **Update**를 누릅니다.
-3. 버전 `2.17.0`, `chany-project`, `chany-jtbd-persona`, `chany-meta-ad-research`, `chany-creative-direction`, `chany-campaign-video`, `chany-viral-product-remake`, `chany-ad-variants`, `chany-shortform-recut`, `chany-product-3d`, `chany-media-production-loop`, 공통 제작 스킬과 11개 업종 스킬 목록을 확인합니다.
+3. 버전 `2.18.0`, `chany-project`, `chany-jtbd-persona`, `chany-meta-ad-research`, `chany-creative-direction`, `chany-campaign-video`, `chany-viral-product-remake`, `chany-ad-variants`, `chany-shortform-recut`, `chany-product-3d`, `chany-media-production-loop`, 공통 제작 스킬과 11개 업종 스킬 목록을 확인합니다.
 4. 새 Cowork 작업을 시작합니다.
 
 ### Claude Code
@@ -164,7 +166,7 @@ Claude Cowork에서는 빠진 캠페인 정보가 **Ask your question** 카드�
 
 ## 업데이트가 반영되지 않을 때
 
-- 설치 상세의 버전이 `2.17.0`인지 확인합니다.
+- 설치 상세의 버전이 `2.18.0`인지 확인합니다.
 - Refresh 또는 Update 뒤 반드시 새 대화나 새 작업을 시작합니다.
 - Claude Code에서는 `/plugin`의 Errors 탭을 확인합니다.
 - Claude Cowork에서 레퍼런스 이미지가 안 보이면 Node.js 18 이상과 `reference-preview` 연결을 확인합니다. Node.js 설치 방법은 [문제 해결의 Node.js 안내](TROUBLESHOOTING.md#nodejs가-필요하다고-나와요-claude-cowork-이미지-미리보기)를 보세요.
@@ -172,10 +174,10 @@ Claude Cowork에서는 빠진 캠페인 정보가 **Ask your question** 카드�
 
 삭제와 재설치는 [문제 해결 가이드](TROUBLESHOOTING.md)를 먼저 확인한 뒤 최후 수단으로 사용하세요.
 
-## 2.17.0 제작 스킬 확인
+## 2.18.0 제작 스킬 확인
 
 업데이트 후 Chany’s Studio의 스킬 목록에서 `adobe-video-pipeline`, `adobe-after-effects-production`, `adobe-premiere-finishing`, `image-asset-production`을 확인하세요. 네 스킬은 플러그인에 포함되어 있으므로 따로 설치할 필요가 없습니다. 로컬 프로젝트의 `.claude/skills/` 변경만으로 Cowork의 설치된 플러그인이 갱신되지는 않습니다.
 
 ## 드라마 스킬 확인
 
-2.17.0에는 기존 43개 스킬과 `ai-drama-production`, `cinematic-director`가 포함됩니다. 설치 상세에서 버전과 두 스킬을 확인한 뒤 새 작업에서 “짧은 드라마의 대본과 컷별 콘티를 만들어줘”로 시작합니다. 설치는 실제 영상 생성·편집 실행이나 공개 승인을 뜻하지 않습니다. 제작표 자동 검사는 실행 환경에 Python 3가 있을 때 사용할 수 있습니다.
+2.18.0에는 기존 43개 스킬과 `ai-drama-production`, `cinematic-director`가 포함됩니다. 설치 상세에서 버전과 두 스킬을 확인한 뒤 새 작업에서 “짧은 드라마의 대본과 컷별 콘티를 만들어줘”로 시작합니다. 설치는 실제 영상 생성·편집 실행이나 공개 승인을 뜻하지 않습니다. 제작표 자동 검사는 실행 환경에 Python 3가 있을 때 사용할 수 있습니다.

@@ -28,7 +28,7 @@ New identity-sensitive generated video keeps its still-first order: tell the use
 - When a concept must be named, use plain words: 기본에 충실한 안, 감성 연출 안, 제품 특징을 강조한 안. Use 레퍼런스 분석 instead of Visual DNA, 검색 범위 instead of L1/L2, 구매 이유 분석 instead of JTBD, 사진 배경 제거(누끼) instead of cutout, 행동 유도 문구(버튼 문구) instead of CTA.
 - Keep photography, film and design terminology and production prompts internal unless the user asks to see or learn them. Describe the visible outcome in everyday words through [plain-language-direction.md](plain-language-direction.md); users do not need to study vocabulary.
 - Keep a turn short: result or question first, explanation after, no tables unless the user is comparing options.
-- Name the model or template actually resolved for this job once in the confirmation card (GPT Image 2.5 by default, or for example Marketing Studio Image or a named Higgsfield template). If the host hides the model, write "기본 모델(확인 불가)" rather than claiming GPT Image 2.5. Do not explain model routing.
+- Name the model or template actually resolved for this job once in the confirmation card (GPT Image 2.6 by default, or for example Marketing Studio Image or a named Higgsfield template). If the host hides the model, write "기본 모델(확인 불가)" rather than claiming GPT Image 2.6. Do not explain model routing.
 
 ## 3. The confirmation card
 
@@ -43,7 +43,7 @@ Before any paid generation, keep the full `paid_generation_approval` record inte
 - 참고 사진: 3번(Pinterest, 다른 사람의 작품)을 Higgsfield에 참고 입력으로 보냅니다. 결과가 원본과 너무 비슷하면 광고에 쓰지 마세요
 - 방향: 제품의 모양과 라벨은 지키고, 참고 사진처럼 오른쪽 아래에 두어 약간 아래에서 새로 촬영한 느낌으로 만들어요
 - 들어갈 문구: "하루 한 번, 촉촉하게" / 버튼: 지금 구매하기
-- 사용 도구: Higgsfield · GPT Image 2.5 · 고화질 2K (실제로 쓰는 모델·템플릿 이름)
+- 사용 도구: Higgsfield · GPT Image 2.6 · 고화질 2K (실제로 쓰는 모델·템플릿 이름)
 - 비용: 1장 12 크레딧 · 2장 24 크레딧 (현재 잔액 240)
 ```
 
@@ -81,3 +81,7 @@ For an ordinary product or service post, deliver the draft with a short plain-Ko
 `chany-project` uses the same compact purpose-led intake: what response they want, who it is for, and what/where to make, only when unknown. Do not append a separate preference questionnaire. Recommend look, ratio and working defaults in the blueprint; collect optional preferences only when requested or when they materially change the result. Defaults do not approve uploads or spending. End setup with one ready-to-copy first request, for example: "이 제품 사진으로 인스타 광고 이미지 한 장 만들어줘".
 
 For drama-owned reference-mode generation, apply [drama-production-integration.md](drama-production-integration.md): accepted character and environment references may replace a governing first frame when the live operation supports them. Explain only the actual paid stages; do not add a paid still or a second confirmation card for a stage that is not needed.
+
+## Product or service + chosen reference
+
+Use [reference-insertion.md](reference-insertion.md) for a requested subject replacement with the reference layout retained. A product photo, real service screen, space photo or approved brand material can be the source. Show the intended change in one plain sentence; request only the missing input. Existing reference → inspect and use it; no reference → find fitting examples. Do not require beginners to choose models, enter JSON, create a character sheet or configure Metricool. Keep exact text in editable layers where practical and show the actual result before the short identity/layout check.

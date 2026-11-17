@@ -9,6 +9,8 @@ metadata:
 
 # Cinematic Director Skill
 
+Apply [reference roles and continuity](../chany-studio/references/reference-roles-and-continuity.md) when multiple shots or assets share identity, location or props. Reuse original identity plus inspected current scene state; do not create redundant paid reference sheets or carry forward drift.
+
 ## Chany’s Studio integration — apply first
 
 Read [drama production integration](../chany-studio/references/drama-production-integration.md) and [beginner experience](../chany-studio/references/beginner-experience.md). This package supplies directing craft. `ai-drama-production` owns narrative drama; `chany-campaign-video` retains commercial concepts; `chany-media-production-loop` owns job execution, receipts, approval scope and retries. Reuse the current brief and asset records.

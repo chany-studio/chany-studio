@@ -12,7 +12,8 @@ MeiGen extension, reviewed 2026-09-15: `chany-ai-prompt-reference` is a separate
 
 Scope: the photography/award board restrictions below do not replace the separate `chany-meta-ad-research` lane. For performance ads, official Meta Ad Library creative is the benchmark source for video, single images and carousels under [performance-ad-contract.md](performance-ad-contract.md). Pinterest is still-photo/style inspiration only, never the video route. User-supplied video analysis uses the existing intake contract. Do not cross-fill these lanes or widen the Pinterest preview server.
 
-- **Visual references:** use exactly one controlled lane per board: public Pinterest Pin pages, public Production Paradise work/profile pages, or public Ads of the World, D&AD, and The One Show work pages. Never mix lanes to fill a shortage. Stocksy, ShotDeck, Death to Stock, social networks, mirrors, general image results, and outbound destinations are not permitted.
+- **Photography/award lanes:** use exactly one controlled lane per specialist board: public Pinterest Pin pages, public Production Paradise work/profile pages, or public Ads of the World, D&AD, and The One Show work pages. Never mix lanes to fill a shortage. Within these lanes, Stocksy, ShotDeck, Death to Stock, social networks, mirrors, general image results, and outbound destinations are not permitted.
+- **Curated discovery, reviewed 2026-11-17:** named sites/accounts, the user's directory and broader product/service research use [curated-reference-sources.md](curated-reference-sources.md). Instagram posts can be inspected in that separate lane; [Metricool](metricool-reference-research.md) is optional account evidence. These are not automatic trend-feed scouting, hidden replacements for a short Pinterest board, or permission to widen its preview server. The restrictions in the previous bullet govern photography/award lane operations, not this separately requested discovery.
 - **Trend signals:** Pinterest Predicts and Pinterest Palette may inform concept selection, but their editorial examples are not automatically reference candidates. A candidate must still come through one of the three source-isolated reference skills.
 - **Knowledge sources:** official product, platform, accessibility, or commerce documentation may be consulted only to verify current prompting, format, safe-area, accessibility, or conversion requirements. They are not visual-reference providers, and their example images must not be collected into a reference board.
 
@@ -66,9 +67,9 @@ Reject a signal if it weakens legibility, authority fidelity, product truth, cul
 
 ## 3. Current production practices by output
 
-### GPT Image 2.5
+### GPT Image 2.6
 
-- Use GPT Image 2.5 (Higgsfield ID `gpt_image_2_5`) as the production default; resolve other hosts through their live catalog.
+- Use GPT Image 2.6 (Higgsfield ID `gpt_image_2_6`) as the production default; resolve other hosts through their live catalog.
 - Structure complex prompts with labelled sections and a stable order: intended use, scene/background, subject, concrete details, composition/light, copy, constraints, output and acceptance.
 - Describe real materials, texture, framing, viewpoint, placement and lighting. Treat lens specifications as look guidance, not exact optical simulation.
 - Index every input and state its authority role.

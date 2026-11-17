@@ -1,0 +1,21 @@
+{
+  "intent": "insert",
+  "subject": {
+    "kind": "product",
+    "sources": [{ "id": "local-product-photo", "purpose": "actual bottle, cap and label" }],
+    "locks": ["one bottle", "original cap geometry", "exact source label"]
+  },
+  "reference": {
+    "id": "user-selected-reference",
+    "inspected": true,
+    "edit_authorized": true,
+    "composition": "one bottle at lower right, empty copy space on left, soft side light"
+  },
+  "target": {
+    "region": "the bottle and its contact shadow",
+    "preserve": ["background", "frame", "left copy space"],
+    "exact_untouched_pixels": false
+  },
+  "capabilities": { "reference_images": true, "deterministic_mask_composite": false },
+  "approved_copy": []
+}
