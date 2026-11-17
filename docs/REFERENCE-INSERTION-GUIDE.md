@@ -31,9 +31,9 @@ Claude는 자연어로 요청하고, Codex는 `$chany-studio`, ChatGPT Work는 `
 
 ## 레퍼런스를 찾는 곳
 
-기존 기본 보드는 Pinterest 5장 + MeiGen 5장입니다. 원하는 사이트와 수량을 말하면 그 요청을 우선합니다. 참고 이미지가 이미 있으면 불필요한 보드를 다시 만들지 않습니다.
+기존 기본 보드는 Pinterest 6장입니다. 원하는 사이트와 수량을 말하면 그 요청을 우선합니다. 참고 이미지가 이미 있으면 불필요한 보드를 다시 만들지 않습니다.
 
-패키지는 Dieline·Packaging of the World, 브랜드는 The Brand Identity·Behance·노트폴리오, 앱·랜딩은 Mobbin·Land-book, 영상은 Vimeo Staff Picks·Motionographer 등에서 목적에 맞는 자료를 선별할 수 있습니다. 사용자 제공 노션 자료의 사이트·추천 계정·폰트·색상도 참고합니다. 모든 사이트를 무조건 검색하거나 로그인·유료 열람 제한을 우회하지 않습니다.
+기본 검색처는 여섯 곳입니다. 사진은 Pinterest·Production Paradise, 광고 사례는 Meta 광고 라이브러리·Ads of the World, 영상 연출은 Vimeo Staff Picks·Motionographer를 사용합니다. 목적에 맞는 한 곳부터 시작해 최대 두 곳만 검색합니다. 사용자가 직접 준 사이트·영상 링크는 별도로 분석할 수 있습니다. [검색처와 선택 기준](REFERENCE-SOURCES.md).
 
 > 보내준 자료에서 한국 브랜드 제품 사진에 맞는 계정을 골라 실제 게시물 3개를 보여줘. 첫 이미지뿐 아니라 캐러셀 전체를 확인한 범위도 알려줘.
 

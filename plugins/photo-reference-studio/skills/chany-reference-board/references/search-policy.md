@@ -100,7 +100,7 @@ Select exactly `target_count` distinct Pinterest candidates. Avoid one creator o
 
 Render every finalist as an actual image in the response. The user must be able to compare all candidates without opening another page.
 
-Before the first Pinterest query in Claude Cowork, confirm that `fetch_reference_preview_image` is callable. The plugin marks its one-tool preview server `alwaysLoad: true`; if a host still defers it and exposes `ToolSearch`, call `ToolSearch(query: "select:fetch_reference_preview_image")`. When the tool is absent, disconnected, or denied, report that transport blocker before search and continue the other lane of a combined board when available.
+Before the first Pinterest query in Claude Cowork, confirm that `fetch_reference_preview_image` is callable. The plugin marks its one-tool preview server `alwaysLoad: true`; if a host still defers it and exposes `ToolSearch`, call `ToolSearch(query: "select:fetch_reference_preview_image")`. When the tool is absent, disconnected, or denied, report that transport blocker before search and report the incomplete board and follow the existing recovery choices.
 
 Use this display order:
 

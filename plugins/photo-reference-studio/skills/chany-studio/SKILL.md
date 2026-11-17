@@ -13,6 +13,10 @@ Everyday look words are translated into professional direction through [plain-la
 
 Project initialization, `AGENTS.md`, project records, and runtime-specific delegation configuration belong to `chany-project`. Once a project is configured, use this router for its multi-deliverable production work.
 
+## Video is a primary output
+
+For a video request, apply [video-first experience](references/video-first-experience.md) before any generic photo board or image-first campaign sequence. The promised deliverable is the requested playable video, with its requested editing, captions and sound; a still or generated clip is an intermediate only when the approved plan needs it. Preserve explicit photo requests. Do not require a still-photo campaign before starting video.
+
 ## Narrative drama
 
 For fiction, episodic or branded drama, and requests for a drama script, scene or storyboard (드라마 대본·콘티), **load the installed `ai-drama-production` skill before drafting**, even for a single scene or text-only plan. In Claude, select `photo-reference-studio:ai-drama-production` with the skill loader. In file-based hosts, read its [SKILL.md](../ai-drama-production/SKILL.md) from this plugin if there is no skill loader. Apply its story and continuity workflow to the requested deliverable. If the skill cannot be loaded, say so and continue with the planning work you can support.
@@ -29,7 +33,7 @@ Resolve the intended effect, viewer and placement through [content intent](refer
 
 Supplied reference images take priority under [reference-led design](references/reference-led-design.md). Carousel, thumbnail and ad requests use [design craft](references/design-intelligence.md) and `chany-ad-creative`'s format modes. Users choose visible results in everyday words, not technical vocabulary.
 
-Generic visual-reference research defaults to one combined 10-image board (Pinterest 5 + MeiGen 5) through `chany-reference-board`; read [combined-reference-board.md](references/combined-reference-board.md) and [reference-recovery.md](references/reference-recovery.md). Explicit source/count requests take precedence. Keep lane-specific provenance while consolidating the user decision after images are displayed.
+Generic visual-reference research defaults to one 6-image Pinterest board through `chany-reference-board`; read [reference-board-defaults.md](references/reference-board-defaults.md) and [reference-recovery.md](references/reference-recovery.md). Explicit source/count requests take precedence. Keep lane-specific provenance while consolidating the user decision after images are displayed.
 
 Read [references/industry-overlay.md](references/industry-overlay.md), [references/routing.md](references/routing.md), and [references/runtime-boundaries.md](references/runtime-boundaries.md). For any customer-facing creative, also read the shared [creative-direction system](references/creative-direction-system.md), [current creative signals](references/current-creative-signals.md), and [live model routing](references/latest-model-routing.md). When any asset has a named platform, placement, storefront, outbound channel, or possible live publishing operation, also read and apply [references/platform-publication-adapter.md](references/platform-publication-adapter.md) before release or mutation. Choose one primary industry skill when the domain is known, then the smallest set of production specialists that covers the named deliverables. A single clearly named deliverable should go directly to its production owner after applying the industry packet when relevant. Use this router for ambiguous requests, complete campaigns, or work spanning two or more production categories.
 
@@ -50,7 +54,7 @@ Default dependency order when those assets are requested:
 1. select the industry mode and create its direction packet
 2. approve the marketing brief, claim ledger, and asset matrix
 3. prepare source-faithful assets when needed
-4. find and select art direction through one source-isolated static-reference lane when needed: broad Pinterest, Production Paradise commercial photography, approved award archives, or `chany-ai-prompt-reference` for MeiGen image-and-prompt research
+4. find and select art direction through one source-isolated static-reference lane when needed: broad Pinterest, Production Paradise commercial photography, approved advertising archive
 5. when a video reference link, browser capture, direct media URL, or local reference file is supplied, use `chany-video-reference-ingest` to establish the observable evidence level and produce the authorized capture packet before timing analysis; a short product-video reference plus the user's product uses `chany-viral-product-remake` as the simple front door
 6. compile and approve one brand-specific creative direction, then one master campaign visual or design system
 7. let each production owner, including `chany-campaign-video` when requested, define its asset specification, then use `chany-media-production-loop` for every requested generated still or campaign-video job

@@ -29,6 +29,10 @@ For every governing still, read and follow the shared [image model default](../c
 
 For every named platform, placement, storefront, outbound channel, upload, schedule, or live publishing operation, read and follow the shared [platform publication adapter](../chany-studio/references/platform-publication-adapter.md). This skill never treats creative approval as authority to upload, activate, publish, or spend.
 
+## Beginner video delivery
+
+Read [video-first experience](../chany-studio/references/video-first-experience.md). For “영상 레퍼런스도 찾아줘”, this owner coordinates video discovery: use the existing Meta ad research owner for conversion ads, or curated public video work and named accounts through the existing reference owner and video-ingest boundary. Keep observed footage separate from thumbnail-only evidence. Do not start a Pinterest photo board. Reuse a selected reference and ask only unresolved decisions. When a final edited film is requested, continue through accepted clips to assembly, requested captions/sound and playback verification; do not mark a shot list or isolated clips as a delivered film.
+
 ## Optional Higgsfield modes
 
 For a requested object swap or motion transfer in authorized footage, read [Genjutsu revision](references/genjutsu-edit.md). Keep this skill as owner of the bounded edit without forcing a new campaign strategy or regenerating accepted source stills. The media loop executes the verified operation; assembly receives only an accepted replacement version.

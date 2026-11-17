@@ -172,7 +172,7 @@ reference_board:
   shortfall: 0
   status: "not-requested | collecting | incomplete | complete"
 selected_reference:
-  provider: "Pinterest | Production Paradise | Ads of the World | D&AD | The One Show"
+  provider: "Pinterest | Production Paradise | Ads of the World"
   source_url: ""
   visual_dna: {}
 creative_direction:

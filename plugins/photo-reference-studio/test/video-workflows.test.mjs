@@ -304,17 +304,17 @@ test("marketing brief reviews observed performance without inventing causality",
   assert.match(schema, /^\s+next_single_variable:/m);
 });
 
-test("both manifests publish the 2.19.0 current-Higgsfield release", async () => {
+test("both manifests publish the 2.20.0 current-Higgsfield release", async () => {
   const [claude, codex] = await Promise.all([
     readPluginFile(".claude-plugin/plugin.json").then(JSON.parse),
     readPluginFile(".codex-plugin/plugin.json").then(JSON.parse),
   ]);
 
-  assert.equal(claude.version, "2.19.0");
-  assert.match(codex.version, /^2\.19\.0(?:\+codex\.[a-z0-9.-]+)?$/i);
+  assert.equal(claude.version, "2.20.0");
+  assert.match(codex.version, /^2\.20\.0(?:\+codex\.[a-z0-9.-]+)?$/i);
   assert.ok(codex.interface.capabilities.includes("GPT Image 2.6 default for generative still images with scoped overrides"));
   assert.ok(codex.interface.capabilities.includes("Native Claude question-card interview and Chany-file approval"));
-  assert.ok(codex.interface.capabilities.includes("Source-isolated Pinterest, Production Paradise, and award-archive reference boards with in-chat previews"));
+  assert.ok(codex.interface.capabilities.includes("Source-isolated Pinterest, Production Paradise, and advertising-archive reference boards with in-chat previews"));
   assert.ok(codex.interface.capabilities.includes("Beginner-friendly expert creative direction and anti-genericity review"));
   assert.doesNotMatch(JSON.stringify(codex.interface), /Behance/i);
   assert.ok(codex.interface.capabilities.includes("Concept-led campaign video with approved GPT Image 2.6 governing stills"));

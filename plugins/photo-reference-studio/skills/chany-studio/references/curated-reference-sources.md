@@ -1,33 +1,28 @@
-# Curated references for the actual offer
+# Six reference sources, selected by purpose
 
-Checked 2026-11-17. This is an optional source directory, not evidence that every account, page or asset is currently accessible or reusable. The user's supplied reference or named source always wins. Generic research keeps Pinterest 5 + MeiGen 5; explicit Pinterest-only and specialist lanes retain their own limits and provenance. Do not expand the Pinterest preview server's allowlist or follow a Pin's outbound site.
+The canonical default directory is [reference-sources.json](reference-sources.json). Use **one source first, at most two per search task**; do not search all six automatically. Existing selected references and explicit source/count requests take priority. This is a discovery policy, not a claim that a connector is installed or every page/video can be opened.
 
-## Choose a source for a reason
-
-For a user requesting broader curated research, inspect the offer and choose at most two relevant sources initially. Show a small numbered board with one recommended direction; honor an explicit requested count. The additional sources are separate labelled lanes, never substitutes hidden in Pinterest/MeiGen results.
-
-| Need | Starting sources | What to inspect |
+| Purpose | Default source | Owner and observation |
 |---|---|---|
-| Packaging / product photography | [Dieline](https://thedieline.com/), [Packaging of the World](https://packagingoftheworld.com/), [BP&O](https://bpando.org/) | product proportions, lighting, label visibility and real campaign applications |
-| Brand / service visual system | [The Brand Identity](https://the-brandidentity.com/), [Behance](https://www.behance.net/), [Notefolio](https://notefolio.net/) | a complete case, not a logo thumbnail; type, spacing and repeated applications |
-| App / SaaS / landing page | [Mobbin](https://mobbin.com/), [Land-book](https://land-book.com/), [Siteinspire](https://www.siteinspire.com/) | actual screen/flow and placement; keep the user's actual UI authoritative |
-| Film / motion | [Vimeo Staff Picks](https://vimeo.com/channels/staffpicks), [Motionographer](https://motionographer.com/) | sequence, motion and sound through video intake; a cover is not timing evidence |
-| Korean editorial / local brand | [Notefolio](https://notefolio.net/), [월간 디자인](https://design.co.kr/), [29CM magazine](https://www.29cm.co.kr/content/29magazine) | Korean copy hierarchy, commerce photography and mobile reading size |
-| Space / hospitality | [Dezeen](https://www.dezeen.com/), [오늘의집](https://ohou.se/), [Kinfolk](https://www.kinfolk.com/) | spatial proportions, natural light and the relevant customer context |
-| Typography | [Fonts In Use](https://fontsinuse.com/), [Typewolf](https://www.typewolf.com/), [눈누](https://noonnu.cc/) | use in context and readable Korean; verify the foundry's current license for the intended deliverable |
-| Color | [Adobe Color](https://color.adobe.com/), [Coolors](https://coolors.co/), [Realtime Colors](https://www.realtimecolors.com/) | palette extraction and application; brand colors and legibility outrank a generic trend |
+| Still composition, lighting, product mood | [Pinterest](https://www.pinterest.com/) | `chany-reference-board`; six inline images by default, no outbound Pin destinations |
+| Professional commercial photography | [Production Paradise](https://www.productionparadise.com/) | `chany-commercial-photo-reference`; six photographs by default |
+| Conversion video/image/carousel ads | [Meta Ad Library](https://www.facebook.com/ads/library/) | `chany-meta-ad-research`; six ad candidates by default, no invented performance ranking |
+| Brand campaign idea and advertising craft | [Ads of the World](https://www.adsoftheworld.com/) | `chany-award-ad-reference`; six candidates by default; publication does not prove an award |
+| Film direction, storytelling and editing | [Vimeo Staff Picks](https://vimeo.com/channels/staffpicks) | `chany-reference-board` curated video branch → `chany-video-reference-ingest`; three video candidates by default |
+| Motion graphics, animation and typography in motion | [Motionographer](https://motionographer.com/) | same curated video branch; three video candidates by default |
 
-The user-supplied [Old Kid Studios directory](https://teamourproject.notion.site/3fdb1222998681158528c3ba82ed1700) was read across sites, Instagram accounts, fonts and color. Use it as discovery input, not as a model benchmark, current pricing list or blanket font license. Its two linked color collections are optional inspiration; do not copy the collections into the plugin or force their ratios onto every brand.
+Keep a specialist lane source-isolated. A second source is an explicitly labelled complementary lane, not a way to fill missing slots from the first. A generic still board remains Pinterest only. Existing permitted bounded retries do not need a new interview. If the selected source is unavailable, report the shortfall and use the recovery contract; do not grow the directory or silently substitute another provider.
 
-Useful Instagram starting accounts from that directory include `@thebrandidentity`, `@mindsparklemagazine`, `@thedieline`, `@packaging_of_the_world`, `@studiofnt`, `@hello_ep`, `@ordinarypeople.info`, `@studiodumbar`, `@nowness`, `@thelocalproject`, `@gentlemonster`, and `@29cm.official`. Treat these as named research leads, not preconnected Metricool competitors or endorsements. When asked to use the full supplied directory, read its current page and include the requested categories rather than silently limiting it to this shortlist.
+## Supplied sites and videos
 
-## Find, inspect, select
+The user can still supply an accessible Instagram Reel, YouTube/TikTok video, portfolio, image, or another named site. Inspect it within the existing source/access rules; it is not automatically a new default search source. For an explicitly requested site outside the directory, use the separate named-source branch and its real access capabilities. Do not add a permanent recommendation list, follow Pinterest outbound links, or pass unrelated domains into the Pinterest-only preview server.
 
-1. Search the chosen site for the actual category and intended placement. For a current-style request, prefer the last 12 months and record the visible publication date; undated material is `date unknown`. Older work may remain a labelled visual reference, not latest-model evidence.
-2. Open the strongest result and inspect the image or full sequence. Record source URL, creator/brand when visible, date checked, observed mechanism, suitability for this offer, and any inaccessible pages. Never report a search snippet as an inspected case.
-3. For carousels, inspect every available card and record inspected/total counts plus the ending CTA. For video, hand off to `chany-video-reference-ingest`; distinguish thumbnail-only, sampled frames and full timing/audio evidence.
-4. Rank for product/service fit, clear transferable composition, source completeness and feasibility. Likes or awards do not prove conversion. Keep source facts, the user's preference and the studio's interpretation distinct.
-5. Render actual previews when permitted by the host. A text link alone is a discovery lead, not a completed visual board. If previews are unavailable, disclose the shortfall and offer a usable source or user-supplied reference; never fabricate one.
-6. Extract a few useful design rules from the selected reference: position/scale, light, spacing, type roles, color and contact. Keep editable text separate when exact Korean or prices matter. Two fonts and a restrained palette are starting heuristics, not universal restrictions. Do not copy unverified statements about licenses, rankings or “best” sources.
+The user's supplied reference directory remains a source to consult **when explicitly requested**. Do not enumerate all its sites, font/color tools or creator accounts during ordinary production. Fonts and color resources are optional production aids, not extra reference-discovery destinations. [Metricool](metricool-reference-research.md) remains optional for already configured competitor accounts, not a seventh reference search engine.
 
-For performance-informed Instagram selection, follow [Metricool reference research](metricool-reference-research.md). It is optional; this workflow works without Metricool.
+## Inspect and select
+
+Open the actual candidate; record source URL, creator/brand if visible, observation date, product/service fit and access limits. For current work, record the visible publication date; unknown dates are not current-trend evidence. Likes, awards and time on air do not prove sales or conversion.
+
+Video candidates must pass through `chany-video-reference-ingest`. Distinguish thumbnail-only, sampled-frame and actual timing/audio evidence. A thumbnail never establishes motion or sound. Use playable previews only when genuinely supported; otherwise disclose the limitation. Still-image boards need actual visible images to be complete. Honor requested counts and report visible/missing counts rather than inventing candidates.
+
+Transfer only the requested, observed composition or creative mechanism while keeping the user's actual offer authoritative. A public reference is not permission to download, send to a third-party generator, edit or publish. Reuse the existing source/upload/cost approval contract.

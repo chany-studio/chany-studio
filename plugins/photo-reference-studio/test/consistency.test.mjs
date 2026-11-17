@@ -60,10 +60,10 @@ test("the legacy shim loads the shared table covering every current non-industry
   assert.deepEqual(missing, [], "the shared legacy destination must route every current skill");
   assert.match(shim, /chany-studio\/references\/routing\.md/, "industry overlays are routed through routing.md");
   assert.doesNotMatch(shim, /six visible candidates by default/i);
-  assert.match(shim, /10 inline images by default \(Pinterest 5 \+ MeiGen 5\)/);
+  assert.match(shim, /6 inline images by default \(Pinterest 6\)/);
 });
 
-test("general reference guidance states the combined 10-image default", async () => {
+test("general reference guidance states the six-image Pinterest default", async () => {
   const files = {
     "README.md": await readFile(join(repoRoot, "README.md"), "utf8"),
     "plugin README.md": await readFile(join(pluginRoot, "README.md"), "utf8"),
@@ -73,7 +73,7 @@ test("general reference guidance states the combined 10-image default", async ()
     "industry-overlay.md": await readFile(join(pluginRoot, "skills", "chany-studio", "references", "industry-overlay.md"), "utf8"),
   };
   for (const [name, content] of Object.entries(files)) {
-    assert.match(content, /Pinterest 5\s*(?:장)?\s*\+\s*(?:Meigen|MeiGen) 5/i, `${name} must state the combined default`);
+    assert.match(content, /Pinterest 6/i, `${name} must state the Pinterest default`);
   }
 });
 
@@ -151,7 +151,7 @@ test("the product insertion pipeline covers the core product-to-ad flow", async 
   assert.match(pipeline, /Do not switch silently/);
   assert.match(pipeline, /`quality: high` and `resolution: 2k`/);
   assert.match(pipeline, /which image is which/);
-  for (const skill of ["chany-studio", "chany-campaign-visual", "chany-ad-creative", "chany-reference-board", "chany-campaign-video", "chany-ai-prompt-reference"]) {
+  for (const skill of ["chany-studio", "chany-campaign-visual", "chany-ad-creative", "chany-reference-board", "chany-campaign-video"]) {
     const body = await readFile(join(pluginRoot, "skills", skill, "SKILL.md"), "utf8");
     assert.match(body, /product-insertion\.md\)/, `${skill} must follow the product insertion pipeline`);
   }

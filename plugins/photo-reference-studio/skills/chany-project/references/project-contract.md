@@ -44,7 +44,6 @@ Select the primary industry overlay before the production skills. Read `chany-st
 | Meta video/image/carousel ad benchmarks and copy/CTA analysis | `chany-meta-ad-research` |
 | cutout, white packshot, source cleanup | `chany-product-assets` |
 | explicit Pinterest-only art-direction board: six visible candidates by default, or the user's explicit positive count | `chany-reference-board` |
-| MeiGen AI image references with source prompts and product-specific adaptation | `chany-ai-prompt-reference` |
 | staged master visual | `chany-campaign-visual` |
 | commerce detail-page modules | `chany-detail-page` |
 | single-image ads, conversion/editorial magazine carousels, YouTube thumbnails, Instagram covers, posters, banners | `chany-ad-creative` |
@@ -56,7 +55,7 @@ Select the primary industry overlay before the production skills. Read `chany-st
 | controlled versions of one approved 4–30 second source ad | `chany-ad-variants` |
 | authorized long-form or YouTube video recut into reviewed Reels, Shorts, or social clips | `chany-shortform-recut` |
 | product image to reusable 3D asset, editable advertising scene, turntable, or camera previs | `chany-product-3d` |
-| generic visual references or Pinterest + MeiGen | `chany-reference-board` coordinates 10 inline images by default, Pinterest 5 + MeiGen 5, with bounded automatic search recovery; explicit provider/count overrides |
+| generic visual references or Pinterest | `chany-reference-board` coordinates 6 inline images by default, Pinterest 6, with bounded automatic search recovery; explicit provider/count overrides |
 | animated ad typography, benefit diagram, logo reveal or CTA card | `chany-motion-design` (Higgsfield execution capability checked; no mandatory AE installation) |
 | replace a product/object in authorized footage or transfer its motion | `chany-campaign-video` Genjutsu revision mode → `chany-media-production-loop` → assembly only if requested |
 | execute or resume generated still-image and campaign-video jobs | `chany-media-production-loop` |

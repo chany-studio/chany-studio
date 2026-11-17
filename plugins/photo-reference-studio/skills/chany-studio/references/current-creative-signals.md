@@ -8,11 +8,10 @@ This file separates visual-reference discovery from factual production knowledge
 
 Production override, 2026-09-19: site-trend scouting has been removed. Do not fetch trend reports or social feeds automatically. Historical signals below are optional recorded ideas, not verified current trends. Existing reference discovery and official technical/specification checks remain available. Prioritize the user's reference and [design craft](design-intelligence.md).
 
-MeiGen extension, reviewed 2026-09-15: `chany-ai-prompt-reference` is a separate controlled lane for AI-generated images and their source prompts. It is outside the photography/award restrictions below, preserves the Pinterest-only preview tool, and never cross-fills those boards. Use its observed image/prompt mechanisms as optional execution signals; community engagement is not conversion performance. Do not infer a trend from an offline library result.
 
 Scope: the photography/award board restrictions below do not replace the separate `chany-meta-ad-research` lane. For performance ads, official Meta Ad Library creative is the benchmark source for video, single images and carousels under [performance-ad-contract.md](performance-ad-contract.md). Pinterest is still-photo/style inspiration only, never the video route. User-supplied video analysis uses the existing intake contract. Do not cross-fill these lanes or widen the Pinterest preview server.
 
-- **Photography/award lanes:** use exactly one controlled lane per specialist board: public Pinterest Pin pages, public Production Paradise work/profile pages, or public Ads of the World, D&AD, and The One Show work pages. Never mix lanes to fill a shortage. Within these lanes, Stocksy, ShotDeck, Death to Stock, social networks, mirrors, general image results, and outbound destinations are not permitted.
+- **Photography/award lanes:** use exactly one controlled lane per specialist board: public Pinterest Pin pages, public Production Paradise work/profile pages, or public Ads of the World work pages. Never mix lanes to fill a shortage. Within these lanes, Stocksy, ShotDeck, Death to Stock, social networks, mirrors, general image results, and outbound destinations are not permitted.
 - **Curated discovery, reviewed 2026-11-17:** named sites/accounts, the user's directory and broader product/service research use [curated-reference-sources.md](curated-reference-sources.md). Instagram posts can be inspected in that separate lane; [Metricool](metricool-reference-research.md) is optional account evidence. These are not automatic trend-feed scouting, hidden replacements for a short Pinterest board, or permission to widen its preview server. The restrictions in the previous bullet govern photography/award lane operations, not this separately requested discovery.
 - **Trend signals:** Pinterest Predicts and Pinterest Palette may inform concept selection, but their editorial examples are not automatically reference candidates. A candidate must still come through one of the three source-isolated reference skills.
 - **Knowledge sources:** official product, platform, accessibility, or commerce documentation may be consulted only to verify current prompting, format, safe-area, accessibility, or conversion requirements. They are not visual-reference providers, and their example images must not be collected into a reference board.
@@ -124,7 +123,6 @@ The first three entries below define the public provenance pages for the two spe
 
 - Production Paradise, “About”: https://www.productionparadise.com/about
 - Ads of the World collections: https://www.adsoftheworld.com/collections.php
-- D&AD Photography and The One Show archive: https://www.dandad.org/awards/d-ad-awards/categories/photography and https://www.oneclub.org/awards/theoneshow/-archive/awards/
 
 - OpenAI, “GPT Image Generation Models Prompting Guide,” 2026-04-21: https://developers.openai.com/cookbook/examples/multimodal/image-gen-models-prompting-guide
 - OpenAI, `gpt-image-2` model page: https://developers.openai.com/api/docs/models/gpt-image-2

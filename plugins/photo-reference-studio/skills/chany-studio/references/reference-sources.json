@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "max_sources_per_search": 2,
+  "default_still_source": "pinterest",
+  "default_still_count": 6,
+  "default_video_count": 3,
+  "sources": [
+    {
+      "id": "pinterest",
+      "name": "Pinterest",
+      "url": "https://www.pinterest.com/",
+      "purpose": "still-style",
+      "owner": "chany-reference-board"
+    },
+    {
+      "id": "production-paradise",
+      "name": "Production Paradise",
+      "url": "https://www.productionparadise.com/",
+      "purpose": "commercial-photo",
+      "owner": "chany-commercial-photo-reference"
+    },
+    {
+      "id": "meta-ad-library",
+      "name": "Meta Ad Library",
+      "url": "https://www.facebook.com/ads/library/",
+      "purpose": "conversion-ad",
+      "owner": "chany-meta-ad-research"
+    },
+    {
+      "id": "ads-of-the-world",
+      "name": "Ads of the World",
+      "url": "https://www.adsoftheworld.com/",
+      "purpose": "campaign-concept",
+      "owner": "chany-award-ad-reference"
+    },
+    {
+      "id": "vimeo-staff-picks",
+      "name": "Vimeo Staff Picks",
+      "url": "https://vimeo.com/channels/staffpicks",
+      "purpose": "film-direction",
+      "owner": "chany-reference-board"
+    },
+    {
+      "id": "motionographer",
+      "name": "Motionographer",
+      "url": "https://motionographer.com/",
+      "purpose": "motion-design",
+      "owner": "chany-reference-board"
+    }
+  ],
+  "supplied_references": "Inspect accessible user-supplied links or files without adding their provider to the default directory. Source-specific restrictions and video intake still apply."
+}

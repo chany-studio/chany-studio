@@ -17,4 +17,4 @@ Every user-facing turn follows the shared [beginner experience contract](../chan
 - Show exactly `target_count` distinct photographs as actual images in the current conversation. Under each image include the provider, public Production Paradise source page, query, fit note, Visual DNA, and the branded elements that must not transfer.
 - Never present a portfolio image as licensed for reuse.
 
-On a shortfall, report the incomplete diagnostic from the contract. Do not fall back to Pinterest, MeiGen, an award archive, Stocksy, ShotDeck, Death to Stock, or another site without a new user request.
+On a shortfall, report the incomplete diagnostic from the contract. Do not fall back to Pinterest, an award archive, Stocksy, ShotDeck, Death to Stock, or another site without a new user request.

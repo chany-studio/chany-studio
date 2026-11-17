@@ -51,7 +51,7 @@ test("creative direction turns beginner language into three scored territories a
   assert.match(system, /^## 6\. Anti-genericity gate$/m);
   assert.match(signals, /Photography\/award lanes:[*]* use exactly one controlled lane per specialist board/i);
   assert.match(signals, /public Production Paradise work\/profile pages/i);
-  assert.match(signals, /public Ads of the World, D&AD, and The One Show work pages/i);
+  assert.match(signals, /public Ads of the World work pages/i);
   assert.match(signals, /Knowledge sources:[*]* official product, platform, accessibility, or commerce documentation/i);
   assert.match(ui, /\$chany-creative-direction/);
   assert.match(ui, /^\s*allow_implicit_invocation:\s*true$/m);

@@ -8,6 +8,8 @@ First read [Work-first shared interview](work-first-interview.md). It governs or
 
 Do not run site-trend scouting as part of production, including social-feed or trend-report searches. Existing requested visual references and necessary official capability/delivery-spec verification remain available. Use approved references and design craft, not a claim of fresh trends from an old ledger.
 
+For requested video, [video-first experience](video-first-experience.md) takes precedence over the photo-board and image-result examples below. This includes video requests without a reference: discover video examples when requested, then proceed toward the finished film.
+
 First apply [content-intent.md](content-intent.md): reuse known purpose, audience, placement and authority inputs; ask only one to three missing high-impact questions. Bounded edits, cutouts and assembly need no new campaign interview. This is the same quick-start intake, not an extra stage.
 
 Unless the user asks to compare options ("여러 안 보여줘", "콘셉트 3안", "자세히"), or an approved direction already exists, run **quick start** for a single requested deliverable. "레퍼런스 먼저 보여줘" keeps quick start but waits for the user's reference pick before the card; "레퍼런스 없이 바로 만들어줘" skips reference search and works from the product profile alone.

@@ -388,7 +388,7 @@ test("specialist reference lanes stay source-isolated and exclude rejected provi
   assert.equal(frontmatterName(award, "award skill"), "chany-award-ad-reference");
   assert.match(commercialPolicy, /only provider in this lane is Production Paradise/i);
   assert.match(commercialPolicy, /restricted to `productionparadise\.com`/i);
-  assert.match(awardPolicy, /Ads of the World[\s\S]+D&AD[\s\S]+The One Show/i);
+  assert.match(awardPolicy, /Ads of the World/i);
   assert.match(awardPolicy, /Search or open only the approved domains/i);
   for (const content of [commercial, commercialPolicy, award, awardPolicy, routing]) {
     assert.match(content, /Stocksy/i);

@@ -2,7 +2,7 @@
 
 Taxonomy depth is not a search-call limit. Keep one L1 subject and at most one direct L2 subtype, without creative modifiers or L3 descent. Within that scope, spelling/singular/plural/equivalent subject wording, pagination, another supported search surface on the same provider, and unused candidate replacement do not require user permission. Keep each provider's existing URL, provenance and preview restrictions.
 
-This contract replaces older one-call-per-query wording and separate semi-auto selection checkpoints. It does not replace URL allowlists, host media-display restrictions, access controls or paid-operation approval. The combined-board contract is the explicit exception to selecting only one reference lane; its two pools remain isolated.
+This contract replaces older one-call-per-query wording and separate semi-auto selection checkpoints. It does not replace URL allowlists, host media-display restrictions, access controls or paid-operation approval. Use the compact source directory to select at most two explicitly labelled lanes when the purpose requires it; never cross-fill a source-specific board.
 
 For each provider lane allow at most 6 discovery calls (including pagination and equivalent wording). Stop earlier after 2 consecutive calls yield no new usable candidates, the requested visible count is reached, or an access/rate-limit/transport blocker is observed. Preview at most 3 times the lane's target count of distinct candidates; do not blindly retry failed previews. An actual auth/display failure is not solved by more semantic searches. Do not ask for “추가 검색 허용” or quote internal policy to the user.
 

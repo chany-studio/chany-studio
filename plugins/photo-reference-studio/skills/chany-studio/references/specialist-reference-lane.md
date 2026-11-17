@@ -1,6 +1,6 @@
 # Specialist reference lane contract
 
-Shared rules for the source-isolated specialist lanes `chany-commercial-photo-reference` (Production Paradise) and `chany-award-ad-reference` (Ads of the World, D&AD, The One Show). Each skill's own `references/source-policy.md` adds only its provider scope, ranking signals, provider-specific rejections, and record fields.
+Shared rules for the source-isolated specialist lanes `chany-commercial-photo-reference` (Production Paradise) and `chany-award-ad-reference` (Ads of the World). Each skill's own `references/source-policy.md` adds only its provider scope, ranking signals, provider-specific rejections, and record fields.
 
 ## Query
 
@@ -29,4 +29,4 @@ Resolve `target_count` from the user's explicit positive whole number or default
 
 ## Shortfall
 
-If the permitted L1/L2 pool cannot supply the requested number of visible, traceable images, return an incomplete diagnostic with `requested`, `visible`, and `shortfall` counts. Never widen the lane: no Pinterest, MeiGen, another specialist lane, Stocksy, ShotDeck, Death to Stock, a stock library, or another site without a new user request.
+If the permitted L1/L2 pool cannot supply the requested number of visible, traceable images, return an incomplete diagnostic with `requested`, `visible`, and `shortfall` counts. Never widen the lane: no Pinterest, another specialist lane, Stocksy, ShotDeck, Death to Stock, a stock library, or another site without a new user request.

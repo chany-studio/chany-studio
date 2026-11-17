@@ -1,6 +1,6 @@
 # Design craft without trend scouting
 
-Use for carousel, thumbnail and static advertising work. This is an internal design guide, not a website-trend search workflow. Do not automatically visit Midjourney, Reddit, X or Threads for trends. Existing requested reference discovery (including Pinterest/MeiGen) and official capability/specification verification remain separate.
+Use for carousel, thumbnail and static advertising work. This is an internal design guide, not a website-trend search workflow. Do not automatically visit Midjourney, Reddit, X or Threads for trends. Existing requested reference discovery (including Pinterest) and official capability/specification verification remain separate.
 
 A user-supplied reference or accepted campaign style takes priority. Inspect the image, separate style from product authority, and apply reference-led-design.md. Users do not need vocabulary or prompts; ask only about unresolved visible differences.
 

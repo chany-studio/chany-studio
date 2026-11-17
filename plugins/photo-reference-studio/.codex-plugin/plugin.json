@@ -1,6 +1,6 @@
 {
   "name": "photo-reference-studio",
-  "version": "2.19.0",
+  "version": "2.20.0",
   "description": "Chany's Studio: put real products and services into chosen references, discover fitting examples, and create images and videos with source fidelity, current model checks and bounded revisions.",
   "author": {
     "name": "Chany",
@@ -18,7 +18,6 @@
     "marketing campaign",
     "reference board",
     "Pinterest reference",
-    "Meigen prompt reference",
     "commercial photography reference",
     "award ad reference",
     "creative direction",
@@ -89,9 +88,8 @@
       "Bounded still-image and campaign-video production loop with stable job ledger",
       "Live paid-generation preflight and safe job recovery",
       "Marketing campaign planning",
-      "MeiGen image-and-prompt references with product-specific prompt adaptation",
       "Source-faithful product assets",
-      "Source-isolated Pinterest, Production Paradise, and award-archive reference boards with in-chat previews",
+      "Source-isolated Pinterest, Production Paradise, and advertising-archive reference boards with in-chat previews",
       "Campaign key visuals",
       "Detail-page production",
       "Promotional and multi-channel ad creative",
