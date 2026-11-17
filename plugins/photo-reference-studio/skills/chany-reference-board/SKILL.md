@@ -1,6 +1,6 @@
 ---
 name: chany-reference-board
-description: "Find visual references: product-matched popular Instagram Reels with optional Apify and verified metrics; Instagram first for ads with Meta supplements, six Pinterest images for still styling, or an explicitly requested provider and count. Coordinate source-isolated lanes with Visual DNA and bounded automatic recovery; not final media generation or Meta ad benchmarking."
+description: "제품 설명·사진으로 인스타그램 릴스 레퍼런스 찾기, 조회수·재생수·좋아요·공유수 비교. Find product-matched Instagram Reels with connected Apify and verified metrics without requiring the user to name a plugin. Instagram first for ads with Meta supplements; six Pinterest images for still styling. Not final media generation or Meta ad benchmarking."
 ---
 
 # Chany Reference Board

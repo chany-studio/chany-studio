@@ -1,6 +1,6 @@
 # CHANY STUDIO · 처음 만드는 AI 이미지와 영상
 
-왕초보 실습 교안 · 2026.11.17 업데이트 · 플러그인 2.21.0 기준
+왕초보 실습 교안 · 2026.11.17 업데이트 · 플러그인 2.21.1 기준
 
 **ChatGPT Work에서 시작:** `@chany-studio 필요한 것부터 하나씩 물어봐줘`라고 말하고 제품 사진이나 서비스 자료를 첨부하세요. 자료에서 알 수 있는 내용은 다시 묻지 않으며, 참고 이미지 선택과 결과 수정까지 안내합니다. [짧은 인터뷰 사용법](https://github.com/chany-studio/chany-studio/blob/main/docs/WORK-FIRST-INTERVIEW.md)
 
@@ -37,7 +37,7 @@
 
 ### 설치가 아직 안 되어 있다면
 
-공식 저장소는 [chany-studio/chany-studio](https://github.com/chany-studio/chany-studio)입니다. 사용하는 앱의 플러그인/마켓플레이스에서 이 저장소를 추가해 Chany’s Studio를 설치하고, 제작 서비스 연결을 승인한 뒤 새 작업을 여세요. 화면 이름이 다르거나 메뉴가 없으면 [설치 설명서](https://github.com/chany-studio/chany-studio/blob/main/docs/INSTALL-AND-UPDATE.md)를 확인하세요. 설치 메뉴가 없는데 이미 설치됐다고 가정하지 않습니다.
+ChatGPT Work에서는 [공식 사이트 → 설치·시작하기](https://chany-studio.chanjunpark.chatgpt.site/#start)의 Work용 파일을 내려받아 **플러그인 → 추가 → 플러그인 압축 파일 업로드 → 설치**로 시작합니다. 인스타 검색은 Apify를 Work 계정에 별도로 연결합니다. Codex 설치가 Work Cloud로 자동 전달되지는 않습니다. Codex·Claude에서는 공식 저장소 [chany-studio/chany-studio](https://github.com/chany-studio/chany-studio)를 마켓플레이스에 추가해 설치합니다. 사용할 제작 서비스를 연결한 뒤 새 작업을 여세요. 화면 이름이 다르거나 메뉴가 없으면 [설치 설명서](https://github.com/chany-studio/chany-studio/blob/main/docs/INSTALL-AND-UPDATE.md)를 확인하세요. 설치 메뉴가 없는데 이미 설치됐다고 가정하지 않습니다.
 
 ```text
 Chany’s Studio로 작업하고 싶어. 지금 이 대화에서 플러그인과 이미지·영상 제작 연결을 사용할 수 있는지 확인해줘. 아직 생성하거나 비용을 쓰지 말고, 부족한 준비가 있으면 쉬운 말로 알려줘.
