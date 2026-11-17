@@ -5,6 +5,8 @@ description: Make bounded local edits to accepted or generated commerce composit
 
 # Chany Image Edit
 
+For a numbered selected reference plus product photo, first read [photo reference execution](../chany-studio/references/photo-reference-execution.md). Do not let a generic edit call preserve the original product-photo pose when the chosen reference requires a different framing.
+
 Revise an accepted product, campaign, advertising, detail-page, or model asset without allowing a local request to regenerate the whole design.
 
 A product source plus "이 레퍼런스처럼 만들어줘" is not inherently a local edit. Route that new scene to its production owner using [reference-led design](../chany-studio/references/reference-led-design.md); preserve product identity without locking the original camera/pose. This skill retains the existing view only within an explicitly bounded edit request.

@@ -5,13 +5,15 @@ The canonical default directory is [reference-sources.json](reference-sources.js
 | Purpose | Default source | Owner and observation |
 |---|---|---|
 | Still composition, lighting, product mood | [Pinterest](https://www.pinterest.com/) | `chany-reference-board`; six inline images by default, no outbound Pin destinations |
-| Professional commercial photography | [Production Paradise](https://www.productionparadise.com/) | `chany-commercial-photo-reference`; six photographs by default |
+| Explicit Production Paradise / photographers' portfolio request | [Production Paradise](https://www.productionparadise.com/) | `chany-commercial-photo-reference`; six photographs by default; opt-in, not the generic product-photo route |
 | Advertising ideas: Reels, images and carousels (first) | [Instagram](https://www.instagram.com/) | `chany-reference-board` curated branch; [Instagram-first contract](instagram-ad-reference.md); three total candidates by default |
 | Paid-ad execution and supplementary examples | [Meta Ad Library](https://www.facebook.com/ads/library/) | `chany-meta-ad-research`; six only for Meta-only research, explicit remaining count for supplements; no invented performance ranking |
 | Film direction, storytelling and editing | [Vimeo Staff Picks](https://vimeo.com/channels/staffpicks) | `chany-reference-board` curated video branch → `chany-video-reference-ingest`; three video candidates by default |
 | Motion graphics, animation and typography in motion | [Motionographer](https://motionographer.com/) | same curated video branch; three video candidates by default |
 
 Keep a specialist lane source-isolated. A second source is an explicitly labelled complementary lane, not a way to silently fill a source-specific request. The generic Instagram-first ad job may include labelled Meta supplements within its total count, under its dedicated contract. A generic still board remains Pinterest only. Existing permitted bounded retries do not need a new interview. If the selected source is unavailable, report the shortfall and use the recovery contract; do not grow the directory or silently substitute another provider.
+
+Apply [photo reference execution](photo-reference-execution.md) to product images. Instagram as the intended publishing channel does not change still styling into Instagram ad-case research. Commercial quality does not select Production Paradise automatically.
 
 ## Supplied sites and videos
 

@@ -1,9 +1,11 @@
 ---
 name: chany-reference-board
-description: "제품 설명·사진으로 인스타그램 릴스 레퍼런스 찾기, 조회수·재생수·좋아요·공유수 비교. Find product-matched Instagram Reels with connected Apify and verified metrics without requiring the user to name a plugin. Instagram first for ads with Meta supplements; six Pinterest images for still styling. Not final media generation or Meta ad benchmarking."
+description: "제품 사진으로 레퍼런스 찾아줘, 인스타그램용 광고 사진의 구도·조명·제형 참고 사진을 찾을 때 사용. Still-photo styling defaults to six Pinterest images, even for commercial or Instagram output. Also find product-matched Instagram Reels with Apify and verified plays/likes/shares when video or performance examples are requested. A numbered choice hands the exact selected image to product-reference production. Not final generation or Meta-only benchmarking."
 ---
 
 # Chany Reference Board
+
+For product-photo styling and “레퍼런스 고르면 이 제품으로 만들어줘”, read [photo reference execution](../chany-studio/references/photo-reference-execution.md) first. Pinterest is the default for this request even when the output is called an Instagram advertisement. Preserve the selected image and composition in the production handoff.
 
 For named sites/accounts, the user’s curated directory, or broader product/service research, use the separate [curated source lane](../chany-studio/references/curated-reference-sources.md). For known Instagram competitor accounts, use [Metricool](../chany-studio/references/metricool-reference-research.md) only when available and useful; it is not required or a universal search engine. These branches do not expand Pinterest access or cross-fill the default board. A supplied selected reference skips discovery and goes to [reference insertion](../chany-studio/references/reference-insertion.md) when the user wants its layout retained.
 

@@ -1,5 +1,7 @@
 # Default reference board
 
+Read [photo reference execution](photo-reference-execution.md). “인스타그램용 광고 사진” asking for a product's composition/lighting is still styling, not ad-case benchmarking. Pinterest remains the default; Production Paradise requires a named-source or photographers' portfolio request. Do not substitute retailers when a source cannot be opened.
+
 For an unspecified still-photo styling provider (not advertising examples), use Pinterest through `chany-reference-board`: **6 actual inline images** by default. An explicit positive count overrides six; zero skips research. Never split an unspecified request across several sites. Follow the Pinterest search, preview and [bounded recovery](reference-recovery.md) rules. Never count links, HTML or metadata as displayed images.
 
 Use [curated sources](curated-reference-sources.md) and [reference-sources.json](reference-sources.json) to select an appropriate source by purpose, at most two per discovery task. A named source or supplied reference takes priority; keep specialist source boundaries. A supplied reference skips discovery unless alternatives are requested. Explicit requests outside the default directory use a separate named-source lane, never expand the Pinterest preview allowlist or silently replace a requested source.

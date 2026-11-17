@@ -1,9 +1,11 @@
 ---
 name: chany-studio
-description: Start product/service creation in ChatGPT Work with a short adaptive interview, reference discovery and easy revisions; help with 챠니 설치·Apify 연결·연결 점검. Route single outputs to their owner and coordinate multi-asset campaigns. For narrative film, short drama, scripts or storyboards (드라마 대본·콘티), load the installed ai-drama-production skill before drafting, including for text-only requests.
+description: "제품 사진 넣고 레퍼런스 찾아서 만들어줘, 인스타그램용 광고 사진, 선택한 1번 구도에 내 제품 넣기 등 초보자의 제품·서비스 제작을 담당한다. Start in ChatGPT Work without requiring a plugin name: Pinterest still-photo discovery, exact selected reference plus product inputs, separate identity/composition checks, short interview and revisions. Help with 챠니 설치·Apify 연결. Route video and multi-asset work to owners; for drama scripts/storyboards read ai-drama-production first."
 ---
 
 # Chany's Studio
+
+For a product photo → find a reference → “1번으로 만들어줘” request, read [photo reference execution](references/photo-reference-execution.md) before searching or generating. That short contract owns source choice, the exact selected reference input and separate identity/composition checks; keep it active through a native image-tool handoff.
 
 Coordinate industry-aware advertising, promotion, and content production without duplicating specialist instructions. Keep the user's source materials, approved business facts, evidence, and accepted campaign direction authoritative across every handoff.
 

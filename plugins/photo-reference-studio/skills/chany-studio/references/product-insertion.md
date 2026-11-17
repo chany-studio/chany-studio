@@ -4,6 +4,8 @@ This is the core Chany's Studio job: the user supplies a product photo or servic
 
 Tool names below describe capabilities. Resolve the actual operation from the live tool list and schema each time; if a capability is missing, use the stated fallback and say so in one plain sentence.
 
+Read [photo reference execution](photo-reference-execution.md) for still-photo discovery and selected-reference execution. It keeps Pinterest as the still default, prevents product-only generation requests after a selection, and checks source pose against reference composition before submission.
+
 For requested video, [video-first experience](video-first-experience.md) takes precedence over this document's photo-board, image-count and image-finishing steps. Use those steps only for an actual required still asset. With no supplied video reference, discover video references or honor explicit reference skip; never insert a photo-board prerequisite.
 
 ## 1. Product profile
@@ -29,7 +31,7 @@ First inspect any user-supplied reference image/file/link under [reference-led-d
 - its lighting suits the material (soft wrap light for gloss and glass, directional light for matte texture)
 - the scene is buildable around the product without hiding or redesigning it
 
-Show the board as numbered inline images with one short plain-Korean line each, mark the recommended one, and continue to the confirmation card without waiting. The user can reply with a different number at the card. If no reference image can be displayed, say so once and continue from the product profile alone.
+Show the board as numbered inline images with one short plain-Korean line each, mark the recommended one, and continue to the confirmation card without waiting. The user can reply with a different number at the card. If no reference image can be displayed, report the shortfall; a product-profile-only independent direction requires the user's choice and is not completion of the requested reference workflow.
 
 ## 3. Clean product source
 
@@ -46,7 +48,7 @@ When a model exposes separate roles, use them instead of relying on order.
 
 Compile the chosen operation's composition plan: use the insertion prompt for a retained reference layout, or the explicit reshoot prompt from [reference-led-design.md](reference-led-design.md) for a new scene. Do not reduce "이 레퍼런스처럼" to "배경과 조명만 변경". If the tool cannot perform the requested composition while preserving identity, disclose that limitation instead of silently delivering a background-only edit.
 
-Every reference source (Pinterest, Production Paradise, award archives, Higgsfield templates) may be passed as a generation reference input, but only with the user's explicit approval. The reference is usually someone else's work, and importing it sends it to a third party. Put a dedicated line in the confirmation card that names the source and the risk, for example "참고 사진: 3번(Pinterest, 다른 사람의 작품)을 Higgsfield에 참고 입력으로 보냅니다. 결과가 원본과 너무 비슷하면 광고에 쓰지 마세요." Approving the card with that line is the separate upload approval the runtime contract requires; without that line in the approved card, do not import the reference. If the user says "사진은 보내지 마" or "레퍼런스 사진 없이", or import or a reference role is unavailable, describe the reference in the prompt instead and say the result may resemble it less closely.
+Every reference source (Pinterest, Production Paradise, award archives, Higgsfield templates) may be passed as a generation reference input, but only with the user's explicit approval. The reference is usually someone else's work, and importing it sends it to a third party. Put a dedicated line in the confirmation card that names the source and the risk, for example "참고 사진: 3번(Pinterest, 다른 사람의 작품)을 Higgsfield에 참고 입력으로 보냅니다. 결과가 원본과 너무 비슷하면 광고에 쓰지 마세요." Approving the card with that line is the separate upload approval the runtime contract requires; without that line in the approved card, do not import the reference. If the user explicitly says "사진은 보내지 마" or "레퍼런스 사진 없이", use a textual approximation within that scope and label the reduced fidelity. If import or a reference role is unavailable, stop the selected-reference route, explain the missing image input and obtain scoped acceptance before a text-only approximation. Never silently execute a product-only edit and call it the selected reference's composition.
 
 For third-party inspiration, replace its subject with the user's offer and exclude unrelated brands, people, copy and claims. For a user-authorized template or base-image edit, preserve the explicitly requested layout under [reference insertion](reference-insertion.md); do not reject a correct layout match simply because it is close to the authorized reference. Reuse rights and protected elements follow the actual task scope, not a blanket ban on faithful editing. Mention an unresolved reuse limitation only when it is material to the requested delivery.
 

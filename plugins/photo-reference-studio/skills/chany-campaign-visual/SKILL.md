@@ -1,9 +1,11 @@
 ---
 name: chany-campaign-visual
-description: Create authority-faithful staged commercial imagery and master campaign key visuals using the applicable industry direction packet, with reusable palette, lighting, material, copy-zone, and crop-safe rules. Use for hero imagery and campaign art direction; not for posters, banners, or ads with finished copy and CTA (use chany-ad-creative) or page-module sets.
+description: "제품 사진과 고른 레퍼런스로 광고 사진·제품 촬영 이미지를 만들거나 1번으로 만들어줘 같은 선택을 실행한다. Use both product identity and selected reference composition inputs; Pinterest for missing still styling. Create master campaign visuals, not for finished-copy posters/banners (chany-ad-creative) or page-module sets."
 ---
 
 # Chany Campaign Visual
+
+For product-photo/reference work, read [photo reference execution](../chany-studio/references/photo-reference-execution.md) before a generic image-tool skill. A user's numbered selection must reach the generator as the exact reference image; the product photo alone is insufficient.
 
 Create one commercially useful staged image or master key visual from authoritative subject, place, interface, person, or event sources. The result should define a reusable campaign system, not merely an attractive isolated render.
 

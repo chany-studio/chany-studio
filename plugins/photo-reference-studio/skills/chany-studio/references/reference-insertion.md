@@ -2,6 +2,8 @@
 
 Use inside the current production owner, not as another skill or interview. Follow [reference-led design](reference-led-design.md), [product insertion](product-insertion.md), and the existing cost/input approval. Read this branch when the user says “이 구도 그대로 내 제품만”, “여기에 우리 서비스 화면을 넣어줘”, or identifies the element to replace.
 
+A selection such as “1번으로 만들어줘” inherits the earlier requested composition. Follow [photo reference execution](photo-reference-execution.md): both actual images must reach the generator, and the selected reference's framing/scale cannot be silently replaced by the source product's pose.
+
 ## Resolve the requested result
 
 - `reference-insert`: keep the chosen reference's composition/layout and replace the specified subject with the user's real product or service asset. The reference is the base; the user's source is the identity authority. Do not reroute this to a new camera angle or merely imitate its mood.

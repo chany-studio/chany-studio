@@ -2,6 +2,8 @@
 
 Use for performance marketing, purchase-oriented ads, Meta reference adaptation, or supplied reference + product/service → advertising. This is a mode of existing owners, not another orchestrator or a compulsory full campaign. Read [thirteen-role adaptation](thirteen-role-adaptation.md) when structuring the argument.
 
+Source routing is determined by the evidence requested, not the word “advertising”. A product-photo composition/lighting request, including Instagram-feed advertising photos, follows [photo reference execution](photo-reference-execution.md) and Pinterest by default. This contract's Instagram-first research applies to actual ad cases/benchmarking, not a substitute for that still board.
+
 ## Ownership and runtime
 
 - Single image/carousel: `chany-ad-creative`; video: `chany-campaign-video`; multi-format set: `chany-studio`. The requesting owner keeps responsibility after each research handoff.

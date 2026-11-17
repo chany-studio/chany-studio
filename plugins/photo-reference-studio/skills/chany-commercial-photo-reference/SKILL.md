@@ -1,9 +1,11 @@
 ---
 name: chany-commercial-photo-reference
-description: Find and present high-end commercial, advertising, and lifestyle photography references from Production Paradise with direct in-conversation previews, traceable source pages, and transferable Visual DNA. Use when professional campaign photography is more important than broad Pinterest discovery; not for award-case research or licensed asset sourcing.
+description: "Production Paradise를 명시하거나 전문 사진작가 포트폴리오를 요청했을 때만 해당 사이트의 사진 레퍼런스를 찾는다. Not the default for 제품 사진, 광고 사진, 인스타그램용 사진, 고급 제품 촬영 or reference-to-product creation: use chany-reference-board's Pinterest lane for those. No general-web or retailer fallback."
 ---
 
 # Chany Commercial Photo Reference
+
+**Entry guard:** A request for an attractive product/advertising photo is not a request for this specialist source. If the user did not name Production Paradise or ask for photographers' portfolios, hand still styling to `chany-reference-board` under [photo reference execution](../chany-studio/references/photo-reference-execution.md) before searching. If this source was explicitly requested, keep its isolation even after 403/empty results; report the shortfall instead of filling with retailer images.
 
 Use Production Paradise as a specialist commercial-photography lane. Before discovery, read the shared [specialist reference lane contract](../chany-studio/references/specialist-reference-lane.md) and this lane's [source policy](references/source-policy.md). The contract owns the L1-then-optional-direct-L2 query, count, display, rights, recovery, and shortfall rules; this file adds only what is specific to Production Paradise.
 
