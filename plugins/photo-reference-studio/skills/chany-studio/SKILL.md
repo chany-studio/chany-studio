@@ -1,6 +1,6 @@
 ---
 name: chany-studio
-description: Start product/service creation in ChatGPT Work with a short adaptive interview, reference discovery and easy revisions; route single outputs to their owner and coordinate multi-asset campaigns. For narrative film, short drama, scripts or storyboards (드라마 대본·콘티), load the installed ai-drama-production skill before drafting, including for text-only requests.
+description: Start product/service creation in ChatGPT Work with a short adaptive interview, reference discovery and easy revisions; help with 챠니 설치·Apify 연결·연결 점검. Route single outputs to their owner and coordinate multi-asset campaigns. For narrative film, short drama, scripts or storyboards (드라마 대본·콘티), load the installed ai-drama-production skill before drafting, including for text-only requests.
 ---
 
 # Chany's Studio
@@ -24,6 +24,8 @@ For fiction, episodic or branded drama, and requests for a drama script, scene o
 Use `cinematic-director` when a separate directing task needs it. Apply the [drama production integration](references/drama-production-integration.md) for handoffs to media generation, editing and publication review when those stages are requested.
 
 ## Route the request
+
+For installation, Apify connection, missing tools or a first-use setup question, use [Work installation and connection help](references/work-install-and-connect.md). Diagnose only the missing step; preserve working connections and distinguish creator-account validation from untested accounts.
 
 Use [Work-first shared interview](references/work-first-interview.md) as the common front door. “시작해줘”, “뭘 준비해야 해?”, “하나씩 물어봐줘” and an attached product/service without a complete brief start compact intake. Never require a beginner to name a specialist or initialize a project before one output. Already known facts and clear bounded edits skip redundant questions.
 

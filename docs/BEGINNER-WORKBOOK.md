@@ -1,6 +1,6 @@
 # CHANY STUDIO · 처음 만드는 AI 이미지와 영상
 
-왕초보 실습 교안 · 2026.11.17 업데이트 · 플러그인 2.21.1 기준
+왕초보 실습 교안 · 2026.11.17 업데이트 · 플러그인 2.21.2 기준
 
 **ChatGPT Work에서 시작:** `@chany-studio 필요한 것부터 하나씩 물어봐줘`라고 말하고 제품 사진이나 서비스 자료를 첨부하세요. 자료에서 알 수 있는 내용은 다시 묻지 않으며, 참고 이미지 선택과 결과 수정까지 안내합니다. [짧은 인터뷰 사용법](https://github.com/chany-studio/chany-studio/blob/main/docs/WORK-FIRST-INTERVIEW.md)
 
