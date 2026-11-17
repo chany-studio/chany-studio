@@ -16,6 +16,10 @@ Inspect actual images/carousel pages and use `chany-video-reference-ingest` for 
 
 Compare only observable opening/hook, product or service demonstration, pacing, copy, evidence and CTA. Clearly separate proposed changes from the observed reference. Apply the mechanisms to the user's real product facts; no invented endorsements or results. Public availability alone does not authorize download, third-party upload, source replacement or republication. Keep the existing original-remake versus authorized-source-edit boundary.
 
+## Product-matched popularity search
+
+For high-view, high-like or high-share Instagram examples, follow [Apify Instagram research](apify-instagram-research.md) through the existing reference owner. Reuse the product brief, verify the live search and share-count options, and compare only actually retrieved metrics. Missing shares remain unknown; popularity is not conversion evidence. Apify is an optional access method, not another reference provider.
+
 ## Capability and handoff
 
 Metricool is optional for already configured competitor accounts and exposed post/Reel analytics. It is not a universal Instagram keyword, hashtag, audio or visual search tool, and installation is not a prerequisite. Follow [Metricool research](metricool-reference-research.md); empty analytics do not establish that a post does not exist.

@@ -1,6 +1,6 @@
 # Chany's Studio 설치 및 업데이트
 
-**2.20.1:** 레퍼런스 검색처를 6곳으로 줄이고, 사진은 Pinterest 6장·영상은 목적별 검색으로 연결합니다. Work 인터뷰와 영상 제작·수정 흐름도 보완했습니다. [사용법](WORK-FIRST-INTERVIEW.md)
+**2.21.0:** 내 제품에 맞는 인스타그램 인기 릴스를 Apify로 찾고, 실제 재생수·좋아요를 비교합니다. 공유수는 요금제와 실제 반환 여부를 확인하며 미확인 값을 만들지 않습니다. [검증 결과와 사용법](https://github.com/chany-studio/chany-studio/blob/main/docs/APIFY-INSTAGRAM-VERIFICATION.md)
 
 **2.18.0 새 기능:** 내 제품·서비스를 선택한 레퍼런스 구도에 넣기, 선별한 참고 사이트와 선택형 Metricool 분석, 최신 모델의 실제 입력 제약을 연결했습니다. [바로 쓰는 요청문과 사용법](REFERENCE-INSERTION-GUIDE.md). 기존 프로젝트의 모델과 승인 자료는 유지합니다.
 
@@ -60,7 +60,11 @@ Node.js는 컴퓨터에서 작은 도우미 프로그램을 실행해 주는 무
 - 이미지와 영상을 실제로 만들려면 Higgsfield(이미지·영상 생성 서비스) 계정이 필요합니다.
 - 설치 과정이나 앱의 설정 → 커넥터(또는 앱) 화면에서 Higgsfield를 연결하고 로그인합니다.
 - 플러그인에는 크레딧이 들어 있지 않습니다. 크레딧 충전과 요금은 Higgsfield에서 확인하세요. 실제 비용과 잔액은 생성 직전 확인 카드에 표시됩니다.
-- 프로젝트 설정, 기획, 레퍼런스 찾기는 크레딧을 쓰지 않습니다.
+- 프로젝트 설정과 기획은 생성 크레딧을 쓰지 않습니다. Apify로 인스타그램 지표를 조회하면 별도 사용량이 발생할 수 있어 실행 전에 요금과 상한을 확인합니다.
+
+## 인스타그램 인기 사례 검색 연결 (선택)
+
+Apify 공식 플러그인을 설치하고 계정을 연결하면 키워드 검색과 공개 지표 확인에 사용할 수 있습니다. 이미 제공한 레퍼런스를 분석할 때는 설치가 필요하지 않습니다. 앱에 실행 도구가 나타나는지 새 대화에서 확인하세요. 2026-11-17 무료 계정 실검증에서 재생수·좋아요 수집은 성공했고, 공유수는 무료 계정 지원 제한을 확인했습니다. 유료 요금제의 공유수 반환은 이번에 검증하지 않았습니다.
 
 ## 설치 확인
 
@@ -68,7 +72,7 @@ Node.js는 컴퓨터에서 작은 도우미 프로그램을 실행해 주는 무
 
 - 표시 이름: `Chany's Studio`
 - 내부 식별자: `photo-reference-studio`
-- 버전: `2.20.1`
+- 버전: `2.21.0`
 - 대표 Skill: `chany-studio`
 - 프로젝트 Skill: `chany-project`
 - 전문 Skill: 마케팅 브리프, JTBD 고객 분석(`chany-jtbd-persona`), Meta 광고 리서치(`chany-meta-ad-research`), 레퍼런스 보드(사이트 미지정 시 Pinterest 6장, Pinterest만 지정 시 기본 6장, 또는 요청 수량), 전문 크리에이티브 디렉션(`chany-creative-direction`), 브라우저 캡처 영상 레퍼런스 준비(`chany-video-reference-ingest`), 제품 에셋, 키비주얼, 상세페이지, 광고, 편집, 패션, 콘셉트형 캠페인 영상(`chany-campaign-video`), 광고 모션 디자인(`chany-motion-design`), 미디어 생성 실행·재개(`chany-media-production-loop`), 영상 조립·컷 교체(`chany-video-assembly`), 환경 점검(`chany-preflight`), 게시 전 검수(`chany-publication-review`)
@@ -151,7 +155,7 @@ Claude Cowork에서는 빠진 캠페인 정보가 **Ask your question** 카드�
 
 1. **Customize → Plugins**를 엽니다.
 2. `photo-reference-studio` 마켓플레이스에서 **Update**를 누릅니다.
-3. 버전 `2.20.1`, `chany-project`, `chany-jtbd-persona`, `chany-meta-ad-research`, `chany-creative-direction`, `chany-campaign-video`, `chany-viral-product-remake`, `chany-ad-variants`, `chany-shortform-recut`, `chany-product-3d`, `chany-media-production-loop`, 공통 제작 스킬과 11개 업종 스킬 목록을 확인합니다.
+3. 버전 `2.21.0`, `chany-project`, `chany-jtbd-persona`, `chany-meta-ad-research`, `chany-creative-direction`, `chany-campaign-video`, `chany-viral-product-remake`, `chany-ad-variants`, `chany-shortform-recut`, `chany-product-3d`, `chany-media-production-loop`, 공통 제작 스킬과 11개 업종 스킬 목록을 확인합니다.
 4. 새 Cowork 작업을 시작합니다.
 
 ### Claude Code
@@ -168,7 +172,7 @@ Claude Cowork에서는 빠진 캠페인 정보가 **Ask your question** 카드�
 
 ## 업데이트가 반영되지 않을 때
 
-- 설치 상세의 버전이 `2.20.1`인지 확인합니다.
+- 설치 상세의 버전이 `2.21.0`인지 확인합니다.
 - Refresh 또는 Update 뒤 반드시 새 대화나 새 작업을 시작합니다.
 - Claude Code에서는 `/plugin`의 Errors 탭을 확인합니다.
 - Claude Cowork에서 레퍼런스 이미지가 안 보이면 Node.js 18 이상과 `reference-preview` 연결을 확인합니다. Node.js 설치 방법은 [문제 해결의 Node.js 안내](TROUBLESHOOTING.md#nodejs가-필요하다고-나와요-claude-cowork-이미지-미리보기)를 보세요.
@@ -176,7 +180,7 @@ Claude Cowork에서는 빠진 캠페인 정보가 **Ask your question** 카드�
 
 삭제와 재설치는 [문제 해결 가이드](TROUBLESHOOTING.md)를 먼저 확인한 뒤 최후 수단으로 사용하세요.
 
-## 2.20.1 제작 스킬 확인
+## 2.21.0 제작 스킬 확인
 
 업데이트 후 Chany’s Studio의 스킬 목록에서 `adobe-video-pipeline`, `adobe-after-effects-production`, `adobe-premiere-finishing`, `image-asset-production`을 확인하세요. 네 스킬은 플러그인에 포함되어 있으므로 따로 설치할 필요가 없습니다. 로컬 프로젝트의 `.claude/skills/` 변경만으로 Cowork의 설치된 플러그인이 갱신되지는 않습니다.
 

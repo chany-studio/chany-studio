@@ -10,10 +10,10 @@ test('beginner handout is generated from the current editable lesson', async () 
   const html = await read('CHANY-STUDIO-BEGINNER-WORKBOOK.html');
   const hash = createHash('sha256').update(source).digest('hex');
   assert.ok(html.includes(`name="workbook-source-sha256" content="${hash}"`));
-  assert.equal((source.match(/^## /gm) || []).length, 10);
-  assert.equal((source.match(/^```text$/gm) || []).length, 19);
-  assert.equal((html.match(/data-copy="prompt-\d+"/g) || []).length, 19);
-  for (let i = 1; i <= 10; i++) {
+  assert.equal((source.match(/^## /gm) || []).length, 11);
+  assert.equal((source.match(/^```text$/gm) || []).length, 20);
+  assert.equal((html.match(/data-copy="prompt-\d+"/g) || []).length, 20);
+  for (let i = 1; i <= 11; i++) {
     assert.ok(html.includes(`href="#chapter-${i}"`));
     assert.ok(html.includes(`id="chapter-${i}"`));
   }
