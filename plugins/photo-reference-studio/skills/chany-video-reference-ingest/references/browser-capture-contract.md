@@ -51,7 +51,7 @@ If a native bridge or local MCP connection is installed, it may pass this record
 
 Treat a URL as `direct-media-url` only after the live connector confirms a video or audio content type. Social post and watch-page URLs remain `platform-page-link` even when they contain the word `video`.
 
-Higgsfield's connected media importer may accept a confirmed direct HTTPS media URL under its live size and type limits. This is an external upload and needs separate approval. After a confirmed media ID exists, supported live tools may analyze creative performance or perform an explicitly approved motion-transfer or object-replacement operation. These operations do not establish copyright or likeness rights and do not replace Chany's non-copying teardown.
+Higgsfield's connected media importer may accept a confirmed direct HTTPS media URL under its live size and type limits. This is external processing. For public references explicitly requested for visual analysis, explain the destination and reuse that authorization; request separate approval for private assets, new sensitive access or unapproved charges. Follow the [Instagram verification contract](../../chany-studio/references/instagram-video-verification.md) for returned direct video URLs. After a confirmed media ID exists, supported live tools may analyze creative performance or perform an explicitly approved motion-transfer or object-replacement operation. These operations do not establish copyright or likeness rights and do not replace Chany's non-copying teardown.
 
 ChatCut can import an attached or locally captured file for transcription and post-production when its live connector is available. It does not convert an Instagram or YouTube page URL into an authorized source file.
 

@@ -1,6 +1,6 @@
 # Chany's Studio 2.18.0
 
-**2.21.2:** ChatGPT Work Cloud에 설치할 수 있는 전용 파일을 제공합니다. Work 계정에서 챠니 설치와 Apify 연결을 각각 확인하세요. 내 제품에 맞는 인스타그램 인기 릴스를 Apify로 찾고, 실제 재생수·좋아요를 비교합니다. 공유수는 요금제와 실제 반환 여부를 확인하며 미확인 값을 만들지 않습니다. [검증 결과와 사용법](https://github.com/chany-studio/chany-studio/blob/main/docs/APIFY-INSTAGRAM-VERIFICATION.md)
+**2.21.4:** ChatGPT Work Cloud에 설치할 수 있는 전용 파일을 제공합니다. Work 계정에서 챠니 설치와 Apify 연결을 각각 확인하세요. 내 제품에 맞는 인스타그램 인기 릴스를 Apify로 찾고, 실제 재생수·좋아요를 비교합니다. 릴스는 실제 영상 본편을 확인한 뒤 추천하며 캡션만 확인한 후보는 제외합니다. 공유수는 요금제와 실제 반환 여부를 확인하며 미확인 값을 만들지 않습니다. [검증 결과와 사용법](https://github.com/chany-studio/chany-studio/blob/main/docs/APIFY-INSTAGRAM-VERIFICATION.md)
 
 **2.18.0 새 기능:** 내 제품·서비스를 선택한 레퍼런스 구도에 넣기, 선별한 참고 사이트와 선택형 Metricool 분석, 최신 모델의 실제 입력 제약을 연결했습니다. [바로 쓰는 요청문과 사용법](../../docs/REFERENCE-INSERTION-GUIDE.md). 기존 프로젝트의 모델과 승인 자료는 유지합니다.
 

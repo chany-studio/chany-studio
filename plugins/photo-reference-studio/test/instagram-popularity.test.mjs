@@ -2,8 +2,9 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { canonicalInstagramUrl, rankInstagramReferences } from '../skills/chany-reference-board/scripts/instagram-popularity.mjs';
 const fields = Object.fromEntries(['views','likes','shares'].map(x=>[x,{field:x,definition:`public ${x}`} ]));
-const row = (id, values={}, score=3) => ({data:{url:`https://www.instagram.com/reel/${id}/`,timestamp:'2026-11-01T00:00:00Z',views:100,likes:10,shares:5,...values},format:'reel',fit:{score,reason:'Relevant demonstration',evidence:['Observed product use']},fields});
-const rank = (candidates, options={}) => rankInstagramReferences({observed_at:'2026-11-17T00:00:00Z',published_since:'2026-05-21T00:00:00Z',candidates,...options});
+const row = (id, values={}, score=3) => ({data:{url:`https://www.instagram.com/reel/${id}/`,timestamp:'2026-11-01T00:00:00Z',views:100,likes:10,shares:5,...values},format:'reel',fit:{score,reason:'Relevant demonstration',evidence:['Observed product use']},fields,video_evidence:evidence(id)});
+const evidence = id => ({status:'completed',method:'connected-video-analysis',source_url:`https://www.instagram.com/reel/${id}/`,observed_at:'2026-11-17T00:00:00Z',duration_seconds:10,covered_ranges:[[0,10]],proof_ref:'synthetic-test-record',audio:'unavailable',beats:[{start:0,end:3,observation:'Product reveal'},{start:3,end:8,observation:'Application demonstration'},{start:8,end:10,observation:'Ending product shot'}]});
+const rank = (candidates, options={}) => rankInstagramReferences({evaluated_at:'2026-11-17T12:00:00Z',observed_at:'2026-11-17T00:00:00Z',published_since:'2026-05-21T00:00:00Z',candidates,...options});
 test('product fit wins before popularity; comparable metrics order equal-fit examples',()=>{
  const result=rank([row('viral',{views:999999,likes:99999,shares:9999},2),row('fit',{views:200}),row('fit2')]);
  assert.deepEqual(result.candidates.map(x=>x.url.split('/')[4]),['fit','fit2','viral']);
@@ -75,4 +76,38 @@ test('balanced uses labeled plays when views are missing, never counts both',()=
  assert.equal(rank([a],{sort:'views'}).candidates.length,0);
  assert.equal(rank([a],{sort:'plays'}).candidates[0].metrics.plays.value,200);
  a.data.views=150;assert.deepEqual(rank([a]).comparison_metrics,['views','likes','shares']);
+});
+
+
+test('caption-only viral reels never displace a visually inspected recommendation',()=>{
+ const caption=row('caption',{views:999999});delete caption.video_evidence;
+ const result=rank([caption,row('seen')]);
+ assert.equal(result.candidates.length,1);assert.match(result.candidates[0].url,/seen/);
+ assert.equal(result.pending_inspection[0].reason,'video-not-inspected');assert.equal(result.missing_count,2);
+ assert.equal(rank([caption]).status,'insufficient-evidence');
+});
+test('partial, queued, source-mismatched and untimed video claims cannot pass',()=>{
+ const variants=[{status:'queued'},{source_url:'https://www.instagram.com/reel/other/'},{covered_ranges:[[0,3],[7,10]]},{beats:[{start:0,end:2,observation:'Opening only'}]},{beats:[]},{proof_ref:''},{observed_at:'2027-01-01'},{duration_seconds:NaN}];
+ for(const patch of variants){const a=row('a');Object.assign(a.video_evidence,patch);assert.equal(rank([a]).candidates.length,0,JSON.stringify(patch));}
+});
+test('full continuous video and silent analysis are eligible with explicit evidence',()=>{
+ const a=row('a');a.video_evidence.beats=[{start:0,end:10,observation:'Continuous product rotation with no application'}];
+ const result=rank([a]);assert.equal(result.candidates[0].inspection,'video-verified');
+ assert.equal(result.candidates[0].video_evidence.audio,'unavailable');
+});
+test('still-image comparison does not require fabricated video evidence',()=>{
+ const a=row('a');a.format='image';delete a.video_evidence;
+ assert.equal(rank([a],{format:'image'}).candidates.length,1);
+});
+
+test('video analysis after the metric snapshot is accepted at later evaluation time',()=>{
+ const a=row('a');a.video_evidence.observed_at='2026-11-17T10:05:00Z';
+ assert.equal(rank([a],{observed_at:'2026-11-17T10:00:00Z'}).candidates.length,1);
+});
+test('many short unseen gaps cannot accumulate into fake full coverage',()=>{
+ const a=row('a');a.video_evidence.covered_ranges=Array.from({length:25},(_,i)=>[i*0.4,i*0.4+0.17]);
+ assert.equal(rank([a]).candidates.length,0);
+ a.video_evidence.covered_ranges=[[0,10]];
+ a.video_evidence.beats=Array.from({length:25},(_,i)=>({start:i*0.4,end:i*0.4+0.17,observation:'Fragment'}));
+ assert.equal(rank([a]).candidates.length,0);
 });

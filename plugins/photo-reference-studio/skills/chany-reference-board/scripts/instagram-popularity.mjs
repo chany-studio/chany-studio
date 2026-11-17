@@ -13,6 +13,33 @@ export function canonicalInstagramUrl(value) {
   } catch { return null; }
 }
 
+// This validates evidence records, not the truth of an observer's claim.
+// The owner must bind these records to real player/file/analyzer observations.
+export function hasCompleteVideoEvidence(evidence, url, evaluatedAt) {
+  if (!evidence || evidence.status !== 'completed' ||
+      !['connected-video-analysis', 'full-browser-playback', 'inspected-file'].includes(evidence.method) ||
+      canonicalInstagramUrl(evidence.source_url) !== url ||
+      typeof evidence.proof_ref !== 'string' || !evidence.proof_ref.trim()) return false;
+  const when = date(evidence.observed_at), duration = evidence.duration_seconds;
+  if (when === null || when > evaluatedAt || !Number.isFinite(duration) || duration <= 0) return false;
+  if (!['heard', 'transcribed', 'unavailable'].includes(evidence.audio)) return false;
+  const covers = ranges => {
+    if (!Array.isArray(ranges) || !ranges.length) return false;
+    if (ranges.some(r => !Array.isArray(r) || r.length !== 2 ||
+        !r.every(Number.isFinite) || r[0] < 0 || r[1] <= r[0] || r[1] > duration + 0.25)) return false;
+    let end = 0, missing = 0;
+    for (const [start, stop] of [...ranges].sort((a,b) => a[0]-b[0])) {
+      missing += Math.max(0, start - end);
+      end = Math.max(end, stop);
+    }
+    missing += Math.max(0, duration - end);
+    return missing <= Math.min(0.25, duration * 0.02);
+  };
+  if (!covers(evidence.covered_ranges) || !Array.isArray(evidence.beats) || !evidence.beats.length) return false;
+  if (evidence.beats.some(b => !b || typeof b.observation !== 'string' || !b.observation.trim())) return false;
+  return covers(evidence.beats.map(b => [b.start, b.end]));
+}
+
 export function rankInstagramReferences(input) {
   if (!input || !Array.isArray(input.candidates)) throw new Error('candidates 배열이 필요합니다.');
   const limit = input.limit ?? 3;
@@ -22,11 +49,13 @@ export function rankInstagramReferences(input) {
   if (!['balanced', 'views', 'plays', 'likes', 'shares'].includes(sort)) throw new Error('지원하지 않는 정렬 기준입니다.');
   const observed = date(input.observed_at);
   if (observed === null) throw new Error('지표 확인 시각이 필요합니다.');
+  const evaluated = input.evaluated_at === undefined ? Date.now() : date(input.evaluated_at);
+  if (evaluated === null) throw new Error('추천 평가 시각을 확인해 주세요.');
   const since = input.published_since === undefined ? observed - 180 * 86400000 : date(input.published_since);
   if (input.published_since !== undefined && (since === null || since > observed)) throw new Error('게시 기간을 확인해 주세요.');
   const format = input.format ?? 'reel';
   if (!['reel', 'image', 'carousel'].includes(format)) throw new Error('한 번에 같은 형식끼리 비교합니다.');
-  const rejected = [], unranked = [], unique = new Map(), history = new Map(), conflicts = new Set();
+  const rejected = [], unranked = [], pendingInspection = [], unique = new Map(), history = new Map(), conflicts = new Set();
   for (const candidate of input.candidates) {
     const raw = candidate?.data ?? {};
     const url = canonicalInstagramUrl(raw.url);
@@ -38,6 +67,10 @@ export function rankInstagramReferences(input) {
     if (!fit || !Number.isInteger(fit.score) || fit.score < 2 || fit.score > 3 || typeof fit.reason !== 'string' || !fit.reason.trim() || !Array.isArray(fit.evidence) || !fit.evidence.some(x => typeof x === 'string' && x.trim())) { reject('product-fit-not-established'); continue; }
     if (published !== null && published > observed) { reject('future-publication'); continue; }
     if (since !== null && (published === null || published < since)) { reject('outside-or-unknown-publication-window'); continue; }
+    if (format === 'reel' && !hasCompleteVideoEvidence(candidate.video_evidence, url, evaluated)) {
+      pendingInspection.push({ url, reason: 'video-not-inspected', inspection: candidate.inspection ?? 'metadata-only' });
+      continue;
+    }
     // Explicit map from live schema. No guessing shares from comments, interactions or reposts.
     const fields = candidate.fields ?? {};
     const metrics = {};
@@ -48,7 +81,8 @@ export function rankInstagramReferences(input) {
       metrics[name] = { value, field: mapping?.field ?? null, definition: mapping?.definition ?? null };
     }
     const item = { url, source_url: raw.url, published_at: raw.timestamp ?? null, observed_at: input.observed_at,
-      format, fit, metrics, inspection: candidate.inspection ?? 'metadata-only' };
+      format, fit, metrics, inspection: format === 'reel' ? 'video-verified' : candidate.inspection ?? 'metadata-only',
+      ...(format === 'reel' ? { video_evidence: candidate.video_evidence } : {}) };
     // Prefer a complete enrichment record; never add counts or merge snapshots.
     if (conflicts.has(url)) { reject('conflicting-duplicate'); continue; }
     const prior = unique.get(url);
@@ -100,7 +134,7 @@ export function rankInstagramReferences(input) {
   return { status: eligible.length ? 'ranked' : 'insufficient-evidence', scope: 'observed-candidates-only',
     comparison_metrics: comparisonMetrics, excluded_metrics: ['views', 'plays', 'likes', 'shares'].filter(x => !comparisonMetrics.includes(x)),
     sample_size: eligible.length, requested_count: limit, missing_count: Math.max(0, limit - eligible.length),
-    candidates: eligible.slice(0, limit), unranked, rejected,
+    candidates: eligible.slice(0, limit), unranked, rejected, pending_inspection: pendingInspection,
     warning: '제품 적합도 우선, 같은 형식의 관찰 표본 안에서만 비교합니다. 인기 지표는 매출 증거가 아니며 영상 시청을 대신하지 않습니다.',
     submission_allowed: false };
 }

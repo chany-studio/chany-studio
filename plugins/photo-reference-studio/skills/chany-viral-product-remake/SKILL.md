@@ -9,7 +9,7 @@ Make the common “reference link + my product” job feel like one simple workf
 
 Every user-facing turn follows the shared [beginner experience contract](../chany-studio/references/beginner-experience.md): quick start by default, plain Korean without internal field names, and no extra checkpoint beyond the still and video confirmation cards required for video production.
 
-Read [references/fast-remake-contract.md](references/fast-remake-contract.md), the shared [video reference teardown](../chany-studio/references/video-reference-teardown.md), [product insertion pipeline](../chany-studio/references/product-insertion.md), and [live model routing](../chany-studio/references/latest-model-routing.md). For an Instagram, TikTok, YouTube, or other page link, first use `chany-video-reference-ingest`; a public URL is evidence for observation, never permission to download, upload, transform, or republish its footage.
+Read [references/fast-remake-contract.md](references/fast-remake-contract.md), the shared [video reference teardown](../chany-studio/references/video-reference-teardown.md), [product insertion pipeline](../chany-studio/references/product-insertion.md), and [live model routing](../chany-studio/references/latest-model-routing.md). For an Instagram, TikTok, YouTube, or other page link, first use `chany-video-reference-ingest`; a public URL is evidence for observation, never permission to transform or republish its footage. Requested public-reference analysis may use a connector-returned direct video through the [verified analysis path](../chany-studio/references/instagram-video-verification.md); private uploads and paid creation remain separately authorized.
 
 ## Choose one execution path
 

@@ -5,7 +5,7 @@ description: Prepare YouTube, Instagram, and other video references for lawful s
 
 # Chany Video Reference Ingest
 
-Turn an authorized video reference into an honest, traceable input for Chany's campaign-video workflow. This skill owns acquisition-state classification and the reference packet; it does not download platform videos, generate footage, edit a cut, or claim full analysis from metadata alone.
+Turn an authorized video reference into an honest, traceable input for Chany's campaign-video workflow. This skill owns acquisition-state classification and the reference packet; it does not resolve protected platform streams, generate footage, edit a cut, or claim full analysis from metadata alone. For discovered Instagram Reels, apply [watch-before-recommending](../chany-studio/references/instagram-video-verification.md), including the connected direct-media analysis fallback.
 
 Every user-facing turn follows the shared [beginner experience contract](../chany-studio/references/beginner-experience.md): quick start by default, plain Korean without internal field names, and one confirmation card before any paid generation.
 
@@ -15,21 +15,21 @@ When the input is a browser page, extension capture, or page link, read [referen
 
 - `live-browser-observation`: use only when the current host exposes a browser or extension surface that can actually show the playing reference. Record the timestamps and elements that were visibly observed. Do not infer unseen beats, audio, captions, or full duration.
 - `authorized-tab-capture`: prefer this for YouTube, Instagram, and other platform-page links when the user can invoke a browser extension to capture the active tab. The capture must start from an explicit user gesture and remain visibly stoppable.
-- `direct-media-url`: accept only an HTTPS URL that resolves to an actual video or audio response, not a post, watch, Reel, feed, redirect, or login page. A connected media-import tool may be used only after the user approves the external upload and the live tool confirms the file type and limits.
+- `direct-media-url`: accept only an HTTPS URL that resolves to an actual video or audio response, not a post, watch, Reel, feed, redirect, or login page. A connected media-import tool may process a direct video URL returned by an available public-data connector for the requested reference analysis, after confirming the file type and limits. Explain the destination once and reuse existing public-analysis authorization; private assets and unapproved paid processing need separate approval.
 - `local-file`: use an attached source file, the user's own export, or an authorized screen recording. Keep it local unless the user separately approves an upload.
 
-If only a platform page link is available and no observable browser or capture capability exists, return `capture_required` with one concise instruction to open the link, invoke the extension, play the needed excerpt, stop capture, and attach the result. Do not substitute a scraper, downloader, unofficial resolver, or reconstructed stream.
+If only a platform page link is available, no connector has returned an inspectable direct video, and no observable browser or capture capability exists, return `capture_required` with one concise instruction to open the link, invoke the extension, play the needed excerpt, stop capture, and attach the result. Do not substitute an unofficial resolver or reconstructed stream. Metadata scraping is discovery only; an already returned direct video may use the verified connected-analysis route.
 
 ## Workflow
 
 1. Canonicalize the source without retaining session, tracking, or access-token query values. Identify the platform, page type, and observed public attribution. Never read or export cookies, passwords, tokens, hidden account data, or unrelated page content.
 2. Record the user's stated basis for using the reference and whether the requested operation is observation, structure analysis, motion transfer, or production. Do not treat capture permission as permission to publish, upload externally, reproduce protected expression, or spend credits.
-3. Select one intake mode and report its evidence ceiling before analysis. Metadata or a player view can support `metadata_only` or `observed_excerpt`; a complete inspectable capture or local file is required for `full_teardown_ready`.
+3. Select one intake mode and report its evidence ceiling before analysis. Metadata or a player view can support `metadata_only` or `observed_excerpt`; a complete inspectable capture or local file, or a completed connected analysis of the bound direct video with usable timed scenes across its duration, is required for `full_teardown_ready`. Record analysis method and coverage; a job success flag alone is insufficient.
 4. Create one `video_reference_packet` using the contract below. Bind every frame, transcript, timestamp, or beat table to the exact captured or attached source version.
 5. For an inspectable file, run `chany-preflight` for only the required probe, extraction, transcription, or contact-sheet capabilities, then apply the shared teardown. Separate observation from interpretation and label incomplete coverage.
 6. When the user requests a new ad, hand the accepted packet and transferable timing grammar to `chany-campaign-video`. Transfer pacing, reveal logic, camera behavior, information order, and sound function only; rebuild the product, people, setting, copy, music, branding, and distinctive sequence from the user's own authorities.
    When the request is specifically one short Reel/Short plus the user's product, hand the packet to `chany-viral-product-remake` as the beginner-facing coordinator instead of asking the user to manage the chain.
-7. Use optional connections only when their live tools are installed and applicable. A direct media file may be imported into Higgsfield after upload approval; motion transfer or object replacement requires separate creative, rights, cost, and generation approval. ChatCut may receive an attached or captured local file for transcription and editing, but it is not a platform-link downloader.
+7. Use optional connections only when their live tools are installed and applicable. A public direct media file may be imported into Higgsfield under the requested public-reference analysis scope; private uploads require explicit approval; motion transfer or object replacement requires separate creative, rights, cost, and generation approval. ChatCut may receive an attached or captured local file for transcription and editing, but it is not a platform-link downloader.
 
 ```yaml
 video_reference_packet:
