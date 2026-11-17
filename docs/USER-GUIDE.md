@@ -1,5 +1,7 @@
 # Chany's Studio 사용 가이드
 
+**2.19.0:** ChatGPT Work에서 짧은 인터뷰로 시작하고, 레퍼런스 선택·제작 확인·쉬운 수정까지 이어갑니다. [사용법](WORK-FIRST-INTERVIEW.md)
+
 **2.18.0 새 기능:** 내 제품·서비스를 선택한 레퍼런스 구도에 넣기, 선별한 참고 사이트와 선택형 Metricool 분석, 최신 모델의 실제 입력 제약을 연결했습니다. [바로 쓰는 요청문과 사용법](REFERENCE-INSERTION-GUIDE.md). 기존 프로젝트의 모델과 승인 자료는 유지합니다.
 
 처음 만든다면 [왕초보 실습 교안](https://chany-studio.chanjunpark.chatgpt.site/learn.html)부터 보세요. 플러그인 사용법 → AI 이미지·영상 기본 개념 → 첫 실습 → 수정·저장 순서로 설명하며, 대괄호만 바꿔 쓰는 요청문과 수업용 인쇄 기능이 있습니다. [교안 원문](BEGINNER-WORKBOOK.md)도 제공합니다.

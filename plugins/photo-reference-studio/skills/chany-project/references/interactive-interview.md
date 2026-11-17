@@ -4,6 +4,8 @@ Use this contract for `setup` and any `update` that needs a user decision. It ch
 
 ## Runtime gate
 
+ChatGPT Work is the primary beginner host. Apply [Work-first shared interview](../../chany-studio/references/work-first-interview.md) to reuse production answers and use the current host’s actual native question tool. Ask one missing question per turn by default; the 1–3 question allowance below is a maximum, not a mandatory batch. If the request is only to create one result, return to production intake without project-file setup. The Claude-specific rules below apply only in Claude.
+
 1. The main conversation first inspects the invocation, attachments, and current project files. Do not ask for a fact already present.
 2. When the current interactive Claude host exposes `AskUserQuestion`, the main conversation must call it for every missing-fact interview and the final pre-write decision. Do not substitute prose questions while the tool is available.
 3. If `AskUserQuestion` is deferred and the host exposes `ToolSearch`, immediately call `ToolSearch(query: "select:AskUserQuestion")` before each question-card call. If the tool is already callable, call it directly; do not invent a preload requirement the host does not expose.

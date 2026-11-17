@@ -1,5 +1,7 @@
 # Chany's Studio
 
+**2.19.0:** ChatGPT Work에서 짧은 인터뷰로 시작하고, 레퍼런스 선택·제작 확인·쉬운 수정까지 이어갑니다. [사용법](https://github.com/chany-studio/chany-studio/blob/main/docs/WORK-FIRST-INTERVIEW.md)
+
 **2.18.0 새 기능:** 내 제품·서비스를 선택한 레퍼런스 구도에 넣기, 선별한 참고 사이트와 선택형 Metricool 분석, 최신 모델의 실제 입력 제약을 연결했습니다. [바로 쓰는 요청문과 사용법](docs/REFERENCE-INSERTION-GUIDE.md). 기존 프로젝트의 모델과 승인 자료는 유지합니다.
 
 [공식 사이트](https://chany-studio.chanjunpark.chatgpt.site/) · [조사·자료 선별·45개 스킬 판단·검증 보고](docs/RELEASE-2.18-REVIEW.md)

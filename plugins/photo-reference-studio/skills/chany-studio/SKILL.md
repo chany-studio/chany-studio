@@ -1,6 +1,6 @@
 ---
 name: chany-studio
-description: Route end-to-end or multi-asset campaigns through the relevant industry and production skills. For narrative film, short drama, scripts or storyboards (드라마 대본·콘티), load the installed ai-drama-production skill before drafting, including for text-only requests.
+description: Start product/service creation in ChatGPT Work with a short adaptive interview, reference discovery and easy revisions; route single outputs to their owner and coordinate multi-asset campaigns. For narrative film, short drama, scripts or storyboards (드라마 대본·콘티), load the installed ai-drama-production skill before drafting, including for text-only requests.
 ---
 
 # Chany's Studio
@@ -20,6 +20,8 @@ For fiction, episodic or branded drama, and requests for a drama script, scene o
 Use `cinematic-director` when a separate directing task needs it. Apply the [drama production integration](references/drama-production-integration.md) for handoffs to media generation, editing and publication review when those stages are requested.
 
 ## Route the request
+
+Use [Work-first shared interview](references/work-first-interview.md) as the common front door. “시작해줘”, “뭘 준비해야 해?”, “하나씩 물어봐줘” and an attached product/service without a complete brief start compact intake. Never require a beginner to name a specialist or initialize a project before one output. Already known facts and clear bounded edits skip redundant questions.
 
 For “이 구도 그대로 제품만” or a service screen in a chosen reference, apply [reference insertion](references/reference-insertion.md). Preserve a supplied base layout when that is the request; service evidence is as valid as a product photo. For requested broader discovery or Instagram competitor evidence, use [curated sources](references/curated-reference-sources.md) and [optional Metricool](references/metricool-reference-research.md) through the existing reference owner.
 
