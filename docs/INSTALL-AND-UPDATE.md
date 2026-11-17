@@ -22,6 +22,8 @@ chany-studio/chany-studio
 
 ## ChatGPT Work: 먼저 계정에 설치하기
 
+처음 쓰는 분은 [Work 설치부터 Apify 연결까지 단계별 안내](https://chany-studio.chanjunpark.chatgpt.site/work-start.html)를 따라 하세요. 계정 권한 확인·입력값·첫 요청문·문제 해결을 한 화면에 정리했습니다.
+
 **Codex에 설치했다고 ChatGPT Work Cloud에도 설치되는 것은 아닙니다.** Work에서는 `chatgpt.com/plugins`의 개인용 목록에서 챠니 스튜디오의 설치 상태를 확인합니다. 로컬 사용자 스킬 연결도 Work Cloud로 전달되지 않습니다.
 
 1. [공식 사이트의 설치·시작하기](https://chany-studio.chanjunpark.chatgpt.site/#start)에서 **ChatGPT Work → Work용 플러그인 내려받기**를 누릅니다. 개발자는 이 저장소에서 `python3 scripts/package-chatgpt-work.py /tmp/chany-studio-work.zip`으로 같은 패키지를 만들 수 있습니다. 이미 같은 파일이 있으면 다른 이름을 지정합니다.

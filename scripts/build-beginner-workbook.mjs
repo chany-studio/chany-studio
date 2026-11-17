@@ -6,7 +6,8 @@ import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const source = await readFile(resolve(root, 'docs/BEGINNER-WORKBOOK.md'), 'utf8');
+const workInstall = process.argv.includes('--work-install');
+const source = await readFile(resolve(root, workInstall ? 'docs/WORK-INSTALL-BEGINNER.md' : 'docs/BEGINNER-WORKBOOK.md'), 'utf8');
 const sourceHash = createHash('sha256').update(source).digest('hex');
 const esc = (s) => s.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
 const inline = (s) => esc(s)
@@ -44,11 +45,12 @@ for (let i = 0; i < lines.length; i++) {
     } else body.push(`<h${level}>${inline(label)}</h${level}>`);
   } else if (/^(?:- |\d+\. )/.test(line)) {
     const ordered = /^\d/.test(line), tag = ordered ? 'ol' : 'ul';
+    const start = ordered ? Number.parseInt(line, 10) : 1;
     const rule = ordered ? /^\d+\. / : /^- /;
     const items = [];
     while (i < lines.length && rule.test(lines[i])) items.push(`<li>${inline(lines[i++].replace(rule, ''))}</li>`);
     i--;
-    body.push(`<${tag}>${items.join('')}</${tag}>`);
+    body.push(`<${tag}${ordered && start !== 1 ? ` start="${start}"` : ''}>${items.join('')}</${tag}>`);
   } else body.push(`<p>${inline(line)}</p>`);
 }
 const html = `<!doctype html>
@@ -65,6 +67,13 @@ try{await navigator.clipboard.writeText(target.textContent);button.textContent='
 catch{const range=document.createRange();range.selectNodeContents(target);const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);status.textContent='자동 복사가 안 되어 문구를 선택했어요. Ctrl+C 또는 ⌘C로 복사하세요.'}
 }));
 </script></body></html>`;
-const output = resolve(root, 'docs/CHANY-STUDIO-BEGINNER-WORKBOOK.html');
-await writeFile(output, html);
+const output = resolve(root, workInstall ? 'docs/CHANY-STUDIO-WORK-INSTALL.html' : 'docs/CHANY-STUDIO-BEGINNER-WORKBOOK.html');
+const rendered = workInstall ? html
+  .replace('CHANY STUDIO · 왕초보 실습 교안', 'CHANY STUDIO · Work 설치와 Apify 연결')
+  .replace('플러그인 사용법부터 첫 이미지·영상 실습까지. 기본 개념과 누구나 바꿔 쓰는 14종 상세 프롬프트.', 'ChatGPT Work에 챠니 스튜디오 설치, 내 Apify 계정 연결, 첫 인스타 레퍼런스 검색까지.')
+  .replace('왕초보 실습 교안 · 읽고, 복사하고, 직접 만들어보기', '처음 시작하기 · Work 설치와 Apify 연결')
+  .replace('수업 순서 · 필요한 부분으로 이동', '설치 순서 · 필요한 부분으로 이동')
+  .replace('CHANY STUDIO · 기초와 첫 실습은 1~6장, 목적별 복사 요청문은 7장입니다.', 'CHANY STUDIO · 먼저 내 계정에 설치하고, Apify 연결을 완료한 뒤 새 Work 대화를 시작하세요.')
+  : html;
+await writeFile(output, rendered);
 console.log(`Rendered ${chapter} chapters and ${prompt} copyable prompts: ${output}`);
