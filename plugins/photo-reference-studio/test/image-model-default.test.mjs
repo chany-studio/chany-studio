@@ -96,7 +96,7 @@ test("Claude loads the one-tool reference preview before Pinterest discovery", a
   }
 });
 
-test("public docs and manifests publish the 2.20.0 default consistently", async () => {
+test("public docs and manifests publish the 2.20.1 default consistently", async () => {
   const [rootReadme, pluginReadme, install, guide, troubleshooting, claude, codex] =
     await Promise.all([
       readFile(join(repoRoot, "README.md"), "utf8"),
@@ -112,8 +112,8 @@ test("public docs and manifests publish the 2.20.0 default consistently", async 
     assert.match(document, /GPT Image 2.6/i);
     assert.match(document, /gpt_image_2_6/i);
   }
-  assert.equal(claude.version, "2.20.0");
-  assert.match(codex.version, /^2\.20\.0(?:\+codex\.)?/);
+  assert.equal(claude.version, "2.20.1");
+  assert.match(codex.version, /^2\.20\.1(?:\+codex\.)?/);
   assert.ok(claude.keywords.includes("gpt_image_2_6"));
   assert.ok(codex.interface.capabilities.includes(
     "GPT Image 2.6 default for generative still images with scoped overrides",

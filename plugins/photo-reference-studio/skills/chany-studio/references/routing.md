@@ -42,12 +42,13 @@ Do not add two overlays merely because two subjects appear in one scene. Use a s
 | initialize or update an advertising-production project | `chany-project` | shared project instructions, brief, state, and runtime-specific delegation configuration |
 | campaign strategy, launch plan, message hierarchy, asset plan | `chany-marketing-brief` | approved brief and asset matrix |
 | customer purchase motivations, JTBD, persona or buying barriers | `chany-jtbd-persona` | evidence-labeled customer insight packet, not final copy |
+| Ad examples without a specified source (Reels, images, carousels) | `chany-reference-board` curated branch | [Instagram first, Meta as a complement](instagram-ad-reference.md); three total by default |
 | Meta Ad Library research for video, single-image or carousel ads | `chany-meta-ad-research` | observed ad mechanisms, full copy-field analysis and original-adaptation map, not assumed winners |
 | transparent cutout, background removal, white packshot, source cleanup | `chany-product-assets` | reusable source asset |
 | broad visual references, Pinterest, or a Pinterest-only moodboard | `chany-reference-board` | default 6 inline Pinterest candidates; explicit provider/count respected |
 | editorial magazine carousel, YouTube thumbnail or Instagram cover | `chany-ad-creative` | social-design-formats.md modes without mandatory sales CTA |
 | high-end commercial, advertising, or lifestyle photography references | `chany-commercial-photo-reference` | visible Production Paradise references with creator provenance and transferable photographic craft |
-| awarded advertising, campaign ideas, or commercial-photography benchmarks | `chany-award-ad-reference` | visible Ads of the World cases with message mechanism and Visual DNA |
+| explicitly requested Ads of the World campaign cases | `chany-award-ad-reference` | visible Ads of the World cases with message mechanism and Visual DNA |
 | vague visual request, concept territories, trend translation, or expert prompt direction | `chany-creative-direction` | three brand-specific territories, one recommendation, and an approved creative-direction packet |
 | YouTube, Instagram, or other video reference link; browser capture; reference-video structure analysis | `chany-video-reference-ingest` | capability-labeled capture packet and, when inspectable, a non-copying beat table |
 | short Instagram Reel, TikTok, or YouTube Short plus the user's product; “제품만 바꿔서 만들어줘” | `chany-viral-product-remake` | one fast chain that defaults to an original product-specific remake, or an authorized product swap when usable source media and rights are confirmed |

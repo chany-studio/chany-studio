@@ -45,7 +45,7 @@ For the common single-output request “short Reel/Short link + my product,” r
 
 ## Coordinate a campaign
 
-For purchase-oriented video, single-image or carousel advertising, read [references/performance-ad-contract.md](references/performance-ad-contract.md) and use its minimal chain instead of expanding the general campaign sequence below. Meta is the ad-benchmark lane; Pinterest is optional still-photo styling only. Reuse one conversion brief and one selected direction for the requested set. A single output keeps its existing production owner; this router coordinates only multi-format or ambiguous work.
+For purchase-oriented video, single-image or carousel advertising, read [references/performance-ad-contract.md](references/performance-ad-contract.md) and use its minimal chain instead of expanding the general campaign sequence below. [Instagram is the first ad-reference source, with Meta as a complement](references/instagram-ad-reference.md); explicit source requests take priority. Pinterest is optional still-photo styling only. Reuse one conversion brief and one selected direction for the requested set. A single output keeps its existing production owner; this router coordinates only multi-format or ambiguous work.
 
 For a multi-skill campaign, read [references/campaign-state.md](references/campaign-state.md) and maintain one shared state record. Pass only the fields the next specialist needs.
 

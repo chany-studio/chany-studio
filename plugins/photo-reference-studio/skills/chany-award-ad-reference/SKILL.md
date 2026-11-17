@@ -1,11 +1,11 @@
 ---
 name: chany-award-ad-reference
-description: Find and compare advertising campaign and commercial-photography references from Ads of the World with visible previews, source provenance, campaign logic, and transferable art-direction principles. Use for campaign concepts and benchmark research; not for broad moodboards or licensed asset sourcing.
+description: Find and compare advertising campaign and commercial-photography references from Ads of the World with visible previews, source provenance, campaign logic, and transferable art-direction principles. Use only when Ads of the World or this specialist is explicitly requested; not for broad moodboards or licensed asset sourcing.
 ---
 
 # Chany Advertising Case References
 
-Use Ads of the World as the campaign-idea lane. Keep the existing skill ID for saved calls; an archive listing is not evidence of an award. Before discovery, read the shared [specialist reference lane contract](../chany-studio/references/specialist-reference-lane.md) and this lane's [source policy](references/source-policy.md). The contract owns the L1-then-optional-direct-L2 query, count, display, rights, recovery, and shortfall rules; this file adds only what is specific to the award archives.
+Use Ads of the World only for an explicit site or specialist request. Generic ad examples follow [Instagram first with Meta as a complement](../chany-studio/references/instagram-ad-reference.md). Keep the existing skill ID for saved calls; an archive listing is not evidence of an award. Before discovery, read the shared [specialist reference lane contract](../chany-studio/references/specialist-reference-lane.md) and this lane's [source policy](references/source-policy.md). The contract owns the L1-then-optional-direct-L2 query, count, display, rights, recovery, and shortfall rules; this file adds only what is specific to the award archives.
 
 Every user-facing turn follows the shared [beginner experience contract](../chany-studio/references/beginner-experience.md): quick start by default, plain Korean without internal field names, and one confirmation card before any paid generation.
 

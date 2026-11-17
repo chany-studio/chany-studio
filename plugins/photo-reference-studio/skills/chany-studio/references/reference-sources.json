@@ -20,18 +20,18 @@
       "owner": "chany-commercial-photo-reference"
     },
     {
+      "id": "instagram",
+      "name": "Instagram",
+      "url": "https://www.instagram.com/",
+      "purpose": "ad-creative",
+      "owner": "chany-reference-board"
+    },
+    {
       "id": "meta-ad-library",
       "name": "Meta Ad Library",
       "url": "https://www.facebook.com/ads/library/",
       "purpose": "conversion-ad",
       "owner": "chany-meta-ad-research"
-    },
-    {
-      "id": "ads-of-the-world",
-      "name": "Ads of the World",
-      "url": "https://www.adsoftheworld.com/",
-      "purpose": "campaign-concept",
-      "owner": "chany-award-ad-reference"
     },
     {
       "id": "vimeo-staff-picks",
@@ -48,5 +48,10 @@
       "owner": "chany-reference-board"
     }
   ],
-  "supplied_references": "Inspect accessible user-supplied links or files without adding their provider to the default directory. Source-specific restrictions and video intake still apply."
+  "supplied_references": "Inspect accessible user-supplied links or files without adding their provider to the default directory. Source-specific restrictions and video intake still apply.",
+  "default_ad_sources": [
+    "instagram",
+    "meta-ad-library"
+  ],
+  "default_ad_count": 3
 }

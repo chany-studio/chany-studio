@@ -1,6 +1,6 @@
 # Chany's Studio 설치 및 업데이트
 
-**2.20.0:** 레퍼런스 검색처를 6곳으로 줄이고, 사진은 Pinterest 6장·영상은 목적별 검색으로 연결합니다. Work 인터뷰와 영상 제작·수정 흐름도 보완했습니다. [사용법](WORK-FIRST-INTERVIEW.md)
+**2.20.1:** 레퍼런스 검색처를 6곳으로 줄이고, 사진은 Pinterest 6장·영상은 목적별 검색으로 연결합니다. Work 인터뷰와 영상 제작·수정 흐름도 보완했습니다. [사용법](WORK-FIRST-INTERVIEW.md)
 
 **2.18.0 새 기능:** 내 제품·서비스를 선택한 레퍼런스 구도에 넣기, 선별한 참고 사이트와 선택형 Metricool 분석, 최신 모델의 실제 입력 제약을 연결했습니다. [바로 쓰는 요청문과 사용법](REFERENCE-INSERTION-GUIDE.md). 기존 프로젝트의 모델과 승인 자료는 유지합니다.
 
@@ -68,7 +68,7 @@ Node.js는 컴퓨터에서 작은 도우미 프로그램을 실행해 주는 무
 
 - 표시 이름: `Chany's Studio`
 - 내부 식별자: `photo-reference-studio`
-- 버전: `2.20.0`
+- 버전: `2.20.1`
 - 대표 Skill: `chany-studio`
 - 프로젝트 Skill: `chany-project`
 - 전문 Skill: 마케팅 브리프, JTBD 고객 분석(`chany-jtbd-persona`), Meta 광고 리서치(`chany-meta-ad-research`), 레퍼런스 보드(사이트 미지정 시 Pinterest 6장, Pinterest만 지정 시 기본 6장, 또는 요청 수량), 전문 크리에이티브 디렉션(`chany-creative-direction`), 브라우저 캡처 영상 레퍼런스 준비(`chany-video-reference-ingest`), 제품 에셋, 키비주얼, 상세페이지, 광고, 편집, 패션, 콘셉트형 캠페인 영상(`chany-campaign-video`), 광고 모션 디자인(`chany-motion-design`), 미디어 생성 실행·재개(`chany-media-production-loop`), 영상 조립·컷 교체(`chany-video-assembly`), 환경 점검(`chany-preflight`), 게시 전 검수(`chany-publication-review`)
@@ -151,7 +151,7 @@ Claude Cowork에서는 빠진 캠페인 정보가 **Ask your question** 카드�
 
 1. **Customize → Plugins**를 엽니다.
 2. `photo-reference-studio` 마켓플레이스에서 **Update**를 누릅니다.
-3. 버전 `2.20.0`, `chany-project`, `chany-jtbd-persona`, `chany-meta-ad-research`, `chany-creative-direction`, `chany-campaign-video`, `chany-viral-product-remake`, `chany-ad-variants`, `chany-shortform-recut`, `chany-product-3d`, `chany-media-production-loop`, 공통 제작 스킬과 11개 업종 스킬 목록을 확인합니다.
+3. 버전 `2.20.1`, `chany-project`, `chany-jtbd-persona`, `chany-meta-ad-research`, `chany-creative-direction`, `chany-campaign-video`, `chany-viral-product-remake`, `chany-ad-variants`, `chany-shortform-recut`, `chany-product-3d`, `chany-media-production-loop`, 공통 제작 스킬과 11개 업종 스킬 목록을 확인합니다.
 4. 새 Cowork 작업을 시작합니다.
 
 ### Claude Code
@@ -168,7 +168,7 @@ Claude Cowork에서는 빠진 캠페인 정보가 **Ask your question** 카드�
 
 ## 업데이트가 반영되지 않을 때
 
-- 설치 상세의 버전이 `2.20.0`인지 확인합니다.
+- 설치 상세의 버전이 `2.20.1`인지 확인합니다.
 - Refresh 또는 Update 뒤 반드시 새 대화나 새 작업을 시작합니다.
 - Claude Code에서는 `/plugin`의 Errors 탭을 확인합니다.
 - Claude Cowork에서 레퍼런스 이미지가 안 보이면 Node.js 18 이상과 `reference-preview` 연결을 확인합니다. Node.js 설치 방법은 [문제 해결의 Node.js 안내](TROUBLESHOOTING.md#nodejs가-필요하다고-나와요-claude-cowork-이미지-미리보기)를 보세요.
@@ -176,7 +176,7 @@ Claude Cowork에서는 빠진 캠페인 정보가 **Ask your question** 카드�
 
 삭제와 재설치는 [문제 해결 가이드](TROUBLESHOOTING.md)를 먼저 확인한 뒤 최후 수단으로 사용하세요.
 
-## 2.20.0 제작 스킬 확인
+## 2.20.1 제작 스킬 확인
 
 업데이트 후 Chany’s Studio의 스킬 목록에서 `adobe-video-pipeline`, `adobe-after-effects-production`, `adobe-premiere-finishing`, `image-asset-production`을 확인하세요. 네 스킬은 플러그인에 포함되어 있으므로 따로 설치할 필요가 없습니다. 로컬 프로젝트의 `.claude/skills/` 변경만으로 Cowork의 설치된 플러그인이 갱신되지는 않습니다.
 

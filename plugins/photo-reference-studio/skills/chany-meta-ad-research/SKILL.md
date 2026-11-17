@@ -5,6 +5,9 @@ description: Find and analyze Meta Ad Library (메타 광고 라이브러리) vi
 
 # Chany Meta Ad Research
 
+Generic ad discovery starts with [Instagram](../chany-studio/references/instagram-ad-reference.md). This specialist handles explicit Meta requests or the delegated Meta supplement. A supplement receives an explicit remaining count; do not add the six-ad default on top of an existing shortlist. Keep this source lane Meta-only.
+
+
 Own read-only ad discovery and reference analysis, not customer truth, media production or account operation. Read [research and handoff rules](references/meta-ad-research.md). For production requests, return the selected evidence to the existing output owner under the shared [performance-ad contract](../chany-studio/references/performance-ad-contract.md).
 
 Every user-facing turn follows the shared [beginner experience contract](../chany-studio/references/beginner-experience.md): quick start by default, plain Korean without internal field names, and one confirmation card before any paid generation.

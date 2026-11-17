@@ -1,6 +1,6 @@
 # Chany's Studio 2.18.0
 
-**2.20.0:** 레퍼런스 검색처를 6곳으로 줄이고, 사진은 Pinterest 6장·영상은 목적별 검색으로 연결합니다. Work 인터뷰와 영상 제작·수정 흐름도 보완했습니다. [사용법](https://github.com/chany-studio/chany-studio/blob/main/docs/WORK-FIRST-INTERVIEW.md)
+**2.20.1:** 레퍼런스 검색처를 6곳으로 줄이고, 사진은 Pinterest 6장·영상은 목적별 검색으로 연결합니다. Work 인터뷰와 영상 제작·수정 흐름도 보완했습니다. [사용법](https://github.com/chany-studio/chany-studio/blob/main/docs/WORK-FIRST-INTERVIEW.md)
 
 **2.18.0 새 기능:** 내 제품·서비스를 선택한 레퍼런스 구도에 넣기, 선별한 참고 사이트와 선택형 Metricool 분석, 최신 모델의 실제 입력 제약을 연결했습니다. [바로 쓰는 요청문과 사용법](../../docs/REFERENCE-INSERTION-GUIDE.md). 기존 프로젝트의 모델과 승인 자료는 유지합니다.
 
@@ -150,7 +150,7 @@ Codex: $chany-publication-review로 최종 광고의 정확한 카피·오퍼·�
 
 - 승인 원본과 사실 자료는 제품, 음식, 차량, 공간, UI, 프로그램, 모델, 의류와 카피의 정체성을 결정합니다.
 - 사이트를 정하지 않은 범용 비주얼 보드는 `chany-reference-board`가 Pinterest 6장으로 보여주며, 요청한 출처 밖의 후보를 섞지 않습니다.
-- 사이트를 지정하면 경로 하나만 씁니다. Pinterest만은 `chany-reference-board`, 전문 광고·라이프스타일 사진은 `chany-commercial-photo-reference`의 Production Paradise, 광고 사례·캠페인 사례는 `chany-award-ad-reference`의 Ads of the World로 분리합니다.
+- 사이트를 지정하면 경로 하나만 씁니다. Pinterest만은 `chany-reference-board`, 전문 광고·라이프스타일 사진은 `chany-commercial-photo-reference`의 Production Paradise, Ads of the World를 명시한 요청은 기존 `chany-award-ad-reference`로 분리합니다. 일반 광고 사례는 인스타그램 우선·Meta 보조입니다.
 - 사이트를 지정한 보드는 그 경로만 사용하며 후보가 부족해도 다른 경로로 보충하지 않습니다. Stocksy, ShotDeck, Death to Stock은 허용하지 않습니다. Pinterest용 `reference-preview` 연결은 계속 공개 Pin 페이지와 `i.pinimg.com`만 받습니다.
 - 기본 표시 수량은 사이트 미지정 시 6장(Pinterest), 사진 사이트 하나를 지정하면 6장이며, 사용자가 양의 정수로 장수를 지정하면 정확히 그 수량을 사용합니다. 허용된 두 검색에서 후보가 부족하면 수량을 조용히 줄이지 않고 미완성으로 보고합니다.
 - 모든 레퍼런스 경로는 업종 taxonomy의 L1 광역 카테고리 1개를 먼저 검색하고, 필요할 때만 같은 경로의 직접 L2 하위 카테고리 0~1개를 추가합니다.

@@ -7,11 +7,13 @@ const read = path => readFile(new URL(path, root), 'utf8');
 
 test('compact directory has six distinct sources with live owners and bounded search defaults', async () => {
   const config = JSON.parse(await read('skills/chany-studio/references/reference-sources.json'));
-  assert.deepEqual(config.sources.map(x => x.id), ['pinterest', 'production-paradise', 'meta-ad-library', 'ads-of-the-world', 'vimeo-staff-picks', 'motionographer']);
+  assert.deepEqual(config.sources.map(x => x.id), ['pinterest', 'production-paradise', 'instagram', 'meta-ad-library', 'vimeo-staff-picks', 'motionographer']);
   assert.equal(config.max_sources_per_search, 2);
   assert.equal(config.default_still_source, 'pinterest');
   assert.equal(config.default_still_count, 6);
   assert.equal(config.default_video_count, 3);
+  assert.deepEqual(config.default_ad_sources, ['instagram', 'meta-ad-library']);
+  assert.equal(config.default_ad_count, 3);
   for (const source of config.sources) {
     assert.equal(new URL(source.url).protocol, 'https:');
     assert.match(await read(`skills/${source.owner}/SKILL.md`), /name:/);
@@ -41,4 +43,13 @@ test('campaign archive no longer requires multiple providers and video evidence 
   assert.match(policy, /adsoftheworld\.com/);
   assert.match(policy, /chany-video-reference-ingest/);
   assert.match(await read('skills/chany-award-ad-reference/SKILL.md'), /Never infer award status/);
+});
+
+
+test('Instagram-first ads preserve explicit sources, bounded totals and honest observation', async () => {
+  const policy = await read('skills/chany-studio/references/instagram-ad-reference.md');
+  for (const clause of [/three total candidates/, /remaining candidate count explicitly/, /Meta-only request stays Meta-only/, /zero skips research/, /Instagram-only requests cannot be silently filled/, /explain the source change/, /post or Reel alone does not prove paid delivery/, /thumbnail or snippet/, /not a universal Instagram/, /Preserve the existing output owner/]) assert.match(policy, clause);
+  assert.match(await read('skills/chany-studio/agents/openai.yaml'), /인스타그램에서 먼저/);
+  assert.match(await read('skills/chany-project/assets/templates/AGENTS.md.tmpl'), /curated Instagram branch first/);
+  for (const entry of ['skills/chany-reference-board/SKILL.md', 'skills/chany-campaign-video/SKILL.md', 'skills/chany-studio/references/performance-ad-contract.md', 'skills/chany-studio/references/routing.md', 'skills/chany-ad-creative/SKILL.md', 'skills/chany-creative-direction/SKILL.md', 'skills/chany-studio/references/current-creative-signals.md']) assert.match(await read(entry), /instagram-ad-reference\.md/, entry);
 });

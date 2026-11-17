@@ -1,6 +1,6 @@
 # Chany's Studio
 
-**2.20.0:** 레퍼런스 검색처를 6곳으로 줄이고, 사진은 Pinterest 6장·영상은 목적별 검색으로 연결합니다. Work 인터뷰와 영상 제작·수정 흐름도 보완했습니다. [사용법](https://github.com/chany-studio/chany-studio/blob/main/docs/WORK-FIRST-INTERVIEW.md)
+**2.20.1:** 레퍼런스 검색처를 6곳으로 줄이고, 사진은 Pinterest 6장·영상은 목적별 검색으로 연결합니다. Work 인터뷰와 영상 제작·수정 흐름도 보완했습니다. [사용법](https://github.com/chany-studio/chany-studio/blob/main/docs/WORK-FIRST-INTERVIEW.md)
 
 **2.18.0 새 기능:** 내 제품·서비스를 선택한 레퍼런스 구도에 넣기, 선별한 참고 사이트와 선택형 Metricool 분석, 최신 모델의 실제 입력 제약을 연결했습니다. [바로 쓰는 요청문과 사용법](docs/REFERENCE-INSERTION-GUIDE.md). 기존 프로젝트의 모델과 승인 자료는 유지합니다.
 
@@ -292,11 +292,11 @@ Codex(개발자용): $chany-publication-review로 최종 광고의 정확한 카
 
 ## 레퍼런스 검색 규칙
 
-- 사이트를 정하지 않은 범용 비주얼 탐색은 `chany-reference-board`가 Pinterest 6장을 한 보드로 보여줍니다. 출처별 검색·미리보기 규칙을 따르며 요청한 출처 밖의 후보를 섞지 않습니다. 자세한 내용은 [복구 규칙](docs/REFERENCE-RECOVERY.md)을 참고하세요.
-- 특정 사이트를 지정하면 목적별 경로 하나만 씁니다. Pinterest만은 `chany-reference-board`, 전문 광고·라이프스타일 사진은 `chany-commercial-photo-reference`의 Production Paradise, 광고 사례와 캠페인 벤치마크는 `chany-award-ad-reference`의 Ads of the World를 사용합니다.
+- 사이트를 정하지 않은 사진 연출 탐색은 `chany-reference-board`가 Pinterest 6장을 한 보드로 보여줍니다. 출처별 검색·미리보기 규칙을 따르며 요청한 출처 밖의 후보를 섞지 않습니다. 자세한 내용은 [복구 규칙](docs/REFERENCE-RECOVERY.md)을 참고하세요.
+- 특정 사이트를 지정하면 목적별 경로 하나만 씁니다. Pinterest만은 `chany-reference-board`, 전문 광고·라이프스타일 사진은 `chany-commercial-photo-reference`의 Production Paradise, Ads of the World를 명시한 광고 사례 요청은 기존 `chany-award-ad-reference`를 사용합니다. 일반 광고 사례는 인스타그램 우선·Meta 보조입니다.
 - 사이트를 지정한 보드는 그 경로만 사용합니다. 후보가 부족해도 다른 경로로 몰래 보충하지 않으며 Stocksy, ShotDeck, Death to Stock은 사용하지 않습니다. Pinterest 경로의 로컬 인라인 미리보기 연결은 계속 공개 Pin 페이지와 `i.pinimg.com`만 허용합니다.
-- 표시 수량은 사이트 미지정 시 `6장`(Pinterest), 사이트 하나를 지정하면 `6장`이 기본입니다. 사용자가 “3장”, “10개”처럼 양의 정수로 지정하면 그 수량을 `target_count`로 사용합니다. 명시한 수량을 임의로 줄이거나 늘리지 않으며, 허용된 두 검색의 후보가 부족하면 요청·표시·부족 수량을 밝힌 미완성 보드로 끝냅니다.
-- 선택한 경로에는 업종 taxonomy의 **L1 광역 카테고리 1개를 먼저** 검색합니다.
+- 사진 연출은 `6장`(기본 Pinterest), 인스타그램 중심 광고·일반 영상은 보충분 포함 `3개`, Meta만 지정한 광고 검색은 `6개`가 기본입니다. 사용자가 “3장”, “10개”처럼 양의 정수로 지정하면 그 수량을 `target_count`로 사용합니다. 명시한 수량을 임의로 줄이거나 늘리지 않으며, 허용된 두 검색의 후보가 부족하면 요청·표시·부족 수량을 밝힌 미완성 보드로 끝냅니다.
+- 사진·광고 아카이브 전용 보드 경로에는 업종 taxonomy의 **L1 광역 카테고리 1개를 먼저** 검색합니다.
 - 더 좁혀야 할 때만 같은 경로의 **직접 L2 하위 카테고리 0~1개**를 추가합니다. 한 작업에서 여러 L2 형제를 검색하지 않습니다.
 - 세 번째 의미 검색어와 스타일·렌즈·지역·색·무드·플랫폼 modifier를 검색어에 붙이지 않습니다.
 - 검색 뒤에는 선택한 이미지의 구도·조명·배경·재질·색 관계·정보 위계를 Visual DNA로 분석할 수 있지만, 그 분석어를 새 검색 쿼리로 확장하지 않습니다.

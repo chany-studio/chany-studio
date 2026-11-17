@@ -1,13 +1,13 @@
 ---
 name: chany-reference-board
-description: Find and display visual references inline, defaulting to six images from Pinterest, or an explicitly requested provider and count. Coordinate source-isolated lanes with Visual DNA and bounded automatic recovery; not final media generation or Meta ad benchmarking.
+description: Find visual references: Instagram first for ads with Meta supplements, six Pinterest images for still styling, or an explicitly requested provider and count. Coordinate source-isolated lanes with Visual DNA and bounded automatic recovery; not final media generation or Meta ad benchmarking.
 ---
 
 # Chany Reference Board
 
 For named sites/accounts, the user’s curated directory, or broader product/service research, use the separate [curated source lane](../chany-studio/references/curated-reference-sources.md). For known Instagram competitor accounts, use [Metricool](../chany-studio/references/metricool-reference-research.md) only when available and useful; it is not required or a universal search engine. These branches do not expand Pinterest access or cross-fill the default board. A supplied selected reference skips discovery and goes to [reference insertion](../chany-studio/references/reference-insertion.md) when the user wants its layout retained.
 
-For a video-reference request or video-scoped handoff, use only the curated video discovery branch in [video-first experience](../chany-studio/references/video-first-experience.md), then `chany-video-reference-ingest` for observation. The generic image-board defaults and Pinterest display requirements below do not apply to that branch. Conversion-ad benchmarking stays with `chany-meta-ad-research`. A supplied video reference goes to video intake, not static layout insertion.
+For a video-reference request or video-scoped handoff, use only the curated video discovery branch in [video-first experience](../chany-studio/references/video-first-experience.md), then `chany-video-reference-ingest` for observation. The generic image-board defaults and Pinterest display requirements below do not apply to that branch. Advertising discovery follows [Instagram first with Meta as a complement](../chany-studio/references/instagram-ad-reference.md). Meta-only benchmarking stays with `chany-meta-ad-research`. A supplied video reference goes to video intake, not static layout insertion.
 
 Find commercial visual direction while keeping every candidate traceable and directly visible.
 
@@ -15,7 +15,9 @@ Every user-facing turn follows the shared [beginner experience contract](../chan
 
 For a supplied physical product, follow the shared [product insertion pipeline](../chany-studio/references/product-insertion.md): references ranked for this product, clean product source, reference-style generation with the product as the authority, visible product match check, and optional upscale, extra ratios, or video.
 
-For an unspecified still-image provider or Pinterest request, follow [reference defaults](../chany-studio/references/reference-board-defaults.md): Pinterest 6 images by default, or the user’s explicit count. Other default sources are selected only through [curated sources](../chany-studio/references/curated-reference-sources.md) for the requested purpose. Read [automatic recovery](../chany-studio/references/reference-recovery.md) for bounded retries and the single selection/production decision.
+For an unspecified still-photo styling provider or explicit Pinterest request (not generic ad discovery), follow [reference defaults](../chany-studio/references/reference-board-defaults.md): Pinterest 6 images by default, or the user’s explicit count. Other default sources are selected only through [curated sources](../chany-studio/references/curated-reference-sources.md) for the requested purpose. Read [automatic recovery](../chany-studio/references/reference-recovery.md) for bounded retries and the single selection/production decision.
+
+The remaining search, preview and required-result instructions apply only to the Pinterest lane. Instagram advertising uses the Instagram-first contract above without invoking the Pinterest preview server.
 
 Read [references/search-policy.md](references/search-policy.md) and the machine-readable [references/industry-taxonomy.json](references/industry-taxonomy.json) before searching. Read [references/reference-search-mcp-contract.md](references/reference-search-mcp-contract.md) when using, testing, or connecting the Claude Cowork preview path. After the Pinterest candidate pool exists, use the shared [current creative signals](../chany-studio/references/current-creative-signals.md) only as a ranking lens; trend names, years, palette names, moods, and style words must never enter the L1 or L2 search query.
 

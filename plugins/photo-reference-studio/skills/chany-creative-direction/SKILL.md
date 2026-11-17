@@ -25,9 +25,9 @@ Read the shared [commercial creative direction system](../chany-studio/reference
 ## Reference boundary
 
 
-Conversion-ad benchmarks are handled separately by `chany-meta-ad-research`. Reuse its observed design/hook/copy mechanisms and the shared [performance-ad contract](../chany-studio/references/performance-ad-contract.md); do not require a second photo board or rerun concept selection after direction approval. Pinterest remains a still-photo/style source, not a video source.
+Ad examples use [Instagram-first discovery](../chany-studio/references/instagram-ad-reference.md) through `chany-reference-board`, with `chany-meta-ad-research` for complementary or explicit Meta research. Reuse observed design/hook/copy mechanisms and the shared [performance-ad contract](../chany-studio/references/performance-ad-contract.md); do not require a second photo board or rerun concept selection after direction approval. Pinterest remains a still-photo/style source, not a video source.
 
-This skill does not browse for references. When real references are needed, hand the approved industry taxonomy route to exactly one owner: `chany-reference-board` for broad Pinterest discovery, `chany-commercial-photo-reference` for Production Paradise commercial photography, `chany-award-ad-reference` for approved award and campaign archives. Each owner keeps its own hard source boundary; never blend providers to fill a weak board. Do not use a knowledge-source example image as a reference.
+This skill does not browse for references. When real references are needed, hand the approved industry taxonomy route to exactly one owner: `chany-reference-board` for broad Pinterest discovery, `chany-commercial-photo-reference` for Production Paradise commercial photography, `chany-award-ad-reference` for explicitly requested Ads of the World cases. Each owner keeps its own hard source boundary; never blend providers to fill a weak board. Do not use a knowledge-source example image as a reference.
 
 ## Output
 
