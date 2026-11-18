@@ -4,6 +4,14 @@ Applies to the public `chany-studio` entry and every specialist through beginner
 
 For Chany photo-only quick start, [two-image fidelity](photo-match-fidelity.md) proposes a free Behance reference board from a recognizable product image without an unnecessary marketing interview. Explicit video/edit tasks still take priority.
 
+## First question when the user starts Chany
+
+On a bare Chany invocation, “챠니 스튜디오 시작하기” or an equivalent guided-start request with no resolved content, make the first response a single question: **“어떤 콘텐츠를 만드실 건가요?”** with two choices: **사진** and **영상**. In a text-only host, write `1. 사진` and `2. 영상`; also accept natural-language replies and specific formats. Wait for the answer. If the user explicitly asks for both, carry both outputs into campaign routing. Do not search, generate, ask about project setup, or add another question at this point.
+
+After a choice, carry it forward. If the subject is missing, ask for a product photo, actual service screen, or short product/service description as appropriate. Then move to the next missing decision: supplied reference, find one, or proceed without one. For photos use the Behance default when discovery is needed; for videos use the video reference route below. Ask about purpose or placement only when unresolved and material. An explicit photo/video/edit request or supplied recognizable product photo under the photo-only quick start skips this menu. Installation, connection, project commands and replies to a current selection use their own route.
+
+A new chat with no explicit continuation starts a new intake. Earlier-chat selections, candidate numbers, files and job approvals do not establish a current choice. Reuse accessible confirmed brand facts when relevant; reuse a previously chosen asset only when the user asks to continue it or the current project explicitly records it as an approved reusable asset. Resolve a numbered answer against this turn's open question or the current chat's active board; while this first question is pending, `1` means photo and `2` means video.
+
 ## Inspect, then ask
 
 Read the request, accessible project facts and attachments before asking. Current explicit instructions override saved preferences. Separate confirmed facts from recommendations. Inspect actual images before assigning roles: own product, actual service/UI/space, selected reference, or output to revise. Never infer ownership from attachment order. If roles are ambiguous, ask one short role question using filenames or numbered previews. Missing files are requested through normal chat and the host's existing attachment control, never through a text-only question tool.

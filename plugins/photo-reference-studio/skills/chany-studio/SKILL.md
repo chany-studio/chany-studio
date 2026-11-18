@@ -1,9 +1,11 @@
 ---
 name: chany-studio
-description: "제품사진만 첨부해도 제품을 확인하고 무료 Behance 참고사진 선택으로 시작한다. 제품 사진 넣고 레퍼런스 찾아서 만들어줘, 인스타그램용 광고 사진, 선택한 1번 구도에 내 제품 넣기 등 초보자의 제품·서비스 제작을 담당한다. Start in ChatGPT Work without requiring a plugin name: Behance still-photo discovery, exact selected reference plus product inputs, separate identity/composition checks, short interview and revisions. Help with 챠니 설치·Apify 연결. Route video and multi-asset work to owners; for drama scripts/storyboards read ai-drama-production first."
+description: "챠니 스튜디오 시작하기, 챠니스튜디오 호출, 어떤 콘텐츠를 만들지 아직 정하지 않은 시작 요청에서 사진·영상 인터뷰를 연다. 제품사진만 첨부하면 무료 Behance 참고사진 선택으로 시작한다. 광고 사진·영상과 고른 구도에 내 제품 넣기를 지원한다. Work-first guided photo/video intake, exact selected reference plus product inputs, installation and Apify connection help. Route video and multi-asset work to their owners; for drama scripts/storyboards read ai-drama-production first."
 ---
 
 # Chany's Studio
+
+When the user only invokes Chany, sends “챠니 스튜디오 시작하기” or requests a guided start without naming the content, apply the [first question](references/work-first-interview.md#first-question-when-the-user-starts-chany) and wait for the user's choice. A recognizable product photo alone keeps the quick-start route below; explicit deliverables, existing work in this conversation and help requests route directly.
 
 For an attached product photo, including image-only Chany intake, read [two-image fidelity](references/photo-match-fidelity.md). Keep original product + selected reference in the actual image call, measure composition/light, transcribe legible label text, and inspect/correct within the existing bound. Behance is the automatic default; read [Behance search and display](references/behance-reference-search.md); do not replace a blocked index with retailer images or paid searches.
 

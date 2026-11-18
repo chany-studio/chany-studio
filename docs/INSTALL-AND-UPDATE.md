@@ -1,6 +1,6 @@
 # Chany's Studio 설치 및 업데이트
 
-**2.21.7:** 제품 사진의 구도·조명은 Behance에서 찾고, 선택한 레퍼런스와 제품 사진을 함께 넣어 제작하도록 연결과 검수를 보강했습니다. 내 제품에 맞는 인스타그램 인기 릴스를 Apify로 찾고, 실제 재생수·좋아요를 비교합니다. 릴스는 실제 영상 본편을 확인한 뒤 추천하며 캡션만 확인한 후보는 제외합니다. 공유수는 요금제와 실제 반환 여부를 확인하며 미확인 값을 만들지 않습니다. [검증 결과와 사용법](https://github.com/chany-studio/chany-studio/blob/main/docs/APIFY-INSTAGRAM-VERIFICATION.md)
+**2.21.8:** 제품 사진의 구도·조명은 Behance에서 찾고, 선택한 레퍼런스와 제품 사진을 함께 넣어 제작하도록 연결과 검수를 보강했습니다. 내 제품에 맞는 인스타그램 인기 릴스를 Apify로 찾고, 실제 재생수·좋아요를 비교합니다. 릴스는 실제 영상 본편을 확인한 뒤 추천하며 캡션만 확인한 후보는 제외합니다. 공유수는 요금제와 실제 반환 여부를 확인하며 미확인 값을 만들지 않습니다. [검증 결과와 사용법](https://github.com/chany-studio/chany-studio/blob/main/docs/APIFY-INSTAGRAM-VERIFICATION.md)
 
 **2.18.0 새 기능:** 내 제품·서비스를 선택한 레퍼런스 구도에 넣기, 선별한 참고 사이트와 선택형 Metricool 분석, 최신 모델의 실제 입력 제약을 연결했습니다. [바로 쓰는 요청문과 사용법](REFERENCE-INSERTION-GUIDE.md). 기존 프로젝트의 모델과 승인 자료는 유지합니다.
 
@@ -28,7 +28,7 @@ chany-studio/chany-studio
 
 1. [공식 사이트의 설치·시작하기](https://chany-studio.chanjunpark.chatgpt.site/#start)에서 **ChatGPT Work → Work용 플러그인 내려받기**를 누릅니다. 개발자는 이 저장소에서 `python3 scripts/package-chatgpt-work.py /tmp/chany-studio-work.zip`으로 같은 패키지를 만들 수 있습니다. 이미 같은 파일이 있으면 다른 이름을 지정합니다.
 2. ChatGPT의 **플러그인 → 추가 → 플러그인 압축 파일 업로드**에서 파일을 선택합니다.
-3. **Chany's Studio → 플러그인 설치**를 누릅니다. 2.21.7·스킬 44개를 확인합니다. ‘데스크톱 앱에서 열기’만 보이면 Work 호환 패키지가 아닙니다.
+3. **Chany's Studio → 플러그인 설치**를 누릅니다. 2.21.8·스킬 44개를 확인합니다. ‘데스크톱 앱에서 열기’만 보이면 Work 호환 패키지가 아닙니다.
 4. 인스타 지표 검색에는 별도로 **추가 → 사용자 지정 MCP 서버 추가**에서 이름 `Apify`, 서버 URL `https://mcp.apify.com`, 인증 `OAuth`를 선택하고 본인의 Apify 계정 연결을 승인합니다. 비밀키를 대화나 ZIP에 넣지 않습니다. 기존 Work 연결이 있으면 재사용합니다.
 5. 새 **Work** 대화에서 제품 설명과 “이 제품에 맞는 인스타 릴스 3개 찾아줘”라고 요청합니다. 도구 이름을 말할 필요는 없습니다. 비용 한도가 없으면 제시된 검색 범위·예상 비용을 확인한 뒤 한도를 승인합니다.
 
@@ -110,7 +110,7 @@ Apify 공식 플러그인을 설치하고 계정을 연결하면 키워드 검�
 
 - 표시 이름: `Chany's Studio`
 - 내부 식별자: `photo-reference-studio`
-- 버전: `2.21.7`
+- 버전: `2.21.8`
 - 대표 Skill: `chany-studio`
 - 프로젝트 Skill: `chany-project`
 - 전문 Skill: 마케팅 브리프, JTBD 고객 분석(`chany-jtbd-persona`), Meta 광고 리서치(`chany-meta-ad-research`), 레퍼런스 보드(사이트 미지정 시 Behance 6장, 특정 사이트 지정 시 기본 6장, 또는 요청 수량), 전문 크리에이티브 디렉션(`chany-creative-direction`), 브라우저 캡처 영상 레퍼런스 준비(`chany-video-reference-ingest`), 제품 에셋, 키비주얼, 상세페이지, 광고, 편집, 패션, 콘셉트형 캠페인 영상(`chany-campaign-video`), 광고 모션 디자인(`chany-motion-design`), 미디어 생성 실행·재개(`chany-media-production-loop`), 영상 조립·컷 교체(`chany-video-assembly`), 환경 점검(`chany-preflight`), 게시 전 검수(`chany-publication-review`)
@@ -197,7 +197,7 @@ Claude Cowork에서는 빠진 캠페인 정보가 **Ask your question** 카드�
 
 1. **Customize → Plugins**를 엽니다.
 2. `photo-reference-studio` 마켓플레이스에서 **Update**를 누릅니다.
-3. 버전 `2.21.7`, `chany-project`, `chany-jtbd-persona`, `chany-meta-ad-research`, `chany-creative-direction`, `chany-campaign-video`, `chany-viral-product-remake`, `chany-ad-variants`, `chany-shortform-recut`, `chany-product-3d`, `chany-media-production-loop`, 공통 제작 스킬과 11개 업종 스킬 목록을 확인합니다.
+3. 버전 `2.21.8`, `chany-project`, `chany-jtbd-persona`, `chany-meta-ad-research`, `chany-creative-direction`, `chany-campaign-video`, `chany-viral-product-remake`, `chany-ad-variants`, `chany-shortform-recut`, `chany-product-3d`, `chany-media-production-loop`, 공통 제작 스킬과 11개 업종 스킬 목록을 확인합니다.
 4. 새 Cowork 작업을 시작합니다.
 
 ### Claude Code
@@ -214,7 +214,7 @@ Claude Cowork에서는 빠진 캠페인 정보가 **Ask your question** 카드�
 
 ## 업데이트가 반영되지 않을 때
 
-- 설치 상세의 버전이 `2.21.7`인지 확인합니다.
+- 설치 상세의 버전이 `2.21.8`인지 확인합니다.
 - Refresh 또는 Update 뒤 반드시 새 대화나 새 작업을 시작합니다.
 - Claude Code에서는 `/plugin`의 Errors 탭을 확인합니다.
 - Claude Cowork에서 레퍼런스 이미지가 안 보이면 Node.js 18 이상과 `reference-preview` 연결을 확인합니다. Node.js 설치 방법은 [문제 해결의 Node.js 안내](TROUBLESHOOTING.md#nodejs가-필요하다고-나와요-claude-cowork-이미지-미리보기)를 보세요.
@@ -222,7 +222,7 @@ Claude Cowork에서는 빠진 캠페인 정보가 **Ask your question** 카드�
 
 삭제와 재설치는 [문제 해결 가이드](TROUBLESHOOTING.md)를 먼저 확인한 뒤 최후 수단으로 사용하세요.
 
-## 2.21.7 제작 스킬 확인
+## 2.21.8 제작 스킬 확인
 
 업데이트 후 Chany’s Studio의 스킬 목록에서 `adobe-video-pipeline`, `adobe-after-effects-production`, `adobe-premiere-finishing`, `image-asset-production`을 확인하세요. 네 스킬은 플러그인에 포함되어 있으므로 따로 설치할 필요가 없습니다. 로컬 프로젝트의 `.claude/skills/` 변경만으로 Cowork의 설치된 플러그인이 갱신되지는 않습니다.
 

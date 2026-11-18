@@ -49,7 +49,7 @@ test('campaign archive no longer requires multiple providers and video evidence 
 test('Instagram-first ads preserve explicit sources, bounded totals and honest observation', async () => {
   const policy = await read('skills/chany-studio/references/instagram-ad-reference.md');
   for (const clause of [/three total candidates/, /remaining candidate count explicitly/, /Meta-only request stays Meta-only/, /zero skips research/, /Instagram-only requests cannot be silently filled/, /explain the source change/, /post or Reel alone does not prove paid delivery/, /thumbnail or snippet/, /not a universal Instagram/, /Preserve the existing output owner/]) assert.match(policy, clause);
-  assert.match(await read('skills/chany-studio/agents/openai.yaml'), /인스타그램에서 먼저/);
+  assert.match(await read('skills/chany-studio/SKILL.md'), /Instagram is the first ad-reference source/);
   assert.match(await read('skills/chany-project/assets/templates/AGENTS.md.tmpl'), /curated Instagram branch first/);
   for (const entry of ['skills/chany-reference-board/SKILL.md', 'skills/chany-campaign-video/SKILL.md', 'skills/chany-studio/references/performance-ad-contract.md', 'skills/chany-studio/references/routing.md', 'skills/chany-ad-creative/SKILL.md', 'skills/chany-creative-direction/SKILL.md', 'skills/chany-studio/references/current-creative-signals.md']) assert.match(await read(entry), /instagram-ad-reference\.md/, entry);
 });

@@ -304,14 +304,14 @@ test("marketing brief reviews observed performance without inventing causality",
   assert.match(schema, /^\s+next_single_variable:/m);
 });
 
-test("both manifests publish the 2.21.7 current-Higgsfield release", async () => {
+test("both manifests publish the 2.21.8 current-Higgsfield release", async () => {
   const [claude, codex] = await Promise.all([
     readPluginFile(".claude-plugin/plugin.json").then(JSON.parse),
     readPluginFile(".codex-plugin/plugin.json").then(JSON.parse),
   ]);
 
-  assert.equal(claude.version, "2.21.7");
-  assert.match(codex.version, /^2\.21\.7(?:\+codex\.[a-z0-9.-]+)?$/i);
+  assert.equal(claude.version, "2.21.8");
+  assert.match(codex.version, /^2\.21\.8(?:\+codex\.[a-z0-9.-]+)?$/i);
   assert.ok(codex.interface.capabilities.includes("GPT Image 2.6 default for generative still images with scoped overrides"));
   assert.ok(codex.interface.capabilities.includes("Native Claude question-card interview and Chany-file approval"));
   assert.ok(codex.interface.capabilities.includes("Automatic Behance product-photo reference boards, explicit Pinterest and specialist source lanes with in-chat previews"));

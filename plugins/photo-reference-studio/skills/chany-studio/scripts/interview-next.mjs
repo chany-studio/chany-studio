@@ -22,8 +22,8 @@ export function nextInterviewStep(state = {}) {
     if (state.intent !== 'cutout' && !text(facts.change)) return ask('change', '어떤 변경이 필요한가요?', state.intent === 'assembly' || video ? ['영상 순서·길이', '자막·소리', '제품·서비스 모습'] : ['제품·서비스 모습', '배치·배경', '글자']);
     return result('production-check', { owner: 'existing-edit-owner', reuse_answers: true });
   }
+  if (!text(facts.output) && facts.medium !== 'image' && !video) return ask('output', '어떤 콘텐츠를 만드실 건가요?', ['사진', '영상']);
   if (!text(facts.offer) && !assets.some(a => a.role === 'product' || a.role === 'service')) return ask('offer', '어떤 제품이나 서비스를 소개할까요?', ['제품', '서비스']);
-  if (!text(facts.output) && !video) return ask('output', '어떤 콘텐츠를 만들까요?', ['짧은 영상', '이미지', '추천해 주세요']);
   const videoOwners = new Set(['chany-campaign-video', 'chany-viral-product-remake', 'ai-drama-production', 'cinematic-director', 'adobe-video-pipeline', 'adobe-after-effects-production', 'adobe-premiere-finishing', 'chany-motion-design', 'chany-shortform-recut', 'chany-ad-variants', 'chany-video-assembly']);
   const owner = videoOwners.has(state.current_owner) ? state.current_owner : 'chany-campaign-video';
   const videoOwner = video ? { owner } : {};

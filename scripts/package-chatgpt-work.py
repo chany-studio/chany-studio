@@ -16,9 +16,9 @@ def package(destination):
     manifest.pop('mcpServers', None)
     manifest['requires_local_executor'] = False
     manifest['interface']['defaultPrompt'] = [
+        '챠니 스튜디오 시작하기',
         '이 제품사진에 맞는 Behance 참고사진을 무료로 찾아줘. 내가 고르면 제품 원본과 선택한 참고사진을 함께 넣어 같은 구도와 빛의 광고사진을 만들고 라벨을 확인해줘.',
         '이 제품 설명을 바탕으로 인스타그램 릴스 레퍼런스 3개를 찾아줘. 제품에 맞는 이유와 실제 반응 지표를 비교해줘.',
-        '내 제품 사진과 이 레퍼런스로 짧은 광고 영상을 만들고 싶어. 필요한 것부터 하나씩 물어봐줘.',
     ]
     tracked = subprocess.check_output(
         ['git', '-C', str(repo), 'ls-files', '-z', 'plugins/photo-reference-studio'],

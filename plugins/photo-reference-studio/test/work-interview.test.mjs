@@ -6,12 +6,26 @@ const product = { id: 'own-product', role: 'product', inspected: true };
 const reference = { id: 'chosen-look', role: 'reference', inspected: true };
 
 test('an empty start asks one plain question without granting permission', () => {
-  const r = next(); assert.equal(r.field, 'offer'); assert.equal(r.allow_free_text, true); assert.equal(r.submission_allowed, false);
+  assert.deepEqual(next(), {
+    stage: 'question', field: 'output', question: '어떤 콘텐츠를 만드실 건가요?',
+    options: ['사진', '영상'], allow_free_text: true, submission_allowed: false,
+  });
+});
+test('both content choices lead to the subject and then the appropriate reference question', () => {
+  for (const [medium, reference] of [['image', '사진'], ['video', '영상']]) {
+    assert.equal(next({ facts: { medium } }).field, 'offer');
+    assert.match(next({ facts: { medium, offer: '텀블러' } }).question, new RegExp(`참고 ${reference}`));
+  }
 });
 test('inspected product and stated output bypass answered questions', () => {
   const state = { assets: [product, reference], facts: { output: '인스타 이미지' } };
   const before = structuredClone(state); const r = next(state);
   assert.equal(r.stage, 'production-check'); assert.deepEqual(state, before); assert.equal(r.submission_allowed, false);
+});
+test('a resolved product-photo quick start skips the menu and finds still references', () => {
+  const result = next({ assets: [product], facts: { medium: 'image', reference: 'find' } });
+  assert.equal(result.stage, 'find-references');
+  assert.equal(result.owner, 'chany-reference-board');
 });
 test('ambiguous roles and unread attachments are checked before recommendations', () => {
   assert.equal(next({ assets: [{ id: 'a' }] }).stage, 'inspect-assets');
@@ -45,7 +59,7 @@ test('unknown jobs are recovered before new interviews; cancellation does not im
   assert.match(next({ job, cancelled: true }).message, /취소 상태를 따로 확인/);
 });
 test('blank answers do not fill facts or authorize execution', () => {
-  assert.equal(next({ facts: { offer: '  ' } }).field, 'offer');
+  assert.equal(next({ facts: { medium: 'image', offer: '  ' } }).field, 'offer');
   assert.equal(next({ assets: [product], facts: { output: '' } }).field, 'output');
 });
 test('video discovery goes to its film owner, never the generic still board', () => {
