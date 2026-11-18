@@ -1,6 +1,6 @@
 # Pinterest Reference Search and Preview MCP Contract
 
-Use this contract when implementing or connecting Pinterest-lane discovery and preview display. It does not govern the separate [curated source lane](../../chany-studio/references/curated-reference-sources.md). Discovery may come from a host image-search tool; Claude Cowork preview delivery uses the bundled `reference-preview` connection. The hard allowlist is public `pinterest.com` Pin pages plus `i.pinimg.com` previews. Within this lane and connection, no other host may be searched, opened, clicked, fetched, previewed, retained, or exposed as a visual reference.
+Use this contract when implementing or connecting Pinterest-lane discovery and preview display. It does not govern the separate [curated source lane](../../chany-studio/references/curated-reference-sources.md). Discovery may come from a host image-search tool; Claude Cowork preview delivery uses the bundled `reference-preview` connection. The hard allowlist is public `pinterest.com` Pin pages plus `i.pinimg.com` previews. Within this lane and connection, no other host may be opened, clicked, fetched, previewed, retained, or exposed as a visual reference. Host discovery can use the documented [free provider-word fallback](../../chany-studio/references/pinterest-free-recovery.md), with non-Pinterest search results discarded before use; the bundled preview server allowlist remains unchanged.
 
 ## Discovery tool when a connector owns search
 

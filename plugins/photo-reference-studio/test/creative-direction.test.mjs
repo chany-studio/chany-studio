@@ -95,7 +95,7 @@ test("routing keeps source-isolated reference discovery before approved creative
   assert.match(routing, /reference lane[\s\S]+`chany-creative-direction`[\s\S]+`chany-campaign-visual`/i);
   assert.match(router, /creative-direction system/i);
   assert.match(state, /^reference_board:$/m);
-  assert.match(state, /^\s+source_lane: "pinterest \| commercial-photo \| award-ad"$/m);
+  assert.match(state, /^\s+source_lane: "behance \| pinterest \| commercial-photo \| award-ad"$/m);
   assert.match(state, /^\s+target_count: 6$/m);
   assert.match(state, /^\s+count_source: "default \| user"$/m);
   assert.match(state, /^creative_direction:$/m);

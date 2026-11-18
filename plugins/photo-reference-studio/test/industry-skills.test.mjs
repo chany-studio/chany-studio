@@ -358,9 +358,12 @@ test("the Pinterest lane honors a user count with six as its single-provider def
   for (const [l1, l2] of documentedPairs) {
     assert.ok(taxonomyPairs.has(`${l1} -> ${l2}`), `${l1} -> ${l2} must exist in taxonomy`);
   }
-  assert.doesNotMatch([skill, policy, contract, ui].join("\n"), /Behance/i);
+  assert.doesNotMatch([policy, contract].join("\n"), /Behance/i);
+  assert.match(skill, /Behance automatically/);
+  assert.match(ui, /Behance 6/);
   assert.match(skill, /explicit `pinterest\.com` domain restriction/i);
-  assert.match(policy, /Every search call must be restricted to `pinterest\.com`/i);
+  assert.match(policy, /Start with an explicit `pinterest\.com` domain restriction/i);
+  assert.match(policy, /strictly filter the results before any fetch\/display/i);
   assert.match(policy, /Never follow a Pin's outbound destination/i);
   assert.match(contract, /non-null `original_source_url`/i);
   assert.match(contract, /keep `original_source_url` null/i);

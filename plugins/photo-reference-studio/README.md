@@ -8,7 +8,7 @@
 > 요청하면 확인 카드 한 장으로 만들 것과 비용을 먼저 보여주고, 승인해야 생성이 시작됩니다.
 > 모르는 단어는 [용어 사전](../../docs/GLOSSARY.md)을 보세요.
 
-일반 레퍼런스는 Pinterest 6장을 대화에 표시합니다. 동일 L1·직접 L2 범위 재검색은 자동으로 진행하고 레퍼런스 선택·생성 조건 확인을 통합합니다. [사용법](../../docs/REFERENCE-RECOVERY.md).
+일반 레퍼런스는 Behance 6장을 대화에 표시합니다. 동일 L1·직접 L2 범위 재검색은 자동으로 진행하고 레퍼런스 선택·생성 조건 확인을 통합합니다. [사용법](../../docs/REFERENCE-RECOVERY.md).
 
 Claude와 ChatGPT Work/Codex에서 함께 쓰는 광고 프로젝트 지침을 설정하고, 업종별 여정·증거·연출·컴플라이언스와 공통 제작 워크플로를 결합해 광고·홍보·마케팅·상세/랜딩·콘텐츠를 기획·제작합니다.
 
@@ -59,7 +59,7 @@ ChatGPT Work에서는 `@스킬명`, Codex에서는 `$스킬명`으로 명시 호
 | ChatGPT `@chany-jtbd-persona` · Codex `$chany-jtbd-persona` | 제품·서비스 구매 동기·장벽과 근거 기반 고객 분석 |
 | ChatGPT `@chany-meta-ad-research` · Codex `$chany-meta-ad-research` | Meta 광고 레퍼런스의 디자인·훅·카피·CTA 분석 |
 | ChatGPT `@chany-product-assets` · Codex `$chany-product-assets` | 투명 누끼, 순백 팩샷과 원본 클린업 |
-| ChatGPT `@chany-reference-board` · Codex `$chany-reference-board` | 사이트 미지정 시 Pinterest 6장, Pinterest만 지정 시 기본 6장, 또는 요청 수량을 대화에 직접 표시 |
+| ChatGPT `@chany-reference-board` · Codex `$chany-reference-board` | 사이트 미지정 시 Behance 6장, Pinterest만 지정 시 기본 6장, 또는 요청 수량을 대화에 직접 표시 |
 | ChatGPT `@chany-commercial-photo-reference` · Codex `$chany-commercial-photo-reference` | Production Paradise 전문 광고·라이프스타일 사진 레퍼런스 |
 | ChatGPT `@chany-award-ad-reference` · Codex `$chany-award-ad-reference` | Ads of the World 광고 사례·캠페인 벤치마크 |
 | ChatGPT `@chany-creative-direction` · Codex `$chany-creative-direction` | 초보자 요청을 세 가지 브랜드 콘셉트, 추천 방향과 전문가 제작 프롬프트로 전환 |
@@ -149,10 +149,10 @@ Codex: $chany-publication-review로 최종 광고의 정확한 카피·오퍼·�
 ## 레퍼런스와 원본
 
 - 승인 원본과 사실 자료는 제품, 음식, 차량, 공간, UI, 프로그램, 모델, 의류와 카피의 정체성을 결정합니다.
-- 사이트를 정하지 않은 범용 비주얼 보드는 `chany-reference-board`가 Pinterest 6장으로 보여주며, 요청한 출처 밖의 후보를 섞지 않습니다.
+- 사이트를 정하지 않은 범용 비주얼 보드는 `chany-reference-board`가 Behance 6장으로 보여주며, 요청한 출처 밖의 후보를 섞지 않습니다.
 - 사이트를 지정하면 경로 하나만 씁니다. Pinterest만은 `chany-reference-board`, 전문 광고·라이프스타일 사진은 `chany-commercial-photo-reference`의 Production Paradise, Ads of the World를 명시한 요청은 기존 `chany-award-ad-reference`로 분리합니다. 일반 광고 사례는 인스타그램 우선·Meta 보조입니다.
 - 사이트를 지정한 보드는 그 경로만 사용하며 후보가 부족해도 다른 경로로 보충하지 않습니다. Stocksy, ShotDeck, Death to Stock은 허용하지 않습니다. Pinterest용 `reference-preview` 연결은 계속 공개 Pin 페이지와 `i.pinimg.com`만 받습니다.
-- 기본 표시 수량은 사이트 미지정 시 6장(Pinterest), 사진 사이트 하나를 지정하면 6장이며, 사용자가 양의 정수로 장수를 지정하면 정확히 그 수량을 사용합니다. 허용된 두 검색에서 후보가 부족하면 수량을 조용히 줄이지 않고 미완성으로 보고합니다.
+- 기본 표시 수량은 사이트 미지정 시 6장(Behance), 사진 사이트 하나를 지정하면 6장이며, 사용자가 양의 정수로 장수를 지정하면 정확히 그 수량을 사용합니다. 허용된 두 검색에서 후보가 부족하면 수량을 조용히 줄이지 않고 미완성으로 보고합니다.
 - 모든 레퍼런스 경로는 업종 taxonomy의 L1 광역 카테고리 1개를 먼저 검색하고, 필요할 때만 같은 경로의 직접 L2 하위 카테고리 0~1개를 추가합니다.
 - 한 작업에서 여러 L2 형제나 세 번째 의미 검색어를 쓰지 않으며 스타일·렌즈·지역·색·무드·플랫폼 modifier도 검색어에 붙이지 않습니다.
 - 검색 결과는 복제하지 않고 구도, 조명, 배경, 재질, 색 관계와 정보 위계를 분석하는 방향 자료로 사용합니다. 분석어를 새 검색어로 확장하지 않습니다.

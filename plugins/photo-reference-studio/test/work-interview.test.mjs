@@ -92,5 +92,5 @@ test('all existing entry skills inherit the common interview and runtime boundar
   assert.match(await get('chany-studio/references/beginner-experience.md'), /work-first-interview.md/);
   assert.match(await get('chany-project/references/interactive-interview.md'), /work-first-interview.md/);
   const contract = await get('chany-studio/references/work-first-interview.md');
-  for (const phrase of ['One question per turn', 'text-only question tool', 'Empty/error/timeout', 'not spending approval', 'cross-chat memory', 'Pinterest 6']) assert.ok(contract.includes(phrase), phrase);
+  for (const phrase of ['One question per turn', 'text-only question tool', 'Empty/error/timeout', 'not spending approval', 'cross-chat memory', 'Behance 6']) assert.ok(contract.includes(phrase), phrase);
 });

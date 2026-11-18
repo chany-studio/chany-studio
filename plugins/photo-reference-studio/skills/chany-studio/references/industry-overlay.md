@@ -87,7 +87,7 @@ Do not paste the whole playbook into a generation prompt. Pass only the packet f
 
 The industry skill may select only a domain branch and one direct subtype from `chany-reference-board/references/industry-taxonomy.json`.
 
-The production router selects one reference route: the generic Pinterest board (Pinterest 6 through `chany-reference-board`, see [reference-board-defaults.md](reference-board-defaults.md)), or one explicitly requested source-isolated owner — Pinterest only, Production Paradise commercial photography, or the approved Ads of the World archive lane. Never use Stocksy, ShotDeck, Death to Stock, a Pin's outbound destination, or official-document example imagery as a reference. A weak lane ends incomplete instead of borrowing another lane's provider.
+The production router selects one reference route: the generic Behance board (Behance 6 through `chany-reference-board`, see [reference-board-defaults.md](reference-board-defaults.md)), or one explicitly requested source-isolated owner — Pinterest only, Production Paradise commercial photography, or the approved Ads of the World archive lane. Never use Stocksy, ShotDeck, Death to Stock, a Pin's outbound destination, or official-document example imagery as a reference. A weak lane ends incomplete instead of borrowing another lane's provider.
 
 - Search L1 first.
 - Search zero or one L2 direct subtype second.

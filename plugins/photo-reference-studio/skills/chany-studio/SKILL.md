@@ -1,9 +1,11 @@
 ---
 name: chany-studio
-description: "제품 사진 넣고 레퍼런스 찾아서 만들어줘, 인스타그램용 광고 사진, 선택한 1번 구도에 내 제품 넣기 등 초보자의 제품·서비스 제작을 담당한다. Start in ChatGPT Work without requiring a plugin name: Pinterest still-photo discovery, exact selected reference plus product inputs, separate identity/composition checks, short interview and revisions. Help with 챠니 설치·Apify 연결. Route video and multi-asset work to owners; for drama scripts/storyboards read ai-drama-production first."
+description: "제품사진만 첨부해도 제품을 확인하고 무료 Behance 참고사진 선택으로 시작한다. 제품 사진 넣고 레퍼런스 찾아서 만들어줘, 인스타그램용 광고 사진, 선택한 1번 구도에 내 제품 넣기 등 초보자의 제품·서비스 제작을 담당한다. Start in ChatGPT Work without requiring a plugin name: Behance still-photo discovery, exact selected reference plus product inputs, separate identity/composition checks, short interview and revisions. Help with 챠니 설치·Apify 연결. Route video and multi-asset work to owners; for drama scripts/storyboards read ai-drama-production first."
 ---
 
 # Chany's Studio
+
+For an attached product photo, including image-only Chany intake, read [two-image fidelity](references/photo-match-fidelity.md). Keep original product + selected reference in the actual image call, measure composition/light, transcribe legible label text, and inspect/correct within the existing bound. Behance is the automatic default; read [Behance search and display](references/behance-reference-search.md); do not replace a blocked index with retailer images or paid searches.
 
 For a product photo → find a reference → “1번으로 만들어줘” request, read [photo reference execution](references/photo-reference-execution.md) before searching or generating. That short contract owns source choice, the exact selected reference input and separate identity/composition checks; keep it active through a native image-tool handoff.
 
@@ -37,7 +39,7 @@ Resolve the intended effect, viewer and placement through [content intent](refer
 
 Supplied reference images take priority under [reference-led design](references/reference-led-design.md). Carousel, thumbnail and ad requests use [design craft](references/design-intelligence.md) and `chany-ad-creative`'s format modes. Users choose visible results in everyday words, not technical vocabulary.
 
-Generic visual-reference research defaults to one 6-image Pinterest board through `chany-reference-board`; read [reference-board-defaults.md](references/reference-board-defaults.md) and [reference-recovery.md](references/reference-recovery.md). Explicit source/count requests take precedence. Keep lane-specific provenance while consolidating the user decision after images are displayed.
+Generic visual-reference research defaults to one 6-image Behance board through `chany-reference-board`; read [reference-board-defaults.md](references/reference-board-defaults.md) and [reference-recovery.md](references/reference-recovery.md). Explicit source/count requests take precedence. Keep lane-specific provenance while consolidating the user decision after images are displayed.
 
 Read [references/industry-overlay.md](references/industry-overlay.md), [references/routing.md](references/routing.md), and [references/runtime-boundaries.md](references/runtime-boundaries.md). For any customer-facing creative, also read the shared [creative-direction system](references/creative-direction-system.md), [current creative signals](references/current-creative-signals.md), and [live model routing](references/latest-model-routing.md). When any asset has a named platform, placement, storefront, outbound channel, or possible live publishing operation, also read and apply [references/platform-publication-adapter.md](references/platform-publication-adapter.md) before release or mutation. Choose one primary industry skill when the domain is known, then the smallest set of production specialists that covers the named deliverables. A single clearly named deliverable should go directly to its production owner after applying the industry packet when relevant. Use this router for ambiguous requests, complete campaigns, or work spanning two or more production categories.
 
@@ -51,7 +53,7 @@ For the common single-output request “short Reel/Short link + my product,” r
 
 For “내 제품에 맞는 조회수·좋아요·공유수 높은 인스타 사례”, route the existing product brief to `chany-reference-board` using [Apify popularity research](references/apify-instagram-research.md). Keep the interview short and the default three-candidate shortlist.
 
-For purchase-oriented video, single-image or carousel advertising, read [references/performance-ad-contract.md](references/performance-ad-contract.md) and use its minimal chain instead of expanding the general campaign sequence below. [Instagram is the first ad-reference source, with Meta as a complement](references/instagram-ad-reference.md); explicit source requests take priority. Pinterest is optional still-photo styling only. Reuse one conversion brief and one selected direction for the requested set. A single output keeps its existing production owner; this router coordinates only multi-format or ambiguous work.
+For purchase-oriented video, single-image or carousel advertising, read [references/performance-ad-contract.md](references/performance-ad-contract.md) and use its minimal chain instead of expanding the general campaign sequence below. [Instagram is the first ad-reference source, with Meta as a complement](references/instagram-ad-reference.md); explicit source requests take priority. Behance is the default still-photo styling source. Reuse one conversion brief and one selected direction for the requested set. A single output keeps its existing production owner; this router coordinates only multi-format or ambiguous work.
 
 For a multi-skill campaign, read [references/campaign-state.md](references/campaign-state.md) and maintain one shared state record. Pass only the fields the next specialist needs.
 
@@ -60,7 +62,7 @@ Default dependency order when those assets are requested:
 1. select the industry mode and create its direction packet
 2. approve the marketing brief, claim ledger, and asset matrix
 3. prepare source-faithful assets when needed
-4. find and select art direction through one source-isolated static-reference lane when needed: broad Pinterest, Production Paradise commercial photography, approved advertising archive
+4. find and select art direction through one source-isolated static-reference lane when needed: broad Behance, Production Paradise commercial photography, approved advertising archive
 5. when a video reference link, browser capture, direct media URL, or local reference file is supplied, use `chany-video-reference-ingest` to establish the observable evidence level and produce the authorized capture packet before timing analysis; a short product-video reference plus the user's product uses `chany-viral-product-remake` as the simple front door
 6. compile and approve one brand-specific creative direction, then one master campaign visual or design system
 7. let each production owner, including `chany-campaign-video` when requested, define its asset specification, then use `chany-media-production-loop` for every requested generated still or campaign-video job

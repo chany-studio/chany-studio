@@ -4,7 +4,7 @@ This is the core Chany's Studio job: the user supplies a product photo or servic
 
 Tool names below describe capabilities. Resolve the actual operation from the live tool list and schema each time; if a capability is missing, use the stated fallback and say so in one plain sentence.
 
-Read [photo reference execution](photo-reference-execution.md) for still-photo discovery and selected-reference execution. It keeps Pinterest as the still default, prevents product-only generation requests after a selection, and checks source pose against reference composition before submission.
+Read [photo reference execution](photo-reference-execution.md) for still-photo discovery and selected-reference execution. It keeps Behance as the still default, prevents product-only generation requests after a selection, and checks source pose against reference composition before submission.
 
 For requested video, [video-first experience](video-first-experience.md) takes precedence over this document's photo-board, image-count and image-finishing steps. Use those steps only for an actual required still asset. With no supplied video reference, discover video references or honor explicit reference skip; never insert a photo-board prerequisite.
 
@@ -24,7 +24,7 @@ Before searching, read the product photo and record internally:
 
 A supplied video-reference packet already supplies the visual direction for its governing stills. Reuse observed frames/description and the approved scene plan; do not launch a Pinterest photo board unless the user requests alternate looks. An accepted image reused for animation likewise needs no new board.
 
-First inspect any user-supplied reference image/file/link under [reference-led-design.md](reference-led-design.md). An existing reference replaces automatic discovery unless the user asks for alternatives; a product photo alone is not a style reference. Otherwise run the generic reference board (Pinterest 6 by default, see [reference-board-defaults.md](reference-board-defaults.md)) using the product category. Rank candidates for this specific product using `chany-reference-board/references/search-policy.md`:
+First inspect any user-supplied reference image/file/link under [reference-led-design.md](reference-led-design.md). An existing reference replaces automatic discovery unless the user asks for alternatives; a product photo alone is not a style reference. Otherwise run the generic reference board (Behance 6 by default, see [reference-board-defaults.md](reference-board-defaults.md)) using the product category. Rank candidates for this specific product using `chany-reference-board/references/search-policy.md`:
 
 - the reference can accommodate the real product's geometry in its target view; do not limit discovery to the source photo's orientation or centered framing
 - its palette flatters or contrasts cleanly with the product colors, and its background keeps the label readable
@@ -38,6 +38,8 @@ Show the board as numbered inline images with one short plain-Korean line each, 
 Use the original photo directly when its product is clear. Prepare a cutout only when requested or when background clutter materially obscures the subject and the live background-removal operation helps (for example Higgsfield `remove_background`, which needs no prompt). A different intended scene alone does not require background removal; removal does not repair a color cast or reveal hidden surfaces. Compare any prepared cutout with the original at high zoom for edge loss, missing parts, and label damage; the original remains the identity authority. A cutout is an optional identity input, not a locked pose or a layer that must be pasted into a reshoot. Include any needed step and its cost in the existing confirmation card. If removal is unavailable, use the original when adequate and state any material limitation. Background removal keeps the source resolution (a 487×580 photo gave a 487×580 cutout in the 2026-09-18 test), so when the product photo is small, say once that a larger, sharper photo will give a better result; generation itself can still output 2K from a small source.
 
 ## 4. "Like this reference" generation
+
+Apply [two-image fidelity](photo-match-fidelity.md): match the observed reference frame/light, record every legible source label line, inspect the full output and use a targeted AI label correction within the existing bound. When the user chooses AI-only, do not use deterministic label replacement.
 
 Pass both images to the image model as reference inputs. Inspect the model's input roles first: GPT Image 2.6 on the direct Higgsfield MCP exposes `image_references` (checked 2026-11-17), so both images share that role and the prompt must say which image is which, in input order. The Apps connector may instead require canonical `image` roles; translate only through its actual schema. Never pass model-native roles blindly across hosts:
 

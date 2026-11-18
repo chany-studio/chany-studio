@@ -1,13 +1,15 @@
-# Product photo → Pinterest → selected composition
+# Product photo → Behance → selected composition
 
 Mandatory short contract for “제품 사진으로 레퍼런스 찾아서 만들어줘”, “인스타그램용 광고 사진”, and a later selection such as “1번으로 만들어줘”. Read this before discovery and again before handing a selected photo to a generator. It applies even when the host also requires a native image-generation skill.
 
+Read [Behance discovery](behance-reference-search.md) for search, image display and bounded recovery and [two-image fidelity](photo-match-fidelity.md) for photo-only intake, measured reference anchors, source-verified label text and a targeted AI correction. Honor free-search-only and AI-generation-only requests.
+
 ## Choose the source by the requested evidence
 
-- A product-photo request for composition, camera, lighting, texture or mood is **still-photo styling**: use `chany-reference-board`, Pinterest only, six actual images unless the user requests another count. “Instagram용”, “광고 사진”, “고급”, “전문적인” and “상업용” describe the output; they do not request Instagram performance research or Production Paradise.
+- A product-photo request for composition, camera, lighting, texture or mood is **still-photo styling**: use `chany-reference-board`, Behance only, six actual images unless the user requests another count. “Instagram용”, “광고 사진”, “고급”, “전문적인” and “상업용” describe the output; they do not request Instagram performance research or Production Paradise.
 - Instagram first applies when the user requests real advertising examples, Reels, engagement/performance comparison or an Instagram source. Keep its video and cost rules.
 - Production Paradise is an opt-in specialist source: a named source or explicit request for photographers' commercial portfolios. Never select it merely because the user wants a polished product photo.
-- If Pinterest is blocked, use its bounded recovery and report the shortfall. Do not replace it with shopping pages, a general image search or another provider. A missing preview is not permission to change source or claim a complete board.
+- If Behance is blocked, use its bounded recovery and report the shortfall. Do not replace it with shopping pages, a general image search or another provider. A missing preview is not permission to change source or claim a complete board.
 
 ## Freeze the selected reference, not the input photo's pose
 

@@ -4,14 +4,14 @@
 
 | 만들 것 | 먼저 찾는 곳 | 사용하는 이유 |
 |---|---|---|
-| 사진의 구도·빛·배경 | [Pinterest](https://www.pinterest.com/) | 제품에 어울리는 촬영 방향 찾기 |
+| 사진의 구도·빛·배경 | [Behance](https://www.behance.net/) | 제품에 어울리는 촬영 방향 찾기 |
 | 전문 광고·제품 사진 | [Production Paradise](https://www.productionparadise.com/) | 상업사진의 완성도와 제품 표현 비교 |
 | 광고 아이디어·릴스·이미지·캐러셀 | [Instagram](https://www.instagram.com/) **우선** | 실제 게시물의 첫 장면·제품 표현·전개 참고 |
 | 광고 집행 사례·추가 비교 | [Meta 광고 라이브러리](https://www.facebook.com/ads/library/) **보조** | 광고로 확인되는 소재와 문구·행동 유도 방식 비교 |
 | 브랜드 필름·스토리 영상 | [Vimeo Staff Picks](https://vimeo.com/channels/staffpicks) | 장면 전개·촬영·편집 연출 참고 |
 | 모션그래픽·애니메이션 | [Motionographer](https://motionographer.com/) | 움직이는 글자·그래픽·애니메이션 참고 |
 
-일반 사진 레퍼런스는 **Pinterest 6장**이 기본입니다. 인스타그램 중심 광고 후보는 Meta 보충분까지 합쳐 **3개**, 일반 영상 후보도 **3개**가 기본입니다. Meta만 지정하거나 Ads of the World를 명시한 전용 검색은 **6개**가 기본이며, 원하는 수량을 말하면 그 요청을 따릅니다. 여섯 사이트를 매번 전부 검색하지 않습니다.
+일반 사진 레퍼런스는 **Behance 6장**이 기본입니다. 인스타그램 중심 광고 후보는 Meta 보충분까지 합쳐 **3개**, 일반 영상 후보도 **3개**가 기본입니다. Meta만 지정하거나 Ads of the World를 명시한 전용 검색은 **6개**가 기본이며, 원하는 수량을 말하면 그 요청을 따릅니다. 여섯 사이트를 매번 전부 검색하지 않습니다.
 
 사이트를 직접 고를 필요 없이 “내 제품에 맞는 참고 영상도 찾아줘”라고 시작할 수 있습니다. 직접 준 사진이나 영상이 있으면 먼저 분석하고 불필요한 새 검색은 생략합니다.
 

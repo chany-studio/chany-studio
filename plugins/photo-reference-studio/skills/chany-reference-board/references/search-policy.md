@@ -12,9 +12,9 @@ Search only Pinterest. Search terms identify what the source subject is, not how
 |---|---|---|
 | Pinterest | `pinterest.com` Pin pages and `i.pinimg.com` previews | Broad visual discovery with Pin-page provenance |
 
-This allowlist is exact. Every search call must be restricted to `pinterest.com`; every accepted source must be a public `pinterest.com/pin/...` page; every fetched preview must be on `i.pinimg.com`. Do not search, open, click, fetch, preview, retain, or expose visual-reference material from general web results, stock sites, social networks, agency sites, portfolio sites, mirrors, or any other domain. Never follow a Pin's outbound destination. If a redirect leaves the allowlist, reject it.
+This allowlist is exact. Start with an explicit `pinterest.com` domain restriction. If the host index returns no usable pins, use the bounded provider-word fallback in [free Pinterest recovery](../../chany-studio/references/pinterest-free-recovery.md), then strictly filter the results before any fetch/display. Every accepted source must be a public Pinterest Pin page; every fetched preview must be on `i.pinimg.com`. Unrelated search results are discarded, never opened or used. Do not accept, open, click, fetch, preview, retain, or expose non-Pinterest visual-reference material from mixed search results, stock sites, social networks, agency sites, portfolio sites, mirrors, or any other domain. Never follow a Pin's outbound destination. If a redirect leaves the allowlist, reject it.
 
-Require a public Pinterest Pin page and a directly displayable Pinterest preview. A visible Pinterest creator or board may help diversity scoring but is not permission to leave Pinterest. Reject orphaned Pins, inaccessible pages, login-gated content, scraped mirrors, and results without a directly displayable preview.
+Require a public Pinterest Pin page and a directly displayable Pinterest preview. A visible Pinterest creator or board may help diversity scoring but is not permission to leave Pinterest. Reject orphaned Pins, login-gated content, scraped mirrors, and results without a directly displayable preview. A paired public preview may be used when the host cannot open its Pin page, but mark the page unverified and distinguish search-paired provenance from a directly inspected page.
 
 Pinterest content is direction-only. Do not treat it as licensed production pixels. It may be used as a generation reference input only through [product insertion](../../chany-studio/references/product-insertion.md) §4, after the user approves the confirmation card that names it as someone else's photo; never deliver its pixels, and reject any output that could pass for it.
 
@@ -43,7 +43,7 @@ The L2 term is a direct child, not the L1 phrase plus a string of modifiers. An 
 
 Additional valid pairs include `Professional Services Branding` → `Law Firm Branding`, `Hospitality Photography` → `Hotel Photography`, `Architecture Photography` → `Interior Photography`, and `Automotive Photography` → `Electric Vehicle Photography`.
 
-Read [automatic recovery](../../chany-studio/references/reference-recovery.md). Use at most 6 discovery calls per lane, stopping after 2 consecutive calls without new usable candidates. Equivalent wording and pagination within the same L1/direct L2 scope are automatic; no extra-search approval is needed. Do not retry with a narrower phrase that adds L3 or creative modifiers. If L2 is uncertain, stay within L1.
+Read [automatic recovery](../../chany-studio/references/reference-recovery.md). Use at most 6 discovery calls per lane, stopping after 2 consecutive calls without new usable candidates on a transport. The one free transport transition in [free Pinterest recovery](../../chany-studio/references/pinterest-free-recovery.md) shares this total ceiling; never bypass an access-control block. Equivalent wording and pagination within the same L1/direct L2 scope are automatic; no extra-search approval is needed. Do not retry with a narrower phrase that adds L3 or creative modifiers. If L2 is uncertain, stay within L1.
 
 ## Prohibited query modifiers
 

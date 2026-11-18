@@ -60,10 +60,10 @@ test("the legacy shim loads the shared table covering every current non-industry
   assert.deepEqual(missing, [], "the shared legacy destination must route every current skill");
   assert.match(shim, /chany-studio\/references\/routing\.md/, "industry overlays are routed through routing.md");
   assert.doesNotMatch(shim, /six visible candidates by default/i);
-  assert.match(shim, /6 inline images by default \(Pinterest 6\)/);
+  assert.match(shim, /6 inline images by default \(Behance 6\)/);
 });
 
-test("general reference guidance states the six-image Pinterest default", async () => {
+test("general reference guidance states the six-image Behance default", async () => {
   const files = {
     "README.md": await readFile(join(repoRoot, "README.md"), "utf8"),
     "plugin README.md": await readFile(join(pluginRoot, "README.md"), "utf8"),
@@ -73,7 +73,7 @@ test("general reference guidance states the six-image Pinterest default", async 
     "industry-overlay.md": await readFile(join(pluginRoot, "skills", "chany-studio", "references", "industry-overlay.md"), "utf8"),
   };
   for (const [name, content] of Object.entries(files)) {
-    assert.match(content, /Pinterest 6/i, `${name} must state the Pinterest default`);
+    assert.match(content, /Behance 6/i, `${name} must state the Behance default`);
   }
 });
 

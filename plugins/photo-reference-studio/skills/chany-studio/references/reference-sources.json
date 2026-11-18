@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "max_sources_per_search": 2,
-  "default_still_source": "pinterest",
+  "default_still_source": "behance",
   "default_still_count": 6,
   "default_video_count": 3,
   "sources": [
     {
-      "id": "pinterest",
-      "name": "Pinterest",
-      "url": "https://www.pinterest.com/",
+      "id": "behance",
+      "name": "Behance",
+      "url": "https://www.behance.net/",
       "purpose": "still-style",
       "owner": "chany-reference-board"
     },

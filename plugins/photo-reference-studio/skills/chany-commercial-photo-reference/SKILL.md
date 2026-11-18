@@ -1,6 +1,6 @@
 ---
 name: chany-commercial-photo-reference
-description: "Production Paradise를 명시하거나 전문 사진작가 포트폴리오를 요청했을 때만 해당 사이트의 사진 레퍼런스를 찾는다. Not the default for 제품 사진, 광고 사진, 인스타그램용 사진, 고급 제품 촬영 or reference-to-product creation: use chany-reference-board's Pinterest lane for those. No general-web or retailer fallback."
+description: "Production Paradise를 명시하거나 전문 사진작가 포트폴리오를 요청했을 때만 해당 사이트의 사진 레퍼런스를 찾는다. Not the default for 제품 사진, 광고 사진, 인스타그램용 사진, 고급 제품 촬영 or reference-to-product creation: use chany-reference-board's automatic Behance lane for those. No general-web or retailer fallback."
 ---
 
 # Chany Commercial Photo Reference

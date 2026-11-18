@@ -5,7 +5,7 @@ description: Create single-image ads, conversion carousels (캐러셀 광고), e
 
 # Chany Ad Creative
 
-Product-photo styling, including “인스타그램용 광고 사진” and “1번 구도에 내 제품”, follows [photo reference execution](../chany-studio/references/photo-reference-execution.md) first. Pinterest supplies missing still composition; an output channel or the word advertising does not by itself request performance-ad research. Preserve the exact selected reference through generation.
+Product-photo styling, including “인스타그램용 광고 사진” and “1번 구도에 내 제품”, follows [photo reference execution](../chany-studio/references/photo-reference-execution.md) first. Behance supplies missing still composition; an output channel or the word advertising does not by itself request performance-ad research. Preserve the exact selected reference through generation.
 
 Turn approved authority sources, industry direction, and campaign rules into placement-ready static advertising and promotional layouts.
 
@@ -19,7 +19,7 @@ Read [references/ad-formats.md](references/ad-formats.md) for objective, templat
 
 For editorial carousels, thumbnails, covers and static ads, read [social design modes](references/social-design-formats.md) and shared [design craft](../chany-studio/references/design-intelligence.md). Their non-ad modes override sales-only CTA/ad-copy requirements. Keep this skill as owner without another strategy interview. Supplied reference images follow [reference-led design](../chany-studio/references/reference-led-design.md) before discovery.
 
-For purchase-oriented argument/copy or actual ad-case benchmarking, read the shared [performance-ad contract](../chany-studio/references/performance-ad-contract.md). Keep this skill as output owner: use [Instagram-first discovery](../chany-studio/references/instagram-ad-reference.md) for requested ad cases through `chany-reference-board`, with `chany-meta-ad-research` only for complementary or explicit Meta analysis and `chany-jtbd-persona` only for unresolved customer decisions. Still styling stays with the Pinterest route above. Reuse their packets instead of restarting strategy. For a carousel, also read [references/carousel-ad-contract.md](references/carousel-ad-contract.md).
+For purchase-oriented argument/copy or actual ad-case benchmarking, read the shared [performance-ad contract](../chany-studio/references/performance-ad-contract.md). Keep this skill as output owner: use [Instagram-first discovery](../chany-studio/references/instagram-ad-reference.md) for requested ad cases through `chany-reference-board`, with `chany-meta-ad-research` only for complementary or explicit Meta analysis and `chany-jtbd-persona` only for unresolved customer decisions. Still styling stays with the Behance route above. Reuse their packets instead of restarting strategy. For a carousel, also read [references/carousel-ad-contract.md](references/carousel-ad-contract.md).
 
 Read the shared [creative-direction system](../chany-studio/references/creative-direction-system.md) and [current creative signals](../chany-studio/references/current-creative-signals.md). Apply the named placement's current creative pattern—such as mobile hierarchy, safe zones, brand timing, modular asset rules, or CTA treatment—without converting platform guidance into a universal layout formula.
 

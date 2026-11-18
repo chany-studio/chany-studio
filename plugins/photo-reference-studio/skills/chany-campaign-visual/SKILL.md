@@ -1,9 +1,11 @@
 ---
 name: chany-campaign-visual
-description: "제품 사진과 고른 레퍼런스로 광고 사진·제품 촬영 이미지를 만들거나 1번으로 만들어줘 같은 선택을 실행한다. Use both product identity and selected reference composition inputs; Pinterest for missing still styling. Create master campaign visuals, not for finished-copy posters/banners (chany-ad-creative) or page-module sets."
+description: "제품 사진과 고른 레퍼런스로 광고 사진·제품 촬영 이미지를 만들거나 1번으로 만들어줘 같은 선택을 실행한다. Use both product identity and selected reference composition inputs; Behance for missing still styling. Create master campaign visuals, not for finished-copy posters/banners (chany-ad-creative) or page-module sets."
 ---
 
 # Chany Campaign Visual
+
+For an attached product photo, including image-only Chany intake, read [two-image fidelity](../chany-studio/references/photo-match-fidelity.md). Keep original product + selected reference in the actual image call, measure composition/light, transcribe legible label text, and inspect/correct within the existing bound. Behance is the automatic default; read [Behance search and display](../chany-studio/references/behance-reference-search.md); do not replace a blocked index with retailer images or paid searches.
 
 For product-photo/reference work, read [photo reference execution](../chany-studio/references/photo-reference-execution.md) before a generic image-tool skill. A user's numbered selection must reach the generator as the exact reference image; the product photo alone is insufficient.
 

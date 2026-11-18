@@ -50,7 +50,7 @@ Chany's Studio는 Claude와 ChatGPT Work에서 같은 프로젝트 지침을 사
 
 잡지형 캐러셀, 유튜브 썸네일, 인스타 커버와 Meta 광고는 같은 제작 스킬 안에서 목적별로 다르게 구성합니다. 사이트 트렌드 검색은 하지 않습니다. 참고 사진·브랜드·실제 사용 목적을 기준으로 구도, 문구 크기, 여백과 일관성을 결정하고 결과물을 검수합니다. Pinterest 실사 사진의 연출 분석은 원본 AI 프롬프트와 구분합니다.
 
-일반 레퍼런스 검색 기본값은 Pinterest 6으로 유지합니다. 출처나 장수를 지정하면 그 요청을 따릅니다. 레퍼런스 검색과 제작 장수는 별개이며 불필요한 추가 생성은 하지 않습니다.
+일반 레퍼런스 검색 기본값은 Behance 6으로 유지합니다. 출처나 장수를 지정하면 그 요청을 따릅니다. 레퍼런스 검색과 제작 장수는 별개이며 불필요한 추가 생성은 하지 않습니다.
 
 ```text
 첨부한 제품과 참고 사진으로 인스타 잡지형 캐러셀 5장 만들어줘. 어려운 건 알아서 추천해줘.
@@ -109,7 +109,7 @@ ChatGPT Work의 명시 호출은 `@스킬명`, Codex의 명시 호출은 `$스�
 | 고객 구매 동기·JTBD·페르소나 분석 | ChatGPT `@chany-jtbd-persona` · Codex `$chany-jtbd-persona` |
 | Meta 영상·단일 이미지·캐러셀 광고 분석 | ChatGPT `@chany-meta-ad-research` · Codex `$chany-meta-ad-research` |
 | 누끼·순백 팩샷·제품 클린업 | ChatGPT `@chany-product-assets` · Codex `$chany-product-assets` |
-| 사이트 미지정 시 Pinterest 6장, Pinterest만 지정 시 기본 6장, 또는 요청 수량 비교 | ChatGPT `@chany-reference-board` · Codex `$chany-reference-board` |
+| 사이트 미지정 시 Behance 6장, Pinterest만 지정 시 기본 6장, 또는 요청 수량 비교 | ChatGPT `@chany-reference-board` · Codex `$chany-reference-board` |
 | 전문 광고·라이프스타일 사진 레퍼런스 | ChatGPT `@chany-commercial-photo-reference` · Codex `$chany-commercial-photo-reference` |
 | 광고 사례·캠페인 벤치마크 | ChatGPT `@chany-award-ad-reference` · Codex `$chany-award-ad-reference` |
 | 세련된 콘셉트 3안·추천 방향·전문 제작 프롬프트 | ChatGPT `@chany-creative-direction` · Codex `$chany-creative-direction` |
@@ -175,7 +175,7 @@ chany-corporate-employer → chany-marketing-brief → chany-campaign-video 또�
 chany-live-culture-events → chany-reference-board → chany-creative-direction → chany-campaign-visual → chany-ad-creative
 ```
 
-위 체인의 `chany-reference-board`는 기본 Pinterest 경로입니다. 전문 광고사진이 핵심이면 `chany-commercial-photo-reference`, 광고 사례 아이디어와 메시지 장치가 핵심이면 `chany-award-ad-reference`로 한 번만 교체합니다.
+위 체인의 사진 레퍼런스는 `chany-reference-board`가 사이트 질문 없이 Behance에서 찾습니다. Production Paradise나 Ads of the World는 해당 사이트를 명시할 때만 별도 경로로 사용합니다. 광고 사례 비교는 인스타그램 우선·Meta 보조입니다.
 
 명시 호출 예시:
 
@@ -304,7 +304,7 @@ Pinterest 후보만 링크가 아니라 이 대화 안에 이미지 6장으로 �
 구도·조명·배경·색감·소품의 Visual DNA를 설명해줘.
 ```
 
-이 예시처럼 Pinterest만 지정했을 때 수량을 말하지 않으면 서로 다른 Pinterest 후보 6장을 표시합니다(Pinterest 전용 기본값). 사이트를 정하지 않으면 Pinterest 6장이 기본입니다. “3장”, “10개”처럼 양의 정수로 지정하면 그 장수가 `target_count`가 되며, 정확히 그 수량이 실제로 표시된 뒤 번호 하나 또는 `자동 선택`을 기다립니다. 허용된 검색 풀에서 목표 수량을 채우지 못하면 요청·표시·부족 수량을 밝힌 미완성 보드로 끝내고 선택이나 유료 제작으로 넘어가지 않습니다. 레퍼런스 속 제품, 모델, 로고, 패키지, 문구와 가격은 최종 결과로 가져오지 않습니다.
+이 예시처럼 Pinterest만 지정했을 때 수량을 말하지 않으면 서로 다른 Pinterest 후보 6장을 표시합니다(Pinterest 전용 기본값). 사이트를 정하지 않으면 Behance 6장이 기본입니다. “3장”, “10개”처럼 양의 정수로 지정하면 그 장수가 `target_count`가 되며, 정확히 그 수량이 실제로 표시된 뒤 번호 하나 또는 `자동 선택`을 기다립니다. 허용된 검색 풀에서 목표 수량을 채우지 못하면 요청·표시·부족 수량을 밝힌 미완성 보드로 끝내고 선택이나 유료 제작으로 넘어가지 않습니다. 레퍼런스 속 제품, 모델, 로고, 패키지, 문구와 가격은 최종 결과로 가져오지 않습니다.
 
 목적에 따라 다음 중 하나만 선택합니다.
 

@@ -7,9 +7,9 @@ const read = path => readFile(new URL(path, root), 'utf8');
 
 test('compact directory has six distinct sources with live owners and bounded search defaults', async () => {
   const config = JSON.parse(await read('skills/chany-studio/references/reference-sources.json'));
-  assert.deepEqual(config.sources.map(x => x.id), ['pinterest', 'production-paradise', 'instagram', 'meta-ad-library', 'vimeo-staff-picks', 'motionographer']);
+  assert.deepEqual(config.sources.map(x => x.id), ['behance', 'production-paradise', 'instagram', 'meta-ad-library', 'vimeo-staff-picks', 'motionographer']);
   assert.equal(config.max_sources_per_search, 2);
-  assert.equal(config.default_still_source, 'pinterest');
+  assert.equal(config.default_still_source, 'behance');
   assert.equal(config.default_still_count, 6);
   assert.equal(config.default_video_count, 3);
   assert.deepEqual(config.default_ad_sources, ['instagram', 'meta-ad-library']);

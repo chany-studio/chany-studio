@@ -1,6 +1,6 @@
 {
   "name": "photo-reference-studio",
-  "version": "2.21.5",
+  "version": "2.21.7",
   "description": "Chany's Studio: put real products and services into chosen references, discover fitting examples, and create images and videos with source fidelity, current model checks and bounded revisions.",
   "author": {
     "name": "Chany",
@@ -17,6 +17,7 @@
     "product photography",
     "marketing campaign",
     "reference board",
+    "Behance reference",
     "Pinterest reference",
     "commercial photography reference",
     "award ad reference",
@@ -89,7 +90,7 @@
       "Live paid-generation preflight and safe job recovery",
       "Marketing campaign planning",
       "Source-faithful product assets",
-      "Source-isolated Pinterest, Production Paradise, and advertising-archive reference boards with in-chat previews",
+      "Automatic Behance product-photo reference boards, explicit Pinterest and specialist source lanes with in-chat previews",
       "Campaign key visuals",
       "Detail-page production",
       "Promotional and multi-channel ad creative",

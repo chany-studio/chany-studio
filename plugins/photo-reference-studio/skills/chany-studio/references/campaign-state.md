@@ -165,14 +165,14 @@ customer_insight_packets: []
 ad_copy_packets: []
 carousel_manifests: []
 reference_board:
-  source_lane: "pinterest | commercial-photo | award-ad"
+  source_lane: "behance | pinterest | commercial-photo | award-ad"
   target_count: 6
   count_source: "default | user"
   visible_count: 0
   shortfall: 0
   status: "not-requested | collecting | incomplete | complete"
 selected_reference:
-  provider: "Pinterest | Production Paradise | Ads of the World"
+  provider: "Behance | Pinterest | Production Paradise | Ads of the World"
   source_url: ""
   visual_dna: {}
 creative_direction:

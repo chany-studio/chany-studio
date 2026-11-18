@@ -62,7 +62,7 @@ Run one L1 search first. Keep `l2` empty and `query_count: 1` when discovery sto
 ## Production handoff
 
 - `$chany-marketing-brief`: objective, message hierarchy, approved-fact ledger, offer, asset matrix, and tests
-- one reference route: the generic Pinterest board through `$chany-reference-board` (Pinterest 6 by default), or one explicitly requested source-isolated owner — `$chany-reference-board` for Pinterest only, `$chany-commercial-photo-reference` for Production Paradise photography, or `$chany-award-ad-reference` for approved advertising archive; every lane stays L1-first with one optional direct L2, and a single-provider lane shows six inline previews by default or the user's explicit positive count
+- one reference route: the generic Behance board through `$chany-reference-board` (Behance 6 by default), or one explicitly requested source-isolated owner — `$chany-reference-board` for Pinterest only, `$chany-commercial-photo-reference` for Production Paradise photography, or `$chany-award-ad-reference` for approved advertising archive; every lane stays L1-first with one optional direct L2, and a single-provider lane shows six inline previews by default or the user's explicit positive count
 - `$chany-campaign-visual`: approved vehicle key visual or campaign image system
 - `$chany-ad-creative`: placement-specific launch, consideration, retail, finance, and retargeting variants
 - `$chany-detail-page`: model, trim, feature, range, finance, fleet, or ownership page structure
