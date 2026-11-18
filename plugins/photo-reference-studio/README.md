@@ -1,4 +1,6 @@
-# Chany's Studio 2.18.0
+# Chany's Studio 2.21.8
+
+**2.21.8:** Work에서 **챠니 스튜디오 시작하기**를 보내면 사진·영상 중 무엇을 만들지 먼저 묻습니다. 제품 사진의 구도·조명은 Behance에서 찾고, 선택한 레퍼런스와 제품 사진을 함께 넣어 제작하도록 연결과 검수를 보강했습니다. Pinterest는 직접 요청할 때 사용합니다.
 
 **2.21.4:** ChatGPT Work Cloud에 설치할 수 있는 전용 파일을 제공합니다. Work 계정에서 챠니 설치와 Apify 연결을 각각 확인하세요. 내 제품에 맞는 인스타그램 인기 릴스를 Apify로 찾고, 실제 재생수·좋아요를 비교합니다. 릴스는 실제 영상 본편을 확인한 뒤 추천하며 캡션만 확인한 후보는 제외합니다. 공유수는 요금제와 실제 반환 여부를 확인하며 미확인 값을 만들지 않습니다. [검증 결과와 사용법](https://github.com/chany-studio/chany-studio/blob/main/docs/APIFY-INSTAGRAM-VERIFICATION.md)
 
